@@ -2,7 +2,7 @@
 
 This repository contains the source code for Blake Lin's personal resume website. It's a modern, responsive portfolio built with Next.js, React, and Tailwind CSS, designed to showcase professional experience, skills, and education.
 
-**Live Site:** [https://blakelin-lsy.github.io/web-resume-chatllm/](https://blakelin-lsy.github.io/web-resume-chatllm/)
+**Live Site:** [https://blakelin-lsy.github.io/web-resume/](https://blakelin-lsy.github.io/web-resume/)
 
 ## Features
 
@@ -40,8 +40,8 @@ To run this website locally for development or testing:
 
 1.  **Clone the repository (if you haven't already):**
     ```bash
-    git clone https://github.com/blakelin-lsy/web-resume-chatllm.git
-    cd web-resume-chatllm
+    git clone https://github.com/blakelin-lsy/web-resume.git
+    cd web-resume
     ```
 
 2.  **Navigate to the application directory and install dependencies:**
@@ -63,7 +63,7 @@ This site is automatically deployed to GitHub Pages using GitHub Actions wheneve
 
 -   **Workflow Configuration:** The deployment process is defined in `.github/workflows/deploy.yml`.
 -   **Next.js Configuration for GitHub Pages:**
-    The `app/next.config.js` file is configured for static export suitable for GitHub Pages. Key settings include `output: 'export'`, and potentially `basePath` and `assetPrefix` if the site is hosted in a subdirectory of a domain (e.g., `your-username.github.io/repository-name`). For this project, `basePath: "/web-resume-chatllm"` and `assetPrefix: "/web-resume-chatllm/"` are used.
+    The `app/next.config.js` file is configured for static export suitable for GitHub Pages. Key settings include `output: 'export'`, and potentially `basePath` and `assetPrefix` if the site is hosted in a subdirectory of a domain (e.g., `your-username.github.io/repository-name`). For this project, `basePath: "/web-resume"` and `assetPrefix: "/web-resume"` are used.
 -   The `.nojekyll` file in the root of the repository ensures GitHub Pages serves the Next.js static export correctly without trying to process it with Jekyll.
 
 You can monitor deployment progress in the "Actions" tab of the GitHub repository.
