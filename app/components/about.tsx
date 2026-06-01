@@ -21,9 +21,9 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <div className="bg-card shadow-md dark:shadow-black/30 rounded-lg p-6 hover:shadow-lg transition-shadow">
-          <p className="text-lg leading-relaxed">
-            An engineer who tries to build the future with imagination and skills. I am eager to leverage my skills to build innovative software that positively impacts daily life. Software engineer specializing in computer vision and 3D metrology with a proven track record of developing and optimizing algorithms for industrial applications.
+        <div className="glass-card">
+          <p className="text-base sm:text-lg leading-relaxed">
+            I am an AI Software Engineer with a proven track record of delivering systems from MVP to factory-grade production. With an M.S. in Physics and deep expertise in signal processing and physical system modeling, I possess strong rapid domain transfer capabilities—successfully shipping cybersecurity, CFD simulation, and 3D metrology pipelines within months of onboarding. I am passionate about designing robust agentic workflows, multi-agent systems, and scalable ML infrastructures with a strong bias toward measurable outcomes.
           </p>
         </div>
       </motion.div>

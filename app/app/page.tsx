@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import Hero from "@/components/hero";
 import About from "@/components/about";
 import Skills from "@/components/skills";
+import Projects from "@/components/projects";
 import Experience from "@/components/experience";
 import Education from "@/components/education";
 import Contact from "@/components/contact";
@@ -18,6 +19,11 @@ export default function Home() {
   });
 
   const [skillsRef, skillsInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [projectsRef, projectsInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
@@ -74,12 +80,23 @@ export default function Home() {
       </motion.div>
       
       <motion.div
+        ref={projectsRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.5 }}
+        id="projects"
+        className="py-16 bg-secondary/30 dark:bg-secondary/10"
+      >
+        <Projects />
+      </motion.div>
+      
+      <motion.div
         ref={experienceRef}
         initial={{ opacity: 0, y: 50 }}
         animate={experienceInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
         id="experience"
-        className="py-16 bg-secondary/30 dark:bg-secondary/10"
+        className="py-16"
       >
         <Experience />
       </motion.div>

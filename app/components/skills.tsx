@@ -1,21 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Brain, Cloud, Beaker } from "lucide-react";
+import { Code, Brain, Wrench, Camera } from "lucide-react";
 
 const skills = {
-  programmingLanguages: ["C++", "Python", "Kotlin", "Rust"],
-  computerVision: [
-    "Stereo camera",
-    "3D metrology",
-    "Algorithm development",
-    "Image processing",
-    "Object detection",
-    "Segmentation"
+  programmingLanguages: ["Python", "C++", "Rust", "Kotlin"],
+  aiAndAgents: [
+    "Context Engineering",
+    "Multi-agent Systems",
+    "Claude Code / Copilot / Gemini",
+    "Codex / Antigravity",
+    "MCP Servers",
   ],
-  machineLearning: ["TensorFlow"],
-  cloudComputing: ["Google Cloud"],
-  other: ["Physics", "Biophysics", "Microscopy"]
+  toolsAndFrameworks: [
+    "TensorFlow",
+    "Nvidia Morpheus",
+    "PhysicsNeMo",
+    "Docker & Cloud (GCP/AWS)",
+    "Git & CI/CD"
+  ],
+  computerVision: [
+    "OpenCV",
+    "RealSense",
+    "3D Metrology",
+    "Signal Analysis & FFT",
+    "CFD (OpenFOAM)"
+  ]
 };
 
 export default function Skills() {
@@ -43,15 +53,36 @@ export default function Skills() {
         className="flex items-center gap-2 mb-6"
       >
         <Code className="h-6 w-6 text-primary" />
-        <h2 className="section-heading">Skills</h2>
+        <h2 className="section-heading">Technical Skills</h2>
       </motion.div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <motion.div
           variants={container}
           initial="hidden"
-          animate="show"
-          className="bg-card shadow-md dark:shadow-black/30 rounded-lg p-6 hover:shadow-lg transition-all hover:scale-[1.02]"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="glass-card"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <Brain className="h-5 w-5 text-primary" />
+            <h3 className="text-xl font-semibold">AI & Agent Systems</h3>
+          </div>
+          <div className="flex flex-wrap">
+            {skills.aiAndAgents.map((skill) => (
+              <motion.span key={skill} variants={item} className="skill-tag">
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="glass-card"
         >
           <div className="flex items-center gap-2 mb-4">
             <Code className="h-5 w-5 text-primary" />
@@ -69,72 +100,36 @@ export default function Skills() {
         <motion.div
           variants={container}
           initial="hidden"
-          animate="show"
-          className="bg-card shadow-md dark:shadow-black/30 rounded-lg p-6 hover:shadow-lg transition-all hover:scale-[1.02]"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="glass-card"
         >
           <div className="flex items-center gap-2 mb-4">
-            <Brain className="h-5 w-5 text-primary" />
+            <Wrench className="h-5 w-5 text-primary" />
+            <h3 className="text-xl font-semibold">Tools & Frameworks</h3>
+          </div>
+          <div className="flex flex-wrap">
+            {skills.toolsAndFrameworks.map((skill) => (
+              <motion.span key={skill} variants={item} className="skill-tag">
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
+        
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="glass-card"
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <Camera className="h-5 w-5 text-primary" />
             <h3 className="text-xl font-semibold">Computer Vision</h3>
           </div>
           <div className="flex flex-wrap">
             {skills.computerVision.map((skill) => (
-              <motion.span key={skill} variants={item} className="skill-tag">
-                {skill}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
-        
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="bg-card shadow-md dark:shadow-black/30 rounded-lg p-6 hover:shadow-lg transition-all hover:scale-[1.02]"
-        >
-          <div className="flex items-center gap-2 mb-4">
-            <Brain className="h-5 w-5 text-primary" />
-            <h3 className="text-xl font-semibold">Machine Learning</h3>
-          </div>
-          <div className="flex flex-wrap">
-            {skills.machineLearning.map((skill) => (
-              <motion.span key={skill} variants={item} className="skill-tag">
-                {skill}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
-        
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="bg-card shadow-md dark:shadow-black/30 rounded-lg p-6 hover:shadow-lg transition-all hover:scale-[1.02]"
-        >
-          <div className="flex items-center gap-2 mb-4">
-            <Cloud className="h-5 w-5 text-primary" />
-            <h3 className="text-xl font-semibold">Cloud Computing</h3>
-          </div>
-          <div className="flex flex-wrap">
-            {skills.cloudComputing.map((skill) => (
-              <motion.span key={skill} variants={item} className="skill-tag">
-                {skill}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
-        
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="bg-card shadow-md dark:shadow-black/30 rounded-lg p-6 hover:shadow-lg transition-all hover:scale-[1.02]"
-        >
-          <div className="flex items-center gap-2 mb-4">
-            <Beaker className="h-5 w-5 text-primary" />
-            <h3 className="text-xl font-semibold">Other Skills</h3>
-          </div>
-          <div className="flex flex-wrap">
-            {skills.other.map((skill) => (
               <motion.span key={skill} variants={item} className="skill-tag">
                 {skill}
               </motion.span>

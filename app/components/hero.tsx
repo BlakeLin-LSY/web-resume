@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div
-        className="absolute inset-0 bg-gradient-to-b from-primary/10 to-background dark:from-primary/5 dark:to-background"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-500/20 via-purple-500/10 to-background dark:from-indigo-500/10 dark:via-purple-500/5 dark:to-background"
         style={{
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
@@ -45,10 +45,10 @@ export default function Hero() {
           className="mb-8"
         >
           <h2 className="text-xl md:text-3xl font-medium text-primary">
-            Software Engineer
+            AI Software Engineer
           </h2>
-          <p className="text-lg mt-2 max-w-2xl text-muted-foreground">
-            Computer vision specialist with expertise in 3D metrology and algorithm optimization for industrial applications.
+          <p className="text-lg mt-2 max-w-2xl text-muted-foreground px-4">
+            LLM Agents & System Architecture | Specializing in applied AI, complex autonomous workflows, and scalable AI infrastructure.
           </p>
         </motion.div>
         
