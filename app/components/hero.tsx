@@ -48,7 +48,7 @@ export default function Hero() {
             AI Software Engineer
           </h2>
           <p className="text-lg mt-2 max-w-2xl text-muted-foreground px-4">
-            LLM Agents & System Architecture | Specializing in applied AI, complex autonomous workflows, and scalable AI infrastructure.
+            ML pipelines, computer vision, and hardware integration. Personal tools for research, voice workflows, and inspectable AI delivery.
           </p>
         </motion.div>
         
