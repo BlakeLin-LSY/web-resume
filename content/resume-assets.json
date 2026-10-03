@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "sourceVersion": "2026-09-29 career canonical CV",
+  "privacy": "Name and email only",
+  "locales": {
+    "en": {
+      "file": "blake-lin-cv-en.pdf",
+      "bytes": 62007,
+      "sha256": "bd4063bdc73b7a3126e6a01e8ed8950f88d5ba20deae844feff95001b81db9ed",
+      "pageCount": 1
+    },
+    "zh-TW": {
+      "file": "blake-lin-cv-zh-tw.pdf",
+      "bytes": 225055,
+      "sha256": "fab906e1e9e88d5bfd4bd9250db8da9d104e917d88bac00510a465acc1fda104",
+      "pageCount": 1
+    }
+  }
+}
