@@ -47,7 +47,7 @@ export default function Skills() {
   return (
     <div className="section-container">
       <motion.div
-        initial={{ opacity: 0, x: -20 }}
+        initial={false}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         className="flex items-center gap-2 mb-6"

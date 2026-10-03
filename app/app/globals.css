@@ -107,3 +107,19 @@
 nextjs-portal {
   display: none;
 }
+
+/* Native anchors and readable content do not depend on animation. */
+html { scroll-behavior: auto; }
+main > section[id] { scroll-margin-top: 80px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  header, nav, button { display: none !important; }
+  main, section, article, main * { opacity: 1 !important; transform: none !important; }
+  main > section, .glass-card { break-inside: avoid; }
+  .glass-card { box-shadow: none; backdrop-filter: none; }
+  body { background: white; color: black; }
+}

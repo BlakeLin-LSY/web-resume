@@ -10,7 +10,7 @@ export default function LifeDevotions() {
   return (
     <div className="section-container">
       <motion.div
-        initial={{ opacity: 0, x: -20 }}
+        initial={false}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         className="flex items-center gap-2 mb-6"
@@ -22,7 +22,7 @@ export default function LifeDevotions() {
       <div className="space-y-6">
         {/* LeetCode - Full Row */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="bg-card shadow-md dark:shadow-black/30 rounded-lg overflow-hidden hover:shadow-lg transition-all hover:scale-[1.01]"
@@ -63,7 +63,7 @@ export default function LifeDevotions() {
         {/* Marathon and Trail Running - Side by Side with significantly increased height */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-card shadow-md dark:shadow-black/30 rounded-lg overflow-hidden hover:shadow-lg transition-all hover:scale-[1.02]"
@@ -90,7 +90,7 @@ export default function LifeDevotions() {
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-card shadow-md dark:shadow-black/30 rounded-lg overflow-hidden hover:shadow-lg transition-all hover:scale-[1.02]"

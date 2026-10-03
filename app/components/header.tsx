@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import ThemeToggle from "./theme-toggle";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./theme-toggle";
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -16,135 +15,40 @@ const navItems = [
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
-
+  const [open, setOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-      
-      // Determine active section
-      const sections = navItems.map(item => item.href.substring(1));
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section);
-        if (!element) return false;
-        
-        const rect = element.getBoundingClientRect();
-        return rect.top <= 100 && rect.bottom >= 100;
-      });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
-      } else if (window.scrollY < 100) {
-        setActiveSection("");
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && open) {
+        setOpen(false);
+        menuButton.current?.focus();
       }
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleNavClick = (href: string) => {
-    setMobileMenuOpen(false);
-    
-    // Smooth scroll to section
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+    document.addEventListener("keydown", escape);
+    return () => document.removeEventListener("keydown", escape);
+  }, [open]);
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-md shadow-md dark:shadow-black/30"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       <div className="section-container flex items-center justify-between h-16">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="font-bold text-xl"
-        >
-          <a href="#" className="text-primary">
-            Blake Lin
-          </a>
-        </motion.div>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-1">
-          {navItems.map((item, index) => (
-            <motion.div
-              key={item.name}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-            >
-              <button
-                onClick={() => handleNavClick(item.href)}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  activeSection === item.href.substring(1)
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground hover:bg-secondary hover:text-secondary-foreground"
-                }`}
-              >
-                {item.name}
-              </button>
-            </motion.div>
-          ))}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
-          >
-            <ThemeToggle />
-          </motion.div>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <div className="flex items-center md:hidden">
+        <a href="#top" className="font-bold text-xl text-primary">Blake Lin</a>
+        <nav aria-label="Main navigation" className="hidden md:flex items-center gap-1">
+          {navItems.map(item => <a key={item.href} href={item.href} className="px-3 py-2 rounded-md text-sm hover:bg-secondary">{item.name}</a>)}
           <ThemeToggle />
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="ml-2 p-2 rounded-md text-foreground hover:bg-secondary"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </nav>
+        <div className="flex items-center md:hidden gap-2">
+          <ThemeToggle />
+          <button ref={menuButton} type="button" aria-label="Menu"
+            aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)} className="p-2 rounded-md hover:bg-secondary">
+            {open ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-background/95 backdrop-blur-md shadow-lg dark:shadow-black/30"
-          >
-            <div className="section-container py-4 space-y-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className={`block w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    activeSection === item.href.substring(1)
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground hover:bg-secondary hover:text-secondary-foreground"
-                  }`}
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <nav id="mobile-navigation" aria-label="Mobile navigation" hidden={!open} className="md:hidden bg-background section-container pb-4">
+        {navItems.map(item => <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="block px-3 py-2">{item.name}</a>)}
+      </nav>
+      <noscript><nav aria-label="Navigation without JavaScript" className="section-container flex flex-wrap gap-3 md:hidden bg-background py-2">
+        {navItems.map(item => <a key={item.href} href={item.href}>{item.name}</a>)}
+      </nav></noscript>
     </header>
   );
 }

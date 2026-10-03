@@ -63,7 +63,7 @@ export default function Experience() {
   return (
     <div className="section-container">
       <motion.div
-        initial={{ opacity: 0, x: -20 }}
+        initial={false}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         className="flex items-center gap-2 mb-6"
@@ -82,7 +82,7 @@ export default function Experience() {
         {group.entries.map((exp, index) => (
           <motion.div
             key={exp.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="timeline-item"
