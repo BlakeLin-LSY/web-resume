@@ -1,0 +1,73 @@
+<!doctype html>
+<!-- Generated from content/project-case-studies.json. Edit the content source or generator. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+<title>windowphase — Engineering introduction</title><meta name="description" content="An anchored usage window can reset while you are away from the keyboard. I built a planner that compares timings against working hours and previews the command before a live clock-in."><style>
+:root{color-scheme:light dark;--bg:#f8fafc;--panel:#fff;--text:#0f172a;--muted:#475569;--border:#dbe3ee;--blue:#2563eb;--tint:#eff6ff}
+@media(prefers-color-scheme:dark){:root{--bg:#020817;--panel:#0d1627;--text:#f1f5f9;--muted:#b2bfd0;--border:#263449;--blue:#60a5fa;--tint:#122440}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:.2em}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}header,main,footer{width:min(1050px,100% - 40px);margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-bottom:1px solid var(--border)}.back{text-decoration:none;font-weight:600}.languages{display:flex;gap:6px}.languages button{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:7px 12px;border-radius:8px;cursor:pointer}.languages button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue)}.skip{position:absolute;top:-100px;left:20px;padding:10px;background:var(--panel);z-index:1}.skip:focus{top:10px}.hero{padding:50px 0 30px;max-width:780px}.eyebrow{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}h2{font-size:1.5rem;line-height:1.35;margin:0 0 18px}h3{font-size:1.05rem;margin:0 0 12px}.subtitle{font-size:1.3rem;font-weight:600;margin:0 0 16px}.lead{color:var(--muted);font-size:1.05rem}.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;list-style:none;margin:24px 0 0}.tags li{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--blue);background:var(--tint)}.section{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px;margin:0 0 22px}.section p{color:var(--muted);margin:12px 0}.flow{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:24px 0 0}.flow li{flex:1;min-width:120px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);padding:12px;font-size:14px;line-height:1.5}.flow span{display:block;font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px}.example{padding:18px;border-left:3px solid var(--blue);background:var(--tint);border-radius:6px;margin-top:22px}.example p{margin:6px 0 0}.source-list{list-style:none;padding:0;margin:0}.source-list li{padding:14px 0;border-top:1px solid var(--border)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82rem;overflow-wrap:anywhere}.source-role{display:block;color:var(--muted);font-size:13px}.notice{color:var(--muted);font-size:14px}.language-view+.language-view{border-top:1px solid var(--border);margin-top:40px}.js .language-view[hidden]{display:none}footer{border-top:1px solid var(--border);margin-top:32px;padding:24px 0 40px;color:var(--muted);font-size:13px}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.hero{padding-top:34px}.section{padding:22px}.flow{flex-direction:column}}
+</style></head>
+<body><a class="skip" href="#content">Skip to content / 跳至內容</a>
+<header><a class="back" href="../#projects">← Projects / 返回專案</a><a href="windowphase.html" download="windowphase.html">Download HTML / 下載 HTML</a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>正體中文</button></div></header>
+<main id="content"><article class="language-view" lang="en" data-language="en">
+<div class="hero"><p class="eyebrow">Personal project · Engineering case study</p>
+<h1>windowphase</h1><p class="subtitle">A workday schedule you can inspect before running.</p><p class="lead">I wanted to see whether a fixed usage-window schedule could line up with my working hours. windowphase makes the timing, baseline, and clock-in command explicit before a live request.</p>
+<ul class="tags"><li>Python</li><li>Scheduling</li><li>CLI</li></ul></div>
+<section class="section"><h2>The workday problem</h2>
+<p>If a provider uses a request-anchored window, the time of the first request shapes when the next reset arrives. Those boundaries can fall outside the hours when the allowance is useful.</p>
+<p>windowphase models a five-hour window against the workday and looks for reset boundaries that leave usable portions of time on either side. It compares the proposed schedule with the no-tool baseline, so the calculation has a concrete point of comparison.</p>
+<ol class="flow"><li><span>01</span>Work hours</li><li><span>02</span>Anchored-window model</li><li><span>03</span>Schedule &amp; baseline</li><li><span>04</span>Inspect before live use</li></ol>
+
+</section>
+<section class="section"><h2>The choice I made</h2>
+<p>I separated the planner from provider execution. The Python calculation returns pre-work ignition, reset times, and reachable windows under a minimum usable-slice constraint; spacing validation also checks the gap across midnight.</p>
+<p>Provider adapters build explicit command arguments, and the runner defaults to a dry run. A live clock-in requires live=True or --live. This makes the plan inspectable, while leaving the real provider behavior and request cost as assumptions that must be checked separately.</p>
+
+<aside class="example"><h3>Illustrative model example — not an account measurement</h3><p>For a 09:00–18:00 workday and a 60-minute minimum usable slice, the anchored model places clock-ins at 06:00, 11:00, and 16:00. These are calculated times under the model, not a measured account benefit.</p></aside>
+</section>
+<section class="section"><h2>What it produces today</h2>
+<p>The project provides schedule calculation and rendering, a no-tool comparison, provider command previews, a ledger, and health-check code. Scheduler representations exist for systemd, launchd, and Windows Task Scheduler.</p>
+<p>The bounded result is a calculated schedule and an inspectable CLI path. A rolling lookback may make the anchored model unsuitable; actual quota benefit and parity across Linux, macOS, and Windows remain unestablished.</p>
+
+
+</section>
+</article>
+<article class="language-view" lang="zh-TW" data-language="zh-TW">
+<div class="hero"><p class="eyebrow">個人工程專案 · 專案介紹</p>
+<h1>windowphase</h1><p class="subtitle">先檢查工作日排程，再決定是否執行。</p><p class="lead">我想知道固定 usage window 的排程能否對齊工作時間。windowphase 先把時間安排、baseline 與 clock-in command 攤開，再由使用者決定是否送出 live request。</p>
+<ul class="tags"><li>Python</li><li>Scheduling</li><li>CLI</li></ul></div>
+<section class="section"><h2>工作時段的問題</h2>
+<p>若 provider 採用由 request 錨定的 window，第一次 request 的時間會影響下一次 reset 何時到來。這些 boundaries 可能落在無法使用 allowance 的時段。</p>
+<p>windowphase 以 five-hour window 為模型，尋找能在工作日兩側留下可用區段的 reset boundaries，並與未使用工具的 baseline 比較，讓排程有具體對照。</p>
+<ol class="flow"><li><span>01</span>工作時間</li><li><span>02</span>Anchored-window 模型</li><li><span>03</span>排程與 baseline</li><li><span>04</span>Live use 前先檢查</li></ol>
+
+</section>
+<section class="section"><h2>我的關鍵選擇</h2>
+<p>我把 planner 與 provider execution 分開。Python 計算在 minimum usable-slice 條件下回傳 pre-work ignition、reset times 與 reachable windows；spacing validation 也檢查跨午夜的間距。</p>
+<p>Provider adapters 產生明確的 command arguments，runner 預設 dry run。Live clock-in 必須使用 live=True 或 --live。這讓排程可以先被檢查，也把 provider 的真實行為與 request 成本留作需要另外確認的 assumptions。</p>
+
+<aside class="example"><h3>模型示例，並非帳號量測</h3><p>若工作時間為 09:00–18:00，minimum usable slice 為 60 分鐘，anchored model 會把 clock-ins 放在 06:00、11:00 與 16:00。這些是模型中的計算時間，不是已量測的帳號效益。</p></aside>
+</section>
+<section class="section"><h2>目前可看見的結果</h2>
+<p>專案提供 schedule calculation 與 rendering、no-tool comparison、provider command preview、ledger 與 health-check code，也有 systemd、launchd 和 Windows Task Scheduler representations。</p>
+<p>目前成果限於算出的排程與可檢查的 CLI 路徑。Rolling lookback 可能讓 anchored model 不適用；實際 quota 效益，以及 Linux、macOS、Windows 的 platform parity，仍未確立。</p>
+
+
+</section>
+</article>
+<details class="section"><summary><strong>Implementation references / 實作參考</strong></summary><p class="notice">Repository: windowphase · Source review: 2026-10-03 / 原始碼巡查日期</p><ul class="source-list"><li><code>src/windowphase/planner.py:140</code><span class="source-role">Workday schedule calculation</span></li>
+<li><code>src/windowphase/planner.py:192</code><span class="source-role">No-tool comparison model</span></li>
+<li><code>src/windowphase/runner.py:27</code><span class="source-role">Explicit live-run boundary</span></li>
+<li><code>src/windowphase/cli.py:274</code><span class="source-role">Schedule inspection and rendering</span></li></ul></details></main>
+<footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a href="../#projects">Back to projects / 返回專案</a><noscript><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
+<script>
+const controls = document.querySelectorAll('[data-select-language]');
+const views = document.querySelectorAll('[data-language]');
+function selectLanguage(language) {
+  views.forEach(view => { view.hidden = view.dataset.language !== language; });
+  controls.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.selectLanguage === language)));
+  document.documentElement.lang = language;
+}
+document.documentElement.classList.add('js');
+controls.forEach(button => { button.disabled = false; button.addEventListener('click', () => selectLanguage(button.dataset.selectLanguage)); });
+selectLanguage('en');
+</script></body></html>

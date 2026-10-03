@@ -85,7 +85,7 @@ export default function Home() {
         animate={projectsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
         id="projects"
-        className="py-16 bg-secondary/30 dark:bg-secondary/10"
+        className="py-16 scroll-mt-16 bg-secondary/30 dark:bg-secondary/10"
       >
         <Projects />
       </motion.div>

@@ -1,0 +1,231 @@
+<!doctype html>
+<!-- Generated from content/project-case-studies.json. Edit the content source or generator. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+<title>Study Atlas — Engineering introduction</title><meta name="description" content="A research topic may need a quick briefing or a deeper explanation. I built a typed knowledge pipeline that turns one authored study into bilingual reading routes with a source trail."><style>
+:root{color-scheme:light dark;--bg:#f8fafc;--panel:#fff;--text:#0f172a;--muted:#475569;--border:#dbe3ee;--blue:#2563eb;--tint:#eff6ff}
+@media(prefers-color-scheme:dark){:root{--bg:#020817;--panel:#0d1627;--text:#f1f5f9;--muted:#b2bfd0;--border:#263449;--blue:#60a5fa;--tint:#122440}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:.2em}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}header,main,footer{width:min(1050px,100% - 40px);margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-bottom:1px solid var(--border)}.back{text-decoration:none;font-weight:600}.languages{display:flex;gap:6px}.languages button{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:7px 12px;border-radius:8px;cursor:pointer}.languages button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue)}.skip{position:absolute;top:-100px;left:20px;padding:10px;background:var(--panel);z-index:1}.skip:focus{top:10px}.hero{padding:50px 0 30px;max-width:780px}.eyebrow{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}h2{font-size:1.5rem;line-height:1.35;margin:0 0 18px}h3{font-size:1.05rem;margin:0 0 12px}.subtitle{font-size:1.3rem;font-weight:600;margin:0 0 16px}.lead{color:var(--muted);font-size:1.05rem}.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;list-style:none;margin:24px 0 0}.tags li{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--blue);background:var(--tint)}.section{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px;margin:0 0 22px}.section p{color:var(--muted);margin:12px 0}.flow{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:24px 0 0}.flow li{flex:1;min-width:120px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);padding:12px;font-size:14px;line-height:1.5}.flow span{display:block;font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px}.example{padding:18px;border-left:3px solid var(--blue);background:var(--tint);border-radius:6px;margin-top:22px}.example p{margin:6px 0 0}.source-list{list-style:none;padding:0;margin:0}.source-list li{padding:14px 0;border-top:1px solid var(--border)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82rem;overflow-wrap:anywhere}.source-role{display:block;color:var(--muted);font-size:13px}.notice{color:var(--muted);font-size:14px}.language-view+.language-view{border-top:1px solid var(--border);margin-top:40px}.js .language-view[hidden]{display:none}footer{border-top:1px solid var(--border);margin-top:32px;padding:24px 0 40px;color:var(--muted);font-size:13px}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.hero{padding-top:34px}.section{padding:22px}.flow{flex-direction:column}}
+
+.walkthrough{scroll-margin-top:24px;overflow-wrap:anywhere}.walkthrough-language+.walkthrough-language{border-top:1px solid var(--border);padding-top:28px;margin-top:28px}.walkthrough h2{margin-bottom:12px}.walkthrough-intro{max-width:780px}.walkthrough-boundary{padding:14px 18px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);font-size:14px}.walkthrough-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:24px 0 18px}.walkthrough-steps button{display:flex;align-items:flex-start;gap:8px;text-align:left;line-height:1.4;font-size:13px;border:1px solid var(--border);border-radius:8px;padding:12px 10px;background:var(--bg);color:var(--text)}.walkthrough-steps button:enabled,.walkthrough-navigation button:enabled{cursor:pointer}.walkthrough-steps button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue)}.walkthrough-step-number{font-size:11px;font-weight:700;color:var(--blue)}.walkthrough-position{font-size:13px;color:var(--blue)!important;min-height:1.75em}.walkthrough-panel{border-top:1px solid var(--border);padding:22px 0 6px}.walkthrough-panel h3{font-size:1.15rem;line-height:1.4}.walkthrough-evidence{display:inline-block;margin:0 0 10px!important;font-size:12px;line-height:1.5;color:var(--blue)!important;border:1px solid var(--border);border-radius:6px;padding:5px 9px;background:var(--tint)}.walkthrough-budget{padding:18px;border:1px solid var(--border);border-radius:10px;background:var(--bg);margin:20px 0}.walkthrough-budget-value{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px}.walkthrough-budget-value strong{font-size:1.7rem;line-height:1.3;font-variant-numeric:tabular-nums}.walkthrough-budget-value span{font-size:13px;color:var(--muted)}.walkthrough-budget-status{font-size:12px!important;font-weight:700;color:var(--blue)!important;border:1px solid var(--border);border-radius:6px;padding:3px 9px;background:var(--tint)}.walkthrough-budget p{font-size:14px;margin-bottom:0}.walkthrough-artifact{border:1px solid var(--border);border-radius:8px;margin:14px 0;padding:14px 16px}.walkthrough-artifact summary{cursor:pointer;font-weight:600;line-height:1.5}.walkthrough-artifact .walkthrough-evidence{margin-top:14px!important}.walkthrough-artifact p{font-size:14px}.walkthrough-artifact pre{max-width:100%;margin:14px 0 0;padding:14px;background:var(--bg);border:1px solid var(--border);border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}.walkthrough-navigation{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--border);padding-top:18px;margin-top:18px}.walkthrough-navigation button{border:1px solid var(--border);border-radius:8px;padding:8px 16px;background:var(--panel);color:var(--text)}.walkthrough-navigation button:disabled{opacity:.45}.js .walkthrough-panel[hidden],.js .walkthrough-language[hidden]{display:none}summary:focus-visible{outline:3px solid var(--blue);outline-offset:4px}@media(max-width:700px){.walkthrough-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.walkthrough-steps button:last-child{grid-column:1/-1}.walkthrough-artifact{padding:12px}.walkthrough-artifact pre{padding:10px}.walkthrough-navigation button{padding:8px 12px}}
+</style></head>
+<body><a class="skip" href="#content">Skip to content / 跳至內容</a>
+<header><a class="back" href="../#projects">← Projects / 返回專案</a><a href="study-atlas.html" download="study-atlas.html">Download HTML / 下載 HTML</a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>正體中文</button></div></header>
+<main id="content"><article class="language-view" lang="en" data-language="en">
+<div class="hero"><p class="eyebrow">Personal project · Engineering case study</p>
+<h1>Study Atlas</h1><p class="subtitle">One study, several ways to read it.</p><p class="lead">I wanted research outputs that fit a reader&#39;s time without losing the question, the reasoning, or the sources. Study Atlas makes the reading route part of the delivery.</p>
+<ul class="tags"><li>Python</li><li>Semantic IR</li><li>Knowledge graphs</li></ul></div>
+<section class="section"><h2>The reader problem</h2>
+<p>A one-minute briefing and a thirty-minute explanation need different routes through the same material. A shorter version still needs a conclusion and enough context to stand on its own; a longer version needs room for the derivation.</p>
+<p>Study Atlas organizes a supported paper, repository, web source, or topic into a study with bilingual knowledge cards, source locators, and explicit narrative order. Each reading budget has its own route through those cards.</p>
+<ol class="flow"><li><span>01</span>Source &amp; question</li><li><span>02</span>Authored Semantic IR</li><li><span>03</span>Compiler &amp; checks</li><li><span>04</span>Bilingual reader views</li></ol>
+
+</section>
+<section class="section"><h2>The choice I made</h2>
+<p>I made the authored meaning explicit in a typed Semantic IR: the question, claims, sources, bilingual card content, and reading order. A Python compiler expands that into study files, and a separate renderer builds the reader HTML.</p>
+<p>This keeps presentation changes separate from the knowledge being presented. It requires more authoring structure, but gives the compiler something concrete to check and regenerate. The normal new-study path also refuses to overwrite an existing destination.</p>
+
+
+</section>
+<section class="section"><h2>What it produces today</h2>
+<p>Existing study outputs include English and Traditional Chinese reading files for T1, T5, and T30, plus HTML reader pages with language and depth controls. The Semantic IR product tour provides a concrete local artifact showing the path from authored input to reader output.</p>
+<p>A personal live paper request on September 13, 2026 made the budget constraint concrete. Its delivery record describes a 6.0-minute T5 TALK plan above the 5.0-minute limit, then a compact-card revision. The final receipt records a passing 4.6-minute plan on the historical Contract 1.8 path.</p>
+<p>Those minutes are calculated TALK card budgets, not timed reading or elapsed processing time. Compiled outputs establish a reading delivery; whether the claims are sound and a reader understands them still requires source review and human rehearsal.</p>
+
+
+</section>
+</article>
+<article class="language-view" lang="zh-TW" data-language="zh-TW">
+<div class="hero"><p class="eyebrow">個人工程專案 · 專案介紹</p>
+<h1>Study Atlas</h1><p class="subtitle">同一份研究，給讀者不同深度的入口。</p><p class="lead">我希望研究產出能配合讀者的時間，也保留問題、推理與來源。Study Atlas 把閱讀路徑納入交付本身。</p>
+<ul class="tags"><li>Python</li><li>Semantic IR</li><li>Knowledge graphs</li></ul></div>
+<section class="section"><h2>讀者的問題</h2>
+<p>一分鐘的 briefing 和三十分鐘的說明，需要不同的敘事路徑。短版本仍需要能獨立成立的結論與脈絡，長版本則需要空間展開推導。</p>
+<p>Study Atlas 把支援的 paper、repository、web source 或 topic 整理成 study，保存雙語知識卡、source locator 與明確的敘事順序。每個閱讀時間版本都有自己的卡片路徑。</p>
+<ol class="flow"><li><span>01</span>來源與問題</li><li><span>02</span>Authored Semantic IR</li><li><span>03</span>Compiler 與檢查</li><li><span>04</span>雙語閱讀版本</li></ol>
+
+</section>
+<section class="section"><h2>我的關鍵選擇</h2>
+<p>我用 typed Semantic IR 明確保存 authored meaning：問題、主張、來源、雙語卡片內容與閱讀順序。Python compiler 把它展開成 study files，另一個 renderer 產生 reader HTML。</p>
+<p>這讓 presentation 的修改與被呈現的知識分開。Authoring 需要更多結構，但 compiler 也有具體內容可檢查並重新產生；一般 new-study 路徑另會拒絕覆寫既有 destination。</p>
+
+
+</section>
+<section class="section"><h2>目前可看見的結果</h2>
+<p>既有 study outputs 包含 T1、T5、T30 的 English 與正體中文閱讀稿，以及可選語言與深度的 HTML reader pages。Semantic IR product tour 是具體的本機 artifact，展示 authored input 如何成為 reader output。</p>
+<p>2026 年 9 月 13 日的一次個人 live paper request，讓 budget constraint 有了具體例子。Delivery record 記載 T5 TALK plan 原為 6.0 分鐘，超過 5.0 分鐘上限，再經 compact-card 修訂；最後 receipt 記錄了通過門檻的 4.6 分鐘 plan，採用當時的 Contract 1.8 路徑。</p>
+<p>這些分鐘數是計算出的 TALK card budgets，並非真人閱讀計時或處理耗時。Compiled outputs 證明閱讀交付已形成；主張是否成立、讀者是否理解，仍需要 source review 與真人試讀。</p>
+
+
+</section>
+</article>
+<section id="walkthrough" class="section walkthrough" data-walkthrough><div class="walkthrough-language" lang="en" data-language="en" data-walkthrough-language>
+<p class="eyebrow">Historical walkthrough · September 13, 2026 · Contract 1.8</p><h2 id="walkthrough-en-title">A reading plan that had to pass its budget gate</h2>
+<p class="walkthrough-intro">Follow one preserved VGGT paper request from the reader’s question to an over-budget plan, a compact revision, and an inspectable result. Choose a step or use Next.</p><p class="walkthrough-boundary">6.0 → 4.6 minutes is the historical calculated TALK budget. It measures neither human reading speed nor wall-clock acceleration. This local walkthrough makes no model or service calls.</p>
+<div class="walkthrough-steps" role="group" aria-labelledby="walkthrough-en-title"><button type="button" data-walkthrough-select="0" aria-pressed="true" aria-controls="walkthrough-en-source" disabled><span class="walkthrough-step-number">01</span><span>Source &amp; question</span></button><button type="button" data-walkthrough-select="1" aria-pressed="false" aria-controls="walkthrough-en-initial" disabled><span class="walkthrough-step-number">02</span><span>Initial plan</span></button><button type="button" data-walkthrough-select="2" aria-pressed="false" aria-controls="walkthrough-en-rejection" disabled><span class="walkthrough-step-number">03</span><span>Budget rejection</span></button><button type="button" data-walkthrough-select="3" aria-pressed="false" aria-controls="walkthrough-en-revision" disabled><span class="walkthrough-step-number">04</span><span>Compact revision</span></button><button type="button" data-walkthrough-select="4" aria-pressed="false" aria-controls="walkthrough-en-artifact" disabled><span class="walkthrough-step-number">05</span><span>Inspect the result</span></button></div>
+<p class="walkthrough-position" data-walkthrough-position data-position-label="Step" aria-live="polite" aria-atomic="true">Step 1 / 5 · Make the reader’s question explicit</p>
+<section class="walkthrough-panel" id="walkthrough-en-source" data-walkthrough-panel="0" aria-labelledby="walkthrough-en-source-heading">
+<h3 id="walkthrough-en-source-heading">Make the reader’s question explicit</h3><p class="walkthrough-evidence">Preserved request + authored QUESTION.md</p>
+<p>Source: VGGT: Visual Geometry Grounded Transformer, preserved arXiv v1 (2503.11651). The input was the PDF 2025-VGGT_Visual_Geometry_Grounded_Transformer.pdf.</p>
+<p>The recorded request asks: “What can we learn from this paper? What are the nucleus and takeaway for general framework to utilize in daily?” The intended reader has basic ML concepts and AI engineering experience.</p>
+<p>The authored study bounds the daily-framework discussion as engineering inference. A reading artifact can explain that inference; it does not establish that the framework works across domains.</p>
+
+
+</section>
+<section class="walkthrough-panel" id="walkthrough-en-initial" data-walkthrough-panel="1" aria-labelledby="walkthrough-en-initial-heading">
+<h3 id="walkthrough-en-initial-heading">The first plan exceeded the T5 allowance</h3><p class="walkthrough-evidence">Dated report only · initial route not preserved</p>
+<p>The September 13 delivery report records a T5 TALK plan of 6.0 calculated minutes against a 5.0-minute limit.</p>
+<p>The evidence used here does not preserve the original pre-revision route or raw failure output. This step retells the report; it does not invent the initial card list.</p>
+
+
+</section>
+<section class="walkthrough-panel" id="walkthrough-en-rejection" data-walkthrough-panel="2" aria-labelledby="walkthrough-en-rejection-heading">
+<h3 id="walkthrough-en-rejection-heading">Stop the over-budget plan before accepting the delivery</h3><p class="walkthrough-evidence">Report-based reconstruction · not a raw failure log</p>
+<p>6.0 exceeds 5.0, so the plan cannot satisfy the T5 planned-budget constraint. The report attributes this rejection to canonical-build.</p>
+<p>The rejection display below reconstructs that reported constraint failure. It does not rerun the historical compiler or apply today’s Contract 2.0 formula.</p>
+<aside class="walkthrough-budget"><div class="walkthrough-budget-value"><strong>6.0 / 5.0</strong><span>calculated min</span><span class="walkthrough-budget-status">REJECT</span></div><p>Reported initial plan / historical T5 limit · calculated TALK budget</p></aside>
+
+</section>
+<section class="walkthrough-panel" id="walkthrough-en-revision" data-walkthrough-panel="3" aria-labelledby="walkthrough-en-revision-heading">
+<h3 id="walkthrough-en-revision-heading">Change how the cards are presented</h3><p class="walkthrough-evidence">Revision action: report · final configuration and budget: preserved files</p>
+<p>The report describes revising TALK nodes to compact presentation. The saved final T5 route contains five nodes; traditional-pipeline and redundancy-shapes-shared-representation have explicit [compact] overrides.</p>
+<p>The other three nodes use the historical standard default. The final raw receipt records 4.6 calculated minutes. These final settings are preserved; the original card-by-card configuration is not.</p>
+<aside class="walkthrough-budget"><div class="walkthrough-budget-value"><strong>4.6 / 5.0</strong><span>calculated min</span><span class="walkthrough-budget-status">WITHIN BUDGET</span></div><p>Final raw receipt / historical T5 limit · calculated TALK budget</p></aside>
+
+</section>
+<section class="walkthrough-panel" id="walkthrough-en-artifact" data-walkthrough-panel="4" aria-labelledby="walkthrough-en-artifact-heading">
+<h3 id="walkthrough-en-artifact-heading">Check the route, the gate, and the artifact identity</h3><p class="walkthrough-evidence">Preserved TALK.md + final raw receipt + artifact bytes</p>
+<p>The final receipt records GATE: PROCEED with exit code 0. The preserved reader HTML is 387,137 bytes, and its SHA-256 matches the recorded artifact.</p>
+<p>Open the three excerpts below. They establish the final route, recorded gate result, and artifact identity. Human evidence is NONE: no rehearsal was recorded. Gate success alone does not prove claim accuracy or reader understanding.</p>
+
+<details class="walkthrough-artifact"><summary>Saved T5 route</summary><p class="walkthrough-evidence">Verbatim TALK.md excerpt · final configuration</p><p>Five saved nodes, with two explicit compact overrides. This is the final route, not a reconstruction of the initial plan.</p><pre><code>## T5
+- vggt-traditional-pipeline-optimizes-at-test-time [compact]
+- vggt-scene-level-feed-forward-reconstruction
+- vggt-alternates-frame-and-global-attention
+- vggt-redundancy-shapes-shared-representation [compact]
+- vggt-speed-quality-evidence</code></pre></details>
+<details class="walkthrough-artifact"><summary>Recorded gate output</summary><p class="walkthrough-evidence">Selected final run-gate and canonical-gate stdout lines · indentation normalized</p><p>Contract 1.8, the T5 calculated budget, and the absence of human rehearsal are visible together. These are historical outputs, not a live run.</p><pre><code>RUN FINGERPRINT
+contract       1.8
+cards          13 active / 13 total
+tiers          T1=2/0.6m  T5=5/4.6m  T30=13/15m
+human evidence NONE — no rehearsal recorded
+
+All RUN.md output guarantees met.
+
+GATE: PROCEED</code></pre></details>
+<details class="walkthrough-artifact"><summary>Historical artifact identity</summary><p class="walkthrough-evidence">Selected receipt metadata · independently matched to preserved HTML</p><p>The filename identifies the preserved reader artifact. The full historical study is not embedded here; these metadata and excerpts remain inspectable in the complete offline introduction.</p><pre><code>{
+  &quot;file&quot;: &quot;artifact_polished.html&quot;,
+  &quot;bytes&quot;: 387137,
+  &quot;sha256&quot;: &quot;0f5e66c74dbd8762f2a90936d238fc72d9939db6396d68d49703645834eeb0d5&quot;
+}</code></pre></details>
+</section>
+<div class="walkthrough-navigation"><button type="button" data-walkthrough-previous disabled>Previous</button><button type="button" data-walkthrough-next disabled>Next</button></div>
+</div>
+<div class="walkthrough-language" lang="zh-TW" data-language="zh-TW" data-walkthrough-language>
+<p class="eyebrow">歷史流程展示 · 2026 年 9 月 13 日 · Contract 1.8</p><h2 id="walkthrough-zh-TW-title">一份必須通過 budget gate 的閱讀方案</h2>
+<p class="walkthrough-intro">跟著一個保存下來的 VGGT 論文請求，從讀者問題走到超標方案、compact 修訂與可檢查的結果。可以直接選步驟，或按「下一步」。</p><p class="walkthrough-boundary">6.0 → 4.6 分鐘是歷史 calculated TALK budget；它不代表真人閱讀速度或 wall-clock 加速。這份本機展示不會呼叫模型或外部服務。</p>
+<div class="walkthrough-steps" role="group" aria-labelledby="walkthrough-zh-TW-title"><button type="button" data-walkthrough-select="0" aria-pressed="true" aria-controls="walkthrough-zh-TW-source" disabled><span class="walkthrough-step-number">01</span><span>來源與問題</span></button><button type="button" data-walkthrough-select="1" aria-pressed="false" aria-controls="walkthrough-zh-TW-initial" disabled><span class="walkthrough-step-number">02</span><span>初始方案</span></button><button type="button" data-walkthrough-select="2" aria-pressed="false" aria-controls="walkthrough-zh-TW-rejection" disabled><span class="walkthrough-step-number">03</span><span>Budget gate 拒絕</span></button><button type="button" data-walkthrough-select="3" aria-pressed="false" aria-controls="walkthrough-zh-TW-revision" disabled><span class="walkthrough-step-number">04</span><span>Compact 修訂</span></button><button type="button" data-walkthrough-select="4" aria-pressed="false" aria-controls="walkthrough-zh-TW-artifact" disabled><span class="walkthrough-step-number">05</span><span>檢查產物</span></button></div>
+<p class="walkthrough-position" data-walkthrough-position data-position-label="步驟" aria-live="polite" aria-atomic="true">步驟 1 / 5 · 先把讀者的問題說清楚</p>
+<section class="walkthrough-panel" id="walkthrough-zh-TW-source" data-walkthrough-panel="0" aria-labelledby="walkthrough-zh-TW-source-heading">
+<h3 id="walkthrough-zh-TW-source-heading">先把讀者的問題說清楚</h3><p class="walkthrough-evidence">保存的原始 request ＋ authored QUESTION.md</p>
+<p>來源是 VGGT: Visual Geometry Grounded Transformer，保存的是 arXiv v1（2503.11651）。輸入檔案為 2025-VGGT_Visual_Geometry_Grounded_Transformer.pdf。</p>
+<p>原始請求問的是：「我們能從這篇論文學到什麼？它的核心是什麼，又能提煉出哪些可在日常工作使用的通用框架？」預設讀者具備 ML 基本概念與 AI engineering 經驗。</p>
+<p>Authored study 把日常框架的討論限定為 engineering inference。閱讀產物可以解釋這個推論，並不因此證明框架能跨領域成立。</p>
+
+
+</section>
+<section class="walkthrough-panel" id="walkthrough-zh-TW-initial" data-walkthrough-panel="1" aria-labelledby="walkthrough-zh-TW-initial-heading">
+<h3 id="walkthrough-zh-TW-initial-heading">第一份方案超過 T5 的上限</h3><p class="walkthrough-evidence">只有 dated report · 未保存初始完整路線</p>
+<p>9 月 13 日的 delivery report 記錄：T5 TALK plan 為 6.0 計算分鐘，上限為 5.0 分鐘。</p>
+<p>這次採用的證據沒有保存修訂前的完整路線或 raw failure output。這一步是在重述 report，沒有補造初始卡片清單。</p>
+
+
+</section>
+<section class="walkthrough-panel" id="walkthrough-zh-TW-rejection" data-walkthrough-panel="2" aria-labelledby="walkthrough-zh-TW-rejection-heading">
+<h3 id="walkthrough-zh-TW-rejection-heading">先擋下超標方案，再驗收交付</h3><p class="walkthrough-evidence">依 report 重建 · 並非 raw failure log</p>
+<p>6.0 超過 5.0，所以方案無法滿足 T5 planned-budget constraint。Report 記載由 canonical-build 偵測並拒絕這個超標方案。</p>
+<p>下方拒絕畫面是在重建 report 所述的 constraint failure，沒有重新執行歷史 compiler，也沒有套用今天 Contract 2.0 的公式。</p>
+<aside class="walkthrough-budget"><div class="walkthrough-budget-value"><strong>6.0 / 5.0</strong><span>計算分鐘</span><span class="walkthrough-budget-status">REJECT</span></div><p>Report 中的初始方案／歷史 T5 上限 · calculated TALK budget</p></aside>
+
+</section>
+<section class="walkthrough-panel" id="walkthrough-zh-TW-revision" data-walkthrough-panel="3" aria-labelledby="walkthrough-zh-TW-revision-heading">
+<h3 id="walkthrough-zh-TW-revision-heading">調整卡片的呈現方式</h3><p class="walkthrough-evidence">修訂動作依 report · 最終配置與預算有保存檔案</p>
+<p>Report 記載把 TALK nodes 改為 compact presentation。保存的最終 T5 路線有五個 nodes；traditional-pipeline 與 redundancy-shapes-shared-representation 有明確的 [compact] overrides。</p>
+<p>其他三個 nodes 沿用當時的 standard 預設。最終 raw receipt 記錄 4.6 計算分鐘；這些最終設定有保存，初始逐卡配置則沒有。</p>
+<aside class="walkthrough-budget"><div class="walkthrough-budget-value"><strong>4.6 / 5.0</strong><span>計算分鐘</span><span class="walkthrough-budget-status">WITHIN BUDGET</span></div><p>最終 raw receipt／歷史 T5 上限 · calculated TALK budget</p></aside>
+
+</section>
+<section class="walkthrough-panel" id="walkthrough-zh-TW-artifact" data-walkthrough-panel="4" aria-labelledby="walkthrough-zh-TW-artifact-heading">
+<h3 id="walkthrough-zh-TW-artifact-heading">檢查路線、gate 與產物身分</h3><p class="walkthrough-evidence">保存的 TALK.md ＋ 最終 raw receipt ＋ artifact bytes</p>
+<p>最終 receipt 記錄 GATE: PROCEED，exit code 為 0。保存的 reader HTML 為 387,137 bytes，磁碟上的 SHA-256 與記錄一致。</p>
+<p>展開下方三份摘錄，可檢查最終路線、gate 結果及產物身分。Human evidence 為 NONE，沒有真人試講紀錄；gate 成功本身不證明主張正確或讀者理解。</p>
+
+<details class="walkthrough-artifact"><summary>保存的 T5 路線</summary><p class="walkthrough-evidence">TALK.md 原文摘錄 · 最終配置</p><p>保存的五個 nodes，其中兩個有明確 compact overrides。這是最終路線，並非重建的初始方案。</p><pre><code>## T5
+- vggt-traditional-pipeline-optimizes-at-test-time [compact]
+- vggt-scene-level-feed-forward-reconstruction
+- vggt-alternates-frame-and-global-attention
+- vggt-redundancy-shapes-shared-representation [compact]
+- vggt-speed-quality-evidence</code></pre></details>
+<details class="walkthrough-artifact"><summary>記錄中的 gate 輸出</summary><p class="walkthrough-evidence">最終 run-gate 與 canonical-gate stdout 選錄行 · 縮排已整理</p><p>可同時看到 Contract 1.8、T5 計算預算與沒有真人試講的界線。這些是歷史輸出，並非 live run。</p><pre><code>RUN FINGERPRINT
+contract       1.8
+cards          13 active / 13 total
+tiers          T1=2/0.6m  T5=5/4.6m  T30=13/15m
+human evidence NONE — no rehearsal recorded
+
+All RUN.md output guarantees met.
+
+GATE: PROCEED</code></pre></details>
+<details class="walkthrough-artifact"><summary>歷史產物身分</summary><p class="walkthrough-evidence">Receipt metadata 摘錄 · 已獨立比對保存的 HTML</p><p>檔名對應保存的 reader artifact。此處沒有嵌入整份歷史研究；完整離線介紹仍會保留這些可檢查的 metadata 與摘錄。</p><pre><code>{
+  &quot;file&quot;: &quot;artifact_polished.html&quot;,
+  &quot;bytes&quot;: 387137,
+  &quot;sha256&quot;: &quot;0f5e66c74dbd8762f2a90936d238fc72d9939db6396d68d49703645834eeb0d5&quot;
+}</code></pre></details>
+</section>
+<div class="walkthrough-navigation"><button type="button" data-walkthrough-previous disabled>上一步</button><button type="button" data-walkthrough-next disabled>下一步</button></div>
+</div></section>
+<details class="section"><summary><strong>Implementation references / 實作參考</strong></summary><p class="notice">Repository: study-atlas · Source review: 2026-10-03 / 原始碼巡查日期</p><ul class="source-list"><li><code>scripts/compiler/assembler.py:482</code><span class="source-role">Semantic IR compilation</span></li>
+<li><code>scripts/compiler/__main__.py:79</code><span class="source-role">Existing-destination protection</span></li>
+<li><code>scripts/render_artifact.py:361</code><span class="source-role">Reader HTML generation</span></li>
+<li><code>docs/demos/semantic-ir-product-tour.html:193</code><span class="source-role">Existing reader controls</span></li>
+<li><code>records/2026-09-13-ws07-live-service-acceptance.md:44</code><span class="source-role">Historical live delivery and planned-budget revision record</span></li>
+<li><code>references/card-contract.md:74</code><span class="source-role">Current TALK duration model; not the historical Contract 1.8 execution version</span></li></ul></details></main>
+<footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a href="../#projects">Back to projects / 返回專案</a><noscript><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
+<script>
+const controls = document.querySelectorAll('[data-select-language]');
+const views = document.querySelectorAll('[data-language]');
+function selectLanguage(language) {
+  views.forEach(view => { view.hidden = view.dataset.language !== language; });
+  controls.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.selectLanguage === language)));
+  document.documentElement.lang = language;
+}
+document.documentElement.classList.add('js');
+controls.forEach(button => { button.disabled = false; button.addEventListener('click', () => selectLanguage(button.dataset.selectLanguage)); });
+selectLanguage('en');
+
+const walkthrough = document.querySelector('[data-walkthrough]');
+if (walkthrough) {
+  const walkthroughViews = walkthrough.querySelectorAll('[data-walkthrough-language]');
+  const stepCount = walkthroughViews[0].querySelectorAll('[data-walkthrough-panel]').length;
+  let selectedStep = 0;
+  function selectWalkthroughStep(index) {
+    selectedStep = Math.max(0, Math.min(stepCount - 1, index));
+    walkthroughViews.forEach(view => {
+      const panels = view.querySelectorAll('[data-walkthrough-panel]');
+      panels.forEach(panel => { panel.hidden = Number(panel.dataset.walkthroughPanel) !== selectedStep; });
+      view.querySelectorAll('[data-walkthrough-select]').forEach(button => {
+        button.disabled = false;
+        button.setAttribute('aria-pressed', String(Number(button.dataset.walkthroughSelect) === selectedStep));
+      });
+      view.querySelector('[data-walkthrough-previous]').disabled = selectedStep === 0;
+      view.querySelector('[data-walkthrough-next]').disabled = selectedStep === stepCount - 1;
+      const position = view.querySelector('[data-walkthrough-position]');
+      position.textContent = position.dataset.positionLabel + ' ' + (selectedStep + 1) + ' / ' + stepCount + ' · ' + panels[selectedStep].querySelector('h3').textContent;
+    });
+  }
+  walkthroughViews.forEach(view => {
+    view.querySelectorAll('[data-walkthrough-select]').forEach(button => button.addEventListener('click', () => selectWalkthroughStep(Number(button.dataset.walkthroughSelect))));
+    view.querySelector('[data-walkthrough-previous]').addEventListener('click', () => selectWalkthroughStep(selectedStep - 1));
+    view.querySelector('[data-walkthrough-next]').addEventListener('click', () => selectWalkthroughStep(selectedStep + 1));
+  });
+  selectWalkthroughStep(0);
+}
+</script></body></html>

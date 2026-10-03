@@ -1,0 +1,73 @@
+<!doctype html>
+<!-- Generated from content/project-case-studies.json. Edit the content source or generator. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+<title>Transcribe-for-X — Engineering introduction</title><meta name="description" content="A transcript should keep a path back to the recording and show what cleanup changed. I built a local Android workflow that verifies saved audio before recognition and lets the user approve suggested removals."><style>
+:root{color-scheme:light dark;--bg:#f8fafc;--panel:#fff;--text:#0f172a;--muted:#475569;--border:#dbe3ee;--blue:#2563eb;--tint:#eff6ff}
+@media(prefers-color-scheme:dark){:root{--bg:#020817;--panel:#0d1627;--text:#f1f5f9;--muted:#b2bfd0;--border:#263449;--blue:#60a5fa;--tint:#122440}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:.2em}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}header,main,footer{width:min(1050px,100% - 40px);margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-bottom:1px solid var(--border)}.back{text-decoration:none;font-weight:600}.languages{display:flex;gap:6px}.languages button{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:7px 12px;border-radius:8px;cursor:pointer}.languages button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue)}.skip{position:absolute;top:-100px;left:20px;padding:10px;background:var(--panel);z-index:1}.skip:focus{top:10px}.hero{padding:50px 0 30px;max-width:780px}.eyebrow{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}h2{font-size:1.5rem;line-height:1.35;margin:0 0 18px}h3{font-size:1.05rem;margin:0 0 12px}.subtitle{font-size:1.3rem;font-weight:600;margin:0 0 16px}.lead{color:var(--muted);font-size:1.05rem}.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;list-style:none;margin:24px 0 0}.tags li{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--blue);background:var(--tint)}.section{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px;margin:0 0 22px}.section p{color:var(--muted);margin:12px 0}.flow{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:24px 0 0}.flow li{flex:1;min-width:120px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);padding:12px;font-size:14px;line-height:1.5}.flow span{display:block;font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px}.example{padding:18px;border-left:3px solid var(--blue);background:var(--tint);border-radius:6px;margin-top:22px}.example p{margin:6px 0 0}.source-list{list-style:none;padding:0;margin:0}.source-list li{padding:14px 0;border-top:1px solid var(--border)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82rem;overflow-wrap:anywhere}.source-role{display:block;color:var(--muted);font-size:13px}.notice{color:var(--muted);font-size:14px}.language-view+.language-view{border-top:1px solid var(--border);margin-top:40px}.js .language-view[hidden]{display:none}footer{border-top:1px solid var(--border);margin-top:32px;padding:24px 0 40px;color:var(--muted);font-size:13px}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.hero{padding-top:34px}.section{padding:22px}.flow{flex-direction:column}}
+</style></head>
+<body><a class="skip" href="#content">Skip to content / 跳至內容</a>
+<header><a class="back" href="../#projects">← Projects / 返回專案</a><a href="transcribe-for-x.html" download="transcribe-for-x.html">Download HTML / 下載 HTML</a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>正體中文</button></div></header>
+<main id="content"><article class="language-view" lang="en" data-language="en">
+<div class="hero"><p class="eyebrow">Personal project · Engineering case study</p>
+<h1>Transcribe-for-X</h1><p class="subtitle">From a spoken thought to words the speaker controls.</p><p class="lead">I wanted to speak an unfinished thought and keep ownership of the final wording. That meant preserving the recording and making recognition, cleanup, and editing separate steps.</p>
+<ul class="tags"><li>Android / Java</li><li>Local ASR</li><li>Data integrity</li></ul></div>
+<section class="section"><h2>The speaker&#39;s problem</h2>
+<p>An unfinished thought can contain fillers, repetitions, and self-corrections. Recognition may get words wrong, while an aggressive cleanup can erase something the speaker meant to keep.</p>
+<p>Transcribe-for-X keeps a path back to SourceAudio, presents RawTranscript separately from cleanup suggestions, and leaves the final wording with the user. Its current implementation is an Android Voice-to-Words foundation with local recognition.</p>
+<ol class="flow"><li><span>01</span>Record</li><li><span>02</span>Save &amp; verify</li><li><span>03</span>Local ASR</li><li><span>04</span>Approve cleanup</li><li><span>05</span>Edit &amp; copy</li></ol>
+
+</section>
+<section class="section"><h2>The choice I made</h2>
+<p>I put verified storage before recognition. SourceRepository checks capture evidence, syncs and saves the recording, reads it back, compares size and SHA-256, and records a manifest. AsrGateway must resolve a verified source before invoking the local NativeWhisper engine.</p>
+<p>I also kept cleanup conservative: TranscriptCleanup proposes removals, the user accepts or rejects them individually, and the projection is checked to remove only accepted spans. This adds storage, failure handling, and review work, while keeping the source and the speaker&#39;s decisions visible.</p>
+
+
+</section>
+<section class="section"><h2>What it produces today</h2>
+<p>The Android implementation connects recording and verified source storage to local ASR, per-suggestion cleanup, editable final text, and an explicit Copy action. That gives the project a concrete product path, with raw recognition and user-approved changes kept distinct.</p>
+<p>The current result is an implemented Android path. Mixed Traditional Chinese/English recognition quality, microphone behavior, recovery, and private real-use acceptance still need separate evidence.</p>
+
+
+</section>
+</article>
+<article class="language-view" lang="zh-TW" data-language="zh-TW">
+<div class="hero"><p class="eyebrow">個人工程專案 · 專案介紹</p>
+<h1>Transcribe-for-X</h1><p class="subtitle">把口述想法變成作者仍能掌握的文字。</p><p class="lead">我希望能說出未成形的想法，也保有最後措辭的決定權。因此，錄音需要留下來，辨識、cleanup 與編輯也要各自清楚。</p>
+<ul class="tags"><li>Android / Java</li><li>Local ASR</li><li>Data integrity</li></ul></div>
+<section class="section"><h2>說話者的問題</h2>
+<p>未成形的想法可能包含語助詞、重複與自我修正。辨識可能聽錯，而過度的 cleanup 也可能刪掉說話者原本想保留的意思。</p>
+<p>Transcribe-for-X 保留追回 SourceAudio 的路徑，分開呈現 RawTranscript 與 cleanup suggestions，讓使用者決定最後措辭。目前實作是以本機辨識為核心的 Android Voice-to-Words foundation。</p>
+<ol class="flow"><li><span>01</span>錄音</li><li><span>02</span>保存與驗證</li><li><span>03</span>Local ASR</li><li><span>04</span>核准 cleanup</li><li><span>05</span>編輯與 Copy</li></ol>
+
+</section>
+<section class="section"><h2>我的關鍵選擇</h2>
+<p>我把 verified storage 放在辨識之前。SourceRepository 檢查 capture evidence、sync 並保存錄音，再讀回比對大小與 SHA-256，最後記錄 manifest。AsrGateway 必須先 resolve verified source，才能呼叫本機 NativeWhisper engine。</p>
+<p>Cleanup 也採保守路徑：TranscriptCleanup 提出 removal suggestions，使用者逐項接受或拒絕，projection 再檢查只移除已接受的 spans。這增加儲存、失敗處理與 review 工作，也讓來源和說話者的決定維持可見。</p>
+
+
+</section>
+<section class="section"><h2>目前可看見的結果</h2>
+<p>Android 實作已把錄音與 verified source storage 接到本機 ASR、逐項 cleanup、可編輯的 final text 與明確 Copy 動作。專案已有具體的產品路徑，原始辨識結果和使用者核准的改動維持分開。</p>
+<p>目前成果是一條已實作的 Android 路徑。正體中文／English 混合語音品質、microphone 行為、recovery 與私密 real-use acceptance，仍需要各自的證據。</p>
+
+
+</section>
+</article>
+<details class="section"><summary><strong>Implementation references / 實作參考</strong></summary><p class="notice">Repository: transcribe-for-x · Source review: 2026-10-03 / 原始碼巡查日期</p><ul class="source-list"><li><code>app/src/main/java/dev/trivialideas/transcribeforx/SourceRepository.java:71</code><span class="source-role">Durable save and integrity readback</span></li>
+<li><code>app/src/main/java/dev/trivialideas/transcribeforx/AsrGateway.java:13</code><span class="source-role">Verified-source gate before ASR</span></li>
+<li><code>app/src/main/java/dev/trivialideas/transcribeforx/MainActivity.java:333</code><span class="source-role">Local transcription workflow</span></li>
+<li><code>app/src/main/java/dev/trivialideas/transcribeforx/TranscriptCleanup.java:50</code><span class="source-role">Conservative cleanup suggestions</span></li></ul></details></main>
+<footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a href="../#projects">Back to projects / 返回專案</a><noscript><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
+<script>
+const controls = document.querySelectorAll('[data-select-language]');
+const views = document.querySelectorAll('[data-language]');
+function selectLanguage(language) {
+  views.forEach(view => { view.hidden = view.dataset.language !== language; });
+  controls.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.selectLanguage === language)));
+  document.documentElement.lang = language;
+}
+document.documentElement.classList.add('js');
+controls.forEach(button => { button.disabled = false; button.addEventListener('click', () => selectLanguage(button.dataset.selectLanguage)); });
+selectLanguage('en');
+</script></body></html>

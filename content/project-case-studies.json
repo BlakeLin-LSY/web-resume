@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 1,
+  "inspectedOn": "2026-10-03",
+  "projects": [
+    {
+      "id": "study-atlas",
+      "title": "Study Atlas",
+      "card": {
+        "summary": "A research topic may need a quick briefing or a deeper explanation. I built a typed knowledge pipeline that turns one authored study into bilingual reading routes with a source trail.",
+        "tags": [
+          "Python",
+          "Semantic IR",
+          "Knowledge graphs"
+        ],
+        "evidence": "Outputs: English/Traditional Chinese T1, T5, and T30 reading files plus HTML reader pages."
+      },
+      "sources": [
+        {
+          "file": "scripts/compiler/assembler.py",
+          "line": 482,
+          "role": "Semantic IR compilation"
+        },
+        {
+          "file": "scripts/compiler/__main__.py",
+          "line": 79,
+          "role": "Existing-destination protection"
+        },
+        {
+          "file": "scripts/render_artifact.py",
+          "line": 361,
+          "role": "Reader HTML generation"
+        },
+        {
+          "file": "docs/demos/semantic-ir-product-tour.html",
+          "line": 193,
+          "role": "Existing reader controls"
+        },
+        {
+          "file": "records/2026-09-13-ws07-live-service-acceptance.md",
+          "line": 44,
+          "role": "Historical live delivery and planned-budget revision record"
+        },
+        {
+          "file": "references/card-contract.md",
+          "line": 74,
+          "role": "Current TALK duration model; not the historical Contract 1.8 execution version"
+        }
+      ],
+      "en": {
+        "subtitle": "One study, several ways to read it.",
+        "lead": "I wanted research outputs that fit a reader's time without losing the question, the reasoning, or the sources. Study Atlas makes the reading route part of the delivery.",
+        "sections": [
+          {
+            "heading": "The reader problem",
+            "paragraphs": [
+              "A one-minute briefing and a thirty-minute explanation need different routes through the same material. A shorter version still needs a conclusion and enough context to stand on its own; a longer version needs room for the derivation.",
+              "Study Atlas organizes a supported paper, repository, web source, or topic into a study with bilingual knowledge cards, source locators, and explicit narrative order. Each reading budget has its own route through those cards."
+            ],
+            "flow": [
+              "Source & question",
+              "Authored Semantic IR",
+              "Compiler & checks",
+              "Bilingual reader views"
+            ]
+          },
+          {
+            "heading": "The choice I made",
+            "paragraphs": [
+              "I made the authored meaning explicit in a typed Semantic IR: the question, claims, sources, bilingual card content, and reading order. A Python compiler expands that into study files, and a separate renderer builds the reader HTML.",
+              "This keeps presentation changes separate from the knowledge being presented. It requires more authoring structure, but gives the compiler something concrete to check and regenerate. The normal new-study path also refuses to overwrite an existing destination."
+            ]
+          },
+          {
+            "heading": "What it produces today",
+            "paragraphs": [
+              "Existing study outputs include English and Traditional Chinese reading files for T1, T5, and T30, plus HTML reader pages with language and depth controls. The Semantic IR product tour provides a concrete local artifact showing the path from authored input to reader output.",
+              "A personal live paper request on September 13, 2026 made the budget constraint concrete. Its delivery record describes a 6.0-minute T5 TALK plan above the 5.0-minute limit, then a compact-card revision. The final receipt records a passing 4.6-minute plan on the historical Contract 1.8 path.",
+              "Those minutes are calculated TALK card budgets, not timed reading or elapsed processing time. Compiled outputs establish a reading delivery; whether the claims are sound and a reader understands them still requires source review and human rehearsal."
+            ]
+          }
+        ]
+      },
+      "zh-TW": {
+        "subtitle": "同一份研究，給讀者不同深度的入口。",
+        "lead": "我希望研究產出能配合讀者的時間，也保留問題、推理與來源。Study Atlas 把閱讀路徑納入交付本身。",
+        "sections": [
+          {
+            "heading": "讀者的問題",
+            "paragraphs": [
+              "一分鐘的 briefing 和三十分鐘的說明，需要不同的敘事路徑。短版本仍需要能獨立成立的結論與脈絡，長版本則需要空間展開推導。",
+              "Study Atlas 把支援的 paper、repository、web source 或 topic 整理成 study，保存雙語知識卡、source locator 與明確的敘事順序。每個閱讀時間版本都有自己的卡片路徑。"
+            ],
+            "flow": [
+              "來源與問題",
+              "Authored Semantic IR",
+              "Compiler 與檢查",
+              "雙語閱讀版本"
+            ]
+          },
+          {
+            "heading": "我的關鍵選擇",
+            "paragraphs": [
+              "我用 typed Semantic IR 明確保存 authored meaning：問題、主張、來源、雙語卡片內容與閱讀順序。Python compiler 把它展開成 study files，另一個 renderer 產生 reader HTML。",
+              "這讓 presentation 的修改與被呈現的知識分開。Authoring 需要更多結構，但 compiler 也有具體內容可檢查並重新產生；一般 new-study 路徑另會拒絕覆寫既有 destination。"
+            ]
+          },
+          {
+            "heading": "目前可看見的結果",
+            "paragraphs": [
+              "既有 study outputs 包含 T1、T5、T30 的 English 與正體中文閱讀稿，以及可選語言與深度的 HTML reader pages。Semantic IR product tour 是具體的本機 artifact，展示 authored input 如何成為 reader output。",
+              "2026 年 9 月 13 日的一次個人 live paper request，讓 budget constraint 有了具體例子。Delivery record 記載 T5 TALK plan 原為 6.0 分鐘，超過 5.0 分鐘上限，再經 compact-card 修訂；最後 receipt 記錄了通過門檻的 4.6 分鐘 plan，採用當時的 Contract 1.8 路徑。",
+              "這些分鐘數是計算出的 TALK card budgets，並非真人閱讀計時或處理耗時。Compiled outputs 證明閱讀交付已形成；主張是否成立、讀者是否理解，仍需要 source review 與真人試讀。"
+            ]
+          }
+        ]
+      },
+      "walkthrough": {
+        "schemaVersion": 1,
+        "historicalDate": "2026-09-13",
+        "contractVersion": "1.8",
+        "en": {
+          "eyebrow": "Historical walkthrough · September 13, 2026 · Contract 1.8",
+          "title": "A reading plan that had to pass its budget gate",
+          "intro": "Follow one preserved VGGT paper request from the reader’s question to an over-budget plan, a compact revision, and an inspectable result. Choose a step or use Next.",
+          "boundary": "6.0 → 4.6 minutes is the historical calculated TALK budget. It measures neither human reading speed nor wall-clock acceleration. This local walkthrough makes no model or service calls.",
+          "previous": "Previous",
+          "next": "Next",
+          "positionLabel": "Step",
+          "minutesLabel": "calculated min",
+          "steps": [
+            {
+              "id": "source",
+              "label": "Source & question",
+              "heading": "Make the reader’s question explicit",
+              "evidence": "Preserved request + authored QUESTION.md",
+              "paragraphs": [
+                "Source: VGGT: Visual Geometry Grounded Transformer, preserved arXiv v1 (2503.11651). The input was the PDF 2025-VGGT_Visual_Geometry_Grounded_Transformer.pdf.",
+                "The recorded request asks: “What can we learn from this paper? What are the nucleus and takeaway for general framework to utilize in daily?” The intended reader has basic ML concepts and AI engineering experience.",
+                "The authored study bounds the daily-framework discussion as engineering inference. A reading artifact can explain that inference; it does not establish that the framework works across domains."
+              ]
+            },
+            {
+              "id": "initial",
+              "label": "Initial plan",
+              "heading": "The first plan exceeded the T5 allowance",
+              "evidence": "Dated report only · initial route not preserved",
+              "paragraphs": [
+                "The September 13 delivery report records a T5 TALK plan of 6.0 calculated minutes against a 5.0-minute limit.",
+                "The evidence used here does not preserve the original pre-revision route or raw failure output. This step retells the report; it does not invent the initial card list."
+              ]
+            },
+            {
+              "id": "rejection",
+              "label": "Budget rejection",
+              "heading": "Stop the over-budget plan before accepting the delivery",
+              "evidence": "Report-based reconstruction · not a raw failure log",
+              "paragraphs": [
+                "6.0 exceeds 5.0, so the plan cannot satisfy the T5 planned-budget constraint. The report attributes this rejection to canonical-build.",
+                "The rejection display below reconstructs that reported constraint failure. It does not rerun the historical compiler or apply today’s Contract 2.0 formula."
+              ],
+              "budget": {
+                "minutes": 6.0,
+                "limit": 5.0,
+                "status": "REJECT",
+                "caption": "Reported initial plan / historical T5 limit · calculated TALK budget"
+              }
+            },
+            {
+              "id": "revision",
+              "label": "Compact revision",
+              "heading": "Change how the cards are presented",
+              "evidence": "Revision action: report · final configuration and budget: preserved files",
+              "paragraphs": [
+                "The report describes revising TALK nodes to compact presentation. The saved final T5 route contains five nodes; traditional-pipeline and redundancy-shapes-shared-representation have explicit [compact] overrides.",
+                "The other three nodes use the historical standard default. The final raw receipt records 4.6 calculated minutes. These final settings are preserved; the original card-by-card configuration is not."
+              ],
+              "budget": {
+                "minutes": 4.6,
+                "limit": 5.0,
+                "status": "WITHIN BUDGET",
+                "caption": "Final raw receipt / historical T5 limit · calculated TALK budget"
+              }
+            },
+            {
+              "id": "artifact",
+              "label": "Inspect the result",
+              "heading": "Check the route, the gate, and the artifact identity",
+              "evidence": "Preserved TALK.md + final raw receipt + artifact bytes",
+              "paragraphs": [
+                "The final receipt records GATE: PROCEED with exit code 0. The preserved reader HTML is 387,137 bytes, and its SHA-256 matches the recorded artifact.",
+                "Open the three excerpts below. They establish the final route, recorded gate result, and artifact identity. Human evidence is NONE: no rehearsal was recorded. Gate success alone does not prove claim accuracy or reader understanding."
+              ],
+              "artifacts": [
+                {
+                  "label": "Saved T5 route",
+                  "evidence": "Verbatim TALK.md excerpt · final configuration",
+                  "description": "Five saved nodes, with two explicit compact overrides. This is the final route, not a reconstruction of the initial plan.",
+                  "content": "## T5\n- vggt-traditional-pipeline-optimizes-at-test-time [compact]\n- vggt-scene-level-feed-forward-reconstruction\n- vggt-alternates-frame-and-global-attention\n- vggt-redundancy-shapes-shared-representation [compact]\n- vggt-speed-quality-evidence"
+                },
+                {
+                  "label": "Recorded gate output",
+                  "evidence": "Selected final run-gate and canonical-gate stdout lines · indentation normalized",
+                  "description": "Contract 1.8, the T5 calculated budget, and the absence of human rehearsal are visible together. These are historical outputs, not a live run.",
+                  "content": "RUN FINGERPRINT\ncontract       1.8\ncards          13 active / 13 total\ntiers          T1=2/0.6m  T5=5/4.6m  T30=13/15m\nhuman evidence NONE — no rehearsal recorded\n\nAll RUN.md output guarantees met.\n\nGATE: PROCEED"
+                },
+                {
+                  "label": "Historical artifact identity",
+                  "evidence": "Selected receipt metadata · independently matched to preserved HTML",
+                  "description": "The filename identifies the preserved reader artifact. The full historical study is not embedded here; these metadata and excerpts remain inspectable in the complete offline introduction.",
+                  "content": "{\n  \"file\": \"artifact_polished.html\",\n  \"bytes\": 387137,\n  \"sha256\": \"0f5e66c74dbd8762f2a90936d238fc72d9939db6396d68d49703645834eeb0d5\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        "zh-TW": {
+          "eyebrow": "歷史流程展示 · 2026 年 9 月 13 日 · Contract 1.8",
+          "title": "一份必須通過 budget gate 的閱讀方案",
+          "intro": "跟著一個保存下來的 VGGT 論文請求，從讀者問題走到超標方案、compact 修訂與可檢查的結果。可以直接選步驟，或按「下一步」。",
+          "boundary": "6.0 → 4.6 分鐘是歷史 calculated TALK budget；它不代表真人閱讀速度或 wall-clock 加速。這份本機展示不會呼叫模型或外部服務。",
+          "previous": "上一步",
+          "next": "下一步",
+          "positionLabel": "步驟",
+          "minutesLabel": "計算分鐘",
+          "steps": [
+            {
+              "id": "source",
+              "label": "來源與問題",
+              "heading": "先把讀者的問題說清楚",
+              "evidence": "保存的原始 request ＋ authored QUESTION.md",
+              "paragraphs": [
+                "來源是 VGGT: Visual Geometry Grounded Transformer，保存的是 arXiv v1（2503.11651）。輸入檔案為 2025-VGGT_Visual_Geometry_Grounded_Transformer.pdf。",
+                "原始請求問的是：「我們能從這篇論文學到什麼？它的核心是什麼，又能提煉出哪些可在日常工作使用的通用框架？」預設讀者具備 ML 基本概念與 AI engineering 經驗。",
+                "Authored study 把日常框架的討論限定為 engineering inference。閱讀產物可以解釋這個推論，並不因此證明框架能跨領域成立。"
+              ]
+            },
+            {
+              "id": "initial",
+              "label": "初始方案",
+              "heading": "第一份方案超過 T5 的上限",
+              "evidence": "只有 dated report · 未保存初始完整路線",
+              "paragraphs": [
+                "9 月 13 日的 delivery report 記錄：T5 TALK plan 為 6.0 計算分鐘，上限為 5.0 分鐘。",
+                "這次採用的證據沒有保存修訂前的完整路線或 raw failure output。這一步是在重述 report，沒有補造初始卡片清單。"
+              ]
+            },
+            {
+              "id": "rejection",
+              "label": "Budget gate 拒絕",
+              "heading": "先擋下超標方案，再驗收交付",
+              "evidence": "依 report 重建 · 並非 raw failure log",
+              "paragraphs": [
+                "6.0 超過 5.0，所以方案無法滿足 T5 planned-budget constraint。Report 記載由 canonical-build 偵測並拒絕這個超標方案。",
+                "下方拒絕畫面是在重建 report 所述的 constraint failure，沒有重新執行歷史 compiler，也沒有套用今天 Contract 2.0 的公式。"
+              ],
+              "budget": {
+                "minutes": 6.0,
+                "limit": 5.0,
+                "status": "REJECT",
+                "caption": "Report 中的初始方案／歷史 T5 上限 · calculated TALK budget"
+              }
+            },
+            {
+              "id": "revision",
+              "label": "Compact 修訂",
+              "heading": "調整卡片的呈現方式",
+              "evidence": "修訂動作依 report · 最終配置與預算有保存檔案",
+              "paragraphs": [
+                "Report 記載把 TALK nodes 改為 compact presentation。保存的最終 T5 路線有五個 nodes；traditional-pipeline 與 redundancy-shapes-shared-representation 有明確的 [compact] overrides。",
+                "其他三個 nodes 沿用當時的 standard 預設。最終 raw receipt 記錄 4.6 計算分鐘；這些最終設定有保存，初始逐卡配置則沒有。"
+              ],
+              "budget": {
+                "minutes": 4.6,
+                "limit": 5.0,
+                "status": "WITHIN BUDGET",
+                "caption": "最終 raw receipt／歷史 T5 上限 · calculated TALK budget"
+              }
+            },
+            {
+              "id": "artifact",
+              "label": "檢查產物",
+              "heading": "檢查路線、gate 與產物身分",
+              "evidence": "保存的 TALK.md ＋ 最終 raw receipt ＋ artifact bytes",
+              "paragraphs": [
+                "最終 receipt 記錄 GATE: PROCEED，exit code 為 0。保存的 reader HTML 為 387,137 bytes，磁碟上的 SHA-256 與記錄一致。",
+                "展開下方三份摘錄，可檢查最終路線、gate 結果及產物身分。Human evidence 為 NONE，沒有真人試講紀錄；gate 成功本身不證明主張正確或讀者理解。"
+              ],
+              "artifacts": [
+                {
+                  "label": "保存的 T5 路線",
+                  "evidence": "TALK.md 原文摘錄 · 最終配置",
+                  "description": "保存的五個 nodes，其中兩個有明確 compact overrides。這是最終路線，並非重建的初始方案。",
+                  "content": "## T5\n- vggt-traditional-pipeline-optimizes-at-test-time [compact]\n- vggt-scene-level-feed-forward-reconstruction\n- vggt-alternates-frame-and-global-attention\n- vggt-redundancy-shapes-shared-representation [compact]\n- vggt-speed-quality-evidence"
+                },
+                {
+                  "label": "記錄中的 gate 輸出",
+                  "evidence": "最終 run-gate 與 canonical-gate stdout 選錄行 · 縮排已整理",
+                  "description": "可同時看到 Contract 1.8、T5 計算預算與沒有真人試講的界線。這些是歷史輸出，並非 live run。",
+                  "content": "RUN FINGERPRINT\ncontract       1.8\ncards          13 active / 13 total\ntiers          T1=2/0.6m  T5=5/4.6m  T30=13/15m\nhuman evidence NONE — no rehearsal recorded\n\nAll RUN.md output guarantees met.\n\nGATE: PROCEED"
+                },
+                {
+                  "label": "歷史產物身分",
+                  "evidence": "Receipt metadata 摘錄 · 已獨立比對保存的 HTML",
+                  "description": "檔名對應保存的 reader artifact。此處沒有嵌入整份歷史研究；完整離線介紹仍會保留這些可檢查的 metadata 與摘錄。",
+                  "content": "{\n  \"file\": \"artifact_polished.html\",\n  \"bytes\": 387137,\n  \"sha256\": \"0f5e66c74dbd8762f2a90936d238fc72d9939db6396d68d49703645834eeb0d5\"\n}"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "transcribe-for-x",
+      "title": "Transcribe-for-X",
+      "card": {
+        "summary": "A transcript should keep a path back to the recording and show what cleanup changed. I built a local Android workflow that verifies saved audio before recognition and lets the user approve suggested removals.",
+        "tags": [
+          "Android / Java",
+          "Local ASR",
+          "Data integrity"
+        ],
+        "evidence": "Prototype path: saved source → local ASR → approved cleanup → editable text → explicit Copy."
+      },
+      "sources": [
+        {
+          "file": "app/src/main/java/dev/trivialideas/transcribeforx/SourceRepository.java",
+          "line": 71,
+          "role": "Durable save and integrity readback"
+        },
+        {
+          "file": "app/src/main/java/dev/trivialideas/transcribeforx/AsrGateway.java",
+          "line": 13,
+          "role": "Verified-source gate before ASR"
+        },
+        {
+          "file": "app/src/main/java/dev/trivialideas/transcribeforx/MainActivity.java",
+          "line": 333,
+          "role": "Local transcription workflow"
+        },
+        {
+          "file": "app/src/main/java/dev/trivialideas/transcribeforx/TranscriptCleanup.java",
+          "line": 50,
+          "role": "Conservative cleanup suggestions"
+        }
+      ],
+      "en": {
+        "subtitle": "From a spoken thought to words the speaker controls.",
+        "lead": "I wanted to speak an unfinished thought and keep ownership of the final wording. That meant preserving the recording and making recognition, cleanup, and editing separate steps.",
+        "sections": [
+          {
+            "heading": "The speaker's problem",
+            "paragraphs": [
+              "An unfinished thought can contain fillers, repetitions, and self-corrections. Recognition may get words wrong, while an aggressive cleanup can erase something the speaker meant to keep.",
+              "Transcribe-for-X keeps a path back to SourceAudio, presents RawTranscript separately from cleanup suggestions, and leaves the final wording with the user. Its current implementation is an Android Voice-to-Words foundation with local recognition."
+            ],
+            "flow": [
+              "Record",
+              "Save & verify",
+              "Local ASR",
+              "Approve cleanup",
+              "Edit & copy"
+            ]
+          },
+          {
+            "heading": "The choice I made",
+            "paragraphs": [
+              "I put verified storage before recognition. SourceRepository checks capture evidence, syncs and saves the recording, reads it back, compares size and SHA-256, and records a manifest. AsrGateway must resolve a verified source before invoking the local NativeWhisper engine.",
+              "I also kept cleanup conservative: TranscriptCleanup proposes removals, the user accepts or rejects them individually, and the projection is checked to remove only accepted spans. This adds storage, failure handling, and review work, while keeping the source and the speaker's decisions visible."
+            ]
+          },
+          {
+            "heading": "What it produces today",
+            "paragraphs": [
+              "The Android implementation connects recording and verified source storage to local ASR, per-suggestion cleanup, editable final text, and an explicit Copy action. That gives the project a concrete product path, with raw recognition and user-approved changes kept distinct.",
+              "The current result is an implemented Android path. Mixed Traditional Chinese/English recognition quality, microphone behavior, recovery, and private real-use acceptance still need separate evidence."
+            ]
+          }
+        ]
+      },
+      "zh-TW": {
+        "subtitle": "把口述想法變成作者仍能掌握的文字。",
+        "lead": "我希望能說出未成形的想法，也保有最後措辭的決定權。因此，錄音需要留下來，辨識、cleanup 與編輯也要各自清楚。",
+        "sections": [
+          {
+            "heading": "說話者的問題",
+            "paragraphs": [
+              "未成形的想法可能包含語助詞、重複與自我修正。辨識可能聽錯，而過度的 cleanup 也可能刪掉說話者原本想保留的意思。",
+              "Transcribe-for-X 保留追回 SourceAudio 的路徑，分開呈現 RawTranscript 與 cleanup suggestions，讓使用者決定最後措辭。目前實作是以本機辨識為核心的 Android Voice-to-Words foundation。"
+            ],
+            "flow": [
+              "錄音",
+              "保存與驗證",
+              "Local ASR",
+              "核准 cleanup",
+              "編輯與 Copy"
+            ]
+          },
+          {
+            "heading": "我的關鍵選擇",
+            "paragraphs": [
+              "我把 verified storage 放在辨識之前。SourceRepository 檢查 capture evidence、sync 並保存錄音，再讀回比對大小與 SHA-256，最後記錄 manifest。AsrGateway 必須先 resolve verified source，才能呼叫本機 NativeWhisper engine。",
+              "Cleanup 也採保守路徑：TranscriptCleanup 提出 removal suggestions，使用者逐項接受或拒絕，projection 再檢查只移除已接受的 spans。這增加儲存、失敗處理與 review 工作，也讓來源和說話者的決定維持可見。"
+            ]
+          },
+          {
+            "heading": "目前可看見的結果",
+            "paragraphs": [
+              "Android 實作已把錄音與 verified source storage 接到本機 ASR、逐項 cleanup、可編輯的 final text 與明確 Copy 動作。專案已有具體的產品路徑，原始辨識結果和使用者核准的改動維持分開。",
+              "目前成果是一條已實作的 Android 路徑。正體中文／English 混合語音品質、microphone 行為、recovery 與私密 real-use acceptance，仍需要各自的證據。"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "windowphase",
+      "title": "windowphase",
+      "card": {
+        "summary": "An anchored usage window can reset while you are away from the keyboard. I built a planner that compares timings against working hours and previews the command before a live clock-in.",
+        "tags": [
+          "Python",
+          "Scheduling",
+          "CLI"
+        ],
+        "evidence": "Outputs: a workday schedule, a no-tool baseline, and a dry-run command preview. Account benefit depends on actual window behavior."
+      },
+      "sources": [
+        {
+          "file": "src/windowphase/planner.py",
+          "line": 140,
+          "role": "Workday schedule calculation"
+        },
+        {
+          "file": "src/windowphase/planner.py",
+          "line": 192,
+          "role": "No-tool comparison model"
+        },
+        {
+          "file": "src/windowphase/runner.py",
+          "line": 27,
+          "role": "Explicit live-run boundary"
+        },
+        {
+          "file": "src/windowphase/cli.py",
+          "line": 274,
+          "role": "Schedule inspection and rendering"
+        }
+      ],
+      "en": {
+        "subtitle": "A workday schedule you can inspect before running.",
+        "lead": "I wanted to see whether a fixed usage-window schedule could line up with my working hours. windowphase makes the timing, baseline, and clock-in command explicit before a live request.",
+        "sections": [
+          {
+            "heading": "The workday problem",
+            "paragraphs": [
+              "If a provider uses a request-anchored window, the time of the first request shapes when the next reset arrives. Those boundaries can fall outside the hours when the allowance is useful.",
+              "windowphase models a five-hour window against the workday and looks for reset boundaries that leave usable portions of time on either side. It compares the proposed schedule with the no-tool baseline, so the calculation has a concrete point of comparison."
+            ],
+            "flow": [
+              "Work hours",
+              "Anchored-window model",
+              "Schedule & baseline",
+              "Inspect before live use"
+            ]
+          },
+          {
+            "heading": "The choice I made",
+            "paragraphs": [
+              "I separated the planner from provider execution. The Python calculation returns pre-work ignition, reset times, and reachable windows under a minimum usable-slice constraint; spacing validation also checks the gap across midnight.",
+              "Provider adapters build explicit command arguments, and the runner defaults to a dry run. A live clock-in requires live=True or --live. This makes the plan inspectable, while leaving the real provider behavior and request cost as assumptions that must be checked separately."
+            ],
+            "example": {
+              "label": "Illustrative model example — not an account measurement",
+              "text": "For a 09:00–18:00 workday and a 60-minute minimum usable slice, the anchored model places clock-ins at 06:00, 11:00, and 16:00. These are calculated times under the model, not a measured account benefit."
+            }
+          },
+          {
+            "heading": "What it produces today",
+            "paragraphs": [
+              "The project provides schedule calculation and rendering, a no-tool comparison, provider command previews, a ledger, and health-check code. Scheduler representations exist for systemd, launchd, and Windows Task Scheduler.",
+              "The bounded result is a calculated schedule and an inspectable CLI path. A rolling lookback may make the anchored model unsuitable; actual quota benefit and parity across Linux, macOS, and Windows remain unestablished."
+            ]
+          }
+        ]
+      },
+      "zh-TW": {
+        "subtitle": "先檢查工作日排程，再決定是否執行。",
+        "lead": "我想知道固定 usage window 的排程能否對齊工作時間。windowphase 先把時間安排、baseline 與 clock-in command 攤開，再由使用者決定是否送出 live request。",
+        "sections": [
+          {
+            "heading": "工作時段的問題",
+            "paragraphs": [
+              "若 provider 採用由 request 錨定的 window，第一次 request 的時間會影響下一次 reset 何時到來。這些 boundaries 可能落在無法使用 allowance 的時段。",
+              "windowphase 以 five-hour window 為模型，尋找能在工作日兩側留下可用區段的 reset boundaries，並與未使用工具的 baseline 比較，讓排程有具體對照。"
+            ],
+            "flow": [
+              "工作時間",
+              "Anchored-window 模型",
+              "排程與 baseline",
+              "Live use 前先檢查"
+            ]
+          },
+          {
+            "heading": "我的關鍵選擇",
+            "paragraphs": [
+              "我把 planner 與 provider execution 分開。Python 計算在 minimum usable-slice 條件下回傳 pre-work ignition、reset times 與 reachable windows；spacing validation 也檢查跨午夜的間距。",
+              "Provider adapters 產生明確的 command arguments，runner 預設 dry run。Live clock-in 必須使用 live=True 或 --live。這讓排程可以先被檢查，也把 provider 的真實行為與 request 成本留作需要另外確認的 assumptions。"
+            ],
+            "example": {
+              "label": "模型示例，並非帳號量測",
+              "text": "若工作時間為 09:00–18:00，minimum usable slice 為 60 分鐘，anchored model 會把 clock-ins 放在 06:00、11:00 與 16:00。這些是模型中的計算時間，不是已量測的帳號效益。"
+            }
+          },
+          {
+            "heading": "目前可看見的結果",
+            "paragraphs": [
+              "專案提供 schedule calculation 與 rendering、no-tool comparison、provider command preview、ledger 與 health-check code，也有 systemd、launchd 和 Windows Task Scheduler representations。",
+              "目前成果限於算出的排程與可檢查的 CLI 路徑。Rolling lookback 可能讓 anchored model 不適用；實際 quota 效益，以及 Linux、macOS、Windows 的 platform parity，仍未確立。"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
