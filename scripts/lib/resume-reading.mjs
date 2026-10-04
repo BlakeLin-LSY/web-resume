@@ -31,6 +31,7 @@ function setLanguage(value,persist){
   if(persist){savePreference('resume-language',value);updateQuery();if(current&&scrollY>0)scrollBy(0,current.getBoundingClientRect().top-before);}
 }
 root.classList.add('resume-enhanced');document.querySelectorAll('[data-js-control] button').forEach(button=>button.disabled=false);
+if(location.protocol==='file:'){root.dataset.offlineReading='true';document.querySelectorAll('[data-save-actions]').forEach(element=>element.hidden=true);document.querySelectorAll('[data-resume-cv]').forEach(link=>link.removeAttribute('download'));}
 languageButtons.forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.resumeLanguage,true)));
 themeButton.addEventListener('click',()=>setTheme(resolvedDark()?'light':'dark',true));
 menu.addEventListener('click',()=>{open=!open;nav.hidden=!open;menu.setAttribute('aria-expanded',String(open));headerOffset();});

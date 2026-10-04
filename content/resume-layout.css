@@ -76,6 +76,11 @@ details p,details ul{margin-top:12px}
 .resume-contact .resume-actions{font-size:.85rem}
 .resume-footer{max-width:var(--resume-content-width);padding:30px 28px 44px;margin:auto;border-top:1px solid var(--resume-border);font-size:.78rem;color:var(--resume-muted)}
 .resume-footer p{margin-bottom:12px}
+[data-package-scope],[data-cv-open-label]{display:none}
+html[data-offline-package=true] [data-save-actions],html[data-offline-package=true] [data-save-scope]{display:none}
+html[data-offline-package=true] [data-package-scope]{display:block}
+html[data-offline-package=true] [data-cv-download-label],html[data-offline-reading=true] [data-cv-download-label]{display:none}
+html[data-offline-package=true] [data-cv-open-label],html[data-offline-reading=true] [data-cv-open-label]{display:inline}
 html:not(.resume-enhanced) [data-resume-locale]+[data-resume-locale]{margin-top:24px}
 html:not(.resume-enhanced) .resume-navigation [data-resume-locale]+[data-resume-locale]{margin:0}
 html:not(.resume-enhanced) .resume-navigation [data-resume-locale]+[data-resume-locale]:before{content:" / "}

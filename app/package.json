@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node ../scripts/validate-resume-assets.mjs && node ../scripts/build-resume-overview.mjs && node ../scripts/build-project-case-studies.mjs && next build",
+    "build": "node ../scripts/validate-resume-assets.mjs && node ../scripts/build-resume-overview.mjs && node ../scripts/build-project-case-studies.mjs && python3 ../scripts/build-application-package.py && next build",
     "start": "next start",
     "lint": "eslint app/layout.tsx app/page.tsx",
     "export": "npm run build",
