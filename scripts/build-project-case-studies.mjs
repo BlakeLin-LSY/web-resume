@@ -151,12 +151,12 @@ try { selectedLanguage = query.get('lang') || localStorage.getItem('resume-langu
 if (!['en','zh-TW'].includes(selectedLanguage)) selectedLanguage = 'en';
 if (!['auto','light','dark'].includes(selectedTheme)) selectedTheme = 'auto';
 function remember(key, value) { try { localStorage.setItem(key, value); } catch {} }
-function updateQuery() { try { const url = new URL(location.href); url.searchParams.set('lang', selectedLanguage); if (selectedTheme === 'auto') url.searchParams.delete('theme'); else url.searchParams.set('theme', selectedTheme); history.replaceState(null, '', url); } catch {} }
+function updateQuery() { try { const url = new URL(location.href); url.searchParams.set('lang', selectedLanguage); url.searchParams.set('theme', selectedTheme); history.replaceState(null, '', url); } catch {} }
 function updateReadingLinks() {
   document.querySelectorAll('[data-back-home]').forEach(link => {
     const back = new URL(location.protocol === 'file:' ? '../resume-overview.html' : '../', location.href);
     back.searchParams.set('lang', selectedLanguage);
-    if (selectedTheme !== 'auto') back.searchParams.set('theme', selectedTheme);
+    back.searchParams.set('theme', selectedTheme);
     back.hash = 'projects'; link.href = back.href;
   });
 }

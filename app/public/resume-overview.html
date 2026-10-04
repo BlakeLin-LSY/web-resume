@@ -33,7 +33,7 @@ html:not(.resume-enhanced) .resume-header{position:static}
 .resume-navigation a{text-decoration:none;padding:8px 0}
 .resume-reading-controls{align-items:center;gap:5px}
 .resume-reading-controls button{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:44px;padding:6px 8px;background:transparent;border:1px solid transparent;border-radius:4px;font-size:.77rem}
-.resume-reading-controls button[aria-pressed=true]{border-color:var(--resume-border);background:var(--resume-tint);color:var(--resume-accent)}
+.resume-reading-controls button[aria-pressed=true]{border-color:var(--resume-accent);background:var(--resume-tint);color:var(--resume-accent)}
 .resume-languages{display:flex;gap:2px}
 .resume-menu{display:none!important}
 .resume-main{max-width:var(--resume-content-width);padding:0 28px;margin:auto;outline:none}
@@ -155,7 +155,7 @@ if(!['en','zh-TW'].includes(language))language='en';if(!['auto','light','dark'].
 function headerOffset(){root.style.setProperty('--header-offset',(header.getBoundingClientRect().height+20)+'px');}
 function closeMenu(){open=false;nav.hidden=narrow.matches;menu.setAttribute('aria-expanded','false');headerOffset();}
 function savePreference(key,value){try{localStorage.setItem(key,value);}catch{}}
-function updateQuery(){try{const url=new URL(location.href);url.searchParams.set('lang',language);if(theme==='auto')url.searchParams.delete('theme');else url.searchParams.set('theme',theme);history.replaceState(null,'',url);}catch{}}
+function updateQuery(){try{const url=new URL(location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);history.replaceState(null,'',url);}catch{}}
 function updateCaseLinks(){document.querySelectorAll('[data-resume-case]').forEach(link=>{const url=new URL(link.href,location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);link.href=url.href;});}
 function resolvedDark(){return theme==='dark'||(theme==='auto'&&systemDark.matches);}
 function setTheme(value,persist){theme=value;root.dataset.readingTheme=theme;root.style.colorScheme=resolvedDark()?'dark':'light';themeButton.setAttribute('aria-label',data.copy[language][resolvedDark()?'themeLight':'themeDark']);updateCaseLinks();if(persist){savePreference('resume-theme',theme);updateQuery();}}
