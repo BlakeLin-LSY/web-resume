@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node ../scripts/build-project-case-studies.mjs && next build",
+    "build": "node ../scripts/validate-resume-assets.mjs && node ../scripts/build-resume-overview.mjs && node ../scripts/build-project-case-studies.mjs && next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next build && next export"
+    "lint": "eslint app/layout.tsx app/page.tsx",
+    "export": "npm run build",
+    "typecheck": "tsc --project tsconfig.resume.json --noEmit"
   },
   "dependencies": {
     "framer-motion": "^12.12.1",

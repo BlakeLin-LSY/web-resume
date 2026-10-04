@@ -1,15 +1,22 @@
 <!doctype html>
 <!-- Generated from content/project-case-studies.json. Edit the content source or generator. -->
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
-<title>Study Atlas — Engineering introduction</title><meta name="description" content="A research topic may need a quick briefing or a deeper explanation. I built a typed knowledge pipeline that turns one authored study into bilingual reading routes with a source trail."><style>
-:root{color-scheme:light dark;--bg:#f8fafc;--panel:#fff;--text:#0f172a;--muted:#475569;--border:#dbe3ee;--blue:#2563eb;--tint:#eff6ff}
-@media(prefers-color-scheme:dark){:root{--bg:#020817;--panel:#0d1627;--text:#f1f5f9;--muted:#b2bfd0;--border:#263449;--blue:#60a5fa;--tint:#122440}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:.2em}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}header,main,footer{width:min(1050px,100% - 40px);margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-bottom:1px solid var(--border)}.back{text-decoration:none;font-weight:600}.languages{display:flex;gap:6px}.languages button{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:7px 12px;border-radius:8px;cursor:pointer}.languages button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue)}.skip{position:absolute;top:-100px;left:20px;padding:10px;background:var(--panel);z-index:1}.skip:focus{top:10px}.hero{padding:50px 0 30px;max-width:780px}.eyebrow{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}h2{font-size:1.5rem;line-height:1.35;margin:0 0 18px}h3{font-size:1.05rem;margin:0 0 12px}.subtitle{font-size:1.3rem;font-weight:600;margin:0 0 16px}.lead{color:var(--muted);font-size:1.05rem}.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;list-style:none;margin:24px 0 0}.tags li{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--blue);background:var(--tint)}.section{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px;margin:0 0 22px}.section p{color:var(--muted);margin:12px 0}.flow{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:24px 0 0}.flow li{flex:1;min-width:120px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);padding:12px;font-size:14px;line-height:1.5}.flow span{display:block;font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px}.example{padding:18px;border-left:3px solid var(--blue);background:var(--tint);border-radius:6px;margin-top:22px}.example p{margin:6px 0 0}.source-list{list-style:none;padding:0;margin:0}.source-list li{padding:14px 0;border-top:1px solid var(--border)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82rem;overflow-wrap:anywhere}.source-role{display:block;color:var(--muted);font-size:13px}.notice{color:var(--muted);font-size:14px}.language-view+.language-view{border-top:1px solid var(--border);margin-top:40px}.js .language-view[hidden]{display:none}footer{border-top:1px solid var(--border);margin-top:32px;padding:24px 0 40px;color:var(--muted);font-size:13px}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.hero{padding-top:34px}.section{padding:22px}.flow{flex-direction:column}}
+<title>Study Atlas — Engineering introduction</title><meta name="description" content="I wanted research outputs that fit a reader&#39;s time without losing the question, the reasoning, or the sources. Study Atlas makes the reading route part of the delivery."><style>
+:root{--resume-background:#F6F3EC;--resume-panel:#FFFFFF;--resume-text:#242824;--resume-muted:#5C645D;--resume-accent:#285C4D;--resume-border:#BCC4B9;--resume-tint:#E7EDE4;--resume-action-text:#FFFFFF;--resume-font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;--resume-content-width:70rem;--resume-reading-width:44rem;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root:not([data-reading-theme=light]){--resume-background:#171D1A;--resume-panel:#222B25;--resume-text:#F2F0E9;--resume-muted:#B5C0B8;--resume-accent:#A8D2B4;--resume-border:#64776A;--resume-tint:#283B30;--resume-action-text:#17251A}}
+:root[data-reading-theme=dark]{--resume-background:#171D1A;--resume-panel:#222B25;--resume-text:#F2F0E9;--resume-muted:#B5C0B8;--resume-accent:#A8D2B4;--resume-border:#64776A;--resume-tint:#283B30;--resume-action-text:#17251A}
+:root[data-reading-theme=light]{--resume-background:#F6F3EC;--resume-panel:#FFFFFF;--resume-text:#242824;--resume-muted:#5C645D;--resume-accent:#285C4D;--resume-border:#BCC4B9;--resume-tint:#E7EDE4;--resume-action-text:#FFFFFF}
+
+:root{--bg:var(--resume-background);--panel:var(--resume-panel);--text:var(--resume-text);--muted:var(--resume-muted);--border:var(--resume-border);--blue:var(--resume-accent);--tint:var(--resume-tint)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 var(--resume-font)}a{color:var(--blue);text-underline-offset:.2em}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}header,main,footer{width:min(1050px,100% - 40px);margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-bottom:1px solid var(--border)}.back{text-decoration:none;font-weight:600}.languages{display:flex;gap:6px}.languages button{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:7px 12px;border-radius:8px;cursor:pointer}.languages button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue)}.skip{position:absolute;top:-100px;left:20px;padding:10px;background:var(--panel);z-index:1}.skip:focus{top:10px}.hero{padding:50px 0 30px;max-width:780px}.eyebrow{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}h2{font-size:1.5rem;line-height:1.35;margin:0 0 18px}h3{font-size:1.05rem;margin:0 0 12px}.subtitle{font-size:1.3rem;font-weight:600;margin:0 0 16px}.lead{color:var(--muted);font-size:1.05rem}.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;list-style:none;margin:24px 0 0}.tags li{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--blue);background:var(--tint)}.section{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px;margin:0 0 22px}.section p{color:var(--muted);margin:12px 0}.flow{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:24px 0 0}.flow li{flex:1;min-width:120px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);padding:12px;font-size:14px;line-height:1.5}.flow span{display:block;font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px}.example{padding:18px;border-left:3px solid var(--blue);background:var(--tint);border-radius:6px;margin-top:22px}.example p{margin:6px 0 0}.source-list{list-style:none;padding:0;margin:0}.source-list li{padding:14px 0;border-top:1px solid var(--border)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82rem;overflow-wrap:anywhere}.source-role{display:block;color:var(--muted);font-size:13px}.notice{color:var(--muted);font-size:14px}.language-view+.language-view{border-top:1px solid var(--border);margin-top:40px}.js .language-view[hidden]{display:none}footer{border-top:1px solid var(--border);margin-top:32px;padding:24px 0 40px;color:var(--muted);font-size:13px}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.hero{padding-top:34px}.section{padding:22px}.flow{flex-direction:column}}
+
+@media print{:root{color-scheme:light!important;--resume-background:#fff!important;--resume-panel:#fff!important;--resume-text:#242824!important;--resume-muted:#5C645D!important;--resume-accent:#285C4D!important;--resume-border:#BCC4B9!important;--resume-tint:#E7EDE4!important}.languages,header a[download],.walkthrough-steps,.walkthrough-navigation{display:none!important}body{font-size:11pt}header,main,footer{width:100%}.hero{padding:20px 0}.section{padding:18px;break-inside:avoid}.walkthrough-panel[hidden]{display:block!important}.walkthrough-artifact::details-content{content-visibility:visible!important;height:auto!important}}
+
 
 .walkthrough{scroll-margin-top:24px;overflow-wrap:anywhere}.walkthrough-language+.walkthrough-language{border-top:1px solid var(--border);padding-top:28px;margin-top:28px}.walkthrough h2{margin-bottom:12px}.walkthrough-intro{max-width:780px}.walkthrough-boundary{padding:14px 18px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);font-size:14px}.walkthrough-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:24px 0 18px}.walkthrough-steps button{display:flex;align-items:flex-start;gap:8px;text-align:left;line-height:1.4;font-size:13px;border:1px solid var(--border);border-radius:8px;padding:12px 10px;background:var(--bg);color:var(--text)}.walkthrough-steps button:enabled,.walkthrough-navigation button:enabled{cursor:pointer}.walkthrough-steps button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue)}.walkthrough-step-number{font-size:11px;font-weight:700;color:var(--blue)}.walkthrough-position{font-size:13px;color:var(--blue)!important;min-height:1.75em}.walkthrough-panel{border-top:1px solid var(--border);padding:22px 0 6px}.walkthrough-panel h3{font-size:1.15rem;line-height:1.4}.walkthrough-evidence{display:inline-block;margin:0 0 10px!important;font-size:12px;line-height:1.5;color:var(--blue)!important;border:1px solid var(--border);border-radius:6px;padding:5px 9px;background:var(--tint)}.walkthrough-budget{padding:18px;border:1px solid var(--border);border-radius:10px;background:var(--bg);margin:20px 0}.walkthrough-budget-value{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px}.walkthrough-budget-value strong{font-size:1.7rem;line-height:1.3;font-variant-numeric:tabular-nums}.walkthrough-budget-value span{font-size:13px;color:var(--muted)}.walkthrough-budget-status{font-size:12px!important;font-weight:700;color:var(--blue)!important;border:1px solid var(--border);border-radius:6px;padding:3px 9px;background:var(--tint)}.walkthrough-budget p{font-size:14px;margin-bottom:0}.walkthrough-artifact{border:1px solid var(--border);border-radius:8px;margin:14px 0;padding:14px 16px}.walkthrough-artifact summary{cursor:pointer;font-weight:600;line-height:1.5}.walkthrough-artifact .walkthrough-evidence{margin-top:14px!important}.walkthrough-artifact p{font-size:14px}.walkthrough-artifact pre{max-width:100%;margin:14px 0 0;padding:14px;background:var(--bg);border:1px solid var(--border);border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}.walkthrough-navigation{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--border);padding-top:18px;margin-top:18px}.walkthrough-navigation button{border:1px solid var(--border);border-radius:8px;padding:8px 16px;background:var(--panel);color:var(--text)}.walkthrough-navigation button:disabled{opacity:.45}.js .walkthrough-panel[hidden],.js .walkthrough-language[hidden]{display:none}summary:focus-visible{outline:3px solid var(--blue);outline-offset:4px}@media(max-width:700px){.walkthrough-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.walkthrough-steps button:last-child{grid-column:1/-1}.walkthrough-artifact{padding:12px}.walkthrough-artifact pre{padding:10px}.walkthrough-navigation button{padding:8px 12px}}
 </style></head>
 <body><a class="skip" href="#content">Skip to content / 跳至內容</a>
-<header><a class="back" href="../#projects">← Projects / 返回專案</a><a href="study-atlas.html" download="study-atlas.html">Download HTML / 下載 HTML</a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>正體中文</button></div></header>
+<header><a class="back" data-back-home href="../resume-overview.html#projects">← Projects / 返回專案</a><a href="study-atlas.html" download="study-atlas.html">Download HTML / 下載 HTML</a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>正體中文</button><button type="button" data-theme-toggle aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button></div></header>
 <main id="content"><article class="language-view" lang="en" data-language="en">
 <div class="hero"><p class="eyebrow">Personal project · Engineering case study</p>
 <h1>Study Atlas</h1><p class="subtitle">One study, several ways to read it.</p><p class="lead">I wanted research outputs that fit a reader&#39;s time without losing the question, the reasoning, or the sources. Study Atlas makes the reading route part of the delivery.</p>
@@ -188,18 +195,62 @@ GATE: PROCEED</code></pre></details>
 <li><code>docs/demos/semantic-ir-product-tour.html:193</code><span class="source-role">Existing reader controls</span></li>
 <li><code>records/2026-09-13-ws07-live-service-acceptance.md:44</code><span class="source-role">Historical live delivery and planned-budget revision record</span></li>
 <li><code>references/card-contract.md:74</code><span class="source-role">Current TALK duration model; not the historical Contract 1.8 execution version</span></li></ul></details></main>
-<footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a href="../#projects">Back to projects / 返回專案</a><noscript><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
+<footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a data-back-home href="../resume-overview.html#projects">Back to projects / 返回專案</a><noscript><style>.languages{display:none!important}[data-language][hidden],.walkthrough-panel[hidden]{display:block!important}</style><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
 <script>
+const metadata = {"en":"I wanted research outputs that fit a reader's time without losing the question, the reasoning, or the sources. Study Atlas makes the reading route part of the delivery.","zh-TW":"我希望研究產出能配合讀者的時間，也保留問題、推理與來源。Study Atlas 把閱讀路徑納入交付本身。"};
+const root = document.documentElement;
 const controls = document.querySelectorAll('[data-select-language]');
 const views = document.querySelectorAll('[data-language]');
-function selectLanguage(language) {
+const themeButton = document.querySelector('[data-theme-toggle]');
+const systemDark = matchMedia('(prefers-color-scheme: dark)');
+const query = new URLSearchParams(location.search);
+let selectedLanguage = query.get('lang') || root.lang || 'en';
+let selectedTheme = query.get('theme') || root.dataset.readingTheme || 'auto';
+try { selectedLanguage = query.get('lang') || localStorage.getItem('resume-language') || selectedLanguage; selectedTheme = query.get('theme') || localStorage.getItem('resume-theme') || selectedTheme; } catch {}
+if (!['en','zh-TW'].includes(selectedLanguage)) selectedLanguage = 'en';
+if (!['auto','light','dark'].includes(selectedTheme)) selectedTheme = 'auto';
+function remember(key, value) { try { localStorage.setItem(key, value); } catch {} }
+function updateQuery() { try { const url = new URL(location.href); url.searchParams.set('lang', selectedLanguage); if (selectedTheme === 'auto') url.searchParams.delete('theme'); else url.searchParams.set('theme', selectedTheme); history.replaceState(null, '', url); } catch {} }
+function updateReadingLinks() {
+  document.querySelectorAll('[data-back-home]').forEach(link => {
+    const back = new URL(location.protocol === 'file:' ? '../resume-overview.html' : '../', location.href);
+    back.searchParams.set('lang', selectedLanguage);
+    if (selectedTheme !== 'auto') back.searchParams.set('theme', selectedTheme);
+    back.hash = 'projects'; link.href = back.href;
+  });
+}
+function dark() { return selectedTheme === 'dark' || (selectedTheme === 'auto' && systemDark.matches); }
+function selectTheme(value, persist) {
+  selectedTheme = value; root.dataset.readingTheme = value; root.style.colorScheme = dark() ? 'dark' : 'light';
+  themeButton.setAttribute('aria-label', selectedLanguage === 'en' ? (dark() ? 'Switch to light theme' : 'Switch to dark theme') : (dark() ? '切換淺色' : '切換深色'));
+  if (persist) { remember('resume-theme', value); updateQuery(); } updateReadingLinks();
+}
+function selectLanguage(language, persist) {
+  const previous = document.querySelector('.language-view:not([hidden])');
+  const oldSections = previous ? [...previous.querySelectorAll('.hero,.section')] : [];
+  const walkthrough = document.querySelector('[data-walkthrough]');
+  let anchor = oldSections.filter(section => section.getBoundingClientRect().top <= 120).pop();
+  if (walkthrough && walkthrough.getBoundingClientRect().top <= 120) anchor = walkthrough;
+  const index = oldSections.indexOf(anchor), before = anchor && anchor.getBoundingClientRect().top;
+  selectedLanguage = language;
   views.forEach(view => { view.hidden = view.dataset.language !== language; });
   controls.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.selectLanguage === language)));
-  document.documentElement.lang = language;
+  root.lang = language; document.querySelector('meta[name="description"]').content = metadata[language];
+  selectTheme(selectedTheme, false);
+  if (persist) {
+    remember('resume-language', language);
+    updateQuery();
+    const current = anchor === walkthrough ? walkthrough : document.querySelector('.language-view:not([hidden])').querySelectorAll('.hero,.section')[index];
+    if (current && scrollY > 0) scrollBy(0, current.getBoundingClientRect().top - before);
+  }
 }
-document.documentElement.classList.add('js');
-controls.forEach(button => { button.disabled = false; button.addEventListener('click', () => selectLanguage(button.dataset.selectLanguage)); });
-selectLanguage('en');
+root.classList.add('js');
+controls.forEach(button => { button.disabled = false; button.addEventListener('click', () => selectLanguage(button.dataset.selectLanguage, true)); });
+themeButton.disabled = false;
+themeButton.addEventListener('click', () => selectTheme(dark() ? 'light' : 'dark', true));
+systemDark.addEventListener('change', () => selectTheme(selectedTheme, false));
+selectLanguage(selectedLanguage, false);
+selectTheme(selectedTheme, false);
 
 const walkthrough = document.querySelector('[data-walkthrough]');
 if (walkthrough) {

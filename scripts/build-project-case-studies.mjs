@@ -1,20 +1,25 @@
 import { readFile, mkdir, writeFile, rename } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readingTokenCss } from "./lib/resume-source.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const source = JSON.parse(await readFile(resolve(root, "content/project-case-studies.json"), "utf8"));
+const tokens = JSON.parse(await readFile(resolve(root, "content/design-tokens.json"), "utf8"));
 if (source.schemaVersion !== 1 || !Array.isArray(source.projects)) throw new Error("Unsupported case-study content");
 
-// A project page lives directly under projects/ at either the root or a Next basePath.
-// Relative back-links retain that current basePath in development and on GitHub Pages.
-const projectsHref = "../#projects";
+// Relative fallback works in the complete offline reading package.
+// The reading script points HTTP back-links to the current Next basePath.
+const projectsHref = "../resume-overview.html#projects";
 
 const escape = (value) => String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
 const styles = `
-:root{color-scheme:light dark;--bg:#f8fafc;--panel:#fff;--text:#0f172a;--muted:#475569;--border:#dbe3ee;--blue:#2563eb;--tint:#eff6ff}
-@media(prefers-color-scheme:dark){:root{--bg:#020817;--panel:#0d1627;--text:#f1f5f9;--muted:#b2bfd0;--border:#263449;--blue:#60a5fa;--tint:#122440}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:.2em}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}header,main,footer{width:min(1050px,100% - 40px);margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-bottom:1px solid var(--border)}.back{text-decoration:none;font-weight:600}.languages{display:flex;gap:6px}.languages button{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:7px 12px;border-radius:8px;cursor:pointer}.languages button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue)}.skip{position:absolute;top:-100px;left:20px;padding:10px;background:var(--panel);z-index:1}.skip:focus{top:10px}.hero{padding:50px 0 30px;max-width:780px}.eyebrow{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}h2{font-size:1.5rem;line-height:1.35;margin:0 0 18px}h3{font-size:1.05rem;margin:0 0 12px}.subtitle{font-size:1.3rem;font-weight:600;margin:0 0 16px}.lead{color:var(--muted);font-size:1.05rem}.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;list-style:none;margin:24px 0 0}.tags li{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--blue);background:var(--tint)}.section{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px;margin:0 0 22px}.section p{color:var(--muted);margin:12px 0}.flow{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:24px 0 0}.flow li{flex:1;min-width:120px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);padding:12px;font-size:14px;line-height:1.5}.flow span{display:block;font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px}.example{padding:18px;border-left:3px solid var(--blue);background:var(--tint);border-radius:6px;margin-top:22px}.example p{margin:6px 0 0}.source-list{list-style:none;padding:0;margin:0}.source-list li{padding:14px 0;border-top:1px solid var(--border)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82rem;overflow-wrap:anywhere}.source-role{display:block;color:var(--muted);font-size:13px}.notice{color:var(--muted);font-size:14px}.language-view+.language-view{border-top:1px solid var(--border);margin-top:40px}.js .language-view[hidden]{display:none}footer{border-top:1px solid var(--border);margin-top:32px;padding:24px 0 40px;color:var(--muted);font-size:13px}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.hero{padding-top:34px}.section{padding:22px}.flow{flex-direction:column}}
+${readingTokenCss(tokens)}
+:root{--bg:var(--resume-background);--panel:var(--resume-panel);--text:var(--resume-text);--muted:var(--resume-muted);--border:var(--resume-border);--blue:var(--resume-accent);--tint:var(--resume-tint)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 var(--resume-font)}a{color:var(--blue);text-underline-offset:.2em}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}header,main,footer{width:min(1050px,100% - 40px);margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-bottom:1px solid var(--border)}.back{text-decoration:none;font-weight:600}.languages{display:flex;gap:6px}.languages button{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:7px 12px;border-radius:8px;cursor:pointer}.languages button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue)}.skip{position:absolute;top:-100px;left:20px;padding:10px;background:var(--panel);z-index:1}.skip:focus{top:10px}.hero{padding:50px 0 30px;max-width:780px}.eyebrow{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}h2{font-size:1.5rem;line-height:1.35;margin:0 0 18px}h3{font-size:1.05rem;margin:0 0 12px}.subtitle{font-size:1.3rem;font-weight:600;margin:0 0 16px}.lead{color:var(--muted);font-size:1.05rem}.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;list-style:none;margin:24px 0 0}.tags li{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--blue);background:var(--tint)}.section{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px;margin:0 0 22px}.section p{color:var(--muted);margin:12px 0}.flow{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:24px 0 0}.flow li{flex:1;min-width:120px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);padding:12px;font-size:14px;line-height:1.5}.flow span{display:block;font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px}.example{padding:18px;border-left:3px solid var(--blue);background:var(--tint);border-radius:6px;margin-top:22px}.example p{margin:6px 0 0}.source-list{list-style:none;padding:0;margin:0}.source-list li{padding:14px 0;border-top:1px solid var(--border)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82rem;overflow-wrap:anywhere}.source-role{display:block;color:var(--muted);font-size:13px}.notice{color:var(--muted);font-size:14px}.language-view+.language-view{border-top:1px solid var(--border);margin-top:40px}.js .language-view[hidden]{display:none}footer{border-top:1px solid var(--border);margin-top:32px;padding:24px 0 40px;color:var(--muted);font-size:13px}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.hero{padding-top:34px}.section{padding:22px}.flow{flex-direction:column}}
+
+@media print{:root{color-scheme:light!important;--resume-background:#fff!important;--resume-panel:#fff!important;--resume-text:#242824!important;--resume-muted:#5C645D!important;--resume-accent:#285C4D!important;--resume-border:#BCC4B9!important;--resume-tint:#E7EDE4!important}.languages,header a[download],.walkthrough-steps,.walkthrough-navigation{display:none!important}body{font-size:11pt}header,main,footer{width:100%}.hero{padding:20px 0}.section{padding:18px;break-inside:avoid}.walkthrough-panel[hidden]{display:block!important}.walkthrough-artifact::details-content{content-visibility:visible!important;height:auto!important}}
+
 `;
 
 const renderSection = (section) => {
@@ -132,17 +137,61 @@ if (walkthrough) {
 }
 `;
 
-const script = `
+const script = (project) => `
+const metadata = ${JSON.stringify({ en: project.en.lead, "zh-TW": project["zh-TW"].lead }).replace(/</g, "\\u003c")};
+const root = document.documentElement;
 const controls = document.querySelectorAll('[data-select-language]');
 const views = document.querySelectorAll('[data-language]');
-function selectLanguage(language) {
+const themeButton = document.querySelector('[data-theme-toggle]');
+const systemDark = matchMedia('(prefers-color-scheme: dark)');
+const query = new URLSearchParams(location.search);
+let selectedLanguage = query.get('lang') || root.lang || 'en';
+let selectedTheme = query.get('theme') || root.dataset.readingTheme || 'auto';
+try { selectedLanguage = query.get('lang') || localStorage.getItem('resume-language') || selectedLanguage; selectedTheme = query.get('theme') || localStorage.getItem('resume-theme') || selectedTheme; } catch {}
+if (!['en','zh-TW'].includes(selectedLanguage)) selectedLanguage = 'en';
+if (!['auto','light','dark'].includes(selectedTheme)) selectedTheme = 'auto';
+function remember(key, value) { try { localStorage.setItem(key, value); } catch {} }
+function updateQuery() { try { const url = new URL(location.href); url.searchParams.set('lang', selectedLanguage); if (selectedTheme === 'auto') url.searchParams.delete('theme'); else url.searchParams.set('theme', selectedTheme); history.replaceState(null, '', url); } catch {} }
+function updateReadingLinks() {
+  document.querySelectorAll('[data-back-home]').forEach(link => {
+    const back = new URL(location.protocol === 'file:' ? '../resume-overview.html' : '../', location.href);
+    back.searchParams.set('lang', selectedLanguage);
+    if (selectedTheme !== 'auto') back.searchParams.set('theme', selectedTheme);
+    back.hash = 'projects'; link.href = back.href;
+  });
+}
+function dark() { return selectedTheme === 'dark' || (selectedTheme === 'auto' && systemDark.matches); }
+function selectTheme(value, persist) {
+  selectedTheme = value; root.dataset.readingTheme = value; root.style.colorScheme = dark() ? 'dark' : 'light';
+  themeButton.setAttribute('aria-label', selectedLanguage === 'en' ? (dark() ? 'Switch to light theme' : 'Switch to dark theme') : (dark() ? '切換淺色' : '切換深色'));
+  if (persist) { remember('resume-theme', value); updateQuery(); } updateReadingLinks();
+}
+function selectLanguage(language, persist) {
+  const previous = document.querySelector('.language-view:not([hidden])');
+  const oldSections = previous ? [...previous.querySelectorAll('.hero,.section')] : [];
+  const walkthrough = document.querySelector('[data-walkthrough]');
+  let anchor = oldSections.filter(section => section.getBoundingClientRect().top <= 120).pop();
+  if (walkthrough && walkthrough.getBoundingClientRect().top <= 120) anchor = walkthrough;
+  const index = oldSections.indexOf(anchor), before = anchor && anchor.getBoundingClientRect().top;
+  selectedLanguage = language;
   views.forEach(view => { view.hidden = view.dataset.language !== language; });
   controls.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.selectLanguage === language)));
-  document.documentElement.lang = language;
+  root.lang = language; document.querySelector('meta[name="description"]').content = metadata[language];
+  selectTheme(selectedTheme, false);
+  if (persist) {
+    remember('resume-language', language);
+    updateQuery();
+    const current = anchor === walkthrough ? walkthrough : document.querySelector('.language-view:not([hidden])').querySelectorAll('.hero,.section')[index];
+    if (current && scrollY > 0) scrollBy(0, current.getBoundingClientRect().top - before);
+  }
 }
-document.documentElement.classList.add('js');
-controls.forEach(button => { button.disabled = false; button.addEventListener('click', () => selectLanguage(button.dataset.selectLanguage)); });
-selectLanguage('en');
+root.classList.add('js');
+controls.forEach(button => { button.disabled = false; button.addEventListener('click', () => selectLanguage(button.dataset.selectLanguage, true)); });
+themeButton.disabled = false;
+themeButton.addEventListener('click', () => selectTheme(dark() ? 'light' : 'dark', true));
+systemDark.addEventListener('change', () => selectTheme(selectedTheme, false));
+selectLanguage(selectedLanguage, false);
+selectTheme(selectedTheme, false);
 `;
 
 const pages = source.projects.map((project) => {
@@ -153,13 +202,13 @@ const pages = source.projects.map((project) => {
     html: `<!doctype html>
 <!-- Generated from content/project-case-studies.json. Edit the content source or generator. -->
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
-<title>${escape(project.title)} — Engineering introduction</title><meta name="description" content="${escape(project.card.summary)}"><style>${styles}${project.walkthrough ? walkthroughStyles : ""}</style></head>
+<title>${escape(project.title)} — Engineering introduction</title><meta name="description" content="${escape(project.en.lead)}"><style>${styles}${project.walkthrough ? walkthroughStyles : ""}</style></head>
 <body><a class="skip" href="#content">Skip to content / 跳至內容</a>
-<header><a class="back" href="${projectsHref}">← Projects / 返回專案</a><a href="${escape(project.id)}.html" download="${escape(project.id)}.html">Download HTML / 下載 HTML</a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>正體中文</button></div></header>
+<header><a class="back" data-back-home href="${projectsHref}">← Projects / 返回專案</a><a href="${escape(project.id)}.html" download="${escape(project.id)}.html">Download HTML / 下載 HTML</a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>正體中文</button><button type="button" data-theme-toggle aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button></div></header>
 <main id="content">${renderLanguage(project, "en")}\n${renderLanguage(project, "zh-TW")}${renderWalkthrough(project)}
 <details class="section"><summary><strong>Implementation references / 實作參考</strong></summary><p class="notice">Repository: ${escape(project.id)} · Source review: ${escape(source.inspectedOn)} / 原始碼巡查日期</p><ul class="source-list">${sources}</ul></details></main>
-<footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a href="${projectsHref}">Back to projects / 返回專案</a><noscript><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
-<script>${script}${project.walkthrough ? walkthroughScript : ""}</script></body></html>\n`,
+<footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a data-back-home href="${projectsHref}">Back to projects / 返回專案</a><noscript><style>.languages{display:none!important}[data-language][hidden],.walkthrough-panel[hidden]{display:block!important}</style><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
+<script>${script(project)}${project.walkthrough ? walkthroughScript : ""}</script></body></html>\n`,
   };
 });
 

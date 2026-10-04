@@ -20,7 +20,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true,  // Changed to true to avoid build errors
+    ignoreBuildErrors: false,
+    tsconfigPath: 'tsconfig.resume.json', // Type-check the exported routes and their imported production code.
   },
   images: { unoptimized: true },
 };

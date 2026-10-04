@@ -1,33 +1,27 @@
-import { Inter } from "next/font/google";
+import type { Metadata } from "next";
+import profile from "../../content/resume-profile.json";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import Header from "@/components/header";
+import "./resume-tokens.css";
+import "../../content/resume-layout.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "SSU-YUAN LIN (Blake) - Resume",
-  description: "Software engineer specializing in computer vision and 3D metrology",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://blakelin-lsy.github.io"),
+  title: `${profile.identity.name} — ${profile.identity.role}`,
+  description: profile.copy.en.metadataDescription,
+  alternates: { canonical: "/web-resume/" },
+  openGraph: {
+    type: "website",
+    title: `${profile.identity.name} — ${profile.identity.role}`,
+    description: profile.copy.en.metadataDescription,
+    url: "/web-resume/",
+    locale: "en_US",
+    alternateLocale: ["zh_TW"],
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en" suppressHydrationWarning><body suppressHydrationWarning>
+    {children}
+    <noscript><style>{`[data-js-control]{display:none!important}[data-resume-locale]{display:block!important}`}</style></noscript>
+  </body></html>;
 }

@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "evidenceReviewedOn": "2026-10-03",
+  "displayStatus": "Local review draft; owner representation and disclosure review pending",
+  "identity": {
+    "name": "Ssu-Yuan Lin (Blake)",
+    "shortName": "Blake Lin",
+    "zhName": "林思遠",
+    "role": "AI Software Engineer"
+  },
+  "contact": {
+    "email": "ssu.yuan.lin@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ssu-yuan-lin"
+  },
+  "entry": {
+    "id": "general-ai-software",
+    "proofIds": [
+      "dynasafe",
+      "metgauge"
+    ],
+    "projectIds": [
+      "study-atlas",
+      "transcribe-for-x"
+    ],
+    "moreProjectIds": [
+      "windowphase"
+    ]
+  },
+  "copy": {
+    "en": {
+      "lead": "I build ML pipelines, computer vision algorithms, and software that connects to physical systems.",
+      "context": "3+ years of professional engineering · M.S. in Physics",
+      "cv": "Download CV",
+      "contact": "Contact",
+      "save": "Save overview HTML",
+      "language": "Reading language",
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "menu": "Menu",
+      "skip": "Skip to content",
+      "nav": {
+        "projects": "Work",
+        "experience": "Experience",
+        "about": "About",
+        "contact": "Contact"
+      },
+      "proofHeading": "Selected professional work",
+      "proofIntro": "From training bottlenecks to systems on the factory floor.",
+      "proofDetails": "Result and measurement scope",
+      "careerLink": "See professional experience",
+      "workHeading": "Recent personal engineering",
+      "focus": "I am exploring research delivery that readers can inspect, and voice workflows that keep the speaker in control.",
+      "snapshot": "Source review: 3 Oct 2026. Historical examples carry their own dates.",
+      "moreWork": "More work",
+      "experienceHeading": "Professional experience",
+      "experienceIntro": "Four engineering roles. Research and ongoing learning are listed separately.",
+      "careerDetail": "Work details",
+      "researchHeading": "Research and ongoing learning",
+      "aboutHeading": "About",
+      "about": "My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.",
+      "skillsHeading": "Skills in context",
+      "educationHeading": "Education",
+      "personalHeading": "Beyond engineering",
+      "personal": "I enjoy trail running and exploring nature.",
+      "contactHeading": "Let’s talk about the work.",
+      "contactLead": "For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.",
+      "linkedin": "LinkedIn",
+      "cvOther": "正體中文 CV",
+      "footer": "AI Software Engineer · Professional work and personal engineering",
+      "saveScope": "The overview HTML includes both languages and reading controls. Case pages and CVs have separate downloads.",
+      "noJs": "JavaScript is off; both language versions are available below.",
+      "metadataDescription": "AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.",
+      "scopeNote": "Employer results are documented in the career record. Original measurement protocols are not available for independent verification here."
+    },
+    "zh-TW": {
+      "lead": "我的工作涵蓋 ML pipelines、電腦視覺演算法與硬體整合。",
+      "context": "3 年以上專業工程經驗 · 物理學碩士",
+      "cv": "下載 CV",
+      "contact": "聯絡我",
+      "save": "保存概要 HTML",
+      "language": "閱讀語言",
+      "themeDark": "切換深色",
+      "themeLight": "切換淺色",
+      "menu": "選單",
+      "skip": "跳至內容",
+      "nav": {
+        "projects": "作品",
+        "experience": "經歷",
+        "about": "關於我",
+        "contact": "聯絡"
+      },
+      "proofHeading": "精選職業成果",
+      "proofIntro": "從訓練瓶頸，到工廠現場的系統整合。",
+      "proofDetails": "成果與量測範圍",
+      "careerLink": "查看專業經歷",
+      "workHeading": "近期個人工程",
+      "focus": "我近期探索可由讀者檢查的研究交付，以及讓說話者保有決定權的語音流程。",
+      "snapshot": "來源檢視截至 2026-10-03；歷史案例另標當時日期。",
+      "moreWork": "更多作品",
+      "experienceHeading": "專業經歷",
+      "experienceIntro": "四份工程職務；研究與持續學習另行列出。",
+      "careerDetail": "工作細節",
+      "researchHeading": "研究與持續學習",
+      "aboutHeading": "關於我",
+      "about": "物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。",
+      "skillsHeading": "能力與實例",
+      "educationHeading": "學歷",
+      "personalHeading": "工程之外",
+      "personal": "我喜歡越野跑與探索自然。",
+      "contactHeading": "聊聊工作與問題。",
+      "contactLead": "AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。",
+      "linkedin": "LinkedIn",
+      "cvOther": "English CV",
+      "footer": "AI Software Engineer · 職業成果與個人工程",
+      "saveScope": "概要 HTML 包含兩種語言與閱讀控制；專案介紹和 CV 各自提供下載。",
+      "noJs": "JavaScript 關閉時，下方保留兩種語言的完整內容。",
+      "metadataDescription": "AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。",
+      "scopeNote": "雇主成果依職涯紀錄呈現；此處沒有可供獨立核實的原始量測 protocol。"
+    }
+  },
+  "professional": [
+    {
+      "id": "dynasafe",
+      "employer": "DynaSafe Corp.",
+      "title": "Senior AI Engineer",
+      "start": "2026-01",
+      "end": "2026-04",
+      "sourceIds": [
+        "MAT-CAREER"
+      ],
+      "metric": {
+        "value": 10,
+        "type": "training-speed-factor",
+        "en": "{value}× model-training speed",
+        "zh-TW": "模型訓練速度提升 {value} 倍"
+      },
+      "en": {
+        "proofTitle": "ML pipeline performance",
+        "summary": "Profiled a dataloader bottleneck and rebuilt the training data pipeline.",
+        "scope": "Model training · Career record",
+        "details": [
+          "Built and adapted a Nvidia Morpheus network-anomaly workflow using real PCAP input.",
+          "Ran and adapted PhysicsNeMo training workflows for an OpenFOAM CFD use case."
+        ],
+        "boundary": "The metric concerns model training. The original baseline and measurement protocol remain unverified."
+      },
+      "zh-TW": {
+        "proofTitle": "ML pipeline 效能",
+        "summary": "分析 dataloader bottleneck，追查根因並重建訓練資料 pipeline。",
+        "scope": "模型訓練 · 職涯紀錄",
+        "details": [
+          "使用真實 PCAP 輸入，建立並調整 Nvidia Morpheus 網路異常偵測 workflow。",
+          "針對 OpenFOAM CFD use case，執行與調整 PhysicsNeMo 訓練 workflow。"
+        ],
+        "boundary": "指標限模型訓練；原始 baseline 與量測 protocol 尚未核實。"
+      }
+    },
+    {
+      "id": "metgauge",
+      "employer": "MetGauge Co., Ltd.",
+      "title": "Software Engineer",
+      "start": "2023-09",
+      "end": "2024-08",
+      "sourceIds": [
+        "MAT-CAREER"
+      ],
+      "system": {
+        "cameraPairs": 12
+      },
+      "en": {
+        "proofTitle": "Hardware and software integration",
+        "summary": "Led system design, hardware integration, and boundary testing for a {cameraPairs}-stereo-camera line.",
+        "result": "MVP → factory-ready production testing",
+        "scope": "Factory-ready testing · Career record",
+        "details": [
+          "Advanced a C++/Python 3D-measurement MVP to factory-ready production testing.",
+          "Defined test specifications and analyzed results to guide cross-functional hardware tuning."
+        ],
+        "boundary": "The result is factory-ready production testing. Full product launch and sustained production operation are not established."
+      },
+      "zh-TW": {
+        "proofTitle": "軟硬體整合",
+        "summary": "推進 {cameraPairs} 組立體攝影機產線的系統設計、硬體整合與邊界測試。",
+        "result": "MVP → factory-ready production testing",
+        "scope": "工廠就緒測試 · 職涯紀錄",
+        "details": [
+          "將 C++／Python 3D 量測 MVP 推進至 factory-ready production testing。",
+          "定義測試規格、分析成果，支援跨部門硬體調校。"
+        ],
+        "boundary": "成果限 factory-ready production testing；未確立完整產品上市或長期 production operation。"
+      }
+    },
+    {
+      "id": "utechzone",
+      "employer": "UTECHZONE Corp.",
+      "title": "Algorithm Engineer",
+      "start": "2021-06",
+      "end": "2022-03",
+      "sourceIds": [
+        "MAT-CAREER"
+      ],
+      "metric": {
+        "value": 40,
+        "type": "aoi-cycle-time-reduction-percent",
+        "en": "{value}% lower AOI cycle time",
+        "zh-TW": "AOI cycle time 降低 {value}%"
+      },
+      "en": {
+        "summary": "Developed C# automated optical inspection algorithms for manufacturing lines.",
+        "details": [
+          "Mentored two engineers and worked with a cross-functional team of 10+ on integration milestones."
+        ],
+        "boundary": "The metric concerns cycle time. Timing definition, baseline, and attribution remain unspecified.",
+        "proofTitle": "Optical inspection",
+        "scope": "Manufacturing-line inspection · Career record"
+      },
+      "zh-TW": {
+        "summary": "開發 C# 自動光學檢測演算法，應用於製造產線。",
+        "details": [
+          "指導兩位工程師，並與 10 人以上跨部門團隊共同完成整合里程碑。"
+        ],
+        "boundary": "指標為 cycle time；計時定義、baseline 與歸因仍未明確。",
+        "proofTitle": "光學檢測",
+        "scope": "製造產線檢測 · 職涯紀錄"
+      }
+    },
+    {
+      "id": "lips",
+      "employer": "LIPS Corporation",
+      "title": "Software Engineer, Algorithm Development",
+      "start": "2019-07",
+      "end": "2020-04",
+      "sourceIds": [
+        "MAT-CAREER"
+      ],
+      "metric": {
+        "value": 66,
+        "type": "measurement-accuracy-improvement-percent",
+        "en": "{value}% improvement in measurement accuracy",
+        "zh-TW": "量測精度提升 {value}%"
+      },
+      "en": {
+        "summary": "Improved real-time stereo-camera 3D measurement through calibration and algorithm redesign.",
+        "details": [
+          "Calibrated Intel RealSense D415/D435 camera systems."
+        ],
+        "boundary": "The metric concerns measurement accuracy. Its error definition and evaluation protocol remain unspecified.",
+        "proofTitle": "Stereo 3D measurement",
+        "scope": "Measurement accuracy · Career record"
+      },
+      "zh-TW": {
+        "summary": "透過相機校正與演算法重新設計，改善即時立體攝影機 3D 量測。",
+        "details": [
+          "執行 Intel RealSense D415／D435 相機系統校正。"
+        ],
+        "boundary": "指標為量測精度；誤差定義與 evaluation protocol 仍未明確。",
+        "proofTitle": "立體視覺 3D 量測",
+        "scope": "量測精度 · 職涯紀錄"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "study-atlas",
+      "sourceIds": [
+        "MAT-ATLAS",
+        "MAT-SHOWCASE"
+      ],
+      "en": {
+        "summary": "A research topic needs both a short briefing and a deeper explanation. I built bilingual reading routes with a source trail and delivery checks.",
+        "evidence": "Personal project · Historical walkthrough, 13 Sep 2026",
+        "boundary": "6.0 → 4.6 is calculated TALK budget, not measured human reading time or wall-clock acceleration.",
+        "action": "Explore the budget-gate walkthrough"
+      },
+      "zh-TW": {
+        "summary": "研究主題需要短 briefing，也需要深入說明。我建立雙語閱讀路線、來源線索與交付檢查。",
+        "evidence": "個人專案 · 2026-09-13 歷史流程展示",
+        "boundary": "6.0 → 4.6 是 calculated TALK budget，不是真人閱讀時間或 wall-clock 加速。",
+        "action": "操作 budget-gate 展示"
+      }
+    },
+    {
+      "id": "transcribe-for-x",
+      "sourceIds": [
+        "MAT-TFX",
+        "MAT-SHOWCASE"
+      ],
+      "en": {
+        "summary": "An Android prototype saves and verifies audio before local recognition, keeps the raw transcript separate from cleanup suggestions, and removes only user-approved spans.",
+        "evidence": "Personal project · Implemented Android prototype path",
+        "boundary": "Mixed-language quality and device / real-use acceptance require separate evidence.",
+        "action": "Read the source-to-text workflow"
+      },
+      "zh-TW": {
+        "summary": "Android prototype 先保存並核對錄音，再做本機辨識；原始逐字稿與 cleanup 建議分開，只移除使用者接受的文字片段。",
+        "evidence": "個人專案 · 已實作的 Android prototype 路徑",
+        "boundary": "混合語音品質、裝置與 real-use acceptance 需要各自的證據。",
+        "action": "查看錄音到文字的流程"
+      }
+    },
+    {
+      "id": "windowphase",
+      "sourceIds": [
+        "MAT-WINDOWPHASE",
+        "MAT-SHOWCASE"
+      ],
+      "en": {
+        "summary": "Inspect a workday schedule before a live clock-in.",
+        "evidence": "Personal project · Calculated planner",
+        "boundary": "Calculated schedules do not establish actual quota benefit or cross-platform parity.",
+        "action": "Read the planner case"
+      },
+      "zh-TW": {
+        "summary": "在 live clock-in 前先檢查工作日排程。",
+        "evidence": "個人專案 · 計算型 planner",
+        "boundary": "計算排程不等於實際 quota 效益或跨平台 parity。",
+        "action": "查看 planner 介紹"
+      }
+    }
+  ],
+  "researchLearning": [
+    {
+      "id": "ncu-research",
+      "start": "2018-09",
+      "end": "2019-01",
+      "sourceIds": [
+        "MAT-CAREER"
+      ],
+      "en": {
+        "title": "Research Assistant · National Central University",
+        "text": "Analyzed high-speed microscopy data and developed particle-tracking workflows for bacterial flagellar motor research."
+      },
+      "zh-TW": {
+        "title": "研究助理 · 國立中央大學",
+        "text": "分析高速顯微影像資料，建立細菌鞭毛馬達研究的粒子追蹤流程。"
+      }
+    },
+    {
+      "id": "peer-learning",
+      "start": "2021-01",
+      "end": "ongoing",
+      "sourceIds": [
+        "MAT-CAREER"
+      ],
+      "en": {
+        "title": "Weekly AI-paper study group",
+        "text": "Ongoing peer learning with former LIPS colleagues, covering ML theory and emerging research."
+      },
+      "zh-TW": {
+        "title": "每週 AI 論文讀書會",
+        "text": "與前 LIPS 同事持續進行同儕學習，討論 ML 理論與新研究。"
+      }
+    }
+  ],
+  "education": [
+    {
+      "id": "ms",
+      "start": "2016",
+      "end": "2018",
+      "en": {
+        "title": "M.S. in Physics",
+        "institution": "National Central University"
+      },
+      "zh-TW": {
+        "title": "物理學碩士",
+        "institution": "國立中央大學"
+      }
+    },
+    {
+      "id": "bs",
+      "start": "2012",
+      "end": "2016",
+      "en": {
+        "title": "B.S. in Physics",
+        "institution": "National Central University"
+      },
+      "zh-TW": {
+        "title": "物理學學士",
+        "institution": "國立中央大學"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "label": "Python · ML pipelines",
+      "proofId": "dynasafe"
+    },
+    {
+      "label": "C++ · Stereo vision · Test design",
+      "proofId": "metgauge"
+    },
+    {
+      "label": "C# · AOI",
+      "proofId": "utechzone"
+    },
+    {
+      "label": "Workflow gates · Inspectable artifacts",
+      "projectId": "study-atlas"
+    }
+  ]
+}

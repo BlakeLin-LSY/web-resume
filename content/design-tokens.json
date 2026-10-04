@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "styleProposal": "B",
+  "status": "B selected by owner on 2026-10-04 for the local resume redesign; publication remains unauthorized",
+  "light": {
+    "background": "#F6F3EC",
+    "panel": "#FFFFFF",
+    "text": "#242824",
+    "muted": "#5C645D",
+    "accent": "#285C4D",
+    "border": "#BCC4B9",
+    "tint": "#E7EDE4",
+    "actionText": "#FFFFFF"
+  },
+  "dark": {
+    "background": "#171D1A",
+    "panel": "#222B25",
+    "text": "#F2F0E9",
+    "muted": "#B5C0B8",
+    "accent": "#A8D2B4",
+    "border": "#64776A",
+    "tint": "#283B30",
+    "actionText": "#17251A"
+  },
+  "fontFamily": "system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Noto Sans TC\",\"Microsoft JhengHei\",sans-serif",
+  "contentWidth": "70rem",
+  "readingWidth": "44rem"
+}

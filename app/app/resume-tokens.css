@@ -1,0 +1,5 @@
+/* Generated from content/design-tokens.json. */
+:root{--resume-background:#F6F3EC;--resume-panel:#FFFFFF;--resume-text:#242824;--resume-muted:#5C645D;--resume-accent:#285C4D;--resume-border:#BCC4B9;--resume-tint:#E7EDE4;--resume-action-text:#FFFFFF;--resume-font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;--resume-content-width:70rem;--resume-reading-width:44rem;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root:not([data-reading-theme=light]){--resume-background:#171D1A;--resume-panel:#222B25;--resume-text:#F2F0E9;--resume-muted:#B5C0B8;--resume-accent:#A8D2B4;--resume-border:#64776A;--resume-tint:#283B30;--resume-action-text:#17251A}}
+:root[data-reading-theme=dark]{--resume-background:#171D1A;--resume-panel:#222B25;--resume-text:#F2F0E9;--resume-muted:#B5C0B8;--resume-accent:#A8D2B4;--resume-border:#64776A;--resume-tint:#283B30;--resume-action-text:#17251A}
+:root[data-reading-theme=light]{--resume-background:#F6F3EC;--resume-panel:#FFFFFF;--resume-text:#242824;--resume-muted:#5C645D;--resume-accent:#285C4D;--resume-border:#BCC4B9;--resume-tint:#E7EDE4;--resume-action-text:#FFFFFF}
