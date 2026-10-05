@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "candidate",
+  "edition": "2026-10-05",
+  "professionalDetailIndices": {"dynasafe": [0, 1], "metgauge": [1], "utechzone": [0], "lips": [0]},
+  "projectIds": ["study-atlas", "transcribe-for-x"],
+  "en": {
+    "experience": "Professional experience",
+    "projects": "Recent personal projects",
+    "skills": "Selected skills",
+    "education": "Education & research",
+    "skillsLines": ["Python · C++ · C# · ML pipelines · Computer vision", "Profiling · Stereo-camera calibration · Hardware integration · Test design"],
+    "metricsNote": "Professional metrics are reported in the career record; original measurement protocols are not included.",
+    "candidateLabel": "Local review candidate",
+    "atlas": "Built bilingual research-reading routes with traceable sources, explicit inference boundaries and calculated delivery-budget checks. A preserved study provides inspectable reader cards and a historical rejection-to-revision walkthrough.",
+    "tfx": "Built an Android speech-to-text prototype that verifies saved audio before local recognition, preserves the original transcript and applies only user-approved removals. Device and mixed-language quality remain to be tested."
+  },
+  "zh-TW": {
+    "experience": "專業經歷",
+    "projects": "近期個人作品",
+    "skills": "核心技能",
+    "education": "學歷與研究",
+    "skillsLines": ["Python · C++ · C# · ML pipeline · 電腦視覺", "效能分析 · 立體攝影機校正 · 軟硬體整合 · 測試設計"],
+    "metricsNote": "職業成果指標依職涯紀錄呈現；未附原始量測方法。",
+    "candidateLabel": "本機待審候選稿",
+    "atlas": "建立雙語研究閱讀路線，保留來源、推論界線與計算式交付預算檢查。已有保存的研究卡片，以及從預算拒絕到修訂的歷史展示可供檢查。",
+    "tfx": "建立 Android 語音轉文字原型：先驗證保存的錄音，再進行本機辨識；保留原始逐字稿，只套用使用者接受的刪除建議。裝置表現與混合語音品質仍待測試。"
+  }
+}
