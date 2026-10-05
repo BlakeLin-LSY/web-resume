@@ -3,7 +3,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readingTokenCss } from "./lib/resume-source.mjs";
 
-import { previewStyles, renderReaderExcerpt } from "./lib/case-previews.mjs";
+import { previewStyles, renderReaderExcerpt, workflowStyles, renderWorkflowPreview, workflowScript } from "./lib/case-previews.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const source = JSON.parse(await readFile(resolve(root, "content/project-case-studies.json"), "utf8"));
@@ -40,7 +40,7 @@ const renderLanguage = (project, language) => {
 <div class="hero"><p class="eyebrow">${language === "en" ? "Personal project · Engineering case study" : "個人工程專案 · 專案介紹"}</p>
 <h1>${escape(project.title)}</h1><p class="subtitle">${escape(content.subtitle)}</p><p class="lead">${escape(content.lead)}</p>
 <ul class="tags">${project.card.tags.map((tag) => `<li>${escape(tag)}</li>`).join("")}</ul></div>
-${renderReaderExcerpt(project, language)}${content.sections.map(renderSection).join("\n")}
+${renderReaderExcerpt(project, language)}${renderWorkflowPreview(project, language)}${content.sections.map(renderSection).join("\n")}
 </article>`;
 };
 
@@ -204,13 +204,13 @@ const pages = source.projects.map((project) => {
     html: `<!doctype html>
 <!-- Generated from content/project-case-studies.json. Edit the content source or generator. -->
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
-<title>${escape(project.title)} — Engineering introduction</title><meta name="description" content="${escape(project.en.lead)}"><style>${styles}${project.readerExcerpt ? previewStyles : ""}${project.walkthrough ? walkthroughStyles : ""}</style></head>
+<title>${escape(project.title)} — Engineering introduction</title><meta name="description" content="${escape(project.en.lead)}"><style>${styles}${project.workflowPreview ? workflowStyles : ""}${project.readerExcerpt ? previewStyles : ""}${project.walkthrough ? walkthroughStyles : ""}</style></head>
 <body><a class="skip" href="#content">Skip to content / 跳至內容</a>
 <header><a class="back" data-back-home href="${projectsHref}">← Projects / 返回專案</a><a href="${escape(project.id)}.html" download="${escape(project.id)}.html">Download HTML / 下載 HTML</a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>正體中文</button><button type="button" data-theme-toggle aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button></div></header>
 <main id="content">${renderLanguage(project, "en")}\n${renderLanguage(project, "zh-TW")}${renderWalkthrough(project)}
 <details class="section"><summary><strong>Implementation references / 實作參考</strong></summary><p class="notice">Repository: ${escape(project.id)} · Source review: ${escape(source.inspectedOn)} / 原始碼巡查日期</p><ul class="source-list">${sources}</ul></details></main>
 <footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a data-back-home href="${projectsHref}">Back to projects / 返回專案</a><noscript><style>.languages{display:none!important}[data-language][hidden],.walkthrough-panel[hidden]{display:block!important}</style><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
-<script>${script(project)}${project.walkthrough ? walkthroughScript : ""}</script></body></html>\n`,
+<script>${script(project)}${project.workflowPreview ? workflowScript : ""}${project.walkthrough ? walkthroughScript : ""}</script></body></html>\n`,
   };
 });
 

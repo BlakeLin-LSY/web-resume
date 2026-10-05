@@ -437,37 +437,68 @@
       },
       "zh-TW": {
         "subtitle": "把口述想法變成作者仍能掌握的文字。",
-        "lead": "我希望能說出未成形的想法，也保有最後措辭的決定權。因此，錄音需要留下來，辨識、cleanup 與編輯也要各自清楚。",
+        "lead": "我希望能說出未成形的想法，也保有最後措辭的決定權。因此，先留下錄音，再把辨識、清理建議與編輯分開。",
         "sections": [
           {
             "heading": "說話者的問題",
             "paragraphs": [
               "未成形的想法可能包含語助詞、重複與自我修正。辨識可能聽錯，而過度的 cleanup 也可能刪掉說話者原本想保留的意思。",
-              "Transcribe-for-X 保留追回 SourceAudio 的路徑，分開呈現 RawTranscript 與 cleanup suggestions，讓使用者決定最後措辭。目前實作是以本機辨識為核心的 Android Voice-to-Words foundation。"
+              "Transcribe-for-X 保留原始錄音，分開呈現原始逐字稿與清理建議，讓使用者決定最後措辭。目前是採用本機語音辨識的 Android 原型。"
             ],
             "flow": [
               "錄音",
               "保存與驗證",
-              "Local ASR",
-              "核准 cleanup",
-              "編輯與 Copy"
+              "本機語音辨識",
+              "決定是否接受清理",
+              "編輯與複製"
             ]
           },
           {
             "heading": "我的關鍵選擇",
             "paragraphs": [
-              "我把 verified storage 放在辨識之前。SourceRepository 檢查 capture evidence、sync 並保存錄音，再讀回比對大小與 SHA-256，最後記錄 manifest。AsrGateway 必須先 resolve verified source，才能呼叫本機 NativeWhisper engine。",
-              "Cleanup 也採保守路徑：TranscriptCleanup 提出 removal suggestions，使用者逐項接受或拒絕，projection 再檢查只移除已接受的 spans。這增加儲存、失敗處理與 review 工作，也讓來源和說話者的決定維持可見。"
+              "我把錄音保存與驗證放在辨識之前。SourceRepository 檢查錄音是否完整、同步寫入檔案，再讀回比對大小與 SHA-256，留下檔案紀錄。AsrGateway 必須取得已驗證的來源，才能呼叫本機 NativeWhisper 引擎。",
+              "文字清理採保守設計：TranscriptCleanup 提出刪除建議，使用者逐項接受或拒絕，再檢查輸出只移除了已接受的片段。這增加了儲存、失敗處理與確認步驟，也保留了來源與使用者的決定。"
             ]
           },
           {
             "heading": "目前可看見的結果",
             "paragraphs": [
-              "Android 實作已把錄音與 verified source storage 接到本機 ASR、逐項 cleanup、可編輯的 final text 與明確 Copy 動作。專案已有具體的產品路徑，原始辨識結果和使用者核准的改動維持分開。",
-              "目前成果是一條已實作的 Android 路徑。正體中文／English 混合語音品質、microphone 行為、recovery 與私密 real-use acceptance，仍需要各自的證據。"
+              "Android 原型已串接錄音保存、本機辨識、逐項清理建議、文字編輯與複製；原始辨識結果與使用者接受的修改分開保留。",
+              "正體中文／English 混合語音品質、麥克風行為、失敗復原與實際使用體驗仍待測試。"
             ]
           }
         ]
+      },
+      "workflowPreview": {
+        "kind": "illustrative",
+        "en": {
+          "heading": "Keep the source. Choose the edit.",
+          "caption": "Interactive illustration with invented text, based on the implemented cleanup boundary. This is not an Android screenshot, audio transcription or device test.",
+          "sourceLabel": "1 · Recording retained",
+          "sourceText": "Audio is saved and verified before recognition starts.",
+          "rawLabel": "2 · Original transcript",
+          "raw": "Um, let's review the API tomorrow.",
+          "removal": "Um, ",
+          "accept": "Accept removal of “Um, ”",
+          "outputLabel": "3 · Text after your decision",
+          "noJs": "Example after accepting the removal:",
+          "expected": "let's review the API tomorrow.",
+          "note": "Only the selected filler is removed. The original text above stays intact."
+        },
+        "zh-TW": {
+          "heading": "留下原始內容，自己決定刪改。",
+          "caption": "使用虛構文字的互動示意，依照已實作的清理界線呈現。這不是 Android 截圖、錄音辨識結果或裝置測試。",
+          "sourceLabel": "1 · 保留錄音",
+          "sourceText": "錄音保存並驗證後，才開始辨識。",
+          "rawLabel": "2 · 原始逐字稿",
+          "raw": "嗯，我們明天討論 API。",
+          "removal": "嗯，",
+          "accept": "接受移除「嗯，」",
+          "outputLabel": "3 · 依你的決定產生文字",
+          "noJs": "接受刪除後的示例：",
+          "expected": "我們明天討論 API。",
+          "note": "只移除選定的語助詞；上方原始逐字稿維持不變。"
+        }
       }
     },
     {

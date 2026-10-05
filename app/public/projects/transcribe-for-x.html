@@ -12,6 +12,8 @@
 
 @media print{:root{color-scheme:light!important;--resume-background:#fff!important;--resume-panel:#fff!important;--resume-text:#242824!important;--resume-muted:#5C645D!important;--resume-accent:#285C4D!important;--resume-border:#BCC4B9!important;--resume-tint:#E7EDE4!important}.languages,header a[download],.walkthrough-steps,.walkthrough-navigation{display:none!important}body{font-size:11pt}header,main,footer{width:100%}.hero{padding:20px 0}.section{padding:18px;break-inside:avoid}.walkthrough-panel[hidden]{display:block!important}.walkthrough-artifact::details-content{content-visibility:visible!important;height:auto!important}}
 
+
+.workflow-preview{border-top:3px solid var(--blue)}.workflow-preview>p{max-width:70ch}.workflow-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.workflow-step{padding:18px;background:var(--bg);border:1px solid var(--border);border-radius:8px;min-width:0}.workflow-step h3{font-size:.9rem;color:var(--blue)}.workflow-step blockquote{margin:0;overflow-wrap:anywhere}.workflow-choice{display:flex;align-items:center;gap:10px;min-height:44px;margin-top:18px;cursor:pointer}.workflow-choice input{width:20px;height:20px;accent-color:var(--blue)}.workflow-output{display:block;min-height:3.5em;overflow-wrap:anywhere}.workflow-note{font-size:.85rem}@media(max-width:700px){.workflow-columns{grid-template-columns:1fr}}@media print{.workflow-choice{display:none}.workflow-columns{display:block}.workflow-step{margin:8px 0;break-inside:avoid}}
 </style></head>
 <body><a class="skip" href="#content">Skip to content / 跳至內容</a>
 <header><a class="back" data-back-home href="../resume-overview.html#projects">← Projects / 返回專案</a><a href="transcribe-for-x.html" download="transcribe-for-x.html">Download HTML / 下載 HTML</a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>正體中文</button><button type="button" data-theme-toggle aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button></div></header>
@@ -19,7 +21,7 @@
 <div class="hero"><p class="eyebrow">Personal project · Engineering case study</p>
 <h1>Transcribe-for-X</h1><p class="subtitle">From a spoken thought to words the speaker controls.</p><p class="lead">I wanted to speak an unfinished thought and keep ownership of the final wording. That meant preserving the recording and making recognition, cleanup, and editing separate steps.</p>
 <ul class="tags"><li>Android / Java</li><li>Local ASR</li><li>Data integrity</li></ul></div>
-<section class="section"><h2>The speaker&#39;s problem</h2>
+<section class="section workflow-preview" data-workflow-preview data-removal-length="4"><h2>Keep the source. Choose the edit.</h2><p>Interactive illustration with invented text, based on the implemented cleanup boundary. This is not an Android screenshot, audio transcription or device test.</p><div class="workflow-columns"><div class="workflow-step"><h3>1 · Recording retained</h3><p>Audio is saved and verified before recognition starts.</p></div><div class="workflow-step"><h3>2 · Original transcript</h3><blockquote data-workflow-raw>Um, let&#39;s review the API tomorrow.</blockquote></div><div class="workflow-step"><h3>3 · Text after your decision</h3><output class="workflow-output" data-workflow-output aria-live="polite">Um, let&#39;s review the API tomorrow.</output></div></div><label class="workflow-choice"><input type="checkbox" data-workflow-accept disabled>Accept removal of “Um, ”</label><p class="workflow-note">Only the selected filler is removed. The original text above stays intact.</p><noscript><style>.workflow-choice{display:none}</style><p>Example after accepting the removal: let&#39;s review the API tomorrow.</p></noscript></section><section class="section"><h2>The speaker&#39;s problem</h2>
 <p>An unfinished thought can contain fillers, repetitions, and self-corrections. Recognition may get words wrong, while an aggressive cleanup can erase something the speaker meant to keep.</p>
 <p>Transcribe-for-X keeps a path back to SourceAudio, presents RawTranscript separately from cleanup suggestions, and leaves the final wording with the user. Its current implementation is an Android Voice-to-Words foundation with local recognition.</p>
 <ol class="flow"><li><span>01</span>Record</li><li><span>02</span>Save &amp; verify</li><li><span>03</span>Local ASR</li><li><span>04</span>Approve cleanup</li><li><span>05</span>Edit &amp; copy</li></ol>
@@ -40,23 +42,23 @@
 </article>
 <article class="language-view" lang="zh-TW" data-language="zh-TW">
 <div class="hero"><p class="eyebrow">個人工程專案 · 專案介紹</p>
-<h1>Transcribe-for-X</h1><p class="subtitle">把口述想法變成作者仍能掌握的文字。</p><p class="lead">我希望能說出未成形的想法，也保有最後措辭的決定權。因此，錄音需要留下來，辨識、cleanup 與編輯也要各自清楚。</p>
+<h1>Transcribe-for-X</h1><p class="subtitle">把口述想法變成作者仍能掌握的文字。</p><p class="lead">我希望能說出未成形的想法，也保有最後措辭的決定權。因此，先留下錄音，再把辨識、清理建議與編輯分開。</p>
 <ul class="tags"><li>Android / Java</li><li>Local ASR</li><li>Data integrity</li></ul></div>
-<section class="section"><h2>說話者的問題</h2>
+<section class="section workflow-preview" data-workflow-preview data-removal-length="2"><h2>留下原始內容，自己決定刪改。</h2><p>使用虛構文字的互動示意，依照已實作的清理界線呈現。這不是 Android 截圖、錄音辨識結果或裝置測試。</p><div class="workflow-columns"><div class="workflow-step"><h3>1 · 保留錄音</h3><p>錄音保存並驗證後，才開始辨識。</p></div><div class="workflow-step"><h3>2 · 原始逐字稿</h3><blockquote data-workflow-raw>嗯，我們明天討論 API。</blockquote></div><div class="workflow-step"><h3>3 · 依你的決定產生文字</h3><output class="workflow-output" data-workflow-output aria-live="polite">嗯，我們明天討論 API。</output></div></div><label class="workflow-choice"><input type="checkbox" data-workflow-accept disabled>接受移除「嗯，」</label><p class="workflow-note">只移除選定的語助詞；上方原始逐字稿維持不變。</p><noscript><style>.workflow-choice{display:none}</style><p>接受刪除後的示例： 我們明天討論 API。</p></noscript></section><section class="section"><h2>說話者的問題</h2>
 <p>未成形的想法可能包含語助詞、重複與自我修正。辨識可能聽錯，而過度的 cleanup 也可能刪掉說話者原本想保留的意思。</p>
-<p>Transcribe-for-X 保留追回 SourceAudio 的路徑，分開呈現 RawTranscript 與 cleanup suggestions，讓使用者決定最後措辭。目前實作是以本機辨識為核心的 Android Voice-to-Words foundation。</p>
-<ol class="flow"><li><span>01</span>錄音</li><li><span>02</span>保存與驗證</li><li><span>03</span>Local ASR</li><li><span>04</span>核准 cleanup</li><li><span>05</span>編輯與 Copy</li></ol>
+<p>Transcribe-for-X 保留原始錄音，分開呈現原始逐字稿與清理建議，讓使用者決定最後措辭。目前是採用本機語音辨識的 Android 原型。</p>
+<ol class="flow"><li><span>01</span>錄音</li><li><span>02</span>保存與驗證</li><li><span>03</span>本機語音辨識</li><li><span>04</span>決定是否接受清理</li><li><span>05</span>編輯與複製</li></ol>
 
 </section>
 <section class="section"><h2>我的關鍵選擇</h2>
-<p>我把 verified storage 放在辨識之前。SourceRepository 檢查 capture evidence、sync 並保存錄音，再讀回比對大小與 SHA-256，最後記錄 manifest。AsrGateway 必須先 resolve verified source，才能呼叫本機 NativeWhisper engine。</p>
-<p>Cleanup 也採保守路徑：TranscriptCleanup 提出 removal suggestions，使用者逐項接受或拒絕，projection 再檢查只移除已接受的 spans。這增加儲存、失敗處理與 review 工作，也讓來源和說話者的決定維持可見。</p>
+<p>我把錄音保存與驗證放在辨識之前。SourceRepository 檢查錄音是否完整、同步寫入檔案，再讀回比對大小與 SHA-256，留下檔案紀錄。AsrGateway 必須取得已驗證的來源，才能呼叫本機 NativeWhisper 引擎。</p>
+<p>文字清理採保守設計：TranscriptCleanup 提出刪除建議，使用者逐項接受或拒絕，再檢查輸出只移除了已接受的片段。這增加了儲存、失敗處理與確認步驟，也保留了來源與使用者的決定。</p>
 
 
 </section>
 <section class="section"><h2>目前可看見的結果</h2>
-<p>Android 實作已把錄音與 verified source storage 接到本機 ASR、逐項 cleanup、可編輯的 final text 與明確 Copy 動作。專案已有具體的產品路徑，原始辨識結果和使用者核准的改動維持分開。</p>
-<p>目前成果是一條已實作的 Android 路徑。正體中文／English 混合語音品質、microphone 行為、recovery 與私密 real-use acceptance，仍需要各自的證據。</p>
+<p>Android 原型已串接錄音保存、本機辨識、逐項清理建議、文字編輯與複製；原始辨識結果與使用者接受的修改分開保留。</p>
+<p>正體中文／English 混合語音品質、麥克風行為、失敗復原與實際使用體驗仍待測試。</p>
 
 
 </section>
@@ -67,7 +69,7 @@
 <li><code>app/src/main/java/dev/trivialideas/transcribeforx/TranscriptCleanup.java:50</code><span class="source-role">Conservative cleanup suggestions</span></li></ul></details></main>
 <footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a data-back-home href="../resume-overview.html#projects">Back to projects / 返回專案</a><noscript><style>.languages{display:none!important}[data-language][hidden],.walkthrough-panel[hidden]{display:block!important}</style><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
 <script>
-const metadata = {"en":"I wanted to speak an unfinished thought and keep ownership of the final wording. That meant preserving the recording and making recognition, cleanup, and editing separate steps.","zh-TW":"我希望能說出未成形的想法，也保有最後措辭的決定權。因此，錄音需要留下來，辨識、cleanup 與編輯也要各自清楚。"};
+const metadata = {"en":"I wanted to speak an unfinished thought and keep ownership of the final wording. That meant preserving the recording and making recognition, cleanup, and editing separate steps.","zh-TW":"我希望能說出未成形的想法，也保有最後措辭的決定權。因此，先留下錄音，再把辨識、清理建議與編輯分開。"};
 const root = document.documentElement;
 const controls = document.querySelectorAll('[data-select-language]');
 const views = document.querySelectorAll('[data-language]');
@@ -121,4 +123,16 @@ themeButton.addEventListener('click', () => selectTheme(dark() ? 'light' : 'dark
 systemDark.addEventListener('change', () => selectTheme(selectedTheme, false));
 selectLanguage(selectedLanguage, false);
 selectTheme(selectedTheme, false);
+
+const workflowViews = document.querySelectorAll('[data-workflow-preview]');
+workflowViews.forEach(view => {
+  const control = view.querySelector('[data-workflow-accept]'); control.disabled = false;
+  control.addEventListener('change', () => {
+    workflowViews.forEach(item => {
+      const raw = item.querySelector('[data-workflow-raw]').textContent;
+      item.querySelector('[data-workflow-accept]').checked = control.checked;
+      item.querySelector('[data-workflow-output]').textContent = control.checked ? raw.slice(Number(item.dataset.removalLength)) : raw;
+    });
+  });
+});
 </script></body></html>
