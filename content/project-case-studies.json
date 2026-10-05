@@ -73,9 +73,8 @@
           {
             "heading": "What it produces today",
             "paragraphs": [
-              "Existing study outputs include English and Traditional Chinese reading files for T1, T5, and T30, plus HTML reader pages with language and depth controls. The Semantic IR product tour provides a concrete local artifact showing the path from authored input to reader output.",
-              "A personal live paper request on September 13, 2026 made the budget constraint concrete. Its delivery record describes a 6.0-minute T5 TALK plan above the 5.0-minute limit, then a compact-card revision. The final receipt records a passing 4.6-minute plan on the historical Contract 1.8 path.",
-              "Those minutes are calculated TALK card budgets, not timed reading or elapsed processing time. Compiled outputs establish a reading delivery; whether the claims are sound and a reader understands them still requires source review and human rehearsal."
+              "Existing outputs include English and Traditional Chinese files for T1, T5 and T30 reading depths, plus HTML readers with language and depth controls. The excerpt above shows two cards from an actual delivery.",
+              "The historical walkthrough below follows a September 13, 2026 reading-budget rejection and revision, with the evidence for each step. Passing a delivery check does not establish scientific correctness or faster human reading; those require source review and rehearsal."
             ]
           }
         ]
@@ -87,29 +86,28 @@
           {
             "heading": "讀者的問題",
             "paragraphs": [
-              "一分鐘的 briefing 和三十分鐘的說明，需要不同的敘事路徑。短版本仍需要能獨立成立的結論與脈絡，長版本則需要空間展開推導。",
-              "Study Atlas 把支援的 paper、repository、web source 或 topic 整理成 study，保存雙語知識卡、source locator 與明確的敘事順序。每個閱讀時間版本都有自己的卡片路徑。"
+              "一分鐘的簡報和三十分鐘的說明，需要不同的閱讀路徑。短版本仍要有能獨立成立的結論與脈絡，長版本則需要空間展開推導。",
+              "Study Atlas 把論文、程式碼或網頁資料整理成雙語知識卡，保存來源位置與敘事順序，再為不同閱讀深度安排卡片路徑。"
             ],
             "flow": [
               "來源與問題",
-              "Authored Semantic IR",
-              "Compiler 與檢查",
+              "結構化研究內容（Semantic IR）",
+              "編譯與檢查",
               "雙語閱讀版本"
             ]
           },
           {
             "heading": "我的關鍵選擇",
             "paragraphs": [
-              "我用 typed Semantic IR 明確保存 authored meaning：問題、主張、來源、雙語卡片內容與閱讀順序。Python compiler 把它展開成 study files，另一個 renderer 產生 reader HTML。",
-              "這讓 presentation 的修改與被呈現的知識分開。Authoring 需要更多結構，但 compiler 也有具體內容可檢查並重新產生；一般 new-study 路徑另會拒絕覆寫既有 destination。"
+              "我用具型別的中介表示（Semantic IR）保存問題、主張、來源、雙語內容與閱讀順序。Python 編譯器把它展開成研究檔案，再由獨立的 renderer 產生 HTML。",
+              "內容與呈現分開，讓版面可以修改而不必重寫研究內容。代價是作者需要填寫更明確的結構，但編譯器也因此能檢查並重新產生交付檔；建立新研究時會拒絕覆寫既有目錄。"
             ]
           },
           {
             "heading": "目前可看見的結果",
             "paragraphs": [
-              "既有 study outputs 包含 T1、T5、T30 的 English 與正體中文閱讀稿，以及可選語言與深度的 HTML reader pages。Semantic IR product tour 是具體的本機 artifact，展示 authored input 如何成為 reader output。",
-              "2026 年 9 月 13 日的一次個人 live paper request，讓 budget constraint 有了具體例子。Delivery record 記載 T5 TALK plan 原為 6.0 分鐘，超過 5.0 分鐘上限，再經 compact-card 修訂；最後 receipt 記錄了通過門檻的 4.6 分鐘 plan，採用當時的 Contract 1.8 路徑。",
-              "這些分鐘數是計算出的 TALK card budgets，並非真人閱讀計時或處理耗時。Compiled outputs 證明閱讀交付已形成；主張是否成立、讀者是否理解，仍需要 source review 與真人試讀。"
+              "既有產出包含 T1、T5、T30 三種閱讀深度的雙語稿件，以及可切換語言與深度的 HTML reader。上方摘錄展示其中兩張實際交付的卡片。",
+              "下方歷史展示重現 2026-09-13 的閱讀預算拒絕與修訂：每一步都標明它依據的是記錄、計算或保存的產物。檢查通過不代表研究結論正確或真人讀得更快；這兩件事仍需來源核對與試讀。"
             ]
           }
         ]
@@ -574,37 +572,37 @@
       },
       "zh-TW": {
         "subtitle": "先檢查工作日排程，再決定是否執行。",
-        "lead": "我想知道固定 usage window 的排程能否對齊工作時間。windowphase 先把時間安排、baseline 與 clock-in command 攤開，再由使用者決定是否送出 live request。",
+        "lead": "我想讓五小時使用視窗的起點配合工作日。windowphase 先列出啟動時間、重設時刻與要執行的指令，讓使用者看過排程後，再決定是否真的送出請求。",
         "sections": [
           {
             "heading": "工作時段的問題",
             "paragraphs": [
-              "若 provider 採用由 request 錨定的 window，第一次 request 的時間會影響下一次 reset 何時到來。這些 boundaries 可能落在無法使用 allowance 的時段。",
-              "windowphase 以 five-hour window 為模型，尋找能在工作日兩側留下可用區段的 reset boundaries，並與未使用工具的 baseline 比較，讓排程有具體對照。"
+              "如果服務的使用視窗由第一次請求開始計時，第一次使用的時間就會影響下一次重設。重設時刻可能落在不工作、也用不到額度的時段。",
+              "windowphase 以五小時視窗為模型，尋找能在工作時間內留下足夠可用區段的安排，並與不使用工具的排程比較。這是模型計算，不能直接當成帳號實際增加的額度。"
             ],
             "flow": [
-              "工作時間",
-              "Anchored-window 模型",
-              "排程與 baseline",
-              "Live use 前先檢查"
+              "工作時段",
+              "請求起算的視窗模型",
+              "排程與基線比較",
+              "實際執行前先檢查"
             ]
           },
           {
             "heading": "我的關鍵選擇",
             "paragraphs": [
-              "我把 planner 與 provider execution 分開。Python 計算在 minimum usable-slice 條件下回傳 pre-work ignition、reset times 與 reachable windows；spacing validation 也檢查跨午夜的間距。",
-              "Provider adapters 產生明確的 command arguments，runner 預設 dry run。Live clock-in 必須使用 live=True 或 --live。這讓排程可以先被檢查，也把 provider 的真實行為與 request 成本留作需要另外確認的 assumptions。"
+              "我把排程計算與服務執行分開。Python 程式根據最短可用時段，計算上班前啟動、重設時間與可用視窗；也檢查跨午夜的間隔。",
+              "服務轉接器產生明確的指令參數，runner 預設只預覽（dry run）。必須明確指定 live=True 或 --live 才會送出請求；服務實際如何計時與每次請求的成本仍需另外確認。"
             ],
             "example": {
               "label": "模型示例，並非帳號量測",
-              "text": "若工作時間為 09:00–18:00，minimum usable slice 為 60 分鐘，anchored model 會把 clock-ins 放在 06:00、11:00 與 16:00。這些是模型中的計算時間，不是已量測的帳號效益。"
+              "text": "工作日為 09:00–18:00、最短可用時段為 60 分鐘時，模型安排在 06:00、11:00、16:00 啟動請求。這些是模型算出的時刻，不是帳號效益的實測。"
             }
           },
           {
             "heading": "目前可看見的結果",
             "paragraphs": [
-              "專案提供 schedule calculation 與 rendering、no-tool comparison、provider command preview、ledger 與 health-check code，也有 systemd、launchd 和 Windows Task Scheduler representations。",
-              "目前成果限於算出的排程與可檢查的 CLI 路徑。Rolling lookback 可能讓 anchored model 不適用；實際 quota 效益，以及 Linux、macOS、Windows 的 platform parity，仍未確立。"
+              "專案提供排程計算、基線比較、服務指令預覽、執行紀錄與健康檢查程式，並有 systemd、launchd 和 Windows Task Scheduler 的排程設定表示。",
+              "目前可確認的是計算出的排程與可檢查的 CLI。若服務採用滾動回溯視窗，這個模型可能不適用；實際額度效益及三種作業系統的一致表現尚未驗證。"
             ]
           }
         ]

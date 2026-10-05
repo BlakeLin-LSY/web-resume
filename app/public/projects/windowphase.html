@@ -40,23 +40,23 @@
 </article>
 <article class="language-view" lang="zh-TW" data-language="zh-TW">
 <div class="hero"><p class="eyebrow">個人工程專案 · 專案介紹</p>
-<h1>windowphase</h1><p class="subtitle">先檢查工作日排程，再決定是否執行。</p><p class="lead">我想知道固定 usage window 的排程能否對齊工作時間。windowphase 先把時間安排、baseline 與 clock-in command 攤開，再由使用者決定是否送出 live request。</p>
+<h1>windowphase</h1><p class="subtitle">先檢查工作日排程，再決定是否執行。</p><p class="lead">我想讓五小時使用視窗的起點配合工作日。windowphase 先列出啟動時間、重設時刻與要執行的指令，讓使用者看過排程後，再決定是否真的送出請求。</p>
 <ul class="tags"><li>Python</li><li>Scheduling</li><li>CLI</li></ul></div>
 <section class="section"><h2>工作時段的問題</h2>
-<p>若 provider 採用由 request 錨定的 window，第一次 request 的時間會影響下一次 reset 何時到來。這些 boundaries 可能落在無法使用 allowance 的時段。</p>
-<p>windowphase 以 five-hour window 為模型，尋找能在工作日兩側留下可用區段的 reset boundaries，並與未使用工具的 baseline 比較，讓排程有具體對照。</p>
-<ol class="flow"><li><span>01</span>工作時間</li><li><span>02</span>Anchored-window 模型</li><li><span>03</span>排程與 baseline</li><li><span>04</span>Live use 前先檢查</li></ol>
+<p>如果服務的使用視窗由第一次請求開始計時，第一次使用的時間就會影響下一次重設。重設時刻可能落在不工作、也用不到額度的時段。</p>
+<p>windowphase 以五小時視窗為模型，尋找能在工作時間內留下足夠可用區段的安排，並與不使用工具的排程比較。這是模型計算，不能直接當成帳號實際增加的額度。</p>
+<ol class="flow"><li><span>01</span>工作時段</li><li><span>02</span>請求起算的視窗模型</li><li><span>03</span>排程與基線比較</li><li><span>04</span>實際執行前先檢查</li></ol>
 
 </section>
 <section class="section"><h2>我的關鍵選擇</h2>
-<p>我把 planner 與 provider execution 分開。Python 計算在 minimum usable-slice 條件下回傳 pre-work ignition、reset times 與 reachable windows；spacing validation 也檢查跨午夜的間距。</p>
-<p>Provider adapters 產生明確的 command arguments，runner 預設 dry run。Live clock-in 必須使用 live=True 或 --live。這讓排程可以先被檢查，也把 provider 的真實行為與 request 成本留作需要另外確認的 assumptions。</p>
+<p>我把排程計算與服務執行分開。Python 程式根據最短可用時段，計算上班前啟動、重設時間與可用視窗；也檢查跨午夜的間隔。</p>
+<p>服務轉接器產生明確的指令參數，runner 預設只預覽（dry run）。必須明確指定 live=True 或 --live 才會送出請求；服務實際如何計時與每次請求的成本仍需另外確認。</p>
 
-<aside class="example"><h3>模型示例，並非帳號量測</h3><p>若工作時間為 09:00–18:00，minimum usable slice 為 60 分鐘，anchored model 會把 clock-ins 放在 06:00、11:00 與 16:00。這些是模型中的計算時間，不是已量測的帳號效益。</p></aside>
+<aside class="example"><h3>模型示例，並非帳號量測</h3><p>工作日為 09:00–18:00、最短可用時段為 60 分鐘時，模型安排在 06:00、11:00、16:00 啟動請求。這些是模型算出的時刻，不是帳號效益的實測。</p></aside>
 </section>
 <section class="section"><h2>目前可看見的結果</h2>
-<p>專案提供 schedule calculation 與 rendering、no-tool comparison、provider command preview、ledger 與 health-check code，也有 systemd、launchd 和 Windows Task Scheduler representations。</p>
-<p>目前成果限於算出的排程與可檢查的 CLI 路徑。Rolling lookback 可能讓 anchored model 不適用；實際 quota 效益，以及 Linux、macOS、Windows 的 platform parity，仍未確立。</p>
+<p>專案提供排程計算、基線比較、服務指令預覽、執行紀錄與健康檢查程式，並有 systemd、launchd 和 Windows Task Scheduler 的排程設定表示。</p>
+<p>目前可確認的是計算出的排程與可檢查的 CLI。若服務採用滾動回溯視窗，這個模型可能不適用；實際額度效益及三種作業系統的一致表現尚未驗證。</p>
 
 
 </section>
@@ -67,7 +67,7 @@
 <li><code>src/windowphase/cli.py:274</code><span class="source-role">Schedule inspection and rendering</span></li></ul></details></main>
 <footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a data-back-home href="../resume-overview.html#projects">Back to projects / 返回專案</a><noscript><style>.languages{display:none!important}[data-language][hidden],.walkthrough-panel[hidden]{display:block!important}</style><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
 <script>
-const metadata = {"en":"I wanted to see whether a fixed usage-window schedule could line up with my working hours. windowphase makes the timing, baseline, and clock-in command explicit before a live request.","zh-TW":"我想知道固定 usage window 的排程能否對齊工作時間。windowphase 先把時間安排、baseline 與 clock-in command 攤開，再由使用者決定是否送出 live request。"};
+const metadata = {"en":"I wanted to see whether a fixed usage-window schedule could line up with my working hours. windowphase makes the timing, baseline, and clock-in command explicit before a live request.","zh-TW":"我想讓五小時使用視窗的起點配合工作日。windowphase 先列出啟動時間、重設時刻與要執行的指令，讓使用者看過排程後，再決定是否真的送出請求。"};
 const root = document.documentElement;
 const controls = document.querySelectorAll('[data-select-language]');
 const views = document.querySelectorAll('[data-language]');
