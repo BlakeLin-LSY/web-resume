@@ -2,28 +2,70 @@
   "schemaVersion": 1,
   "status": "candidate",
   "edition": "2026-10-05",
-  "professionalDetailIndices": {"dynasafe": [0, 1], "metgauge": [1], "utechzone": [0], "lips": [0]},
-  "projectIds": ["study-atlas", "transcribe-for-x"],
+  "projectIds": [
+    "study-atlas",
+    "transcribe-for-x"
+  ],
   "en": {
     "experience": "Professional experience",
-    "projects": "Recent personal projects",
-    "skills": "Selected skills",
-    "education": "Education & research",
-    "skillsLines": ["Python · C++ · C# · ML pipelines · Computer vision", "Profiling · Stereo-camera calibration · Hardware integration · Test design"],
-    "metricsNote": "Professional metrics are reported in the career record; original measurement protocols are not included.",
+    "projects": "Personal projects",
+    "skills": "Technical skills",
+    "education": "Education & earlier research",
+    "skillsLines": [
+      "Python · C++ · C# · ML pipelines · Computer vision",
+      "Profiling · Stereo-camera calibration · Hardware integration · Test design"
+    ],
     "candidateLabel": "Local review candidate",
-    "atlas": "Built bilingual research-reading routes with traceable sources, explicit inference boundaries and calculated delivery-budget checks. A preserved study provides inspectable reader cards and a historical rejection-to-revision walkthrough.",
-    "tfx": "Built an Android speech-to-text prototype that verifies saved audio before local recognition, preserves the original transcript and applies only user-approved removals. Device and mixed-language quality remain to be tested."
+    "atlas": "Built a reader that turns research into English and Traditional Chinese cards, with short and in-depth reading routes. Added checks that reject an over-budget reading plan before delivery.",
+    "tfx": "Built an Android prototype that saves audio before running local speech recognition. Kept the original transcript separate from cleanup suggestions, so users can accept or reject each removal.",
+    "summary": "Software engineer with 3+ years of experience in ML training, computer vision and hardware integration. Recent personal work includes a bilingual research reader and an Android app for turning recordings into editable text.",
+    "professionalBullets": {
+      "dynasafe": [
+        "Rebuilt the training-data pipeline after profiling a dataloader bottleneck, making model training {value}× faster.",
+        "Adapted Nvidia Morpheus for network-anomaly detection with real PCAP data, and PhysicsNeMo training for an OpenFOAM CFD use case."
+      ],
+      "metgauge": [
+        "Took a C++/Python 3D-measurement prototype to factory-ready production testing on a line with {cameraPairs} stereo-camera pairs.",
+        "Led system design, hardware integration and boundary testing; used test results to guide hardware tuning."
+      ],
+      "utechzone": [
+        "Developed C# optical-inspection algorithms that reduced AOI cycle time by {value}%.",
+        "Mentored two engineers and worked with a cross-functional team of 10+ on system integration."
+      ],
+      "lips": [
+        "Improved real-time 3D measurement accuracy by {value}% through algorithm redesign and calibration of Intel RealSense D415/D435 stereo-camera systems."
+      ]
+    }
   },
   "zh-TW": {
     "experience": "專業經歷",
-    "projects": "近期個人作品",
+    "projects": "個人作品",
     "skills": "核心技能",
-    "education": "學歷與研究",
-    "skillsLines": ["Python · C++ · C# · ML pipeline · 電腦視覺", "效能分析 · 立體攝影機校正 · 軟硬體整合 · 測試設計"],
-    "metricsNote": "職業成果指標依職涯紀錄呈現；未附原始量測方法。",
+    "education": "學歷與早期研究",
+    "skillsLines": [
+      "Python · C++ · C# · ML pipeline · 電腦視覺",
+      "效能分析 · 立體攝影機校正 · 軟硬體整合 · 測試設計"
+    ],
     "candidateLabel": "本機待審候選稿",
-    "atlas": "建立雙語研究閱讀路線，保留來源、推論界線與計算式交付預算檢查。已有保存的研究卡片，以及從預算拒絕到修訂的歷史展示可供檢查。",
-    "tfx": "建立 Android 語音轉文字原型：先驗證保存的錄音，再進行本機辨識；保留原始逐字稿，只套用使用者接受的刪除建議。裝置表現與混合語音品質仍待測試。"
+    "atlas": "把研究內容整理成中英雙語卡片，提供簡短與深入兩種閱讀路線。加入閱讀預算檢查，讓超出預算的方案在交付前退回修訂。",
+    "tfx": "開發 Android 原型，先保存錄音，再進行本機語音辨識。原始逐字稿與清理建議分開保留，使用者可逐項接受或拒絕刪除。",
+    "summary": "軟體工程師，具 3 年以上 ML 訓練、電腦視覺與軟硬體整合經驗。近期個人作品是一套雙語研究閱讀工具，以及將錄音轉成可編輯文字的 Android 應用。",
+    "professionalBullets": {
+      "dynasafe": [
+        "分析資料載入瓶頸並重建訓練資料流程，將模型訓練速度提升 {value} 倍。",
+        "以真實 PCAP 資料調整 Nvidia Morpheus 網路異常偵測流程；將 PhysicsNeMo 訓練流程應用於 OpenFOAM CFD 案例。"
+      ],
+      "metgauge": [
+        "將 C++／Python 3D 量測原型推進到工廠上線前測試，整合 {cameraPairs} 組立體攝影機。",
+        "負責系統設計、軟硬體整合與邊界測試，依測試結果協助跨部門硬體調校。"
+      ],
+      "utechzone": [
+        "開發 C# 自動光學檢測演算法，將產線 AOI 檢測週期縮短 {value}%。",
+        "指導兩位工程師，與 10 人以上跨部門團隊完成系統整合。"
+      ],
+      "lips": [
+        "改良量測演算法並校正 Intel RealSense D415／D435 立體攝影機，將即時 3D 量測精度提升 {value}%。"
+      ]
+    }
   }
 }
