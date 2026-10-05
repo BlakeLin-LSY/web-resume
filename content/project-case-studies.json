@@ -308,6 +308,63 @@
             }
           ]
         }
+      },
+      "readerExcerpt": {
+        "historicalDate": "2026-09-13",
+        "originalFile": "artifact_polished.html",
+        "originalBytes": 387137,
+        "originalSha256": "0f5e66c74dbd8762f2a90936d238fc72d9939db6396d68d49703645834eeb0d5",
+        "paperUrl": "https://arxiv.org/abs/2503.11651",
+        "cards": [
+          {
+            "sourceCardId": "c-vggt-derived-points-beat-direct-point-head",
+            "en": {
+              "title": "At inference time point maps derived from depth and cameras are more accurate than the direct point-map head",
+              "body": "Table 3 compares two point-cloud routes from the same model on ETH3D. The direct point-map head has Overall error 0.709, while unprojecting depth with predicted cameras yields 0.677. The authors attribute the gain to decomposing point-map estimation into simpler depth and camera subproblems. Multi-task training therefore does not require every direct head to be the final delivery path.",
+              "takeaway": "Keep multiple supervised paths during training then use known relations to choose the more reliable delivery path"
+            },
+            "zh-TW": {
+              "title": "推論時由深度與相機反投影得到的點圖比直接點圖頭更準",
+              "body": "表 3 在 ETH3D 比較同一模型的兩條點雲路徑：直接點圖頭的 Overall 誤差為 0.709，將深度圖配合預測相機反投影至 3D 則為 0.677。作者將差異歸因於把複雜點圖問題分解為深度與相機這些較單純子問題。這也顯示多任務訓練不要求最終一定使用每個直接輸出。",
+              "takeaway": "訓練時保留多路監督，交付時再用已知關係選擇更穩定的路徑"
+            }
+          },
+          {
+            "sourceCardId": "c-vggt-paper-evidence-bounds-transfer",
+            "en": {
+              "title": "The paper does not establish whether its design principles work for everyday cross-domain tasks",
+              "body": "Training spans many real and synthetic 3D datasets, while experiments cover camera pose, multi-view depth, point maps, matching, novel-view synthesis, and tracking. Broad 3D-vision evidence still excludes daily domains such as software engineering, incident diagnosis, or business decisions. The five-step framework in this study is therefore a design hypothesis inferred from the paper's architecture, ablations, and optimization results. Each transfer should predefine its baseline, cost, quality metric, and fallback condition.",
+              "takeaway": "Use shared context, redundant supervision, and optional refinement as an experiment checklist, not a validated recipe"
+            },
+            "zh-TW": {
+              "title": "論文證據尚不能回答這套設計原則在日常跨域任務是否有效",
+              "body": "論文訓練使用多個真實與合成 3D 資料集，實驗涵蓋相機姿態、多視角深度、點圖、配對、新視角合成與追蹤。這些廣泛的 3D 視覺結果仍未包含軟體工程、事故診斷、商業決策等日常任務。因此，本研究提出的五步框架是從論文架構、消融與最佳化結果推導的設計假設；每次移植都應預先定義基線、成本、品質與回退條件。",
+              "takeaway": "把共同情境、冗餘監督與可選精修當作實驗檢查表，不要當作已驗證配方"
+            }
+          }
+        ],
+        "en": {
+          "heading": "Read a piece of the delivered reader",
+          "intro": "Two cards from the September 2026 VGGT study: a reported experiment and an open question. The original bilingual text is preserved here in a compact layout. Open a card to read the reasoning.",
+          "evidenceLabel": "Paper evidence · §4.3, Table 3",
+          "inferenceLabel": "Open question · design hypothesis",
+          "detailLabel": "Read the card",
+          "provenanceLabel": "Excerpt provenance",
+          "provenance": "Two card titles, bodies and takeaways copied verbatim from the preserved reader. Layout rebuilt for this page; diagrams, analogies and other cards omitted. This is a partial excerpt, not the full original reader or a new experiment.",
+          "paperLabel": "Original VGGT paper (online)",
+          "walkthroughLabel": "See how the reading plan was checked"
+        },
+        "zh-TW": {
+          "heading": "讀一段實際交付的內容",
+          "intro": "摘自 2026 年 9 月的 VGGT 研究：一張呈現論文實驗，另一張保留尚未驗證的問題。這裡保留原有雙語文字、重新排成小型閱讀版；展開卡片即可閱讀推理。",
+          "evidenceLabel": "論文證據 · §4.3、Table 3",
+          "inferenceLabel": "開放問題 · 設計假設",
+          "detailLabel": "展開閱讀",
+          "provenanceLabel": "摘錄來源與改動",
+          "provenance": "兩張卡的標題、正文與重點逐字取自保存的 reader；本頁重新排版，省略圖、類比與其他卡片。這是部分摘錄，不是完整原件或新的實驗結果。",
+          "paperLabel": "VGGT 原始論文（需連線）",
+          "walkthroughLabel": "查看閱讀方案如何通過檢查"
+        }
       }
     },
     {
