@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "app/public"
 NAMES = [
     "resume-overview.html",
+    "engineering-notes.html",
     "projects/study-atlas.html",
     "projects/transcribe-for-x.html",
     "projects/windowphase.html",
@@ -38,7 +39,7 @@ def main():
     contents["resume-overview.html"] = overview.encode("utf-8")
     manifest = {
         "schemaVersion": 1,
-        "scope": "Complete local reading package: bilingual overview, three cases and two CVs. External email/LinkedIn destinations need connectivity.",
+        "scope": "Complete local reading package: bilingual overview, three cases, engineering notes and two CVs. External email/LinkedIn destinations need connectivity.",
         "cvProvenance": assets["sourceVersion"],
         "files": [{"file": name, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()} for name, data in contents.items()],
     }
@@ -46,11 +47,11 @@ def main():
     contents["READ-ME.txt"] = (
         "Blake Lin — AI Software Engineer\n\n"
         "解壓縮後，保留資料夾結構並開啟 resume-overview.html。\n"
-        "概要、三份作品介紹、兩份單頁 CV 均可離線閱讀；HTML 提供 English／正體中文與深淺色控制。\n"
+        "概要、三份作品介紹、工程筆記、兩份單頁 CV 均可離線閱讀；HTML 提供 English／正體中文與深淺色控制。\n"
         "Email／LinkedIn 需連線；Study Atlas 展示是保存的歷史案例，不呼叫 live 模型。\n"
         "6.0→4.6 是 calculated TALK budget，不是真人閱讀速度或 wall-clock 加速。\n\n"
         "Extract the archive, keep its folders, and open resume-overview.html.\n"
-        "The overview, three cases and two one-page CVs are available offline.\n"
+        "The overview, three cases, engineering notes and two one-page CVs are available offline.\n"
         "HTML pages include English/Traditional Chinese and light/dark reading controls.\n"
         "Email and LinkedIn need connectivity. The Atlas walkthrough is a preserved historical case, with no live model call.\n"
         "6.0→4.6 is calculated TALK budget, not human reading speed or wall-clock acceleration.\n\n"

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-05",
+  "status": "local-review-draft",
+  "copy": {
+    "en": {
+      "title": "Engineering notes",
+      "lead": "A few problems that changed how I build and test software.",
+      "intro": "Short accounts from professional work and personal projects. Longer write-ups are in preparation; each note includes what is already known and a question worth discussing.",
+      "back": "Back to resume",
+      "details": "What happened & what remains",
+      "question": "A question to discuss",
+      "contact": "Email me about this",
+      "draft": "Longer write-up in preparation",
+      "save": "Save complete notes HTML",
+      "print": "Print / save PDF",
+      "theme": "Light / dark",
+      "skip": "Skip to notes",
+      "footer": "Have a similar problem, a different approach, or a role where this work matters? Pick a note and tell me what caught your attention.",
+      "emailHint": "The links open your email app with a topic. Nothing is sent automatically.",
+      "entry": "Engineering notes — debugging, testing, and decisions",
+      "saveScope": "Save the complete package to keep the overview, three cases, engineering notes and both CVs together offline. A single overview HTML does not include linked files.",
+      "offlineScope": "Case pages, engineering notes and both CVs are included. Keep the extracted folders together; Email and LinkedIn need connectivity."
+    },
+    "zh-TW": {
+      "title": "工程筆記",
+      "lead": "幾個讓我改變實作與測試方式的問題。",
+      "intro": "來自職業工作與個人專案的短篇紀錄。完整文章仍在整理；這裡先說清楚發生了什麼，以及有哪些值得繼續聊的問題。",
+      "back": "返回履歷",
+      "details": "經過與待補細節",
+      "question": "可以聊聊",
+      "contact": "用 Email 聊這個題目",
+      "draft": "完整文章整理中",
+      "save": "保存完整筆記 HTML",
+      "print": "列印／保存 PDF",
+      "theme": "淺色／深色",
+      "skip": "跳至筆記",
+      "footer": "你也遇過類似問題、有不同做法，或正在找能處理這些問題的工程師？可以從一篇筆記開始，告訴我你感興趣的地方。",
+      "emailHint": "連結會開啟 Email 草稿並帶入題目，不會自動寄出。",
+      "entry": "工程筆記：排錯、測試與決策",
+      "saveScope": "完整包可離線保留概要、三份作品、工程筆記與兩份 CV。單獨保存概要 HTML 不包含連結的檔案。",
+      "offlineScope": "作品頁、工程筆記與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email 與 LinkedIn 需要連線。"
+    }
+  },
+  "notes": [
+    {
+      "id": "training-data-path",
+      "storyId": "P01",
+      "sourceIds": [
+        "CAREER-CV"
+      ],
+      "en": {
+        "context": "DynaSafe · Professional work · Jan–Apr 2026",
+        "title": "The training bottleneck was in the data pipeline",
+        "brief": "Profiling led me to a dataloader bottleneck. Rebuilding that pipeline produced the 10× model-training speedup recorded in my career history. The interesting part is how the bottleneck was found.",
+        "detail": "This note draws on my career record. The longer account still needs a shareable profiling example and the original workload, hardware and measurement method. The 10× figure describes model training, not overall team productivity.",
+        "question": "How do you decide whether a slow training run needs model changes or a better data path?"
+      },
+      "zh-TW": {
+        "context": "DynaSafe · 職業工作 · 2026 年 1–4 月",
+        "title": "訓練瓶頸，出在資料怎麼送進來",
+        "brief": "我透過 profiling 找到 dataloader 的瓶頸，再重建資料 pipeline。職涯紀錄中的模型訓練速度提升 10 倍，來自這次修改；值得展開聊的是，當時怎麼找到問題。",
+        "detail": "目前依據是職涯紀錄。完整文章還需要可公開的 profiling 範例，以及原始 workload、硬體與量測方法。10 倍指模型訓練速度，不代表整個團隊的工作效率。",
+        "question": "訓練太慢時，你會怎麼判斷該調模型，還是先查資料 pipeline？"
+      }
+    },
+    {
+      "id": "green-check-dead-timer",
+      "storyId": "S04",
+      "sourceIds": [
+        "WINDOW-SESSION"
+      ],
+      "en": {
+        "context": "windowphase · Personal project · 11 Sep 2026",
+        "title": "The health check passed. The scheduled job failed.",
+        "brief": "The CLI was available in my shell, but not in the scheduler’s PATH. I changed the check to inspect the service environment, then stopped and restarted the timer to see whether the result changed with it.",
+        "detail": "The dated project record describes the failed start, the PATH fix, a successful start, and the stop/start check. This is a historical debugging account; the full runtime logs are not included here and this page does not rerun the service.",
+        "question": "Does your health check inspect the environment that actually runs the job?"
+      },
+      "zh-TW": {
+        "context": "windowphase · 個人專案 · 2026-09-11",
+        "title": "檢查通過了，排程卻跑不起來",
+        "brief": "CLI 在我的 shell 裡找得到，在排程服務的 PATH 裡卻找不到。我把檢查改成讀取服務的執行環境，再停用、啟用 timer，確認結果會跟著改變。",
+        "detail": "當日專案紀錄保存了啟動失敗、PATH 修正、成功啟動與停啟檢查的敘述。這是歷史排錯紀錄；此處未附完整 runtime logs，也不會重新執行服務。",
+        "question": "你的健康檢查，查的是實際跑工作的環境嗎？"
+      }
+    },
+    {
+      "id": "testing-the-checker",
+      "storyId": "S07",
+      "sourceIds": [
+        "LEDGER-SESSION"
+      ],
+      "en": {
+        "context": "Decision Ledger · Personal project · 4 Sep 2026",
+        "title": "Before trusting the test, check that the defect was inserted",
+        "brief": "A mutation test can look healthy even when it never changed the code. The first run stopped because its target appeared twice. Requiring a unique target made that false pass visible before any result could be trusted.",
+        "detail": "The repair used a temporary copy of the checker, unique executable anchors and an unchanged control. The dated run caught all 10 declared mutations while the control survived. That is the scope of that run, not a claim that every possible defect is detectable.",
+        "question": "How would you notice if your test setup stopped exercising the failure it was designed to catch?"
+      },
+      "zh-TW": {
+        "context": "Decision Ledger · 個人專案 · 2026-09-04",
+        "title": "先確認錯誤真的被放進去，再相信測試",
+        "brief": "Mutation test 可能看起來正常，實際上根本沒改到程式。第一次執行就因目標出現兩次而中止；要求修改位置唯一，讓這種假通過先被攔下來。",
+        "detail": "修正後，在 checker 的暫存副本套用修改，使用唯一的可執行程式碼位置，並保留不修改的對照組。當日 10 個指定 mutation 全被抓到，對照組則通過；這只涵蓋當次測試範圍。",
+        "question": "如果測試的準備步驟失效，沒有真的測到預期錯誤，你會怎麼發現？"
+      }
+    },
+    {
+      "id": "withdrawing-an-uplift",
+      "storyId": "S08",
+      "sourceIds": [
+        "RFX-CORRECTION",
+        "RFX-RESULT"
+      ],
+      "en": {
+        "context": "Render-for-X · Personal experiment · 16–17 Sep 2026",
+        "title": "The score improved. The comparison did not hold up.",
+        "brief": "An early comparison suggested that a tailored brief worked better, but the same agent wrote and scored both versions with the answers in context. That improvement claim was withdrawn. A later blind evaluation still did not establish a reader benefit.",
+        "detail": "In the later experiment, both versions passed the fidelity check. Reader feedback did not establish a benefit from tailoring; reading order and language also differed. The useful next question was about making the overview easier to enter, rather than claiming a better personalized system.",
+        "question": "What would convince you that an AI-generated brief helped its reader, beyond getting a good evaluator score?"
+      },
+      "zh-TW": {
+        "context": "Render-for-X · 個人實驗 · 2026-09-16–17",
+        "title": "分數變好了，但這個比較站不住腳",
+        "brief": "早期比較看似顯示客製摘要比較好，卻是同一個 agent 在已知答案的上下文中寫稿、自評。這個提升宣稱後來被撤回；後續盲評也仍不足以證明讀者真的受益。",
+        "detail": "後續實驗中，兩份版本都通過內容保真檢查，但讀者回饋沒有證明客製化的好處；閱讀順序與語言也不同。下一步因此轉向讓概要更容易讀進去，而不是宣稱個人化系統已經比較好。",
+        "question": "除了 evaluator 給高分，要看到什麼，才算一份 AI 摘要真的幫上讀者？"
+      }
+    }
+  ]
+}
