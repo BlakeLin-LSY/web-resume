@@ -28,7 +28,7 @@
   },
   "copy": {
     "en": {
-      "lead": "I build ML pipelines, computer vision algorithms, and software that connects to physical systems.",
+      "lead": "I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.",
       "context": "3+ years of professional engineering · M.S. in Physics",
       "cv": "Download CV",
       "cvOpen": "Open CV",
@@ -48,10 +48,10 @@
       },
       "proofHeading": "Selected professional work",
       "proofIntro": "From training bottlenecks to systems on the factory floor.",
-      "proofDetails": "Result and measurement scope",
+      "proofDetails": "Results & evidence",
       "careerLink": "See professional experience",
-      "workHeading": "Recent personal engineering",
-      "focus": "I am exploring research delivery that readers can inspect, and voice workflows that keep the speaker in control.",
+      "workHeading": "Recent personal projects",
+      "focus": "Two tools for turning complex source material into something people can read and use.",
       "snapshot": "Source review: 3 Oct 2026. Historical examples carry their own dates.",
       "moreWork": "More work",
       "experienceHeading": "Professional experience",
@@ -73,10 +73,10 @@
       "offlineScope": "All case pages and both CVs are included. Keep the extracted folders together; Email and LinkedIn need connectivity.",
       "noJs": "JavaScript is off; both language versions are available below.",
       "metadataDescription": "AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.",
-      "scopeNote": "Employer results are documented in the career record. Original measurement protocols are not available for independent verification here."
+      "scopeNote": "Professional results below follow my career record. Original measurement protocols are not included; the notes on each role describe the available scope."
     },
     "zh-TW": {
-      "lead": "我的工作涵蓋 ML pipelines、電腦視覺演算法與硬體整合。",
+      "lead": "我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。",
       "context": "3 年以上專業工程經驗 · 物理學碩士",
       "cv": "下載 CV",
       "cvOpen": "開啟 CV",
@@ -96,10 +96,10 @@
       },
       "proofHeading": "精選職業成果",
       "proofIntro": "從訓練瓶頸，到工廠現場的系統整合。",
-      "proofDetails": "成果與量測範圍",
+      "proofDetails": "成果與依據",
       "careerLink": "查看專業經歷",
-      "workHeading": "近期個人工程",
-      "focus": "我近期探索可由讀者檢查的研究交付，以及讓說話者保有決定權的語音流程。",
+      "workHeading": "近期個人作品",
+      "focus": "把研究資料與錄音，整理成容易閱讀、使用的內容。",
       "snapshot": "來源檢視截至 2026-10-03；歷史案例另標當時日期。",
       "moreWork": "更多作品",
       "experienceHeading": "專業經歷",
@@ -121,7 +121,7 @@
       "offlineScope": "作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email 與 LinkedIn 需要連線。",
       "noJs": "JavaScript 關閉時，下方保留兩種語言的完整內容。",
       "metadataDescription": "AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。",
-      "scopeNote": "雇主成果依職涯紀錄呈現；此處沒有可供獨立核實的原始量測 protocol。"
+      "scopeNote": "以下職業成果依職涯紀錄呈現；未附原始量測方法，各職務的細節中列出目前可確認的範圍。"
     }
   },
   "professional": [
@@ -152,7 +152,7 @@
       },
       "zh-TW": {
         "proofTitle": "ML pipeline 效能",
-        "summary": "分析 dataloader bottleneck，追查根因並重建訓練資料 pipeline。",
+        "summary": "分析資料載入瓶頸、追查根因，並重建訓練資料 pipeline。",
         "scope": "模型訓練 · 職涯紀錄",
         "details": [
           "使用真實 PCAP 輸入，建立並調整 Nvidia Morpheus 網路異常偵測 workflow。",
@@ -186,14 +186,14 @@
       },
       "zh-TW": {
         "proofTitle": "軟硬體整合",
-        "summary": "推進 {cameraPairs} 組立體攝影機產線的系統設計、硬體整合與邊界測試。",
-        "result": "MVP → factory-ready production testing",
-        "scope": "工廠就緒測試 · 職涯紀錄",
+        "summary": "負責 {cameraPairs} 組立體攝影機產線的系統設計、硬體整合與邊界測試。",
+        "result": "量測原型 → 工廠上線前測試",
+        "scope": "工廠上線前測試 · 職涯紀錄",
         "details": [
-          "將 C++／Python 3D 量測 MVP 推進至 factory-ready production testing。",
+          "將 C++／Python 3D 量測原型推進到工廠上線前測試。",
           "定義測試規格、分析成果，支援跨部門硬體調校。"
         ],
-        "boundary": "成果限 factory-ready production testing；未確立完整產品上市或長期 production operation。"
+        "boundary": "成果到工廠上線前測試階段；未包含已確認的產品上市或長期量產運作。"
       }
     },
     {
@@ -273,16 +273,18 @@
         "MAT-SHOWCASE"
       ],
       "en": {
-        "summary": "A research topic needs both a short briefing and a deeper explanation. I built bilingual reading routes with a source trail and delivery checks.",
+        "summary": "I built bilingual reading routes that turn the same research into a short briefing or a deeper explanation, while keeping sources and inferences distinct.",
         "evidence": "Personal project · Historical walkthrough, 13 Sep 2026",
         "boundary": "6.0 → 4.6 is calculated TALK budget, not measured human reading time or wall-clock acceleration.",
-        "action": "Explore the budget-gate walkthrough"
+        "action": "Read the Study Atlas case",
+        "walkthroughAction": "Try the budget-gate walkthrough"
       },
       "zh-TW": {
-        "summary": "研究主題需要短 briefing，也需要深入說明。我建立雙語閱讀路線、來源線索與交付檢查。",
+        "summary": "把同一份研究整理成中英雙語、不同深度的閱讀路線，保留來源與推論的區別。",
         "evidence": "個人專案 · 2026-09-13 歷史流程展示",
         "boundary": "6.0 → 4.6 是 calculated TALK budget，不是真人閱讀時間或 wall-clock 加速。",
-        "action": "操作 budget-gate 展示"
+        "action": "閱讀 Study Atlas 介紹",
+        "walkthroughAction": "操作預算檢查展示"
       }
     },
     {
@@ -292,15 +294,15 @@
         "MAT-SHOWCASE"
       ],
       "en": {
-        "summary": "An Android prototype saves and verifies audio before local recognition, keeps the raw transcript separate from cleanup suggestions, and removes only user-approved spans.",
-        "evidence": "Personal project · Implemented Android prototype path",
-        "boundary": "Mixed-language quality and device / real-use acceptance require separate evidence.",
+        "summary": "Save the recording, then turn it into text. The original transcript stays intact; cleanup suggestions remove only the spans the user accepts.",
+        "evidence": "Personal project · Android prototype",
+        "boundary": "Device performance and mixed-language recognition quality still need real-use testing.",
         "action": "Read the source-to-text workflow"
       },
       "zh-TW": {
-        "summary": "Android prototype 先保存並核對錄音，再做本機辨識；原始逐字稿與 cleanup 建議分開，只移除使用者接受的文字片段。",
-        "evidence": "個人專案 · 已實作的 Android prototype 路徑",
-        "boundary": "混合語音品質、裝置與 real-use acceptance 需要各自的證據。",
+        "summary": "先保留錄音，再轉成文字。原始逐字稿不被清理建議覆寫，每個刪改都由使用者決定。",
+        "evidence": "個人專案 · Android 原型",
+        "boundary": "裝置表現與混合語音辨識品質仍待實際使用測試。",
         "action": "查看錄音到文字的流程"
       }
     },
@@ -311,13 +313,13 @@
         "MAT-SHOWCASE"
       ],
       "en": {
-        "summary": "Inspect a workday schedule before a live clock-in.",
+        "summary": "Plan when to start a five-hour usage window around a workday, and inspect the schedule before any live action.",
         "evidence": "Personal project · Calculated planner",
         "boundary": "Calculated schedules do not establish actual quota benefit or cross-platform parity.",
         "action": "Read the planner case"
       },
       "zh-TW": {
-        "summary": "在 live clock-in 前先檢查工作日排程。",
+        "summary": "依工作日規劃五小時使用視窗的啟動時機，先檢查排程，再決定是否執行。",
         "evidence": "個人專案 · 計算型 planner",
         "boundary": "計算排程不等於實際 quota 效益或跨平台 parity。",
         "action": "查看 planner 介紹"

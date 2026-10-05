@@ -14,7 +14,7 @@ function headerOffset(){root.style.setProperty('--header-offset',(header.getBoun
 function closeMenu(){open=false;nav.hidden=narrow.matches;menu.setAttribute('aria-expanded','false');headerOffset();}
 function savePreference(key,value){try{localStorage.setItem(key,value);}catch{}}
 function updateQuery(){try{const url=new URL(location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);history.replaceState(null,'',url);}catch{}}
-function updateCaseLinks(){document.querySelectorAll('[data-resume-case]').forEach(link=>{const url=new URL(link.href,location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);link.href=url.href;});}
+function updateCaseLinks(){document.querySelectorAll('[data-resume-case], [data-resume-walkthrough]').forEach(link=>{const url=new URL(link.href,location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);link.href=url.href;});}
 function resolvedDark(){return theme==='dark'||(theme==='auto'&&systemDark.matches);}
 function setTheme(value,persist){theme=value;root.dataset.readingTheme=theme;root.style.colorScheme=resolvedDark()?'dark':'light';themeButton.setAttribute('aria-label',data.copy[language][resolvedDark()?'themeLight':'themeDark']);updateCaseLinks();if(persist){savePreference('resume-theme',theme);updateQuery();}}
 function setLanguage(value,persist){

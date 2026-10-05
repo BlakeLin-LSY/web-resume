@@ -52,6 +52,8 @@ export async function loadResumeSource(profilePath = resolve(repoRoot, "content/
     if (item.system && (!Number.isInteger(item.system.cameraPairs) || item.system.cameraPairs <= 0)) throw new Error(`Positive camera count required: ${item.id}`);
   }
   for (const item of profile.projects) for (const language of ["en", "zh-TW"]) for (const key of ["summary", "evidence", "boundary", "action"]) requireText(item[language]?.[key], `${item.id}/${language}/${key}`);
+  const atlas = profile.projects.find(item => item.id === "study-atlas");
+  for (const language of ["en", "zh-TW"]) requireText(atlas?.[language]?.walkthroughAction, `study-atlas/${language}/walkthroughAction`);
   for (const item of profile.skills) if (!(item.proofId && professionalIds.has(item.proofId)) && !(item.projectId && projectIds.has(item.projectId))) throw new Error("Every skill must link to an included example");
   for (const theme of ["light", "dark"]) for (const key of ["background", "panel", "text", "muted", "accent", "border", "tint", "actionText"]) if (!/^#[0-9A-F]{6}$/i.test(tokens[theme]?.[key])) throw new Error(`Invalid reading token: ${theme}/${key}`);
   for (const key of ["contentWidth", "readingWidth"]) if (!/^\d+rem$/.test(tokens[key])) throw new Error(`Invalid layout token: ${key}`);
