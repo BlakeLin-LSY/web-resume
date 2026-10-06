@@ -50,7 +50,6 @@
       },
       "proofHeading": "Selected professional work",
       "proofIntro": "From training bottlenecks to systems on the factory floor.",
-      "proofDetails": "Results & evidence",
       "careerLink": "See professional experience",
       "workHeading": "Recent personal projects",
       "focus": "Two tools for turning complex source material into something people can read and use.",
@@ -75,8 +74,8 @@
       "offlineScope": "All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.",
       "noJs": "JavaScript is off; both language versions are available below.",
       "metadataDescription": "AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.",
-      "scopeNote": "Figures come from my professional work. Each role's details state what the number measures.",
-      "github": "GitHub"
+      "github": "GitHub",
+      "cameraChip": "{cameraPairs} stereo-camera pairs on a production line"
     },
     "zh-TW": {
       "lead": "我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。",
@@ -99,7 +98,6 @@
       },
       "proofHeading": "精選職業成果",
       "proofIntro": "從訓練瓶頸，到工廠現場的系統整合。",
-      "proofDetails": "成果與依據",
       "careerLink": "查看專業經歷",
       "workHeading": "近期個人作品",
       "focus": "把研究資料與錄音，整理成容易閱讀、使用的內容。",
@@ -124,8 +122,8 @@
       "offlineScope": "作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。",
       "noJs": "JavaScript 關閉時，下方保留兩種語言的完整內容。",
       "metadataDescription": "AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。",
-      "scopeNote": "數字來自職業工作；各職務的細節說明每個數字衡量的是什麼。",
-      "github": "GitHub"
+      "github": "GitHub",
+      "cameraChip": "{cameraPairs} 組立體相機產線"
     }
   },
   "professional": [
@@ -152,7 +150,7 @@
           "Built and adapted a Nvidia Morpheus network-anomaly workflow using real PCAP input.",
           "Ran and adapted PhysicsNeMo training workflows for an OpenFOAM CFD use case."
         ],
-        "boundary": "The 10× figure refers to model-training speed, not overall team productivity or deployment results."
+        "boundary": "Measures model-training speed."
       },
       "zh-TW": {
         "proofTitle": "ML pipeline 效能",
@@ -162,7 +160,7 @@
           "使用真實 PCAP 輸入，建立並調整 Nvidia Morpheus 網路異常偵測 workflow。",
           "針對 OpenFOAM CFD use case，執行與調整 PhysicsNeMo 訓練 workflow。"
         ],
-        "boundary": "10 倍指模型訓練速度，不代表整體團隊效率或部署成果。"
+        "boundary": "衡量:模型訓練速度。"
       }
     },
     {
@@ -186,7 +184,7 @@
           "Advanced a C++/Python 3D-measurement MVP to factory-ready production testing.",
           "Defined test specifications and analyzed results to guide cross-functional hardware tuning."
         ],
-        "boundary": "The system reached factory-ready production testing; this does not describe a full product launch."
+        "boundary": "Stage reached: production testing before product launch."
       },
       "zh-TW": {
         "proofTitle": "軟硬體整合",
@@ -197,7 +195,7 @@
           "將 C++／Python 3D 量測原型推進到工廠上線前測試。",
           "定義測試規格、分析成果，支援跨部門硬體調校。"
         ],
-        "boundary": "系統推進到工廠上線前的量產測試階段，不代表正式產品上市。"
+        "boundary": "階段:產品上市前的量產測試。"
       }
     },
     {
@@ -220,7 +218,7 @@
         "details": [
           "Mentored two engineers and worked with a cross-functional team of 10+ on integration milestones."
         ],
-        "boundary": "The 40% figure refers to AOI inspection cycle time, not overall line throughput.",
+        "boundary": "Measures AOI inspection cycle time.",
         "proofTitle": "Optical inspection",
         "scope": "Manufacturing-line inspection"
       },
@@ -229,7 +227,7 @@
         "details": [
           "指導兩位工程師，並與 10 人以上跨部門團隊共同完成整合里程碑。"
         ],
-        "boundary": "40% 指 AOI 檢測週期時間，不代表整條產線產能。",
+        "boundary": "衡量:AOI 檢測週期時間。",
         "proofTitle": "光學檢測",
         "scope": "製造產線檢測"
       }
@@ -254,7 +252,7 @@
         "details": [
           "Calibrated Intel RealSense D415/D435 camera systems."
         ],
-        "boundary": "The 66% figure refers to the 3D measurement accuracy of the stereo-camera system.",
+        "boundary": "Measures 3D measurement accuracy of the stereo-camera system.",
         "proofTitle": "Stereo 3D measurement",
         "scope": "Measurement accuracy"
       },
@@ -263,7 +261,7 @@
         "details": [
           "執行 Intel RealSense D415／D435 相機系統校正。"
         ],
-        "boundary": "66% 指雙目相機系統的 3D 量測精度。",
+        "boundary": "衡量:雙目相機系統的 3D 量測精度。",
         "proofTitle": "立體視覺 3D 量測",
         "scope": "量測精度"
       }

@@ -128,3 +128,4 @@ html:not(.resume-enhanced) .resume-navigation [data-resume-locale]+[data-resume-
 }
 
 @media print{.resume-actions,.resume-button{break-inside:avoid;page-break-inside:avoid}.resume-footer{display:none!important}}
+.resume-chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:18px 0 0}.resume-chips li{border:1px solid var(--resume-border);border-radius:999px;padding:5px 12px;font-size:.88rem;line-height:1.4;color:var(--resume-accent);background:var(--resume-tint)}
