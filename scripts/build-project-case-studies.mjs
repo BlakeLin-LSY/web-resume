@@ -149,10 +149,10 @@ const themeButton = document.querySelector('[data-theme-toggle]');
 const systemDark = matchMedia('(prefers-color-scheme: dark)');
 const query = new URLSearchParams(location.search);
 let selectedLanguage = query.get('lang') || root.lang || 'en';
-let selectedTheme = query.get('theme') || root.dataset.readingTheme || 'auto';
+let selectedTheme = query.get('theme') || root.dataset.readingTheme || 'light';
 try { selectedLanguage = query.get('lang') || localStorage.getItem('resume-language') || selectedLanguage; selectedTheme = query.get('theme') || localStorage.getItem('resume-theme') || selectedTheme; } catch {}
 if (!['en','zh-TW'].includes(selectedLanguage)) selectedLanguage = 'en';
-if (!['auto','light','dark'].includes(selectedTheme)) selectedTheme = 'auto';
+if (!['light','dark'].includes(selectedTheme)) selectedTheme = 'light';
 function remember(key, value) { try { localStorage.setItem(key, value); } catch {} }
 function updateQuery() { try { const url = new URL(location.href); url.searchParams.set('lang', selectedLanguage); url.searchParams.set('theme', selectedTheme); history.replaceState(null, '', url); } catch {} }
 function updateReadingLinks() {

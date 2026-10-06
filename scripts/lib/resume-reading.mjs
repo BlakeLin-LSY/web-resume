@@ -8,8 +8,8 @@ const languageButtons=document.querySelectorAll('[data-resume-language]');
 const narrow=matchMedia('(max-width: 859px)'),systemDark=matchMedia('(prefers-color-scheme: dark)');
 let language='en',theme='auto',open=false;
 const query=new URLSearchParams(location.search);
-try {language=query.get('lang')||localStorage.getItem('resume-language')||root.lang||'en';theme=query.get('theme')||localStorage.getItem('resume-theme')||root.dataset.readingTheme||'auto';} catch {language=query.get('lang')||root.lang||'en';theme=query.get('theme')||root.dataset.readingTheme||'auto';}
-if(!['en','zh-TW'].includes(language))language='en';if(!['auto','light','dark'].includes(theme))theme='auto';
+try {language=query.get('lang')||localStorage.getItem('resume-language')||root.lang||'en';theme=query.get('theme')||localStorage.getItem('resume-theme')||root.dataset.readingTheme||'light';} catch {language=query.get('lang')||root.lang||'en';theme=query.get('theme')||root.dataset.readingTheme||'light';}
+if(!['en','zh-TW'].includes(language))language='en';if(!['light','dark'].includes(theme))theme='light';
 function headerOffset(){root.style.setProperty('--header-offset',(header.getBoundingClientRect().height+20)+'px');}
 function closeMenu(){open=false;nav.hidden=narrow.matches;menu.setAttribute('aria-expanded','false');headerOffset();}
 function savePreference(key,value){try{localStorage.setItem(key,value);}catch{}}

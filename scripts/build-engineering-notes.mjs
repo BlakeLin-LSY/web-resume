@@ -34,9 +34,9 @@ const views = locales.map(lang => {
 }).join('');
 const script = `(function(){
 const root=document.documentElement,query=new URLSearchParams(location.search),system=matchMedia('(prefers-color-scheme:dark)');
-let lang=query.get('lang')||root.lang||'en',theme=query.get('theme')||root.dataset.readingTheme||'auto';
+let lang=query.get('lang')||root.lang||'en',theme=query.get('theme')||root.dataset.readingTheme||'light';
 try{lang=query.get('lang')||localStorage.getItem('resume-language')||lang;theme=query.get('theme')||localStorage.getItem('resume-theme')||theme;}catch{}
-if(!['en','zh-TW'].includes(lang))lang='en';if(!['auto','light','dark'].includes(theme))theme='auto';
+if(!['en','zh-TW'].includes(lang))lang='en';if(!['light','dark'].includes(theme))theme='light';
 function apply(){root.lang=lang;root.dataset.readingTheme=theme;document.title=(lang==='en'?'Engineering notes':'工程筆記')+' — Blake Lin';document.querySelectorAll('[data-locale]').forEach(el=>el.hidden=el.dataset.locale!==lang);document.querySelectorAll('[data-language]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.language===lang)));document.querySelectorAll('[data-back]').forEach(el=>{const url=new URL('./resume-overview.html',location.href);if(location.protocol!=='file:')url.pathname=url.pathname.replace(/resume-overview.html$/,'');url.searchParams.set('lang',lang);url.searchParams.set('theme',theme);url.hash='projects';el.href=url.href;});try{const url=new URL(location.href);url.searchParams.set('lang',lang);url.searchParams.set('theme',theme);history.replaceState(null,'',url);}catch{}}
 function store(){try{localStorage.setItem('resume-language',lang);localStorage.setItem('resume-theme',theme);}catch{}}
 root.classList.add('enhanced');document.querySelectorAll('[data-language]').forEach(el=>el.onclick=()=>{lang=el.dataset.language;apply();store();});document.querySelector('[data-theme]').onclick=()=>{theme=(theme==='dark'||(theme==='auto'&&system.matches))?'light':'dark';apply();store();};

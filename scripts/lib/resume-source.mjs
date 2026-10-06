@@ -64,5 +64,5 @@ export async function loadResumeSource(profilePath = resolve(repoRoot, "content/
 export function readingTokenCss(tokens) {
   const names = { background: "background", panel: "panel", text: "text", muted: "muted", accent: "accent", border: "border", tint: "tint", actionText: "action-text" };
   const values = theme => Object.entries(names).map(([key, cssName]) => `--resume-${cssName}:${tokens[theme][key]}`).join(";");
-  return `:root{${values("light")};--resume-font:${tokens.fontFamily};--resume-content-width:${tokens.contentWidth};--resume-reading-width:${tokens.readingWidth};color-scheme:light dark}\n@media(prefers-color-scheme:dark){:root:not([data-reading-theme=light]){${values("dark")}}}\n:root[data-reading-theme=dark]{${values("dark")}}\n:root[data-reading-theme=light]{${values("light")}}\n`;
+  return `:root{${values("light")};--resume-font:${tokens.fontFamily};--resume-content-width:${tokens.contentWidth};--resume-reading-width:${tokens.readingWidth};color-scheme:light}\n:root[data-reading-theme=dark]{${values("dark")};color-scheme:dark}\n:root[data-reading-theme=light]{${values("light")}}\n`;
 }

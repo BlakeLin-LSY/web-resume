@@ -2,9 +2,8 @@
 <!-- Generated from content/project-case-studies.json. Edit the content source or generator. -->
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
 <title>Transcribe-for-X — Engineering introduction</title><meta name="description" content="I wanted to speak an unfinished thought and keep ownership of the final wording. That meant preserving the recording and making recognition, cleanup, and editing separate steps."><style>
-:root{--resume-background:#F6F3EC;--resume-panel:#FFFFFF;--resume-text:#242824;--resume-muted:#5C645D;--resume-accent:#285C4D;--resume-border:#BCC4B9;--resume-tint:#E7EDE4;--resume-action-text:#FFFFFF;--resume-font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;--resume-content-width:70rem;--resume-reading-width:44rem;color-scheme:light dark}
-@media(prefers-color-scheme:dark){:root:not([data-reading-theme=light]){--resume-background:#171D1A;--resume-panel:#222B25;--resume-text:#F2F0E9;--resume-muted:#B5C0B8;--resume-accent:#A8D2B4;--resume-border:#64776A;--resume-tint:#283B30;--resume-action-text:#17251A}}
-:root[data-reading-theme=dark]{--resume-background:#171D1A;--resume-panel:#222B25;--resume-text:#F2F0E9;--resume-muted:#B5C0B8;--resume-accent:#A8D2B4;--resume-border:#64776A;--resume-tint:#283B30;--resume-action-text:#17251A}
+:root{--resume-background:#F6F3EC;--resume-panel:#FFFFFF;--resume-text:#242824;--resume-muted:#5C645D;--resume-accent:#285C4D;--resume-border:#BCC4B9;--resume-tint:#E7EDE4;--resume-action-text:#FFFFFF;--resume-font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;--resume-content-width:70rem;--resume-reading-width:44rem;color-scheme:light}
+:root[data-reading-theme=dark]{--resume-background:#171D1A;--resume-panel:#222B25;--resume-text:#F2F0E9;--resume-muted:#B5C0B8;--resume-accent:#A8D2B4;--resume-border:#64776A;--resume-tint:#283B30;--resume-action-text:#17251A;color-scheme:dark}
 :root[data-reading-theme=light]{--resume-background:#F6F3EC;--resume-panel:#FFFFFF;--resume-text:#242824;--resume-muted:#5C645D;--resume-accent:#285C4D;--resume-border:#BCC4B9;--resume-tint:#E7EDE4;--resume-action-text:#FFFFFF}
 
 :root{--bg:var(--resume-background);--panel:var(--resume-panel);--text:var(--resume-text);--muted:var(--resume-muted);--border:var(--resume-border);--blue:var(--resume-accent);--tint:var(--resume-tint)}
@@ -78,10 +77,10 @@ const themeButton = document.querySelector('[data-theme-toggle]');
 const systemDark = matchMedia('(prefers-color-scheme: dark)');
 const query = new URLSearchParams(location.search);
 let selectedLanguage = query.get('lang') || root.lang || 'en';
-let selectedTheme = query.get('theme') || root.dataset.readingTheme || 'auto';
+let selectedTheme = query.get('theme') || root.dataset.readingTheme || 'light';
 try { selectedLanguage = query.get('lang') || localStorage.getItem('resume-language') || selectedLanguage; selectedTheme = query.get('theme') || localStorage.getItem('resume-theme') || selectedTheme; } catch {}
 if (!['en','zh-TW'].includes(selectedLanguage)) selectedLanguage = 'en';
-if (!['auto','light','dark'].includes(selectedTheme)) selectedTheme = 'auto';
+if (!['light','dark'].includes(selectedTheme)) selectedTheme = 'light';
 function remember(key, value) { try { localStorage.setItem(key, value); } catch {} }
 function updateQuery() { try { const url = new URL(location.href); url.searchParams.set('lang', selectedLanguage); url.searchParams.set('theme', selectedTheme); history.replaceState(null, '', url); } catch {} }
 function updateReadingLinks() {
