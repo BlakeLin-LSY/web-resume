@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "sourceVersion": "Canonical latest-submission CV copy; verified 2026-10-04",
+  "sourceVersion": "Second-edition CV generated from shared site facts (cv-candidate 2026-10-05, selected 2026-10-07)",
   "privacy": "Name and email only",
   "locales": {
     "en": {
       "file": "blake-lin-cv-en.pdf",
-      "bytes": 62007,
-      "sha256": "bd4063bdc73b7a3126e6a01e8ed8950f88d5ba20deae844feff95001b81db9ed",
+      "bytes": 36182,
+      "sha256": "367e8d67523447f6971815255b5c8ce6945fd6c814e06703924310f694cc33f5",
       "pageCount": 1
     },
     "zh-TW": {
       "file": "blake-lin-cv-zh-tw.pdf",
-      "bytes": 225055,
-      "sha256": "fab906e1e9e88d5bfd4bd9250db8da9d104e917d88bac00510a465acc1fda104",
+      "bytes": 486878,
+      "sha256": "b05981aca0d59c41e679034a826aa65d8780562e58fec87863f08c28d6c9ca00",
       "pageCount": 1
     }
   }
