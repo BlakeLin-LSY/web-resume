@@ -10,7 +10,8 @@
   },
   "contact": {
     "email": "ssu.yuan.lin@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/ssu-yuan-lin"
+    "linkedin": "https://www.linkedin.com/in/ssu-yuan-lin",
+    "github": "https://github.com/BlakeLin-LSY"
   },
   "entry": {
     "id": "general-ai-software",
@@ -70,10 +71,11 @@
       "cvOther": "正體中文 CV",
       "footer": "AI Software Engineer · Professional work and personal engineering",
       "saveScope": "Save the complete package to keep the overview, all three cases and both CVs together offline. A single overview HTML does not include the linked files.",
-      "offlineScope": "All case pages and both CVs are included. Keep the extracted folders together; Email and LinkedIn need connectivity.",
+      "offlineScope": "All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.",
       "noJs": "JavaScript is off; both language versions are available below.",
       "metadataDescription": "AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.",
-      "scopeNote": "Figures come from my professional work. Each role's details state what the number measures."
+      "scopeNote": "Figures come from my professional work. Each role's details state what the number measures.",
+      "github": "GitHub"
     },
     "zh-TW": {
       "lead": "我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。",
@@ -118,10 +120,11 @@
       "cvOther": "English CV",
       "footer": "AI Software Engineer · 職業成果與個人工程",
       "saveScope": "完整包可離線保留概要、三份作品與兩份 CV。單獨保存概要 HTML 不會包含連結的檔案。",
-      "offlineScope": "作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email 與 LinkedIn 需要連線。",
+      "offlineScope": "作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。",
       "noJs": "JavaScript 關閉時，下方保留兩種語言的完整內容。",
       "metadataDescription": "AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。",
-      "scopeNote": "數字來自職業工作；各職務的細節說明每個數字衡量的是什麼。"
+      "scopeNote": "數字來自職業工作；各職務的細節說明每個數字衡量的是什麼。",
+      "github": "GitHub"
     }
   },
   "professional": [

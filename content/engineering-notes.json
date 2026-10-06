@@ -20,7 +20,7 @@
       "emailHint": "The links open your email app with a topic. Nothing is sent automatically.",
       "entry": "Engineering notes — debugging, testing, and decisions",
       "saveScope": "Save the complete package to keep the overview, three cases, engineering notes and both CVs together offline. A single overview HTML does not include linked files.",
-      "offlineScope": "Case pages, engineering notes and both CVs are included. Keep the extracted folders together; Email and LinkedIn need connectivity."
+      "offlineScope": "Case pages, engineering notes and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity."
     },
     "zh-TW": {
       "title": "工程筆記",
@@ -39,7 +39,7 @@
       "emailHint": "連結會開啟 Email 草稿並帶入題目，不會自動寄出。",
       "entry": "工程筆記：排錯、測試與決策",
       "saveScope": "完整包可離線保留概要、三份作品、工程筆記與兩份 CV。單獨保存概要 HTML 不包含連結的檔案。",
-      "offlineScope": "作品頁、工程筆記與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email 與 LinkedIn 需要連線。"
+      "offlineScope": "作品頁、工程筆記與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。"
     }
   },
   "notes": [
