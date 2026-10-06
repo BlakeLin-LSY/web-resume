@@ -56,7 +56,7 @@
       "snapshot": "Personal projects, 2026. Each example shows its own date.",
       "moreWork": "More work",
       "experienceHeading": "Professional experience",
-      "experienceIntro": "Four engineering roles. Research and ongoing learning are listed separately.",
+      "experienceIntro": "Four engineering roles, with what I did between them. Research and ongoing learning are listed separately.",
       "careerDetail": "Work details",
       "researchHeading": "Research and ongoing learning",
       "aboutHeading": "About",
@@ -104,7 +104,7 @@
       "snapshot": "個人專案，2026 年；各案例標示當時日期。",
       "moreWork": "更多作品",
       "experienceHeading": "專業經歷",
-      "experienceIntro": "四份工程職務；研究與持續學習另行列出。",
+      "experienceIntro": "四份工程職務，以及職務之間的經歷；研究與持續學習另行列出。",
       "careerDetail": "工作細節",
       "researchHeading": "研究與持續學習",
       "aboutHeading": "關於我",
@@ -160,7 +160,7 @@
           "使用真實 PCAP 輸入，建立並調整 Nvidia Morpheus 網路異常偵測 workflow。",
           "針對 OpenFOAM CFD use case，執行與調整 PhysicsNeMo 訓練 workflow。"
         ],
-        "boundary": "衡量:模型訓練速度。"
+        "boundary": "衡量：模型訓練速度。"
       }
     },
     {
@@ -195,7 +195,7 @@
           "將 C++／Python 3D 量測原型推進到工廠上線前測試。",
           "定義測試規格、分析成果，支援跨部門硬體調校。"
         ],
-        "boundary": "階段:產品上市前的量產測試。"
+        "boundary": "階段：產品上市前的量產測試。"
       }
     },
     {
@@ -227,7 +227,7 @@
         "details": [
           "指導兩位工程師，並與 10 人以上跨部門團隊共同完成整合里程碑。"
         ],
-        "boundary": "衡量:AOI 檢測週期時間。",
+        "boundary": "衡量：AOI 檢測週期時間。",
         "proofTitle": "光學檢測",
         "scope": "製造產線檢測"
       }
@@ -261,9 +261,43 @@
         "details": [
           "執行 Intel RealSense D415／D435 相機系統校正。"
         ],
-        "boundary": "衡量:雙目相機系統的 3D 量測精度。",
+        "boundary": "衡量：雙目相機系統的 3D 量測精度。",
         "proofTitle": "立體視覺 3D 量測",
         "scope": "量測精度"
+      }
+    }
+  ],
+  "careerBreaks": [
+    {
+      "id": "cloud-courses",
+      "start": "2022-04",
+      "end": "2023-08",
+      "sourceIds": [
+        "MAT-CAREER"
+      ],
+      "en": {
+        "title": "Cloud computing courses · Google Grow with Google program",
+        "text": "GCP architecture, cloud-native application development and distributed systems."
+      },
+      "zh-TW": {
+        "title": "雲端運算課程 · Google Grow with Google 計畫",
+        "text": "GCP 架構、雲原生應用開發與分散式系統。"
+      }
+    },
+    {
+      "id": "gap-year",
+      "start": "2020-04",
+      "end": "2021-05",
+      "sourceIds": [
+        "MAT-CAREER"
+      ],
+      "en": {
+        "title": "Gap year · Outdoor activities and online learning",
+        "text": "CS50 online course; trail running, mountain climbing and marathon training."
+      },
+      "zh-TW": {
+        "title": "空檔年 · 戶外活動與線上學習",
+        "text": "修習 CS50 線上課程；越野跑、登山與馬拉松訓練。"
       }
     }
   ],

@@ -38,7 +38,7 @@ export async function loadResumeSource(profilePath = resolve(repoRoot, "content/
   if (profile.entry.proofIds.length !== 2 || profile.entry.projectIds.length !== 2 || profile.entry.moreProjectIds.length !== 1) throw new Error("Overview requires two professional anchors and two featured works");
   if (new Set(profile.entry.proofIds).size !== 2 || new Set([...profile.entry.projectIds, ...profile.entry.moreProjectIds]).size !== 3) throw new Error("Selected overview entries must be distinct");
   if (profile.entry.proofIds.some(id => !professionalIds.has(id)) || [...profile.entry.projectIds, ...profile.entry.moreProjectIds].some(id => !projectIds.has(id) || !blurbIds.has(id))) throw new Error("Unknown selected proof / project ID");
-  for (const item of [...profile.professional, ...profile.researchLearning]) {
+  for (const item of [...profile.professional, ...profile.careerBreaks, ...profile.researchLearning]) {
     if (!/^\d{4}-\d{2}$/.test(item.start) || !/^(\d{4}-\d{2}|ongoing)$/.test(item.end)) throw new Error(`Invalid career date: ${item.id}`);
     if (!Array.isArray(item.sourceIds) || !item.sourceIds.length) throw new Error(`Source IDs required: ${item.id}`);
     for (const language of ["en", "zh-TW"]) {
