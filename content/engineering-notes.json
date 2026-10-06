@@ -53,14 +53,14 @@
         "context": "DynaSafe · Professional work · Jan–Apr 2026",
         "title": "The training bottleneck was in the data pipeline",
         "brief": "Profiling led me to a dataloader bottleneck. Rebuilding that pipeline produced the 10× model-training speedup recorded in my career history. The interesting part is how the bottleneck was found.",
-        "detail": "This note draws on my career record. The longer account still needs a shareable profiling example and the original workload, hardware and measurement method. The 10× figure describes model training, not overall team productivity.",
+        "detail": "The 10× figure describes model-training speed, not overall team productivity. A longer account with a profiling walkthrough is in preparation.",
         "question": "How do you decide whether a slow training run needs model changes or a better data path?"
       },
       "zh-TW": {
         "context": "DynaSafe · 職業工作 · 2026 年 1–4 月",
         "title": "訓練瓶頸，出在資料怎麼送進來",
         "brief": "我透過 profiling 找到 dataloader 的瓶頸，再重建資料 pipeline。職涯紀錄中的模型訓練速度提升 10 倍，來自這次修改；值得展開聊的是，當時怎麼找到問題。",
-        "detail": "目前依據是職涯紀錄。完整文章還需要可公開的 profiling 範例，以及原始 workload、硬體與量測方法。10 倍指模型訓練速度，不代表整個團隊的工作效率。",
+        "detail": "10 倍指模型訓練速度，不代表整個團隊的工作效率。附 profiling 過程的完整文章準備中。",
         "question": "訓練太慢時，你會怎麼判斷該調模型，還是先查資料 pipeline？"
       }
     },

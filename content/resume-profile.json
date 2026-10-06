@@ -52,7 +52,7 @@
       "careerLink": "See professional experience",
       "workHeading": "Recent personal projects",
       "focus": "Two tools for turning complex source material into something people can read and use.",
-      "snapshot": "Source review: 3 Oct 2026. Historical examples carry their own dates.",
+      "snapshot": "Personal projects, 2026. Each example shows its own date.",
       "moreWork": "More work",
       "experienceHeading": "Professional experience",
       "experienceIntro": "Four engineering roles. Research and ongoing learning are listed separately.",
@@ -73,7 +73,7 @@
       "offlineScope": "All case pages and both CVs are included. Keep the extracted folders together; Email and LinkedIn need connectivity.",
       "noJs": "JavaScript is off; both language versions are available below.",
       "metadataDescription": "AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.",
-      "scopeNote": "Professional results below follow my career record. Original measurement protocols are not included; the notes on each role describe the available scope."
+      "scopeNote": "Figures come from my professional work. Each role's details state what the number measures."
     },
     "zh-TW": {
       "lead": "我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。",
@@ -100,7 +100,7 @@
       "careerLink": "查看專業經歷",
       "workHeading": "近期個人作品",
       "focus": "把研究資料與錄音，整理成容易閱讀、使用的內容。",
-      "snapshot": "來源檢視截至 2026-10-03；歷史案例另標當時日期。",
+      "snapshot": "個人專案，2026 年；各案例標示當時日期。",
       "moreWork": "更多作品",
       "experienceHeading": "專業經歷",
       "experienceIntro": "四份工程職務；研究與持續學習另行列出。",
@@ -121,7 +121,7 @@
       "offlineScope": "作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email 與 LinkedIn 需要連線。",
       "noJs": "JavaScript 關閉時，下方保留兩種語言的完整內容。",
       "metadataDescription": "AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。",
-      "scopeNote": "以下職業成果依職涯紀錄呈現；未附原始量測方法，各職務的細節中列出目前可確認的範圍。"
+      "scopeNote": "數字來自職業工作；各職務的細節說明每個數字衡量的是什麼。"
     }
   },
   "professional": [
@@ -143,22 +143,22 @@
       "en": {
         "proofTitle": "ML pipeline performance",
         "summary": "Profiled a dataloader bottleneck and rebuilt the training data pipeline.",
-        "scope": "Model training · Career record",
+        "scope": "Model training",
         "details": [
           "Built and adapted a Nvidia Morpheus network-anomaly workflow using real PCAP input.",
           "Ran and adapted PhysicsNeMo training workflows for an OpenFOAM CFD use case."
         ],
-        "boundary": "The metric concerns model training. The original baseline and measurement protocol remain unverified."
+        "boundary": "The 10× figure refers to model-training speed, not overall team productivity or deployment results."
       },
       "zh-TW": {
         "proofTitle": "ML pipeline 效能",
         "summary": "分析資料載入瓶頸、追查根因，並重建訓練資料 pipeline。",
-        "scope": "模型訓練 · 職涯紀錄",
+        "scope": "模型訓練",
         "details": [
           "使用真實 PCAP 輸入，建立並調整 Nvidia Morpheus 網路異常偵測 workflow。",
           "針對 OpenFOAM CFD use case，執行與調整 PhysicsNeMo 訓練 workflow。"
         ],
-        "boundary": "指標限模型訓練；原始 baseline 與量測 protocol 尚未核實。"
+        "boundary": "10 倍指模型訓練速度，不代表整體團隊效率或部署成果。"
       }
     },
     {
@@ -177,23 +177,23 @@
         "proofTitle": "Hardware and software integration",
         "summary": "Led system design, hardware integration, and boundary testing for a {cameraPairs}-stereo-camera line.",
         "result": "MVP → factory-ready production testing",
-        "scope": "Factory-ready testing · Career record",
+        "scope": "Factory-ready testing",
         "details": [
           "Advanced a C++/Python 3D-measurement MVP to factory-ready production testing.",
           "Defined test specifications and analyzed results to guide cross-functional hardware tuning."
         ],
-        "boundary": "The result is factory-ready production testing. Full product launch and sustained production operation are not established."
+        "boundary": "The system reached factory-ready production testing; this does not describe a full product launch."
       },
       "zh-TW": {
         "proofTitle": "軟硬體整合",
         "summary": "負責 {cameraPairs} 組立體攝影機產線的系統設計、硬體整合與邊界測試。",
         "result": "量測原型 → 工廠上線前測試",
-        "scope": "工廠上線前測試 · 職涯紀錄",
+        "scope": "工廠上線前測試",
         "details": [
           "將 C++／Python 3D 量測原型推進到工廠上線前測試。",
           "定義測試規格、分析成果，支援跨部門硬體調校。"
         ],
-        "boundary": "成果到工廠上線前測試階段；未包含已確認的產品上市或長期量產運作。"
+        "boundary": "系統推進到工廠上線前的量產測試階段，不代表正式產品上市。"
       }
     },
     {
@@ -216,18 +216,18 @@
         "details": [
           "Mentored two engineers and worked with a cross-functional team of 10+ on integration milestones."
         ],
-        "boundary": "The metric concerns cycle time. Timing definition, baseline, and attribution remain unspecified.",
+        "boundary": "The 40% figure refers to AOI inspection cycle time, not overall line throughput.",
         "proofTitle": "Optical inspection",
-        "scope": "Manufacturing-line inspection · Career record"
+        "scope": "Manufacturing-line inspection"
       },
       "zh-TW": {
         "summary": "開發 C# 自動光學檢測演算法，應用於製造產線。",
         "details": [
           "指導兩位工程師，並與 10 人以上跨部門團隊共同完成整合里程碑。"
         ],
-        "boundary": "指標為 cycle time；計時定義、baseline 與歸因仍未明確。",
+        "boundary": "40% 指 AOI 檢測週期時間，不代表整條產線產能。",
         "proofTitle": "光學檢測",
-        "scope": "製造產線檢測 · 職涯紀錄"
+        "scope": "製造產線檢測"
       }
     },
     {
@@ -250,18 +250,18 @@
         "details": [
           "Calibrated Intel RealSense D415/D435 camera systems."
         ],
-        "boundary": "The metric concerns measurement accuracy. Its error definition and evaluation protocol remain unspecified.",
+        "boundary": "The 66% figure refers to the 3D measurement accuracy of the stereo-camera system.",
         "proofTitle": "Stereo 3D measurement",
-        "scope": "Measurement accuracy · Career record"
+        "scope": "Measurement accuracy"
       },
       "zh-TW": {
         "summary": "透過相機校正與演算法重新設計，改善即時立體攝影機 3D 量測。",
         "details": [
           "執行 Intel RealSense D415／D435 相機系統校正。"
         ],
-        "boundary": "指標為量測精度；誤差定義與 evaluation protocol 仍未明確。",
+        "boundary": "66% 指雙目相機系統的 3D 量測精度。",
         "proofTitle": "立體視覺 3D 量測",
-        "scope": "量測精度 · 職涯紀錄"
+        "scope": "量測精度"
       }
     }
   ],
