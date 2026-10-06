@@ -20,8 +20,8 @@
     },
     {
       "file": "scripts/build-cv-candidates.mjs",
-      "bytes": 7037,
-      "sha256": "2148845f7ed9016538a34561ad10fd6c4e6d701383f079127b1b9e410839df4b"
+      "bytes": 7404,
+      "sha256": "93c9560f7b6513e3f4925d3dd285cc6c51d2f308254ad82fbd87e6e2361d6a89"
     }
   ],
   "outputs": [
@@ -29,14 +29,14 @@
       "language": "en",
       "html": "blake-lin-cv-candidate-en.html",
       "pdf": "blake-lin-cv-candidate-en.pdf",
-      "pdfSha256": "3de7c53817dd847da7412b0cc12e3406040c01c8b1f40535063f292f5c81f1be",
+      "pdfSha256": "c0b5955e7467721b5d09b4942e0ef4354e782455baea6d2fb0de1888df76a137",
       "httpRequests": 0
     },
     {
       "language": "zh-TW",
       "html": "blake-lin-cv-candidate-zh-tw.html",
       "pdf": "blake-lin-cv-candidate-zh-tw.pdf",
-      "pdfSha256": "ec0e0d09508bbf74cdac23f938991a6c2e6a987ea9845f64fc2ed9ccab7ac775",
+      "pdfSha256": "8d0cfb30adeaac71b1aa2075319e8f43914ac80459162be968fe22323f10656f",
       "httpRequests": 0
     }
   ]

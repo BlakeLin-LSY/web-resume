@@ -18,7 +18,7 @@ def normalize(text):
 
 def inspect_text(text):
     normalized = normalize(text)
-    expected = [profile['identity']['name'], profile['identity']['role'], profile['contact']['email'], 'github.com/BlakeLin-LSY', 'blakelin-lsy.github.io/web-resume', 'Study Atlas', 'Transcribe-for-X']
+    expected = [profile['identity']['name'], profile['identity']['role'], profile['contact']['email'], 'github.com/BlakeLin-LSY', 'blakelin-lsy.github.io/web-resume', 'Study Atlas', 'Transcribe-for-X', 'Google Grow with Google', '2020-04', '2021-05', '2022-04', '2023-08']
     for item in profile['professional']:
         expected.extend([item['employer'], item['start'], item['end']])
         if item.get('metric'):
