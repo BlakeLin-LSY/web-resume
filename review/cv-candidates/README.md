@@ -17,7 +17,7 @@
 從 website repo 執行（替換為本機已安裝路徑；不需要 live model）：
 
 ```bash
-PLAYWRIGHT_MODULE=/home/blake_u2204/.npm/_npx/e41f203b7505f1fb/node_modules/playwright CHROMIUM_PATH=/home/blake_u2204/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome /home/blake_u2204/.nvm/versions/node/v22.17.0/bin/node scripts/build-cv-candidates.mjs
+PLAYWRIGHT_MODULE=<path-to>/node_modules/playwright CHROMIUM_PATH=<path-to>/chrome node scripts/build-cv-candidates.mjs
 ```
 
 依賴：現有 Node／Playwright／Chromium，以及 Python pypdf。來源是 `content/resume-profile.json`、`content/cv-candidate.json`、`content/design-tokens.json`；不要只改HTML或PDF。
