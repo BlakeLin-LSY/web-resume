@@ -18,7 +18,7 @@ def normalize(text):
 
 def inspect_text(text):
     normalized = normalize(text)
-    expected = [profile['identity']['name'], profile['identity']['role'], profile['contact']['email'], 'Study Atlas', 'Transcribe-for-X']
+    expected = [profile['identity']['name'], profile['identity']['role'], profile['contact']['email'], 'github.com/BlakeLin-LSY', 'blakelin-lsy.github.io/web-resume', 'Study Atlas', 'Transcribe-for-X']
     for item in profile['professional']:
         expected.extend([item['employer'], item['start'], item['end']])
         if item.get('metric'):
@@ -26,7 +26,7 @@ def inspect_text(text):
     for value in expected:
         if normalize(value) not in normalized:
             raise ValueError('Missing CV fact: ' + value)
-    for forbidden in ['/mnt/', '/home/', 'linkedin.com', 'github.com', 'career-ops-repo']:
+    for forbidden in ['/mnt/', '/home/', 'linkedin.com', 'career-ops-repo']:
         if forbidden in text:
             raise ValueError('Non-public CV field: ' + forbidden)
 

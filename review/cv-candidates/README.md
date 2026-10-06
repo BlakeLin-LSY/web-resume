@@ -1,6 +1,6 @@
 # 兩語 CV 候選稿 — 2026-10-05
 
-用途：讓目前通用 AI Software Engineer 網站與 PDF 使用同一近期敘事。這裡是候選稿，尚未替換 `app/public/resume/` 的 career 原件，沒有變更外部 career repo。
+用途：讓目前通用 AI Software Engineer 網站與 PDF 使用同一近期敘事。2026-10-07 owner 選定第二版，已替換 `app/public/resume/` 的公開 CV（career 原件留在 `a3e5df2` 的歷史）；頁首聯絡列含 email、GitHub 與網站連結。沒有變更外部 career repo。
 
 - [English PDF](blake-lin-cv-candidate-en.pdf)／[HTML](blake-lin-cv-candidate-en.html)
 - [正體中文 PDF](blake-lin-cv-candidate-zh-tw.pdf)／[HTML](blake-lin-cv-candidate-zh-tw.html)
@@ -28,4 +28,4 @@ Owner 選定候選版後，將 cv-candidate 的 status 改為 selected，重建�
 
 ## 第二版：依 owner 的「AI smell」回饋修訂
 
-刪除 traceable／inspectable／inference boundaries 等抽象自我描述，改寫成做了什麼、解決哪個問題、產出什麼。職業經歷用簡短動詞 bullets；專案直接描述閱讀卡片與逐項刪改。移除 CV 中反覆的驗證說明，Android prototype 與工廠上線前測試的成熟度仍保留；完整來源／量測限制在網站與本工作區 review。Owner 尚未選定第二版，因此 public 下載版仍不替換。
+刪除 traceable／inspectable／inference boundaries 等抽象自我描述，改寫成做了什麼、解決哪個問題、產出什麼。職業經歷用簡短動詞 bullets；專案直接描述閱讀卡片與逐項刪改。移除 CV 中反覆的驗證說明，Android prototype 與工廠上線前測試的成熟度仍保留；完整來源／量測限制在網站與本工作區 review。Owner 已於 2026-10-07 選定第二版，並替換公開下載版。

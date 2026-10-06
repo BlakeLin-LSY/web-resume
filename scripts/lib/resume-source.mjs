@@ -15,7 +15,7 @@ export async function loadResumeSource(profilePath = resolve(repoRoot, "content/
   for (const key of ["name", "shortName", "role"]) requireText(profile.identity?.[key], `identity/${key}`);
   if (profile.identity.role !== "AI Software Engineer") throw new Error("The agreed generic role must be retained");
   if (!/^\d{4}-\d{2}-\d{2}$/.test(profile.evidenceReviewedOn)) throw new Error("Dated source review is required");
-  if (!/^[\w.+-]+@[\w.-]+\.[a-z]+$/i.test(profile.contact?.email) || !/^https:\/\/www\.linkedin\.com\/in\/[a-z0-9-]+\/?$/i.test(profile.contact?.linkedin) || !/^https:\/\/github\.com\/[A-Za-z0-9-]+$/.test(profile.contact?.github)) throw new Error("Invalid public contact path");
+  if (!/^[\w.+-]+@[\w.-]+\.[a-z]+$/i.test(profile.contact?.email) || !/^https:\/\/www\.linkedin\.com\/in\/[a-z0-9-]+\/?$/i.test(profile.contact?.linkedin) || !/^https:\/\/github\.com\/[A-Za-z0-9-]+$/.test(profile.contact?.github) || profile.contact?.website !== "https://blakelin-lsy.github.io/web-resume/") throw new Error("Invalid public contact path");
   const localeKeys = Object.keys(profile.copy.en).sort();
   if (JSON.stringify(localeKeys) !== JSON.stringify(Object.keys(profile.copy["zh-TW"]).sort())) throw new Error("Homepage locale key mismatch");
   for (const language of ["en", "zh-TW"]) {
