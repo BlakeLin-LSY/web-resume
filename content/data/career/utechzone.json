@@ -1,0 +1,34 @@
+{
+  "id": "utechzone",
+  "employer": "UTECHZONE Corp.",
+  "title": "Algorithm Engineer",
+  "start": "2021-06",
+  "end": "2022-03",
+  "sourceIds": [
+    "MAT-CAREER"
+  ],
+  "metric": {
+    "value": 40,
+    "type": "aoi-cycle-time-reduction-percent",
+    "en": "{value}% lower AOI cycle time",
+    "zh-TW": "AOI cycle time 降低 {value}%"
+  },
+  "en": {
+    "summary": "Developed C# automated optical inspection algorithms for manufacturing lines.",
+    "details": [
+      "Mentored two engineers and worked with a cross-functional team of 10+ on integration milestones."
+    ],
+    "boundary": "Measures AOI inspection cycle time.",
+    "proofTitle": "Optical inspection",
+    "scope": "Manufacturing-line inspection"
+  },
+  "zh-TW": {
+    "summary": "開發 C# 自動光學檢測演算法，應用於製造產線。",
+    "details": [
+      "指導兩位工程師，並與 10 人以上跨部門團隊共同完成整合里程碑。"
+    ],
+    "boundary": "衡量：AOI 檢測週期時間。",
+    "proofTitle": "光學檢測",
+    "scope": "製造產線檢測"
+  }
+}

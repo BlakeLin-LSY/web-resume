@@ -1,0 +1,49 @@
+{
+  "id": "metgauge",
+  "employer": "MetGauge Co., Ltd.",
+  "title": "Software Engineer",
+  "start": "2023-09",
+  "end": "2024-08",
+  "sourceIds": [
+    "MAT-CAREER"
+  ],
+  "system": {
+    "cameraPairs": 12
+  },
+  "triad": {
+    "challenge": {
+      "en": "Scaling 3D optical measurement to 12 stereo pairs (24 cameras) on an active line.",
+      "zh-TW": "將 3D 光學量測擴展至產線 12 組立體相機（24 顆相機）即時檢測。"
+    },
+    "solution": {
+      "en": "Designed system architecture, deterministic hardware trigger sync bus, and tuning specs.",
+      "zh-TW": "主導系統架構設計、硬體觸發同步匯流排與跨部門調校規格。"
+    },
+    "boundary": {
+      "en": "Advanced prototype MVP to factory-ready production testing before product launch.",
+      "zh-TW": "推進成果：量測原型進入工廠上市前的產線上線測試階段。"
+    }
+  },
+  "en": {
+    "proofTitle": "Hardware and software integration",
+    "summary": "Led system design, hardware integration, and boundary testing for a {cameraPairs}-stereo-camera line.",
+    "result": "MVP → factory-ready production testing",
+    "scope": "Factory-ready testing",
+    "details": [
+      "Advanced a C++/Python 3D-measurement MVP to factory-ready production testing.",
+      "Defined test specifications and analyzed results to guide cross-functional hardware tuning."
+    ],
+    "boundary": "Stage reached: production testing before product launch."
+  },
+  "zh-TW": {
+    "proofTitle": "軟硬體整合",
+    "summary": "負責 {cameraPairs} 組立體攝影機產線的系統設計、硬體整合與邊界測試。",
+    "result": "量測原型 → 工廠上線前測試",
+    "scope": "工廠上線前測試",
+    "details": [
+      "將 C++／Python 3D 量測原型推進到工廠上線前測試。",
+      "定義測試規格、分析成果，支援跨部門硬體調校。"
+    ],
+    "boundary": "階段：產品上市前的量產測試。"
+  }
+}

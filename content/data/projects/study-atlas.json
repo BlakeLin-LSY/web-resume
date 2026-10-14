@@ -1,0 +1,35 @@
+{
+  "id": "study-atlas",
+  "sourceIds": [
+    "MAT-ATLAS",
+    "MAT-SHOWCASE"
+  ],
+  "triad": {
+    "challenge": {
+      "en": "Preventing unbounded token spend while preserving complete citation provenance.",
+      "zh-TW": "在完整保留引證來源的前提下，防止多 Agent 研究綜述 Token 超支。"
+    },
+    "solution": {
+      "en": "TALK 1.8 budget gate blocks over-budget plans (6.0 > 5.0) and reroutes to T5 compact (4.6).",
+      "zh-TW": "TALK 1.8 預算閘門熔斷超標方案（6.0 > 5.0），自主重導向至 T5 精簡綜述（4.6）。"
+    },
+    "boundary": {
+      "en": "6.0 → 4.6 is calculated TALK budget; not human reading time or wall-clock speedup.",
+      "zh-TW": "邊界界定：6.0 → 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。"
+    }
+  },
+  "en": {
+    "summary": "I built bilingual reading routes that turn the same research into a short briefing or a deeper explanation, while keeping sources and inferences distinct.",
+    "evidence": "Personal project · Historical walkthrough, 13 Sep 2026",
+    "boundary": "6.0 → 4.6 is calculated TALK budget, not measured human reading time or wall-clock acceleration.",
+    "action": "Read the Study Atlas case",
+    "walkthroughAction": "Try the budget-gate walkthrough"
+  },
+  "zh-TW": {
+    "summary": "把同一份研究整理成中英雙語、不同深度的閱讀路線，保留來源與推論的區別。",
+    "evidence": "個人專案 · 2026-09-13 歷史流程展示",
+    "boundary": "6.0 → 4.6 是 calculated TALK budget，不是真人閱讀時間或 wall-clock 加速。",
+    "action": "閱讀 Study Atlas 介紹",
+    "walkthroughAction": "操作預算檢查展示"
+  }
+}

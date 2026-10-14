@@ -1,0 +1,28 @@
+[
+  {
+    "id": "ms",
+    "start": "2016",
+    "end": "2018",
+    "en": {
+      "title": "M.S. in Physics",
+      "institution": "National Central University"
+    },
+    "zh-TW": {
+      "title": "物理學碩士",
+      "institution": "國立中央大學"
+    }
+  },
+  {
+    "id": "bs",
+    "start": "2012",
+    "end": "2016",
+    "en": {
+      "title": "B.S. in Physics",
+      "institution": "National Central University"
+    },
+    "zh-TW": {
+      "title": "物理學學士",
+      "institution": "國立中央大學"
+    }
+  }
+]

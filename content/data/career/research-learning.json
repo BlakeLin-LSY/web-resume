@@ -1,0 +1,34 @@
+[
+  {
+    "id": "ncu-research",
+    "start": "2018-09",
+    "end": "2019-01",
+    "sourceIds": [
+      "MAT-CAREER"
+    ],
+    "en": {
+      "title": "Research Assistant · National Central University",
+      "text": "Analyzed high-speed microscopy data and developed particle-tracking workflows for bacterial flagellar motor research."
+    },
+    "zh-TW": {
+      "title": "研究助理 · 國立中央大學",
+      "text": "分析高速顯微影像資料，建立細菌鞭毛馬達研究的粒子追蹤流程。"
+    }
+  },
+  {
+    "id": "peer-learning",
+    "start": "2021-01",
+    "end": "ongoing",
+    "sourceIds": [
+      "MAT-CAREER"
+    ],
+    "en": {
+      "title": "Weekly AI-paper study group",
+      "text": "Ongoing peer learning with former LIPS colleagues, covering ML theory and emerging research."
+    },
+    "zh-TW": {
+      "title": "每週 AI 論文讀書會",
+      "text": "與前 LIPS 同事持續進行同儕學習，討論 ML 理論與新研究。"
+    }
+  }
+]

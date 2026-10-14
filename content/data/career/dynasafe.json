@@ -1,0 +1,50 @@
+{
+  "id": "dynasafe",
+  "employer": "DynaSafe Corp.",
+  "title": "Senior AI Engineer",
+  "start": "2026-01",
+  "end": "2026-04",
+  "sourceIds": [
+    "MAT-CAREER"
+  ],
+  "metric": {
+    "value": 10,
+    "type": "training-speed-factor",
+    "en": "{value}× model-training speed",
+    "zh-TW": "模型訓練速度提升 {value} 倍"
+  },
+  "triad": {
+    "challenge": {
+      "en": "DataLoader I/O serialization starved GPU compute during OpenFOAM CFD training.",
+      "zh-TW": "DataLoader I/O 序列化阻塞，導致 GPU 在 CFD 訓練期間嚴重閒置飢餓。"
+    },
+    "solution": {
+      "en": "Rebuilt data loading pipeline and custom PhysicsNeMo format conversion.",
+      "zh-TW": "重建訓練資料管線，並自訂 PhysicsNeMo 格式轉換消除 I/O 阻塞。"
+    },
+    "boundary": {
+      "en": "10× overall model-training speedup measured on CFD workload.",
+      "zh-TW": "衡量指標：OpenFOAM CFD 工作負載之整體模型訓練速度提升 10 倍。"
+    }
+  },
+  "en": {
+    "proofTitle": "ML pipeline performance",
+    "summary": "Profiled a dataloader bottleneck and rebuilt the training data pipeline.",
+    "scope": "Model training",
+    "details": [
+      "Built and adapted a Nvidia Morpheus network-anomaly workflow using real PCAP input.",
+      "Ran and adapted PhysicsNeMo training workflows for an OpenFOAM CFD use case."
+    ],
+    "boundary": "Measures model-training speed."
+  },
+  "zh-TW": {
+    "proofTitle": "ML pipeline 效能",
+    "summary": "分析資料載入瓶頸、追查根因，並重建訓練資料 pipeline。",
+    "scope": "模型訓練",
+    "details": [
+      "使用真實 PCAP 輸入，建立並調整 Nvidia Morpheus 網路異常偵測 workflow。",
+      "針對 OpenFOAM CFD use case，執行與調整 PhysicsNeMo 訓練 workflow。"
+    ],
+    "boundary": "衡量：模型訓練速度。"
+  }
+}

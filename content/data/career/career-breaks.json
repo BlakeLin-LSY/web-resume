@@ -1,0 +1,34 @@
+[
+  {
+    "id": "cloud-courses",
+    "start": "2022-04",
+    "end": "2023-08",
+    "sourceIds": [
+      "MAT-CAREER"
+    ],
+    "en": {
+      "title": "Cloud computing courses · Google Grow with Google program",
+      "text": "GCP architecture, cloud-native application development and distributed systems."
+    },
+    "zh-TW": {
+      "title": "雲端運算課程 · Google Grow with Google 計畫",
+      "text": "GCP 架構、雲原生應用開發與分散式系統。"
+    }
+  },
+  {
+    "id": "gap-year",
+    "start": "2020-04",
+    "end": "2021-05",
+    "sourceIds": [
+      "MAT-CAREER"
+    ],
+    "en": {
+      "title": "Gap year · Outdoor activities and online learning",
+      "text": "CS50 online course; trail running, mountain climbing and marathon training."
+    },
+    "zh-TW": {
+      "title": "空檔年 · 戶外活動與線上學習",
+      "text": "修習 CS50 線上課程；越野跑、登山與馬拉松訓練。"
+    }
+  }
+]

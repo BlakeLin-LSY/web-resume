@@ -1,0 +1,33 @@
+{
+  "id": "transcribe-for-x",
+  "sourceIds": [
+    "MAT-TFX",
+    "MAT-SHOWCASE"
+  ],
+  "triad": {
+    "challenge": {
+      "en": "Preventing accidental transcript loss from automatic, uninspected LLM rewrites.",
+      "zh-TW": "杜絕由 LLM 自動修飾改寫逐字稿所造成的不可逆原始資料滅失。"
+    },
+    "solution": {
+      "en": "Dual-track isolation: Private scoped audio storage (SHA-256 verified) vs speculative diff overlay.",
+      "zh-TW": "嚴格雙軌隔離：專有沙盒原始音訊（SHA-256 驗證）vs 非破壞性候選修訂層。"
+    },
+    "boundary": {
+      "en": "Android prototype; device performance and mixed-language ASR require real-use testing.",
+      "zh-TW": "邊界界定：Android 原型；裝置效能與雙語混合辨識品質仍待實際場景驗證。"
+    }
+  },
+  "en": {
+    "summary": "Save the recording, then turn it into text. The original transcript stays intact; cleanup suggestions remove only the spans the user accepts.",
+    "evidence": "Personal project · Android prototype",
+    "boundary": "Device performance and mixed-language recognition quality still need real-use testing.",
+    "action": "Read the source-to-text workflow"
+  },
+  "zh-TW": {
+    "summary": "先保留錄音，再轉成文字。原始逐字稿不被清理建議覆寫，每個刪改都由使用者決定。",
+    "evidence": "個人專案 · Android 原型",
+    "boundary": "裝置表現與混合語音辨識品質仍待實際使用測試。",
+    "action": "查看錄音到文字的流程"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "evidenceReviewedOn": "2026-10-03",
+  "displayStatus": "Local review draft; owner representation and disclosure review pending",
+  "identity": {
+    "name": "Ssu-Yuan Lin (Blake)",
+    "shortName": "Blake Lin",
+    "zhName": "林思遠",
+    "role": "AI Software Engineer"
+  },
+  "contact": {
+    "email": "ssu.yuan.lin@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ssu-yuan-lin",
+    "github": "https://github.com/BlakeLin-LSY",
+    "website": "https://blakelin-lsy.github.io/web-resume/"
+  },
+  "entry": {
+    "id": "general-ai-software",
+    "proofIds": [
+      "dynasafe",
+      "metgauge"
+    ],
+    "projectIds": [
+      "study-atlas",
+      "transcribe-for-x"
+    ],
+    "moreProjectIds": [
+      "windowphase"
+    ]
+  }
+}
