@@ -78,7 +78,7 @@ export function renderTopologySvg(options, language = "en") {
           <text x="485" y="60" class="resume-node-title" text-anchor="middle">${isEn ? "3D Measurement" : "3D 空間量測"}</text>
           <text x="485" y="78" class="resume-node-subtitle" text-anchor="middle">${isEn ? "C++ / Python Engine" : "C++ / Python 核心引擎"}</text>
           <line x1="415" y1="92" x2="555" y2="92" class="resume-node-divider"/>
-          <text x="485" y="110" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Calibration & Boundary Tests" : "標定與邊界極限測試"}</text>
+          <text x="485" y="110" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Calibration & Limit Tests" : "標定與邊界極限測試"}</text>
           <text x="485" y="128" class="resume-node-detail" text-anchor="middle">${isEn ? "Guides Hardware Tuning" : "指引光機硬體校正"}</text>
         </g>
 

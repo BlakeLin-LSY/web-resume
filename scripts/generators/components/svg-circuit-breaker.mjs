@@ -183,15 +183,15 @@ export function renderDualTrackSvg(options, language = "en") {
         <path d="M 115 78 Q 135 45 155 45" class="resume-flow-line" marker-end="url(#${markerId})"/>
         <g class="resume-node-group">
           <rect x="160" y="14" width="245" height="62" rx="6" class="resume-node-box resume-node-highlight"/>
-          <text x="282" y="36" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Track 1: Raw Audio & Whisper ASR" : "軌道 1：原始音訊與 Whisper ASR"}</text>
-          <text x="282" y="52" class="resume-node-detail" text-anchor="middle">${isEn ? "Android Private Scoped Storage (Read-Only)" : "Android 專有沙盒儲存（唯讀保護）"}</text>
+          <text x="282" y="36" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Track 1: Raw Audio & Whisper" : "軌道 1：原始音訊與 Whisper"}</text>
+          <text x="282" y="52" class="resume-node-detail" text-anchor="middle">${isEn ? "Android Scoped Storage · Read-Only" : "Android 專有沙盒儲存 · 唯讀保護"}</text>
           <text x="282" y="66" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "🔒 Byte-for-byte immutable archive" : "🔒 逐位元完全不可變封存"}</text>
         </g>
 
         <line x1="405" y1="45" x2="445" y2="45" class="resume-flow-line" marker-end="url(#${markerId})"/>
         <g class="resume-node-group">
           <rect x="450" y="14" width="165" height="62" rx="6" class="resume-node-box"/>
-          <text x="532" y="38" class="resume-node-title" text-anchor="middle">${isEn ? "Permanent Ground Truth" : "永久真實基底 (Ground Truth)"}</text>
+          <text x="532" y="38" class="resume-node-title" text-anchor="middle">${isEn ? "Permanent Ground Truth" : "永久真實基底"}</text>
           <text x="532" y="56" class="resume-node-detail" text-anchor="middle">${isEn ? "Verbatim Transcript Log" : "逐字稿紀錄與校驗碼"}</text>
         </g>
 
@@ -199,8 +199,8 @@ export function renderDualTrackSvg(options, language = "en") {
         <path d="M 115 102 Q 135 135 155 135" class="resume-flow-line" marker-end="url(#${markerId})"/>
         <g class="resume-node-group">
           <rect x="160" y="104" width="245" height="62" rx="6" class="resume-node-box"/>
-          <text x="282" y="126" class="resume-node-title" text-anchor="middle">${isEn ? "Track 2: AI Disfluency Diff Engine" : "軌道 2：AI 口語贅詞差分引擎"}</text>
-          <text x="282" y="142" class="resume-node-detail" text-anchor="middle">${isEn ? "Non-destructive candidate text overlays" : "非破壞性候選修訂文字層"}</text>
+          <text x="282" y="126" class="resume-node-title" text-anchor="middle">${isEn ? "Track 2: AI Disfluency Engine" : "軌道 2：AI 口語贅詞差分引擎"}</text>
+          <text x="282" y="142" class="resume-node-detail" text-anchor="middle">${isEn ? "Non-destructive candidate overlays" : "非破壞性候選修訂文字層"}</text>
           <text x="282" y="156" class="resume-node-detail" text-anchor="middle">${isEn ? "Zero in-place file mutation" : "絕無原地複寫檔案風險"}</text>
         </g>
 
@@ -215,9 +215,9 @@ export function renderDualTrackSvg(options, language = "en") {
         <!-- Final Export -->
         <path d="M 615 45 Q 640 45 645 75" class="resume-flow-line"/>
         <path d="M 615 135 Q 640 135 645 105" class="resume-flow-line"/>
-        <line x1="645" y1="90" x2="665" y2="90" class="resume-flow-line" marker-end="url(#${markerId})"/>
+        <line x1="645" y1="90" x2="666" y2="90" class="resume-flow-line" marker-end="url(#${markerId})"/>
         <g class="resume-node-group">
-          <rect x="670" y="55" width="80" height="70" rx="6" class="resume-node-box"/>
+          <rect x="668" y="55" width="84" height="70" rx="6" class="resume-node-box"/>
           <text x="710" y="85" class="resume-node-title" text-anchor="middle">${isEn ? "Clean Text" : "乾淨文稿"}</text>
           <text x="710" y="102" class="resume-node-detail" text-anchor="middle">${isEn ? "User Confirmed" : "使用者確認輸出"}</text>
         </g>
