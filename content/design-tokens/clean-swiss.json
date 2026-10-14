@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "themeName": "clean-swiss",
+  "displayName": "Clean Swiss (國際大型產品 · 極簡無襯線/經典黑白灰)",
+  "styleProposal": "S",
+  "status": "Minimalist international product engineering theme",
+  "light": {
+    "background": "#FFFFFF",
+    "panel": "#FAFAFA",
+    "text": "#111827",
+    "muted": "#4B5563",
+    "accent": "#2563EB",
+    "border": "#D1D5DB",
+    "tint": "#EFF6FF",
+    "actionText": "#FFFFFF"
+  },
+  "dark": {
+    "background": "#111827",
+    "panel": "#1F2937",
+    "text": "#F9FAFB",
+    "muted": "#9CA3AF",
+    "accent": "#60A5FA",
+    "border": "#374151",
+    "tint": "#1E3A5F",
+    "actionText": "#0F172A"
+  },
+  "fontFamily": "\"Inter\",system-ui,-apple-system,BlinkMacSystemFont,\"Helvetica Neue\",Arial,sans-serif",
+  "contentWidth": "68rem",
+  "readingWidth": "42rem"
+}

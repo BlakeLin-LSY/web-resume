@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "themeName": "terminal-mono",
+  "displayName": "Terminal Mono (底層系統/Linux 核心 · 全黑底/高對比琥珀綠)",
+  "styleProposal": "T",
+  "status": "Engineering system theme for Linux kernel / low-level systems showcase",
+  "light": {
+    "background": "#F0F2F5",
+    "panel": "#FFFFFF",
+    "text": "#0F172A",
+    "muted": "#475569",
+    "accent": "#D97706",
+    "border": "#94A3B8",
+    "tint": "#FEF3C7",
+    "actionText": "#FFFFFF"
+  },
+  "dark": {
+    "background": "#0D1117",
+    "panel": "#161B22",
+    "text": "#39D353",
+    "muted": "#8B949E",
+    "accent": "#F59E0B",
+    "border": "#30363D",
+    "tint": "#04260F",
+    "actionText": "#0D1117"
+  },
+  "fontFamily": "\"JetBrains Mono\",\"Fira Code\",\"SF Mono\",ui-monospace,Menlo,Monaco,Consolas,monospace",
+  "contentWidth": "72rem",
+  "readingWidth": "46rem"
+}
