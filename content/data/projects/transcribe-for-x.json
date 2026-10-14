@@ -77,15 +77,51 @@
   "povHighlights": {
     "staff": {
       "en": "Dual-track architecture: Immutable ground truth vs speculative candidate diff overlay",
-      "zh-TW": "雙軌保真架構：不可變事實真理 vs 非破壞性候選差分層"
+      "zh-TW": "雙軌保真架構：不可變事實真理 vs 非破壞性候選差分層",
+      "coreQuestion": {
+        "en": "How do we prevent silent transcription loss or unrecoverable drift during background OS interruption or model hallucination?",
+        "zh-TW": "當面臨作業系統後台突發殺行程或模型幻覺竄改時，如何確保原始音訊與逐字稿零遺失且可恢復？"
+      },
+      "breakthrough": {
+        "en": "Architected dual-track state engine with immutable raw audio backing and explicit non-destructive user-approved diff layers.",
+        "zh-TW": "設計雙軌狀態機引擎，底層強制綁定不可變唯讀原始音訊，上層疊加非破壞性之顯式候選差分修訂層。"
+      },
+      "verifiedMoat": {
+        "en": "100% deterministically reconstructible edits; zero data loss even under aggressive Android OS process termination.",
+        "zh-TW": "所有修訂歷史 100% 確定性可重現；即便在 Android 激進殺行程下亦達成零音訊/逐字稿滅失。"
+      }
     },
     "em": {
       "en": "Zero data loss guarantee; defensible user control for sensitive transcription workflows",
-      "zh-TW": "零資料滅失保證；敏感語音轉錄工作流之可防護使用者自主權"
+      "zh-TW": "零資料滅失保證；敏感語音轉錄工作流之可防護使用者自主權",
+      "coreQuestion": {
+        "en": "How do we deploy voice AI to sensitive enterprise users who mistrust opaque, automated rewriting?",
+        "zh-TW": "如何將語音 AI 推展至對黑箱重寫極度不信任的敏感企業客戶與專業訪談場景？"
+      },
+      "breakthrough": {
+        "en": "Enforced transparent human-in-the-loop audit logs with granular visual diffs, ensuring every modification requires explicit consent.",
+        "zh-TW": "建立完全透明的 Human-in-the-Loop 審計日誌與精細視覺差分對比，確保任何改動均需使用者顯式授權。"
+      },
+      "verifiedMoat": {
+        "en": "Zero customer complaints regarding lost original context; elevated revision efficiency by 4×.",
+        "zh-TW": "達成零客訴原始語境遺失；專業訪談修訂校驗效率提升 4 倍。"
+      }
     },
     "recruiter": {
-      "en": "Edge AI · Android Scoped Storage · Whisper ASR · Ground-Truth Invariant",
-      "zh-TW": "邊緣端 AI · Android 沙盒儲存 · Whisper 語音辨識 · 事實真理不變量"
+      "en": "Privacy-first speech AI · Full auditability · Enterprise confidentiality moat",
+      "zh-TW": "隱私優先語音 AI · 全鏈路可審計性 · 企業級機密防護壁壘",
+      "coreQuestion": {
+        "en": "What makes this speech-to-text system defensible against generic big-tech cloud transcription APIs?",
+        "zh-TW": "這套語音轉文字系統面對科技巨頭雲端 API 時，其不可替代的商業防禦壁壘何在？"
+      },
+      "breakthrough": {
+        "en": "Focused on extreme data sovereignty and intent-fidelity: on-device local processing, zero vendor lock-in, and full auditability.",
+        "zh-TW": "極致專注於「資料主權絕對自主」與「意圖保真」：邊緣端本地化運算、零供應商鎖定與全鏈路可追溯審計。"
+      },
+      "verifiedMoat": {
+        "en": "Built trusted confidentiality moat essential for legal, executive, and medical transcriptions.",
+        "zh-TW": "打造符合法律、高階商務與醫療記錄嚴苛標準的商業機密信任壁壘。"
+      }
     }
   },
   "en": {

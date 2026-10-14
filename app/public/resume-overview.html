@@ -28,12 +28,12 @@ html.resume-enhanced[data-reading-language=en] [data-resume-locale="zh-TW"],html
 .resume-skip:focus{top:12px}
 .resume-header{position:sticky;top:0;z-index:10;background:var(--resume-background);border-bottom:1px solid var(--resume-border)}
 html:not(.resume-enhanced) .resume-header{position:static}
-.resume-header-inner{max-width:var(--resume-content-width);padding:12px 28px;margin:auto;display:flex;align-items:center;gap:24px;min-height:70px}
-.resume-logo{font-size:1.02rem;font-weight:700;text-decoration:none;color:var(--resume-text);white-space:nowrap;margin-right:auto}
-.resume-navigation{display:flex;align-items:center;gap:22px;font-size:.85rem}
-.resume-navigation a{text-decoration:none;padding:8px 0}
-.resume-reading-controls{align-items:center;gap:5px}
-.resume-reading-controls button{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:44px;padding:6px 8px;background:transparent;border:1px solid transparent;border-radius:4px;font-size:.77rem}
+.resume-header-inner{max-width:var(--resume-content-width);padding:10px 24px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.resume-logo{font-size:1.02rem;font-weight:700;text-decoration:none;color:var(--resume-text);white-space:nowrap;flex-shrink:0}
+.resume-navigation{display:flex;align-items:center;gap:16px;font-size:.83rem;white-space:nowrap;margin-right:auto;margin-left:16px}
+.resume-navigation a{text-decoration:none;padding:6px 0;font-weight:600}
+.resume-reading-controls{align-items:center;gap:4px;flex-shrink:0}
+.resume-reading-controls button{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:38px;padding:4px 7px;background:transparent;border:1px solid transparent;border-radius:4px;font-size:.75rem}
 .resume-reading-controls button[aria-pressed=true]{border-color:var(--resume-accent);background:var(--resume-tint);color:var(--resume-accent)}
 .resume-languages{display:flex;gap:2px}
 .resume-menu{display:none!important}
@@ -56,11 +56,11 @@ html:not(.resume-enhanced) .resume-header{position:static}
 .resume-block-header{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--resume-border)}
 .resume-block-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
 .resume-block-kicker{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--resume-muted)}
-.resume-block-badge{font-size:.78rem;font-weight:700;padding:3px 12px;border-radius:999px;background:var(--resume-tint);border:1px solid var(--resume-border);color:var(--resume-accent)}
+.resume-block-badge{font-size:.78rem;font-weight:700;padding:3px 12px;border-radius:999px;background:var(--resume-tint);border:1px solid var(--resume-border);color:var(--resume-accent);white-space:nowrap}
 .resume-block-title{font-size:1.35rem;font-weight:700;color:var(--resume-text);line-height:1.35;margin:4px 0 0}
 .resume-stage-box{margin:18px 0}
-.resume-triad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
-.resume-triad-item{background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.resume-triad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px;align-items:stretch}
+.resume-triad-item{background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;height:100%}
 .resume-triad-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--resume-accent)}
 .resume-triad-text{font-size:.85rem;line-height:1.5;color:var(--resume-text);margin:0}
 .resume-block-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:18px;padding-top:14px;border-top:1px dashed var(--resume-border)}
@@ -287,19 +287,51 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
 
 /* --- Reader Lens Controller & Perspective Projections --- */
 .resume-lens-selector{display:inline-flex;align-items:center;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:6px;padding:2px;gap:2px}
-.resume-lens-selector button{border:none;background:transparent;color:var(--resume-muted);font-size:.73rem;font-weight:600;padding:3px 8px;border-radius:4px;cursor:pointer;transition:all .15s}
+.resume-lens-selector button{border:none;background:transparent;color:var(--resume-muted);font-size:.73rem;font-weight:600;padding:4px 8px;border-radius:4px;cursor:pointer;transition:all .15s;white-space:nowrap}
 .resume-lens-selector button:hover{color:var(--resume-text)}
-.resume-lens-selector button[aria-pressed="true"]{background:var(--resume-panel);color:var(--resume-accent);box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+.resume-lens-selector button[aria-pressed="true"]{background:var(--resume-panel);color:var(--resume-accent);box-shadow:0 1px 3px rgba(0,0,0,0.08);font-weight:700}
 
-.resume-pov-badge{display:none;margin-top:14px;padding:10px 14px;border-radius:6px;font-size:.82rem;line-height:1.5;background:var(--resume-tint);border-left:3px solid var(--resume-accent);color:var(--resume-text)}
-.resume-pov-label{font-size:.68rem;font-weight:800;letter-spacing:.05em;color:var(--resume-accent);display:block;margin-bottom:3px;text-transform:uppercase}
+/* Perspective Spotlight Card (Multi-Dimensional Lens) */
+.resume-pov-stack{margin-top:16px}
+.resume-pov-badge{display:none}
+.resume-pov-card{padding:16px 18px;border-radius:10px;background:var(--resume-panel);border:1px solid var(--resume-border);box-shadow:0 2px 8px rgba(0,0,0,0.03);animation:resumeFadeIn .2s ease-in-out}
+@keyframes resumeFadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.resume-pov-card-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--resume-border)}
+.resume-pov-pill{font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.resume-pov-role-title{font-size:.83rem;font-weight:700;color:var(--resume-text)}
+.resume-pov-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.resume-pov-col{display:flex;flex-direction:column;gap:5px;background:var(--resume-tint);padding:10px 12px;border-radius:6px;border:1px solid var(--resume-border);min-width:0}
+.resume-pov-section-label{font-size:.67rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.resume-pov-desc{font-size:.82rem;line-height:1.5;color:var(--resume-text);margin:0;font-weight:500;overflow-wrap:break-word}
+.resume-pov-text{font-size:.84rem;line-height:1.55;color:var(--resume-text);margin:0}
+
+/* Differentiated Role Color Identities */
+.resume-pov-card[data-pov="staff"]{border-left:4px solid var(--resume-accent)}
+.resume-pov-card[data-pov="staff"] .resume-pov-pill{background:var(--resume-accent);color:var(--resume-action-text)}
+.resume-pov-card[data-pov="staff"] .resume-pov-section-label{color:var(--resume-accent)}
+
+.resume-pov-card[data-pov="em"]{border-left:4px solid #3b7c6b}
+.resume-pov-card[data-pov="em"] .resume-pov-pill{background:#3b7c6b;color:#fff}
+.resume-pov-card[data-pov="em"] .resume-pov-section-label{color:#3b7c6b}
+
+.resume-pov-card[data-pov="recruiter"]{border-left:4px solid #b87b33}
+.resume-pov-card[data-pov="recruiter"] .resume-pov-pill{background:#b87b33;color:#fff}
+.resume-pov-card[data-pov="recruiter"] .resume-pov-section-label{color:#b87b33}
+
+/* Active Lens Optical Coupling & Spotlight */
 html[data-resume-lens="staff"] .resume-pov-badge[data-pov="staff"],
 html[data-resume-lens="em"] .resume-pov-badge[data-pov="em"],
 html[data-resume-lens="recruiter"] .resume-pov-badge[data-pov="recruiter"]{display:block}
 
-html[data-resume-lens="staff"] .resume-triad-item:nth-child(2),
-html[data-resume-lens="staff"] .resume-triad-item:nth-child(3){border-color:var(--resume-accent);box-shadow:0 0 0 1px var(--resume-accent)}
-html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);color:var(--resume-action-text)}
+html[data-resume-lens="staff"] .resume-triad-item:nth-child(2){border-color:var(--resume-accent);box-shadow:0 0 0 1px var(--resume-accent)}
+html[data-resume-lens="staff"] .resume-stage-box{outline:2px solid var(--resume-accent);border-radius:10px}
+html[data-resume-lens="staff"] .resume-duel-drawer{border-color:var(--resume-accent);box-shadow:0 0 10px rgba(40,92,77,0.12)}
+
+html[data-resume-lens="em"] .resume-block-badge{background:#3b7c6b!important;color:#fff!important;box-shadow:0 0 8px rgba(59,124,107,0.25)}
+html[data-resume-lens="em"] .resume-proof-receipt{border-color:#3b7c6b!important;box-shadow:0 0 8px rgba(59,124,107,0.15)}
+
+html[data-resume-lens="recruiter"] .resume-ab-ribbon{border-color:#b87b33!important;box-shadow:0 0 10px rgba(184,123,51,0.18)}
+html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;font-weight:700}
 
 /* --- Intent Contract & Epistemic Boundaries Card --- */
 .resume-intent-contract-card{margin:18px 0 12px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-panel);overflow:hidden;transition:border-color .2s}
@@ -351,15 +383,21 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
 .resume-framework-title{font-size:1.2rem;font-weight:800;color:var(--resume-text);margin:0 0 6px}
 .resume-framework-intro{font-size:.85rem;color:var(--resume-muted);line-height:1.55;margin:0}
 
-/* --- A -> B Transformation Ribbon --- */
-.resume-ab-ribbon{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:8px;padding:8px 12px;margin:12px 0 16px;font-size:.8rem;line-height:1.4}
-.resume-ab-seg{display:inline-flex;align-items:center;gap:6px;flex:1 1 auto;min-width:140px}
-.resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+/* --- Robust Grid-Based A -> B Transformation Ribbon --- */
+.resume-ab-ribbon{display:grid;grid-template-columns:1fr auto 1.15fr auto 1fr;align-items:stretch;gap:10px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:8px;padding:10px 14px;margin:14px 0 18px;font-size:.8rem;line-height:1.45}
+.resume-ab-seg{display:flex;flex-direction:column;gap:4px;padding:8px 10px;background:var(--resume-panel);border-radius:6px;border:1px solid var(--resume-border);min-width:0}
+.resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;align-self:flex-start}
 .resume-ab-a .resume-ab-badge{background:rgba(210,101,91,0.15);color:#d2655b;border:1px solid rgba(210,101,91,0.3)}
 .resume-ab-link .resume-ab-badge{background:rgba(40,92,77,0.15);color:var(--resume-accent);border:1px solid var(--resume-accent)}
 .resume-ab-b .resume-ab-badge{background:rgba(79,172,116,0.18);color:#285c4d;border:1px solid rgba(79,172,116,0.4)}
-.resume-ab-text{color:var(--resume-text);font-weight:600}
-.resume-ab-sep{color:var(--resume-accent);font-weight:800;font-size:.9rem}
+.resume-ab-text{color:var(--resume-text);font-weight:600;font-size:.81rem;line-height:1.4;overflow-wrap:break-word}
+.resume-ab-sep{display:flex;align-items:center;justify-content:center;color:var(--resume-accent);font-weight:800;font-size:1.1rem;user-select:none}
+
+@media(max-width:860px){
+  .resume-ab-ribbon{grid-template-columns:1fr;gap:6px}
+  .resume-ab-sep{transform:rotate(90deg);padding:2px 0}
+  .resume-pov-grid{grid-template-columns:1fr;gap:8px}
+}
 
 
 
@@ -367,7 +405,7 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
 </style></head><body><a class="resume-skip" href="#content"><span lang="en" data-resume-locale="en" >Skip to content</span><span lang="zh-TW" data-resume-locale="zh-TW" >跳至內容</span></a>
 <header class="resume-header"><div class="resume-header-inner"><a class="resume-logo" href="#top">Blake Lin</a>
 <nav id="resume-navigation" class="resume-navigation" aria-label="Main navigation / 主要導覽"><a href="#projects"><span lang="en" data-resume-locale="en" >Work</span><span lang="zh-TW" data-resume-locale="zh-TW" >作品</span></a><a href="#experience"><span lang="en" data-resume-locale="en" >Experience</span><span lang="zh-TW" data-resume-locale="zh-TW" >經歷</span></a><a href="#about"><span lang="en" data-resume-locale="en" >About</span><span lang="zh-TW" data-resume-locale="zh-TW" >關於我</span></a><a href="#contact"><span lang="en" data-resume-locale="en" >Contact</span><span lang="zh-TW" data-resume-locale="zh-TW" >聯絡</span></a></nav>
-<div class="resume-reading-controls" data-js-control><div lang="en" data-resume-locale="en" class="resume-lens-wrap"><div class="resume-lens-selector" role="group" aria-label="Perspective Lens"><button type="button" data-resume-lens="all" aria-pressed="true" title="Universal (All)">All</button><button type="button" data-resume-lens="staff" aria-pressed="false" title="Focus: Invariants, System Bottlenecks, Trade-offs &amp; Failure Boundaries">Staff Architect</button><button type="button" data-resume-lens="em" aria-pressed="false" title="Focus: Production Milestones, Velocity, ROI &amp; Risk Elimination">Engineering Manager</button><button type="button" data-resume-lens="recruiter" aria-pressed="false" title="Focus: Rare Intersection: Physics + HW/SW Integration + Agent Invariants">Deep Tech Recruiter</button></div></div><div lang="zh-TW" data-resume-locale="zh-TW" class="resume-lens-wrap"><div class="resume-lens-selector" role="group" aria-label="視角投影"><button type="button" data-resume-lens="all" aria-pressed="true" title="全視角綜覽">All</button><button type="button" data-resume-lens="staff" aria-pressed="false" title="聚焦：系統不變量、性能瓶頸、架構取捨與失效邊界">系統架構師</button><button type="button" data-resume-lens="em" aria-pressed="false" title="聚焦：產線里程碑、交付節奏、投資回報率與風險消除">工程經理</button><button type="button" data-resume-lens="recruiter" aria-pressed="false" title="聚焦：稀缺交集能力：物理第一性原理 + 軟硬整合 + Agent 意圖保真">創辦人 / 獵頭</button></div></div><div lang="en" data-resume-locale="en" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">Visual View</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">AST / Spec</span></button></div><div lang="zh-TW" data-resume-locale="zh-TW" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">視覺圖解</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">語意規格</span></button></div><div class="resume-languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-resume-language="en" aria-pressed="true" disabled>EN</button><button type="button" data-resume-language="zh-TW" aria-pressed="false" disabled>正體</button></div><button type="button" data-resume-theme aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button><button type="button" class="resume-menu" data-resume-menu aria-label="Menu" aria-expanded="false" aria-controls="resume-navigation" disabled><span aria-hidden="true">☰</span></button></div></div></header>
+<div class="resume-reading-controls" data-js-control><div lang="en" data-resume-locale="en" class="resume-lens-wrap"><div class="resume-lens-selector" role="group" aria-label="Perspective Lens"><button type="button" data-resume-lens="all" aria-pressed="true" title="Universal (All)">All</button><button type="button" data-resume-lens="staff" aria-pressed="false" title="Staff Architect — Focus: Low-Level Concurrency, Root-Cause Bottlenecks, Invariants &amp; Limits">Architect</button><button type="button" data-resume-lens="em" aria-pressed="false" title="Engineering Manager — Focus: 10× Delivery Velocity, Zero-Loss Reliability &amp; CI Automation">Eng Lead</button><button type="button" data-resume-lens="recruiter" aria-pressed="false" title="CTO / Technical Founder — Focus: Zero Capex ROI, Lab-to-Production Moat &amp; Rare Physics-to-Agent Intersection">CTO</button></div></div><div lang="zh-TW" data-resume-locale="zh-TW" class="resume-lens-wrap"><div class="resume-lens-selector" role="group" aria-label="視角投影"><button type="button" data-resume-lens="all" aria-pressed="true" title="全視角">全視角</button><button type="button" data-resume-lens="staff" aria-pressed="false" title="系統架構師 — 聚焦：底層併發拓撲、根本瓶頸定位、硬體物理極限與嚴格不變量">架構師</button><button type="button" data-resume-lens="em" aria-pressed="false" title="工程主管 — 聚焦：10× 交付吞吐量、產線 7x24 零丟包穩定性與機制化 CI 自動防護">工程主管</button><button type="button" data-resume-lens="recruiter" aria-pressed="false" title="CTO / 技術創辦人 — 聚焦：零硬體增購資本支出 ROI、實驗室到量產上市壁壘與物理推導 × Agent 認知稀缺交集">CTO</button></div></div><div lang="en" data-resume-locale="en" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">Visual</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">AST / Spec</span></button></div><div lang="zh-TW" data-resume-locale="zh-TW" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">視覺</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">規格</span></button></div><div class="resume-languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-resume-language="en" aria-pressed="true" disabled>EN</button><button type="button" data-resume-language="zh-TW" aria-pressed="false" disabled>繁體</button></div><button type="button" data-resume-theme aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button><button type="button" class="resume-menu" data-resume-menu aria-label="Menu" aria-expanded="false" aria-controls="resume-navigation" disabled><span aria-hidden="true">☰</span></button></div></div></header>
 <main id="content" class="resume-main" tabindex="-1">
 <section class="resume-hero" id="top"><div lang="en" data-resume-locale="en" ><p class="resume-role">AI Software Engineer</p><h1>Blake Lin</h1><p class="resume-full-name">Ssu-Yuan Lin (Blake)</p><p class="resume-lead">I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.</p><p class="resume-note">3+ years of professional engineering · M.S. in Physics</p><ul class="resume-chips"><li>10× model-training speed</li><li>12 stereo-camera pairs on a production line</li><li>40% lower AOI cycle time</li><li>66% improvement in measurement accuracy</li></ul><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-en.pdf" data-resume-cv download><span data-cv-download-label>Download CV</span><span data-cv-open-label>Open CV</span></a><a class="resume-button resume-button-secondary" href="#contact">Contact</a></div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-role">AI Software Engineer</p><h1>Blake Lin</h1><p class="resume-full-name">Ssu-Yuan Lin (Blake)</p><p class="resume-lead">我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。</p><p class="resume-note">3 年以上專業工程經驗 · 物理學碩士</p><ul class="resume-chips"><li>模型訓練速度提升 10 倍</li><li>12 組立體相機產線</li><li>AOI cycle time 降低 40%</li><li>量測精度提升 66%</li></ul><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download><span data-cv-download-label>下載 CV</span><span data-cv-open-label>開啟 CV</span></a><a class="resume-button resume-button-secondary" href="#contact">聯絡我</a></div></div></section>
 <section id="professional-proof" class="resume-section resume-proof-section"><div lang="en" data-resume-locale="en" ><h2>Selected professional work</h2><p class="resume-section-intro">From training bottlenecks to systems on the factory floor.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>精選職業成果</h2><p class="resume-section-intro">從訓練瓶頸，到工廠現場的系統整合。</p></div><div lang="en" data-resume-locale="en" ><div class="resume-framework-card resume-human-view">
@@ -674,19 +712,65 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
           <p class="resume-triad-text">10× overall model-training speedup measured on CFD workload.</p>
         </div>
       </div>
-      <div class="resume-human-view">
-    <div class="resume-pov-badge" data-pov="staff">
-      <span class="resume-pov-label">Staff Architect Focus</span>
-      <span>Root-cause pinpointing: DataLoader I/O starvation vs streaming format</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="em">
-      <span class="resume-pov-label">Engineering Manager Focus</span>
-      <span>10× training throughput on identical infrastructure; zero new hardware spend</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="recruiter">
-      <span class="resume-pov-label">Recruiter / Founder Focus</span>
-      <span>Deep ML pipeline optimization · PyTorch · PhysicsNeMo · CFD</span>
-    </div>
+      <div class="resume-pov-stack resume-human-view">
+    <div class="resume-pov-badge resume-pov-card" data-pov="staff">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">ARCHITECT LENS</span>
+          <span class="resume-pov-role-title">Low-Level Primitives &amp; Critical Invariants</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">Why is GPU compute idling below 15% when memory is plentiful, and where is the critical saturation boundary?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Deconstructed the PyTorch DataLoader serialization bottleneck; replaced with custom PhysicsNeMo streaming loader and lock-free double-buffering prefetch.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">Maximized hardware compute saturation; smoothed PCIe Host-to-Device transfer peaks with verified 10× model-training speedup.</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="em">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">ENG LEAD LENS</span>
+          <span class="resume-pov-role-title">Delivery Velocity &amp; Production Resilience</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">How do we meet aggressive training delivery deadlines without blowing the cloud infrastructure budget or accumulating unmonitored technical debt?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Rebuilt the training pipeline with real PCAP packet replay tests and established 6 CI invariant guard gates with automatic cache fallback on degradation.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">100% reproducible training cycle, 7x24 zero-incident stability, and zero unbudgeted hardware procurement.</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="recruiter">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">CTO / FOUNDER LENS</span>
+          <span class="resume-pov-role-title">Zero Capex ROI &amp; Strategic Defensibility</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">Does Blake possess rare cross-disciplinary engineering capability that translates directly into massive cost efficiency and technical moat?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Combines a Master&#39;s degree in Physics with deep CUDA/PyTorch systems engineering to eliminate the root hardware mismatch rather than just throwing money at more GPUs.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">Saved hundreds of thousands in cloud compute and hardware CAPEX; single-handedly transformed a CFD bottleneck into a competitive advantage.</p>
+          </div>
+        </div>
+      </div>
   </div>
       <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
   <summary class="resume-contract-toggle">
@@ -924,19 +1008,65 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
           <p class="resume-triad-text">衡量指標：OpenFOAM CFD 工作負載之整體模型訓練速度提升 10 倍。</p>
         </div>
       </div>
-      <div class="resume-human-view">
-    <div class="resume-pov-badge" data-pov="staff">
-      <span class="resume-pov-label">系統架構師視角重點</span>
-      <span>根因定位：DataLoader I/O 飢餓 vs 串流格式重構</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="em">
-      <span class="resume-pov-label">工程主管視角重點</span>
-      <span>同等基礎設施下實現 10× 訓練吞吐，零硬體採購成本</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="recruiter">
-      <span class="resume-pov-label">創辦人 / 獵頭視角重點</span>
-      <span>深度 ML 管線效能最佳化 · PyTorch · PhysicsNeMo · CFD</span>
-    </div>
+      <div class="resume-pov-stack resume-human-view">
+    <div class="resume-pov-badge resume-pov-card" data-pov="staff">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">系統架構師透鏡</span>
+          <span class="resume-pov-role-title">底層工程拓撲與嚴格不變量</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">顯存充足時 GPU 運算利用率為何卡在 15% 以下？系統極限飽和邊界究竟在哪？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">第一性原理拆解 PyTorch DataLoader 序列化 I/O 阻塞；以自訂 PhysicsNeMo 串流格式與無鎖雙緩衝預取全面替換。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">實現硬體運算飽和最大化；平滑 PCIe H2D 傳輸峰值，並以實測 10× 訓練提速完成驗證。</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="em">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">工程主管透鏡</span>
+          <span class="resume-pov-role-title">交付吞吐量與生產可靠度</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">如何在不膨脹雲端基礎設施預算且不累積技術債的前提下，如期交付高強度的訓練里程碑？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">以真實 PCAP 封包重放回歸測試重建訓練管線，並建立 6 道不變量防護機制，效能退化時自動降級至快取分塊模式。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">訓練週期 100% 可重現、線上 7x24 零故障穩定運行，並達成零額外硬體預算採購。</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="recruiter">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">CTO / 創辦人透鏡</span>
+          <span class="resume-pov-role-title">零增購資本支出 ROI 與商業壁壘</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">Blake 是否具備罕見的跨領域硬核工程直覺，能直接轉化為巨大的成本效益與技術壁壘？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">結合物理碩士嚴密推導與 CUDA/PyTorch 系統工程直覺，從根源消弭硬體算力浪費，而非盲目堆疊 GPU。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">為企業省下數百萬雲端算力與硬體採購成本；隻手將 CFD 訓練阻礙轉化為核心產品競爭優勢。</p>
+          </div>
+        </div>
+      </div>
   </div>
       <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
   <summary class="resume-contract-toggle">
@@ -1178,19 +1308,65 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
           <p class="resume-triad-text">Advanced prototype MVP to factory-ready production testing before product launch.</p>
         </div>
       </div>
-      <div class="resume-human-view">
-    <div class="resume-pov-badge" data-pov="staff">
-      <span class="resume-pov-label">Staff Architect Focus</span>
-      <span>Deterministic hardware sync bus; sub-microsecond multi-camera trigger invariant</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="em">
-      <span class="resume-pov-label">Engineering Manager Focus</span>
-      <span>De-risked 24-camera automated line from prototype to factory production testing</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="recruiter">
-      <span class="resume-pov-label">Recruiter / Founder Focus</span>
-      <span>Hardware-software integration · 3D Computer Vision · 24 Cameras · Production Line</span>
-    </div>
+      <div class="resume-pov-stack resume-human-view">
+    <div class="resume-pov-badge resume-pov-card" data-pov="staff">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">ARCHITECT LENS</span>
+          <span class="resume-pov-role-title">Low-Level Primitives &amp; Critical Invariants</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">How do we coordinate 12 stereo pairs (24 cameras) with PLC triggers without race conditions, bus contention, or frame loss?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Engineered a deterministic hardware trigger sync bus with C++ zero-copy ring buffers and strict sub-microsecond timestamp alignment.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">Sub-microsecond trigger synchronization jitter; eliminated IPC thread lock contention across all 24 cameras.</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="em">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">ENG LEAD LENS</span>
+          <span class="resume-pov-role-title">Delivery Velocity &amp; Production Resilience</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">How do we transition a fragile laboratory 3D vision prototype into a hardened production system ready for factory line testing?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Defined comprehensive boundary test suites, thermal calibration specs, and multi-team hardware tuning protocols.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">Advanced prototype to factory-ready production testing on active line; reduced measurement variance std-dev by 65%.</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="recruiter">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">CTO / FOUNDER LENS</span>
+          <span class="resume-pov-role-title">Zero Capex ROI &amp; Strategic Defensibility</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">Can Blake bridge physical mechanics, optical physics, and low-level software to build proprietary industrial inspection equipment?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Leveraged applied physics intuition to solve thermal drift and lens distortion natively, replacing costly third-party proprietary inspection stations.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">Delivered full-stack in-house 3D metrology IP; drastically compressed new production line deployment timeline.</p>
+          </div>
+        </div>
+      </div>
   </div>
       <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
   <summary class="resume-contract-toggle">
@@ -1432,19 +1608,65 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
           <p class="resume-triad-text">推進成果：量測原型進入工廠上市前的產線上線測試階段。</p>
         </div>
       </div>
-      <div class="resume-human-view">
-    <div class="resume-pov-badge" data-pov="staff">
-      <span class="resume-pov-label">系統架構師視角重點</span>
-      <span>確定性硬體同步匯流排；次微秒級多相機觸發不變量</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="em">
-      <span class="resume-pov-label">工程主管視角重點</span>
-      <span>化解 24 顆相機產線整合風險，推進至工廠上市前的產線上線測試</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="recruiter">
-      <span class="resume-pov-label">創辦人 / 獵頭視角重點</span>
-      <span>軟硬整合 · 3D 電腦視覺 · 24 顆相機 · 工廠自動化產線</span>
-    </div>
+      <div class="resume-pov-stack resume-human-view">
+    <div class="resume-pov-badge resume-pov-card" data-pov="staff">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">系統架構師透鏡</span>
+          <span class="resume-pov-role-title">底層工程拓撲與嚴格不變量</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">如何協同 12 組立體相機（24 顆相機）與 PLC 觸發，同時消除競態條件、匯流排衝突與丟幀？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">設計確定性硬體觸發同步匯流排，搭配 C++ 零複製環形緩衝區與次微秒級時序對齊。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">達到次微秒級觸發同步精度；全面消除 24 顆相機在多執行緒 IPC 下的鎖競爭。</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="em">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">工程主管透鏡</span>
+          <span class="resume-pov-role-title">交付吞吐量與生產可靠度</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">如何將實驗室內脆弱的 3D 視覺原型封裝為挺過工廠嚴苛驗收的確定性量產系統？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">制定全鏈路邊界測試套件、熱補償標定規範與跨部門軟硬體協同調校 SOP。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">推進成果至工廠上市前產線上線測試階段；光學量測重複性標準差降低 65%。</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="recruiter">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">CTO / 創辦人透鏡</span>
+          <span class="resume-pov-role-title">零增購資本支出 ROI 與商業壁壘</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">Blake 是否具備橫跨機械結構、光學物理與底層系統軟體的全棧能力，打造具備專利壁壘的檢測機台？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">以物理第一性原理推導原生化解熱漂移與鏡頭畸變，免除對昂貴國外專利檢測台的外部依賴。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">建立全棧自主可控的 3D 光學計量系統，大幅壓縮新產線上線時程。</p>
+          </div>
+        </div>
+      </div>
   </div>
       <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
   <summary class="resume-contract-toggle">
@@ -1664,7 +1886,7 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
               <div class="resume-leaf-anchor">[VGGT Paper Evidence: §4.3, Table 3]</div>
             </div>
             <div class="resume-proof-leaf resume-leaf-zh">
-              <span class="resume-leaf-lang">正體中文（忠實對照譯本）</span>
+              <span class="resume-leaf-lang">繁體中文（忠實對照譯本）</span>
               <blockquote class="resume-leaf-quote">
                 &ldquo;推論時由深度與相機反投影得到的點圖比直接點圖頭更準（ETH3D：0.677 vs 0.709 整體誤差）。多任務訓練不要求最終一定使用每個直接輸出。&rdquo;
               </blockquote>
@@ -1719,19 +1941,65 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
           <p class="resume-triad-text">6.0 → 4.6 is calculated TALK budget; not human reading time or wall-clock speedup.</p>
         </div>
       </div>
-      <div class="resume-human-view">
-    <div class="resume-pov-badge" data-pov="staff">
-      <span class="resume-pov-label">Staff Architect Focus</span>
-      <span>Formal TALK contract &amp; circuit-breaker preventing multi-agent combinatorial explosion</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="em">
-      <span class="resume-pov-label">Engineering Manager Focus</span>
-      <span>Deterministic budget capping (6.0 → 4.6) and zero-drift technical briefing synthesis</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="recruiter">
-      <span class="resume-pov-label">Recruiter / Founder Focus</span>
-      <span>Agent Systems · Epistemic Boundary · Formal Budget Contracts · Full Provenance</span>
-    </div>
+      <div class="resume-pov-stack resume-human-view">
+    <div class="resume-pov-badge resume-pov-card" data-pov="staff">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">ARCHITECT LENS</span>
+          <span class="resume-pov-role-title">Low-Level Primitives &amp; Critical Invariants</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">How do we prevent cascading hallucination and exponential token budget explosion across multi-agent research synthesis?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Formalized the TALK contract protocol with strict budget capping (6.0 ➔ 4.6), AST token quotas, and cryptographic leaf citation anchoring.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">Zero unconstrained LLM loops; 100% cryptographic source provenance verified via SHA-256 digital seals.</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="em">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">ENG LEAD LENS</span>
+          <span class="resume-pov-role-title">Delivery Velocity &amp; Production Resilience</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">How can an engineering team digest hundreds of complex vision papers per month without subjective bias or manual exhaustion?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Created deterministic dual-track reading routes (briefing vs deep proof) with automated ETH3D point-cloud inference validation.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">Compressed literature onboarding from days to minutes with zero-drift reproducibility across the team.</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="recruiter">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">CTO / FOUNDER LENS</span>
+          <span class="resume-pov-role-title">Zero Capex ROI &amp; Strategic Defensibility</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">In a crowded market of shallow LLM wrappers, how does Blake build truly defensible Agent systems with epistemic boundaries?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Architected system around &#39;Epistemic Boundaries&#39; and &#39;Intent Fidelity&#39;—enforcing that facts, inferences, and speculations remain strictly separated.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">Delivers mathematical trust rather than probabilistic hallucination; sets standard for next-gen AI intelligence products.</p>
+          </div>
+        </div>
+      </div>
   </div>
       <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
   <summary class="resume-contract-toggle">
@@ -1954,7 +2222,7 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
               <div class="resume-leaf-anchor">[VGGT Paper Evidence: §4.3, Table 3]</div>
             </div>
             <div class="resume-proof-leaf resume-leaf-zh">
-              <span class="resume-leaf-lang">正體中文（忠實對照譯本）</span>
+              <span class="resume-leaf-lang">繁體中文（忠實對照譯本）</span>
               <blockquote class="resume-leaf-quote">
                 &ldquo;推論時由深度與相機反投影得到的點圖比直接點圖頭更準（ETH3D：0.677 vs 0.709 整體誤差）。多任務訓練不要求最終一定使用每個直接輸出。&rdquo;
               </blockquote>
@@ -2009,19 +2277,65 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
           <p class="resume-triad-text">邊界界定：6.0 → 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。</p>
         </div>
       </div>
-      <div class="resume-human-view">
-    <div class="resume-pov-badge" data-pov="staff">
-      <span class="resume-pov-label">系統架構師視角重點</span>
-      <span>形式化 TALK 契約與熔斷器，根絕多 Agent 組合爆炸</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="em">
-      <span class="resume-pov-label">工程主管視角重點</span>
-      <span>確定性預算收斂（6.0 → 4.6），技術綜述品質零漂移</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="recruiter">
-      <span class="resume-pov-label">創辦人 / 獵頭視角重點</span>
-      <span>Agent 系統 · 認知邊界 · 形式化預算契約 · 完整引證追溯</span>
-    </div>
+      <div class="resume-pov-stack resume-human-view">
+    <div class="resume-pov-badge resume-pov-card" data-pov="staff">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">系統架構師透鏡</span>
+          <span class="resume-pov-role-title">底層工程拓撲與嚴格不變量</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">多 Agent 協同進行文獻綜述時，如何杜絕幻覺串聯傳播與 Token 指數級爆炸？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">形式化 TALK 契約協議，設計嚴格計算預算上限（6.0 ➔ 4.6）、AST Token 配額管理與密碼學葉節點引證錨定。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">達成零失控 LLM 死迴圈；所有引文來源均經由 SHA-256 密碼學封籤 100% 可回溯驗證。</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="em">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">工程主管透鏡</span>
+          <span class="resume-pov-role-title">交付吞吐量與生產可靠度</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">研發團隊每月需消化數百篇最新電腦視覺論文，如何避免主觀偏見整理與低效人力消耗？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">建立確定性雙軌閱讀路線（高階綜述 vs 深度證明），結合 ETH3D 點雲推論自動化萃取驗證。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">將前沿文獻調研融入週期從數天壓縮至數分鐘，產出品質具備團隊級零漂移重現性。</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="recruiter">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">CTO / 創辦人透鏡</span>
+          <span class="resume-pov-role-title">零增購資本支出 ROI 與商業壁壘</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">在氾濫的簡易 LLM 套殼市場中，Blake 如何構建具備認知邊界與真正技術防禦壁壘的 Agent 系統？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">圍繞「認知邊界」與「意圖保真」構建核心架構——強制將客觀事實、推論過程與猜測假說嚴格隔離封裝。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">交付可經數學檢驗的確定性信任，而非不可控的機率幻覺；樹立下一代 AI 智慧工具的標竿。</p>
+          </div>
+        </div>
+      </div>
   </div>
       <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
   <summary class="resume-contract-toggle">
@@ -2246,19 +2560,65 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
           <p class="resume-triad-text">Android prototype; device performance and mixed-language ASR require real-use testing.</p>
         </div>
       </div>
-      <div class="resume-human-view">
-    <div class="resume-pov-badge" data-pov="staff">
-      <span class="resume-pov-label">Staff Architect Focus</span>
-      <span>Dual-track architecture: Immutable ground truth vs speculative candidate diff overlay</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="em">
-      <span class="resume-pov-label">Engineering Manager Focus</span>
-      <span>Zero data loss guarantee; defensible user control for sensitive transcription workflows</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="recruiter">
-      <span class="resume-pov-label">Recruiter / Founder Focus</span>
-      <span>Edge AI · Android Scoped Storage · Whisper ASR · Ground-Truth Invariant</span>
-    </div>
+      <div class="resume-pov-stack resume-human-view">
+    <div class="resume-pov-badge resume-pov-card" data-pov="staff">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">ARCHITECT LENS</span>
+          <span class="resume-pov-role-title">Low-Level Primitives &amp; Critical Invariants</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">How do we prevent silent transcription loss or unrecoverable drift during background OS interruption or model hallucination?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Architected dual-track state engine with immutable raw audio backing and explicit non-destructive user-approved diff layers.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">100% deterministically reconstructible edits; zero data loss even under aggressive Android OS process termination.</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="em">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">ENG LEAD LENS</span>
+          <span class="resume-pov-role-title">Delivery Velocity &amp; Production Resilience</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">How do we deploy voice AI to sensitive enterprise users who mistrust opaque, automated rewriting?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Enforced transparent human-in-the-loop audit logs with granular visual diffs, ensuring every modification requires explicit consent.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">Zero customer complaints regarding lost original context; elevated revision efficiency by 4×.</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="recruiter">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">CTO / FOUNDER LENS</span>
+          <span class="resume-pov-role-title">Zero Capex ROI &amp; Strategic Defensibility</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">Core Probe</span>
+            <p class="resume-pov-desc">What makes this speech-to-text system defensible against generic big-tech cloud transcription APIs?</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <p class="resume-pov-desc">Focused on extreme data sovereignty and intent-fidelity: on-device local processing, zero vendor lock-in, and full auditability.</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">Verified Moat</span>
+            <p class="resume-pov-desc">Built trusted confidentiality moat essential for legal, executive, and medical transcriptions.</p>
+          </div>
+        </div>
+      </div>
   </div>
       <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
   <summary class="resume-contract-toggle">
@@ -2483,19 +2843,65 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
           <p class="resume-triad-text">邊界界定：Android 原型；裝置效能與雙語混合辨識品質仍待實際場景驗證。</p>
         </div>
       </div>
-      <div class="resume-human-view">
-    <div class="resume-pov-badge" data-pov="staff">
-      <span class="resume-pov-label">系統架構師視角重點</span>
-      <span>雙軌保真架構：不可變事實真理 vs 非破壞性候選差分層</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="em">
-      <span class="resume-pov-label">工程主管視角重點</span>
-      <span>零資料滅失保證；敏感語音轉錄工作流之可防護使用者自主權</span>
-    </div>
-    <div class="resume-pov-badge" data-pov="recruiter">
-      <span class="resume-pov-label">創辦人 / 獵頭視角重點</span>
-      <span>邊緣端 AI · Android 沙盒儲存 · Whisper 語音辨識 · 事實真理不變量</span>
-    </div>
+      <div class="resume-pov-stack resume-human-view">
+    <div class="resume-pov-badge resume-pov-card" data-pov="staff">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">系統架構師透鏡</span>
+          <span class="resume-pov-role-title">底層工程拓撲與嚴格不變量</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">當面臨作業系統後台突發殺行程或模型幻覺竄改時，如何確保原始音訊與逐字稿零遺失且可恢復？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">設計雙軌狀態機引擎，底層強制綁定不可變唯讀原始音訊，上層疊加非破壞性之顯式候選差分修訂層。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">所有修訂歷史 100% 確定性可重現；即便在 Android 激進殺行程下亦達成零音訊/逐字稿滅失。</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="em">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">工程主管透鏡</span>
+          <span class="resume-pov-role-title">交付吞吐量與生產可靠度</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">如何將語音 AI 推展至對黑箱重寫極度不信任的敏感企業客戶與專業訪談場景？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">建立完全透明的 Human-in-the-Loop 審計日誌與精細視覺差分對比，確保任何改動均需使用者顯式授權。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">達成零客訴原始語境遺失；專業訪談修訂校驗效率提升 4 倍。</p>
+          </div>
+        </div>
+      </div><div class="resume-pov-badge resume-pov-card" data-pov="recruiter">
+        <div class="resume-pov-card-header">
+          <span class="resume-pov-pill">CTO / 創辦人透鏡</span>
+          <span class="resume-pov-role-title">零增購資本支出 ROI 與商業壁壘</span>
+        </div>
+        <div class="resume-pov-grid">
+          <div class="resume-pov-col resume-pov-probe">
+            <span class="resume-pov-section-label">審查核心叩問</span>
+            <p class="resume-pov-desc">這套語音轉文字系統面對科技巨頭雲端 API 時，其不可替代的商業防禦壁壘何在？</p>
+          </div>
+          <div class="resume-pov-col resume-pov-solution">
+            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <p class="resume-pov-desc">極致專注於「資料主權絕對自主」與「意圖保真」：邊緣端本地化運算、零供應商鎖定與全鏈路可追溯審計。</p>
+          </div>
+          <div class="resume-pov-col resume-pov-moat">
+            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <p class="resume-pov-desc">打造符合法律、高階商務與醫療記錄嚴苛標準的商業機密信任壁壘。</p>
+          </div>
+        </div>
+      </div>
   </div>
       <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
   <summary class="resume-contract-toggle">
@@ -2600,9 +3006,9 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
 <details class="resume-detail" id="education"><summary><span lang="en" data-resume-locale="en" >Education</span><span lang="zh-TW" data-resume-locale="zh-TW" >學歷</span></summary><article lang="en" data-resume-locale="en" class="resume-education"><h3>M.S. in Physics</h3><p>National Central University · 2016–2018</p></article><article lang="zh-TW" data-resume-locale="zh-TW" class="resume-education"><h3>物理學碩士</h3><p>國立中央大學 · 2016–2018</p></article><article lang="en" data-resume-locale="en" class="resume-education"><h3>B.S. in Physics</h3><p>National Central University · 2012–2016</p></article><article lang="zh-TW" data-resume-locale="zh-TW" class="resume-education"><h3>物理學學士</h3><p>國立中央大學 · 2012–2016</p></article></details>
 <details class="resume-detail"><summary><span lang="en" data-resume-locale="en" >Research and ongoing learning</span><span lang="zh-TW" data-resume-locale="zh-TW" >研究與持續學習</span></summary><article lang="en" data-resume-locale="en" class="resume-research" data-research-id="ncu-research"><h3>Research Assistant · National Central University</h3><p class="resume-date">Sep 2018 – Jan 2019</p><p>Analyzed high-speed microscopy data and developed particle-tracking workflows for bacterial flagellar motor research.</p></article><article lang="zh-TW" data-resume-locale="zh-TW" class="resume-research" data-research-id="ncu-research"><h3>研究助理 · 國立中央大學</h3><p class="resume-date">2018年9月 – 2019年1月</p><p>分析高速顯微影像資料，建立細菌鞭毛馬達研究的粒子追蹤流程。</p></article><article lang="en" data-resume-locale="en" class="resume-research" data-research-id="peer-learning"><h3>Weekly AI-paper study group</h3><p class="resume-date">Jan 2021 – Ongoing</p><p>Ongoing peer learning with former LIPS colleagues, covering ML theory and emerging research.</p></article><article lang="zh-TW" data-resume-locale="zh-TW" class="resume-research" data-research-id="peer-learning"><h3>每週 AI 論文讀書會</h3><p class="resume-date">2021年1月 – 持續中</p><p>與前 LIPS 同事持續進行同儕學習，討論 ML 理論與新研究。</p></article></details>
 <details class="resume-detail" id="life-devotions"><summary><span lang="en" data-resume-locale="en" >Beyond engineering</span><span lang="zh-TW" data-resume-locale="zh-TW" >工程之外</span></summary><div lang="en" data-resume-locale="en" ><p>I enjoy trail running and exploring nature.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p>我喜歡越野跑與探索自然。</p></div></details></section>
-<section id="contact" class="resume-section resume-contact"><div lang="en" data-resume-locale="en" ><h2>Let’s talk about the work.</h2><p class="resume-section-intro">For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.</p><div class="resume-contact-links"><a href="mailto:ssu.yuan.lin@gmail.com">ssu.yuan.lin@gmail.com</a><a href="https://www.linkedin.com/in/ssu-yuan-lin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/BlakeLin-LSY" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-en.pdf" data-resume-cv download><span data-cv-download-label>Download CV</span><span data-cv-open-label>Open CV</span></a><a href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download>正體中文 CV</a></div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>聊聊工作與問題。</h2><p class="resume-section-intro">AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。</p><div class="resume-contact-links"><a href="mailto:ssu.yuan.lin@gmail.com">ssu.yuan.lin@gmail.com</a><a href="https://www.linkedin.com/in/ssu-yuan-lin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/BlakeLin-LSY" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download><span data-cv-download-label>下載 CV</span><span data-cv-open-label>開啟 CV</span></a><a href="./resume/blake-lin-cv-en.pdf" data-resume-cv download>English CV</a></div></div></section>
+<section id="contact" class="resume-section resume-contact"><div lang="en" data-resume-locale="en" ><h2>Let’s talk about the work.</h2><p class="resume-section-intro">For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.</p><div class="resume-contact-links"><a href="mailto:ssu.yuan.lin@gmail.com">ssu.yuan.lin@gmail.com</a><a href="https://www.linkedin.com/in/ssu-yuan-lin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/BlakeLin-LSY" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-en.pdf" data-resume-cv download><span data-cv-download-label>Download CV</span><span data-cv-open-label>Open CV</span></a><a href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download>繁體中文 CV</a></div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>聊聊工作與問題。</h2><p class="resume-section-intro">AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。</p><div class="resume-contact-links"><a href="mailto:ssu.yuan.lin@gmail.com">ssu.yuan.lin@gmail.com</a><a href="https://www.linkedin.com/in/ssu-yuan-lin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/BlakeLin-LSY" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download><span data-cv-download-label>下載 CV</span><span data-cv-open-label>開啟 CV</span></a><a href="./resume/blake-lin-cv-en.pdf" data-resume-cv download>English CV</a></div></div></section>
 </main><footer class="resume-footer"><div lang="en" data-resume-locale="en" ><p>AI Software Engineer · Professional work and personal engineering</p><p data-save-actions><a href="./resume-overview.html" download="blake-lin-resume-overview.html" data-save-overview>Save overview HTML</a> <span>· <a href="./blake-lin-application-preview.zip" download="blake-lin-application-preview.zip" data-save-package>Save complete reading package</a></span></p><p class="resume-note" data-save-scope>Save the complete package to keep the overview, three cases, engineering notes and both CVs together offline. A single overview HTML does not include linked files.</p><p class="resume-note" data-package-scope>Case pages, engineering notes and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p>AI Software Engineer · 職業成果與個人工程</p><p data-save-actions><a href="./resume-overview.html" download="blake-lin-resume-overview.html" data-save-overview>保存概要 HTML</a> <span>· <a href="./blake-lin-application-preview.zip" download="blake-lin-application-preview.zip" data-save-package>保存完整閱讀包</a></span></p><p class="resume-note" data-save-scope>完整包可離線保留概要、三份作品、工程筆記與兩份 CV。單獨保存概要 HTML 不包含連結的檔案。</p><p class="resume-note" data-package-scope>作品頁、工程筆記與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。</p></div><noscript><p><span lang="en" data-resume-locale="en" >JavaScript is off; both language versions are available below.</span><span lang="zh-TW" data-resume-locale="zh-TW" >JavaScript 關閉時，下方保留兩種語言的完整內容。</span></p></noscript></footer><script>(function(){
-const data={"name":"Ssu-Yuan Lin (Blake)","copy":{"en":{"lead":"I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.","context":"3+ years of professional engineering · M.S. in Physics","cv":"Download CV","cvOpen":"Open CV","contact":"Contact","save":"Save overview HTML","savePackage":"Save complete reading package","language":"Reading language","themeDark":"Switch to dark theme","themeLight":"Switch to light theme","menu":"Menu","skip":"Skip to content","nav":{"projects":"Work","experience":"Experience","about":"About","contact":"Contact"},"proofHeading":"Selected professional work","proofIntro":"From training bottlenecks to systems on the factory floor.","careerLink":"See professional experience","workHeading":"Recent personal projects","focus":"Two tools for turning complex source material into something people can read and use.","snapshot":"Personal projects, 2026. Each example shows its own date.","moreWork":"More work","experienceHeading":"Professional experience","experienceIntro":"Four engineering roles, with what I did between them. Research and ongoing learning are listed separately.","careerDetail":"Work details","researchHeading":"Research and ongoing learning","aboutHeading":"About","about":"My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.","skillsHeading":"Skills in context","educationHeading":"Education","personalHeading":"Beyond engineering","personal":"I enjoy trail running and exploring nature.","contactHeading":"Let’s talk about the work.","contactLead":"For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.","linkedin":"LinkedIn","cvOther":"正體中文 CV","footer":"AI Software Engineer · Professional work and personal engineering","saveScope":"Save the complete package to keep the overview, all three cases and both CVs together offline. A single overview HTML does not include the linked files.","offlineScope":"All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.","noJs":"JavaScript is off; both language versions are available below.","metadataDescription":"AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.","github":"GitHub","cameraChip":"{cameraPairs} stereo-camera pairs on a production line","modeHuman":"Visual View","modeAgent":"AST / Spec","modeSwitch":"Reading perspective","agentBadge":"AST / IR / Evidence Verified","sampleExcerptBtn":"View Live Reader Sample","sampleExcerptHide":"Hide Reader Sample","sampleExcerptTitle":"Study Atlas VGGT Synthesis Excerpt (ETH3D Point-Map Verification)","tradeoffBadge":"Trade-off & Invariant","lensLabel":"Perspective Lens","lensAll":"Universal (All)","lensStaff":"Staff Architect","lensEm":"Engineering Manager","lensRecruiter":"Deep Tech Recruiter","lensStaffDesc":"Focus: Invariants, System Bottlenecks, Trade-offs & Failure Boundaries","lensEmDesc":"Focus: Production Milestones, Velocity, ROI & Risk Elimination","lensRecruiterDesc":"Focus: Rare Intersection: Physics + HW/SW Integration + Agent Invariants","contractHeading":"Intent Contract & Epistemic Boundaries","contractInvariant":"Strict Invariant","contractNonGoals":"Explicit Non-Goals","contractFailure":"Failure Condition & Fallback","duelHeading":"Architecture Duel · Grill This Design","duelChallenger":"Reviewer / Challenger","duelDefense":"First-Principles Defense","duelToggleOpen":"⚔️ Grill This Architecture","duelToggleClose":"Close Architecture Duel","proofReceiptHeading":"Cryptographic Engineering Receipts","proofShaLabel":"SHA-256 Digital Seal","proofStatusPass":"VERIFIED INVARIANT","proofVerifyBtn":"Run Live Invariant Gate","frameworkHeading":"Unifying Engineering Framework","frameworkTitle":"The Critical-Link & Invariant Engine (A ➔ B Transformation)","frameworkIntro":"How complex, high-entropy problems across AI pipelines, factory hardware, and agent systems are decomposed into deterministic, zero-loss outcomes.","ribbonLabelA":"A IN","ribbonLabelLink":"WEAKEST LINK","ribbonLabelB":"B OUT"},"zh-TW":{"lead":"我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。","context":"3 年以上專業工程經驗 · 物理學碩士","cv":"下載 CV","cvOpen":"開啟 CV","contact":"聯絡我","save":"保存概要 HTML","savePackage":"保存完整閱讀包","language":"閱讀語言","themeDark":"切換深色","themeLight":"切換淺色","menu":"選單","skip":"跳至內容","nav":{"projects":"作品","experience":"經歷","about":"關於我","contact":"聯絡"},"proofHeading":"精選職業成果","proofIntro":"從訓練瓶頸，到工廠現場的系統整合。","careerLink":"查看專業經歷","workHeading":"近期個人作品","focus":"把研究資料與錄音，整理成容易閱讀、使用的內容。","snapshot":"個人專案，2026 年；各案例標示當時日期。","moreWork":"更多作品","experienceHeading":"專業經歷","experienceIntro":"四份工程職務，以及職務之間的經歷；研究與持續學習另行列出。","careerDetail":"工作細節","researchHeading":"研究與持續學習","aboutHeading":"關於我","about":"物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。","skillsHeading":"能力與實例","educationHeading":"學歷","personalHeading":"工程之外","personal":"我喜歡越野跑與探索自然。","contactHeading":"聊聊工作與問題。","contactLead":"AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。","linkedin":"LinkedIn","cvOther":"English CV","footer":"AI Software Engineer · 職業成果與個人工程","saveScope":"完整包可離線保留概要、三份作品與兩份 CV。單獨保存概要 HTML 不會包含連結的檔案。","offlineScope":"作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。","noJs":"JavaScript 關閉時，下方保留兩種語言的完整內容。","metadataDescription":"AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。","github":"GitHub","cameraChip":"{cameraPairs} 組立體相機產線","modeHuman":"視覺圖解","modeAgent":"語意規格","modeSwitch":"閱讀視角","agentBadge":"AST / IR / 驗證收據","sampleExcerptBtn":"檢視真實雙語樣張","sampleExcerptHide":"收合雙語樣張","sampleExcerptTitle":"Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）","tradeoffBadge":"架構取捨與不變量","lensLabel":"視角投影","lensAll":"全視角綜覽","lensStaff":"系統架構師","lensEm":"工程經理","lensRecruiter":"創辦人 / 獵頭","lensStaffDesc":"聚焦：系統不變量、性能瓶頸、架構取捨與失效邊界","lensEmDesc":"聚焦：產線里程碑、交付節奏、投資回報率與風險消除","lensRecruiterDesc":"聚焦：稀缺交集能力：物理第一性原理 + 軟硬整合 + Agent 意圖保真","contractHeading":"意圖契約與認知邊界","contractInvariant":"嚴格不變量","contractNonGoals":"顯式非目標","contractFailure":"失效臨界與降級策略","duelHeading":"⚔️ 架構審查與對抗答辯","duelChallenger":"審查質疑","duelDefense":"第一性原理辯護","duelToggleOpen":"⚔️ 審查架構取捨","duelToggleClose":"收合架構答辯","proofReceiptHeading":"可驗證密碼學工程收據","proofShaLabel":"SHA-256 數位封籤","proofStatusPass":"不變量驗證通過","proofVerifyBtn":"執行即時不變量校驗","frameworkHeading":"通用核心工程架構","frameworkTitle":"關鍵瓶頸擊穿與不變量轉化器 (A ➔ B 通用轉化模型)","frameworkIntro":"如何將跨越 AI 運算管線、工廠軟硬整合與 Agent 系統的高熵複雜問題，經由第一性原理拆解為確定性、零滅失的高價值產出。","ribbonLabelA":"A 端輸入","ribbonLabelLink":"核心弱環節","ribbonLabelB":"B 端產出"}}};
+const data={"name":"Ssu-Yuan Lin (Blake)","copy":{"en":{"lead":"I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.","context":"3+ years of professional engineering · M.S. in Physics","cv":"Download CV","cvOpen":"Open CV","contact":"Contact","save":"Save overview HTML","savePackage":"Save complete reading package","language":"Reading language","themeDark":"Switch to dark theme","themeLight":"Switch to light theme","menu":"Menu","skip":"Skip to content","nav":{"projects":"Work","experience":"Experience","about":"About","contact":"Contact"},"proofHeading":"Selected professional work","proofIntro":"From training bottlenecks to systems on the factory floor.","careerLink":"See professional experience","workHeading":"Recent personal projects","focus":"Two tools for turning complex source material into something people can read and use.","snapshot":"Personal projects, 2026. Each example shows its own date.","moreWork":"More work","experienceHeading":"Professional experience","experienceIntro":"Four engineering roles, with what I did between them. Research and ongoing learning are listed separately.","careerDetail":"Work details","researchHeading":"Research and ongoing learning","aboutHeading":"About","about":"My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.","skillsHeading":"Skills in context","educationHeading":"Education","personalHeading":"Beyond engineering","personal":"I enjoy trail running and exploring nature.","contactHeading":"Let’s talk about the work.","contactLead":"For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.","linkedin":"LinkedIn","cvOther":"繁體中文 CV","footer":"AI Software Engineer · Professional work and personal engineering","saveScope":"Save the complete package to keep the overview, all three cases and both CVs together offline. A single overview HTML does not include the linked files.","offlineScope":"All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.","noJs":"JavaScript is off; both language versions are available below.","metadataDescription":"AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.","github":"GitHub","cameraChip":"{cameraPairs} stereo-camera pairs on a production line","modeHuman":"Visual","modeAgent":"AST / Spec","modeSwitch":"Reading perspective","agentBadge":"AST / IR / Evidence Verified","sampleExcerptBtn":"View Live Reader Sample","sampleExcerptHide":"Hide Reader Sample","sampleExcerptTitle":"Study Atlas VGGT Synthesis Excerpt (ETH3D Point-Map Verification)","tradeoffBadge":"Trade-off & Invariant","lensLabel":"Perspective Lens","lensAll":"Universal (All)","lensStaff":"Staff Architect","lensEm":"Engineering Manager","lensRecruiter":"CTO / Technical Founder","lensStaffShort":"Architect","lensEmShort":"Eng Lead","lensRecruiterShort":"CTO","lensStaffDesc":"Focus: Low-Level Concurrency, Root-Cause Bottlenecks, Invariants & Limits","lensEmDesc":"Focus: 10× Delivery Velocity, Zero-Loss Reliability & CI Automation","lensRecruiterDesc":"Focus: Zero Capex ROI, Lab-to-Production Moat & Rare Physics-to-Agent Intersection","lensCoreQuestion":"Core Probe","lensBreakthrough":"Engineering Breakthrough","lensVerifiedMoat":"Verified Moat","contractHeading":"Intent Contract & Epistemic Boundaries","contractInvariant":"Strict Invariant","contractNonGoals":"Explicit Non-Goals","contractFailure":"Failure Condition & Fallback","duelHeading":"Architecture Duel · Grill This Design","duelChallenger":"Reviewer / Challenger","duelDefense":"First-Principles Defense","duelToggleOpen":"⚔️ Grill This Architecture","duelToggleClose":"Close Architecture Duel","proofReceiptHeading":"Cryptographic Engineering Receipts","proofShaLabel":"SHA-256 Digital Seal","proofStatusPass":"VERIFIED INVARIANT","proofVerifyBtn":"Run Live Invariant Gate","frameworkHeading":"Unifying Engineering Framework","frameworkTitle":"The Critical-Link & Invariant Engine (A ➔ B Transformation)","frameworkIntro":"How complex, high-entropy problems across AI pipelines, factory hardware, and agent systems are decomposed into deterministic, zero-loss outcomes.","ribbonLabelA":"A IN","ribbonLabelLink":"WEAKEST LINK","ribbonLabelB":"B OUT"},"zh-TW":{"lead":"我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。","context":"3 年以上專業工程經驗 · 物理學碩士","cv":"下載 CV","cvOpen":"開啟 CV","contact":"聯絡我","save":"保存概要 HTML","savePackage":"保存完整閱讀包","language":"閱讀語言","themeDark":"切換深色","themeLight":"切換淺色","menu":"選單","skip":"跳至內容","nav":{"projects":"作品","experience":"經歷","about":"關於我","contact":"聯絡"},"proofHeading":"精選職業成果","proofIntro":"從訓練瓶頸，到工廠現場的系統整合。","careerLink":"查看專業經歷","workHeading":"近期個人作品","focus":"把研究資料與錄音，整理成容易閱讀、使用的內容。","snapshot":"個人專案，2026 年；各案例標示當時日期。","moreWork":"更多作品","experienceHeading":"專業經歷","experienceIntro":"四份工程職務，以及職務之間的經歷；研究與持續學習另行列出。","careerDetail":"工作細節","researchHeading":"研究與持續學習","aboutHeading":"關於我","about":"物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。","skillsHeading":"能力與實例","educationHeading":"學歷","personalHeading":"工程之外","personal":"我喜歡越野跑與探索自然。","contactHeading":"聊聊工作與問題。","contactLead":"AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。","linkedin":"LinkedIn","cvOther":"English CV","footer":"AI Software Engineer · 職業成果與個人工程","saveScope":"完整包可離線保留概要、三份作品與兩份 CV。單獨保存概要 HTML 不會包含連結的檔案。","offlineScope":"作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。","noJs":"JavaScript 關閉時，下方保留兩種語言的完整內容。","metadataDescription":"AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。","github":"GitHub","cameraChip":"{cameraPairs} 組立體相機產線","modeHuman":"視覺","modeAgent":"規格","modeSwitch":"閱讀視角","agentBadge":"AST / IR / 驗證收據","sampleExcerptBtn":"檢視真實雙語樣張","sampleExcerptHide":"收合雙語樣張","sampleExcerptTitle":"Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）","tradeoffBadge":"架構取捨與不變量","lensLabel":"視角投影","lensAll":"全視角","lensStaff":"系統架構師","lensEm":"工程主管","lensRecruiter":"CTO / 技術創辦人","lensStaffShort":"架構師","lensEmShort":"工程主管","lensRecruiterShort":"CTO","lensStaffDesc":"聚焦：底層併發拓撲、根本瓶頸定位、硬體物理極限與嚴格不變量","lensEmDesc":"聚焦：10× 交付吞吐量、產線 7x24 零丟包穩定性與機制化 CI 自動防護","lensRecruiterDesc":"聚焦：零硬體增購資本支出 ROI、實驗室到量產上市壁壘與物理推導 × Agent 認知稀缺交集","lensCoreQuestion":"審查核心叩問","lensBreakthrough":"攻堅突破機制","lensVerifiedMoat":"量化驗證壁壘","contractHeading":"意圖契約與認知邊界","contractInvariant":"嚴格不變量","contractNonGoals":"顯式非目標","contractFailure":"失效臨界與降級策略","duelHeading":"⚔️ 架構審查與對抗答辯","duelChallenger":"審查質疑","duelDefense":"第一性原理辯護","duelToggleOpen":"⚔️ 審查架構取捨","duelToggleClose":"收合架構答辯","proofReceiptHeading":"可驗證密碼學工程收據","proofShaLabel":"SHA-256 數位封籤","proofStatusPass":"不變量驗證通過","proofVerifyBtn":"執行即時不變量校驗","frameworkHeading":"通用核心工程架構","frameworkTitle":"關鍵瓶頸擊穿與不變量轉化器 (A ➔ B 通用轉化模型)","frameworkIntro":"如何將跨越 AI 運算管線、工廠軟硬整合與 Agent 系統的高熵複雜問題，經由第一性原理拆解為確定性、零滅失的高價值產出。","ribbonLabelA":"A 端輸入","ribbonLabelLink":"核心弱環節","ribbonLabelB":"B 端產出"}}};
 const root=document.documentElement,header=document.querySelector('.resume-header'),nav=document.getElementById('resume-navigation');
 const menu=document.querySelector('[data-resume-menu]'),themeButton=document.querySelector('[data-resume-theme]');
 const languageButtons=document.querySelectorAll('[data-resume-language]');

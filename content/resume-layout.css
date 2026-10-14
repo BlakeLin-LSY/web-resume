@@ -23,12 +23,12 @@ html.resume-enhanced[data-reading-language=en] [data-resume-locale="zh-TW"],html
 .resume-skip:focus{top:12px}
 .resume-header{position:sticky;top:0;z-index:10;background:var(--resume-background);border-bottom:1px solid var(--resume-border)}
 html:not(.resume-enhanced) .resume-header{position:static}
-.resume-header-inner{max-width:var(--resume-content-width);padding:12px 28px;margin:auto;display:flex;align-items:center;gap:24px;min-height:70px}
-.resume-logo{font-size:1.02rem;font-weight:700;text-decoration:none;color:var(--resume-text);white-space:nowrap;margin-right:auto}
-.resume-navigation{display:flex;align-items:center;gap:22px;font-size:.85rem}
-.resume-navigation a{text-decoration:none;padding:8px 0}
-.resume-reading-controls{align-items:center;gap:5px}
-.resume-reading-controls button{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:44px;padding:6px 8px;background:transparent;border:1px solid transparent;border-radius:4px;font-size:.77rem}
+.resume-header-inner{max-width:var(--resume-content-width);padding:10px 24px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.resume-logo{font-size:1.02rem;font-weight:700;text-decoration:none;color:var(--resume-text);white-space:nowrap;flex-shrink:0}
+.resume-navigation{display:flex;align-items:center;gap:16px;font-size:.83rem;white-space:nowrap;margin-right:auto;margin-left:16px}
+.resume-navigation a{text-decoration:none;padding:6px 0;font-weight:600}
+.resume-reading-controls{align-items:center;gap:4px;flex-shrink:0}
+.resume-reading-controls button{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:38px;padding:4px 7px;background:transparent;border:1px solid transparent;border-radius:4px;font-size:.75rem}
 .resume-reading-controls button[aria-pressed=true]{border-color:var(--resume-accent);background:var(--resume-tint);color:var(--resume-accent)}
 .resume-languages{display:flex;gap:2px}
 .resume-menu{display:none!important}
@@ -51,11 +51,11 @@ html:not(.resume-enhanced) .resume-header{position:static}
 .resume-block-header{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--resume-border)}
 .resume-block-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
 .resume-block-kicker{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--resume-muted)}
-.resume-block-badge{font-size:.78rem;font-weight:700;padding:3px 12px;border-radius:999px;background:var(--resume-tint);border:1px solid var(--resume-border);color:var(--resume-accent)}
+.resume-block-badge{font-size:.78rem;font-weight:700;padding:3px 12px;border-radius:999px;background:var(--resume-tint);border:1px solid var(--resume-border);color:var(--resume-accent);white-space:nowrap}
 .resume-block-title{font-size:1.35rem;font-weight:700;color:var(--resume-text);line-height:1.35;margin:4px 0 0}
 .resume-stage-box{margin:18px 0}
-.resume-triad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
-.resume-triad-item{background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.resume-triad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px;align-items:stretch}
+.resume-triad-item{background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;height:100%}
 .resume-triad-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--resume-accent)}
 .resume-triad-text{font-size:.85rem;line-height:1.5;color:var(--resume-text);margin:0}
 .resume-block-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:18px;padding-top:14px;border-top:1px dashed var(--resume-border)}
@@ -282,19 +282,51 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
 
 /* --- Reader Lens Controller & Perspective Projections --- */
 .resume-lens-selector{display:inline-flex;align-items:center;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:6px;padding:2px;gap:2px}
-.resume-lens-selector button{border:none;background:transparent;color:var(--resume-muted);font-size:.73rem;font-weight:600;padding:3px 8px;border-radius:4px;cursor:pointer;transition:all .15s}
+.resume-lens-selector button{border:none;background:transparent;color:var(--resume-muted);font-size:.73rem;font-weight:600;padding:4px 8px;border-radius:4px;cursor:pointer;transition:all .15s;white-space:nowrap}
 .resume-lens-selector button:hover{color:var(--resume-text)}
-.resume-lens-selector button[aria-pressed="true"]{background:var(--resume-panel);color:var(--resume-accent);box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+.resume-lens-selector button[aria-pressed="true"]{background:var(--resume-panel);color:var(--resume-accent);box-shadow:0 1px 3px rgba(0,0,0,0.08);font-weight:700}
 
-.resume-pov-badge{display:none;margin-top:14px;padding:10px 14px;border-radius:6px;font-size:.82rem;line-height:1.5;background:var(--resume-tint);border-left:3px solid var(--resume-accent);color:var(--resume-text)}
-.resume-pov-label{font-size:.68rem;font-weight:800;letter-spacing:.05em;color:var(--resume-accent);display:block;margin-bottom:3px;text-transform:uppercase}
+/* Perspective Spotlight Card (Multi-Dimensional Lens) */
+.resume-pov-stack{margin-top:16px}
+.resume-pov-badge{display:none}
+.resume-pov-card{padding:16px 18px;border-radius:10px;background:var(--resume-panel);border:1px solid var(--resume-border);box-shadow:0 2px 8px rgba(0,0,0,0.03);animation:resumeFadeIn .2s ease-in-out}
+@keyframes resumeFadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.resume-pov-card-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--resume-border)}
+.resume-pov-pill{font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.resume-pov-role-title{font-size:.83rem;font-weight:700;color:var(--resume-text)}
+.resume-pov-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.resume-pov-col{display:flex;flex-direction:column;gap:5px;background:var(--resume-tint);padding:10px 12px;border-radius:6px;border:1px solid var(--resume-border);min-width:0}
+.resume-pov-section-label{font-size:.67rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.resume-pov-desc{font-size:.82rem;line-height:1.5;color:var(--resume-text);margin:0;font-weight:500;overflow-wrap:break-word}
+.resume-pov-text{font-size:.84rem;line-height:1.55;color:var(--resume-text);margin:0}
+
+/* Differentiated Role Color Identities */
+.resume-pov-card[data-pov="staff"]{border-left:4px solid var(--resume-accent)}
+.resume-pov-card[data-pov="staff"] .resume-pov-pill{background:var(--resume-accent);color:var(--resume-action-text)}
+.resume-pov-card[data-pov="staff"] .resume-pov-section-label{color:var(--resume-accent)}
+
+.resume-pov-card[data-pov="em"]{border-left:4px solid #3b7c6b}
+.resume-pov-card[data-pov="em"] .resume-pov-pill{background:#3b7c6b;color:#fff}
+.resume-pov-card[data-pov="em"] .resume-pov-section-label{color:#3b7c6b}
+
+.resume-pov-card[data-pov="recruiter"]{border-left:4px solid #b87b33}
+.resume-pov-card[data-pov="recruiter"] .resume-pov-pill{background:#b87b33;color:#fff}
+.resume-pov-card[data-pov="recruiter"] .resume-pov-section-label{color:#b87b33}
+
+/* Active Lens Optical Coupling & Spotlight */
 html[data-resume-lens="staff"] .resume-pov-badge[data-pov="staff"],
 html[data-resume-lens="em"] .resume-pov-badge[data-pov="em"],
 html[data-resume-lens="recruiter"] .resume-pov-badge[data-pov="recruiter"]{display:block}
 
-html[data-resume-lens="staff"] .resume-triad-item:nth-child(2),
-html[data-resume-lens="staff"] .resume-triad-item:nth-child(3){border-color:var(--resume-accent);box-shadow:0 0 0 1px var(--resume-accent)}
-html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);color:var(--resume-action-text)}
+html[data-resume-lens="staff"] .resume-triad-item:nth-child(2){border-color:var(--resume-accent);box-shadow:0 0 0 1px var(--resume-accent)}
+html[data-resume-lens="staff"] .resume-stage-box{outline:2px solid var(--resume-accent);border-radius:10px}
+html[data-resume-lens="staff"] .resume-duel-drawer{border-color:var(--resume-accent);box-shadow:0 0 10px rgba(40,92,77,0.12)}
+
+html[data-resume-lens="em"] .resume-block-badge{background:#3b7c6b!important;color:#fff!important;box-shadow:0 0 8px rgba(59,124,107,0.25)}
+html[data-resume-lens="em"] .resume-proof-receipt{border-color:#3b7c6b!important;box-shadow:0 0 8px rgba(59,124,107,0.15)}
+
+html[data-resume-lens="recruiter"] .resume-ab-ribbon{border-color:#b87b33!important;box-shadow:0 0 10px rgba(184,123,51,0.18)}
+html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;font-weight:700}
 
 /* --- Intent Contract & Epistemic Boundaries Card --- */
 .resume-intent-contract-card{margin:18px 0 12px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-panel);overflow:hidden;transition:border-color .2s}
@@ -346,15 +378,21 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
 .resume-framework-title{font-size:1.2rem;font-weight:800;color:var(--resume-text);margin:0 0 6px}
 .resume-framework-intro{font-size:.85rem;color:var(--resume-muted);line-height:1.55;margin:0}
 
-/* --- A -> B Transformation Ribbon --- */
-.resume-ab-ribbon{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:8px;padding:8px 12px;margin:12px 0 16px;font-size:.8rem;line-height:1.4}
-.resume-ab-seg{display:inline-flex;align-items:center;gap:6px;flex:1 1 auto;min-width:140px}
-.resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+/* --- Robust Grid-Based A -> B Transformation Ribbon --- */
+.resume-ab-ribbon{display:grid;grid-template-columns:1fr auto 1.15fr auto 1fr;align-items:stretch;gap:10px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:8px;padding:10px 14px;margin:14px 0 18px;font-size:.8rem;line-height:1.45}
+.resume-ab-seg{display:flex;flex-direction:column;gap:4px;padding:8px 10px;background:var(--resume-panel);border-radius:6px;border:1px solid var(--resume-border);min-width:0}
+.resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;align-self:flex-start}
 .resume-ab-a .resume-ab-badge{background:rgba(210,101,91,0.15);color:#d2655b;border:1px solid rgba(210,101,91,0.3)}
 .resume-ab-link .resume-ab-badge{background:rgba(40,92,77,0.15);color:var(--resume-accent);border:1px solid var(--resume-accent)}
 .resume-ab-b .resume-ab-badge{background:rgba(79,172,116,0.18);color:#285c4d;border:1px solid rgba(79,172,116,0.4)}
-.resume-ab-text{color:var(--resume-text);font-weight:600}
-.resume-ab-sep{color:var(--resume-accent);font-weight:800;font-size:.9rem}
+.resume-ab-text{color:var(--resume-text);font-weight:600;font-size:.81rem;line-height:1.4;overflow-wrap:break-word}
+.resume-ab-sep{display:flex;align-items:center;justify-content:center;color:var(--resume-accent);font-weight:800;font-size:1.1rem;user-select:none}
+
+@media(max-width:860px){
+  .resume-ab-ribbon{grid-template-columns:1fr;gap:6px}
+  .resume-ab-sep{transform:rotate(90deg);padding:2px 0}
+  .resume-pov-grid{grid-template-columns:1fr;gap:8px}
+}
 
 
 

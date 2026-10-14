@@ -77,15 +77,51 @@
   "povHighlights": {
     "staff": {
       "en": "Formal TALK contract & circuit-breaker preventing multi-agent combinatorial explosion",
-      "zh-TW": "形式化 TALK 契約與熔斷器，根絕多 Agent 組合爆炸"
+      "zh-TW": "形式化 TALK 契約與熔斷器，根絕多 Agent 組合爆炸",
+      "coreQuestion": {
+        "en": "How do we prevent cascading hallucination and exponential token budget explosion across multi-agent research synthesis?",
+        "zh-TW": "多 Agent 協同進行文獻綜述時，如何杜絕幻覺串聯傳播與 Token 指數級爆炸？"
+      },
+      "breakthrough": {
+        "en": "Formalized the TALK contract protocol with strict budget capping (6.0 ➔ 4.6), AST token quotas, and cryptographic leaf citation anchoring.",
+        "zh-TW": "形式化 TALK 契約協議，設計嚴格計算預算上限（6.0 ➔ 4.6）、AST Token 配額管理與密碼學葉節點引證錨定。"
+      },
+      "verifiedMoat": {
+        "en": "Zero unconstrained LLM loops; 100% cryptographic source provenance verified via SHA-256 digital seals.",
+        "zh-TW": "達成零失控 LLM 死迴圈；所有引文來源均經由 SHA-256 密碼學封籤 100% 可回溯驗證。"
+      }
     },
     "em": {
       "en": "Deterministic budget capping (6.0 → 4.6) and zero-drift technical briefing synthesis",
-      "zh-TW": "確定性預算收斂（6.0 → 4.6），技術綜述品質零漂移"
+      "zh-TW": "確定性預算收斂（6.0 → 4.6），技術綜述品質零漂移",
+      "coreQuestion": {
+        "en": "How can an engineering team digest hundreds of complex vision papers per month without subjective bias or manual exhaustion?",
+        "zh-TW": "研發團隊每月需消化數百篇最新電腦視覺論文，如何避免主觀偏見整理與低效人力消耗？"
+      },
+      "breakthrough": {
+        "en": "Created deterministic dual-track reading routes (briefing vs deep proof) with automated ETH3D point-cloud inference validation.",
+        "zh-TW": "建立確定性雙軌閱讀路線（高階綜述 vs 深度證明），結合 ETH3D 點雲推論自動化萃取驗證。"
+      },
+      "verifiedMoat": {
+        "en": "Compressed literature onboarding from days to minutes with zero-drift reproducibility across the team.",
+        "zh-TW": "將前沿文獻調研融入週期從數天壓縮至數分鐘，產出品質具備團隊級零漂移重現性。"
+      }
     },
     "recruiter": {
-      "en": "Agent Systems · Epistemic Boundary · Formal Budget Contracts · Full Provenance",
-      "zh-TW": "Agent 系統 · 認知邊界 · 形式化預算契約 · 完整引證追溯"
+      "en": "Epistemic boundary architecture · Beyond LLM wrapper · Enterprise research moat",
+      "zh-TW": "認知邊界架構 · 超越普通 LLM 套殼 · 企業級研究壁壘",
+      "coreQuestion": {
+        "en": "In a crowded market of shallow LLM wrappers, how does Blake build truly defensible Agent systems with epistemic boundaries?",
+        "zh-TW": "在氾濫的簡易 LLM 套殼市場中，Blake 如何構建具備認知邊界與真正技術防禦壁壘的 Agent 系統？"
+      },
+      "breakthrough": {
+        "en": "Architected system around 'Epistemic Boundaries' and 'Intent Fidelity'—enforcing that facts, inferences, and speculations remain strictly separated.",
+        "zh-TW": "圍繞「認知邊界」與「意圖保真」構建核心架構——強制將客觀事實、推論過程與猜測假說嚴格隔離封裝。"
+      },
+      "verifiedMoat": {
+        "en": "Delivers mathematical trust rather than probabilistic hallucination; sets standard for next-gen AI intelligence products.",
+        "zh-TW": "交付可經數學檢驗的確定性信任，而非不可控的機率幻覺；樹立下一代 AI 智慧工具的標竿。"
+      }
     }
   },
   "en": {

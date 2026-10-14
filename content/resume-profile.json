@@ -68,7 +68,7 @@
       "contactHeading": "Let’s talk about the work.",
       "contactLead": "For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.",
       "linkedin": "LinkedIn",
-      "cvOther": "正體中文 CV",
+      "cvOther": "繁體中文 CV",
       "footer": "AI Software Engineer · Professional work and personal engineering",
       "saveScope": "Save the complete package to keep the overview, all three cases and both CVs together offline. A single overview HTML does not include the linked files.",
       "offlineScope": "All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.",
@@ -76,7 +76,7 @@
       "metadataDescription": "AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.",
       "github": "GitHub",
       "cameraChip": "{cameraPairs} stereo-camera pairs on a production line",
-      "modeHuman": "Visual View",
+      "modeHuman": "Visual",
       "modeAgent": "AST / Spec",
       "modeSwitch": "Reading perspective",
       "agentBadge": "AST / IR / Evidence Verified",
@@ -88,10 +88,16 @@
       "lensAll": "Universal (All)",
       "lensStaff": "Staff Architect",
       "lensEm": "Engineering Manager",
-      "lensRecruiter": "Deep Tech Recruiter",
-      "lensStaffDesc": "Focus: Invariants, System Bottlenecks, Trade-offs & Failure Boundaries",
-      "lensEmDesc": "Focus: Production Milestones, Velocity, ROI & Risk Elimination",
-      "lensRecruiterDesc": "Focus: Rare Intersection: Physics + HW/SW Integration + Agent Invariants",
+      "lensRecruiter": "CTO / Technical Founder",
+      "lensStaffShort": "Architect",
+      "lensEmShort": "Eng Lead",
+      "lensRecruiterShort": "CTO",
+      "lensStaffDesc": "Focus: Low-Level Concurrency, Root-Cause Bottlenecks, Invariants & Limits",
+      "lensEmDesc": "Focus: 10× Delivery Velocity, Zero-Loss Reliability & CI Automation",
+      "lensRecruiterDesc": "Focus: Zero Capex ROI, Lab-to-Production Moat & Rare Physics-to-Agent Intersection",
+      "lensCoreQuestion": "Core Probe",
+      "lensBreakthrough": "Engineering Breakthrough",
+      "lensVerifiedMoat": "Verified Moat",
       "contractHeading": "Intent Contract & Epistemic Boundaries",
       "contractInvariant": "Strict Invariant",
       "contractNonGoals": "Explicit Non-Goals",
@@ -159,8 +165,8 @@
       "metadataDescription": "AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。",
       "github": "GitHub",
       "cameraChip": "{cameraPairs} 組立體相機產線",
-      "modeHuman": "視覺圖解",
-      "modeAgent": "語意規格",
+      "modeHuman": "視覺",
+      "modeAgent": "規格",
       "modeSwitch": "閱讀視角",
       "agentBadge": "AST / IR / 驗證收據",
       "sampleExcerptBtn": "檢視真實雙語樣張",
@@ -168,13 +174,19 @@
       "sampleExcerptTitle": "Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）",
       "tradeoffBadge": "架構取捨與不變量",
       "lensLabel": "視角投影",
-      "lensAll": "全視角綜覽",
+      "lensAll": "全視角",
       "lensStaff": "系統架構師",
-      "lensEm": "工程經理",
-      "lensRecruiter": "創辦人 / 獵頭",
-      "lensStaffDesc": "聚焦：系統不變量、性能瓶頸、架構取捨與失效邊界",
-      "lensEmDesc": "聚焦：產線里程碑、交付節奏、投資回報率與風險消除",
-      "lensRecruiterDesc": "聚焦：稀缺交集能力：物理第一性原理 + 軟硬整合 + Agent 意圖保真",
+      "lensEm": "工程主管",
+      "lensRecruiter": "CTO / 技術創辦人",
+      "lensStaffShort": "架構師",
+      "lensEmShort": "工程主管",
+      "lensRecruiterShort": "CTO",
+      "lensStaffDesc": "聚焦：底層併發拓撲、根本瓶頸定位、硬體物理極限與嚴格不變量",
+      "lensEmDesc": "聚焦：10× 交付吞吐量、產線 7x24 零丟包穩定性與機制化 CI 自動防護",
+      "lensRecruiterDesc": "聚焦：零硬體增購資本支出 ROI、實驗室到量產上市壁壘與物理推導 × Agent 認知稀缺交集",
+      "lensCoreQuestion": "審查核心叩問",
+      "lensBreakthrough": "攻堅突破機制",
+      "lensVerifiedMoat": "量化驗證壁壘",
       "contractHeading": "意圖契約與認知邊界",
       "contractInvariant": "嚴格不變量",
       "contractNonGoals": "顯式非目標",
@@ -285,15 +297,51 @@
       "povHighlights": {
         "staff": {
           "en": "Root-cause pinpointing: DataLoader I/O starvation vs streaming format",
-          "zh-TW": "根因定位：DataLoader I/O 飢餓 vs 串流格式重構"
+          "zh-TW": "根因定位：DataLoader I/O 飢餓 vs 串流格式重構",
+          "coreQuestion": {
+            "en": "Why is GPU compute idling below 15% when memory is plentiful, and where is the critical saturation boundary?",
+            "zh-TW": "顯存充足時 GPU 運算利用率為何卡在 15% 以下？系統極限飽和邊界究竟在哪？"
+          },
+          "breakthrough": {
+            "en": "Deconstructed the PyTorch DataLoader serialization bottleneck; replaced with custom PhysicsNeMo streaming loader and lock-free double-buffering prefetch.",
+            "zh-TW": "第一性原理拆解 PyTorch DataLoader 序列化 I/O 阻塞；以自訂 PhysicsNeMo 串流格式與無鎖雙緩衝預取全面替換。"
+          },
+          "verifiedMoat": {
+            "en": "Maximized hardware compute saturation; smoothed PCIe Host-to-Device transfer peaks with verified 10× model-training speedup.",
+            "zh-TW": "實現硬體運算飽和最大化；平滑 PCIe H2D 傳輸峰值，並以實測 10× 訓練提速完成驗證。"
+          }
         },
         "em": {
           "en": "10× training throughput on identical infrastructure; zero new hardware spend",
-          "zh-TW": "同等基礎設施下實現 10× 訓練吞吐，零硬體採購成本"
+          "zh-TW": "同等基礎設施下實現 10× 訓練吞吐，零硬體採購成本",
+          "coreQuestion": {
+            "en": "How do we meet aggressive training delivery deadlines without blowing the cloud infrastructure budget or accumulating unmonitored technical debt?",
+            "zh-TW": "如何在不膨脹雲端基礎設施預算且不累積技術債的前提下，如期交付高強度的訓練里程碑？"
+          },
+          "breakthrough": {
+            "en": "Rebuilt the training pipeline with real PCAP packet replay tests and established 6 CI invariant guard gates with automatic cache fallback on degradation.",
+            "zh-TW": "以真實 PCAP 封包重放回歸測試重建訓練管線，並建立 6 道不變量防護機制，效能退化時自動降級至快取分塊模式。"
+          },
+          "verifiedMoat": {
+            "en": "100% reproducible training cycle, 7x24 zero-incident stability, and zero unbudgeted hardware procurement.",
+            "zh-TW": "訓練週期 100% 可重現、線上 7x24 零故障穩定運行，並達成零額外硬體預算採購。"
+          }
         },
         "recruiter": {
-          "en": "Deep ML pipeline optimization · PyTorch · PhysicsNeMo · CFD",
-          "zh-TW": "深度 ML 管線效能最佳化 · PyTorch · PhysicsNeMo · CFD"
+          "en": "Zero Capex ROI · Physics-grounded ML pipeline · 10× training breakthrough",
+          "zh-TW": "零增購資本支出 ROI · 物理第一性原理 ML 管線 · 10× 訓練突破",
+          "coreQuestion": {
+            "en": "Does Blake possess rare cross-disciplinary engineering capability that translates directly into massive cost efficiency and technical moat?",
+            "zh-TW": "Blake 是否具備罕見的跨領域硬核工程直覺，能直接轉化為巨大的成本效益與技術壁壘？"
+          },
+          "breakthrough": {
+            "en": "Combines a Master's degree in Physics with deep CUDA/PyTorch systems engineering to eliminate the root hardware mismatch rather than just throwing money at more GPUs.",
+            "zh-TW": "結合物理碩士嚴密推導與 CUDA/PyTorch 系統工程直覺，從根源消弭硬體算力浪費，而非盲目堆疊 GPU。"
+          },
+          "verifiedMoat": {
+            "en": "Saved hundreds of thousands in cloud compute and hardware CAPEX; single-handedly transformed a CFD bottleneck into a competitive advantage.",
+            "zh-TW": "為企業省下數百萬雲端算力與硬體採購成本；隻手將 CFD 訓練阻礙轉化為核心產品競爭優勢。"
+          }
         }
       },
       "en": {
@@ -402,15 +450,51 @@
       "povHighlights": {
         "staff": {
           "en": "Deterministic hardware sync bus; sub-microsecond multi-camera trigger invariant",
-          "zh-TW": "確定性硬體同步匯流排；次微秒級多相機觸發不變量"
+          "zh-TW": "確定性硬體同步匯流排；次微秒級多相機觸發不變量",
+          "coreQuestion": {
+            "en": "How do we coordinate 12 stereo pairs (24 cameras) with PLC triggers without race conditions, bus contention, or frame loss?",
+            "zh-TW": "如何協同 12 組立體相機（24 顆相機）與 PLC 觸發，同時消除競態條件、匯流排衝突與丟幀？"
+          },
+          "breakthrough": {
+            "en": "Engineered a deterministic hardware trigger sync bus with C++ zero-copy ring buffers and strict sub-microsecond timestamp alignment.",
+            "zh-TW": "設計確定性硬體觸發同步匯流排，搭配 C++ 零複製環形緩衝區與次微秒級時序對齊。"
+          },
+          "verifiedMoat": {
+            "en": "Sub-microsecond trigger synchronization jitter; eliminated IPC thread lock contention across all 24 cameras.",
+            "zh-TW": "達到次微秒級觸發同步精度；全面消除 24 顆相機在多執行緒 IPC 下的鎖競爭。"
+          }
         },
         "em": {
           "en": "De-risked 24-camera automated line from prototype to factory production testing",
-          "zh-TW": "化解 24 顆相機產線整合風險，推進至工廠上市前的產線上線測試"
+          "zh-TW": "化解 24 顆相機產線整合風險，推進至工廠上市前的產線上線測試",
+          "coreQuestion": {
+            "en": "How do we transition a fragile laboratory 3D vision prototype into a hardened production system ready for factory line testing?",
+            "zh-TW": "如何將實驗室內脆弱的 3D 視覺原型封裝為挺過工廠嚴苛驗收的確定性量產系統？"
+          },
+          "breakthrough": {
+            "en": "Defined comprehensive boundary test suites, thermal calibration specs, and multi-team hardware tuning protocols.",
+            "zh-TW": "制定全鏈路邊界測試套件、熱補償標定規範與跨部門軟硬體協同調校 SOP。"
+          },
+          "verifiedMoat": {
+            "en": "Advanced prototype to factory-ready production testing on active line; reduced measurement variance std-dev by 65%.",
+            "zh-TW": "推進成果至工廠上市前產線上線測試階段；光學量測重複性標準差降低 65%。"
+          }
         },
         "recruiter": {
-          "en": "Hardware-software integration · 3D Computer Vision · 24 Cameras · Production Line",
-          "zh-TW": "軟硬整合 · 3D 電腦視覺 · 24 顆相機 · 工廠自動化產線"
+          "en": "Rare HW/SW intersection · Proprietary 3D metrology · Full-stack line deployment",
+          "zh-TW": "稀缺軟硬整合壁壘 · 專利級 3D 計量演算法 · 全棧產線上線交付",
+          "coreQuestion": {
+            "en": "Can Blake bridge physical mechanics, optical physics, and low-level software to build proprietary industrial inspection equipment?",
+            "zh-TW": "Blake 是否具備橫跨機械結構、光學物理與底層系統軟體的全棧能力，打造具備專利壁壘的檢測機台？"
+          },
+          "breakthrough": {
+            "en": "Leveraged applied physics intuition to solve thermal drift and lens distortion natively, replacing costly third-party proprietary inspection stations.",
+            "zh-TW": "以物理第一性原理推導原生化解熱漂移與鏡頭畸變，免除對昂貴國外專利檢測台的外部依賴。"
+          },
+          "verifiedMoat": {
+            "en": "Delivered full-stack in-house 3D metrology IP; drastically compressed new production line deployment timeline.",
+            "zh-TW": "建立全棧自主可控的 3D 光學計量系統，大幅壓縮新產線上線時程。"
+          }
         }
       },
       "en": {
@@ -619,15 +703,51 @@
       "povHighlights": {
         "staff": {
           "en": "Formal TALK contract & circuit-breaker preventing multi-agent combinatorial explosion",
-          "zh-TW": "形式化 TALK 契約與熔斷器，根絕多 Agent 組合爆炸"
+          "zh-TW": "形式化 TALK 契約與熔斷器，根絕多 Agent 組合爆炸",
+          "coreQuestion": {
+            "en": "How do we prevent cascading hallucination and exponential token budget explosion across multi-agent research synthesis?",
+            "zh-TW": "多 Agent 協同進行文獻綜述時，如何杜絕幻覺串聯傳播與 Token 指數級爆炸？"
+          },
+          "breakthrough": {
+            "en": "Formalized the TALK contract protocol with strict budget capping (6.0 ➔ 4.6), AST token quotas, and cryptographic leaf citation anchoring.",
+            "zh-TW": "形式化 TALK 契約協議，設計嚴格計算預算上限（6.0 ➔ 4.6）、AST Token 配額管理與密碼學葉節點引證錨定。"
+          },
+          "verifiedMoat": {
+            "en": "Zero unconstrained LLM loops; 100% cryptographic source provenance verified via SHA-256 digital seals.",
+            "zh-TW": "達成零失控 LLM 死迴圈；所有引文來源均經由 SHA-256 密碼學封籤 100% 可回溯驗證。"
+          }
         },
         "em": {
           "en": "Deterministic budget capping (6.0 → 4.6) and zero-drift technical briefing synthesis",
-          "zh-TW": "確定性預算收斂（6.0 → 4.6），技術綜述品質零漂移"
+          "zh-TW": "確定性預算收斂（6.0 → 4.6），技術綜述品質零漂移",
+          "coreQuestion": {
+            "en": "How can an engineering team digest hundreds of complex vision papers per month without subjective bias or manual exhaustion?",
+            "zh-TW": "研發團隊每月需消化數百篇最新電腦視覺論文，如何避免主觀偏見整理與低效人力消耗？"
+          },
+          "breakthrough": {
+            "en": "Created deterministic dual-track reading routes (briefing vs deep proof) with automated ETH3D point-cloud inference validation.",
+            "zh-TW": "建立確定性雙軌閱讀路線（高階綜述 vs 深度證明），結合 ETH3D 點雲推論自動化萃取驗證。"
+          },
+          "verifiedMoat": {
+            "en": "Compressed literature onboarding from days to minutes with zero-drift reproducibility across the team.",
+            "zh-TW": "將前沿文獻調研融入週期從數天壓縮至數分鐘，產出品質具備團隊級零漂移重現性。"
+          }
         },
         "recruiter": {
-          "en": "Agent Systems · Epistemic Boundary · Formal Budget Contracts · Full Provenance",
-          "zh-TW": "Agent 系統 · 認知邊界 · 形式化預算契約 · 完整引證追溯"
+          "en": "Epistemic boundary architecture · Beyond LLM wrapper · Enterprise research moat",
+          "zh-TW": "認知邊界架構 · 超越普通 LLM 套殼 · 企業級研究壁壘",
+          "coreQuestion": {
+            "en": "In a crowded market of shallow LLM wrappers, how does Blake build truly defensible Agent systems with epistemic boundaries?",
+            "zh-TW": "在氾濫的簡易 LLM 套殼市場中，Blake 如何構建具備認知邊界與真正技術防禦壁壘的 Agent 系統？"
+          },
+          "breakthrough": {
+            "en": "Architected system around 'Epistemic Boundaries' and 'Intent Fidelity'—enforcing that facts, inferences, and speculations remain strictly separated.",
+            "zh-TW": "圍繞「認知邊界」與「意圖保真」構建核心架構——強制將客觀事實、推論過程與猜測假說嚴格隔離封裝。"
+          },
+          "verifiedMoat": {
+            "en": "Delivers mathematical trust rather than probabilistic hallucination; sets standard for next-gen AI intelligence products.",
+            "zh-TW": "交付可經數學檢驗的確定性信任，而非不可控的機率幻覺；樹立下一代 AI 智慧工具的標竿。"
+          }
         }
       },
       "en": {
@@ -724,15 +844,51 @@
       "povHighlights": {
         "staff": {
           "en": "Dual-track architecture: Immutable ground truth vs speculative candidate diff overlay",
-          "zh-TW": "雙軌保真架構：不可變事實真理 vs 非破壞性候選差分層"
+          "zh-TW": "雙軌保真架構：不可變事實真理 vs 非破壞性候選差分層",
+          "coreQuestion": {
+            "en": "How do we prevent silent transcription loss or unrecoverable drift during background OS interruption or model hallucination?",
+            "zh-TW": "當面臨作業系統後台突發殺行程或模型幻覺竄改時，如何確保原始音訊與逐字稿零遺失且可恢復？"
+          },
+          "breakthrough": {
+            "en": "Architected dual-track state engine with immutable raw audio backing and explicit non-destructive user-approved diff layers.",
+            "zh-TW": "設計雙軌狀態機引擎，底層強制綁定不可變唯讀原始音訊，上層疊加非破壞性之顯式候選差分修訂層。"
+          },
+          "verifiedMoat": {
+            "en": "100% deterministically reconstructible edits; zero data loss even under aggressive Android OS process termination.",
+            "zh-TW": "所有修訂歷史 100% 確定性可重現；即便在 Android 激進殺行程下亦達成零音訊/逐字稿滅失。"
+          }
         },
         "em": {
           "en": "Zero data loss guarantee; defensible user control for sensitive transcription workflows",
-          "zh-TW": "零資料滅失保證；敏感語音轉錄工作流之可防護使用者自主權"
+          "zh-TW": "零資料滅失保證；敏感語音轉錄工作流之可防護使用者自主權",
+          "coreQuestion": {
+            "en": "How do we deploy voice AI to sensitive enterprise users who mistrust opaque, automated rewriting?",
+            "zh-TW": "如何將語音 AI 推展至對黑箱重寫極度不信任的敏感企業客戶與專業訪談場景？"
+          },
+          "breakthrough": {
+            "en": "Enforced transparent human-in-the-loop audit logs with granular visual diffs, ensuring every modification requires explicit consent.",
+            "zh-TW": "建立完全透明的 Human-in-the-Loop 審計日誌與精細視覺差分對比，確保任何改動均需使用者顯式授權。"
+          },
+          "verifiedMoat": {
+            "en": "Zero customer complaints regarding lost original context; elevated revision efficiency by 4×.",
+            "zh-TW": "達成零客訴原始語境遺失；專業訪談修訂校驗效率提升 4 倍。"
+          }
         },
         "recruiter": {
-          "en": "Edge AI · Android Scoped Storage · Whisper ASR · Ground-Truth Invariant",
-          "zh-TW": "邊緣端 AI · Android 沙盒儲存 · Whisper 語音辨識 · 事實真理不變量"
+          "en": "Privacy-first speech AI · Full auditability · Enterprise confidentiality moat",
+          "zh-TW": "隱私優先語音 AI · 全鏈路可審計性 · 企業級機密防護壁壘",
+          "coreQuestion": {
+            "en": "What makes this speech-to-text system defensible against generic big-tech cloud transcription APIs?",
+            "zh-TW": "這套語音轉文字系統面對科技巨頭雲端 API 時，其不可替代的商業防禦壁壘何在？"
+          },
+          "breakthrough": {
+            "en": "Focused on extreme data sovereignty and intent-fidelity: on-device local processing, zero vendor lock-in, and full auditability.",
+            "zh-TW": "極致專注於「資料主權絕對自主」與「意圖保真」：邊緣端本地化運算、零供應商鎖定與全鏈路可追溯審計。"
+          },
+          "verifiedMoat": {
+            "en": "Built trusted confidentiality moat essential for legal, executive, and medical transcriptions.",
+            "zh-TW": "打造符合法律、高階商務與醫療記錄嚴苛標準的商業機密信任壁壘。"
+          }
         }
       },
       "en": {

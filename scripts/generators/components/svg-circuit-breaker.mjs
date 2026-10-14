@@ -119,7 +119,7 @@ export function renderCircuitBreakerSvg(options, language = "en") {
               <div class="resume-leaf-anchor">[VGGT Paper Evidence: §4.3, Table 3]</div>
             </div>
             <div class="resume-proof-leaf resume-leaf-zh">
-              <span class="resume-leaf-lang">正體中文（忠實對照譯本）</span>
+              <span class="resume-leaf-lang">繁體中文（忠實對照譯本）</span>
               <blockquote class="resume-leaf-quote">
                 &ldquo;推論時由深度與相機反投影得到的點圖比直接點圖頭更準（ETH3D：0.677 vs 0.709 整體誤差）。多任務訓練不要求最終一定使用每個直接輸出。&rdquo;
               </blockquote>

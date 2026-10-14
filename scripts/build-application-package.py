@@ -47,7 +47,7 @@ def main():
     contents["READ-ME.txt"] = (
         "Blake Lin — AI Software Engineer\n\n"
         "解壓縮後，保留資料夾結構並開啟 resume-overview.html。\n"
-        "概要、三份作品介紹、工程筆記、兩份單頁 CV 均可離線閱讀；HTML 提供 English／正體中文與深淺色控制。\n"
+        "概要、三份作品介紹、工程筆記、兩份單頁 CV 均可離線閱讀；HTML 提供 English／繁體中文與深淺色控制。\n"
         "Email／LinkedIn 需連線；Study Atlas 展示是保存的歷史案例，不呼叫 live 模型。\n"
         "6.0→4.6 是 calculated TALK budget，不是真人閱讀速度或 wall-clock 加速。\n\n"
         "Extract the archive, keep its folders, and open resume-overview.html.\n"

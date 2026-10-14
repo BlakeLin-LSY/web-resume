@@ -86,15 +86,51 @@
   "povHighlights": {
     "staff": {
       "en": "Root-cause pinpointing: DataLoader I/O starvation vs streaming format",
-      "zh-TW": "根因定位：DataLoader I/O 飢餓 vs 串流格式重構"
+      "zh-TW": "根因定位：DataLoader I/O 飢餓 vs 串流格式重構",
+      "coreQuestion": {
+        "en": "Why is GPU compute idling below 15% when memory is plentiful, and where is the critical saturation boundary?",
+        "zh-TW": "顯存充足時 GPU 運算利用率為何卡在 15% 以下？系統極限飽和邊界究竟在哪？"
+      },
+      "breakthrough": {
+        "en": "Deconstructed the PyTorch DataLoader serialization bottleneck; replaced with custom PhysicsNeMo streaming loader and lock-free double-buffering prefetch.",
+        "zh-TW": "第一性原理拆解 PyTorch DataLoader 序列化 I/O 阻塞；以自訂 PhysicsNeMo 串流格式與無鎖雙緩衝預取全面替換。"
+      },
+      "verifiedMoat": {
+        "en": "Maximized hardware compute saturation; smoothed PCIe Host-to-Device transfer peaks with verified 10× model-training speedup.",
+        "zh-TW": "實現硬體運算飽和最大化；平滑 PCIe H2D 傳輸峰值，並以實測 10× 訓練提速完成驗證。"
+      }
     },
     "em": {
       "en": "10× training throughput on identical infrastructure; zero new hardware spend",
-      "zh-TW": "同等基礎設施下實現 10× 訓練吞吐，零硬體採購成本"
+      "zh-TW": "同等基礎設施下實現 10× 訓練吞吐，零硬體採購成本",
+      "coreQuestion": {
+        "en": "How do we meet aggressive training delivery deadlines without blowing the cloud infrastructure budget or accumulating unmonitored technical debt?",
+        "zh-TW": "如何在不膨脹雲端基礎設施預算且不累積技術債的前提下，如期交付高強度的訓練里程碑？"
+      },
+      "breakthrough": {
+        "en": "Rebuilt the training pipeline with real PCAP packet replay tests and established 6 CI invariant guard gates with automatic cache fallback on degradation.",
+        "zh-TW": "以真實 PCAP 封包重放回歸測試重建訓練管線，並建立 6 道不變量防護機制，效能退化時自動降級至快取分塊模式。"
+      },
+      "verifiedMoat": {
+        "en": "100% reproducible training cycle, 7x24 zero-incident stability, and zero unbudgeted hardware procurement.",
+        "zh-TW": "訓練週期 100% 可重現、線上 7x24 零故障穩定運行，並達成零額外硬體預算採購。"
+      }
     },
     "recruiter": {
-      "en": "Deep ML pipeline optimization · PyTorch · PhysicsNeMo · CFD",
-      "zh-TW": "深度 ML 管線效能最佳化 · PyTorch · PhysicsNeMo · CFD"
+      "en": "Zero Capex ROI · Physics-grounded ML pipeline · 10× training breakthrough",
+      "zh-TW": "零增購資本支出 ROI · 物理第一性原理 ML 管線 · 10× 訓練突破",
+      "coreQuestion": {
+        "en": "Does Blake possess rare cross-disciplinary engineering capability that translates directly into massive cost efficiency and technical moat?",
+        "zh-TW": "Blake 是否具備罕見的跨領域硬核工程直覺，能直接轉化為巨大的成本效益與技術壁壘？"
+      },
+      "breakthrough": {
+        "en": "Combines a Master's degree in Physics with deep CUDA/PyTorch systems engineering to eliminate the root hardware mismatch rather than just throwing money at more GPUs.",
+        "zh-TW": "結合物理碩士嚴密推導與 CUDA/PyTorch 系統工程直覺，從根源消弭硬體算力浪費，而非盲目堆疊 GPU。"
+      },
+      "verifiedMoat": {
+        "en": "Saved hundreds of thousands in cloud compute and hardware CAPEX; single-handedly transformed a CFD bottleneck into a competitive advantage.",
+        "zh-TW": "為企業省下數百萬雲端算力與硬體採購成本；隻手將 CFD 訓練阻礙轉化為核心產品競爭優勢。"
+      }
     }
   },
   "en": {

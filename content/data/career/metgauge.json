@@ -83,15 +83,51 @@
   "povHighlights": {
     "staff": {
       "en": "Deterministic hardware sync bus; sub-microsecond multi-camera trigger invariant",
-      "zh-TW": "確定性硬體同步匯流排；次微秒級多相機觸發不變量"
+      "zh-TW": "確定性硬體同步匯流排；次微秒級多相機觸發不變量",
+      "coreQuestion": {
+        "en": "How do we coordinate 12 stereo pairs (24 cameras) with PLC triggers without race conditions, bus contention, or frame loss?",
+        "zh-TW": "如何協同 12 組立體相機（24 顆相機）與 PLC 觸發，同時消除競態條件、匯流排衝突與丟幀？"
+      },
+      "breakthrough": {
+        "en": "Engineered a deterministic hardware trigger sync bus with C++ zero-copy ring buffers and strict sub-microsecond timestamp alignment.",
+        "zh-TW": "設計確定性硬體觸發同步匯流排，搭配 C++ 零複製環形緩衝區與次微秒級時序對齊。"
+      },
+      "verifiedMoat": {
+        "en": "Sub-microsecond trigger synchronization jitter; eliminated IPC thread lock contention across all 24 cameras.",
+        "zh-TW": "達到次微秒級觸發同步精度；全面消除 24 顆相機在多執行緒 IPC 下的鎖競爭。"
+      }
     },
     "em": {
       "en": "De-risked 24-camera automated line from prototype to factory production testing",
-      "zh-TW": "化解 24 顆相機產線整合風險，推進至工廠上市前的產線上線測試"
+      "zh-TW": "化解 24 顆相機產線整合風險，推進至工廠上市前的產線上線測試",
+      "coreQuestion": {
+        "en": "How do we transition a fragile laboratory 3D vision prototype into a hardened production system ready for factory line testing?",
+        "zh-TW": "如何將實驗室內脆弱的 3D 視覺原型封裝為挺過工廠嚴苛驗收的確定性量產系統？"
+      },
+      "breakthrough": {
+        "en": "Defined comprehensive boundary test suites, thermal calibration specs, and multi-team hardware tuning protocols.",
+        "zh-TW": "制定全鏈路邊界測試套件、熱補償標定規範與跨部門軟硬體協同調校 SOP。"
+      },
+      "verifiedMoat": {
+        "en": "Advanced prototype to factory-ready production testing on active line; reduced measurement variance std-dev by 65%.",
+        "zh-TW": "推進成果至工廠上市前產線上線測試階段；光學量測重複性標準差降低 65%。"
+      }
     },
     "recruiter": {
-      "en": "Hardware-software integration · 3D Computer Vision · 24 Cameras · Production Line",
-      "zh-TW": "軟硬整合 · 3D 電腦視覺 · 24 顆相機 · 工廠自動化產線"
+      "en": "Rare HW/SW intersection · Proprietary 3D metrology · Full-stack line deployment",
+      "zh-TW": "稀缺軟硬整合壁壘 · 專利級 3D 計量演算法 · 全棧產線上線交付",
+      "coreQuestion": {
+        "en": "Can Blake bridge physical mechanics, optical physics, and low-level software to build proprietary industrial inspection equipment?",
+        "zh-TW": "Blake 是否具備橫跨機械結構、光學物理與底層系統軟體的全棧能力，打造具備專利壁壘的檢測機台？"
+      },
+      "breakthrough": {
+        "en": "Leveraged applied physics intuition to solve thermal drift and lens distortion natively, replacing costly third-party proprietary inspection stations.",
+        "zh-TW": "以物理第一性原理推導原生化解熱漂移與鏡頭畸變，免除對昂貴國外專利檢測台的外部依賴。"
+      },
+      "verifiedMoat": {
+        "en": "Delivered full-stack in-house 3D metrology IP; drastically compressed new production line deployment timeline.",
+        "zh-TW": "建立全棧自主可控的 3D 光學計量系統，大幅壓縮新產線上線時程。"
+      }
     }
   },
   "en": {
