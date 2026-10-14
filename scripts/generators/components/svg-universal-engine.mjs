@@ -110,91 +110,91 @@ export function renderUniversalEngineSvg(language = "en") {
     </defs>
 
     <!-- COLUMN A: Problem & Scope Inputs (width 242) -->
-    <g class="ue-group-inputs" transform="translate(14, 16)">
+    <g class="ue-group-inputs" transform="translate(14, 14)">
       <!-- Column Header -->
       <rect x="0" y="0" width="242" height="26" rx="5" fill="var(--resume-tint)" stroke="var(--resume-border)" stroke-width="1" />
       <circle cx="12" cy="13" r="4" fill="#d2655b" />
       <text x="24" y="17" font-size="9.5" font-weight="800" fill="var(--resume-text)" letter-spacing="0.04em">${e(kickerA)}</text>
 
       ${inputs.map((item, idx) => {
-        const y = 38 + idx * 72;
+        const y = 36 + idx * 72;
         return `
         <!-- Input Capsule ${idx + 1} -->
         <g class="ue-input-card" transform="translate(0, ${y})">
-          <rect x="0" y="0" width="242" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#d2655b" />
+          <rect x="0" y="0" width="242" height="62" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <rect x="0" y="0" width="3.5" height="62" rx="1.5" fill="#d2655b" />
           <text x="14" y="24" font-size="11.5" font-weight="700" fill="var(--resume-text)">${e(item.title)}</text>
           <text x="14" y="44" font-size="9.5" font-weight="500" fill="var(--resume-muted)">${e(item.sub)}</text>
-          <circle cx="230" cy="30" r="3" fill="#d2655b" />
+          <circle cx="230" cy="31" r="3" fill="#d2655b" />
         </g>`;
       }).join("")}
     </g>
 
-    <!-- CONVERGENCE FLOW LINES (A -> Engine, 256 -> 294) -->
+    <!-- CONVERGENCE FLOW LINES (A -> Engine, 256 -> 292) -->
     <g class="ue-converge-wires" fill="none">
-      <path d="M 256 68 C 275 68, 280 110, 292 110" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
-      <path d="M 256 140 C 275 140, 280 135, 292 135" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
-      <path d="M 256 212 C 275 212, 280 205, 292 205" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
-      <path d="M 256 284 C 275 284, 280 235, 292 235" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+      <path d="M 256 81 C 275 81, 280 110, 292 110" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+      <path d="M 256 153 C 275 153, 280 140, 292 140" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+      <path d="M 256 225 C 275 225, 280 205, 292 205" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+      <path d="M 256 297 C 275 297, 280 235, 292 235" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
     </g>
 
     <!-- COLUMN CENTER: Blake's Critical-Link Engine (The Focal Chamber, width 284) -->
-    <g class="ue-group-engine" transform="translate(298, 16)">
+    <g class="ue-group-engine" transform="translate(298, 14)">
       <!-- Chamber Frame -->
-      <rect x="0" y="0" width="284" height="328" rx="14" fill="url(#ue-engine-bg)" stroke="var(--resume-accent)" stroke-width="2" />
-      <rect x="0" y="0" width="284" height="328" rx="14" fill="url(#ue-core-glow)" pointer-events="none" />
+      <rect x="0" y="0" width="284" height="332" rx="14" fill="url(#ue-engine-bg)" stroke="var(--resume-accent)" stroke-width="2" />
+      <rect x="0" y="0" width="284" height="332" rx="14" fill="url(#ue-core-glow)" pointer-events="none" />
       
       <!-- Chamber Header Pill -->
-      <rect x="12" y="12" width="260" height="28" rx="6" fill="var(--resume-accent)" />
-      <text x="142" y="30" font-size="9.5" font-weight="800" fill="var(--resume-action-text)" letter-spacing="0.05em" text-anchor="middle">⚡ ${e(kickerEngine)}</text>
+      <rect x="12" y="10" width="260" height="26" rx="6" fill="var(--resume-accent)" />
+      <text x="142" y="27" font-size="9.5" font-weight="800" fill="var(--resume-action-text)" letter-spacing="0.05em" text-anchor="middle">⚡ ${e(kickerEngine)}</text>
 
       ${coreStages.map((stage, idx) => {
-        const y = 52 + idx * 90;
+        const y = 44 + idx * 82;
         const isMiddle = idx === 1;
         return `
         <!-- Core Stage ${idx + 1} -->
         <g class="ue-stage-box" transform="translate(12, ${y})">
-          <rect x="0" y="0" width="260" height="78" rx="8" fill="var(--resume-panel)" stroke="${isMiddle ? "var(--resume-accent)" : "var(--resume-border)"}" stroke-width="${isMiddle ? "2" : "1.2"}" />
-          ${isMiddle ? `<rect x="0" y="0" width="4" height="78" fill="var(--resume-accent)" rx="2" />` : ""}
-          <text x="14" y="24" font-size="11.5" font-weight="800" fill="${isMiddle ? "var(--resume-accent)" : "var(--resume-text)"}">
+          <rect x="0" y="0" width="260" height="74" rx="8" fill="var(--resume-panel)" stroke="${isMiddle ? "var(--resume-accent)" : "var(--resume-border)"}" stroke-width="${isMiddle ? "2" : "1.2"}" />
+          ${isMiddle ? `<rect x="0" y="0" width="4" height="74" fill="var(--resume-accent)" rx="2" />` : ""}
+          <text x="14" y="22" font-size="11.5" font-weight="800" fill="${isMiddle ? "var(--resume-accent)" : "var(--resume-text)"}">
             <tspan fill="var(--resume-muted)" font-size="10" font-family="monospace">${e(stage.num)} · </tspan>${e(stage.name)}
           </text>
-          <text x="14" y="44" font-size="9.5" font-weight="500" fill="var(--resume-text)" opacity="0.9">${e(stage.line1)}</text>
-          <text x="14" y="60" font-size="9.5" font-weight="500" fill="var(--resume-muted)">${e(stage.line2)}</text>
+          <text x="14" y="42" font-size="9.5" font-weight="500" fill="var(--resume-text)" opacity="0.9">${e(stage.line1)}</text>
+          <text x="14" y="58" font-size="9.5" font-weight="500" fill="var(--resume-muted)">${e(stage.line2)}</text>
         </g>
-        ${idx < 2 ? `<line x1="142" y1="${y + 78}" x2="142" y2="${y + 90}" stroke="var(--resume-accent)" stroke-width="2" stroke-dasharray="2 2" />` : ""}
+        ${idx < 2 ? `<line x1="142" y1="${y + 74}" x2="142" y2="${y + 82}" stroke="var(--resume-accent)" stroke-width="2" stroke-dasharray="2 2" />` : ""}
         `;
       }).join("")}
 
       <!-- Chamber Status Indicator -->
-      <g transform="translate(14, 308)">
+      <g transform="translate(14, 298)">
         <circle cx="6" cy="6" r="3" fill="#4fac74" />
         <text x="16" y="10" font-size="8.8" font-weight="700" fill="var(--resume-muted)" font-family="monospace">${isEn ? "FIRST-PRINCIPLES CONVERGENCE LOCKED" : "第一性原理收斂不變量鎖定"}</text>
       </g>
     </g>
 
-    <!-- DIVERGENCE FLOW LINES (Engine -> B, 582 -> 620) -->
+    <!-- DIVERGENCE FLOW LINES (Engine -> B, 582 -> 618) -->
     <g class="ue-diverge-wires" fill="none">
-      <path d="M 582 110 C 596 110, 604 68, 618 68" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
-      <path d="M 582 135 C 596 135, 604 140, 618 140" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
-      <path d="M 582 205 C 596 205, 604 212, 618 212" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
-      <path d="M 582 235 C 596 235, 604 284, 618 284" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+      <path d="M 582 110 C 596 110, 604 81, 618 81" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+      <path d="M 582 140 C 596 140, 604 153, 618 153" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+      <path d="M 582 205 C 596 205, 604 225, 618 225" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+      <path d="M 582 235 C 596 235, 604 297, 618 297" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
     </g>
 
     <!-- COLUMN B: Value Delivery (width 242) -->
-    <g class="ue-group-yields" transform="translate(624, 16)">
+    <g class="ue-group-yields" transform="translate(624, 14)">
       <!-- Column Header -->
       <rect x="0" y="0" width="242" height="26" rx="5" fill="var(--resume-tint)" stroke="var(--resume-border)" stroke-width="1" />
       <circle cx="12" cy="13" r="4" fill="#4fac74" />
       <text x="24" y="17" font-size="9.5" font-weight="800" fill="var(--resume-text)" letter-spacing="0.04em">${e(kickerB)}</text>
 
       ${yields.map((item, idx) => {
-        const y = 38 + idx * 72;
+        const y = 36 + idx * 72;
         return `
         <!-- Yield Capsule ${idx + 1} -->
         <g class="ue-yield-card" transform="translate(0, ${y})">
-          <rect x="0" y="0" width="242" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#4fac74" />
+          <rect x="0" y="0" width="242" height="62" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <rect x="0" y="0" width="3.5" height="62" rx="1.5" fill="#4fac74" />
           <text x="14" y="24" font-size="11.5" font-weight="700" fill="var(--resume-text)">
             <tspan fill="#4fac74" font-weight="800">✓ </tspan>${e(item.title)}
           </text>

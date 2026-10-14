@@ -65,12 +65,13 @@ html:not(.resume-enhanced) .resume-header{position:static}
 .resume-block-kicker{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--resume-muted)}
 .resume-block-badge{font-size:.78rem;font-weight:700;padding:3px 12px;border-radius:999px;background:var(--resume-tint);border:1px solid var(--resume-border);color:var(--resume-accent);white-space:nowrap}
 .resume-block-title{font-size:1.35rem;font-weight:700;color:var(--resume-text);line-height:1.35;margin:4px 0 0}
-.resume-stage-box{margin:18px 0}
-.resume-triad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px;align-items:stretch}
+.resume-stage-box{margin:0 0 20px}
+.resume-stage-box > .resume-diagram-container{margin:0}
+.resume-triad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 20px;align-items:stretch}
 .resume-triad-item{background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;height:100%}
 .resume-triad-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--resume-accent)}
 .resume-triad-text{font-size:.85rem;line-height:1.5;color:var(--resume-text);margin:0}
-.resume-block-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:18px;padding-top:14px;border-top:1px dashed var(--resume-border)}
+.resume-block-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:20px;padding-top:16px;border-top:1px dashed var(--resume-border)}
 .resume-work-link-secondary{color:var(--resume-muted)!important}
 
 .resume-proof-grid,.resume-work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
@@ -79,7 +80,7 @@ html:not(.resume-enhanced) .resume-header{position:static}
 .resume-result{font-weight:650;color:var(--resume-accent);font-size:1.1rem;line-height:1.4;margin-bottom:14px}
 .resume-proof p:not(.resume-kicker):not(.resume-result):not(.resume-note){font-size:.95rem}
 .resume-note{font-size:.78rem;line-height:1.65;color:var(--resume-muted)}
-.resume-small-link{display:inline-block;font-size:.82rem;margin-top:24px}
+.resume-small-link{display:inline-block;font-size:.82rem;margin-top:4px}
 details summary{font-size:.82rem;color:var(--resume-accent);font-weight:600;cursor:pointer;min-height:44px;padding:10px 0}
 details p,details ul{margin-top:12px}
 .resume-work-grid{margin-top:32px}
@@ -201,9 +202,8 @@ html:not(.resume-enhanced) .resume-navigation [data-resume-locale]+[data-resume-
 .resume-svg-wrapper{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0;scrollbar-width:thin;scrollbar-color:var(--resume-border) transparent}
 .resume-svg-wrapper::-webkit-scrollbar{height:4px}
 .resume-svg-wrapper::-webkit-scrollbar-track{background:transparent}
-.resume-svg-wrapper::-webkit-scrollbar-thumb{background:var(--resume-border);border-radius:999px}
-.resume-svg-diagram{width:100%;min-width:620px;max-width:760px;height:auto;display:block;margin:auto;font-family:inherit}
-.resume-universal-engine-svg{max-width:880px;min-width:660px}
+.resume-svg-diagram{width:100%;max-width:100%;height:auto;display:block;margin:auto;font-family:inherit}
+.resume-universal-engine-svg{width:100%;max-width:100%}
 .resume-node-box{fill:var(--resume-panel);stroke:var(--resume-border);stroke-width:1.5px;transition:stroke .15s}
 .resume-node-highlight{fill:var(--resume-tint);stroke:var(--resume-accent);stroke-width:1.8px}
 .resume-node-alert{fill:var(--resume-panel);stroke:#c25953;stroke-width:1.8px}
@@ -300,7 +300,7 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
 .resume-lens-selector button[aria-pressed="true"]{background:var(--resume-panel);color:var(--resume-accent);box-shadow:0 1px 3px rgba(0,0,0,0.08);font-weight:700}
 
 /* Perspective Spotlight Card (Multi-Dimensional Lens) */
-.resume-pov-stack{margin-top:16px}
+.resume-pov-stack{margin:0 0 20px;display:flex;flex-direction:column;gap:12px}
 .resume-pov-badge{display:none}
 .resume-pov-card{padding:16px 18px;border-radius:10px;background:var(--resume-panel);border:1px solid var(--resume-border);box-shadow:0 2px 8px rgba(0,0,0,0.03);animation:resumeFadeIn .2s ease-in-out}
 @keyframes resumeFadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
@@ -326,6 +326,12 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
 .resume-pov-card[data-pov="recruiter"] .resume-pov-pill{background:#b87b33;color:#fff}
 .resume-pov-card[data-pov="recruiter"] .resume-pov-section-label{color:#b87b33}
 
+/* Dark Theme Role Contrast Boosts */
+:root[data-reading-theme=dark] .resume-pov-card[data-pov="recruiter"] .resume-pov-section-label{color:#f0ad5e}
+:root[data-reading-theme=dark] .resume-pov-card[data-pov="em"] .resume-pov-section-label{color:#6fc7af}
+:root[data-reading-theme=dark] .resume-ab-a{background:linear-gradient(135deg,rgba(210,101,91,0.12) 0%,var(--resume-panel) 100%)}
+:root[data-reading-theme=dark] .resume-ab-b{background:linear-gradient(135deg,rgba(79,172,116,0.12) 0%,var(--resume-panel) 100%)}
+
 /* Active Lens Optical Coupling & Spotlight */
 html[data-resume-lens="all"] .resume-pov-badge,
 html:not([data-resume-lens]) .resume-pov-badge,
@@ -344,7 +350,7 @@ html[data-resume-lens="recruiter"] .resume-ab-ribbon{border-color:#b87b33!import
 html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;font-weight:700}
 
 /* --- Intent Contract & Epistemic Boundaries Card --- */
-.resume-intent-contract-card{margin:18px 0 12px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-panel);overflow:hidden;transition:border-color .2s}
+.resume-intent-contract-card{margin:0 0 20px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-panel);overflow:hidden;transition:border-color .2s}
 .resume-intent-contract-card[open]{border-color:var(--resume-accent)}
 .resume-contract-toggle{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--resume-tint);cursor:pointer;font-size:.82rem;font-weight:600;color:var(--resume-text);list-style:none}
 .resume-contract-toggle::-webkit-details-marker{display:none}
@@ -358,7 +364,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
 .resume-contract-list li{margin-bottom:3px}
 
 /* --- Architecture Duel (Grill This Architecture) Drawer --- */
-.resume-duel-drawer{margin:16px 0;border:1px solid var(--resume-border);border-radius:10px;background:var(--resume-panel);overflow:hidden;transition:all .2s}
+.resume-duel-drawer{margin:0 0 20px;border:1px solid var(--resume-border);border-radius:10px;background:var(--resume-panel);overflow:hidden;transition:all .2s}
 .resume-duel-drawer[open]{box-shadow:0 4px 16px rgba(0,0,0,0.06);border-color:var(--resume-accent)}
 .resume-duel-summary{padding:10px 14px;background:var(--resume-tint);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
 .resume-duel-summary::-webkit-details-marker{display:none}
@@ -375,7 +381,8 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
 .resume-duel-text{margin:0}
 
 /* --- Cryptographic Proof Receipt --- */
-.resume-proof-receipt{margin:14px 0 8px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-tint);padding:10px 14px;font-size:.78rem;line-height:1.5}
+.resume-proof-receipt{margin:0 0 20px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-tint);padding:10px 14px;font-size:.78rem;line-height:1.5}
+.resume-focal-block > :last-child{margin-bottom:0!important}
 .resume-receipt-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
 .resume-receipt-title-wrap{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--resume-text)}
 .resume-receipt-status{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-weight:800;color:var(--resume-accent);letter-spacing:.04em}
@@ -394,12 +401,12 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
 .resume-framework-intro{font-size:.85rem;color:var(--resume-muted);line-height:1.55;margin:0}
 
 /* --- Inline Lens Bar --- */
-.resume-inline-lens-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;padding:6px 12px;background:var(--resume-tint);border-radius:8px;border:1px solid var(--resume-border)}
+.resume-inline-lens-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:0;padding:6px 12px;background:var(--resume-tint);border-radius:8px;border:1px solid var(--resume-border)}
 .resume-inline-lens-title{font-size:.76rem;font-weight:700;color:var(--resume-text);letter-spacing:.02em;display:inline-flex;align-items:center;gap:4px}
 .resume-inline-lens-selector{background:var(--resume-panel)}
 
 /* --- Robust Grid-Based A -> B Transformation Ribbon --- */
-.resume-ab-ribbon{display:grid;grid-template-columns:1fr auto 1.15fr auto 1fr;align-items:stretch;gap:10px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:10px;padding:12px 16px;margin:14px 0 18px;font-size:.8rem;line-height:1.45;box-shadow:0 1px 4px rgba(0,0,0,0.02)}
+.resume-ab-ribbon{display:grid;grid-template-columns:1fr auto 1.15fr auto 1fr;align-items:stretch;gap:10px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:10px;padding:12px 16px;margin:0 0 20px;font-size:.8rem;line-height:1.45;box-shadow:0 1px 4px rgba(0,0,0,0.02)}
 .resume-ab-seg{display:flex;flex-direction:column;gap:5px;padding:9px 12px;border-radius:8px;border:1px solid var(--resume-border);min-width:0;transition:all .2s ease}
 .resume-ab-a{background:linear-gradient(135deg,rgba(210,101,91,0.06) 0%,var(--resume-panel) 100%);border-color:rgba(210,101,91,0.25)}
 .resume-ab-link{background:linear-gradient(135deg,rgba(40,92,77,0.09) 0%,var(--resume-panel) 100%);border-color:var(--resume-accent);box-shadow:0 0 10px rgba(40,92,77,0.08)}
