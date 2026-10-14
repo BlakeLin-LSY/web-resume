@@ -14,27 +14,39 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 h1,h2,h3,p{margin-top:0}
 h1,h2,h3{line-height:1.2;letter-spacing:-.025em}
 h2,h3{text-wrap:balance}
-[lang="zh-TW"] h2,[lang="zh-TW"] h3{line-height:1.4;letter-spacing:0}
 h2{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:14px}
 h3{font-size:1.2rem;margin-bottom:12px}
 p{margin-bottom:16px}
 ul{padding-left:22px}
 li+li{margin-top:8px}
 section[id],article[id],details[id]{scroll-margin-top:var(--header-offset,100px)}
+
+/* Independent Bilingual Typographic Engine */
+[lang="en"]{letter-spacing:-.012em;font-feature-settings:"cv02","cv03","cv04","cv11"}
+[lang="en"] h1,[lang="en"] h2,[lang="en"] h3{letter-spacing:-.035em;line-height:1.2}
+[lang="en"] .resume-lead{letter-spacing:-.015em;line-height:1.56}
+[lang="en"] .resume-triad-text,[lang="en"] .resume-pov-desc,[lang="en"] .resume-contract-desc{text-wrap:pretty;hyphens:auto;line-height:1.55}
+
+[lang="zh-TW"]{letter-spacing:.022em;line-height:1.72;font-feature-settings:"palt"}
+[lang="zh-TW"] h1,[lang="zh-TW"] h2,[lang="zh-TW"] h3{letter-spacing:.015em;line-height:1.36;text-wrap:balance}
+[lang="zh-TW"] .resume-lead{letter-spacing:.02em;line-height:1.75}
+[lang="zh-TW"] .resume-triad-text,[lang="zh-TW"] .resume-pov-desc,[lang="zh-TW"] .resume-contract-desc{line-height:1.68;letter-spacing:.018em;text-align:justify;text-justify:inter-ideograph}
+
 html.resume-enhanced[data-reading-language=en] [data-resume-locale="zh-TW"],html.resume-enhanced[data-reading-language="zh-TW"] [data-resume-locale=en]{display:none!important}
 [data-js-control]{display:none}
 .resume-enhanced [data-js-control]{display:flex}
 .resume-skip{position:absolute;z-index:100;top:-200px;left:20px;padding:10px 16px;background:var(--resume-panel);color:var(--resume-accent)}
 .resume-skip:focus{top:12px}
-.resume-header{position:sticky;top:0;z-index:10;background:var(--resume-background);border-bottom:1px solid var(--resume-border)}
+.resume-header{position:sticky;top:0;z-index:20;background:var(--resume-background);border-bottom:1px solid var(--resume-border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .2s,border-color .2s}
 html:not(.resume-enhanced) .resume-header{position:static}
 .resume-header-inner{max-width:var(--resume-content-width);padding:10px 24px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
 .resume-logo{font-size:1.02rem;font-weight:700;text-decoration:none;color:var(--resume-text);white-space:nowrap;flex-shrink:0}
 .resume-navigation{display:flex;align-items:center;gap:16px;font-size:.83rem;white-space:nowrap;margin-right:auto;margin-left:16px}
 .resume-navigation a{text-decoration:none;padding:6px 0;font-weight:600}
-.resume-reading-controls{align-items:center;gap:4px;flex-shrink:0}
-.resume-reading-controls button{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:38px;padding:4px 7px;background:transparent;border:1px solid transparent;border-radius:4px;font-size:.75rem}
-.resume-reading-controls button[aria-pressed=true]{border-color:var(--resume-accent);background:var(--resume-tint);color:var(--resume-accent)}
+.resume-reading-controls{align-items:center;gap:5px;flex-shrink:0}
+.resume-reading-controls button{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:36px;padding:4px 8px;background:transparent;border:1px solid transparent;border-radius:6px;font-size:.75rem;transition:all .15s ease}
+.resume-reading-controls button:hover{background:var(--resume-tint)}
+.resume-reading-controls button[aria-pressed=true]{border-color:var(--resume-accent);background:var(--resume-tint);color:var(--resume-accent);font-weight:700}
 .resume-languages{display:flex;gap:2px}
 .resume-menu{display:none!important}
 .resume-main{max-width:var(--resume-content-width);padding:0 28px;margin:auto;outline:none}
@@ -384,17 +396,21 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
 .resume-framework-intro{font-size:.85rem;color:var(--resume-muted);line-height:1.55;margin:0}
 
 /* --- Robust Grid-Based A -> B Transformation Ribbon --- */
-.resume-ab-ribbon{display:grid;grid-template-columns:1fr auto 1.15fr auto 1fr;align-items:stretch;gap:10px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:8px;padding:10px 14px;margin:14px 0 18px;font-size:.8rem;line-height:1.45}
-.resume-ab-seg{display:flex;flex-direction:column;gap:4px;padding:8px 10px;background:var(--resume-panel);border-radius:6px;border:1px solid var(--resume-border);min-width:0}
-.resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;align-self:flex-start}
+.resume-ab-ribbon{display:grid;grid-template-columns:1fr auto 1.15fr auto 1fr;align-items:stretch;gap:10px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:10px;padding:12px 16px;margin:14px 0 18px;font-size:.8rem;line-height:1.45;box-shadow:0 1px 4px rgba(0,0,0,0.02)}
+.resume-ab-seg{display:flex;flex-direction:column;gap:5px;padding:9px 12px;border-radius:8px;border:1px solid var(--resume-border);min-width:0;transition:all .2s ease}
+.resume-ab-a{background:linear-gradient(135deg,rgba(210,101,91,0.06) 0%,var(--resume-panel) 100%);border-color:rgba(210,101,91,0.25)}
+.resume-ab-link{background:linear-gradient(135deg,rgba(40,92,77,0.09) 0%,var(--resume-panel) 100%);border-color:var(--resume-accent);box-shadow:0 0 10px rgba(40,92,77,0.08)}
+.resume-ab-b{background:linear-gradient(135deg,rgba(79,172,116,0.08) 0%,var(--resume-panel) 100%);border-color:rgba(79,172,116,0.35)}
+.resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 7px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;align-self:flex-start}
 .resume-ab-a .resume-ab-badge{background:rgba(210,101,91,0.15);color:#d2655b;border:1px solid rgba(210,101,91,0.3)}
-.resume-ab-link .resume-ab-badge{background:rgba(40,92,77,0.15);color:var(--resume-accent);border:1px solid var(--resume-accent)}
+.resume-ab-link .resume-ab-badge{background:rgba(40,92,77,0.18);color:var(--resume-accent);border:1px solid var(--resume-accent)}
 .resume-ab-b .resume-ab-badge{background:rgba(79,172,116,0.18);color:#285c4d;border:1px solid rgba(79,172,116,0.4)}
-.resume-ab-text{color:var(--resume-text);font-weight:600;font-size:.81rem;line-height:1.4;overflow-wrap:break-word}
-.resume-ab-sep{display:flex;align-items:center;justify-content:center;color:var(--resume-accent);font-weight:800;font-size:1.1rem;user-select:none}
+.resume-ab-text{color:var(--resume-text);font-weight:600;font-size:.82rem;line-height:1.42;overflow-wrap:break-word}
+.resume-ab-sep{display:flex;align-items:center;justify-content:center;color:var(--resume-accent);font-weight:800;font-size:1.15rem;user-select:none;opacity:.85}
+.resume-pov-icon{margin-right:4px;font-size:.78rem;display:inline-block;vertical-align:-1px}
 
 @media(max-width:860px){
-  .resume-ab-ribbon{grid-template-columns:1fr;gap:6px}
+  .resume-ab-ribbon{grid-template-columns:1fr;gap:8px;padding:10px}
   .resume-ab-sep{transform:rotate(90deg);padding:2px 0}
   .resume-pov-grid{grid-template-columns:1fr;gap:8px}
 }
@@ -417,6 +433,14 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
       <div class="resume-svg-wrapper">
   <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Universal Critical-Link Engine A to B Transformation Architecture">
     <defs>
+      <linearGradient id="ue-grad-engine" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="var(--resume-accent)" stop-opacity="0.12" />
+        <stop offset="100%" stop-color="var(--resume-tint)" stop-opacity="0.65" />
+      </linearGradient>
+      <linearGradient id="ue-grad-pill" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--resume-accent)" />
+        <stop offset="100%" stop-color="#3b7c6b" />
+      </linearGradient>
       <marker id="ue-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
         <path d="M 0 1 L 8 5 L 0 9 z" class="resume-arrow-head" fill="var(--resume-accent)" />
       </marker>
@@ -427,7 +451,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
       <rect x="0" y="0" width="215" height="195" rx="8" class="resume-node-box" />
       <rect x="0" y="0" width="215" height="28" rx="8" class="resume-node-pill" />
       <rect x="0" y="20" width="215" height="8" class="resume-node-pill" />
-      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.04em">A IN: HIGH-ENTROPY INPUT</text>
+      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.06em">A IN: HIGH-ENTROPY INPUT</text>
       
       <text x="12" y="52" class="resume-node-detail" font-size="9.5">• Microsecond Jitter &amp; Sensor Noise (24 Cams)</text>
       <text x="12" y="87" class="resume-node-detail" font-size="9.5">• GPU Starvation &amp; DataLoader I/O Stall</text>
@@ -442,10 +466,10 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
 
     <!-- BOX ENGINE: Blake's Cognitive Core -->
     <g class="ue-box-engine" transform="translate(270, 10)">
-      <rect x="0" y="0" width="225" height="205" rx="10" class="resume-node-highlight" stroke-width="2" />
-      <rect x="0" y="0" width="225" height="30" rx="10" class="resume-pill-highlight" />
-      <rect x="0" y="22" width="225" height="8" class="resume-pill-highlight" />
-      <text x="14" y="20" class="resume-pill-text" fill="#fff" font-weight="800" letter-spacing="0.04em">ENGINE: BLAKE&#39;S COGNITIVE CORE</text>
+      <rect x="0" y="0" width="225" height="205" rx="10" fill="url(#ue-grad-engine)" stroke="var(--resume-accent)" stroke-width="1.8" />
+      <rect x="0" y="0" width="225" height="30" rx="10" fill="url(#ue-grad-pill)" />
+      <rect x="0" y="22" width="225" height="8" fill="url(#ue-grad-pill)" />
+      <text x="14" y="20" class="resume-pill-text" fill="#fff" font-weight="800" letter-spacing="0.06em">ENGINE: BLAKE&#39;S COGNITIVE CORE</text>
       
       <!-- Engine Step 1 -->
       <g transform="translate(10, 40)">
@@ -477,7 +501,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
       <rect x="0" y="0" width="210" height="195" rx="8" class="resume-node-box" />
       <rect x="0" y="0" width="210" height="28" rx="8" class="resume-node-pill" />
       <rect x="0" y="20" width="210" height="8" class="resume-node-pill" />
-      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.04em">B OUT: DETERMINISTIC OUTCOME</text>
+      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.06em">B OUT: DETERMINISTIC OUTCOME</text>
       
       <text x="12" y="52" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 10× Model Training Speedup (Measured)</text>
       <text x="12" y="87" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ Sub-μs Hardware Sync in Factory Testing</text>
@@ -497,6 +521,14 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
       <div class="resume-svg-wrapper">
   <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="關鍵瓶頸擊穿引擎 A 到 B 通用轉化架構圖">
     <defs>
+      <linearGradient id="ue-grad-engine" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="var(--resume-accent)" stop-opacity="0.12" />
+        <stop offset="100%" stop-color="var(--resume-tint)" stop-opacity="0.65" />
+      </linearGradient>
+      <linearGradient id="ue-grad-pill" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--resume-accent)" />
+        <stop offset="100%" stop-color="#3b7c6b" />
+      </linearGradient>
       <marker id="ue-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
         <path d="M 0 1 L 8 5 L 0 9 z" class="resume-arrow-head" fill="var(--resume-accent)" />
       </marker>
@@ -507,7 +539,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
       <rect x="0" y="0" width="215" height="195" rx="8" class="resume-node-box" />
       <rect x="0" y="0" width="215" height="28" rx="8" class="resume-node-pill" />
       <rect x="0" y="20" width="215" height="8" class="resume-node-pill" />
-      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.04em">A 端：高熵真實世界輸入</text>
+      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.06em">A 端：高熵真實世界輸入</text>
       
       <text x="12" y="52" class="resume-node-detail" font-size="9.5">• 24 顆相機微秒級時序抖動與雜訊 (MetGauge)</text>
       <text x="12" y="87" class="resume-node-detail" font-size="9.5">• GPU 運算飢餓與 DataLoader I/O 阻塞 (DynaSafe)</text>
@@ -522,10 +554,10 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
 
     <!-- BOX ENGINE: Blake's Cognitive Core -->
     <g class="ue-box-engine" transform="translate(270, 10)">
-      <rect x="0" y="0" width="225" height="205" rx="10" class="resume-node-highlight" stroke-width="2" />
-      <rect x="0" y="0" width="225" height="30" rx="10" class="resume-pill-highlight" />
-      <rect x="0" y="22" width="225" height="8" class="resume-pill-highlight" />
-      <text x="14" y="20" class="resume-pill-text" fill="#fff" font-weight="800" letter-spacing="0.04em">核心引擎：關鍵環節擊穿器</text>
+      <rect x="0" y="0" width="225" height="205" rx="10" fill="url(#ue-grad-engine)" stroke="var(--resume-accent)" stroke-width="1.8" />
+      <rect x="0" y="0" width="225" height="30" rx="10" fill="url(#ue-grad-pill)" />
+      <rect x="0" y="22" width="225" height="8" fill="url(#ue-grad-pill)" />
+      <text x="14" y="20" class="resume-pill-text" fill="#fff" font-weight="800" letter-spacing="0.06em">核心引擎：關鍵環節擊穿器</text>
       
       <!-- Engine Step 1 -->
       <g transform="translate(10, 40)">
@@ -557,7 +589,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
       <rect x="0" y="0" width="210" height="195" rx="8" class="resume-node-box" />
       <rect x="0" y="0" width="210" height="28" rx="8" class="resume-node-pill" />
       <rect x="0" y="20" width="210" height="8" class="resume-node-pill" />
-      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.04em">B 端：確定性高價值產出</text>
+      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.06em">B 端：確定性高價值產出</text>
       
       <text x="12" y="52" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 10× 模型訓練速度提升（實測指標）</text>
       <text x="12" y="87" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 次微秒級硬體確定性同步（工廠上線前測試）</text>
@@ -720,15 +752,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">Why is GPU compute idling below 15% when memory is plentiful, and where is the critical saturation boundary?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Deconstructed the PyTorch DataLoader serialization bottleneck; replaced with custom PhysicsNeMo streaming loader and lock-free double-buffering prefetch.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">Maximized hardware compute saturation; smoothed PCIe Host-to-Device transfer peaks with verified 10× model-training speedup.</p>
           </div>
         </div>
@@ -739,15 +771,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">How do we meet aggressive training delivery deadlines without blowing the cloud infrastructure budget or accumulating unmonitored technical debt?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Rebuilt the training pipeline with real PCAP packet replay tests and established 6 CI invariant guard gates with automatic cache fallback on degradation.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">100% reproducible training cycle, 7x24 zero-incident stability, and zero unbudgeted hardware procurement.</p>
           </div>
         </div>
@@ -758,15 +790,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">Does Blake possess rare cross-disciplinary engineering capability that translates directly into massive cost efficiency and technical moat?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Combines a Master&#39;s degree in Physics with deep CUDA/PyTorch systems engineering to eliminate the root hardware mismatch rather than just throwing money at more GPUs.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">Saved hundreds of thousands in cloud compute and hardware CAPEX; single-handedly transformed a CFD bottleneck into a competitive advantage.</p>
           </div>
         </div>
@@ -1016,15 +1048,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">顯存充足時 GPU 運算利用率為何卡在 15% 以下？系統極限飽和邊界究竟在哪？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">第一性原理拆解 PyTorch DataLoader 序列化 I/O 阻塞；以自訂 PhysicsNeMo 串流格式與無鎖雙緩衝預取全面替換。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">實現硬體運算飽和最大化；平滑 PCIe H2D 傳輸峰值，並以實測 10× 訓練提速完成驗證。</p>
           </div>
         </div>
@@ -1035,15 +1067,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">如何在不膨脹雲端基礎設施預算且不累積技術債的前提下，如期交付高強度的訓練里程碑？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">以真實 PCAP 封包重放回歸測試重建訓練管線，並建立 6 道不變量防護機制，效能退化時自動降級至快取分塊模式。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">訓練週期 100% 可重現、線上 7x24 零故障穩定運行，並達成零額外硬體預算採購。</p>
           </div>
         </div>
@@ -1054,15 +1086,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">Blake 是否具備罕見的跨領域硬核工程直覺，能直接轉化為巨大的成本效益與技術壁壘？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">結合物理碩士嚴密推導與 CUDA/PyTorch 系統工程直覺，從根源消弭硬體算力浪費，而非盲目堆疊 GPU。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">為企業省下數百萬雲端算力與硬體採購成本；隻手將 CFD 訓練阻礙轉化為核心產品競爭優勢。</p>
           </div>
         </div>
@@ -1316,15 +1348,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">How do we coordinate 12 stereo pairs (24 cameras) with PLC triggers without race conditions, bus contention, or frame loss?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Engineered a deterministic hardware trigger sync bus with C++ zero-copy ring buffers and strict sub-microsecond timestamp alignment.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">Sub-microsecond trigger synchronization jitter; eliminated IPC thread lock contention across all 24 cameras.</p>
           </div>
         </div>
@@ -1335,15 +1367,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">How do we transition a fragile laboratory 3D vision prototype into a hardened production system ready for factory line testing?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Defined comprehensive boundary test suites, thermal calibration specs, and multi-team hardware tuning protocols.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">Advanced prototype to factory-ready production testing on active line; reduced measurement variance std-dev by 65%.</p>
           </div>
         </div>
@@ -1354,15 +1386,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">Can Blake bridge physical mechanics, optical physics, and low-level software to build proprietary industrial inspection equipment?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Leveraged applied physics intuition to solve thermal drift and lens distortion natively, replacing costly third-party proprietary inspection stations.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">Delivered full-stack in-house 3D metrology IP; drastically compressed new production line deployment timeline.</p>
           </div>
         </div>
@@ -1616,15 +1648,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">如何協同 12 組立體相機（24 顆相機）與 PLC 觸發，同時消除競態條件、匯流排衝突與丟幀？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">設計確定性硬體觸發同步匯流排，搭配 C++ 零複製環形緩衝區與次微秒級時序對齊。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">達到次微秒級觸發同步精度；全面消除 24 顆相機在多執行緒 IPC 下的鎖競爭。</p>
           </div>
         </div>
@@ -1635,15 +1667,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">如何將實驗室內脆弱的 3D 視覺原型封裝為挺過工廠嚴苛驗收的確定性量產系統？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">制定全鏈路邊界測試套件、熱補償標定規範與跨部門軟硬體協同調校 SOP。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">推進成果至工廠上市前產線上線測試階段；光學量測重複性標準差降低 65%。</p>
           </div>
         </div>
@@ -1654,15 +1686,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">Blake 是否具備橫跨機械結構、光學物理與底層系統軟體的全棧能力，打造具備專利壁壘的檢測機台？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">以物理第一性原理推導原生化解熱漂移與鏡頭畸變，免除對昂貴國外專利檢測台的外部依賴。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">建立全棧自主可控的 3D 光學計量系統，大幅壓縮新產線上線時程。</p>
           </div>
         </div>
@@ -1949,15 +1981,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">How do we prevent cascading hallucination and exponential token budget explosion across multi-agent research synthesis?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Formalized the TALK contract protocol with strict budget capping (6.0 ➔ 4.6), AST token quotas, and cryptographic leaf citation anchoring.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">Zero unconstrained LLM loops; 100% cryptographic source provenance verified via SHA-256 digital seals.</p>
           </div>
         </div>
@@ -1968,15 +2000,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">How can an engineering team digest hundreds of complex vision papers per month without subjective bias or manual exhaustion?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Created deterministic dual-track reading routes (briefing vs deep proof) with automated ETH3D point-cloud inference validation.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">Compressed literature onboarding from days to minutes with zero-drift reproducibility across the team.</p>
           </div>
         </div>
@@ -1987,15 +2019,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">In a crowded market of shallow LLM wrappers, how does Blake build truly defensible Agent systems with epistemic boundaries?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Architected system around &#39;Epistemic Boundaries&#39; and &#39;Intent Fidelity&#39;—enforcing that facts, inferences, and speculations remain strictly separated.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">Delivers mathematical trust rather than probabilistic hallucination; sets standard for next-gen AI intelligence products.</p>
           </div>
         </div>
@@ -2285,15 +2317,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">多 Agent 協同進行文獻綜述時，如何杜絕幻覺串聯傳播與 Token 指數級爆炸？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">形式化 TALK 契約協議，設計嚴格計算預算上限（6.0 ➔ 4.6）、AST Token 配額管理與密碼學葉節點引證錨定。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">達成零失控 LLM 死迴圈；所有引文來源均經由 SHA-256 密碼學封籤 100% 可回溯驗證。</p>
           </div>
         </div>
@@ -2304,15 +2336,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">研發團隊每月需消化數百篇最新電腦視覺論文，如何避免主觀偏見整理與低效人力消耗？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">建立確定性雙軌閱讀路線（高階綜述 vs 深度證明），結合 ETH3D 點雲推論自動化萃取驗證。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">將前沿文獻調研融入週期從數天壓縮至數分鐘，產出品質具備團隊級零漂移重現性。</p>
           </div>
         </div>
@@ -2323,15 +2355,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">在氾濫的簡易 LLM 套殼市場中，Blake 如何構建具備認知邊界與真正技術防禦壁壘的 Agent 系統？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">圍繞「認知邊界」與「意圖保真」構建核心架構——強制將客觀事實、推論過程與猜測假說嚴格隔離封裝。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">交付可經數學檢驗的確定性信任，而非不可控的機率幻覺；樹立下一代 AI 智慧工具的標竿。</p>
           </div>
         </div>
@@ -2568,15 +2600,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">How do we prevent silent transcription loss or unrecoverable drift during background OS interruption or model hallucination?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Architected dual-track state engine with immutable raw audio backing and explicit non-destructive user-approved diff layers.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">100% deterministically reconstructible edits; zero data loss even under aggressive Android OS process termination.</p>
           </div>
         </div>
@@ -2587,15 +2619,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">How do we deploy voice AI to sensitive enterprise users who mistrust opaque, automated rewriting?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Enforced transparent human-in-the-loop audit logs with granular visual diffs, ensuring every modification requires explicit consent.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">Zero customer complaints regarding lost original context; elevated revision efficiency by 4×.</p>
           </div>
         </div>
@@ -2606,15 +2638,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">Core Probe</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> Core Probe</span>
             <p class="resume-pov-desc">What makes this speech-to-text system defensible against generic big-tech cloud transcription APIs?</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">Engineering Breakthrough</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> Engineering Breakthrough</span>
             <p class="resume-pov-desc">Focused on extreme data sovereignty and intent-fidelity: on-device local processing, zero vendor lock-in, and full auditability.</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">Verified Moat</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> Verified Moat</span>
             <p class="resume-pov-desc">Built trusted confidentiality moat essential for legal, executive, and medical transcriptions.</p>
           </div>
         </div>
@@ -2851,15 +2883,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">當面臨作業系統後台突發殺行程或模型幻覺竄改時，如何確保原始音訊與逐字稿零遺失且可恢復？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">設計雙軌狀態機引擎，底層強制綁定不可變唯讀原始音訊，上層疊加非破壞性之顯式候選差分修訂層。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">所有修訂歷史 100% 確定性可重現；即便在 Android 激進殺行程下亦達成零音訊/逐字稿滅失。</p>
           </div>
         </div>
@@ -2870,15 +2902,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">如何將語音 AI 推展至對黑箱重寫極度不信任的敏感企業客戶與專業訪談場景？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">建立完全透明的 Human-in-the-Loop 審計日誌與精細視覺差分對比，確保任何改動均需使用者顯式授權。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">達成零客訴原始語境遺失；專業訪談修訂校驗效率提升 4 倍。</p>
           </div>
         </div>
@@ -2889,15 +2921,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
         <div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">審查核心叩問</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> 審查核心叩問</span>
             <p class="resume-pov-desc">這套語音轉文字系統面對科技巨頭雲端 API 時，其不可替代的商業防禦壁壘何在？</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">攻堅突破機制</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> 攻堅突破機制</span>
             <p class="resume-pov-desc">極致專注於「資料主權絕對自主」與「意圖保真」：邊緣端本地化運算、零供應商鎖定與全鏈路可追溯審計。</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">量化驗證壁壘</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> 量化驗證壁壘</span>
             <p class="resume-pov-desc">打造符合法律、高階商務與醫療記錄嚴苛標準的商業機密信任壁壘。</p>
           </div>
         </div>

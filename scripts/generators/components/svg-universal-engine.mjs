@@ -50,6 +50,14 @@ export function renderUniversalEngineSvg(language = "en") {
   return `<div class="resume-svg-wrapper">
   <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${e(isEn ? "Universal Critical-Link Engine A to B Transformation Architecture" : "關鍵瓶頸擊穿引擎 A 到 B 通用轉化架構圖")}">
     <defs>
+      <linearGradient id="ue-grad-engine" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="var(--resume-accent)" stop-opacity="0.12" />
+        <stop offset="100%" stop-color="var(--resume-tint)" stop-opacity="0.65" />
+      </linearGradient>
+      <linearGradient id="ue-grad-pill" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--resume-accent)" />
+        <stop offset="100%" stop-color="#3b7c6b" />
+      </linearGradient>
       <marker id="ue-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
         <path d="M 0 1 L 8 5 L 0 9 z" class="resume-arrow-head" fill="var(--resume-accent)" />
       </marker>
@@ -60,7 +68,7 @@ export function renderUniversalEngineSvg(language = "en") {
       <rect x="0" y="0" width="215" height="195" rx="8" class="resume-node-box" />
       <rect x="0" y="0" width="215" height="28" rx="8" class="resume-node-pill" />
       <rect x="0" y="20" width="215" height="8" class="resume-node-pill" />
-      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.04em">${e(kickerA)}</text>
+      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.06em">${e(kickerA)}</text>
       
       <text x="12" y="52" class="resume-node-detail" font-size="9.5">${e(aItems[0])}</text>
       <text x="12" y="87" class="resume-node-detail" font-size="9.5">${e(aItems[1])}</text>
@@ -75,10 +83,10 @@ export function renderUniversalEngineSvg(language = "en") {
 
     <!-- BOX ENGINE: Blake's Cognitive Core -->
     <g class="ue-box-engine" transform="translate(270, 10)">
-      <rect x="0" y="0" width="225" height="205" rx="10" class="resume-node-highlight" stroke-width="2" />
-      <rect x="0" y="0" width="225" height="30" rx="10" class="resume-pill-highlight" />
-      <rect x="0" y="22" width="225" height="8" class="resume-pill-highlight" />
-      <text x="14" y="20" class="resume-pill-text" fill="#fff" font-weight="800" letter-spacing="0.04em">${e(kickerEngine)}</text>
+      <rect x="0" y="0" width="225" height="205" rx="10" fill="url(#ue-grad-engine)" stroke="var(--resume-accent)" stroke-width="1.8" />
+      <rect x="0" y="0" width="225" height="30" rx="10" fill="url(#ue-grad-pill)" />
+      <rect x="0" y="22" width="225" height="8" fill="url(#ue-grad-pill)" />
+      <text x="14" y="20" class="resume-pill-text" fill="#fff" font-weight="800" letter-spacing="0.06em">${e(kickerEngine)}</text>
       
       <!-- Engine Step 1 -->
       <g transform="translate(10, 40)">
@@ -110,7 +118,7 @@ export function renderUniversalEngineSvg(language = "en") {
       <rect x="0" y="0" width="210" height="195" rx="8" class="resume-node-box" />
       <rect x="0" y="0" width="210" height="28" rx="8" class="resume-node-pill" />
       <rect x="0" y="20" width="210" height="8" class="resume-node-pill" />
-      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.04em">${e(kickerB)}</text>
+      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.06em">${e(kickerB)}</text>
       
       <text x="12" y="52" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">${e(bItems[0])}</text>
       <text x="12" y="87" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">${e(bItems[1])}</text>

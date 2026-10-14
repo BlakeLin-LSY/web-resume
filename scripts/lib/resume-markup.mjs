@@ -317,15 +317,15 @@ function renderPovBadges(item, language, copy) {
         </div>
         ${q ? `<div class="resume-pov-grid">
           <div class="resume-pov-col resume-pov-probe">
-            <span class="resume-pov-section-label">${e(copy[language].lensCoreQuestion || (isEn ? "Core Probe" : "審查核心叩問"))}</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🎯</span> ${e(copy[language].lensCoreQuestion || (isEn ? "Core Probe" : "審查核心叩問"))}</span>
             <p class="resume-pov-desc">${e(q)}</p>
           </div>
           <div class="resume-pov-col resume-pov-solution">
-            <span class="resume-pov-section-label">${e(copy[language].lensBreakthrough || (isEn ? "Engineering Breakthrough" : "攻堅突破機制"))}</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">⚡</span> ${e(copy[language].lensBreakthrough || (isEn ? "Engineering Breakthrough" : "攻堅突破機制"))}</span>
             <p class="resume-pov-desc">${e(b)}</p>
           </div>
           <div class="resume-pov-col resume-pov-moat">
-            <span class="resume-pov-section-label">${e(copy[language].lensVerifiedMoat || (isEn ? "Verified Moat" : "量化驗證壁壘"))}</span>
+            <span class="resume-pov-section-label"><span class="resume-pov-icon" aria-hidden="true">🛡️</span> ${e(copy[language].lensVerifiedMoat || (isEn ? "Verified Moat" : "量化驗證壁壘"))}</span>
             <p class="resume-pov-desc">${e(m)}</p>
           </div>
         </div>` : `<p class="resume-pov-text">${e(text)}</p>`}

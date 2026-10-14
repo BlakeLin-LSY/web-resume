@@ -2,6 +2,7 @@ import { checkI18nParity } from "./check-i18n-parity.mjs";
 import { checkDigitalSeals } from "./check-digital-seals.mjs";
 import { checkWcagAndViewport } from "./check-wcag-and-viewport.mjs";
 import { checkIntentContracts } from "./check-intent-contracts.mjs";
+import { checkDesignAndTypographyInvariants } from "./check-design-and-typography-invariants.mjs";
 import { loadResumeSource } from "../lib/resume-source.mjs";
 import { loadModularProfile } from "../lib/data-loader.mjs";
 import { readFile } from "node:fs/promises";
@@ -51,6 +52,10 @@ async function runAllInvariants() {
 
   // 6. Intent Contracts, Mirror Duels & PoV Highlights completeness
   await checkIntentContracts();
+  console.log("");
+
+  // 7. Design Tokens, Typography & Layout Alignment Invariants
+  await checkDesignAndTypographyInvariants();
   console.log("");
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);

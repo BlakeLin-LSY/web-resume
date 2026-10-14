@@ -9,27 +9,39 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 h1,h2,h3,p{margin-top:0}
 h1,h2,h3{line-height:1.2;letter-spacing:-.025em}
 h2,h3{text-wrap:balance}
-[lang="zh-TW"] h2,[lang="zh-TW"] h3{line-height:1.4;letter-spacing:0}
 h2{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:14px}
 h3{font-size:1.2rem;margin-bottom:12px}
 p{margin-bottom:16px}
 ul{padding-left:22px}
 li+li{margin-top:8px}
 section[id],article[id],details[id]{scroll-margin-top:var(--header-offset,100px)}
+
+/* Independent Bilingual Typographic Engine */
+[lang="en"]{letter-spacing:-.012em;font-feature-settings:"cv02","cv03","cv04","cv11"}
+[lang="en"] h1,[lang="en"] h2,[lang="en"] h3{letter-spacing:-.035em;line-height:1.2}
+[lang="en"] .resume-lead{letter-spacing:-.015em;line-height:1.56}
+[lang="en"] .resume-triad-text,[lang="en"] .resume-pov-desc,[lang="en"] .resume-contract-desc{text-wrap:pretty;hyphens:auto;line-height:1.55}
+
+[lang="zh-TW"]{letter-spacing:.022em;line-height:1.72;font-feature-settings:"palt"}
+[lang="zh-TW"] h1,[lang="zh-TW"] h2,[lang="zh-TW"] h3{letter-spacing:.015em;line-height:1.36;text-wrap:balance}
+[lang="zh-TW"] .resume-lead{letter-spacing:.02em;line-height:1.75}
+[lang="zh-TW"] .resume-triad-text,[lang="zh-TW"] .resume-pov-desc,[lang="zh-TW"] .resume-contract-desc{line-height:1.68;letter-spacing:.018em;text-align:justify;text-justify:inter-ideograph}
+
 html.resume-enhanced[data-reading-language=en] [data-resume-locale="zh-TW"],html.resume-enhanced[data-reading-language="zh-TW"] [data-resume-locale=en]{display:none!important}
 [data-js-control]{display:none}
 .resume-enhanced [data-js-control]{display:flex}
 .resume-skip{position:absolute;z-index:100;top:-200px;left:20px;padding:10px 16px;background:var(--resume-panel);color:var(--resume-accent)}
 .resume-skip:focus{top:12px}
-.resume-header{position:sticky;top:0;z-index:10;background:var(--resume-background);border-bottom:1px solid var(--resume-border)}
+.resume-header{position:sticky;top:0;z-index:20;background:var(--resume-background);border-bottom:1px solid var(--resume-border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .2s,border-color .2s}
 html:not(.resume-enhanced) .resume-header{position:static}
 .resume-header-inner{max-width:var(--resume-content-width);padding:10px 24px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
 .resume-logo{font-size:1.02rem;font-weight:700;text-decoration:none;color:var(--resume-text);white-space:nowrap;flex-shrink:0}
 .resume-navigation{display:flex;align-items:center;gap:16px;font-size:.83rem;white-space:nowrap;margin-right:auto;margin-left:16px}
 .resume-navigation a{text-decoration:none;padding:6px 0;font-weight:600}
-.resume-reading-controls{align-items:center;gap:4px;flex-shrink:0}
-.resume-reading-controls button{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:38px;padding:4px 7px;background:transparent;border:1px solid transparent;border-radius:4px;font-size:.75rem}
-.resume-reading-controls button[aria-pressed=true]{border-color:var(--resume-accent);background:var(--resume-tint);color:var(--resume-accent)}
+.resume-reading-controls{align-items:center;gap:5px;flex-shrink:0}
+.resume-reading-controls button{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:36px;padding:4px 8px;background:transparent;border:1px solid transparent;border-radius:6px;font-size:.75rem;transition:all .15s ease}
+.resume-reading-controls button:hover{background:var(--resume-tint)}
+.resume-reading-controls button[aria-pressed=true]{border-color:var(--resume-accent);background:var(--resume-tint);color:var(--resume-accent);font-weight:700}
 .resume-languages{display:flex;gap:2px}
 .resume-menu{display:none!important}
 .resume-main{max-width:var(--resume-content-width);padding:0 28px;margin:auto;outline:none}
@@ -379,17 +391,21 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
 .resume-framework-intro{font-size:.85rem;color:var(--resume-muted);line-height:1.55;margin:0}
 
 /* --- Robust Grid-Based A -> B Transformation Ribbon --- */
-.resume-ab-ribbon{display:grid;grid-template-columns:1fr auto 1.15fr auto 1fr;align-items:stretch;gap:10px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:8px;padding:10px 14px;margin:14px 0 18px;font-size:.8rem;line-height:1.45}
-.resume-ab-seg{display:flex;flex-direction:column;gap:4px;padding:8px 10px;background:var(--resume-panel);border-radius:6px;border:1px solid var(--resume-border);min-width:0}
-.resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;align-self:flex-start}
+.resume-ab-ribbon{display:grid;grid-template-columns:1fr auto 1.15fr auto 1fr;align-items:stretch;gap:10px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:10px;padding:12px 16px;margin:14px 0 18px;font-size:.8rem;line-height:1.45;box-shadow:0 1px 4px rgba(0,0,0,0.02)}
+.resume-ab-seg{display:flex;flex-direction:column;gap:5px;padding:9px 12px;border-radius:8px;border:1px solid var(--resume-border);min-width:0;transition:all .2s ease}
+.resume-ab-a{background:linear-gradient(135deg,rgba(210,101,91,0.06) 0%,var(--resume-panel) 100%);border-color:rgba(210,101,91,0.25)}
+.resume-ab-link{background:linear-gradient(135deg,rgba(40,92,77,0.09) 0%,var(--resume-panel) 100%);border-color:var(--resume-accent);box-shadow:0 0 10px rgba(40,92,77,0.08)}
+.resume-ab-b{background:linear-gradient(135deg,rgba(79,172,116,0.08) 0%,var(--resume-panel) 100%);border-color:rgba(79,172,116,0.35)}
+.resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 7px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;align-self:flex-start}
 .resume-ab-a .resume-ab-badge{background:rgba(210,101,91,0.15);color:#d2655b;border:1px solid rgba(210,101,91,0.3)}
-.resume-ab-link .resume-ab-badge{background:rgba(40,92,77,0.15);color:var(--resume-accent);border:1px solid var(--resume-accent)}
+.resume-ab-link .resume-ab-badge{background:rgba(40,92,77,0.18);color:var(--resume-accent);border:1px solid var(--resume-accent)}
 .resume-ab-b .resume-ab-badge{background:rgba(79,172,116,0.18);color:#285c4d;border:1px solid rgba(79,172,116,0.4)}
-.resume-ab-text{color:var(--resume-text);font-weight:600;font-size:.81rem;line-height:1.4;overflow-wrap:break-word}
-.resume-ab-sep{display:flex;align-items:center;justify-content:center;color:var(--resume-accent);font-weight:800;font-size:1.1rem;user-select:none}
+.resume-ab-text{color:var(--resume-text);font-weight:600;font-size:.82rem;line-height:1.42;overflow-wrap:break-word}
+.resume-ab-sep{display:flex;align-items:center;justify-content:center;color:var(--resume-accent);font-weight:800;font-size:1.15rem;user-select:none;opacity:.85}
+.resume-pov-icon{margin-right:4px;font-size:.78rem;display:inline-block;vertical-align:-1px}
 
 @media(max-width:860px){
-  .resume-ab-ribbon{grid-template-columns:1fr;gap:6px}
+  .resume-ab-ribbon{grid-template-columns:1fr;gap:8px;padding:10px}
   .resume-ab-sep{transform:rotate(90deg);padding:2px 0}
   .resume-pov-grid{grid-template-columns:1fr;gap:8px}
 }
