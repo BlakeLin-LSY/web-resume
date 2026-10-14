@@ -18,11 +18,56 @@ const escape = (value) => String(value).replace(/[&<>"']/g, (char) => ({ "&": "&
 const styles = `
 ${readingTokenCss(tokens)}
 :root{--bg:var(--resume-background);--panel:var(--resume-panel);--text:var(--resume-text);--muted:var(--resume-muted);--border:var(--resume-border);--blue:var(--resume-accent);--tint:var(--resume-tint)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 var(--resume-font)}a{color:var(--blue);text-underline-offset:.2em}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}header,main,footer{width:min(920px,100% - 40px);margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-bottom:1px solid var(--border)}.back{text-decoration:none;font-weight:600}.languages{display:flex;gap:6px}.languages button{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:7px 12px;border-radius:8px;cursor:pointer}.languages button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue)}.skip{position:absolute;top:-100px;left:20px;padding:10px;background:var(--panel);z-index:1}.skip:focus{top:10px}.hero{padding:50px 0 30px;max-width:780px}.eyebrow{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}h2{font-size:1.5rem;line-height:1.35;margin:0 0 18px}h3{font-size:1.05rem;margin:0 0 12px}.subtitle{font-size:1.3rem;font-weight:600;margin:0 0 16px}.lead{color:var(--muted);font-size:1.05rem}.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;list-style:none;margin:24px 0 0}.tags li{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--blue);background:var(--tint)}.section{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px;margin:0 0 22px}.section p{color:var(--muted);margin:12px 0}.flow{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:24px 0 0}.flow li{flex:1;min-width:120px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);padding:12px;font-size:14px;line-height:1.5}.flow span{display:block;font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px}.example{padding:18px;border-left:3px solid var(--blue);background:var(--tint);border-radius:6px;margin-top:22px}.example p{margin:6px 0 0}.source-list{list-style:none;padding:0;margin:0}.source-list li{padding:14px 0;border-top:1px solid var(--border)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82rem;overflow-wrap:anywhere}.source-role{display:block;color:var(--muted);font-size:13px}.notice{color:var(--muted);font-size:14px}.language-view+.language-view{border-top:1px solid var(--border);margin-top:40px}.js .language-view[hidden]{display:none}footer{border-top:1px solid var(--border);margin-top:32px;padding:24px 0 40px;color:var(--muted);font-size:13px}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.hero{padding-top:34px}.section{padding:22px}.flow{flex-direction:column}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 var(--resume-font);overflow-wrap:anywhere}a{color:var(--blue);text-underline-offset:.2em}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+header{position:sticky;top:0;z-index:20;background:var(--bg);background:color-mix(in srgb,var(--bg) 88%,transparent);border-bottom:1px solid var(--border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:14px 0;transition:background .2s,border-color .2s}
+.header-inner,main,footer{width:min(920px,100% - 40px);margin:auto}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.back,.download-link{text-decoration:none;font-weight:600}
+[data-header-lang]{display:none}
+html[lang="en"] [data-header-lang="en"]{display:inline}
+html[lang="zh-TW"] [data-header-lang="zh-TW"]{display:inline}
+.languages{display:flex;gap:6px}.languages button{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;transition:all .15s ease}
+.languages button:hover{background:var(--tint)}
+.languages button[aria-pressed=true]{border-color:var(--blue);background:var(--tint);color:var(--blue);font-weight:700}
+.skip{position:absolute;top:-100px;left:20px;padding:10px;background:var(--panel);z-index:1}.skip:focus{top:10px}
+.hero{padding:48px 0 28px;max-width:780px}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.15;letter-spacing:-.04em;margin:12px 0}
+h2{font-size:1.5rem;line-height:1.35;margin:0 0 18px}
+h3{font-size:1.05rem;margin:0 0 12px}
+.subtitle{font-size:1.3rem;font-weight:600;margin:0 0 16px}
+.lead{color:var(--muted);font-size:1.05rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;list-style:none;margin:24px 0 0}
+.tags li{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--blue);background:var(--tint);font-weight:600}
+.section{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px;margin:0 0 22px;box-shadow:0 3px 12px rgba(0,0,0,0.03);transition:border-color .2s,box-shadow .2s}
+.section:hover{border-color:var(--blue);box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+.section p{color:var(--muted);margin:12px 0}
+.flow{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:24px 0 0}
+.flow li{flex:1;min-width:120px;border-left:3px solid var(--blue);border-radius:6px;background:var(--tint);padding:12px;font-size:14px;line-height:1.5}
+.flow span{display:block;font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px}
+.example{padding:18px;border-left:3px solid var(--blue);background:var(--tint);border-radius:6px;margin-top:22px}
+.example p{margin:6px 0 0}
+.source-list{list-style:none;padding:0;margin:0}
+.source-list li{padding:14px 0;border-top:1px solid var(--border)}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82rem;overflow-wrap:anywhere}
+.source-role{display:block;color:var(--muted);font-size:13px}
+.notice{color:var(--muted);font-size:14px}
+.language-view+.language-view{border-top:1px solid var(--border);margin-top:40px}
+.js .language-view[hidden]{display:none}
+footer{border-top:1px solid var(--border);margin-top:32px;padding:24px 0 40px;color:var(--muted);font-size:13px}
+@media(max-width:600px){.header-inner{gap:10px}.hero{padding-top:28px}.section{padding:22px}.flow{flex-direction:column}}
 
-h2,h3{text-wrap:balance}.section>p{max-width:72ch}.language-view[lang="zh-TW"] h2,.language-view[lang="zh-TW"] h3{line-height:1.5;letter-spacing:0}.language-view[lang="zh-TW"] .section>p{max-width:38em}
+/* Independent Bilingual Typographic Engine */
+[lang="en"]{letter-spacing:-.012em;font-feature-settings:"cv02","cv03","cv04","cv11"}
+[lang="en"] h1,[lang="en"] h2,[lang="en"] h3{letter-spacing:-.035em;line-height:1.2}
+[lang="en"] .lead{letter-spacing:-.015em;line-height:1.56}
+[lang="zh-TW"]{letter-spacing:.022em;line-height:1.72;font-feature-settings:"palt"}
+[lang="zh-TW"] h1,[lang="zh-TW"] h2,[lang="zh-TW"] h3{letter-spacing:.015em;line-height:1.36;text-wrap:balance}
+[lang="zh-TW"] .lead{letter-spacing:.02em;line-height:1.75}
+[lang="zh-TW"] .section p{line-height:1.68;letter-spacing:.018em;text-align:justify;text-justify:inter-ideograph}
+
+h2,h3{text-wrap:balance}.section>p{max-width:72ch}.language-view[lang="zh-TW"] .section>p{max-width:38em}
 @media print{:root{color-scheme:light!important;--resume-background:#fff!important;--resume-panel:#fff!important;--resume-text:#242824!important;--resume-muted:#5C645D!important;--resume-accent:#285C4D!important;--resume-border:#BCC4B9!important;--resume-tint:#E7EDE4!important}.languages,header a[download],.walkthrough-steps,.walkthrough-navigation{display:none!important}body{font-size:11pt}header,main,footer{width:100%}.hero{padding:20px 0}.section{padding:18px;break-inside:avoid}.walkthrough-panel[hidden]{display:block!important}.walkthrough-artifact::details-content{content-visibility:visible!important;height:auto!important}}
-
 `;
 
 const renderSection = (section) => {
@@ -206,11 +251,11 @@ const pages = source.projects.map((project) => {
 <!-- Generated from content/project-case-studies.json. Edit the content source or generator. -->
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
 <title>${escape(project.title)} — Engineering introduction</title><meta name="description" content="${escape(project.en.lead)}"><style>${styles}${project.workflowPreview ? workflowStyles : ""}${project.readerExcerpt ? previewStyles : ""}${project.walkthrough ? walkthroughStyles : ""}</style></head>
-<body><a class="skip" href="#content">Skip to content / 跳至內容</a>
-<header><a class="back" data-back-home href="${projectsHref}">← Projects / 返回專案</a><a href="${escape(project.id)}.html" download="${escape(project.id)}.html">Download HTML / 下載 HTML</a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>繁體中文</button><button type="button" data-theme-toggle aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button></div></header>
+<body><a class="skip" href="#content"><span data-header-lang="en">Skip to content</span><span data-header-lang="zh-TW">跳至內容</span></a>
+<header><div class="header-inner"><a class="back" data-back-home href="${projectsHref}"><span data-header-lang="en">← Projects</span><span data-header-lang="zh-TW">← 返回專案</span></a><a class="download-link" href="${escape(project.id)}.html" download="${escape(project.id)}.html"><span data-header-lang="en">Download HTML</span><span data-header-lang="zh-TW">下載 HTML</span></a><div class="languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-select-language="en" aria-pressed="true" disabled>English</button><button type="button" data-select-language="zh-TW" aria-pressed="false" disabled>繁體中文</button><button type="button" data-theme-toggle aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button></div></div></header>
 <main id="content">${renderLanguage(project, "en")}\n${renderLanguage(project, "zh-TW")}${renderWalkthrough(project)}
-<details class="section"><summary><strong>Implementation references / 實作參考</strong></summary><p class="notice">Repository: ${escape(project.id)} · Source review: ${escape(source.inspectedOn)} / 原始碼巡查日期</p><ul class="source-list">${sources}</ul></details></main>
-<footer>Personal project / 個人專案 · Offline introduction / 可離線保存的介紹 · <a data-back-home href="${projectsHref}">Back to projects / 返回專案</a><noscript><style>.languages{display:none!important}[data-language][hidden],.walkthrough-panel[hidden]{display:block!important}</style><p>JavaScript is off; both language versions are shown. / JavaScript 關閉時，同時顯示兩種語言。</p></noscript></footer>
+<details class="section"><summary><strong><span data-header-lang="en">Implementation references</span><span data-header-lang="zh-TW">實作參考</span></strong></summary><p class="notice"><span data-header-lang="en">Repository: ${escape(project.id)} · Source review: ${escape(source.inspectedOn)}</span><span data-header-lang="zh-TW">原始碼儲存庫：${escape(project.id)} · 原始碼巡查日期：${escape(source.inspectedOn)}</span></p><ul class="source-list">${sources}</ul></details></main>
+<footer><span data-header-lang="en">Personal project · Offline introduction · <a data-back-home href="${projectsHref}">Back to projects</a></span><span data-header-lang="zh-TW">個人專案 · 可離線保存的介紹 · <a data-back-home href="${projectsHref}">返回專案</a></span><noscript><style>.languages{display:none!important}[data-language][hidden],.walkthrough-panel[hidden]{display:block!important}[data-header-lang]{display:inline!important}</style><p><span data-header-lang="en">JavaScript is off; both language versions are shown.</span><span data-header-lang="zh-TW">JavaScript 關閉時，同時顯示兩種語言。</span></p></noscript></footer>
 <script>${script(project)}${project.workflowPreview ? workflowScript : ""}${project.walkthrough ? walkthroughScript : ""}</script></body></html>\n`,
   };
 });

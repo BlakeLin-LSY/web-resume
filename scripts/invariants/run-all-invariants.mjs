@@ -3,6 +3,7 @@ import { checkDigitalSeals } from "./check-digital-seals.mjs";
 import { checkWcagAndViewport } from "./check-wcag-and-viewport.mjs";
 import { checkIntentContracts } from "./check-intent-contracts.mjs";
 import { checkDesignAndTypographyInvariants } from "./check-design-and-typography-invariants.mjs";
+import { checkSideProjectInvariants } from "./check-side-project-invariants.mjs";
 import { loadResumeSource } from "../lib/resume-source.mjs";
 import { loadModularProfile } from "../lib/data-loader.mjs";
 import { readFile } from "node:fs/promises";
@@ -56,6 +57,10 @@ async function runAllInvariants() {
 
   // 7. Design Tokens, Typography & Layout Alignment Invariants
   await checkDesignAndTypographyInvariants();
+  console.log("");
+
+  // 8. Side Project Pages Parity and Designer Taste Invariants
+  await checkSideProjectInvariants();
   console.log("");
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
