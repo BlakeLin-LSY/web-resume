@@ -210,7 +210,7 @@ html:not(.resume-enhanced) .resume-navigation [data-resume-locale]+[data-resume-
 .resume-node-pill{fill:var(--resume-tint);stroke:var(--resume-border);stroke-width:1px}
 .resume-pill-highlight{fill:var(--resume-accent);stroke:var(--resume-accent)}
 .resume-pill-text{font-size:9px;font-weight:700;fill:var(--resume-muted);letter-spacing:.05em}
-.resume-pill-highlight + .resume-pill-text{fill:#fff}
+.resume-pill-highlight + .resume-pill-text{fill:var(--resume-action-text)}
 .resume-node-title{font-size:13px;font-weight:700;fill:var(--resume-text)}
 .resume-title-highlight{fill:var(--resume-accent)}
 .resume-node-subtitle{font-size:10.5px;font-weight:600;fill:var(--resume-muted)}

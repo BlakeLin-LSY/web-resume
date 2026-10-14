@@ -34,7 +34,7 @@ export function renderPipelineSvg(options, language = "en") {
     </div>
 
     <div class="resume-svg-wrapper">
-      <svg class="resume-svg-diagram" viewBox="0 0 760 160" role="img" aria-label="${e(ariaLabel)}">
+      <svg class="resume-svg-diagram" viewBox="0 0 760 160" role="img" aria-label="${e(ariaLabel)}" style="font-family:var(--resume-font,system-ui,-apple-system,sans-serif)">
         <defs>
           <marker id="${arrowDynaId}" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 1 2 L 8 5 L 1 8 z" class="resume-arrow-head"/>
