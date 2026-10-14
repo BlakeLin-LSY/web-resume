@@ -76,12 +76,13 @@
       "metadataDescription": "AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.",
       "github": "GitHub",
       "cameraChip": "{cameraPairs} stereo-camera pairs on a production line",
-      "modeHuman": "Human",
-      "modeAgent": "Agent",
+      "modeHuman": "Visual View",
+      "modeAgent": "AST / Spec",
       "modeSwitch": "Reading perspective",
       "agentBadge": "AST / IR / Evidence Verified",
       "sampleExcerptBtn": "View Live Reader Sample",
       "sampleExcerptHide": "Hide Reader Sample",
+      "sampleExcerptTitle": "Study Atlas VGGT Synthesis Excerpt (ETH3D Point-Map Verification)",
       "tradeoffBadge": "Trade-off & Invariant"
     },
     "zh-TW": {
@@ -131,12 +132,13 @@
       "metadataDescription": "AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。",
       "github": "GitHub",
       "cameraChip": "{cameraPairs} 組立體相機產線",
-      "modeHuman": "真人視角",
-      "modeAgent": "Agent 語意",
+      "modeHuman": "視覺圖解",
+      "modeAgent": "語意規格",
       "modeSwitch": "閱讀視角",
       "agentBadge": "AST / IR / 驗證收據",
       "sampleExcerptBtn": "檢視真實雙語樣張",
       "sampleExcerptHide": "收合雙語樣張",
+      "sampleExcerptTitle": "Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）",
       "tradeoffBadge": "架構取捨與不變量"
     }
   },
