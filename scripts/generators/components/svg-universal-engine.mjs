@@ -79,7 +79,7 @@ export function renderUniversalEngineSvg(language = "en") {
   ];
 
   return `<div class="resume-svg-wrapper">
-  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${e(isEn ? "First-Principles Problem-Solving Engine A to B Architecture" : "第一性工程求解引擎 A 到 B 架構圖")}">
+  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${e(isEn ? "First-Principles Problem-Solving Engine A to B Architecture" : "第一性工程求解引擎 A 到 B 架構圖")}" style="font-family:var(--resume-font,system-ui,-apple-system,sans-serif)">
     <defs>
       <!-- Gradients -->
       <linearGradient id="ue-engine-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -104,7 +104,7 @@ export function renderUniversalEngineSvg(language = "en") {
         <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--resume-accent)" />
       </marker>
       <marker id="ue-arrow-out" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#285c4d" />
+        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4fac74" />
       </marker>
     </defs>
 
@@ -121,9 +121,9 @@ export function renderUniversalEngineSvg(language = "en") {
         <!-- Input Capsule ${idx + 1} -->
         <g class="ue-input-card" transform="translate(0, ${y})">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">${e(item.title)}</text>
-          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">${e(item.sub)}</text>
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#d2655b" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">${e(item.title)}</text>
+          <text x="14" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">${e(item.sub)}</text>
           <circle cx="210" cy="30" r="3" fill="#d2655b" />
         </g>`;
       }).join("")}
@@ -193,11 +193,11 @@ export function renderUniversalEngineSvg(language = "en") {
         <!-- Yield Capsule ${idx + 1} -->
         <g class="ue-yield-card" transform="translate(0, ${y})">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
-            <tspan fill="#285c4d" font-weight="800">✓ </tspan>${e(item.title)}
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#4fac74" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#4fac74" font-weight="800">✓ </tspan>${e(item.title)}
           </text>
-          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">${e(item.metric)}</text>
+          <text x="14" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">${e(item.metric)}</text>
         </g>`;
       }).join("")}
     </g>

@@ -37,7 +37,7 @@ html.resume-enhanced[data-reading-language=en] [data-resume-locale="zh-TW"],html
 .resume-enhanced [data-js-control]{display:flex}
 .resume-skip{position:absolute;z-index:100;top:-200px;left:20px;padding:10px 16px;background:var(--resume-panel);color:var(--resume-accent)}
 .resume-skip:focus{top:12px}
-.resume-header{position:sticky;top:0;z-index:20;background:var(--resume-background);border-bottom:1px solid var(--resume-border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .2s,border-color .2s}
+.resume-header{position:sticky;top:0;z-index:20;background:var(--resume-background);background:color-mix(in srgb,var(--resume-background) 88%,transparent);border-bottom:1px solid var(--resume-border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .2s,border-color .2s}
 html:not(.resume-enhanced) .resume-header{position:static}
 .resume-header-inner{max-width:var(--resume-content-width);padding:10px 24px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
 .resume-logo{font-size:1.02rem;font-weight:700;text-decoration:none;color:var(--resume-text);white-space:nowrap;flex-shrink:0}
@@ -332,6 +332,8 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
 .resume-pov-card[data-pov="recruiter"] .resume-pov-section-label{color:#b87b33}
 
 /* Active Lens Optical Coupling & Spotlight */
+html[data-resume-lens="all"] .resume-pov-badge,
+html:not([data-resume-lens]) .resume-pov-badge,
 html[data-resume-lens="staff"] .resume-pov-badge[data-pov="staff"],
 html[data-resume-lens="em"] .resume-pov-badge[data-pov="em"],
 html[data-resume-lens="recruiter"] .resume-pov-badge[data-pov="recruiter"]{display:block}
@@ -381,7 +383,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
 .resume-proof-receipt{margin:14px 0 8px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-tint);padding:10px 14px;font-size:.78rem;line-height:1.5}
 .resume-receipt-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
 .resume-receipt-title-wrap{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--resume-text)}
-.resume-receipt-status{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-weight:800;color:#285c4d;letter-spacing:.04em}
+.resume-receipt-status{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-weight:800;color:var(--resume-accent);letter-spacing:.04em}
 .resume-receipt-dot{width:6px;height:6px;border-radius:50%;background:#4fac74}
 .resume-receipt-body{display:flex;flex-direction:column;gap:3px;color:var(--resume-muted)}
 .resume-receipt-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
@@ -396,6 +398,11 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
 .resume-framework-title{font-size:1.2rem;font-weight:800;color:var(--resume-text);margin:0 0 6px}
 .resume-framework-intro{font-size:.85rem;color:var(--resume-muted);line-height:1.55;margin:0}
 
+/* --- Inline Lens Bar --- */
+.resume-inline-lens-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;padding:6px 12px;background:var(--resume-tint);border-radius:8px;border:1px solid var(--resume-border)}
+.resume-inline-lens-title{font-size:.76rem;font-weight:700;color:var(--resume-text);letter-spacing:.02em;display:inline-flex;align-items:center;gap:4px}
+.resume-inline-lens-selector{background:var(--resume-panel)}
+
 /* --- Robust Grid-Based A -> B Transformation Ribbon --- */
 .resume-ab-ribbon{display:grid;grid-template-columns:1fr auto 1.15fr auto 1fr;align-items:stretch;gap:10px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:10px;padding:12px 16px;margin:14px 0 18px;font-size:.8rem;line-height:1.45;box-shadow:0 1px 4px rgba(0,0,0,0.02)}
 .resume-ab-seg{display:flex;flex-direction:column;gap:5px;padding:9px 12px;border-radius:8px;border:1px solid var(--resume-border);min-width:0;transition:all .2s ease}
@@ -405,7 +412,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
 .resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 7px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;align-self:flex-start}
 .resume-ab-a .resume-ab-badge{background:rgba(210,101,91,0.15);color:#d2655b;border:1px solid rgba(210,101,91,0.3)}
 .resume-ab-link .resume-ab-badge{background:rgba(40,92,77,0.18);color:var(--resume-accent);border:1px solid var(--resume-accent)}
-.resume-ab-b .resume-ab-badge{background:rgba(79,172,116,0.18);color:#285c4d;border:1px solid rgba(79,172,116,0.4)}
+.resume-ab-b .resume-ab-badge{background:rgba(79,172,116,0.18);color:var(--resume-accent);border:1px solid rgba(79,172,116,0.4)}
 .resume-ab-text{color:var(--resume-text);font-weight:600;font-size:.82rem;line-height:1.42;overflow-wrap:break-word}
 .resume-ab-sep{display:flex;align-items:center;justify-content:center;color:var(--resume-accent);font-weight:800;font-size:1.15rem;user-select:none;opacity:.85}
 .resume-pov-icon{margin-right:4px;font-size:.78rem;display:inline-block;vertical-align:-1px}
@@ -432,7 +439,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         <p class="resume-framework-intro">From physical boundary conditions and true-problem framing, to surgical weakest-link piercing via adaptive mental models, delivering zero-loss, anti-fragile deterministic outcomes across hardware and agent systems.</p>
       </div>
       <div class="resume-svg-wrapper">
-  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="First-Principles Problem-Solving Engine A to B Architecture">
+  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="First-Principles Problem-Solving Engine A to B Architecture" style="font-family:var(--resume-font,system-ui,-apple-system,sans-serif)">
     <defs>
       <!-- Gradients -->
       <linearGradient id="ue-engine-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -457,7 +464,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--resume-accent)" />
       </marker>
       <marker id="ue-arrow-out" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#285c4d" />
+        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4fac74" />
       </marker>
     </defs>
 
@@ -472,33 +479,33 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         <!-- Input Capsule 1 -->
         <g class="ue-input-card" transform="translate(0, 38)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Sensor Clocks &amp; Jitter</text>
-          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">24 Cams Async · Metrology Boundary</text>
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#d2655b" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Sensor Clocks &amp; Jitter</text>
+          <text x="14" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">24 Cams Async · Metrology Boundary</text>
           <circle cx="210" cy="30" r="3" fill="#d2655b" />
         </g>
         <!-- Input Capsule 2 -->
         <g class="ue-input-card" transform="translate(0, 110)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Compute Starvation &amp; I/O Stall</text>
-          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">Deserialization Drag · DynaSafe Pipeline</text>
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#d2655b" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Compute Starvation &amp; I/O Stall</text>
+          <text x="14" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">Deserialization Drag · DynaSafe Pipeline</text>
           <circle cx="210" cy="30" r="3" fill="#d2655b" />
         </g>
         <!-- Input Capsule 3 -->
         <g class="ue-input-card" transform="translate(0, 182)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Epistemic Drift &amp; Bloom</text>
-          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">Recursive Context · Atlas Agent Mesh</text>
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#d2655b" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Epistemic Drift &amp; Bloom</text>
+          <text x="14" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">Recursive Context · Atlas Agent Mesh</text>
           <circle cx="210" cy="30" r="3" fill="#d2655b" />
         </g>
         <!-- Input Capsule 4 -->
         <g class="ue-input-card" transform="translate(0, 254)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Destructive In-Place Mutation</text>
-          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">Unchecked ASR Overwrites · TFX Pipeline</text>
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#d2655b" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Destructive In-Place Mutation</text>
+          <text x="14" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">Unchecked ASR Overwrites · TFX Pipeline</text>
           <circle cx="210" cy="30" r="3" fill="#d2655b" />
         </g>
     </g>
@@ -585,38 +592,38 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         <!-- Yield Capsule 1 -->
         <g class="ue-yield-card" transform="translate(0, 38)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
-            <tspan fill="#285c4d" font-weight="800">✓ </tspan>Sub-μs Hardware Sync
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#4fac74" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#4fac74" font-weight="800">✓ </tspan>Sub-μs Hardware Sync
           </text>
-          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">Zero-Drop Metrology Invariant Pass</text>
+          <text x="14" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">Zero-Drop Metrology Invariant Pass</text>
         </g>
         <!-- Yield Capsule 2 -->
         <g class="ue-yield-card" transform="translate(0, 110)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
-            <tspan fill="#285c4d" font-weight="800">✓ </tspan>10× Training Throughput
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#4fac74" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#4fac74" font-weight="800">✓ </tspan>10× Training Throughput
           </text>
-          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">Hardware Saturated · Zero Capex</text>
+          <text x="14" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">Hardware Saturated · Zero Capex</text>
         </g>
         <!-- Yield Capsule 3 -->
         <g class="ue-yield-card" transform="translate(0, 182)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
-            <tspan fill="#285c4d" font-weight="800">✓ </tspan>Budget &amp; Drift Convergence
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#4fac74" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#4fac74" font-weight="800">✓ </tspan>Budget &amp; Drift Convergence
           </text>
-          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">100% Intent Fidelity · TALK 1.8 Capped</text>
+          <text x="14" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">100% Intent Fidelity · TALK 1.8 Capped</text>
         </g>
         <!-- Yield Capsule 4 -->
         <g class="ue-yield-card" transform="translate(0, 254)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
-            <tspan fill="#285c4d" font-weight="800">✓ </tspan>Immutable Ground Truth
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#4fac74" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#4fac74" font-weight="800">✓ </tspan>Immutable Ground Truth
           </text>
-          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">Zero Data Loss · Cryptographic Seals</text>
+          <text x="14" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">Zero Data Loss · Cryptographic Seals</text>
         </g>
     </g>
   </svg>
@@ -628,7 +635,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         <p class="resume-framework-intro">從物理學邊界條件與假性需求過濾出發，運用自適應心智模型手術刀式擊穿最弱環節，在軟硬體產線與 Agent 系統中交付零滅失、抗脆弱的高價值確定性成果。</p>
       </div>
       <div class="resume-svg-wrapper">
-  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="第一性工程求解引擎 A 到 B 架構圖">
+  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="第一性工程求解引擎 A 到 B 架構圖" style="font-family:var(--resume-font,system-ui,-apple-system,sans-serif)">
     <defs>
       <!-- Gradients -->
       <linearGradient id="ue-engine-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -653,7 +660,7 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--resume-accent)" />
       </marker>
       <marker id="ue-arrow-out" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#285c4d" />
+        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4fac74" />
       </marker>
     </defs>
 
@@ -668,33 +675,33 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         <!-- Input Capsule 1 -->
         <g class="ue-input-card" transform="translate(0, 38)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">感測器時序競爭與微秒抖動</text>
-          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">24 顆相機非同步觸發 · MetGauge</text>
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#d2655b" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">感測器時序競爭與微秒抖動</text>
+          <text x="14" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">24 顆相機非同步觸發 · MetGauge</text>
           <circle cx="210" cy="30" r="3" fill="#d2655b" />
         </g>
         <!-- Input Capsule 2 -->
         <g class="ue-input-card" transform="translate(0, 110)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">算力飢餓與反序列化阻塞</text>
-          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">I/O 延遲拖垮 GPU · DynaSafe</text>
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#d2655b" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">算力飢餓與反序列化阻塞</text>
+          <text x="14" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">I/O 延遲拖垮 GPU · DynaSafe</text>
           <circle cx="210" cy="30" r="3" fill="#d2655b" />
         </g>
         <!-- Input Capsule 3 -->
         <g class="ue-input-card" transform="translate(0, 182)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">認知邊界迷航與上下文膨脹</text>
-          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">多 Agent 遞迴發散 · Study-Atlas</text>
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#d2655b" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">認知邊界迷航與上下文膨脹</text>
+          <text x="14" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">多 Agent 遞迴發散 · Study-Atlas</text>
           <circle cx="210" cy="30" r="3" fill="#d2655b" />
         </g>
         <!-- Input Capsule 4 -->
         <g class="ue-input-card" transform="translate(0, 254)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">黑箱模型破壞性原地覆寫</text>
-          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">語音切片無狀態審計 · Transcribe-for-X</text>
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#d2655b" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">黑箱模型破壞性原地覆寫</text>
+          <text x="14" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">語音切片無狀態審計 · Transcribe-for-X</text>
           <circle cx="210" cy="30" r="3" fill="#d2655b" />
         </g>
     </g>
@@ -781,38 +788,38 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         <!-- Yield Capsule 1 -->
         <g class="ue-yield-card" transform="translate(0, 38)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
-            <tspan fill="#285c4d" font-weight="800">✓ </tspan>次微秒級確定性同步
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#4fac74" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#4fac74" font-weight="800">✓ </tspan>次微秒級確定性同步
           </text>
-          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">工廠 0 掉幀 · 物理公差量測通過</text>
+          <text x="14" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">工廠 0 掉幀 · 物理公差量測通過</text>
         </g>
         <!-- Yield Capsule 2 -->
         <g class="ue-yield-card" transform="translate(0, 110)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
-            <tspan fill="#285c4d" font-weight="800">✓ </tspan>10× 訓練吞吐極限釋放
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#4fac74" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#4fac74" font-weight="800">✓ </tspan>10× 訓練吞吐極限釋放
           </text>
-          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">同等硬體飽和，零設備增購支出</text>
+          <text x="14" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">同等硬體飽和，零設備增購支出</text>
         </g>
         <!-- Yield Capsule 3 -->
         <g class="ue-yield-card" transform="translate(0, 182)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
-            <tspan fill="#285c4d" font-weight="800">✓ </tspan>認知邊界收斂與防漂移
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#4fac74" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#4fac74" font-weight="800">✓ </tspan>認知邊界收斂與防漂移
           </text>
-          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">100% 意圖保真 · TALK 1.8 成本鎖定</text>
+          <text x="14" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">100% 意圖保真 · TALK 1.8 成本鎖定</text>
         </g>
         <!-- Yield Capsule 4 -->
         <g class="ue-yield-card" transform="translate(0, 254)">
           <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
-          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
-          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
-            <tspan fill="#285c4d" font-weight="800">✓ </tspan>底層真理數據零滅失保證
+          <rect x="0" y="0" width="3.5" height="60" rx="1.5" fill="#4fac74" />
+          <text x="14" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#4fac74" font-weight="800">✓ </tspan>底層真理數據零滅失保證
           </text>
-          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">不可變快照與 SHA-256 數位封籤</text>
+          <text x="14" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">不可變快照與 SHA-256 數位封籤</text>
         </g>
     </g>
   </svg>
@@ -962,6 +969,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
       </div>
       <div class="resume-pov-stack resume-human-view">
+    <div class="resume-inline-lens-header">
+      <span class="resume-inline-lens-title"><span class="resume-pov-icon" aria-hidden="true">👁️</span> Perspective Lens</span>
+      <div class="resume-lens-selector resume-inline-lens-selector" role="group" aria-label="Perspective Lens">
+        <button type="button" data-resume-lens="all" aria-pressed="true" title="Universal (All)">All</button>
+        <button type="button" data-resume-lens="staff" aria-pressed="false" title="Staff Architect — Focus: Low-Level Concurrency, Root-Cause Bottlenecks, Invariants &amp; Limits">Architect</button>
+        <button type="button" data-resume-lens="em" aria-pressed="false" title="Engineering Manager — Focus: 10× Delivery Velocity, Zero-Loss Reliability &amp; CI Automation">Eng Lead</button>
+        <button type="button" data-resume-lens="recruiter" aria-pressed="false" title="CTO / Technical Founder — Focus: Zero Capex ROI, Lab-to-Production Moat &amp; Rare Physics-to-Agent Intersection">CTO</button>
+      </div>
+    </div>
     <div class="resume-pov-badge resume-pov-card" data-pov="staff">
         <div class="resume-pov-card-header">
           <span class="resume-pov-pill">ARCHITECT LENS</span>
@@ -1258,6 +1274,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
       </div>
       <div class="resume-pov-stack resume-human-view">
+    <div class="resume-inline-lens-header">
+      <span class="resume-inline-lens-title"><span class="resume-pov-icon" aria-hidden="true">👁️</span> 視角投影</span>
+      <div class="resume-lens-selector resume-inline-lens-selector" role="group" aria-label="視角投影">
+        <button type="button" data-resume-lens="all" aria-pressed="true" title="全視角">全視角</button>
+        <button type="button" data-resume-lens="staff" aria-pressed="false" title="系統架構師 — 聚焦：底層併發拓撲、根本瓶頸定位、硬體物理極限與嚴格不變量">架構師</button>
+        <button type="button" data-resume-lens="em" aria-pressed="false" title="工程主管 — 聚焦：10× 交付吞吐量、產線 7x24 零丟包穩定性與機制化 CI 自動防護">工程主管</button>
+        <button type="button" data-resume-lens="recruiter" aria-pressed="false" title="CTO / 技術創辦人 — 聚焦：零硬體增購資本支出 ROI、實驗室到量產上市壁壘與物理推導 × Agent 認知稀缺交集">CTO</button>
+      </div>
+    </div>
     <div class="resume-pov-badge resume-pov-card" data-pov="staff">
         <div class="resume-pov-card-header">
           <span class="resume-pov-pill">系統架構師透鏡</span>
@@ -1558,6 +1583,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
       </div>
       <div class="resume-pov-stack resume-human-view">
+    <div class="resume-inline-lens-header">
+      <span class="resume-inline-lens-title"><span class="resume-pov-icon" aria-hidden="true">👁️</span> Perspective Lens</span>
+      <div class="resume-lens-selector resume-inline-lens-selector" role="group" aria-label="Perspective Lens">
+        <button type="button" data-resume-lens="all" aria-pressed="true" title="Universal (All)">All</button>
+        <button type="button" data-resume-lens="staff" aria-pressed="false" title="Staff Architect — Focus: Low-Level Concurrency, Root-Cause Bottlenecks, Invariants &amp; Limits">Architect</button>
+        <button type="button" data-resume-lens="em" aria-pressed="false" title="Engineering Manager — Focus: 10× Delivery Velocity, Zero-Loss Reliability &amp; CI Automation">Eng Lead</button>
+        <button type="button" data-resume-lens="recruiter" aria-pressed="false" title="CTO / Technical Founder — Focus: Zero Capex ROI, Lab-to-Production Moat &amp; Rare Physics-to-Agent Intersection">CTO</button>
+      </div>
+    </div>
     <div class="resume-pov-badge resume-pov-card" data-pov="staff">
         <div class="resume-pov-card-header">
           <span class="resume-pov-pill">ARCHITECT LENS</span>
@@ -1858,6 +1892,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
       </div>
       <div class="resume-pov-stack resume-human-view">
+    <div class="resume-inline-lens-header">
+      <span class="resume-inline-lens-title"><span class="resume-pov-icon" aria-hidden="true">👁️</span> 視角投影</span>
+      <div class="resume-lens-selector resume-inline-lens-selector" role="group" aria-label="視角投影">
+        <button type="button" data-resume-lens="all" aria-pressed="true" title="全視角">全視角</button>
+        <button type="button" data-resume-lens="staff" aria-pressed="false" title="系統架構師 — 聚焦：底層併發拓撲、根本瓶頸定位、硬體物理極限與嚴格不變量">架構師</button>
+        <button type="button" data-resume-lens="em" aria-pressed="false" title="工程主管 — 聚焦：10× 交付吞吐量、產線 7x24 零丟包穩定性與機制化 CI 自動防護">工程主管</button>
+        <button type="button" data-resume-lens="recruiter" aria-pressed="false" title="CTO / 技術創辦人 — 聚焦：零硬體增購資本支出 ROI、實驗室到量產上市壁壘與物理推導 × Agent 認知稀缺交集">CTO</button>
+      </div>
+    </div>
     <div class="resume-pov-badge resume-pov-card" data-pov="staff">
         <div class="resume-pov-card-header">
           <span class="resume-pov-pill">系統架構師透鏡</span>
@@ -2191,6 +2234,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
       </div>
       <div class="resume-pov-stack resume-human-view">
+    <div class="resume-inline-lens-header">
+      <span class="resume-inline-lens-title"><span class="resume-pov-icon" aria-hidden="true">👁️</span> Perspective Lens</span>
+      <div class="resume-lens-selector resume-inline-lens-selector" role="group" aria-label="Perspective Lens">
+        <button type="button" data-resume-lens="all" aria-pressed="true" title="Universal (All)">All</button>
+        <button type="button" data-resume-lens="staff" aria-pressed="false" title="Staff Architect — Focus: Low-Level Concurrency, Root-Cause Bottlenecks, Invariants &amp; Limits">Architect</button>
+        <button type="button" data-resume-lens="em" aria-pressed="false" title="Engineering Manager — Focus: 10× Delivery Velocity, Zero-Loss Reliability &amp; CI Automation">Eng Lead</button>
+        <button type="button" data-resume-lens="recruiter" aria-pressed="false" title="CTO / Technical Founder — Focus: Zero Capex ROI, Lab-to-Production Moat &amp; Rare Physics-to-Agent Intersection">CTO</button>
+      </div>
+    </div>
     <div class="resume-pov-badge resume-pov-card" data-pov="staff">
         <div class="resume-pov-card-header">
           <span class="resume-pov-pill">ARCHITECT LENS</span>
@@ -2527,6 +2579,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
       </div>
       <div class="resume-pov-stack resume-human-view">
+    <div class="resume-inline-lens-header">
+      <span class="resume-inline-lens-title"><span class="resume-pov-icon" aria-hidden="true">👁️</span> 視角投影</span>
+      <div class="resume-lens-selector resume-inline-lens-selector" role="group" aria-label="視角投影">
+        <button type="button" data-resume-lens="all" aria-pressed="true" title="全視角">全視角</button>
+        <button type="button" data-resume-lens="staff" aria-pressed="false" title="系統架構師 — 聚焦：底層併發拓撲、根本瓶頸定位、硬體物理極限與嚴格不變量">架構師</button>
+        <button type="button" data-resume-lens="em" aria-pressed="false" title="工程主管 — 聚焦：10× 交付吞吐量、產線 7x24 零丟包穩定性與機制化 CI 自動防護">工程主管</button>
+        <button type="button" data-resume-lens="recruiter" aria-pressed="false" title="CTO / 技術創辦人 — 聚焦：零硬體增購資本支出 ROI、實驗室到量產上市壁壘與物理推導 × Agent 認知稀缺交集">CTO</button>
+      </div>
+    </div>
     <div class="resume-pov-badge resume-pov-card" data-pov="staff">
         <div class="resume-pov-card-header">
           <span class="resume-pov-pill">系統架構師透鏡</span>
@@ -2810,6 +2871,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
       </div>
       <div class="resume-pov-stack resume-human-view">
+    <div class="resume-inline-lens-header">
+      <span class="resume-inline-lens-title"><span class="resume-pov-icon" aria-hidden="true">👁️</span> Perspective Lens</span>
+      <div class="resume-lens-selector resume-inline-lens-selector" role="group" aria-label="Perspective Lens">
+        <button type="button" data-resume-lens="all" aria-pressed="true" title="Universal (All)">All</button>
+        <button type="button" data-resume-lens="staff" aria-pressed="false" title="Staff Architect — Focus: Low-Level Concurrency, Root-Cause Bottlenecks, Invariants &amp; Limits">Architect</button>
+        <button type="button" data-resume-lens="em" aria-pressed="false" title="Engineering Manager — Focus: 10× Delivery Velocity, Zero-Loss Reliability &amp; CI Automation">Eng Lead</button>
+        <button type="button" data-resume-lens="recruiter" aria-pressed="false" title="CTO / Technical Founder — Focus: Zero Capex ROI, Lab-to-Production Moat &amp; Rare Physics-to-Agent Intersection">CTO</button>
+      </div>
+    </div>
     <div class="resume-pov-badge resume-pov-card" data-pov="staff">
         <div class="resume-pov-card-header">
           <span class="resume-pov-pill">ARCHITECT LENS</span>
@@ -3093,6 +3163,15 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         </div>
       </div>
       <div class="resume-pov-stack resume-human-view">
+    <div class="resume-inline-lens-header">
+      <span class="resume-inline-lens-title"><span class="resume-pov-icon" aria-hidden="true">👁️</span> 視角投影</span>
+      <div class="resume-lens-selector resume-inline-lens-selector" role="group" aria-label="視角投影">
+        <button type="button" data-resume-lens="all" aria-pressed="true" title="全視角">全視角</button>
+        <button type="button" data-resume-lens="staff" aria-pressed="false" title="系統架構師 — 聚焦：底層併發拓撲、根本瓶頸定位、硬體物理極限與嚴格不變量">架構師</button>
+        <button type="button" data-resume-lens="em" aria-pressed="false" title="工程主管 — 聚焦：10× 交付吞吐量、產線 7x24 零丟包穩定性與機制化 CI 自動防護">工程主管</button>
+        <button type="button" data-resume-lens="recruiter" aria-pressed="false" title="CTO / 技術創辦人 — 聚焦：零硬體增購資本支出 ROI、實驗室到量產上市壁壘與物理推導 × Agent 認知稀缺交集">CTO</button>
+      </div>
+    </div>
     <div class="resume-pov-badge resume-pov-card" data-pov="staff">
         <div class="resume-pov-card-header">
           <span class="resume-pov-pill">系統架構師透鏡</span>

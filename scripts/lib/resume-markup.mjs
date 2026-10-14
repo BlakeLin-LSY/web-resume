@@ -302,6 +302,15 @@ function renderPovBadges(item, language, copy) {
   ];
 
   return `<div class="resume-pov-stack resume-human-view">
+    <div class="resume-inline-lens-header">
+      <span class="resume-inline-lens-title"><span class="resume-pov-icon" aria-hidden="true">👁️</span> ${e(copy[language].lensLabel || (isEn ? "Perspective Projections" : "多維角色透鏡"))}</span>
+      <div class="resume-lens-selector resume-inline-lens-selector" role="group" aria-label="${e(copy[language].lensLabel)}">
+        <button type="button" data-resume-lens="all" aria-pressed="true" title="${e(copy[language].lensAll)}">${isEn ? "All" : "全視角"}</button>
+        <button type="button" data-resume-lens="staff" aria-pressed="false" title="${e(copy[language].lensStaff)} — ${e(copy[language].lensStaffDesc)}">${e(copy[language].lensStaffShort)}</button>
+        <button type="button" data-resume-lens="em" aria-pressed="false" title="${e(copy[language].lensEm)} — ${e(copy[language].lensEmDesc)}">${e(copy[language].lensEmShort)}</button>
+        <button type="button" data-resume-lens="recruiter" aria-pressed="false" title="${e(copy[language].lensRecruiter)} — ${e(copy[language].lensRecruiterDesc)}">${e(copy[language].lensRecruiterShort)}</button>
+      </div>
+    </div>
     ${roles.map(r => {
       const data = povs[r.id];
       if (!data) return "";
