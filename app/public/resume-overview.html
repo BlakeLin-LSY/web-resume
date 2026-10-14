@@ -208,6 +208,7 @@ html:not(.resume-enhanced) .resume-navigation [data-resume-locale]+[data-resume-
 .resume-svg-wrapper::-webkit-scrollbar-track{background:transparent}
 .resume-svg-wrapper::-webkit-scrollbar-thumb{background:var(--resume-border);border-radius:999px}
 .resume-svg-diagram{width:100%;min-width:620px;max-width:760px;height:auto;display:block;margin:auto;font-family:inherit}
+.resume-universal-engine-svg{max-width:880px;min-width:660px}
 .resume-node-box{fill:var(--resume-panel);stroke:var(--resume-border);stroke-width:1.5px;transition:stroke .15s}
 .resume-node-highlight{fill:var(--resume-tint);stroke:var(--resume-accent);stroke-width:1.8px}
 .resume-node-alert{fill:var(--resume-panel);stroke:#c25953;stroke-width:1.8px}
@@ -431,84 +432,192 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         <p class="resume-framework-intro">How complex, high-entropy problems across AI pipelines, factory hardware, and agent systems are decomposed into deterministic, zero-loss outcomes.</p>
       </div>
       <div class="resume-svg-wrapper">
-  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Universal Critical-Link Engine A to B Transformation Architecture">
+  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Universal Critical-Link Engine A to B Transformation Architecture">
     <defs>
-      <linearGradient id="ue-grad-engine" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="var(--resume-accent)" stop-opacity="0.12" />
-        <stop offset="100%" stop-color="var(--resume-tint)" stop-opacity="0.65" />
+      <!-- Gradients -->
+      <linearGradient id="ue-engine-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="var(--resume-panel)" stop-opacity="0.95" />
+        <stop offset="100%" stop-color="var(--resume-tint)" stop-opacity="0.85" />
       </linearGradient>
-      <linearGradient id="ue-grad-pill" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="var(--resume-accent)" />
-        <stop offset="100%" stop-color="#3b7c6b" />
+      <linearGradient id="ue-core-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--resume-accent)" stop-opacity="0.2" />
+        <stop offset="50%" stop-color="var(--resume-accent)" stop-opacity="0.05" />
+        <stop offset="100%" stop-color="var(--resume-accent)" stop-opacity="0.2" />
       </linearGradient>
-      <marker id="ue-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 1 L 8 5 L 0 9 z" class="resume-arrow-head" fill="var(--resume-accent)" />
+      <linearGradient id="ue-wire-in" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#d2655b" stop-opacity="0.4" />
+        <stop offset="100%" stop-color="var(--resume-accent)" stop-opacity="0.9" />
+      </linearGradient>
+      <linearGradient id="ue-wire-out" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--resume-accent)" stop-opacity="0.9" />
+        <stop offset="100%" stop-color="#4fac74" stop-opacity="0.8" />
+      </linearGradient>
+      <!-- Arrow Markers -->
+      <marker id="ue-arrow-in" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--resume-accent)" />
+      </marker>
+      <marker id="ue-arrow-out" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#285c4d" />
       </marker>
     </defs>
 
-    <!-- BOX A: High Entropy Reality -->
-    <g class="ue-box-a" transform="translate(15, 15)">
-      <rect x="0" y="0" width="215" height="195" rx="8" class="resume-node-box" />
-      <rect x="0" y="0" width="215" height="28" rx="8" class="resume-node-pill" />
-      <rect x="0" y="20" width="215" height="8" class="resume-node-pill" />
-      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.06em">A IN: HIGH-ENTROPY INPUT</text>
+    <!-- COLUMN A: High-Entropy Inputs -->
+    <g class="ue-group-inputs" transform="translate(16, 16)">
+      <!-- Column Header -->
+      <rect x="0" y="0" width="220" height="26" rx="5" fill="var(--resume-tint)" stroke="var(--resume-border)" stroke-width="1" />
+      <circle cx="12" cy="13" r="4" fill="#d2655b" />
+      <text x="24" y="17" font-size="10.5" font-weight="800" fill="var(--resume-text)" letter-spacing="0.06em">HIGH-ENTROPY INPUTS</text>
+
       
-      <text x="12" y="52" class="resume-node-detail" font-size="9.5">• Microsecond Jitter &amp; Sensor Noise (24 Cams)</text>
-      <text x="12" y="87" class="resume-node-detail" font-size="9.5">• GPU Starvation &amp; DataLoader I/O Stall</text>
-      <text x="12" y="122" class="resume-node-detail" font-size="9.5">• Multi-Agent Combinatorial Token Explosion</text>
-      <text x="12" y="157" class="resume-node-detail" font-size="9.5">• Destructive In-place Text Overwriting</text>
-      
-      <text x="12" y="188" class="resume-node-detail" font-size="8.5" fill="var(--resume-muted)" font-style="italic">High Entropy / Ambiguity</text>
+        <!-- Input Capsule 1 -->
+        <g class="ue-input-card" transform="translate(0, 38)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Sensor Jitter &amp; Noise</text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">24 Cams · Hardware Async</text>
+          <circle cx="210" cy="30" r="3" fill="#d2655b" />
+        </g>
+        <!-- Input Capsule 2 -->
+        <g class="ue-input-card" transform="translate(0, 110)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">GPU Compute Starvation</text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">DataLoader I/O Serialization</text>
+          <circle cx="210" cy="30" r="3" fill="#d2655b" />
+        </g>
+        <!-- Input Capsule 3 -->
+        <g class="ue-input-card" transform="translate(0, 182)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Agent Combinatorial Drift</text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">Unbounded Recursive Context</text>
+          <circle cx="210" cy="30" r="3" fill="#d2655b" />
+        </g>
+        <!-- Input Capsule 4 -->
+        <g class="ue-input-card" transform="translate(0, 254)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">Silent Overwrite Risk</text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">Destructive In-Place ASR</text>
+          <circle cx="210" cy="30" r="3" fill="#d2655b" />
+        </g>
     </g>
 
-    <!-- CONNECTOR A -> ENGINE -->
-    <path d="M 230 112 L 265 112" class="resume-flow-line" stroke="var(--resume-accent)" stroke-width="2" marker-end="url(#ue-arrow)" />
+    <!-- CONVERGENCE FLOW LINES (A -> Engine) -->
+    <g class="ue-converge-wires" fill="none">
+      <path d="M 236 84 C 265 84, 275 120, 298 120" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+      <path d="M 236 156 C 265 156, 275 145, 298 145" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+      <path d="M 236 228 C 265 228, 275 205, 298 205" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+      <path d="M 236 300 C 265 300, 275 240, 298 240" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+    </g>
 
-    <!-- BOX ENGINE: Blake's Cognitive Core -->
-    <g class="ue-box-engine" transform="translate(270, 10)">
-      <rect x="0" y="0" width="225" height="205" rx="10" fill="url(#ue-grad-engine)" stroke="var(--resume-accent)" stroke-width="1.8" />
-      <rect x="0" y="0" width="225" height="30" rx="10" fill="url(#ue-grad-pill)" />
-      <rect x="0" y="22" width="225" height="8" fill="url(#ue-grad-pill)" />
-      <text x="14" y="20" class="resume-pill-text" fill="#fff" font-weight="800" letter-spacing="0.06em">ENGINE: BLAKE&#39;S COGNITIVE CORE</text>
+    <!-- COLUMN CENTER: Blake's Critical-Link Engine (The Focal Chamber) -->
+    <g class="ue-group-engine" transform="translate(304, 16)">
+      <!-- Chamber Frame -->
+      <rect x="0" y="0" width="272" height="328" rx="14" fill="url(#ue-engine-bg)" stroke="var(--resume-accent)" stroke-width="2" />
+      <rect x="0" y="0" width="272" height="328" rx="14" fill="url(#ue-core-glow)" pointer-events="none" />
       
-      <!-- Engine Step 1 -->
-      <g transform="translate(10, 40)">
-        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1" />
-        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="700" fill="var(--resume-accent)">1. Epistemic Scoping</text>
-        <text x="8" y="34" class="resume-node-detail" font-size="8.8">First-Principles Physics &amp; Boundaries</text>
-      </g>
-      
-      <!-- Engine Step 2 -->
-      <g transform="translate(10, 92)">
-        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-accent)" stroke-width="1.5" />
-        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="800" fill="var(--resume-text)">2. Weakest-Link Pinpoint</text>
-        <text x="8" y="34" class="resume-node-detail" font-size="8.8" font-weight="600" fill="var(--resume-accent)">Isolate Single Rate-Limiting Choke</text>
-      </g>
+      <!-- Chamber Header Pill -->
+      <rect x="12" y="12" width="248" height="28" rx="6" fill="var(--resume-accent)" />
+      <text x="136" y="30" font-size="10.5" font-weight="800" fill="var(--resume-action-text)" letter-spacing="0.06em" text-anchor="middle">⚡ CRITICAL-LINK &amp; INVARIANT ENGINE</text>
 
-      <!-- Engine Step 3 -->
-      <g transform="translate(10, 144)">
-        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1" />
-        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="700" fill="var(--resume-accent)">3. Invariant Gate</text>
-        <text x="8" y="34" class="resume-node-detail" font-size="8.8">Deterministic Guardrails &amp; Circuit Breakers</text>
+      
+        <!-- Core Stage 1 -->
+        <g class="ue-stage-box" transform="translate(12, 52)">
+          <rect x="0" y="0" width="248" height="78" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          
+          <text x="12" y="24" font-size="12.5" font-weight="800" fill="var(--resume-text)">
+            <tspan fill="var(--resume-muted)" font-size="10.5" font-family="monospace">01 · </tspan>First-Principles Decomposition
+          </text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-text)" opacity="0.9">Strip away surface symptoms; isolate roo</text>
+          <text x="12" y="60" font-size="10" font-weight="500" fill="var(--resume-muted)">t physics and computation limits.</text>
+        </g>
+        <line x1="136" y1="130" x2="136" y2="142" stroke="var(--resume-accent)" stroke-width="2" stroke-dasharray="2 2" />
+        
+        <!-- Core Stage 2 -->
+        <g class="ue-stage-box" transform="translate(12, 142)">
+          <rect x="0" y="0" width="248" height="78" rx="8" fill="var(--resume-panel)" stroke="var(--resume-accent)" stroke-width="2" />
+          <rect x="0" y="0" width="4" height="78" fill="var(--resume-accent)" rx="2" />
+          <text x="12" y="24" font-size="12.5" font-weight="800" fill="var(--resume-accent)">
+            <tspan fill="var(--resume-muted)" font-size="10.5" font-family="monospace">02 · </tspan>Pierce Critical Weakest Link
+          </text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-text)" opacity="0.9">Re-engineer the single rate-limiting bot</text>
+          <text x="12" y="60" font-size="10" font-weight="500" fill="var(--resume-muted)">tleneck via lockless IPC &amp; ring buffers.</text>
+        </g>
+        <line x1="136" y1="220" x2="136" y2="232" stroke="var(--resume-accent)" stroke-width="2" stroke-dasharray="2 2" />
+        
+        <!-- Core Stage 3 -->
+        <g class="ue-stage-box" transform="translate(12, 232)">
+          <rect x="0" y="0" width="248" height="78" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          
+          <text x="12" y="24" font-size="12.5" font-weight="800" fill="var(--resume-text)">
+            <tspan fill="var(--resume-muted)" font-size="10.5" font-family="monospace">03 · </tspan>Enforce Invariant Guard Gates
+          </text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-text)" opacity="0.9">Embed formal circuit breakers, zero-drif</text>
+          <text x="12" y="60" font-size="10" font-weight="500" fill="var(--resume-muted)">t contracts &amp; cryptographic seals.</text>
+        </g>
+        
+        
+
+      <!-- Chamber Status Indicator -->
+      <g transform="translate(12, 308)">
+        <circle cx="6" cy="6" r="3" fill="#4fac74" />
+        <text x="16" y="10" font-size="9" font-weight="700" fill="var(--resume-muted)" font-family="monospace">CONVERGENCE INVARIANT LOCKED</text>
       </g>
     </g>
 
-    <!-- CONNECTOR ENGINE -> B -->
-    <path d="M 495 112 L 530 112" class="resume-flow-line" stroke="var(--resume-accent)" stroke-width="2" marker-end="url(#ue-arrow)" />
+    <!-- DIVERGENCE FLOW LINES (Engine -> B) -->
+    <g class="ue-diverge-wires" fill="none">
+      <path d="M 576 120 C 600 120, 610 84, 638 84" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+      <path d="M 576 145 C 600 145, 610 156, 638 156" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+      <path d="M 576 205 C 600 205, 610 228, 638 228" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+      <path d="M 576 240 C 600 240, 610 300, 638 300" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+    </g>
 
-    <!-- BOX B: Deterministic High Value Outcome -->
-    <g class="ue-box-b" transform="translate(535, 15)">
-      <rect x="0" y="0" width="210" height="195" rx="8" class="resume-node-box" />
-      <rect x="0" y="0" width="210" height="28" rx="8" class="resume-node-pill" />
-      <rect x="0" y="20" width="210" height="8" class="resume-node-pill" />
-      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.06em">B OUT: DETERMINISTIC OUTCOME</text>
+    <!-- COLUMN B: Deterministic High-Value Outcomes -->
+    <g class="ue-group-yields" transform="translate(644, 16)">
+      <!-- Column Header -->
+      <rect x="0" y="0" width="220" height="26" rx="5" fill="var(--resume-tint)" stroke="var(--resume-border)" stroke-width="1" />
+      <circle cx="12" cy="13" r="4" fill="#4fac74" />
+      <text x="24" y="17" font-size="10.5" font-weight="800" fill="var(--resume-text)" letter-spacing="0.06em">DETERMINISTIC YIELDS</text>
+
       
-      <text x="12" y="52" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 10× Model Training Speedup (Measured)</text>
-      <text x="12" y="87" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ Sub-μs Hardware Sync in Factory Testing</text>
-      <text x="12" y="122" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ TALK 1.8 Capped Budget (6.0 → 4.6)</text>
-      <text x="12" y="157" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ Zero Data Loss Guarantee (Immutable Ground Truth)</text>
-
-      <text x="12" y="188" class="resume-node-detail" font-size="8.5" fill="var(--resume-accent)" font-weight="700">Deterministic / Zero Loss</text>
+        <!-- Yield Capsule 1 -->
+        <g class="ue-yield-card" transform="translate(0, 38)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#285c4d" font-weight="800">✓ </tspan>Sub-μs Hardware Sync
+          </text>
+          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">Factory Testing Verified</text>
+        </g>
+        <!-- Yield Capsule 2 -->
+        <g class="ue-yield-card" transform="translate(0, 110)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#285c4d" font-weight="800">✓ </tspan>10× Training Throughput
+          </text>
+          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">Zero New GPU Capex</text>
+        </g>
+        <!-- Yield Capsule 3 -->
+        <g class="ue-yield-card" transform="translate(0, 182)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#285c4d" font-weight="800">✓ </tspan>TALK 1.8 Budget Capping
+          </text>
+          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">6.0 → 4.6 Calculated Budget</text>
+        </g>
+        <!-- Yield Capsule 4 -->
+        <g class="ue-yield-card" transform="translate(0, 254)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#285c4d" font-weight="800">✓ </tspan>Zero Data Loss Guarantee
+          </text>
+          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">Immutable Raw Ground Truth</text>
+        </g>
     </g>
   </svg>
 </div>
@@ -519,84 +628,192 @@ html[data-resume-lens="recruiter"] .resume-work-link{color:#b87b33!important;fon
         <p class="resume-framework-intro">如何將跨越 AI 運算管線、工廠軟硬整合與 Agent 系統的高熵複雜問題，經由第一性原理拆解為確定性、零滅失的高價值產出。</p>
       </div>
       <div class="resume-svg-wrapper">
-  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="關鍵瓶頸擊穿引擎 A 到 B 通用轉化架構圖">
+  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="關鍵瓶頸擊穿引擎 A 到 B 通用轉化架構圖">
     <defs>
-      <linearGradient id="ue-grad-engine" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="var(--resume-accent)" stop-opacity="0.12" />
-        <stop offset="100%" stop-color="var(--resume-tint)" stop-opacity="0.65" />
+      <!-- Gradients -->
+      <linearGradient id="ue-engine-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="var(--resume-panel)" stop-opacity="0.95" />
+        <stop offset="100%" stop-color="var(--resume-tint)" stop-opacity="0.85" />
       </linearGradient>
-      <linearGradient id="ue-grad-pill" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="var(--resume-accent)" />
-        <stop offset="100%" stop-color="#3b7c6b" />
+      <linearGradient id="ue-core-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--resume-accent)" stop-opacity="0.2" />
+        <stop offset="50%" stop-color="var(--resume-accent)" stop-opacity="0.05" />
+        <stop offset="100%" stop-color="var(--resume-accent)" stop-opacity="0.2" />
       </linearGradient>
-      <marker id="ue-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-        <path d="M 0 1 L 8 5 L 0 9 z" class="resume-arrow-head" fill="var(--resume-accent)" />
+      <linearGradient id="ue-wire-in" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#d2655b" stop-opacity="0.4" />
+        <stop offset="100%" stop-color="var(--resume-accent)" stop-opacity="0.9" />
+      </linearGradient>
+      <linearGradient id="ue-wire-out" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--resume-accent)" stop-opacity="0.9" />
+        <stop offset="100%" stop-color="#4fac74" stop-opacity="0.8" />
+      </linearGradient>
+      <!-- Arrow Markers -->
+      <marker id="ue-arrow-in" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--resume-accent)" />
+      </marker>
+      <marker id="ue-arrow-out" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#285c4d" />
       </marker>
     </defs>
 
-    <!-- BOX A: High Entropy Reality -->
-    <g class="ue-box-a" transform="translate(15, 15)">
-      <rect x="0" y="0" width="215" height="195" rx="8" class="resume-node-box" />
-      <rect x="0" y="0" width="215" height="28" rx="8" class="resume-node-pill" />
-      <rect x="0" y="20" width="215" height="8" class="resume-node-pill" />
-      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.06em">A 端：高熵真實世界輸入</text>
+    <!-- COLUMN A: High-Entropy Inputs -->
+    <g class="ue-group-inputs" transform="translate(16, 16)">
+      <!-- Column Header -->
+      <rect x="0" y="0" width="220" height="26" rx="5" fill="var(--resume-tint)" stroke="var(--resume-border)" stroke-width="1" />
+      <circle cx="12" cy="13" r="4" fill="#d2655b" />
+      <text x="24" y="17" font-size="10.5" font-weight="800" fill="var(--resume-text)" letter-spacing="0.06em">高熵真實世界輸入</text>
+
       
-      <text x="12" y="52" class="resume-node-detail" font-size="9.5">• 24 顆相機微秒級時序抖動與雜訊 (MetGauge)</text>
-      <text x="12" y="87" class="resume-node-detail" font-size="9.5">• GPU 運算飢餓與 DataLoader I/O 阻塞 (DynaSafe)</text>
-      <text x="12" y="122" class="resume-node-detail" font-size="9.5">• 多 Agent 遞迴檢索之 Token 組合爆炸 (Atlas)</text>
-      <text x="12" y="157" class="resume-node-detail" font-size="9.5">• LLM 原地覆寫導致原始語義滅失 (TFX)</text>
-      
-      <text x="12" y="188" class="resume-node-detail" font-size="8.5" fill="var(--resume-muted)" font-style="italic">High Entropy / Ambiguity</text>
+        <!-- Input Capsule 1 -->
+        <g class="ue-input-card" transform="translate(0, 38)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">感測器時序抖動與雜訊</text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">24 顆相機非同步觸發 (MetGauge)</text>
+          <circle cx="210" cy="30" r="3" fill="#d2655b" />
+        </g>
+        <!-- Input Capsule 2 -->
+        <g class="ue-input-card" transform="translate(0, 110)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">GPU 運算飢餓與 I/O 阻塞</text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">DataLoader 序列化瓶頸 (DynaSafe)</text>
+          <circle cx="210" cy="30" r="3" fill="#d2655b" />
+        </g>
+        <!-- Input Capsule 3 -->
+        <g class="ue-input-card" transform="translate(0, 182)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">多 Agent 遞迴組合漂移</text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">Token 預算指數級擴散 (Atlas)</text>
+          <circle cx="210" cy="30" r="3" fill="#d2655b" />
+        </g>
+        <!-- Input Capsule 4 -->
+        <g class="ue-input-card" transform="translate(0, 254)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="0" y1="0" x2="4" y2="0" stroke="#d2655b" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">非可逆覆寫資料滅失</text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-muted)">黑箱語音轉錄無審計層 (TFX)</text>
+          <circle cx="210" cy="30" r="3" fill="#d2655b" />
+        </g>
     </g>
 
-    <!-- CONNECTOR A -> ENGINE -->
-    <path d="M 230 112 L 265 112" class="resume-flow-line" stroke="var(--resume-accent)" stroke-width="2" marker-end="url(#ue-arrow)" />
+    <!-- CONVERGENCE FLOW LINES (A -> Engine) -->
+    <g class="ue-converge-wires" fill="none">
+      <path d="M 236 84 C 265 84, 275 120, 298 120" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+      <path d="M 236 156 C 265 156, 275 145, 298 145" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+      <path d="M 236 228 C 265 228, 275 205, 298 205" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+      <path d="M 236 300 C 265 300, 275 240, 298 240" stroke="url(#ue-wire-in)" stroke-width="1.8" marker-end="url(#ue-arrow-in)" />
+    </g>
 
-    <!-- BOX ENGINE: Blake's Cognitive Core -->
-    <g class="ue-box-engine" transform="translate(270, 10)">
-      <rect x="0" y="0" width="225" height="205" rx="10" fill="url(#ue-grad-engine)" stroke="var(--resume-accent)" stroke-width="1.8" />
-      <rect x="0" y="0" width="225" height="30" rx="10" fill="url(#ue-grad-pill)" />
-      <rect x="0" y="22" width="225" height="8" fill="url(#ue-grad-pill)" />
-      <text x="14" y="20" class="resume-pill-text" fill="#fff" font-weight="800" letter-spacing="0.06em">核心引擎：關鍵環節擊穿器</text>
+    <!-- COLUMN CENTER: Blake's Critical-Link Engine (The Focal Chamber) -->
+    <g class="ue-group-engine" transform="translate(304, 16)">
+      <!-- Chamber Frame -->
+      <rect x="0" y="0" width="272" height="328" rx="14" fill="url(#ue-engine-bg)" stroke="var(--resume-accent)" stroke-width="2" />
+      <rect x="0" y="0" width="272" height="328" rx="14" fill="url(#ue-core-glow)" pointer-events="none" />
       
-      <!-- Engine Step 1 -->
-      <g transform="translate(10, 40)">
-        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1" />
-        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="700" fill="var(--resume-accent)">1. 第一性原理分解</text>
-        <text x="8" y="34" class="resume-node-detail" font-size="8.8">釐清物理與計算真實邊界條件</text>
-      </g>
-      
-      <!-- Engine Step 2 -->
-      <g transform="translate(10, 92)">
-        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-accent)" stroke-width="1.5" />
-        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="800" fill="var(--resume-text)">2. 鎖定最脆弱環節</text>
-        <text x="8" y="34" class="resume-node-detail" font-size="8.8" font-weight="600" fill="var(--resume-accent)">精準點穴單一限速速率瓶頸</text>
-      </g>
+      <!-- Chamber Header Pill -->
+      <rect x="12" y="12" width="248" height="28" rx="6" fill="var(--resume-accent)" />
+      <text x="136" y="30" font-size="10.5" font-weight="800" fill="var(--resume-action-text)" letter-spacing="0.06em" text-anchor="middle">⚡ 關鍵瓶頸擊穿與不變量核心</text>
 
-      <!-- Engine Step 3 -->
-      <g transform="translate(10, 144)">
-        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1" />
-        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="700" fill="var(--resume-accent)">3. 建立不變量閘門</text>
-        <text x="8" y="34" class="resume-node-detail" font-size="8.8">注入確定性防護與斷路熔斷機制</text>
+      
+        <!-- Core Stage 1 -->
+        <g class="ue-stage-box" transform="translate(12, 52)">
+          <rect x="0" y="0" width="248" height="78" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          
+          <text x="12" y="24" font-size="12.5" font-weight="800" fill="var(--resume-text)">
+            <tspan fill="var(--resume-muted)" font-size="10.5" font-family="monospace">01 · </tspan>第一性原理邊界剖析
+          </text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-text)" opacity="0.9">剝離表象雜訊與盲目增購，定位根本物理與計</text>
+          <text x="12" y="60" font-size="10" font-weight="500" fill="var(--resume-muted)">算制約。</text>
+        </g>
+        <line x1="136" y1="130" x2="136" y2="142" stroke="var(--resume-accent)" stroke-width="2" stroke-dasharray="2 2" />
+        
+        <!-- Core Stage 2 -->
+        <g class="ue-stage-box" transform="translate(12, 142)">
+          <rect x="0" y="0" width="248" height="78" rx="8" fill="var(--resume-panel)" stroke="var(--resume-accent)" stroke-width="2" />
+          <rect x="0" y="0" width="4" height="78" fill="var(--resume-accent)" rx="2" />
+          <text x="12" y="24" font-size="12.5" font-weight="800" fill="var(--resume-accent)">
+            <tspan fill="var(--resume-muted)" font-size="10.5" font-family="monospace">02 · </tspan>穿透關鍵脆弱弱環節
+          </text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-text)" opacity="0.9">在唯一限速瓶頸處重構拓撲，實作無鎖緩衝與</text>
+          <text x="12" y="60" font-size="10" font-weight="500" fill="var(--resume-muted)">同態校正。</text>
+        </g>
+        <line x1="136" y1="220" x2="136" y2="232" stroke="var(--resume-accent)" stroke-width="2" stroke-dasharray="2 2" />
+        
+        <!-- Core Stage 3 -->
+        <g class="ue-stage-box" transform="translate(12, 232)">
+          <rect x="0" y="0" width="248" height="78" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          
+          <text x="12" y="24" font-size="12.5" font-weight="800" fill="var(--resume-text)">
+            <tspan fill="var(--resume-muted)" font-size="10.5" font-family="monospace">03 · </tspan>錨定不變量防護閘門
+          </text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-text)" opacity="0.9">注入確定性斷路熔斷器、型別安全契約與 S</text>
+          <text x="12" y="60" font-size="10" font-weight="500" fill="var(--resume-muted)">HA-256 數位封籤。</text>
+        </g>
+        
+        
+
+      <!-- Chamber Status Indicator -->
+      <g transform="translate(12, 308)">
+        <circle cx="6" cy="6" r="3" fill="#4fac74" />
+        <text x="16" y="10" font-size="9" font-weight="700" fill="var(--resume-muted)" font-family="monospace">CONVERGENCE INVARIANT LOCKED</text>
       </g>
     </g>
 
-    <!-- CONNECTOR ENGINE -> B -->
-    <path d="M 495 112 L 530 112" class="resume-flow-line" stroke="var(--resume-accent)" stroke-width="2" marker-end="url(#ue-arrow)" />
+    <!-- DIVERGENCE FLOW LINES (Engine -> B) -->
+    <g class="ue-diverge-wires" fill="none">
+      <path d="M 576 120 C 600 120, 610 84, 638 84" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+      <path d="M 576 145 C 600 145, 610 156, 638 156" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+      <path d="M 576 205 C 600 205, 610 228, 638 228" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+      <path d="M 576 240 C 600 240, 610 300, 638 300" stroke="url(#ue-wire-out)" stroke-width="1.8" marker-end="url(#ue-arrow-out)" />
+    </g>
 
-    <!-- BOX B: Deterministic High Value Outcome -->
-    <g class="ue-box-b" transform="translate(535, 15)">
-      <rect x="0" y="0" width="210" height="195" rx="8" class="resume-node-box" />
-      <rect x="0" y="0" width="210" height="28" rx="8" class="resume-node-pill" />
-      <rect x="0" y="20" width="210" height="8" class="resume-node-pill" />
-      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.06em">B 端：確定性高價值產出</text>
+    <!-- COLUMN B: Deterministic High-Value Outcomes -->
+    <g class="ue-group-yields" transform="translate(644, 16)">
+      <!-- Column Header -->
+      <rect x="0" y="0" width="220" height="26" rx="5" fill="var(--resume-tint)" stroke="var(--resume-border)" stroke-width="1" />
+      <circle cx="12" cy="13" r="4" fill="#4fac74" />
+      <text x="24" y="17" font-size="10.5" font-weight="800" fill="var(--resume-text)" letter-spacing="0.06em">確定性高價值產出</text>
+
       
-      <text x="12" y="52" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 10× 模型訓練速度提升（實測指標）</text>
-      <text x="12" y="87" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 次微秒級硬體確定性同步（工廠上線前測試）</text>
-      <text x="12" y="122" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ TALK 1.8 預算超標熔斷收斂 (6.0 → 4.6)</text>
-      <text x="12" y="157" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 原始資料零滅失保證（不可變真理層）</text>
-
-      <text x="12" y="188" class="resume-node-detail" font-size="8.5" fill="var(--resume-accent)" font-weight="700">Deterministic / Zero Loss</text>
+        <!-- Yield Capsule 1 -->
+        <g class="ue-yield-card" transform="translate(0, 38)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#285c4d" font-weight="800">✓ </tspan>次微秒級硬體確定性同步
+          </text>
+          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">工廠產線上線前驗收通過</text>
+        </g>
+        <!-- Yield Capsule 2 -->
+        <g class="ue-yield-card" transform="translate(0, 110)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#285c4d" font-weight="800">✓ </tspan>10× 訓練模型吞吐提速
+          </text>
+          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">同等硬體下釋放，零資本支出</text>
+        </g>
+        <!-- Yield Capsule 3 -->
+        <g class="ue-yield-card" transform="translate(0, 182)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#285c4d" font-weight="800">✓ </tspan>TALK 1.8 預算超標熔斷
+          </text>
+          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">6.0 → 4.6 計算成本收斂</text>
+        </g>
+        <!-- Yield Capsule 4 -->
+        <g class="ue-yield-card" transform="translate(0, 254)">
+          <rect x="0" y="0" width="220" height="60" rx="8" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1.2" />
+          <line x1="216" y1="0" x2="220" y2="0" stroke="#4fac74" stroke-width="3" stroke-linecap="round" />
+          <text x="12" y="24" font-size="12" font-weight="700" fill="var(--resume-text)">
+            <tspan fill="#285c4d" font-weight="800">✓ </tspan>原始資料零滅失保證
+          </text>
+          <text x="12" y="44" font-size="10.5" font-weight="700" fill="var(--resume-accent)">不可變底層真理與顯式確認</text>
+        </g>
     </g>
   </svg>
 </div>

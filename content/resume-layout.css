@@ -203,6 +203,7 @@ html:not(.resume-enhanced) .resume-navigation [data-resume-locale]+[data-resume-
 .resume-svg-wrapper::-webkit-scrollbar-track{background:transparent}
 .resume-svg-wrapper::-webkit-scrollbar-thumb{background:var(--resume-border);border-radius:999px}
 .resume-svg-diagram{width:100%;min-width:620px;max-width:760px;height:auto;display:block;margin:auto;font-family:inherit}
+.resume-universal-engine-svg{max-width:880px;min-width:660px}
 .resume-node-box{fill:var(--resume-panel);stroke:var(--resume-border);stroke-width:1.5px;transition:stroke .15s}
 .resume-node-highlight{fill:var(--resume-tint);stroke:var(--resume-accent);stroke-width:1.8px}
 .resume-node-alert{fill:var(--resume-panel);stroke:#c25953;stroke-width:1.8px}
