@@ -280,4 +280,64 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
   .resume-reading-controls button{padding:4px 6px;min-width:30px}
 }
 
+/* --- Reader Lens Controller & Perspective Projections --- */
+.resume-lens-selector{display:inline-flex;align-items:center;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:6px;padding:2px;gap:2px}
+.resume-lens-selector button{border:none;background:transparent;color:var(--resume-muted);font-size:.73rem;font-weight:600;padding:3px 8px;border-radius:4px;cursor:pointer;transition:all .15s}
+.resume-lens-selector button:hover{color:var(--resume-text)}
+.resume-lens-selector button[aria-pressed="true"]{background:var(--resume-panel);color:var(--resume-accent);box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+
+.resume-pov-badge{display:none;margin-top:14px;padding:10px 14px;border-radius:6px;font-size:.82rem;line-height:1.5;background:var(--resume-tint);border-left:3px solid var(--resume-accent);color:var(--resume-text)}
+.resume-pov-label{font-size:.68rem;font-weight:800;letter-spacing:.05em;color:var(--resume-accent);display:block;margin-bottom:3px;text-transform:uppercase}
+html[data-resume-lens="staff"] .resume-pov-badge[data-pov="staff"],
+html[data-resume-lens="em"] .resume-pov-badge[data-pov="em"],
+html[data-resume-lens="recruiter"] .resume-pov-badge[data-pov="recruiter"]{display:block}
+
+html[data-resume-lens="staff"] .resume-triad-item:nth-child(2),
+html[data-resume-lens="staff"] .resume-triad-item:nth-child(3){border-color:var(--resume-accent);box-shadow:0 0 0 1px var(--resume-accent)}
+html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);color:var(--resume-action-text)}
+
+/* --- Intent Contract & Epistemic Boundaries Card --- */
+.resume-intent-contract-card{margin:18px 0 12px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-panel);overflow:hidden;transition:border-color .2s}
+.resume-intent-contract-card[open]{border-color:var(--resume-accent)}
+.resume-contract-toggle{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--resume-tint);cursor:pointer;font-size:.82rem;font-weight:600;color:var(--resume-text);list-style:none}
+.resume-contract-toggle::-webkit-details-marker{display:none}
+.resume-contract-title{display:inline-flex;align-items:center;gap:6px}
+.resume-contract-badge{font-size:.7rem;padding:2px 6px;border-radius:4px;background:var(--resume-panel);border:1px solid var(--resume-border);color:var(--resume-accent);font-weight:700}
+.resume-contract-body{padding:14px;display:flex;flex-direction:column;gap:10px;font-size:.82rem;line-height:1.55}
+.resume-contract-row{display:flex;flex-direction:column;gap:4px}
+.resume-contract-tag{font-size:.68rem;font-weight:800;letter-spacing:.05em;color:var(--resume-accent);text-transform:uppercase}
+.resume-contract-desc{margin:0;color:var(--resume-text)}
+.resume-contract-list{margin:0;padding-left:18px;color:var(--resume-muted)}
+.resume-contract-list li{margin-bottom:3px}
+
+/* --- Architecture Duel (Grill This Architecture) Drawer --- */
+.resume-duel-drawer{margin:16px 0;border:1px solid var(--resume-border);border-radius:10px;background:var(--resume-panel);overflow:hidden;transition:all .2s}
+.resume-duel-drawer[open]{box-shadow:0 4px 16px rgba(0,0,0,0.06);border-color:var(--resume-accent)}
+.resume-duel-summary{padding:10px 14px;background:var(--resume-tint);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+.resume-duel-summary::-webkit-details-marker{display:none}
+.resume-duel-summary-content{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;font-weight:700;color:var(--resume-text)}
+.resume-duel-pill{font-size:.7rem;font-weight:600;padding:2px 8px;border-radius:12px;background:var(--resume-accent);color:var(--resume-action-text)}
+.resume-duel-arena{padding:16px;display:flex;flex-direction:column;gap:14px;background:var(--resume-panel)}
+.resume-duel-exchange{display:flex;flex-direction:column;gap:10px;padding-bottom:12px;border-bottom:1px dashed var(--resume-border)}
+.resume-duel-exchange:last-child{border-bottom:none;padding-bottom:0}
+.resume-duel-bubble{padding:12px 14px;border-radius:8px;font-size:.83rem;line-height:1.55}
+.resume-duel-challenger{background:var(--resume-tint);border-left:3px solid #d2655b;color:var(--resume-text)}
+.resume-duel-defense{background:var(--resume-panel);border:1px solid var(--resume-border);border-left:3px solid var(--resume-accent);color:var(--resume-text)}
+.resume-duel-role{display:flex;align-items:center;gap:6px;font-size:.76rem;margin-bottom:4px;font-weight:700}
+.resume-duel-tag{font-size:.65rem;background:var(--resume-tint);color:var(--resume-accent);padding:1px 5px;border-radius:3px;margin-left:auto}
+.resume-duel-text{margin:0}
+
+/* --- Cryptographic Proof Receipt --- */
+.resume-proof-receipt{margin:14px 0 8px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-tint);padding:10px 14px;font-size:.78rem;line-height:1.5}
+.resume-receipt-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.resume-receipt-title-wrap{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--resume-text)}
+.resume-receipt-status{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-weight:800;color:#285c4d;letter-spacing:.04em}
+.resume-receipt-dot{width:6px;height:6px;border-radius:50%;background:#4fac74}
+.resume-receipt-body{display:flex;flex-direction:column;gap:3px;color:var(--resume-muted)}
+.resume-receipt-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.resume-receipt-key{font-weight:700;color:var(--resume-text);margin-right:2px}
+.resume-receipt-hash{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;font-size:.72rem;background:var(--resume-panel);padding:1px 5px;border-radius:3px;border:1px solid var(--resume-border);color:var(--resume-text);word-break:break-all}
+.resume-receipt-invariant{color:var(--resume-accent);font-weight:600}
+
+
 

@@ -13,7 +13,7 @@ web-resume/
 ├── content/
 │   ├── data/                          # [1. 內容資料層] 模組化宣告式資料源
 │   │   ├── identity.json              # 個人身份、職稱、聯絡信箱與外鏈
-│   │   ├── career/                    # 經歷獨立檔（定義職務、三元結構、指標驗證）
+│   │   ├── career/                    # 經歷獨立檔（定義意圖契約、架構答辯、多視角重點）
 │   │   │   ├── dynasafe.json
 │   │   │   ├── metgauge.json
 │   │   │   ├── utechzone.json
@@ -22,7 +22,7 @@ web-resume/
 │   │   │   ├── research-learning.json
 │   │   │   ├── education.json
 │   │   │   └── skills.json
-│   │   ├── projects/                  # 專案獨立檔（定義架構、邊界、行動導引）
+│   │   ├── projects/                  # 專案獨立檔（定義架構、不變量、邊界與答辯）
 │   │   │   ├── study-atlas.json
 │   │   │   ├── transcribe-for-x.json
 │   │   │   └── windowphase.json
@@ -36,23 +36,41 @@ web-resume/
 │   ├── project-case-studies.json      # 三大專案長篇案例研究
 │   └── resume-assets.json             # CV 二進位檔案資訊與 SHA-256 數位封籤
 ├── scripts/
-│   ├── generators/components/         # [2. 圖解渲染引擎] 參數化向量生成器
+│   ├── generators/components/         # [2. 圖解與亮點渲染引擎] 參數化向量與互動組件
 │   │   ├── svg-pipeline.mjs           # 通用資料管線圖（自動節點排版與連接線）
 │   │   ├── svg-topology.mjs           # 通用感測器/硬體拓撲圖
 │   │   ├── svg-circuit-breaker.mjs    # 通用閘門熔斷/雙軌保真/樣張卡片
-│   │   └── agent-ir.mjs               # 通用 AST/IR 語法高亮生成器
+│   │   ├── agent-ir.mjs               # 通用 AST/IR 語法高亮生成器
+│   │   ├── intent-contract.mjs        # 意圖契約與認知邊界卡生成器
+│   │   ├── architecture-duel.mjs      # ⚔️ 架構審查與對抗答辯抽屜生成器
+│   │   └── proof-receipt.mjs          # 密碼學工程數位收據生成器
 │   ├── invariants/                    # [4. 工程品質門禁] CI 驗證閘門
 │   │   ├── check-i18n-parity.mjs      # 詞條雙向完整性與變數樣板檢查
 │   │   ├── check-digital-seals.mjs    # PDF 與論文 SHA-256 數位封籤校驗
 │   │   ├── check-wcag-and-viewport.mjs# WCAG AA 對比度 (>=4.5) 與行動端 320px 防溢出
-│   │   └── run-all-invariants.mjs     # 綜合門禁執行器 (0.12s 毫秒級通過)
+│   │   ├── check-intent-contracts.mjs # 意圖契約、架構答辯與多重視角完整性檢驗
+│   │   └── run-all-invariants.mjs     # 綜合門禁執行器 (0.16s 毫秒級通過 6 道門禁)
 │   └── lib/
 │       ├── data-loader.mjs            # 內容資料聚合器（支援向下相容同步）
 │       ├── theme-engine.mjs           # Token 主題編譯與切換引擎
 │       ├── resume-markup.mjs          # 佈局組裝 Orchestrator（已瘦身解耦）
+│       ├── resume-reading.mjs         # 前端客戶端控制器（透鏡切換、持久化）
 │       └── resume-source.mjs          # Schema 契約驗證
 └── app/                               # Next.js 15 App Router 與靜態匯出管線
 ```
+
+---
+
+## ⚡ 四大突破性展示亮點（The 4 Pillars）
+
+1. **`render-for-x` 讀者視角投影切換器（Reader Lenses）**：
+   - 頂部控制列支援 **🏛️ Staff Architect**（不變量、瓶頸與失敗邊界）、**🚀 Engineering Manager**（里程碑、ROI 與風險化解）、**🎯 Deep Tech Recruiter**（物理學第一性原理 + 軟硬整合 + Agent 意圖保真稀缺交集能力）三重视角隨選切換。
+2. **`intentforge` 意圖契約與認知邊界卡（Intent Contract & Epistemic Boundaries）**：
+   - 每個核心經歷與專案均附有嚴格定義的**不變量保證（Strict Invariant）**、**顯式非目標（Explicit Non-Goals）**與**失效臨界條件（Failure Conditions）**。
+3. **`mirrorAgent` 架構對抗答辯（⚔️ Grill This Architecture / Duel Mode）**：
+   - 可互動展開的架構審查抽屜，收錄針對架構選擇與極端負載失效點的第一性原理辯護。
+4. **`preference` 密碼學工程收據與即時校驗（Cryptographic Proofs & Receipts）**：
+   - 嵌入 SHA-256 數位封籤與可重現的 CI 測試斷言收據，以真實工程證據驗證「10× 加速」與「零資料滅失」。
 
 ---
 

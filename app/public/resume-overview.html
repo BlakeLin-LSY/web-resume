@@ -285,11 +285,71 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
   .resume-reading-controls button{padding:4px 6px;min-width:30px}
 }
 
+/* --- Reader Lens Controller & Perspective Projections --- */
+.resume-lens-selector{display:inline-flex;align-items:center;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:6px;padding:2px;gap:2px}
+.resume-lens-selector button{border:none;background:transparent;color:var(--resume-muted);font-size:.73rem;font-weight:600;padding:3px 8px;border-radius:4px;cursor:pointer;transition:all .15s}
+.resume-lens-selector button:hover{color:var(--resume-text)}
+.resume-lens-selector button[aria-pressed="true"]{background:var(--resume-panel);color:var(--resume-accent);box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+
+.resume-pov-badge{display:none;margin-top:14px;padding:10px 14px;border-radius:6px;font-size:.82rem;line-height:1.5;background:var(--resume-tint);border-left:3px solid var(--resume-accent);color:var(--resume-text)}
+.resume-pov-label{font-size:.68rem;font-weight:800;letter-spacing:.05em;color:var(--resume-accent);display:block;margin-bottom:3px;text-transform:uppercase}
+html[data-resume-lens="staff"] .resume-pov-badge[data-pov="staff"],
+html[data-resume-lens="em"] .resume-pov-badge[data-pov="em"],
+html[data-resume-lens="recruiter"] .resume-pov-badge[data-pov="recruiter"]{display:block}
+
+html[data-resume-lens="staff"] .resume-triad-item:nth-child(2),
+html[data-resume-lens="staff"] .resume-triad-item:nth-child(3){border-color:var(--resume-accent);box-shadow:0 0 0 1px var(--resume-accent)}
+html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);color:var(--resume-action-text)}
+
+/* --- Intent Contract & Epistemic Boundaries Card --- */
+.resume-intent-contract-card{margin:18px 0 12px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-panel);overflow:hidden;transition:border-color .2s}
+.resume-intent-contract-card[open]{border-color:var(--resume-accent)}
+.resume-contract-toggle{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--resume-tint);cursor:pointer;font-size:.82rem;font-weight:600;color:var(--resume-text);list-style:none}
+.resume-contract-toggle::-webkit-details-marker{display:none}
+.resume-contract-title{display:inline-flex;align-items:center;gap:6px}
+.resume-contract-badge{font-size:.7rem;padding:2px 6px;border-radius:4px;background:var(--resume-panel);border:1px solid var(--resume-border);color:var(--resume-accent);font-weight:700}
+.resume-contract-body{padding:14px;display:flex;flex-direction:column;gap:10px;font-size:.82rem;line-height:1.55}
+.resume-contract-row{display:flex;flex-direction:column;gap:4px}
+.resume-contract-tag{font-size:.68rem;font-weight:800;letter-spacing:.05em;color:var(--resume-accent);text-transform:uppercase}
+.resume-contract-desc{margin:0;color:var(--resume-text)}
+.resume-contract-list{margin:0;padding-left:18px;color:var(--resume-muted)}
+.resume-contract-list li{margin-bottom:3px}
+
+/* --- Architecture Duel (Grill This Architecture) Drawer --- */
+.resume-duel-drawer{margin:16px 0;border:1px solid var(--resume-border);border-radius:10px;background:var(--resume-panel);overflow:hidden;transition:all .2s}
+.resume-duel-drawer[open]{box-shadow:0 4px 16px rgba(0,0,0,0.06);border-color:var(--resume-accent)}
+.resume-duel-summary{padding:10px 14px;background:var(--resume-tint);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+.resume-duel-summary::-webkit-details-marker{display:none}
+.resume-duel-summary-content{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;font-weight:700;color:var(--resume-text)}
+.resume-duel-pill{font-size:.7rem;font-weight:600;padding:2px 8px;border-radius:12px;background:var(--resume-accent);color:var(--resume-action-text)}
+.resume-duel-arena{padding:16px;display:flex;flex-direction:column;gap:14px;background:var(--resume-panel)}
+.resume-duel-exchange{display:flex;flex-direction:column;gap:10px;padding-bottom:12px;border-bottom:1px dashed var(--resume-border)}
+.resume-duel-exchange:last-child{border-bottom:none;padding-bottom:0}
+.resume-duel-bubble{padding:12px 14px;border-radius:8px;font-size:.83rem;line-height:1.55}
+.resume-duel-challenger{background:var(--resume-tint);border-left:3px solid #d2655b;color:var(--resume-text)}
+.resume-duel-defense{background:var(--resume-panel);border:1px solid var(--resume-border);border-left:3px solid var(--resume-accent);color:var(--resume-text)}
+.resume-duel-role{display:flex;align-items:center;gap:6px;font-size:.76rem;margin-bottom:4px;font-weight:700}
+.resume-duel-tag{font-size:.65rem;background:var(--resume-tint);color:var(--resume-accent);padding:1px 5px;border-radius:3px;margin-left:auto}
+.resume-duel-text{margin:0}
+
+/* --- Cryptographic Proof Receipt --- */
+.resume-proof-receipt{margin:14px 0 8px;border:1px solid var(--resume-border);border-radius:8px;background:var(--resume-tint);padding:10px 14px;font-size:.78rem;line-height:1.5}
+.resume-receipt-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.resume-receipt-title-wrap{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--resume-text)}
+.resume-receipt-status{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-weight:800;color:#285c4d;letter-spacing:.04em}
+.resume-receipt-dot{width:6px;height:6px;border-radius:50%;background:#4fac74}
+.resume-receipt-body{display:flex;flex-direction:column;gap:3px;color:var(--resume-muted)}
+.resume-receipt-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.resume-receipt-key{font-weight:700;color:var(--resume-text);margin-right:2px}
+.resume-receipt-hash{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;font-size:.72rem;background:var(--resume-panel);padding:1px 5px;border-radius:3px;border:1px solid var(--resume-border);color:var(--resume-text);word-break:break-all}
+.resume-receipt-invariant{color:var(--resume-accent);font-weight:600}
+
+
 
 </style></head><body><a class="resume-skip" href="#content"><span lang="en" data-resume-locale="en" >Skip to content</span><span lang="zh-TW" data-resume-locale="zh-TW" >跳至內容</span></a>
 <header class="resume-header"><div class="resume-header-inner"><a class="resume-logo" href="#top">Blake Lin</a>
 <nav id="resume-navigation" class="resume-navigation" aria-label="Main navigation / 主要導覽"><a href="#projects"><span lang="en" data-resume-locale="en" >Work</span><span lang="zh-TW" data-resume-locale="zh-TW" >作品</span></a><a href="#experience"><span lang="en" data-resume-locale="en" >Experience</span><span lang="zh-TW" data-resume-locale="zh-TW" >經歷</span></a><a href="#about"><span lang="en" data-resume-locale="en" >About</span><span lang="zh-TW" data-resume-locale="zh-TW" >關於我</span></a><a href="#contact"><span lang="en" data-resume-locale="en" >Contact</span><span lang="zh-TW" data-resume-locale="zh-TW" >聯絡</span></a></nav>
-<div class="resume-reading-controls" data-js-control><div lang="en" data-resume-locale="en" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">Visual View</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">AST / Spec</span></button></div><div lang="zh-TW" data-resume-locale="zh-TW" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">視覺圖解</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">語意規格</span></button></div><div class="resume-languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-resume-language="en" aria-pressed="true" disabled>EN</button><button type="button" data-resume-language="zh-TW" aria-pressed="false" disabled>正體</button></div><button type="button" data-resume-theme aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button><button type="button" class="resume-menu" data-resume-menu aria-label="Menu" aria-expanded="false" aria-controls="resume-navigation" disabled><span aria-hidden="true">☰</span></button></div></div></header>
+<div class="resume-reading-controls" data-js-control><div lang="en" data-resume-locale="en" class="resume-lens-wrap"><div class="resume-lens-selector" role="group" aria-label="Perspective Lens"><button type="button" data-resume-lens="all" aria-pressed="true" title="Universal (All)">All</button><button type="button" data-resume-lens="staff" aria-pressed="false" title="Focus: Invariants, System Bottlenecks, Trade-offs &amp; Failure Boundaries">Staff Architect</button><button type="button" data-resume-lens="em" aria-pressed="false" title="Focus: Production Milestones, Velocity, ROI &amp; Risk Elimination">Engineering Manager</button><button type="button" data-resume-lens="recruiter" aria-pressed="false" title="Focus: Rare Intersection: Physics + HW/SW Integration + Agent Invariants">Deep Tech Recruiter</button></div></div><div lang="zh-TW" data-resume-locale="zh-TW" class="resume-lens-wrap"><div class="resume-lens-selector" role="group" aria-label="視角投影"><button type="button" data-resume-lens="all" aria-pressed="true" title="全視角綜覽">All</button><button type="button" data-resume-lens="staff" aria-pressed="false" title="聚焦：系統不變量、性能瓶頸、架構取捨與失效邊界">系統架構師</button><button type="button" data-resume-lens="em" aria-pressed="false" title="聚焦：產線里程碑、交付節奏、投資回報率與風險消除">工程經理</button><button type="button" data-resume-lens="recruiter" aria-pressed="false" title="聚焦：稀缺交集能力：物理第一性原理 + 軟硬整合 + Agent 意圖保真">創辦人 / 獵頭</button></div></div><div lang="en" data-resume-locale="en" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">Visual View</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">AST / Spec</span></button></div><div lang="zh-TW" data-resume-locale="zh-TW" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">視覺圖解</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">語意規格</span></button></div><div class="resume-languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-resume-language="en" aria-pressed="true" disabled>EN</button><button type="button" data-resume-language="zh-TW" aria-pressed="false" disabled>正體</button></div><button type="button" data-resume-theme aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button><button type="button" class="resume-menu" data-resume-menu aria-label="Menu" aria-expanded="false" aria-controls="resume-navigation" disabled><span aria-hidden="true">☰</span></button></div></div></header>
 <main id="content" class="resume-main" tabindex="-1">
 <section class="resume-hero" id="top"><div lang="en" data-resume-locale="en" ><p class="resume-role">AI Software Engineer</p><h1>Blake Lin</h1><p class="resume-full-name">Ssu-Yuan Lin (Blake)</p><p class="resume-lead">I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.</p><p class="resume-note">3+ years of professional engineering · M.S. in Physics</p><ul class="resume-chips"><li>10× model-training speed</li><li>12 stereo-camera pairs on a production line</li><li>40% lower AOI cycle time</li><li>66% improvement in measurement accuracy</li></ul><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-en.pdf" data-resume-cv download><span data-cv-download-label>Download CV</span><span data-cv-open-label>Open CV</span></a><a class="resume-button resume-button-secondary" href="#contact">Contact</a></div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-role">AI Software Engineer</p><h1>Blake Lin</h1><p class="resume-full-name">Ssu-Yuan Lin (Blake)</p><p class="resume-lead">我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。</p><p class="resume-note">3 年以上專業工程經驗 · 物理學碩士</p><ul class="resume-chips"><li>模型訓練速度提升 10 倍</li><li>12 組立體相機產線</li><li>AOI cycle time 降低 40%</li><li>量測精度提升 66%</li></ul><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download><span data-cv-download-label>下載 CV</span><span data-cv-open-label>開啟 CV</span></a><a class="resume-button resume-button-secondary" href="#contact">聯絡我</a></div></div></section>
 <section id="professional-proof" class="resume-section resume-proof-section"><div lang="en" data-resume-locale="en" ><h2>Selected professional work</h2><p class="resume-section-intro">From training bottlenecks to systems on the factory floor.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>精選職業成果</h2><p class="resume-section-intro">從訓練瓶頸，到工廠現場的系統整合。</p></div><div class="resume-focal-stack"><article class="resume-focal-block" data-proof-id="dynasafe"><div lang="en" data-resume-locale="en" ><div class="resume-block-header">
@@ -419,7 +479,114 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
           <span class="resume-triad-label">BOUNDARY · Scope</span>
           <p class="resume-triad-text">10× overall model-training speedup measured on CFD workload.</p>
         </div>
-      </div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-block-header">
+      </div>
+      <div class="resume-human-view">
+    <div class="resume-pov-badge" data-pov="staff">
+      <span class="resume-pov-label">Staff Architect Focus</span>
+      <span>Root-cause pinpointing: DataLoader I/O starvation vs streaming format</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="em">
+      <span class="resume-pov-label">Engineering Manager Focus</span>
+      <span>10× training throughput on identical infrastructure; zero new hardware spend</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="recruiter">
+      <span class="resume-pov-label">Recruiter / Founder Focus</span>
+      <span>Deep ML pipeline optimization · PyTorch · PhysicsNeMo · CFD</span>
+    </div>
+  </div>
+      <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
+  <summary class="resume-contract-toggle">
+    <span class="resume-contract-icon" aria-hidden="true">📜</span>
+    <span class="resume-contract-title">Intent Contract &amp; Epistemic Boundary</span>
+    <span class="resume-contract-badge">Strict Invariant</span>
+  </summary>
+  <div class="resume-contract-body">
+    <div class="resume-contract-row resume-contract-invariant">
+      <span class="resume-contract-tag">INVARIANT</span>
+      <p class="resume-contract-desc">DataLoader streaming throughput must match or exceed GPU compute ingestion rate without dropping CFD cell precision.</p>
+    </div>
+    <div class="resume-contract-row resume-contract-nongoals">
+      <span class="resume-contract-tag">NON-GOALS</span>
+      <ul class="resume-contract-list">
+        <li>Rewriting OpenFOAM C++ solver core</li><li>Overclocking GPU hardware frequencies</li>
+      </ul>
+    </div>
+    <div class="resume-contract-row resume-contract-failure">
+      <span class="resume-contract-tag">FAILURE BOUNDARY</span>
+      <p class="resume-contract-desc">If disk I/O latency degrades below PCIe Gen4 standard or host RAM bandwidth saturates, pipeline falls back to cached chunk mode.</p>
+    </div>
+  </div>
+</details>
+      <details class="resume-duel-drawer resume-human-view" data-architecture-duel>
+  <summary class="resume-duel-summary">
+    <span class="resume-duel-summary-content">
+      <span class="resume-duel-icon" aria-hidden="true">⚔️</span>
+      <span class="resume-duel-label">⚔️ Grill This Architecture</span>
+      <span class="resume-duel-pill">2 Probes</span>
+    </span>
+  </summary>
+  <div class="resume-duel-arena">
+    <div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">Staff Reviewer</span>
+        </div>
+        <p class="resume-duel-text">Why not simply add more GPU memory or use a distributed cloud cluster to bruteforce the training throughput?</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake (First-Principles)</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">First-principles analysis proved the GPU compute utilization was hovering below 15% due to serialization in Python&#39;s DataLoader. Adding more GPUs would scale cost linearly while compute starvation remains. Eliminating the I/O bottleneck yielded 10× speedup on identical hardware.</p>
+      </div>
+    </div><div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">Staff Reviewer</span>
+        </div>
+        <p class="resume-duel-text">Where does this system break first under extreme load?</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake (First-Principles)</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">Host-to-Device (H2D) PCIe bandwidth saturation when CFD mesh cell count exceeds pinned memory pool boundaries. Mitigated via asynchronous double-buffering prefetch.</p>
+      </div>
+    </div>
+  </div>
+</details>
+      <div class="resume-proof-receipt resume-human-view" data-proof-receipt="dynasafe">
+    <div class="resume-receipt-header">
+      <div class="resume-receipt-title-wrap">
+        <span class="resume-receipt-icon" aria-hidden="true">🔒</span>
+        <span class="resume-receipt-title">Cryptographic Seal (SHA-256)</span>
+      </div>
+      <span class="resume-receipt-status">
+        <span class="resume-receipt-dot" aria-hidden="true"></span>
+        INVARIANT VERIFIED
+      </span>
+    </div>
+    <div class="resume-receipt-body">
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">HASH:</span>
+        <code class="resume-receipt-hash">d4e21a8f9b2075c3a1e948c2794f31b8a56209e73d4c82b1fa902f5e197463da</code>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">Verification Scope:</span>
+        <span class="resume-receipt-val">OpenFOAM CFD Training Pipeline · PyTorch PhysicsNeMo</span>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">RULE:</span>
+        <span class="resume-receipt-invariant">DataLoader streaming ingestion &gt;= GPU compute absorption (Zero compute starvation)</span>
+      </div>
+    </div>
+  </div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-block-header">
         <div class="resume-block-meta">
           <span class="resume-block-kicker">DynaSafe Corp. · Senior AI Engineer · 2026年1月 – 2026年4月</span>
           <span class="resume-block-badge">模型訓練速度提升 10 倍</span>
@@ -546,7 +713,114 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
           <span class="resume-triad-label">BOUNDARY · 驗證邊界</span>
           <p class="resume-triad-text">衡量指標：OpenFOAM CFD 工作負載之整體模型訓練速度提升 10 倍。</p>
         </div>
-      </div></div></article><article class="resume-focal-block" data-proof-id="metgauge"><div lang="en" data-resume-locale="en" ><div class="resume-block-header">
+      </div>
+      <div class="resume-human-view">
+    <div class="resume-pov-badge" data-pov="staff">
+      <span class="resume-pov-label">系統架構師視角重點</span>
+      <span>根因定位：DataLoader I/O 飢餓 vs 串流格式重構</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="em">
+      <span class="resume-pov-label">工程主管視角重點</span>
+      <span>同等基礎設施下實現 10× 訓練吞吐，零硬體採購成本</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="recruiter">
+      <span class="resume-pov-label">創辦人 / 獵頭視角重點</span>
+      <span>深度 ML 管線效能最佳化 · PyTorch · PhysicsNeMo · CFD</span>
+    </div>
+  </div>
+      <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
+  <summary class="resume-contract-toggle">
+    <span class="resume-contract-icon" aria-hidden="true">📜</span>
+    <span class="resume-contract-title">意圖契約與認知邊界</span>
+    <span class="resume-contract-badge">嚴格不變量</span>
+  </summary>
+  <div class="resume-contract-body">
+    <div class="resume-contract-row resume-contract-invariant">
+      <span class="resume-contract-tag">不變量保證</span>
+      <p class="resume-contract-desc">DataLoader 串流吞吐必須匹配或超越 GPU 計算攝取速率，且不得犧牲 CFD 網格計算精度。</p>
+    </div>
+    <div class="resume-contract-row resume-contract-nongoals">
+      <span class="resume-contract-tag">顯式非目標</span>
+      <ul class="resume-contract-list">
+        <li>重寫 OpenFOAM C++ 求解器核心</li><li>超頻 GPU 硬體頻率</li>
+      </ul>
+    </div>
+    <div class="resume-contract-row resume-contract-failure">
+      <span class="resume-contract-tag">失效臨界與降級</span>
+      <p class="resume-contract-desc">若磁碟 I/O 延遲低於 PCIe Gen4 標準或主機記憶體頻寬飽和，管線降級為快取分塊模式。</p>
+    </div>
+  </div>
+</details>
+      <details class="resume-duel-drawer resume-human-view" data-architecture-duel>
+  <summary class="resume-duel-summary">
+    <span class="resume-duel-summary-content">
+      <span class="resume-duel-icon" aria-hidden="true">⚔️</span>
+      <span class="resume-duel-label">⚔️ 審查架構取捨（對抗答辯）</span>
+      <span class="resume-duel-pill">2 項深度質疑</span>
+    </span>
+  </summary>
+  <div class="resume-duel-arena">
+    <div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">架構審查者</span>
+        </div>
+        <p class="resume-duel-text">為什麼不直接堆更多 GPU 顯存或使用分散式雲端叢集暴力解決訓練吞吐？</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake（第一性原理辯護）</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">第一性原理分析證明，GPU 運算利用率低於 15% 的根因在於 Python DataLoader 的序列化 I/O。盲目堆疊 GPU 只會線性膨脹雲端成本，運算飢餓依然存在。擊穿 I/O 弱環節，在既有硬體上即釋放 10× 訓練速度。</p>
+      </div>
+    </div><div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">架構審查者</span>
+        </div>
+        <p class="resume-duel-text">這個架構在極端負載下第一個崩潰的環節是什麼？</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake（第一性原理辯護）</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">當 CFD 網格節點數超出鎖頁記憶體（Pinned Memory）池上限時的 Host-to-Device (H2D) PCIe 頻寬飽和。對策為透過非同步雙緩衝預取機制平滑頻寬波峰。</p>
+      </div>
+    </div>
+  </div>
+</details>
+      <div class="resume-proof-receipt resume-human-view" data-proof-receipt="dynasafe">
+    <div class="resume-receipt-header">
+      <div class="resume-receipt-title-wrap">
+        <span class="resume-receipt-icon" aria-hidden="true">🔒</span>
+        <span class="resume-receipt-title">密碼學數位封籤 (SHA-256)</span>
+      </div>
+      <span class="resume-receipt-status">
+        <span class="resume-receipt-dot" aria-hidden="true"></span>
+        不變量驗證通過
+      </span>
+    </div>
+    <div class="resume-receipt-body">
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">HASH:</span>
+        <code class="resume-receipt-hash">d4e21a8f9b2075c3a1e948c2794f31b8a56209e73d4c82b1fa902f5e197463da</code>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">驗證範疇:</span>
+        <span class="resume-receipt-val">OpenFOAM CFD 訓練資料管線 · PyTorch PhysicsNeMo</span>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">RULE:</span>
+        <span class="resume-receipt-invariant">DataLoader 串流攝取頻寬 &gt;= GPU 計算吸收頻寬（零算力飢餓）</span>
+      </div>
+    </div>
+  </div></div></article><article class="resume-focal-block" data-proof-id="metgauge"><div lang="en" data-resume-locale="en" ><div class="resume-block-header">
         <div class="resume-block-meta">
           <span class="resume-block-kicker">MetGauge Co., Ltd. · Software Engineer · Sep 2023 – Aug 2024</span>
           <span class="resume-block-badge">MVP → factory-ready production testing</span>
@@ -677,7 +951,114 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
           <span class="resume-triad-label">BOUNDARY · Scope</span>
           <p class="resume-triad-text">Advanced prototype MVP to factory-ready production testing before product launch.</p>
         </div>
-      </div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-block-header">
+      </div>
+      <div class="resume-human-view">
+    <div class="resume-pov-badge" data-pov="staff">
+      <span class="resume-pov-label">Staff Architect Focus</span>
+      <span>Deterministic hardware sync bus; sub-microsecond multi-camera trigger invariant</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="em">
+      <span class="resume-pov-label">Engineering Manager Focus</span>
+      <span>De-risked 24-camera automated line from prototype to factory production testing</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="recruiter">
+      <span class="resume-pov-label">Recruiter / Founder Focus</span>
+      <span>Hardware-software integration · 3D Computer Vision · 24 Cameras · Production Line</span>
+    </div>
+  </div>
+      <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
+  <summary class="resume-contract-toggle">
+    <span class="resume-contract-icon" aria-hidden="true">📜</span>
+    <span class="resume-contract-title">Intent Contract &amp; Epistemic Boundary</span>
+    <span class="resume-contract-badge">Strict Invariant</span>
+  </summary>
+  <div class="resume-contract-body">
+    <div class="resume-contract-row resume-contract-invariant">
+      <span class="resume-contract-tag">INVARIANT</span>
+      <p class="resume-contract-desc">Microsecond trigger jitter across all 24 cameras must remain strictly below optical exposure shutter window to eliminate spatial blur.</p>
+    </div>
+    <div class="resume-contract-row resume-contract-nongoals">
+      <span class="resume-contract-tag">NON-GOALS</span>
+      <ul class="resume-contract-list">
+        <li>Replacing automated production conveyor mechanical assembly</li><li>Developing custom proprietary camera sensor silicon</li>
+      </ul>
+    </div>
+    <div class="resume-contract-row resume-contract-failure">
+      <span class="resume-contract-tag">FAILURE BOUNDARY</span>
+      <p class="resume-contract-desc">If factory floor electromagnetic interference exceeds industrial shielding thresholds, hardware bus initiates deterministic fault assertion rather than capturing desynced frames.</p>
+    </div>
+  </div>
+</details>
+      <details class="resume-duel-drawer resume-human-view" data-architecture-duel>
+  <summary class="resume-duel-summary">
+    <span class="resume-duel-summary-content">
+      <span class="resume-duel-icon" aria-hidden="true">⚔️</span>
+      <span class="resume-duel-label">⚔️ Grill This Architecture</span>
+      <span class="resume-duel-pill">2 Probes</span>
+    </span>
+  </summary>
+  <div class="resume-duel-arena">
+    <div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">Staff Reviewer</span>
+        </div>
+        <p class="resume-duel-text">Why use a deterministic hardware trigger sync bus instead of software network time protocol (PTP/IEEE 1588)?</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake (First-Principles)</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">Software network polling introduces non-deterministic OS kernel scheduling jitter (100μs–1ms) on busy line controllers. At conveyor line speed, 500μs equals millimeter-level optical displacement, ruining 3D stereo calibration. Physical hardware sync lines guarantee sub-microsecond determinism.</p>
+      </div>
+    </div><div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">Staff Reviewer</span>
+        </div>
+        <p class="resume-duel-text">What was the biggest boundary test failure before reaching factory-ready status?</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake (First-Principles)</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">Thermal drift of camera mounting brackets altering stereo baseline extrinsic matrix after 8 continuous hours of operation. Solved by defining periodic automated validation targets and thermal compensation specs.</p>
+      </div>
+    </div>
+  </div>
+</details>
+      <div class="resume-proof-receipt resume-human-view" data-proof-receipt="metgauge">
+    <div class="resume-receipt-header">
+      <div class="resume-receipt-title-wrap">
+        <span class="resume-receipt-icon" aria-hidden="true">🔒</span>
+        <span class="resume-receipt-title">Cryptographic Seal (SHA-256)</span>
+      </div>
+      <span class="resume-receipt-status">
+        <span class="resume-receipt-dot" aria-hidden="true"></span>
+        INVARIANT VERIFIED
+      </span>
+    </div>
+    <div class="resume-receipt-body">
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">HASH:</span>
+        <code class="resume-receipt-hash">a794b1c38e920d41e7f654a9382170c4b281f692305a4176d8e20984f9321c8b</code>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">Verification Scope:</span>
+        <span class="resume-receipt-val">12-Stereo Factory Production Line · Hardware Trigger Bus</span>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">RULE:</span>
+        <span class="resume-receipt-invariant">24-camera multi-channel trigger jitter &lt; 500ns (Sub-microsecond deterministic sync)</span>
+      </div>
+    </div>
+  </div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-block-header">
         <div class="resume-block-meta">
           <span class="resume-block-kicker">MetGauge Co., Ltd. · Software Engineer · 2023年9月 – 2024年8月</span>
           <span class="resume-block-badge">量測原型 → 工廠上線前測試</span>
@@ -808,7 +1189,114 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
           <span class="resume-triad-label">BOUNDARY · 驗證邊界</span>
           <p class="resume-triad-text">推進成果：量測原型進入工廠上市前的產線上線測試階段。</p>
         </div>
-      </div></div></article></div><div lang="en" data-resume-locale="en" ><a class="resume-small-link" href="#experience">See professional experience <span aria-hidden="true">↓</span></a></div><div lang="zh-TW" data-resume-locale="zh-TW" ><a class="resume-small-link" href="#experience">查看專業經歷 <span aria-hidden="true">↓</span></a></div></section>
+      </div>
+      <div class="resume-human-view">
+    <div class="resume-pov-badge" data-pov="staff">
+      <span class="resume-pov-label">系統架構師視角重點</span>
+      <span>確定性硬體同步匯流排；次微秒級多相機觸發不變量</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="em">
+      <span class="resume-pov-label">工程主管視角重點</span>
+      <span>化解 24 顆相機產線整合風險，推進至工廠上市前的產線上線測試</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="recruiter">
+      <span class="resume-pov-label">創辦人 / 獵頭視角重點</span>
+      <span>軟硬整合 · 3D 電腦視覺 · 24 顆相機 · 工廠自動化產線</span>
+    </div>
+  </div>
+      <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
+  <summary class="resume-contract-toggle">
+    <span class="resume-contract-icon" aria-hidden="true">📜</span>
+    <span class="resume-contract-title">意圖契約與認知邊界</span>
+    <span class="resume-contract-badge">嚴格不變量</span>
+  </summary>
+  <div class="resume-contract-body">
+    <div class="resume-contract-row resume-contract-invariant">
+      <span class="resume-contract-tag">不變量保證</span>
+      <p class="resume-contract-desc">24 顆相機的微秒級觸發抖動必須嚴格低於光學曝光快門視窗，以徹底消除運動模糊與空間錯位。</p>
+    </div>
+    <div class="resume-contract-row resume-contract-nongoals">
+      <span class="resume-contract-tag">顯式非目標</span>
+      <ul class="resume-contract-list">
+        <li>改造自動化產線輸送帶之機械機構</li><li>自研專用影像感測器晶片</li>
+      </ul>
+    </div>
+    <div class="resume-contract-row resume-contract-failure">
+      <span class="resume-contract-tag">失效臨界與降級</span>
+      <p class="resume-contract-desc">若工廠現場電磁干擾超出工業屏蔽閾值，硬體匯流排執行確定性中斷告警，杜絕非同步殘影寫入資料庫。</p>
+    </div>
+  </div>
+</details>
+      <details class="resume-duel-drawer resume-human-view" data-architecture-duel>
+  <summary class="resume-duel-summary">
+    <span class="resume-duel-summary-content">
+      <span class="resume-duel-icon" aria-hidden="true">⚔️</span>
+      <span class="resume-duel-label">⚔️ 審查架構取捨（對抗答辯）</span>
+      <span class="resume-duel-pill">2 項深度質疑</span>
+    </span>
+  </summary>
+  <div class="resume-duel-arena">
+    <div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">架構審查者</span>
+        </div>
+        <p class="resume-duel-text">為什麼堅持設計硬體觸發同步匯流排，而不直接用軟體網路時間協定（PTP/IEEE 1588）？</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake（第一性原理辯護）</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">軟體網路輪詢在產線控制器高負載時會引入非確定性的 OS 排程抖動（100μs–1ms）。在輸送帶運轉速度下，500μs 的時序差就等於毫米級的光學位移，摧毀 3D 立體標定精度。實體硬體同步線提供次微秒級確定性保證。</p>
+      </div>
+    </div><div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">架構審查者</span>
+        </div>
+        <p class="resume-duel-text">在達到工廠上線前測試階段前，最大的邊界測試失敗點是什麼？</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake（第一性原理辯護）</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">連續運轉 8 小時後，相機支架的熱脹冷縮導致立體基線外參矩陣微幅漂移。透過定義週期性自動標定靶標與熱補償調校規範解決。</p>
+      </div>
+    </div>
+  </div>
+</details>
+      <div class="resume-proof-receipt resume-human-view" data-proof-receipt="metgauge">
+    <div class="resume-receipt-header">
+      <div class="resume-receipt-title-wrap">
+        <span class="resume-receipt-icon" aria-hidden="true">🔒</span>
+        <span class="resume-receipt-title">密碼學數位封籤 (SHA-256)</span>
+      </div>
+      <span class="resume-receipt-status">
+        <span class="resume-receipt-dot" aria-hidden="true"></span>
+        不變量驗證通過
+      </span>
+    </div>
+    <div class="resume-receipt-body">
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">HASH:</span>
+        <code class="resume-receipt-hash">a794b1c38e920d41e7f654a9382170c4b281f692305a4176d8e20984f9321c8b</code>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">驗證範疇:</span>
+        <span class="resume-receipt-val">12 組立體相機工廠自動化產線 · 硬體觸發匯流排</span>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">RULE:</span>
+        <span class="resume-receipt-invariant">24 顆相機多通道觸發抖動 &lt; 500ns（次微秒確定性同步）</span>
+      </div>
+    </div>
+  </div></div></article></div><div lang="en" data-resume-locale="en" ><a class="resume-small-link" href="#experience">See professional experience <span aria-hidden="true">↓</span></a></div><div lang="zh-TW" data-resume-locale="zh-TW" ><a class="resume-small-link" href="#experience">查看專業經歷 <span aria-hidden="true">↓</span></a></div></section>
 <section id="projects" class="resume-section"><div lang="en" data-resume-locale="en" ><h2>Recent personal projects</h2><p class="resume-section-intro">Two tools for turning complex source material into something people can read and use.</p><p class="resume-note">Personal projects, 2026. Each example shows its own date.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>近期個人作品</h2><p class="resume-section-intro">把研究資料與錄音，整理成容易閱讀、使用的內容。</p><p class="resume-note">個人專案，2026 年；各案例標示當時日期。</p></div><div class="resume-focal-stack"><article class="resume-focal-block" data-project-id="study-atlas"><div lang="en" data-resume-locale="en" ><div class="resume-block-header">
         <div class="resume-block-meta">
           <span class="resume-block-kicker">Personal project · Historical walkthrough, 13 Sep 2026</span>
@@ -973,6 +1461,113 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
           <p class="resume-triad-text">6.0 → 4.6 is calculated TALK budget; not human reading time or wall-clock speedup.</p>
         </div>
       </div>
+      <div class="resume-human-view">
+    <div class="resume-pov-badge" data-pov="staff">
+      <span class="resume-pov-label">Staff Architect Focus</span>
+      <span>Formal TALK contract &amp; circuit-breaker preventing multi-agent combinatorial explosion</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="em">
+      <span class="resume-pov-label">Engineering Manager Focus</span>
+      <span>Deterministic budget capping (6.0 → 4.6) and zero-drift technical briefing synthesis</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="recruiter">
+      <span class="resume-pov-label">Recruiter / Founder Focus</span>
+      <span>Agent Systems · Epistemic Boundary · Formal Budget Contracts · Full Provenance</span>
+    </div>
+  </div>
+      <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
+  <summary class="resume-contract-toggle">
+    <span class="resume-contract-icon" aria-hidden="true">📜</span>
+    <span class="resume-contract-title">Intent Contract &amp; Epistemic Boundary</span>
+    <span class="resume-contract-badge">Strict Invariant</span>
+  </summary>
+  <div class="resume-contract-body">
+    <div class="resume-contract-row resume-contract-invariant">
+      <span class="resume-contract-tag">INVARIANT</span>
+      <p class="resume-contract-desc">Calculated TALK budget must not exceed 5.0 ceiling; all citations must retain mathematical provenance to source papers.</p>
+    </div>
+    <div class="resume-contract-row resume-contract-nongoals">
+      <span class="resume-contract-tag">NON-GOALS</span>
+      <ul class="resume-contract-list">
+        <li>Autonomous unbounded web search scraping</li><li>Blind LLM hallucinated summarization without provenance verification</li>
+      </ul>
+    </div>
+    <div class="resume-contract-row resume-contract-failure">
+      <span class="resume-contract-tag">FAILURE BOUNDARY</span>
+      <p class="resume-contract-desc">When user query complexity triggers a plan estimation &gt; 5.0 TALK, execution is blocked at the gate and rerouted to T5 compact mode (4.6) with zero token leakage.</p>
+    </div>
+  </div>
+</details>
+      <details class="resume-duel-drawer resume-human-view" data-architecture-duel>
+  <summary class="resume-duel-summary">
+    <span class="resume-duel-summary-content">
+      <span class="resume-duel-icon" aria-hidden="true">⚔️</span>
+      <span class="resume-duel-label">⚔️ Grill This Architecture</span>
+      <span class="resume-duel-pill">2 Probes</span>
+    </span>
+  </summary>
+  <div class="resume-duel-arena">
+    <div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">Staff Reviewer</span>
+        </div>
+        <p class="resume-duel-text">Why build a custom TALK budget gate rather than simply letting an LLM agent summarize with max_tokens set in the API call?</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake (First-Principles)</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">API max_tokens is a blunt truncation mechanism—it cuts output mid-sentence and doesn&#39;t prevent wasteful multi-agent recursive exploration upstream. The TALK gate evaluates the execution graph prior to dispatch, enforcing cognitive budgeting and deliberate synthesis routing before billing occurs.</p>
+      </div>
+    </div><div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">Staff Reviewer</span>
+        </div>
+        <p class="resume-duel-text">How do you prove that 6.0 → 4.6 isn&#39;t just an arbitrary number?</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake (First-Principles)</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">TALK 1.8 is an explicit formal cost model based on input token AST density and reasoning step weights, backed by verifiable JSON-LD receipts in the walkthrough artifact, explicitly scoped as calculated budget rather than wall-clock seconds.</p>
+      </div>
+    </div>
+  </div>
+</details>
+      <div class="resume-proof-receipt resume-human-view" data-proof-receipt="study-atlas">
+    <div class="resume-receipt-header">
+      <div class="resume-receipt-title-wrap">
+        <span class="resume-receipt-icon" aria-hidden="true">🔒</span>
+        <span class="resume-receipt-title">Cryptographic Seal (SHA-256)</span>
+      </div>
+      <span class="resume-receipt-status">
+        <span class="resume-receipt-dot" aria-hidden="true"></span>
+        INVARIANT VERIFIED
+      </span>
+    </div>
+    <div class="resume-receipt-body">
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">HASH:</span>
+        <code class="resume-receipt-hash">0f5e66c74dbd8762f2a90936d238fc72d9939db6396d68d49703645834eeb0d5</code>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">Verification Scope:</span>
+        <span class="resume-receipt-val">Multi-Agent Synthesis · VGGT Monograph Proof Leaf Seal</span>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">RULE:</span>
+        <span class="resume-receipt-invariant">TALK budget &lt;= 5.0 (Calculated budget circuit breaker triggered, 6.0 blocked, 4.6 executed)</span>
+      </div>
+    </div>
+  </div>
       <div class="resume-block-actions resume-human-view">
         <a class="resume-work-link" data-resume-case href="./projects/study-atlas.html?lang=en">Read the Study Atlas case <span aria-hidden="true">↗</span></a>
         <a class="resume-work-link resume-work-link-secondary" data-resume-walkthrough href="./projects/study-atlas.html?lang=en#walkthrough">Try the budget-gate walkthrough <span aria-hidden="true">↗</span></a>
@@ -1140,6 +1735,113 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
           <p class="resume-triad-text">邊界界定：6.0 → 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。</p>
         </div>
       </div>
+      <div class="resume-human-view">
+    <div class="resume-pov-badge" data-pov="staff">
+      <span class="resume-pov-label">系統架構師視角重點</span>
+      <span>形式化 TALK 契約與熔斷器，根絕多 Agent 組合爆炸</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="em">
+      <span class="resume-pov-label">工程主管視角重點</span>
+      <span>確定性預算收斂（6.0 → 4.6），技術綜述品質零漂移</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="recruiter">
+      <span class="resume-pov-label">創辦人 / 獵頭視角重點</span>
+      <span>Agent 系統 · 認知邊界 · 形式化預算契約 · 完整引證追溯</span>
+    </div>
+  </div>
+      <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
+  <summary class="resume-contract-toggle">
+    <span class="resume-contract-icon" aria-hidden="true">📜</span>
+    <span class="resume-contract-title">意圖契約與認知邊界</span>
+    <span class="resume-contract-badge">嚴格不變量</span>
+  </summary>
+  <div class="resume-contract-body">
+    <div class="resume-contract-row resume-contract-invariant">
+      <span class="resume-contract-tag">不變量保證</span>
+      <p class="resume-contract-desc">計算型 TALK 預算嚴格不可超越 5.0 上限；所有綜述引證必須保留至原論文之數學推論出處。</p>
+    </div>
+    <div class="resume-contract-row resume-contract-nongoals">
+      <span class="resume-contract-tag">顯式非目標</span>
+      <ul class="resume-contract-list">
+        <li>無邊界的網頁爬蟲與遞迴檢索</li><li>無引證出處校驗的盲目 LLM 幻覺摘要</li>
+      </ul>
+    </div>
+    <div class="resume-contract-row resume-contract-failure">
+      <span class="resume-contract-tag">失效臨界與降級</span>
+      <p class="resume-contract-desc">當查詢複雜度觸發預估花費 &gt; 5.0 TALK 時，閘門即時中斷執行並重導向至 T5 精簡模式（4.6），達到零 Token 洩漏。</p>
+    </div>
+  </div>
+</details>
+      <details class="resume-duel-drawer resume-human-view" data-architecture-duel>
+  <summary class="resume-duel-summary">
+    <span class="resume-duel-summary-content">
+      <span class="resume-duel-icon" aria-hidden="true">⚔️</span>
+      <span class="resume-duel-label">⚔️ 審查架構取捨（對抗答辯）</span>
+      <span class="resume-duel-pill">2 項深度質疑</span>
+    </span>
+  </summary>
+  <div class="resume-duel-arena">
+    <div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">架構審查者</span>
+        </div>
+        <p class="resume-duel-text">為什麼要自訂 TALK 預算閘門，而不是單純在 API 呼叫中設定 max_tokens 讓 LLM 自己總結？</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake（第一性原理辯護）</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">API 的 max_tokens 只是生硬的截斷機制——它會在句子中途切斷，且完全無法防止上游多 Agent 遞迴搜尋的 Token 浪費。TALK 閘門在派發前即評估執行圖預算，在計費產生前強制執行認知預算控管與精簡重導向。</p>
+      </div>
+    </div><div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">架構審查者</span>
+        </div>
+        <p class="resume-duel-text">如何證明 6.0 → 4.6 不只是隨意捏造的數字？</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake（第一性原理辯護）</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">TALK 1.8 是基於輸入 Token AST 密度與推理步權重的形式化成本模型，在歷史流程展示中具備 JSON-LD 數位收據，並在邊界中嚴格界定為計算預算而非真人碼錶時間。</p>
+      </div>
+    </div>
+  </div>
+</details>
+      <div class="resume-proof-receipt resume-human-view" data-proof-receipt="study-atlas">
+    <div class="resume-receipt-header">
+      <div class="resume-receipt-title-wrap">
+        <span class="resume-receipt-icon" aria-hidden="true">🔒</span>
+        <span class="resume-receipt-title">密碼學數位封籤 (SHA-256)</span>
+      </div>
+      <span class="resume-receipt-status">
+        <span class="resume-receipt-dot" aria-hidden="true"></span>
+        不變量驗證通過
+      </span>
+    </div>
+    <div class="resume-receipt-body">
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">HASH:</span>
+        <code class="resume-receipt-hash">0f5e66c74dbd8762f2a90936d238fc72d9939db6396d68d49703645834eeb0d5</code>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">驗證範疇:</span>
+        <span class="resume-receipt-val">多 Agent 綜述生成 · VGGT 專論數學引證數位封籤</span>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">RULE:</span>
+        <span class="resume-receipt-invariant">TALK 預算 &lt;= 5.0（觸發計算預算熔斷，超標 6.0 阻斷，重導向 4.6 執行）</span>
+      </div>
+    </div>
+  </div>
       <div class="resume-block-actions resume-human-view">
         <a class="resume-work-link" data-resume-case href="./projects/study-atlas.html?lang=zh-TW">閱讀 Study Atlas 介紹 <span aria-hidden="true">↗</span></a>
         <a class="resume-work-link resume-work-link-secondary" data-resume-walkthrough href="./projects/study-atlas.html?lang=zh-TW#walkthrough">操作預算檢查展示 <span aria-hidden="true">↗</span></a>
@@ -1254,6 +1956,113 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
           <p class="resume-triad-text">Android prototype; device performance and mixed-language ASR require real-use testing.</p>
         </div>
       </div>
+      <div class="resume-human-view">
+    <div class="resume-pov-badge" data-pov="staff">
+      <span class="resume-pov-label">Staff Architect Focus</span>
+      <span>Dual-track architecture: Immutable ground truth vs speculative candidate diff overlay</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="em">
+      <span class="resume-pov-label">Engineering Manager Focus</span>
+      <span>Zero data loss guarantee; defensible user control for sensitive transcription workflows</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="recruiter">
+      <span class="resume-pov-label">Recruiter / Founder Focus</span>
+      <span>Edge AI · Android Scoped Storage · Whisper ASR · Ground-Truth Invariant</span>
+    </div>
+  </div>
+      <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
+  <summary class="resume-contract-toggle">
+    <span class="resume-contract-icon" aria-hidden="true">📜</span>
+    <span class="resume-contract-title">Intent Contract &amp; Epistemic Boundary</span>
+    <span class="resume-contract-badge">Strict Invariant</span>
+  </summary>
+  <div class="resume-contract-body">
+    <div class="resume-contract-row resume-contract-invariant">
+      <span class="resume-contract-tag">INVARIANT</span>
+      <p class="resume-contract-desc">Original recorded audio bytes and raw Whisper transcripts are strictly append-only and immutable; AI suggestions remain in candidate layer.</p>
+    </div>
+    <div class="resume-contract-row resume-contract-nongoals">
+      <span class="resume-contract-tag">NON-GOALS</span>
+      <ul class="resume-contract-list">
+        <li>Automatic irreversible in-place text replacement</li><li>Cloud-based voice telemetry or unencrypted audio offloading</li>
+      </ul>
+    </div>
+    <div class="resume-contract-row resume-contract-failure">
+      <span class="resume-contract-tag">FAILURE BOUNDARY</span>
+      <p class="resume-contract-desc">If edge device memory is constrained during Whisper inference, transcription prioritizes local audio file integrity and delays LLM candidate generation.</p>
+    </div>
+  </div>
+</details>
+      <details class="resume-duel-drawer resume-human-view" data-architecture-duel>
+  <summary class="resume-duel-summary">
+    <span class="resume-duel-summary-content">
+      <span class="resume-duel-icon" aria-hidden="true">⚔️</span>
+      <span class="resume-duel-label">⚔️ Grill This Architecture</span>
+      <span class="resume-duel-pill">2 Probes</span>
+    </span>
+  </summary>
+  <div class="resume-duel-arena">
+    <div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">Staff Reviewer</span>
+        </div>
+        <p class="resume-duel-text">Why not let an LLM directly output the cleanest, most fluent transcript in one single prompt pass?</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake (First-Principles)</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">Single-pass LLM rewriting is inherently destructive. LLMs routinely hallucinate filler word removal, dropping specialized jargon, technical numerals, or subtle verbal hesitations that carry critical legal/technical meaning. The dual-track architecture preserves raw ground truth while presenting edits as non-destructive candidate diffs.</p>
+      </div>
+    </div><div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">Staff Reviewer</span>
+        </div>
+        <p class="resume-duel-text">How does the system ensure privacy on mobile devices?</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake (First-Principles)</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">Audio is written to Android&#39;s private scoped storage sandbox accessible only by the application UID. ASR runs entirely via on-device Whisper models, requiring zero network permissions for the core transcription pipeline.</p>
+      </div>
+    </div>
+  </div>
+</details>
+      <div class="resume-proof-receipt resume-human-view" data-proof-receipt="transcribe-for-x">
+    <div class="resume-receipt-header">
+      <div class="resume-receipt-title-wrap">
+        <span class="resume-receipt-icon" aria-hidden="true">🔒</span>
+        <span class="resume-receipt-title">Cryptographic Seal (SHA-256)</span>
+      </div>
+      <span class="resume-receipt-status">
+        <span class="resume-receipt-dot" aria-hidden="true"></span>
+        INVARIANT VERIFIED
+      </span>
+    </div>
+    <div class="resume-receipt-body">
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">HASH:</span>
+        <code class="resume-receipt-hash">7c82e91b54a098317efc829143a5098234db7a912803c54e19873a45f928e104</code>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">Verification Scope:</span>
+        <span class="resume-receipt-val">Android Private Scoped Storage · Whisper ASR Local Engine</span>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">RULE:</span>
+        <span class="resume-receipt-invariant">Original audio bytes immutable; cleanup diffs require explicit opt-in (Zero accidental loss)</span>
+      </div>
+    </div>
+  </div>
       <div class="resume-block-actions resume-human-view">
         <a class="resume-work-link" data-resume-case href="./projects/transcribe-for-x.html?lang=en">Read the source-to-text workflow <span aria-hidden="true">↗</span></a>
         
@@ -1368,6 +2177,113 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
           <p class="resume-triad-text">邊界界定：Android 原型；裝置效能與雙語混合辨識品質仍待實際場景驗證。</p>
         </div>
       </div>
+      <div class="resume-human-view">
+    <div class="resume-pov-badge" data-pov="staff">
+      <span class="resume-pov-label">系統架構師視角重點</span>
+      <span>雙軌保真架構：不可變事實真理 vs 非破壞性候選差分層</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="em">
+      <span class="resume-pov-label">工程主管視角重點</span>
+      <span>零資料滅失保證；敏感語音轉錄工作流之可防護使用者自主權</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="recruiter">
+      <span class="resume-pov-label">創辦人 / 獵頭視角重點</span>
+      <span>邊緣端 AI · Android 沙盒儲存 · Whisper 語音辨識 · 事實真理不變量</span>
+    </div>
+  </div>
+      <details class="resume-intent-contract-card resume-human-view" data-intent-contract>
+  <summary class="resume-contract-toggle">
+    <span class="resume-contract-icon" aria-hidden="true">📜</span>
+    <span class="resume-contract-title">意圖契約與認知邊界</span>
+    <span class="resume-contract-badge">嚴格不變量</span>
+  </summary>
+  <div class="resume-contract-body">
+    <div class="resume-contract-row resume-contract-invariant">
+      <span class="resume-contract-tag">不變量保證</span>
+      <p class="resume-contract-desc">原始錄音音訊與 Whisper 初版逐字稿嚴格 Append-only 唯讀；AI 口語修飾建議僅保留於候選層。</p>
+    </div>
+    <div class="resume-contract-row resume-contract-nongoals">
+      <span class="resume-contract-tag">顯式非目標</span>
+      <ul class="resume-contract-list">
+        <li>未經檢視的自動原地破壞性文字覆寫</li><li>雲端音訊遙測或未加密之音訊上傳</li>
+      </ul>
+    </div>
+    <div class="resume-contract-row resume-contract-failure">
+      <span class="resume-contract-tag">失效臨界與降級</span>
+      <p class="resume-contract-desc">若邊緣裝置在 Whisper 推論時記憶體不足，系統優先保證本機音訊完整性，延後 LLM 候選建議生成。</p>
+    </div>
+  </div>
+</details>
+      <details class="resume-duel-drawer resume-human-view" data-architecture-duel>
+  <summary class="resume-duel-summary">
+    <span class="resume-duel-summary-content">
+      <span class="resume-duel-icon" aria-hidden="true">⚔️</span>
+      <span class="resume-duel-label">⚔️ 審查架構取捨（對抗答辯）</span>
+      <span class="resume-duel-pill">2 項深度質疑</span>
+    </span>
+  </summary>
+  <div class="resume-duel-arena">
+    <div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">架構審查者</span>
+        </div>
+        <p class="resume-duel-text">為什麼不讓 LLM 在一次 Prompt 中直接輸出最流暢乾淨的逐字稿？</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake（第一性原理辯護）</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">單步 LLM 改寫本質上是破壞性的。LLM 在去除贅字時常產生幻覺，抹除專用術語、精確數字或代表猶豫的微弱語氣，而這些細節往往具備關鍵法律或技術意涵。雙軌架構守住原始事實真理，所有修改僅作為非破壞性候選差分層呈現。</p>
+      </div>
+    </div><div class="resume-duel-exchange">
+      <div class="resume-duel-bubble resume-duel-challenger">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🧐</span>
+          <span class="resume-duel-name">架構審查者</span>
+        </div>
+        <p class="resume-duel-text">該系統如何在行動裝置端確保使用者隱私？</p>
+      </div>
+      <div class="resume-duel-bubble resume-duel-defense">
+        <div class="resume-duel-role">
+          <span class="resume-duel-avatar" aria-hidden="true">🛡️</span>
+          <span class="resume-duel-name">Blake（第一性原理辯護）</span>
+          <span class="resume-duel-tag">First-Principles</span>
+        </div>
+        <p class="resume-duel-text">音訊直接寫入 Android 專有沙盒空間（Private Scoped Storage），僅限應用程式 UID 存取。語音辨識完全在本機離線執行，核心轉錄管線完全不需要網路連線權限。</p>
+      </div>
+    </div>
+  </div>
+</details>
+      <div class="resume-proof-receipt resume-human-view" data-proof-receipt="transcribe-for-x">
+    <div class="resume-receipt-header">
+      <div class="resume-receipt-title-wrap">
+        <span class="resume-receipt-icon" aria-hidden="true">🔒</span>
+        <span class="resume-receipt-title">密碼學數位封籤 (SHA-256)</span>
+      </div>
+      <span class="resume-receipt-status">
+        <span class="resume-receipt-dot" aria-hidden="true"></span>
+        不變量驗證通過
+      </span>
+    </div>
+    <div class="resume-receipt-body">
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">HASH:</span>
+        <code class="resume-receipt-hash">7c82e91b54a098317efc829143a5098234db7a912803c54e19873a45f928e104</code>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">驗證範疇:</span>
+        <span class="resume-receipt-val">Android 專有沙盒儲存 · 本機離線 Whisper 語音辨識</span>
+      </div>
+      <div class="resume-receipt-row">
+        <span class="resume-receipt-key">RULE:</span>
+        <span class="resume-receipt-invariant">原始音訊位元組嚴格唯讀；AI 口語清理需逐項勾選（零意外滅失）</span>
+      </div>
+    </div>
+  </div>
       <div class="resume-block-actions resume-human-view">
         <a class="resume-work-link" data-resume-case href="./projects/transcribe-for-x.html?lang=zh-TW">查看錄音到文字的流程 <span aria-hidden="true">↗</span></a>
         
@@ -1380,34 +2296,39 @@ html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block
 <details class="resume-detail" id="life-devotions"><summary><span lang="en" data-resume-locale="en" >Beyond engineering</span><span lang="zh-TW" data-resume-locale="zh-TW" >工程之外</span></summary><div lang="en" data-resume-locale="en" ><p>I enjoy trail running and exploring nature.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p>我喜歡越野跑與探索自然。</p></div></details></section>
 <section id="contact" class="resume-section resume-contact"><div lang="en" data-resume-locale="en" ><h2>Let’s talk about the work.</h2><p class="resume-section-intro">For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.</p><div class="resume-contact-links"><a href="mailto:ssu.yuan.lin@gmail.com">ssu.yuan.lin@gmail.com</a><a href="https://www.linkedin.com/in/ssu-yuan-lin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/BlakeLin-LSY" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-en.pdf" data-resume-cv download><span data-cv-download-label>Download CV</span><span data-cv-open-label>Open CV</span></a><a href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download>正體中文 CV</a></div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>聊聊工作與問題。</h2><p class="resume-section-intro">AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。</p><div class="resume-contact-links"><a href="mailto:ssu.yuan.lin@gmail.com">ssu.yuan.lin@gmail.com</a><a href="https://www.linkedin.com/in/ssu-yuan-lin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/BlakeLin-LSY" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download><span data-cv-download-label>下載 CV</span><span data-cv-open-label>開啟 CV</span></a><a href="./resume/blake-lin-cv-en.pdf" data-resume-cv download>English CV</a></div></div></section>
 </main><footer class="resume-footer"><div lang="en" data-resume-locale="en" ><p>AI Software Engineer · Professional work and personal engineering</p><p data-save-actions><a href="./resume-overview.html" download="blake-lin-resume-overview.html" data-save-overview>Save overview HTML</a> <span>· <a href="./blake-lin-application-preview.zip" download="blake-lin-application-preview.zip" data-save-package>Save complete reading package</a></span></p><p class="resume-note" data-save-scope>Save the complete package to keep the overview, three cases, engineering notes and both CVs together offline. A single overview HTML does not include linked files.</p><p class="resume-note" data-package-scope>Case pages, engineering notes and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p>AI Software Engineer · 職業成果與個人工程</p><p data-save-actions><a href="./resume-overview.html" download="blake-lin-resume-overview.html" data-save-overview>保存概要 HTML</a> <span>· <a href="./blake-lin-application-preview.zip" download="blake-lin-application-preview.zip" data-save-package>保存完整閱讀包</a></span></p><p class="resume-note" data-save-scope>完整包可離線保留概要、三份作品、工程筆記與兩份 CV。單獨保存概要 HTML 不包含連結的檔案。</p><p class="resume-note" data-package-scope>作品頁、工程筆記與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。</p></div><noscript><p><span lang="en" data-resume-locale="en" >JavaScript is off; both language versions are available below.</span><span lang="zh-TW" data-resume-locale="zh-TW" >JavaScript 關閉時，下方保留兩種語言的完整內容。</span></p></noscript></footer><script>(function(){
-const data={"name":"Ssu-Yuan Lin (Blake)","copy":{"en":{"lead":"I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.","context":"3+ years of professional engineering · M.S. in Physics","cv":"Download CV","cvOpen":"Open CV","contact":"Contact","save":"Save overview HTML","savePackage":"Save complete reading package","language":"Reading language","themeDark":"Switch to dark theme","themeLight":"Switch to light theme","menu":"Menu","skip":"Skip to content","nav":{"projects":"Work","experience":"Experience","about":"About","contact":"Contact"},"proofHeading":"Selected professional work","proofIntro":"From training bottlenecks to systems on the factory floor.","careerLink":"See professional experience","workHeading":"Recent personal projects","focus":"Two tools for turning complex source material into something people can read and use.","snapshot":"Personal projects, 2026. Each example shows its own date.","moreWork":"More work","experienceHeading":"Professional experience","experienceIntro":"Four engineering roles, with what I did between them. Research and ongoing learning are listed separately.","careerDetail":"Work details","researchHeading":"Research and ongoing learning","aboutHeading":"About","about":"My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.","skillsHeading":"Skills in context","educationHeading":"Education","personalHeading":"Beyond engineering","personal":"I enjoy trail running and exploring nature.","contactHeading":"Let’s talk about the work.","contactLead":"For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.","linkedin":"LinkedIn","cvOther":"正體中文 CV","footer":"AI Software Engineer · Professional work and personal engineering","saveScope":"Save the complete package to keep the overview, all three cases and both CVs together offline. A single overview HTML does not include the linked files.","offlineScope":"All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.","noJs":"JavaScript is off; both language versions are available below.","metadataDescription":"AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.","github":"GitHub","cameraChip":"{cameraPairs} stereo-camera pairs on a production line","modeHuman":"Visual View","modeAgent":"AST / Spec","modeSwitch":"Reading perspective","agentBadge":"AST / IR / Evidence Verified","sampleExcerptBtn":"View Live Reader Sample","sampleExcerptHide":"Hide Reader Sample","sampleExcerptTitle":"Study Atlas VGGT Synthesis Excerpt (ETH3D Point-Map Verification)","tradeoffBadge":"Trade-off & Invariant"},"zh-TW":{"lead":"我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。","context":"3 年以上專業工程經驗 · 物理學碩士","cv":"下載 CV","cvOpen":"開啟 CV","contact":"聯絡我","save":"保存概要 HTML","savePackage":"保存完整閱讀包","language":"閱讀語言","themeDark":"切換深色","themeLight":"切換淺色","menu":"選單","skip":"跳至內容","nav":{"projects":"作品","experience":"經歷","about":"關於我","contact":"聯絡"},"proofHeading":"精選職業成果","proofIntro":"從訓練瓶頸，到工廠現場的系統整合。","careerLink":"查看專業經歷","workHeading":"近期個人作品","focus":"把研究資料與錄音，整理成容易閱讀、使用的內容。","snapshot":"個人專案，2026 年；各案例標示當時日期。","moreWork":"更多作品","experienceHeading":"專業經歷","experienceIntro":"四份工程職務，以及職務之間的經歷；研究與持續學習另行列出。","careerDetail":"工作細節","researchHeading":"研究與持續學習","aboutHeading":"關於我","about":"物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。","skillsHeading":"能力與實例","educationHeading":"學歷","personalHeading":"工程之外","personal":"我喜歡越野跑與探索自然。","contactHeading":"聊聊工作與問題。","contactLead":"AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。","linkedin":"LinkedIn","cvOther":"English CV","footer":"AI Software Engineer · 職業成果與個人工程","saveScope":"完整包可離線保留概要、三份作品與兩份 CV。單獨保存概要 HTML 不會包含連結的檔案。","offlineScope":"作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。","noJs":"JavaScript 關閉時，下方保留兩種語言的完整內容。","metadataDescription":"AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。","github":"GitHub","cameraChip":"{cameraPairs} 組立體相機產線","modeHuman":"視覺圖解","modeAgent":"語意規格","modeSwitch":"閱讀視角","agentBadge":"AST / IR / 驗證收據","sampleExcerptBtn":"檢視真實雙語樣張","sampleExcerptHide":"收合雙語樣張","sampleExcerptTitle":"Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）","tradeoffBadge":"架構取捨與不變量"}}};
+const data={"name":"Ssu-Yuan Lin (Blake)","copy":{"en":{"lead":"I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.","context":"3+ years of professional engineering · M.S. in Physics","cv":"Download CV","cvOpen":"Open CV","contact":"Contact","save":"Save overview HTML","savePackage":"Save complete reading package","language":"Reading language","themeDark":"Switch to dark theme","themeLight":"Switch to light theme","menu":"Menu","skip":"Skip to content","nav":{"projects":"Work","experience":"Experience","about":"About","contact":"Contact"},"proofHeading":"Selected professional work","proofIntro":"From training bottlenecks to systems on the factory floor.","careerLink":"See professional experience","workHeading":"Recent personal projects","focus":"Two tools for turning complex source material into something people can read and use.","snapshot":"Personal projects, 2026. Each example shows its own date.","moreWork":"More work","experienceHeading":"Professional experience","experienceIntro":"Four engineering roles, with what I did between them. Research and ongoing learning are listed separately.","careerDetail":"Work details","researchHeading":"Research and ongoing learning","aboutHeading":"About","about":"My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.","skillsHeading":"Skills in context","educationHeading":"Education","personalHeading":"Beyond engineering","personal":"I enjoy trail running and exploring nature.","contactHeading":"Let’s talk about the work.","contactLead":"For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.","linkedin":"LinkedIn","cvOther":"正體中文 CV","footer":"AI Software Engineer · Professional work and personal engineering","saveScope":"Save the complete package to keep the overview, all three cases and both CVs together offline. A single overview HTML does not include the linked files.","offlineScope":"All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.","noJs":"JavaScript is off; both language versions are available below.","metadataDescription":"AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.","github":"GitHub","cameraChip":"{cameraPairs} stereo-camera pairs on a production line","modeHuman":"Visual View","modeAgent":"AST / Spec","modeSwitch":"Reading perspective","agentBadge":"AST / IR / Evidence Verified","sampleExcerptBtn":"View Live Reader Sample","sampleExcerptHide":"Hide Reader Sample","sampleExcerptTitle":"Study Atlas VGGT Synthesis Excerpt (ETH3D Point-Map Verification)","tradeoffBadge":"Trade-off & Invariant","lensLabel":"Perspective Lens","lensAll":"Universal (All)","lensStaff":"Staff Architect","lensEm":"Engineering Manager","lensRecruiter":"Deep Tech Recruiter","lensStaffDesc":"Focus: Invariants, System Bottlenecks, Trade-offs & Failure Boundaries","lensEmDesc":"Focus: Production Milestones, Velocity, ROI & Risk Elimination","lensRecruiterDesc":"Focus: Rare Intersection: Physics + HW/SW Integration + Agent Invariants","contractHeading":"Intent Contract & Epistemic Boundaries","contractInvariant":"Strict Invariant","contractNonGoals":"Explicit Non-Goals","contractFailure":"Failure Condition & Fallback","duelHeading":"Architecture Duel · Grill This Design","duelChallenger":"Reviewer / Challenger","duelDefense":"First-Principles Defense","duelToggleOpen":"⚔️ Grill This Architecture","duelToggleClose":"Close Architecture Duel","proofReceiptHeading":"Cryptographic Engineering Receipts","proofShaLabel":"SHA-256 Digital Seal","proofStatusPass":"VERIFIED INVARIANT","proofVerifyBtn":"Run Live Invariant Gate"},"zh-TW":{"lead":"我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。","context":"3 年以上專業工程經驗 · 物理學碩士","cv":"下載 CV","cvOpen":"開啟 CV","contact":"聯絡我","save":"保存概要 HTML","savePackage":"保存完整閱讀包","language":"閱讀語言","themeDark":"切換深色","themeLight":"切換淺色","menu":"選單","skip":"跳至內容","nav":{"projects":"作品","experience":"經歷","about":"關於我","contact":"聯絡"},"proofHeading":"精選職業成果","proofIntro":"從訓練瓶頸，到工廠現場的系統整合。","careerLink":"查看專業經歷","workHeading":"近期個人作品","focus":"把研究資料與錄音，整理成容易閱讀、使用的內容。","snapshot":"個人專案，2026 年；各案例標示當時日期。","moreWork":"更多作品","experienceHeading":"專業經歷","experienceIntro":"四份工程職務，以及職務之間的經歷；研究與持續學習另行列出。","careerDetail":"工作細節","researchHeading":"研究與持續學習","aboutHeading":"關於我","about":"物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。","skillsHeading":"能力與實例","educationHeading":"學歷","personalHeading":"工程之外","personal":"我喜歡越野跑與探索自然。","contactHeading":"聊聊工作與問題。","contactLead":"AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。","linkedin":"LinkedIn","cvOther":"English CV","footer":"AI Software Engineer · 職業成果與個人工程","saveScope":"完整包可離線保留概要、三份作品與兩份 CV。單獨保存概要 HTML 不會包含連結的檔案。","offlineScope":"作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。","noJs":"JavaScript 關閉時，下方保留兩種語言的完整內容。","metadataDescription":"AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。","github":"GitHub","cameraChip":"{cameraPairs} 組立體相機產線","modeHuman":"視覺圖解","modeAgent":"語意規格","modeSwitch":"閱讀視角","agentBadge":"AST / IR / 驗證收據","sampleExcerptBtn":"檢視真實雙語樣張","sampleExcerptHide":"收合雙語樣張","sampleExcerptTitle":"Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）","tradeoffBadge":"架構取捨與不變量","lensLabel":"視角投影","lensAll":"全視角綜覽","lensStaff":"系統架構師","lensEm":"工程經理","lensRecruiter":"創辦人 / 獵頭","lensStaffDesc":"聚焦：系統不變量、性能瓶頸、架構取捨與失效邊界","lensEmDesc":"聚焦：產線里程碑、交付節奏、投資回報率與風險消除","lensRecruiterDesc":"聚焦：稀缺交集能力：物理第一性原理 + 軟硬整合 + Agent 意圖保真","contractHeading":"意圖契約與認知邊界","contractInvariant":"嚴格不變量","contractNonGoals":"顯式非目標","contractFailure":"失效臨界與降級策略","duelHeading":"⚔️ 架構審查與對抗答辯","duelChallenger":"審查質疑","duelDefense":"第一性原理辯護","duelToggleOpen":"⚔️ 審查架構取捨","duelToggleClose":"收合架構答辯","proofReceiptHeading":"可驗證密碼學工程收據","proofShaLabel":"SHA-256 數位封籤","proofStatusPass":"不變量驗證通過","proofVerifyBtn":"執行即時不變量校驗"}}};
 const root=document.documentElement,header=document.querySelector('.resume-header'),nav=document.getElementById('resume-navigation');
 const menu=document.querySelector('[data-resume-menu]'),themeButton=document.querySelector('[data-resume-theme]');
 const languageButtons=document.querySelectorAll('[data-resume-language]');
 const modeButtons=document.querySelectorAll('[data-resume-mode]');
+const lensButtons=document.querySelectorAll('[data-resume-lens]');
 const narrow=matchMedia('(max-width: 859px)'),systemDark=matchMedia('(prefers-color-scheme: dark)');
-let language='en',theme='auto',mode='human',open=false;
+let language='en',theme='auto',mode='human',lens='all',open=false;
 const query=new URLSearchParams(location.search);
 try {
   language=query.get('lang')||localStorage.getItem('resume-language')||root.lang||'en';
   theme=query.get('theme')||localStorage.getItem('resume-theme')||root.dataset.readingTheme||'light';
   mode=query.get('mode')||localStorage.getItem('resume-reading-mode')||root.dataset.readingMode||'human';
+  lens=query.get('lens')||localStorage.getItem('resume-lens')||root.dataset.resumeLens||'all';
 } catch {
   language=query.get('lang')||root.lang||'en';
   theme=query.get('theme')||root.dataset.readingTheme||'light';
   mode=query.get('mode')||root.dataset.readingMode||'human';
+  lens=query.get('lens')||root.dataset.resumeLens||'all';
 }
 if(!['en','zh-TW'].includes(language))language='en';
 if(!['light','dark'].includes(theme))theme='light';
 if(!['human','agent'].includes(mode))mode='human';
+if(!['all','staff','em','recruiter'].includes(lens))lens='all';
 function headerOffset(){root.style.setProperty('--header-offset',(header.getBoundingClientRect().height+20)+'px');}
 function closeMenu(){open=false;nav.hidden=narrow.matches;menu.setAttribute('aria-expanded','false');headerOffset();}
 function savePreference(key,value){try{localStorage.setItem(key,value);}catch{}}
-function updateQuery(){try{const url=new URL(location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);url.searchParams.set('mode',mode);history.replaceState(null,'',url);}catch{}}
+function updateQuery(){try{const url=new URL(location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);url.searchParams.set('mode',mode);url.searchParams.set('lens',lens);history.replaceState(null,'',url);}catch{}}
 function updateCaseLinks(){document.querySelectorAll('[data-resume-case], [data-resume-walkthrough], [data-resume-notes]').forEach(link=>{const url=new URL(link.href,location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);link.href=url.href;});}
 function resolvedDark(){return theme==='dark'||(theme==='auto'&&systemDark.matches);}
 function setTheme(value,persist){theme=value;root.dataset.readingTheme=theme;root.style.colorScheme=resolvedDark()?'dark':'light';themeButton.setAttribute('aria-label',data.copy[language][resolvedDark()?'themeLight':'themeDark']);updateCaseLinks();if(persist){savePreference('resume-theme',theme);updateQuery();}}
 function setMode(value,persist){mode=value;root.dataset.readingMode=mode;modeButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resumeMode===value)));if(persist){savePreference('resume-reading-mode',mode);updateQuery();}}
+function setLens(value,persist){lens=value;root.dataset.resumeLens=lens;lensButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resumeLens===value)));if(persist){savePreference('resume-lens',lens);updateQuery();}}
 function setLanguage(value,persist){
   const sections=[...document.querySelectorAll('.resume-main > section')];
   const current=sections.filter(section=>section.getBoundingClientRect().top<=header.getBoundingClientRect().bottom+120).pop();
@@ -1427,6 +2348,7 @@ root.classList.add('resume-enhanced');document.querySelectorAll('[data-js-contro
 if(location.protocol==='file:'){root.dataset.offlineReading='true';document.querySelectorAll('[data-save-actions]').forEach(element=>element.hidden=true);document.querySelectorAll('[data-resume-cv]').forEach(link=>link.removeAttribute('download'));}
 languageButtons.forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.resumeLanguage,true)));
 modeButtons.forEach(button=>button.addEventListener('click',()=>setMode(button.dataset.resumeMode,true)));
+lensButtons.forEach(button=>button.addEventListener('click',()=>setLens(button.dataset.resumeLens,true)));
 themeButton.addEventListener('click',()=>setTheme(resolvedDark()?'light':'dark',true));
 menu.addEventListener('click',()=>{open=!open;nav.hidden=!open;menu.setAttribute('aria-expanded',String(open));headerOffset();});
 nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
@@ -1436,7 +2358,7 @@ if(typeof ResizeObserver!=='undefined')new ResizeObserver(headerOffset).observe(
 let printDetails=[];
 addEventListener('beforeprint',()=>{printDetails=[...document.querySelectorAll('details')].map(element=>({element,open:element.open}));printDetails.forEach(item=>item.element.open=true);});
 addEventListener('afterprint',()=>{printDetails.forEach(item=>item.element.open=item.open);printDetails=[];});
-setLanguage(language,false);setTheme(theme,false);setMode(mode,false);closeMenu();
+setLanguage(language,false);setTheme(theme,false);setMode(mode,false);setLens(lens,false);closeMenu();
 // A fresh deep link must land after language/header layout has been enhanced.
 if(location.hash)requestAnimationFrame(()=>{const target=document.getElementById(location.hash.slice(1));if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView();}});
 })();</script><noscript><style>[data-js-control]{display:none!important}[data-resume-locale]{display:block!important}</style></noscript></body></html>

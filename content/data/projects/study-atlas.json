@@ -18,6 +18,62 @@
       "zh-TW": "邊界界定：6.0 → 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。"
     }
   },
+  "intentContract": {
+    "strictInvariant": {
+      "en": "Calculated TALK budget must not exceed 5.0 ceiling; all citations must retain mathematical provenance to source papers.",
+      "zh-TW": "計算型 TALK 預算嚴格不可超越 5.0 上限；所有綜述引證必須保留至原論文之數學推論出處。"
+    },
+    "nonGoals": {
+      "en": [
+        "Autonomous unbounded web search scraping",
+        "Blind LLM hallucinated summarization without provenance verification"
+      ],
+      "zh-TW": [
+        "無邊界的網頁爬蟲與遞迴檢索",
+        "無引證出處校驗的盲目 LLM 幻覺摘要"
+      ]
+    },
+    "failureConditions": {
+      "en": "When user query complexity triggers a plan estimation > 5.0 TALK, execution is blocked at the gate and rerouted to T5 compact mode (4.6) with zero token leakage.",
+      "zh-TW": "當查詢複雜度觸發預估花費 > 5.0 TALK 時，閘門即時中斷執行並重導向至 T5 精簡模式（4.6），達到零 Token 洩漏。"
+    }
+  },
+  "mirrorDuel": [
+    {
+      "challenger": {
+        "en": "Why build a custom TALK budget gate rather than simply letting an LLM agent summarize with max_tokens set in the API call?",
+        "zh-TW": "為什麼要自訂 TALK 預算閘門，而不是單純在 API 呼叫中設定 max_tokens 讓 LLM 自己總結？"
+      },
+      "defense": {
+        "en": "API max_tokens is a blunt truncation mechanism—it cuts output mid-sentence and doesn't prevent wasteful multi-agent recursive exploration upstream. The TALK gate evaluates the execution graph prior to dispatch, enforcing cognitive budgeting and deliberate synthesis routing before billing occurs.",
+        "zh-TW": "API 的 max_tokens 只是生硬的截斷機制——它會在句子中途切斷，且完全無法防止上游多 Agent 遞迴搜尋的 Token 浪費。TALK 閘門在派發前即評估執行圖預算，在計費產生前強制執行認知預算控管與精簡重導向。"
+      }
+    },
+    {
+      "challenger": {
+        "en": "How do you prove that 6.0 → 4.6 isn't just an arbitrary number?",
+        "zh-TW": "如何證明 6.0 → 4.6 不只是隨意捏造的數字？"
+      },
+      "defense": {
+        "en": "TALK 1.8 is an explicit formal cost model based on input token AST density and reasoning step weights, backed by verifiable JSON-LD receipts in the walkthrough artifact, explicitly scoped as calculated budget rather than wall-clock seconds.",
+        "zh-TW": "TALK 1.8 是基於輸入 Token AST 密度與推理步權重的形式化成本模型，在歷史流程展示中具備 JSON-LD 數位收據，並在邊界中嚴格界定為計算預算而非真人碼錶時間。"
+      }
+    }
+  ],
+  "povHighlights": {
+    "staff": {
+      "en": "Formal TALK contract & circuit-breaker preventing multi-agent combinatorial explosion",
+      "zh-TW": "形式化 TALK 契約與熔斷器，根絕多 Agent 組合爆炸"
+    },
+    "em": {
+      "en": "Deterministic budget capping (6.0 → 4.6) and zero-drift technical briefing synthesis",
+      "zh-TW": "確定性預算收斂（6.0 → 4.6），技術綜述品質零漂移"
+    },
+    "recruiter": {
+      "en": "Agent Systems · Epistemic Boundary · Formal Budget Contracts · Full Provenance",
+      "zh-TW": "Agent 系統 · 認知邊界 · 形式化預算契約 · 完整引證追溯"
+    }
+  },
   "en": {
     "summary": "I built bilingual reading routes that turn the same research into a short briefing or a deeper explanation, while keeping sources and inferences distinct.",
     "evidence": "Personal project · Historical walkthrough, 13 Sep 2026",

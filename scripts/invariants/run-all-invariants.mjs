@@ -1,6 +1,7 @@
 import { checkI18nParity } from "./check-i18n-parity.mjs";
 import { checkDigitalSeals } from "./check-digital-seals.mjs";
 import { checkWcagAndViewport } from "./check-wcag-and-viewport.mjs";
+import { checkIntentContracts } from "./check-intent-contracts.mjs";
 import { loadResumeSource } from "../lib/resume-source.mjs";
 import { loadModularProfile } from "../lib/data-loader.mjs";
 import { readFile } from "node:fs/promises";
@@ -46,6 +47,10 @@ async function runAllInvariants() {
     throw new Error("Drift detected between modular content/data/ and compiled content/resume-profile.json");
   }
   console.log("✓ Modular content/data/ and compiled profile are in 100% lockstep parity.");
+  console.log("");
+
+  // 6. Intent Contracts, Mirror Duels & PoV Highlights completeness
+  await checkIntentContracts();
   console.log("");
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);

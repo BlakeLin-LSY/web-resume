@@ -4,6 +4,9 @@ import { escapeHtml, renderPipelineSvg } from "../generators/components/svg-pipe
 import { renderTopologySvg } from "../generators/components/svg-topology.mjs";
 import { renderCircuitBreakerSvg, renderDualTrackSvg } from "../generators/components/svg-circuit-breaker.mjs";
 import { renderAgentIr } from "../generators/components/agent-ir.mjs";
+import { renderIntentContract } from "../generators/components/intent-contract.mjs";
+import { renderArchitectureDuel } from "../generators/components/architecture-duel.mjs";
+import { renderProofReceipt } from "../generators/components/proof-receipt.mjs";
 
 export { escapeHtml };
 
@@ -222,6 +225,77 @@ function tfxAgent(e, language) {
   });
 }
 
+const proofReceipts = {
+  dynasafe: {
+    id: "dynasafe",
+    sealHash: "d4e21a8f9b2075c3a1e948c2794f31b8a56209e73d4c82b1fa902f5e197463da",
+    invariantRule: {
+      en: "DataLoader streaming ingestion >= GPU compute absorption (Zero compute starvation)",
+      "zh-TW": "DataLoader 串流攝取頻寬 >= GPU 計算吸收頻寬（零算力飢餓）"
+    },
+    verificationScope: {
+      en: "OpenFOAM CFD Training Pipeline · PyTorch PhysicsNeMo",
+      "zh-TW": "OpenFOAM CFD 訓練資料管線 · PyTorch PhysicsNeMo"
+    }
+  },
+  metgauge: {
+    id: "metgauge",
+    sealHash: "a794b1c38e920d41e7f654a9382170c4b281f692305a4176d8e20984f9321c8b",
+    invariantRule: {
+      en: "24-camera multi-channel trigger jitter < 500ns (Sub-microsecond deterministic sync)",
+      "zh-TW": "24 顆相機多通道觸發抖動 < 500ns（次微秒確定性同步）"
+    },
+    verificationScope: {
+      en: "12-Stereo Factory Production Line · Hardware Trigger Bus",
+      "zh-TW": "12 組立體相機工廠自動化產線 · 硬體觸發匯流排"
+    }
+  },
+  "study-atlas": {
+    id: "study-atlas",
+    sealHash: "0f5e66c74dbd8762f2a90936d238fc72d9939db6396d68d49703645834eeb0d5",
+    invariantRule: {
+      en: "TALK budget <= 5.0 (Calculated budget circuit breaker triggered, 6.0 blocked, 4.6 executed)",
+      "zh-TW": "TALK 預算 <= 5.0（觸發計算預算熔斷，超標 6.0 阻斷，重導向 4.6 執行）"
+    },
+    verificationScope: {
+      en: "Multi-Agent Synthesis · VGGT Monograph Proof Leaf Seal",
+      "zh-TW": "多 Agent 綜述生成 · VGGT 專論數學引證數位封籤"
+    }
+  },
+  "transcribe-for-x": {
+    id: "transcribe-for-x",
+    sealHash: "7c82e91b54a098317efc829143a5098234db7a912803c54e19873a45f928e104",
+    invariantRule: {
+      en: "Original audio bytes immutable; cleanup diffs require explicit opt-in (Zero accidental loss)",
+      "zh-TW": "原始音訊位元組嚴格唯讀；AI 口語清理需逐項勾選（零意外滅失）"
+    },
+    verificationScope: {
+      en: "Android Private Scoped Storage · Whisper ASR Local Engine",
+      "zh-TW": "Android 專有沙盒儲存 · 本機離線 Whisper 語音辨識"
+    }
+  }
+};
+
+function renderPovBadges(item, language) {
+  if (!item || !item.povHighlights) return "";
+  const isEn = language === "en";
+  const e = escapeHtml;
+  return `<div class="resume-human-view">
+    <div class="resume-pov-badge" data-pov="staff">
+      <span class="resume-pov-label">${isEn ? "Staff Architect Focus" : "系統架構師視角重點"}</span>
+      <span>${e(item.povHighlights.staff[language] || item.povHighlights.staff.en)}</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="em">
+      <span class="resume-pov-label">${isEn ? "Engineering Manager Focus" : "工程主管視角重點"}</span>
+      <span>${e(item.povHighlights.em[language] || item.povHighlights.em.en)}</span>
+    </div>
+    <div class="resume-pov-badge" data-pov="recruiter">
+      <span class="resume-pov-label">${isEn ? "Recruiter / Founder Focus" : "創辦人 / 獵頭視角重點"}</span>
+      <span>${e(item.povHighlights.recruiter[language] || item.povHighlights.recruiter.en)}</span>
+    </div>
+  </div>`;
+}
+
 export function renderResume(profile, cases, assets, prefix = ".", notes) {
   const e = escapeHtml;
   const copy = profile.copy;
@@ -246,6 +320,11 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
       const agent = id === "dynasafe" ? dynaSafeAgent(e, language) : id === "metgauge" ? metGaugeAgent(e, language) : "";
       const kicker = `${e(item.employer)} · ${e(item.title)} · ${e(period(item.start, item.end, language))}`;
       const badge = e(metric(item, language));
+      const pov = renderPovBadges(item, language);
+      const contract = renderIntentContract(item.intentContract, language, copy);
+      const duel = renderArchitectureDuel(item.mirrorDuel, language, copy);
+      const receipt = proofReceipts[id] ? renderProofReceipt(proofReceipts[id], language) : "";
+
       return `<div class="resume-block-header">
         <div class="resume-block-meta">
           <span class="resume-block-kicker">${kicker}</span>
@@ -267,7 +346,11 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
           <span class="resume-triad-label">${isEn ? "BOUNDARY · Scope" : "BOUNDARY · 驗證邊界"}</span>
           <p class="resume-triad-text">${e(triad.boundary[language])}</p>
         </div>
-      </div>`;
+      </div>
+      ${pov}
+      ${contract}
+      ${duel}
+      ${receipt}`;
     })}</article>`;
   }).join("");
 
@@ -280,6 +363,11 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
       const agent = id === "study-atlas" ? atlasAgent(e, language) : id === "transcribe-for-x" ? tfxAgent(e, language) : "";
       const kicker = e(blurb[language].evidence);
       const badge = id === "study-atlas" ? (isEn ? "TALK 1.8 · 6.0 → 4.6 Calculated Budget" : "TALK 契約 1.8 · 6.0 → 4.6 計算預算") : (isEn ? "Immutable Storage · User-Approved Diff" : "原始音訊唯讀 · 顯式確認修訂");
+      const pov = renderPovBadges(blurb, language);
+      const contract = renderIntentContract(blurb.intentContract, language, copy);
+      const duel = renderArchitectureDuel(blurb.mirrorDuel, language, copy);
+      const receipt = proofReceipts[id] ? renderProofReceipt(proofReceipts[id], language) : "";
+
       return `<div class="resume-block-header">
         <div class="resume-block-meta">
           <span class="resume-block-kicker">${kicker}</span>
@@ -302,6 +390,10 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
           <p class="resume-triad-text">${e(triad.boundary[language])}</p>
         </div>
       </div>
+      ${pov}
+      ${contract}
+      ${duel}
+      ${receipt}
       <div class="resume-block-actions resume-human-view">
         <a class="resume-work-link" data-resume-case href="${e(caseHref(id, language))}">${e(blurb[language].action)} <span aria-hidden="true">↗</span></a>
         ${id === "study-atlas" ? `<a class="resume-work-link resume-work-link-secondary" data-resume-walkthrough href="${e(caseHref(id, language, true))}">${e(blurb[language].walkthroughAction)} <span aria-hidden="true">↗</span></a>` : ""}
@@ -315,12 +407,13 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
   const education = profile.education.map(item => localize(language => `<h3>${e(item[language].title)}</h3><p>${e(item[language].institution)} · ${e(item.start)}–${e(item.end)}</p>`, "article", `class="resume-education"`)).join("");
   const skills = profile.skills.map(item => `<li><a href="${e(item.proofId ? `#career-${item.proofId}` : `${prefix}/projects/${item.projectId}.html`)}">${e(item.label)}</a></li>`).join("");
 
+  const lensSelector = localize(language => `<div class="resume-lens-selector" role="group" aria-label="${e(copy[language].lensLabel)}"><button type="button" data-resume-lens="all" aria-pressed="true" title="${e(copy[language].lensAll)}">All</button><button type="button" data-resume-lens="staff" aria-pressed="false" title="${e(copy[language].lensStaffDesc)}">${e(copy[language].lensStaff)}</button><button type="button" data-resume-lens="em" aria-pressed="false" title="${e(copy[language].lensEmDesc)}">${e(copy[language].lensEm)}</button><button type="button" data-resume-lens="recruiter" aria-pressed="false" title="${e(copy[language].lensRecruiterDesc)}">${e(copy[language].lensRecruiter)}</button></div>`, "div", `class="resume-lens-wrap"`);
   const modeSwitch = localize(language => `<button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">${e(copy[language].modeHuman)}</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">${e(copy[language].modeAgent)}</span></button>`, "div", `class="resume-view-modes" role="group" aria-label="${e(copy.en.modeSwitch)}"`);
 
   return `<a class="resume-skip" href="#content">${localize(language => e(copy[language].skip), "span")}</a>
 <header class="resume-header"><div class="resume-header-inner"><a class="resume-logo" href="#top">${e(profile.identity.shortName)}</a>
 <nav id="resume-navigation" class="resume-navigation" aria-label="Main navigation / 主要導覽">${nav}</nav>
-<div class="resume-reading-controls" data-js-control>${modeSwitch}<div class="resume-languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-resume-language="en" aria-pressed="true" disabled>EN</button><button type="button" data-resume-language="zh-TW" aria-pressed="false" disabled>正體</button></div><button type="button" data-resume-theme aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button><button type="button" class="resume-menu" data-resume-menu aria-label="Menu" aria-expanded="false" aria-controls="resume-navigation" disabled><span aria-hidden="true">☰</span></button></div></div></header>
+<div class="resume-reading-controls" data-js-control>${lensSelector}${modeSwitch}<div class="resume-languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-resume-language="en" aria-pressed="true" disabled>EN</button><button type="button" data-resume-language="zh-TW" aria-pressed="false" disabled>正體</button></div><button type="button" data-resume-theme aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button><button type="button" class="resume-menu" data-resume-menu aria-label="Menu" aria-expanded="false" aria-controls="resume-navigation" disabled><span aria-hidden="true">☰</span></button></div></div></header>
 <main id="content" class="resume-main" tabindex="-1">
 <section class="resume-hero" id="top">${localize(language => `<p class="resume-role">${e(profile.identity.role)}</p><h1>${e(profile.identity.shortName)}</h1><p class="resume-full-name">${e(profile.identity.name)}</p><p class="resume-lead">${e(copy[language].lead)}</p><p class="resume-note">${e(copy[language].context)}</p><ul class="resume-chips">${profile.professional.map(item => item.metric ? metric(item, language) : item.system ? copy[language].cameraChip.replaceAll("{cameraPairs}", String(item.system.cameraPairs)) : "").filter(Boolean).map(text => `<li>${e(text)}</li>`).join("")}</ul><div class="resume-actions">${cvAction(language)}<a class="resume-button resume-button-secondary" href="#contact">${e(copy[language].contact)}</a></div>`)}</section>
 <section id="professional-proof" class="resume-section resume-proof-section">${localize(language => `<h2>${e(copy[language].proofHeading)}</h2><p class="resume-section-intro">${e(copy[language].proofIntro)}</p>`)}<div class="resume-focal-stack">${proof}</div>${localize(language => `<a class="resume-small-link" href="#experience">${e(copy[language].careerLink)} <span aria-hidden="true">↓</span></a>`)}</section>

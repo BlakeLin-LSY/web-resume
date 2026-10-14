@@ -18,6 +18,62 @@
       "zh-TW": "邊界界定：Android 原型；裝置效能與雙語混合辨識品質仍待實際場景驗證。"
     }
   },
+  "intentContract": {
+    "strictInvariant": {
+      "en": "Original recorded audio bytes and raw Whisper transcripts are strictly append-only and immutable; AI suggestions remain in candidate layer.",
+      "zh-TW": "原始錄音音訊與 Whisper 初版逐字稿嚴格 Append-only 唯讀；AI 口語修飾建議僅保留於候選層。"
+    },
+    "nonGoals": {
+      "en": [
+        "Automatic irreversible in-place text replacement",
+        "Cloud-based voice telemetry or unencrypted audio offloading"
+      ],
+      "zh-TW": [
+        "未經檢視的自動原地破壞性文字覆寫",
+        "雲端音訊遙測或未加密之音訊上傳"
+      ]
+    },
+    "failureConditions": {
+      "en": "If edge device memory is constrained during Whisper inference, transcription prioritizes local audio file integrity and delays LLM candidate generation.",
+      "zh-TW": "若邊緣裝置在 Whisper 推論時記憶體不足，系統優先保證本機音訊完整性，延後 LLM 候選建議生成。"
+    }
+  },
+  "mirrorDuel": [
+    {
+      "challenger": {
+        "en": "Why not let an LLM directly output the cleanest, most fluent transcript in one single prompt pass?",
+        "zh-TW": "為什麼不讓 LLM 在一次 Prompt 中直接輸出最流暢乾淨的逐字稿？"
+      },
+      "defense": {
+        "en": "Single-pass LLM rewriting is inherently destructive. LLMs routinely hallucinate filler word removal, dropping specialized jargon, technical numerals, or subtle verbal hesitations that carry critical legal/technical meaning. The dual-track architecture preserves raw ground truth while presenting edits as non-destructive candidate diffs.",
+        "zh-TW": "單步 LLM 改寫本質上是破壞性的。LLM 在去除贅字時常產生幻覺，抹除專用術語、精確數字或代表猶豫的微弱語氣，而這些細節往往具備關鍵法律或技術意涵。雙軌架構守住原始事實真理，所有修改僅作為非破壞性候選差分層呈現。"
+      }
+    },
+    {
+      "challenger": {
+        "en": "How does the system ensure privacy on mobile devices?",
+        "zh-TW": "該系統如何在行動裝置端確保使用者隱私？"
+      },
+      "defense": {
+        "en": "Audio is written to Android's private scoped storage sandbox accessible only by the application UID. ASR runs entirely via on-device Whisper models, requiring zero network permissions for the core transcription pipeline.",
+        "zh-TW": "音訊直接寫入 Android 專有沙盒空間（Private Scoped Storage），僅限應用程式 UID 存取。語音辨識完全在本機離線執行，核心轉錄管線完全不需要網路連線權限。"
+      }
+    }
+  ],
+  "povHighlights": {
+    "staff": {
+      "en": "Dual-track architecture: Immutable ground truth vs speculative candidate diff overlay",
+      "zh-TW": "雙軌保真架構：不可變事實真理 vs 非破壞性候選差分層"
+    },
+    "em": {
+      "en": "Zero data loss guarantee; defensible user control for sensitive transcription workflows",
+      "zh-TW": "零資料滅失保證；敏感語音轉錄工作流之可防護使用者自主權"
+    },
+    "recruiter": {
+      "en": "Edge AI · Android Scoped Storage · Whisper ASR · Ground-Truth Invariant",
+      "zh-TW": "邊緣端 AI · Android 沙盒儲存 · Whisper 語音辨識 · 事實真理不變量"
+    }
+  },
   "en": {
     "summary": "Save the recording, then turn it into text. The original transcript stays intact; cleanup suggestions remove only the spans the user accepts.",
     "evidence": "Personal project · Android prototype",

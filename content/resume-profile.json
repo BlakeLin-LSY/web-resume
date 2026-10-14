@@ -83,7 +83,28 @@
       "sampleExcerptBtn": "View Live Reader Sample",
       "sampleExcerptHide": "Hide Reader Sample",
       "sampleExcerptTitle": "Study Atlas VGGT Synthesis Excerpt (ETH3D Point-Map Verification)",
-      "tradeoffBadge": "Trade-off & Invariant"
+      "tradeoffBadge": "Trade-off & Invariant",
+      "lensLabel": "Perspective Lens",
+      "lensAll": "Universal (All)",
+      "lensStaff": "Staff Architect",
+      "lensEm": "Engineering Manager",
+      "lensRecruiter": "Deep Tech Recruiter",
+      "lensStaffDesc": "Focus: Invariants, System Bottlenecks, Trade-offs & Failure Boundaries",
+      "lensEmDesc": "Focus: Production Milestones, Velocity, ROI & Risk Elimination",
+      "lensRecruiterDesc": "Focus: Rare Intersection: Physics + HW/SW Integration + Agent Invariants",
+      "contractHeading": "Intent Contract & Epistemic Boundaries",
+      "contractInvariant": "Strict Invariant",
+      "contractNonGoals": "Explicit Non-Goals",
+      "contractFailure": "Failure Condition & Fallback",
+      "duelHeading": "Architecture Duel · Grill This Design",
+      "duelChallenger": "Reviewer / Challenger",
+      "duelDefense": "First-Principles Defense",
+      "duelToggleOpen": "⚔️ Grill This Architecture",
+      "duelToggleClose": "Close Architecture Duel",
+      "proofReceiptHeading": "Cryptographic Engineering Receipts",
+      "proofShaLabel": "SHA-256 Digital Seal",
+      "proofStatusPass": "VERIFIED INVARIANT",
+      "proofVerifyBtn": "Run Live Invariant Gate"
     },
     "zh-TW": {
       "lead": "我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。",
@@ -139,7 +160,28 @@
       "sampleExcerptBtn": "檢視真實雙語樣張",
       "sampleExcerptHide": "收合雙語樣張",
       "sampleExcerptTitle": "Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）",
-      "tradeoffBadge": "架構取捨與不變量"
+      "tradeoffBadge": "架構取捨與不變量",
+      "lensLabel": "視角投影",
+      "lensAll": "全視角綜覽",
+      "lensStaff": "系統架構師",
+      "lensEm": "工程經理",
+      "lensRecruiter": "創辦人 / 獵頭",
+      "lensStaffDesc": "聚焦：系統不變量、性能瓶頸、架構取捨與失效邊界",
+      "lensEmDesc": "聚焦：產線里程碑、交付節奏、投資回報率與風險消除",
+      "lensRecruiterDesc": "聚焦：稀缺交集能力：物理第一性原理 + 軟硬整合 + Agent 意圖保真",
+      "contractHeading": "意圖契約與認知邊界",
+      "contractInvariant": "嚴格不變量",
+      "contractNonGoals": "顯式非目標",
+      "contractFailure": "失效臨界與降級策略",
+      "duelHeading": "⚔️ 架構審查與對抗答辯",
+      "duelChallenger": "審查質疑",
+      "duelDefense": "第一性原理辯護",
+      "duelToggleOpen": "⚔️ 審查架構取捨",
+      "duelToggleClose": "收合架構答辯",
+      "proofReceiptHeading": "可驗證密碼學工程收據",
+      "proofShaLabel": "SHA-256 數位封籤",
+      "proofStatusPass": "不變量驗證通過",
+      "proofVerifyBtn": "執行即時不變量校驗"
     }
   },
   "professional": [
@@ -157,6 +199,76 @@
         "type": "training-speed-factor",
         "en": "{value}× model-training speed",
         "zh-TW": "模型訓練速度提升 {value} 倍"
+      },
+      "triad": {
+        "challenge": {
+          "en": "DataLoader I/O serialization starved GPU compute during OpenFOAM CFD training.",
+          "zh-TW": "DataLoader I/O 序列化阻塞，導致 GPU 在 CFD 訓練期間嚴重閒置飢餓。"
+        },
+        "solution": {
+          "en": "Rebuilt data loading pipeline and custom PhysicsNeMo format conversion.",
+          "zh-TW": "重建訓練資料管線，並自訂 PhysicsNeMo 格式轉換消除 I/O 阻塞。"
+        },
+        "boundary": {
+          "en": "10× overall model-training speedup measured on CFD workload.",
+          "zh-TW": "衡量指標：OpenFOAM CFD 工作負載之整體模型訓練速度提升 10 倍。"
+        }
+      },
+      "intentContract": {
+        "strictInvariant": {
+          "en": "DataLoader streaming throughput must match or exceed GPU compute ingestion rate without dropping CFD cell precision.",
+          "zh-TW": "DataLoader 串流吞吐必須匹配或超越 GPU 計算攝取速率，且不得犧牲 CFD 網格計算精度。"
+        },
+        "nonGoals": {
+          "en": [
+            "Rewriting OpenFOAM C++ solver core",
+            "Overclocking GPU hardware frequencies"
+          ],
+          "zh-TW": [
+            "重寫 OpenFOAM C++ 求解器核心",
+            "超頻 GPU 硬體頻率"
+          ]
+        },
+        "failureConditions": {
+          "en": "If disk I/O latency degrades below PCIe Gen4 standard or host RAM bandwidth saturates, pipeline falls back to cached chunk mode.",
+          "zh-TW": "若磁碟 I/O 延遲低於 PCIe Gen4 標準或主機記憶體頻寬飽和，管線降級為快取分塊模式。"
+        }
+      },
+      "mirrorDuel": [
+        {
+          "challenger": {
+            "en": "Why not simply add more GPU memory or use a distributed cloud cluster to bruteforce the training throughput?",
+            "zh-TW": "為什麼不直接堆更多 GPU 顯存或使用分散式雲端叢集暴力解決訓練吞吐？"
+          },
+          "defense": {
+            "en": "First-principles analysis proved the GPU compute utilization was hovering below 15% due to serialization in Python's DataLoader. Adding more GPUs would scale cost linearly while compute starvation remains. Eliminating the I/O bottleneck yielded 10× speedup on identical hardware.",
+            "zh-TW": "第一性原理分析證明，GPU 運算利用率低於 15% 的根因在於 Python DataLoader 的序列化 I/O。盲目堆疊 GPU 只會線性膨脹雲端成本，運算飢餓依然存在。擊穿 I/O 弱環節，在既有硬體上即釋放 10× 訓練速度。"
+          }
+        },
+        {
+          "challenger": {
+            "en": "Where does this system break first under extreme load?",
+            "zh-TW": "這個架構在極端負載下第一個崩潰的環節是什麼？"
+          },
+          "defense": {
+            "en": "Host-to-Device (H2D) PCIe bandwidth saturation when CFD mesh cell count exceeds pinned memory pool boundaries. Mitigated via asynchronous double-buffering prefetch.",
+            "zh-TW": "當 CFD 網格節點數超出鎖頁記憶體（Pinned Memory）池上限時的 Host-to-Device (H2D) PCIe 頻寬飽和。對策為透過非同步雙緩衝預取機制平滑頻寬波峰。"
+          }
+        }
+      ],
+      "povHighlights": {
+        "staff": {
+          "en": "Root-cause pinpointing: DataLoader I/O starvation vs streaming format",
+          "zh-TW": "根因定位：DataLoader I/O 飢餓 vs 串流格式重構"
+        },
+        "em": {
+          "en": "10× training throughput on identical infrastructure; zero new hardware spend",
+          "zh-TW": "同等基礎設施下實現 10× 訓練吞吐，零硬體採購成本"
+        },
+        "recruiter": {
+          "en": "Deep ML pipeline optimization · PyTorch · PhysicsNeMo · CFD",
+          "zh-TW": "深度 ML 管線效能最佳化 · PyTorch · PhysicsNeMo · CFD"
+        }
       },
       "en": {
         "proofTitle": "ML pipeline performance",
@@ -190,6 +302,76 @@
       ],
       "system": {
         "cameraPairs": 12
+      },
+      "triad": {
+        "challenge": {
+          "en": "Scaling 3D optical measurement to 12 stereo pairs (24 cameras) on an active line.",
+          "zh-TW": "將 3D 光學量測擴展至產線 12 組立體相機（24 顆相機）即時檢測。"
+        },
+        "solution": {
+          "en": "Designed system architecture, deterministic hardware trigger sync bus, and tuning specs.",
+          "zh-TW": "主導系統架構設計、硬體觸發同步匯流排與跨部門調校規格。"
+        },
+        "boundary": {
+          "en": "Advanced prototype MVP to factory-ready production testing before product launch.",
+          "zh-TW": "推進成果：量測原型進入工廠上市前的產線上線測試階段。"
+        }
+      },
+      "intentContract": {
+        "strictInvariant": {
+          "en": "Microsecond trigger jitter across all 24 cameras must remain strictly below optical exposure shutter window to eliminate spatial blur.",
+          "zh-TW": "24 顆相機的微秒級觸發抖動必須嚴格低於光學曝光快門視窗，以徹底消除運動模糊與空間錯位。"
+        },
+        "nonGoals": {
+          "en": [
+            "Replacing automated production conveyor mechanical assembly",
+            "Developing custom proprietary camera sensor silicon"
+          ],
+          "zh-TW": [
+            "改造自動化產線輸送帶之機械機構",
+            "自研專用影像感測器晶片"
+          ]
+        },
+        "failureConditions": {
+          "en": "If factory floor electromagnetic interference exceeds industrial shielding thresholds, hardware bus initiates deterministic fault assertion rather than capturing desynced frames.",
+          "zh-TW": "若工廠現場電磁干擾超出工業屏蔽閾值，硬體匯流排執行確定性中斷告警，杜絕非同步殘影寫入資料庫。"
+        }
+      },
+      "mirrorDuel": [
+        {
+          "challenger": {
+            "en": "Why use a deterministic hardware trigger sync bus instead of software network time protocol (PTP/IEEE 1588)?",
+            "zh-TW": "為什麼堅持設計硬體觸發同步匯流排，而不直接用軟體網路時間協定（PTP/IEEE 1588）？"
+          },
+          "defense": {
+            "en": "Software network polling introduces non-deterministic OS kernel scheduling jitter (100μs–1ms) on busy line controllers. At conveyor line speed, 500μs equals millimeter-level optical displacement, ruining 3D stereo calibration. Physical hardware sync lines guarantee sub-microsecond determinism.",
+            "zh-TW": "軟體網路輪詢在產線控制器高負載時會引入非確定性的 OS 排程抖動（100μs–1ms）。在輸送帶運轉速度下，500μs 的時序差就等於毫米級的光學位移，摧毀 3D 立體標定精度。實體硬體同步線提供次微秒級確定性保證。"
+          }
+        },
+        {
+          "challenger": {
+            "en": "What was the biggest boundary test failure before reaching factory-ready status?",
+            "zh-TW": "在達到工廠上線前測試階段前，最大的邊界測試失敗點是什麼？"
+          },
+          "defense": {
+            "en": "Thermal drift of camera mounting brackets altering stereo baseline extrinsic matrix after 8 continuous hours of operation. Solved by defining periodic automated validation targets and thermal compensation specs.",
+            "zh-TW": "連續運轉 8 小時後，相機支架的熱脹冷縮導致立體基線外參矩陣微幅漂移。透過定義週期性自動標定靶標與熱補償調校規範解決。"
+          }
+        }
+      ],
+      "povHighlights": {
+        "staff": {
+          "en": "Deterministic hardware sync bus; sub-microsecond multi-camera trigger invariant",
+          "zh-TW": "確定性硬體同步匯流排；次微秒級多相機觸發不變量"
+        },
+        "em": {
+          "en": "De-risked 24-camera automated line from prototype to factory production testing",
+          "zh-TW": "化解 24 顆相機產線整合風險，推進至工廠上市前的產線上線測試"
+        },
+        "recruiter": {
+          "en": "Hardware-software integration · 3D Computer Vision · 24 Cameras · Production Line",
+          "zh-TW": "軟硬整合 · 3D 電腦視覺 · 24 顆相機 · 工廠自動化產線"
+        }
       },
       "en": {
         "proofTitle": "Hardware and software integration",
@@ -324,6 +506,76 @@
         "MAT-ATLAS",
         "MAT-SHOWCASE"
       ],
+      "triad": {
+        "challenge": {
+          "en": "Preventing unbounded token spend while preserving complete citation provenance.",
+          "zh-TW": "在完整保留引證來源的前提下，防止多 Agent 研究綜述 Token 超支。"
+        },
+        "solution": {
+          "en": "TALK 1.8 budget gate blocks over-budget plans (6.0 > 5.0) and reroutes to T5 compact (4.6).",
+          "zh-TW": "TALK 1.8 預算閘門熔斷超標方案（6.0 > 5.0），自主重導向至 T5 精簡綜述（4.6）。"
+        },
+        "boundary": {
+          "en": "6.0 → 4.6 is calculated TALK budget; not human reading time or wall-clock speedup.",
+          "zh-TW": "邊界界定：6.0 → 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。"
+        }
+      },
+      "intentContract": {
+        "strictInvariant": {
+          "en": "Calculated TALK budget must not exceed 5.0 ceiling; all citations must retain mathematical provenance to source papers.",
+          "zh-TW": "計算型 TALK 預算嚴格不可超越 5.0 上限；所有綜述引證必須保留至原論文之數學推論出處。"
+        },
+        "nonGoals": {
+          "en": [
+            "Autonomous unbounded web search scraping",
+            "Blind LLM hallucinated summarization without provenance verification"
+          ],
+          "zh-TW": [
+            "無邊界的網頁爬蟲與遞迴檢索",
+            "無引證出處校驗的盲目 LLM 幻覺摘要"
+          ]
+        },
+        "failureConditions": {
+          "en": "When user query complexity triggers a plan estimation > 5.0 TALK, execution is blocked at the gate and rerouted to T5 compact mode (4.6) with zero token leakage.",
+          "zh-TW": "當查詢複雜度觸發預估花費 > 5.0 TALK 時，閘門即時中斷執行並重導向至 T5 精簡模式（4.6），達到零 Token 洩漏。"
+        }
+      },
+      "mirrorDuel": [
+        {
+          "challenger": {
+            "en": "Why build a custom TALK budget gate rather than simply letting an LLM agent summarize with max_tokens set in the API call?",
+            "zh-TW": "為什麼要自訂 TALK 預算閘門，而不是單純在 API 呼叫中設定 max_tokens 讓 LLM 自己總結？"
+          },
+          "defense": {
+            "en": "API max_tokens is a blunt truncation mechanism—it cuts output mid-sentence and doesn't prevent wasteful multi-agent recursive exploration upstream. The TALK gate evaluates the execution graph prior to dispatch, enforcing cognitive budgeting and deliberate synthesis routing before billing occurs.",
+            "zh-TW": "API 的 max_tokens 只是生硬的截斷機制——它會在句子中途切斷，且完全無法防止上游多 Agent 遞迴搜尋的 Token 浪費。TALK 閘門在派發前即評估執行圖預算，在計費產生前強制執行認知預算控管與精簡重導向。"
+          }
+        },
+        {
+          "challenger": {
+            "en": "How do you prove that 6.0 → 4.6 isn't just an arbitrary number?",
+            "zh-TW": "如何證明 6.0 → 4.6 不只是隨意捏造的數字？"
+          },
+          "defense": {
+            "en": "TALK 1.8 is an explicit formal cost model based on input token AST density and reasoning step weights, backed by verifiable JSON-LD receipts in the walkthrough artifact, explicitly scoped as calculated budget rather than wall-clock seconds.",
+            "zh-TW": "TALK 1.8 是基於輸入 Token AST 密度與推理步權重的形式化成本模型，在歷史流程展示中具備 JSON-LD 數位收據，並在邊界中嚴格界定為計算預算而非真人碼錶時間。"
+          }
+        }
+      ],
+      "povHighlights": {
+        "staff": {
+          "en": "Formal TALK contract & circuit-breaker preventing multi-agent combinatorial explosion",
+          "zh-TW": "形式化 TALK 契約與熔斷器，根絕多 Agent 組合爆炸"
+        },
+        "em": {
+          "en": "Deterministic budget capping (6.0 → 4.6) and zero-drift technical briefing synthesis",
+          "zh-TW": "確定性預算收斂（6.0 → 4.6），技術綜述品質零漂移"
+        },
+        "recruiter": {
+          "en": "Agent Systems · Epistemic Boundary · Formal Budget Contracts · Full Provenance",
+          "zh-TW": "Agent 系統 · 認知邊界 · 形式化預算契約 · 完整引證追溯"
+        }
+      },
       "en": {
         "summary": "I built bilingual reading routes that turn the same research into a short briefing or a deeper explanation, while keeping sources and inferences distinct.",
         "evidence": "Personal project · Historical walkthrough, 13 Sep 2026",
@@ -345,6 +597,76 @@
         "MAT-TFX",
         "MAT-SHOWCASE"
       ],
+      "triad": {
+        "challenge": {
+          "en": "Preventing accidental transcript loss from automatic, uninspected LLM rewrites.",
+          "zh-TW": "杜絕由 LLM 自動修飾改寫逐字稿所造成的不可逆原始資料滅失。"
+        },
+        "solution": {
+          "en": "Dual-track isolation: Private scoped audio storage (SHA-256 verified) vs speculative diff overlay.",
+          "zh-TW": "嚴格雙軌隔離：專有沙盒原始音訊（SHA-256 驗證）vs 非破壞性候選修訂層。"
+        },
+        "boundary": {
+          "en": "Android prototype; device performance and mixed-language ASR require real-use testing.",
+          "zh-TW": "邊界界定：Android 原型；裝置效能與雙語混合辨識品質仍待實際場景驗證。"
+        }
+      },
+      "intentContract": {
+        "strictInvariant": {
+          "en": "Original recorded audio bytes and raw Whisper transcripts are strictly append-only and immutable; AI suggestions remain in candidate layer.",
+          "zh-TW": "原始錄音音訊與 Whisper 初版逐字稿嚴格 Append-only 唯讀；AI 口語修飾建議僅保留於候選層。"
+        },
+        "nonGoals": {
+          "en": [
+            "Automatic irreversible in-place text replacement",
+            "Cloud-based voice telemetry or unencrypted audio offloading"
+          ],
+          "zh-TW": [
+            "未經檢視的自動原地破壞性文字覆寫",
+            "雲端音訊遙測或未加密之音訊上傳"
+          ]
+        },
+        "failureConditions": {
+          "en": "If edge device memory is constrained during Whisper inference, transcription prioritizes local audio file integrity and delays LLM candidate generation.",
+          "zh-TW": "若邊緣裝置在 Whisper 推論時記憶體不足，系統優先保證本機音訊完整性，延後 LLM 候選建議生成。"
+        }
+      },
+      "mirrorDuel": [
+        {
+          "challenger": {
+            "en": "Why not let an LLM directly output the cleanest, most fluent transcript in one single prompt pass?",
+            "zh-TW": "為什麼不讓 LLM 在一次 Prompt 中直接輸出最流暢乾淨的逐字稿？"
+          },
+          "defense": {
+            "en": "Single-pass LLM rewriting is inherently destructive. LLMs routinely hallucinate filler word removal, dropping specialized jargon, technical numerals, or subtle verbal hesitations that carry critical legal/technical meaning. The dual-track architecture preserves raw ground truth while presenting edits as non-destructive candidate diffs.",
+            "zh-TW": "單步 LLM 改寫本質上是破壞性的。LLM 在去除贅字時常產生幻覺，抹除專用術語、精確數字或代表猶豫的微弱語氣，而這些細節往往具備關鍵法律或技術意涵。雙軌架構守住原始事實真理，所有修改僅作為非破壞性候選差分層呈現。"
+          }
+        },
+        {
+          "challenger": {
+            "en": "How does the system ensure privacy on mobile devices?",
+            "zh-TW": "該系統如何在行動裝置端確保使用者隱私？"
+          },
+          "defense": {
+            "en": "Audio is written to Android's private scoped storage sandbox accessible only by the application UID. ASR runs entirely via on-device Whisper models, requiring zero network permissions for the core transcription pipeline.",
+            "zh-TW": "音訊直接寫入 Android 專有沙盒空間（Private Scoped Storage），僅限應用程式 UID 存取。語音辨識完全在本機離線執行，核心轉錄管線完全不需要網路連線權限。"
+          }
+        }
+      ],
+      "povHighlights": {
+        "staff": {
+          "en": "Dual-track architecture: Immutable ground truth vs speculative candidate diff overlay",
+          "zh-TW": "雙軌保真架構：不可變事實真理 vs 非破壞性候選差分層"
+        },
+        "em": {
+          "en": "Zero data loss guarantee; defensible user control for sensitive transcription workflows",
+          "zh-TW": "零資料滅失保證；敏感語音轉錄工作流之可防護使用者自主權"
+        },
+        "recruiter": {
+          "en": "Edge AI · Android Scoped Storage · Whisper ASR · Ground-Truth Invariant",
+          "zh-TW": "邊緣端 AI · Android 沙盒儲存 · Whisper 語音辨識 · 事實真理不變量"
+        }
+      },
       "en": {
         "summary": "Save the recording, then turn it into text. The original transcript stays intact; cleanup suggestions remove only the spans the user accepts.",
         "evidence": "Personal project · Android prototype",

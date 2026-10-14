@@ -27,6 +27,62 @@
       "zh-TW": "衡量指標：OpenFOAM CFD 工作負載之整體模型訓練速度提升 10 倍。"
     }
   },
+  "intentContract": {
+    "strictInvariant": {
+      "en": "DataLoader streaming throughput must match or exceed GPU compute ingestion rate without dropping CFD cell precision.",
+      "zh-TW": "DataLoader 串流吞吐必須匹配或超越 GPU 計算攝取速率，且不得犧牲 CFD 網格計算精度。"
+    },
+    "nonGoals": {
+      "en": [
+        "Rewriting OpenFOAM C++ solver core",
+        "Overclocking GPU hardware frequencies"
+      ],
+      "zh-TW": [
+        "重寫 OpenFOAM C++ 求解器核心",
+        "超頻 GPU 硬體頻率"
+      ]
+    },
+    "failureConditions": {
+      "en": "If disk I/O latency degrades below PCIe Gen4 standard or host RAM bandwidth saturates, pipeline falls back to cached chunk mode.",
+      "zh-TW": "若磁碟 I/O 延遲低於 PCIe Gen4 標準或主機記憶體頻寬飽和，管線降級為快取分塊模式。"
+    }
+  },
+  "mirrorDuel": [
+    {
+      "challenger": {
+        "en": "Why not simply add more GPU memory or use a distributed cloud cluster to bruteforce the training throughput?",
+        "zh-TW": "為什麼不直接堆更多 GPU 顯存或使用分散式雲端叢集暴力解決訓練吞吐？"
+      },
+      "defense": {
+        "en": "First-principles analysis proved the GPU compute utilization was hovering below 15% due to serialization in Python's DataLoader. Adding more GPUs would scale cost linearly while compute starvation remains. Eliminating the I/O bottleneck yielded 10× speedup on identical hardware.",
+        "zh-TW": "第一性原理分析證明，GPU 運算利用率低於 15% 的根因在於 Python DataLoader 的序列化 I/O。盲目堆疊 GPU 只會線性膨脹雲端成本，運算飢餓依然存在。擊穿 I/O 弱環節，在既有硬體上即釋放 10× 訓練速度。"
+      }
+    },
+    {
+      "challenger": {
+        "en": "Where does this system break first under extreme load?",
+        "zh-TW": "這個架構在極端負載下第一個崩潰的環節是什麼？"
+      },
+      "defense": {
+        "en": "Host-to-Device (H2D) PCIe bandwidth saturation when CFD mesh cell count exceeds pinned memory pool boundaries. Mitigated via asynchronous double-buffering prefetch.",
+        "zh-TW": "當 CFD 網格節點數超出鎖頁記憶體（Pinned Memory）池上限時的 Host-to-Device (H2D) PCIe 頻寬飽和。對策為透過非同步雙緩衝預取機制平滑頻寬波峰。"
+      }
+    }
+  ],
+  "povHighlights": {
+    "staff": {
+      "en": "Root-cause pinpointing: DataLoader I/O starvation vs streaming format",
+      "zh-TW": "根因定位：DataLoader I/O 飢餓 vs 串流格式重構"
+    },
+    "em": {
+      "en": "10× training throughput on identical infrastructure; zero new hardware spend",
+      "zh-TW": "同等基礎設施下實現 10× 訓練吞吐，零硬體採購成本"
+    },
+    "recruiter": {
+      "en": "Deep ML pipeline optimization · PyTorch · PhysicsNeMo · CFD",
+      "zh-TW": "深度 ML 管線效能最佳化 · PyTorch · PhysicsNeMo · CFD"
+    }
+  },
   "en": {
     "proofTitle": "ML pipeline performance",
     "summary": "Profiled a dataloader bottleneck and rebuilt the training data pipeline.",

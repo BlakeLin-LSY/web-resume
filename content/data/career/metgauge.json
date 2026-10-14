@@ -24,6 +24,62 @@
       "zh-TW": "推進成果：量測原型進入工廠上市前的產線上線測試階段。"
     }
   },
+  "intentContract": {
+    "strictInvariant": {
+      "en": "Microsecond trigger jitter across all 24 cameras must remain strictly below optical exposure shutter window to eliminate spatial blur.",
+      "zh-TW": "24 顆相機的微秒級觸發抖動必須嚴格低於光學曝光快門視窗，以徹底消除運動模糊與空間錯位。"
+    },
+    "nonGoals": {
+      "en": [
+        "Replacing automated production conveyor mechanical assembly",
+        "Developing custom proprietary camera sensor silicon"
+      ],
+      "zh-TW": [
+        "改造自動化產線輸送帶之機械機構",
+        "自研專用影像感測器晶片"
+      ]
+    },
+    "failureConditions": {
+      "en": "If factory floor electromagnetic interference exceeds industrial shielding thresholds, hardware bus initiates deterministic fault assertion rather than capturing desynced frames.",
+      "zh-TW": "若工廠現場電磁干擾超出工業屏蔽閾值，硬體匯流排執行確定性中斷告警，杜絕非同步殘影寫入資料庫。"
+    }
+  },
+  "mirrorDuel": [
+    {
+      "challenger": {
+        "en": "Why use a deterministic hardware trigger sync bus instead of software network time protocol (PTP/IEEE 1588)?",
+        "zh-TW": "為什麼堅持設計硬體觸發同步匯流排，而不直接用軟體網路時間協定（PTP/IEEE 1588）？"
+      },
+      "defense": {
+        "en": "Software network polling introduces non-deterministic OS kernel scheduling jitter (100μs–1ms) on busy line controllers. At conveyor line speed, 500μs equals millimeter-level optical displacement, ruining 3D stereo calibration. Physical hardware sync lines guarantee sub-microsecond determinism.",
+        "zh-TW": "軟體網路輪詢在產線控制器高負載時會引入非確定性的 OS 排程抖動（100μs–1ms）。在輸送帶運轉速度下，500μs 的時序差就等於毫米級的光學位移，摧毀 3D 立體標定精度。實體硬體同步線提供次微秒級確定性保證。"
+      }
+    },
+    {
+      "challenger": {
+        "en": "What was the biggest boundary test failure before reaching factory-ready status?",
+        "zh-TW": "在達到工廠上線前測試階段前，最大的邊界測試失敗點是什麼？"
+      },
+      "defense": {
+        "en": "Thermal drift of camera mounting brackets altering stereo baseline extrinsic matrix after 8 continuous hours of operation. Solved by defining periodic automated validation targets and thermal compensation specs.",
+        "zh-TW": "連續運轉 8 小時後，相機支架的熱脹冷縮導致立體基線外參矩陣微幅漂移。透過定義週期性自動標定靶標與熱補償調校規範解決。"
+      }
+    }
+  ],
+  "povHighlights": {
+    "staff": {
+      "en": "Deterministic hardware sync bus; sub-microsecond multi-camera trigger invariant",
+      "zh-TW": "確定性硬體同步匯流排；次微秒級多相機觸發不變量"
+    },
+    "em": {
+      "en": "De-risked 24-camera automated line from prototype to factory production testing",
+      "zh-TW": "化解 24 顆相機產線整合風險，推進至工廠上市前的產線上線測試"
+    },
+    "recruiter": {
+      "en": "Hardware-software integration · 3D Computer Vision · 24 Cameras · Production Line",
+      "zh-TW": "軟硬整合 · 3D 電腦視覺 · 24 顆相機 · 工廠自動化產線"
+    }
+  },
   "en": {
     "proofTitle": "Hardware and software integration",
     "summary": "Led system design, hardware integration, and boundary testing for a {cameraPairs}-stereo-camera line.",
