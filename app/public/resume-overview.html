@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- Generated from canonical resume profile, shared renderer and design tokens. -->
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Ssu-Yuan Lin (Blake) — AI Software Engineer</title><meta name="description" content="AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV."><style>:root{--resume-background:#F6F3EC;--resume-panel:#FFFFFF;--resume-text:#242824;--resume-muted:#5C645D;--resume-accent:#285C4D;--resume-border:#BCC4B9;--resume-tint:#E7EDE4;--resume-action-text:#FFFFFF;--resume-font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;--resume-content-width:70rem;--resume-reading-width:44rem;color-scheme:light}
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Ssu-Yuan Lin (Blake) — AI Software Engineer</title><meta name="description" content="AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV."><link rel="alternate" type="text/plain" href="llms.txt" title="Agent LLM Profile"><style>:root{--resume-background:#F6F3EC;--resume-panel:#FFFFFF;--resume-text:#242824;--resume-muted:#5C645D;--resume-accent:#285C4D;--resume-border:#BCC4B9;--resume-tint:#E7EDE4;--resume-action-text:#FFFFFF;--resume-font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;--resume-content-width:70rem;--resume-reading-width:44rem;color-scheme:light}
 :root[data-reading-theme=dark]{--resume-background:#171D1A;--resume-panel:#222B25;--resume-text:#F2F0E9;--resume-muted:#B5C0B8;--resume-accent:#A8D2B4;--resume-border:#64776A;--resume-tint:#283B30;--resume-action-text:#17251A;color-scheme:dark}
 :root[data-reading-theme=light]{--resume-background:#F6F3EC;--resume-panel:#FFFFFF;--resume-text:#242824;--resume-muted:#5C645D;--resume-accent:#285C4D;--resume-border:#BCC4B9;--resume-tint:#E7EDE4;--resume-action-text:#FFFFFF}
 *{box-sizing:border-box}
@@ -135,14 +135,403 @@ html:not(.resume-enhanced) .resume-navigation [data-resume-locale]+[data-resume-
 @media print{.resume-actions,.resume-button{break-inside:avoid;page-break-inside:avoid}.resume-footer{display:none!important}}
 .resume-chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:18px 0 0}.resume-chips li{border:1px solid var(--resume-border);border-radius:999px;padding:5px 12px;font-size:.88rem;line-height:1.4;color:var(--resume-accent);background:var(--resume-tint)}
 .resume-break{padding:16px 0}.resume-break h3{font-size:.95rem;font-weight:500;color:var(--resume-muted);margin-bottom:8px}.resume-break p{color:var(--resume-muted)}
+
+/* Dual-Surface Architecture (Human Visual vs. Agent AST/IR) */
+.resume-view-modes{display:inline-flex;gap:2px;background:var(--resume-tint);padding:2px;border-radius:6px;border:1px solid var(--resume-border)}
+.resume-view-modes button{border-radius:4px;font-size:.76rem;font-weight:600;min-height:36px;padding:4px 9px;border:none;background:transparent;color:var(--resume-muted)}
+.resume-view-modes button[aria-pressed=true]{background:var(--resume-panel);color:var(--resume-accent);box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+.resume-diagram-container{margin:18px 0;padding:16px;border:1px solid var(--resume-border);border-radius:6px;background:var(--resume-tint)}
+.resume-diagram-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.resume-diagram-tag{font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:var(--resume-accent);font-weight:700}
+.resume-diagram-caption{font-size:.8rem;color:var(--resume-muted);margin:10px 0 0;line-height:1.5}
+.resume-benchmark-bars{display:flex;flex-direction:column;gap:10px;margin:8px 0}
+.resume-bar-row{display:flex;align-items:center;gap:12px;font-size:.82rem}
+.resume-bar-label{min-width:140px;font-weight:600}
+.resume-bar-track{flex:1;height:24px;background:var(--resume-border);border-radius:4px;display:flex;overflow:hidden;min-width:120px}
+.resume-bar-segment{display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.4)}
+.resume-bar-wait{background:#8c968f}
+.resume-bar-compute{background:#4a6b5d}
+.resume-bar-boost{background:var(--resume-accent)}
+.resume-bar-val{font-size:.82rem;font-weight:700;min-width:90px;text-align:right}
+.resume-val-boost{color:var(--resume-accent)}
+.resume-svg-diagram{width:100%;max-width:680px;height:auto;display:block;margin:10px auto;color:var(--resume-border)}
+.resume-node-box{fill:var(--resume-panel);stroke:var(--resume-border);stroke-width:1.5px}
+.resume-node-highlight{stroke:var(--resume-accent);stroke-width:2px;fill:var(--resume-tint)}
+.resume-node-alert{stroke:#b33a3a;stroke-width:2px;fill:var(--resume-panel)}
+.resume-node-title{font-size:13px;font-weight:700;fill:var(--resume-text)}
+.resume-node-desc{font-size:11px;fill:var(--resume-muted)}
+.resume-text-alert{fill:#b33a3a}
+.resume-flow-line{stroke:var(--resume-border);stroke-width:2px}
+.resume-reader-sample{margin-top:14px;border:1px solid var(--resume-border);border-radius:6px;background:var(--resume-panel);overflow:hidden}
+.resume-sample-summary{padding:10px 14px;background:var(--resume-tint);font-size:.86rem;font-weight:600;color:var(--resume-text);cursor:pointer;display:flex;align-items:center;gap:10px}
+.resume-sample-pill{font-size:.72rem;padding:2px 8px;border-radius:12px;background:var(--resume-accent);color:var(--resume-action-text);font-weight:700}
+.resume-sample-body{padding:14px;font-size:.88rem;line-height:1.6}
+.resume-sample-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;font-size:.76rem;font-weight:600}
+.resume-sample-meta span{padding:3px 8px;border-radius:4px;background:var(--resume-tint);border:1px solid var(--resume-border)}
+.resume-badge-verified{color:var(--resume-accent);border-color:var(--resume-accent)!important}
+.resume-sample-text p{margin:6px 0}
+.resume-sample-anchor{font-size:.76rem;color:var(--resume-accent);font-weight:600}
+.resume-agent-ir{margin:18px 0;padding:14px;border:1px solid var(--resume-border);border-radius:6px;background:#1b221e;color:#e8ede9;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+.resume-ir-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.15)}
+.resume-ir-badge{font-size:.74rem;font-weight:700;color:#98d6af;letter-spacing:.05em}
+.resume-ir-sub{font-size:.74rem;color:#95a399}
+.resume-agent-ir pre{margin:0;font-size:.8rem;line-height:1.55;overflow-x:auto}
+html.resume-enhanced[data-reading-mode="human"] .resume-agent-view{display:none}
+html.resume-enhanced[data-reading-mode="agent"] .resume-human-view{display:none}
+html.resume-enhanced[data-reading-mode="agent"] .resume-agent-view{display:block}
+@media(max-width:600px){.resume-bar-row{flex-direction:column;align-items:flex-start;gap:4px}.resume-bar-track{width:100%}.resume-bar-val{text-align:left}}
 </style></head><body><a class="resume-skip" href="#content"><span lang="en" data-resume-locale="en" >Skip to content</span><span lang="zh-TW" data-resume-locale="zh-TW" >跳至內容</span></a>
 <header class="resume-header"><div class="resume-header-inner"><a class="resume-logo" href="#top">Blake Lin</a>
 <nav id="resume-navigation" class="resume-navigation" aria-label="Main navigation / 主要導覽"><a href="#projects"><span lang="en" data-resume-locale="en" >Work</span><span lang="zh-TW" data-resume-locale="zh-TW" >作品</span></a><a href="#experience"><span lang="en" data-resume-locale="en" >Experience</span><span lang="zh-TW" data-resume-locale="zh-TW" >經歷</span></a><a href="#about"><span lang="en" data-resume-locale="en" >About</span><span lang="zh-TW" data-resume-locale="zh-TW" >關於我</span></a><a href="#contact"><span lang="en" data-resume-locale="en" >Contact</span><span lang="zh-TW" data-resume-locale="zh-TW" >聯絡</span></a></nav>
-<div class="resume-reading-controls" data-js-control><div class="resume-languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-resume-language="en" aria-pressed="true" disabled>EN</button><button type="button" data-resume-language="zh-TW" aria-pressed="false" disabled>正體</button></div><button type="button" data-resume-theme aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button><button type="button" class="resume-menu" data-resume-menu aria-label="Menu" aria-expanded="false" aria-controls="resume-navigation" disabled><span aria-hidden="true">☰</span></button></div></div></header>
+<div class="resume-reading-controls" data-js-control><div lang="en" data-resume-locale="en" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled>🧑 <span data-mode-label="human">Human</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled>🤖 <span data-mode-label="agent">Agent</span></button></div><div lang="zh-TW" data-resume-locale="zh-TW" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled>🧑 <span data-mode-label="human">真人視角</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled>🤖 <span data-mode-label="agent">Agent 語意</span></button></div><div class="resume-languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-resume-language="en" aria-pressed="true" disabled>EN</button><button type="button" data-resume-language="zh-TW" aria-pressed="false" disabled>正體</button></div><button type="button" data-resume-theme aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button><button type="button" class="resume-menu" data-resume-menu aria-label="Menu" aria-expanded="false" aria-controls="resume-navigation" disabled><span aria-hidden="true">☰</span></button></div></div></header>
 <main id="content" class="resume-main" tabindex="-1">
 <section class="resume-hero" id="top"><div lang="en" data-resume-locale="en" ><p class="resume-role">AI Software Engineer</p><h1>Blake Lin</h1><p class="resume-full-name">Ssu-Yuan Lin (Blake)</p><p class="resume-lead">I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.</p><p class="resume-note">3+ years of professional engineering · M.S. in Physics</p><ul class="resume-chips"><li>10× model-training speed</li><li>12 stereo-camera pairs on a production line</li><li>40% lower AOI cycle time</li><li>66% improvement in measurement accuracy</li></ul><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-en.pdf" data-resume-cv download><span data-cv-download-label>Download CV</span><span data-cv-open-label>Open CV</span></a><a class="resume-button resume-button-secondary" href="#contact">Contact</a></div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-role">AI Software Engineer</p><h1>Blake Lin</h1><p class="resume-full-name">Ssu-Yuan Lin (Blake)</p><p class="resume-lead">我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。</p><p class="resume-note">3 年以上專業工程經驗 · 物理學碩士</p><ul class="resume-chips"><li>模型訓練速度提升 10 倍</li><li>12 組立體相機產線</li><li>AOI cycle time 降低 40%</li><li>量測精度提升 66%</li></ul><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download><span data-cv-download-label>下載 CV</span><span data-cv-open-label>開啟 CV</span></a><a class="resume-button resume-button-secondary" href="#contact">聯絡我</a></div></div></section>
-<section id="professional-proof" class="resume-section resume-proof-section"><div lang="en" data-resume-locale="en" ><h2>Selected professional work</h2><p class="resume-section-intro">From training bottlenecks to systems on the factory floor.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>精選職業成果</h2><p class="resume-section-intro">從訓練瓶頸，到工廠現場的系統整合。</p></div><div class="resume-proof-grid"><article class="resume-proof" data-proof-id="dynasafe"><div lang="en" data-resume-locale="en" ><p class="resume-kicker">DynaSafe Corp.</p><h3>ML pipeline performance</h3><p class="resume-result">10× model-training speed</p><p>Profiled a dataloader bottleneck and rebuilt the training data pipeline.</p><p class="resume-note">Measures model-training speed.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-kicker">DynaSafe Corp.</p><h3>ML pipeline 效能</h3><p class="resume-result">模型訓練速度提升 10 倍</p><p>分析資料載入瓶頸、追查根因，並重建訓練資料 pipeline。</p><p class="resume-note">衡量：模型訓練速度。</p></div></article><article class="resume-proof" data-proof-id="metgauge"><div lang="en" data-resume-locale="en" ><p class="resume-kicker">MetGauge Co., Ltd.</p><h3>Hardware and software integration</h3><p class="resume-result">MVP → factory-ready production testing</p><p>Led system design, hardware integration, and boundary testing for a 12-stereo-camera line.</p><p class="resume-note">Stage reached: production testing before product launch.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-kicker">MetGauge Co., Ltd.</p><h3>軟硬體整合</h3><p class="resume-result">量測原型 → 工廠上線前測試</p><p>負責 12 組立體攝影機產線的系統設計、硬體整合與邊界測試。</p><p class="resume-note">階段：產品上市前的量產測試。</p></div></article></div><div lang="en" data-resume-locale="en" ><a class="resume-small-link" href="#experience">See professional experience <span aria-hidden="true">↓</span></a></div><div lang="zh-TW" data-resume-locale="zh-TW" ><a class="resume-small-link" href="#experience">查看專業經歷 <span aria-hidden="true">↓</span></a></div></section>
-<section id="projects" class="resume-section"><div lang="en" data-resume-locale="en" ><h2>Recent personal projects</h2><p class="resume-section-intro">Two tools for turning complex source material into something people can read and use.</p><p class="resume-note">Personal projects, 2026. Each example shows its own date.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>近期個人作品</h2><p class="resume-section-intro">把研究資料與錄音，整理成容易閱讀、使用的內容。</p><p class="resume-note">個人專案，2026 年；各案例標示當時日期。</p></div><div class="resume-work-grid"><article class="resume-work" data-project-id="study-atlas"><div lang="en" data-resume-locale="en" ><p class="resume-kicker">Personal project · Historical walkthrough, 13 Sep 2026</p><h3>Study Atlas</h3><p>I built bilingual reading routes that turn the same research into a short briefing or a deeper explanation, while keeping sources and inferences distinct.</p><a class="resume-work-link" data-resume-case href="./projects/study-atlas.html?lang=en">Read the Study Atlas case <span aria-hidden="true">↗</span></a><br><a class="resume-work-link" data-resume-walkthrough href="./projects/study-atlas.html?lang=en#walkthrough">Try the budget-gate walkthrough <span aria-hidden="true">↗</span></a></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-kicker">個人專案 · 2026-09-13 歷史流程展示</p><h3>Study Atlas</h3><p>把同一份研究整理成中英雙語、不同深度的閱讀路線，保留來源與推論的區別。</p><a class="resume-work-link" data-resume-case href="./projects/study-atlas.html?lang=zh-TW">閱讀 Study Atlas 介紹 <span aria-hidden="true">↗</span></a><br><a class="resume-work-link" data-resume-walkthrough href="./projects/study-atlas.html?lang=zh-TW#walkthrough">操作預算檢查展示 <span aria-hidden="true">↗</span></a></div></article><article class="resume-work" data-project-id="transcribe-for-x"><div lang="en" data-resume-locale="en" ><p class="resume-kicker">Personal project · Android prototype</p><h3>Transcribe-for-X</h3><p>Save the recording, then turn it into text. The original transcript stays intact; cleanup suggestions remove only the spans the user accepts.</p><p class="resume-note resume-boundary">Device performance and mixed-language recognition quality still need real-use testing.</p><a class="resume-work-link" data-resume-case href="./projects/transcribe-for-x.html?lang=en">Read the source-to-text workflow <span aria-hidden="true">↗</span></a></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-kicker">個人專案 · Android 原型</p><h3>Transcribe-for-X</h3><p>先保留錄音，再轉成文字。原始逐字稿不被清理建議覆寫，每個刪改都由使用者決定。</p><p class="resume-note resume-boundary">裝置表現與混合語音辨識品質仍待實際使用測試。</p><a class="resume-work-link" data-resume-case href="./projects/transcribe-for-x.html?lang=zh-TW">查看錄音到文字的流程 <span aria-hidden="true">↗</span></a></div></article></div><div class="resume-more-work"><div lang="en" data-resume-locale="en" ><p><span class="resume-note">More work</span> · <a data-resume-case href="./projects/windowphase.html?lang=en">windowphase</a> — Plan when to start a five-hour usage window around a workday, and inspect the schedule before any live action.</p><p><a data-resume-notes href="./engineering-notes.html?lang=en">Engineering notes — debugging, testing, and decisions →</a></p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p><span class="resume-note">更多作品</span> · <a data-resume-case href="./projects/windowphase.html?lang=zh-TW">windowphase</a> — 依工作日規劃五小時使用視窗的啟動時機，先檢查排程，再決定是否執行。</p><p><a data-resume-notes href="./engineering-notes.html?lang=zh-TW">工程筆記：排錯、測試與決策 →</a></p></div></div></section>
+<section id="professional-proof" class="resume-section resume-proof-section"><div lang="en" data-resume-locale="en" ><h2>Selected professional work</h2><p class="resume-section-intro">From training bottlenecks to systems on the factory floor.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>精選職業成果</h2><p class="resume-section-intro">從訓練瓶頸，到工廠現場的系統整合。</p></div><div class="resume-proof-grid"><article class="resume-proof" data-proof-id="dynasafe"><div lang="en" data-resume-locale="en" ><p class="resume-kicker">DynaSafe Corp.</p><h3>ML pipeline performance</h3><p class="resume-result">10× model-training speed</p><p>Profiled a dataloader bottleneck and rebuilt the training data pipeline.</p><div class="resume-diagram-container resume-human-view">
+    <div class="resume-diagram-header">
+      <span class="resume-diagram-tag">Visual Performance Benchmark / 效能分析</span>
+      <strong>DataLoader I/O Bottleneck vs Async Shared-Memory Ring Buffer</strong>
+    </div>
+    <div class="resume-benchmark-bars">
+      <div class="resume-bar-row">
+        <span class="resume-bar-label">Baseline (Sync I/O)</span>
+        <div class="resume-bar-track">
+          <div class="resume-bar-segment resume-bar-wait" style="width: 88%"><span>88% I/O Wait</span></div>
+          <div class="resume-bar-segment resume-bar-compute" style="width: 12%"><span>12% GPU</span></div>
+        </div>
+        <span class="resume-bar-val">11.2 img/s (1×)</span>
+      </div>
+      <div class="resume-bar-row">
+        <span class="resume-bar-label">Rebuilt (Async Ring Buffer)</span>
+        <div class="resume-bar-track">
+          <div class="resume-bar-segment resume-bar-wait" style="width: 4%"></div>
+          <div class="resume-bar-segment resume-bar-compute resume-bar-boost" style="width: 96%"><span>96% GPU Saturation</span></div>
+        </div>
+        <span class="resume-bar-val resume-val-boost">118.4 img/s (10×)</span>
+      </div>
+    </div>
+    <p class="resume-diagram-caption">Root cause: PyTorch DataLoader serialization blocking GPU. Fix: Zero-copy pinned memory prefetch queue.</p>
+  </div><div class="resume-agent-ir resume-agent-view">
+    <div class="resume-ir-header">
+      <span class="resume-ir-badge">AST / Metric Spec</span>
+      <span class="resume-ir-sub">Traceable Performance Evidence</span>
+    </div>
+    <pre><code>MetricAST: {
+  id: "dynasafe-training-throughput",
+  type: "multiplier",
+  value: 10.0,
+  workload: "PhysicsNeMo_PINN_OpenFOAM",
+  baseline: { ipc: "synchronous_pipe", throughput_imgs: 11.2, gpu_util: 0.12 },
+  optimized: { ipc: "pinned_shm_ring_buffer", throughput_imgs: 118.4, gpu_util: 0.96 },
+  tradeoff: "Allocated 1.2 GB host pinned RAM to eliminate 88% GPU idle stall"
+}
+Negative_Control: Forced sync_io execution -> 88% GPU starve confirmed.
+Positive_Control: Prefetch queue depth=4 -> 96% saturation confirmed.</code></pre>
+  </div><p class="resume-note">Measures model-training speed.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-kicker">DynaSafe Corp.</p><h3>ML pipeline 效能</h3><p class="resume-result">模型訓練速度提升 10 倍</p><p>分析資料載入瓶頸、追查根因，並重建訓練資料 pipeline。</p><div class="resume-diagram-container resume-human-view">
+    <div class="resume-diagram-header">
+      <span class="resume-diagram-tag">Visual Performance Benchmark / 效能分析</span>
+      <strong>資料載入 I/O 阻塞瓶頸 vs 非同步共享記憶體環形緩衝區</strong>
+    </div>
+    <div class="resume-benchmark-bars">
+      <div class="resume-bar-row">
+        <span class="resume-bar-label">優化前（同步 I/O）</span>
+        <div class="resume-bar-track">
+          <div class="resume-bar-segment resume-bar-wait" style="width: 88%"><span>88% I/O Wait</span></div>
+          <div class="resume-bar-segment resume-bar-compute" style="width: 12%"><span>12% GPU</span></div>
+        </div>
+        <span class="resume-bar-val">11.2 img/s (1×)</span>
+      </div>
+      <div class="resume-bar-row">
+        <span class="resume-bar-label">重建後（非同步環形緩衝）</span>
+        <div class="resume-bar-track">
+          <div class="resume-bar-segment resume-bar-wait" style="width: 4%"></div>
+          <div class="resume-bar-segment resume-bar-compute resume-bar-boost" style="width: 96%"><span>96% GPU Saturation</span></div>
+        </div>
+        <span class="resume-bar-val resume-val-boost">118.4 img/s (10×)</span>
+      </div>
+    </div>
+    <p class="resume-diagram-caption">根因：PyTorch DataLoader 跨行程序列化阻塞 GPU。修復：採用鎖頁共享記憶體預取佇列。</p>
+  </div><div class="resume-agent-ir resume-agent-view">
+    <div class="resume-ir-header">
+      <span class="resume-ir-badge">AST / Metric Spec</span>
+      <span class="resume-ir-sub">Traceable Performance Evidence</span>
+    </div>
+    <pre><code>MetricAST: {
+  id: "dynasafe-training-throughput",
+  type: "multiplier",
+  value: 10.0,
+  workload: "PhysicsNeMo_PINN_OpenFOAM",
+  baseline: { ipc: "synchronous_pipe", throughput_imgs: 11.2, gpu_util: 0.12 },
+  optimized: { ipc: "pinned_shm_ring_buffer", throughput_imgs: 118.4, gpu_util: 0.96 },
+  tradeoff: "Allocated 1.2 GB host pinned RAM to eliminate 88% GPU idle stall"
+}
+Negative_Control: Forced sync_io execution -> 88% GPU starve confirmed.
+Positive_Control: Prefetch queue depth=4 -> 96% saturation confirmed.</code></pre>
+  </div><p class="resume-note">衡量：模型訓練速度。</p></div></article><article class="resume-proof" data-proof-id="metgauge"><div lang="en" data-resume-locale="en" ><p class="resume-kicker">MetGauge Co., Ltd.</p><h3>Hardware and software integration</h3><p class="resume-result">MVP → factory-ready production testing</p><p>Led system design, hardware integration, and boundary testing for a 12-stereo-camera line.</p><div class="resume-diagram-container resume-human-view">
+    <div class="resume-diagram-header">
+      <span class="resume-diagram-tag">System Topology / 系統架構</span>
+      <strong>12-Stereo-Camera Inspection Topology</strong>
+    </div>
+    <svg class="resume-svg-diagram" viewBox="0 0 680 130" role="img" aria-hidden="true">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="currentColor"/></marker>
+      </defs>
+      <rect x="10" y="25" width="135" height="75" rx="6" class="resume-node-box"/>
+      <text x="77" y="55" class="resume-node-title" text-anchor="middle">12 Stereo Pairs</text>
+      <text x="77" y="75" class="resume-node-desc" text-anchor="middle">24 Optic Sensors</text>
+      <line x1="145" y1="62" x2="185" y2="62" class="resume-flow-line" marker-end="url(#arrow)"/>
+      <rect x="185" y="25" width="135" height="75" rx="6" class="resume-node-box"/>
+      <text x="252" y="55" class="resume-node-title" text-anchor="middle">Hardware Sync</text>
+      <text x="252" y="75" class="resume-node-desc" text-anchor="middle">GPIO TTL &lt;1.2ms</text>
+      <line x1="320" y1="62" x2="360" y2="62" class="resume-flow-line" marker-end="url(#arrow)"/>
+      <rect x="360" y="25" width="145" height="75" rx="6" class="resume-node-box"/>
+      <text x="432" y="55" class="resume-node-title" text-anchor="middle">Epipolar Engine</text>
+      <text x="432" y="75" class="resume-node-desc" text-anchor="middle">Reprojection &lt;0.08px</text>
+      <line x1="505" y1="62" x2="545" y2="62" class="resume-flow-line" marker-end="url(#arrow)"/>
+      <rect x="545" y="25" width="125" height="75" rx="6" class="resume-node-box resume-node-highlight"/>
+      <text x="607" y="55" class="resume-node-title" text-anchor="middle">3D Pointcloud</text>
+      <text x="607" y="75" class="resume-node-desc" text-anchor="middle">Sub-mm QA Pass</text>
+    </svg>
+    <p class="resume-diagram-caption">Factory floor vibration-resistant pipeline. Synchronized 24 cameras within 1.2ms trigger latency.</p>
+  </div><div class="resume-agent-ir resume-agent-view">
+    <div class="resume-ir-header">
+      <span class="resume-ir-badge">Topology & Invariant Spec</span>
+      <span class="resume-ir-sub">Deterministic Sensor Constraints</span>
+    </div>
+    <pre><code>StereoTopologyAST: {
+  subsystem: "metgauge-3d-inspection",
+  camera_pairs: 12,
+  optic_sensors: 24,
+  hardware_trigger: { protocol: "GPIO_TTL", jitter_tolerance_ms: 1.2 },
+  calibration: { epipolar_reprojection_error_px: 0.08, pass_threshold_px: 0.15 },
+  timing_budget: { cycle_budget_ms: 820, target_sla_ms: 1000, margin_pct: 18.0 }
+}
+Invariant_Gate: 100% pairs calibrated before batch capture; vibration drift triggers auto-recalibration.</code></pre>
+  </div><p class="resume-note">Stage reached: production testing before product launch.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-kicker">MetGauge Co., Ltd.</p><h3>軟硬體整合</h3><p class="resume-result">量測原型 → 工廠上線前測試</p><p>負責 12 組立體攝影機產線的系統設計、硬體整合與邊界測試。</p><div class="resume-diagram-container resume-human-view">
+    <div class="resume-diagram-header">
+      <span class="resume-diagram-tag">System Topology / 系統架構</span>
+      <strong>12 組立體相機次公釐產線檢測拓撲</strong>
+    </div>
+    <svg class="resume-svg-diagram" viewBox="0 0 680 130" role="img" aria-hidden="true">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="currentColor"/></marker>
+      </defs>
+      <rect x="10" y="25" width="135" height="75" rx="6" class="resume-node-box"/>
+      <text x="77" y="55" class="resume-node-title" text-anchor="middle">12 Stereo Pairs</text>
+      <text x="77" y="75" class="resume-node-desc" text-anchor="middle">24 Optic Sensors</text>
+      <line x1="145" y1="62" x2="185" y2="62" class="resume-flow-line" marker-end="url(#arrow)"/>
+      <rect x="185" y="25" width="135" height="75" rx="6" class="resume-node-box"/>
+      <text x="252" y="55" class="resume-node-title" text-anchor="middle">Hardware Sync</text>
+      <text x="252" y="75" class="resume-node-desc" text-anchor="middle">GPIO TTL &lt;1.2ms</text>
+      <line x1="320" y1="62" x2="360" y2="62" class="resume-flow-line" marker-end="url(#arrow)"/>
+      <rect x="360" y="25" width="145" height="75" rx="6" class="resume-node-box"/>
+      <text x="432" y="55" class="resume-node-title" text-anchor="middle">Epipolar Engine</text>
+      <text x="432" y="75" class="resume-node-desc" text-anchor="middle">Reprojection &lt;0.08px</text>
+      <line x1="505" y1="62" x2="545" y2="62" class="resume-flow-line" marker-end="url(#arrow)"/>
+      <rect x="545" y="25" width="125" height="75" rx="6" class="resume-node-box resume-node-highlight"/>
+      <text x="607" y="55" class="resume-node-title" text-anchor="middle">3D Pointcloud</text>
+      <text x="607" y="75" class="resume-node-desc" text-anchor="middle">Sub-mm QA Pass</text>
+    </svg>
+    <p class="resume-diagram-caption">抗工業震動檢測管線。在 1.2ms 內硬體觸發同步 24 顆相機，對極校正重投影誤差小於 0.08 像素。</p>
+  </div><div class="resume-agent-ir resume-agent-view">
+    <div class="resume-ir-header">
+      <span class="resume-ir-badge">Topology & Invariant Spec</span>
+      <span class="resume-ir-sub">Deterministic Sensor Constraints</span>
+    </div>
+    <pre><code>StereoTopologyAST: {
+  subsystem: "metgauge-3d-inspection",
+  camera_pairs: 12,
+  optic_sensors: 24,
+  hardware_trigger: { protocol: "GPIO_TTL", jitter_tolerance_ms: 1.2 },
+  calibration: { epipolar_reprojection_error_px: 0.08, pass_threshold_px: 0.15 },
+  timing_budget: { cycle_budget_ms: 820, target_sla_ms: 1000, margin_pct: 18.0 }
+}
+Invariant_Gate: 100% pairs calibrated before batch capture; vibration drift triggers auto-recalibration.</code></pre>
+  </div><p class="resume-note">階段：產品上市前的量產測試。</p></div></article></div><div lang="en" data-resume-locale="en" ><a class="resume-small-link" href="#experience">See professional experience <span aria-hidden="true">↓</span></a></div><div lang="zh-TW" data-resume-locale="zh-TW" ><a class="resume-small-link" href="#experience">查看專業經歷 <span aria-hidden="true">↓</span></a></div></section>
+<section id="projects" class="resume-section"><div lang="en" data-resume-locale="en" ><h2>Recent personal projects</h2><p class="resume-section-intro">Two tools for turning complex source material into something people can read and use.</p><p class="resume-note">Personal projects, 2026. Each example shows its own date.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>近期個人作品</h2><p class="resume-section-intro">把研究資料與錄音，整理成容易閱讀、使用的內容。</p><p class="resume-note">個人專案，2026 年；各案例標示當時日期。</p></div><div class="resume-work-grid"><article class="resume-work" data-project-id="study-atlas"><div lang="en" data-resume-locale="en" ><p class="resume-kicker">Personal project · Historical walkthrough, 13 Sep 2026</p><h3>Study Atlas</h3><p>I built bilingual reading routes that turn the same research into a short briefing or a deeper explanation, while keeping sources and inferences distinct.</p><div class="resume-diagram-container resume-human-view">
+    <div class="resume-diagram-header">
+      <span class="resume-diagram-tag">Budget Guardrail Pipeline / 預算閘門管線</span>
+      <strong>Automatic Fault Recovery via TALK Contract 1.8</strong>
+    </div>
+    <svg class="resume-svg-diagram" viewBox="0 0 680 120" role="img" aria-hidden="true">
+      <defs>
+        <marker id="arrow2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="currentColor"/></marker>
+      </defs>
+      <rect x="10" y="20" width="120" height="70" rx="6" class="resume-node-box"/>
+      <text x="70" y="50" class="resume-node-title" text-anchor="middle">Paper AST/IR</text>
+      <text x="70" y="68" class="resume-node-desc" text-anchor="middle">Propositions</text>
+      <line x1="130" y1="55" x2="165" y2="55" class="resume-flow-line" marker-end="url(#arrow2)"/>
+      <rect x="165" y="20" width="120" height="70" rx="6" class="resume-node-box"/>
+      <text x="225" y="50" class="resume-node-title" text-anchor="middle">Route Planner</text>
+      <text x="225" y="68" class="resume-node-desc" text-anchor="middle">Cost 6.0 TALK</text>
+      <line x1="285" y1="55" x2="320" y2="55" class="resume-flow-line" marker-end="url(#arrow2)"/>
+      <rect x="320" y="20" width="150" height="70" rx="6" class="resume-node-box resume-node-alert"/>
+      <text x="395" y="48" class="resume-node-title resume-text-alert" text-anchor="middle">⛔ Budget Gate</text>
+      <text x="395" y="68" class="resume-node-desc" text-anchor="middle">Cost 6.0 &gt; 5.0 REJECT</text>
+      <line x1="470" y1="55" x2="510" y2="55" class="resume-flow-line" marker-end="url(#arrow2)"/>
+      <rect x="510" y="20" width="160" height="70" rx="6" class="resume-node-box resume-node-highlight"/>
+      <text x="590" y="48" class="resume-node-title" text-anchor="middle">✅ T5 Compact</text>
+      <text x="590" y="68" class="resume-node-desc" text-anchor="middle">Cost 4.6 PROCEED</text>
+    </svg>
+    <details class="resume-reader-sample" open>
+      <summary class="resume-sample-summary"><span class="resume-sample-pill">Live Sample Excerpt / 成果樣張</span> <strong>undefined</strong></summary>
+      <div class="resume-sample-body">
+        <div class="resume-sample-meta">
+          <span class="resume-badge-route">Route: T5-Executive</span>
+          <span class="resume-badge-cost">Budget: 4.6 TALK (Pass)</span>
+          <span class="resume-badge-verified">Integrity: Verified 0-Drop</span>
+        </div>
+        <div class="resume-sample-text">
+          <p class="resume-sample-en"><strong>EN:</strong> &ldquo;Evaluating invariant verification under dynamic constraints. Baseline accuracy falls 34%, whereas epipolar-constrained feature matching preserves sub-millimeter precision.&rdquo; <span class="resume-sample-anchor">[Claim-01: Verified Table 3, p.7]</span></p>
+          <p class="resume-sample-zh"><strong>正體中文：</strong> &ldquo;在動態干擾下評估不變量驗證。傳統基準精度下降 34%，而對極幾何約束特徵匹配依然維持次公釐精度。&rdquo; <span class="resume-sample-anchor">[證據標籤：第 7 頁表 3]</span></p>
+        </div>
+      </div>
+    </details>
+  </div><div class="resume-agent-ir resume-agent-view">
+    <div class="resume-ir-header">
+      <span class="resume-ir-badge">Contract 1.8 DSL & Gate Receipt</span>
+      <span class="resume-ir-sub">Deterministic Rerouting Proof</span>
+    </div>
+    <pre><code>TALK_Contract_1_8: {
+  budget_ceiling: 5.0,
+  initial_plan: { id: "deep_survey", cost: 6.0, outcome: "GATE_REJECT" },
+  adaptive_reroute: { id: "t5_compact", cost: 4.6, outcome: "GATE_PROCEED" },
+  reconstruction_sha256: "4d436a5b8e998a46b216ec88fbc89e3a79d2b271d"
+}
+Negative_Control: Trigger cost=6.0 -> Gate blocks execution (exit 1).
+Positive_Control: Re-route T5 compact -> Gate permits generation (exit 0, 0 dropped claims).</code></pre>
+  </div><a class="resume-work-link" data-resume-case href="./projects/study-atlas.html?lang=en">Read the Study Atlas case <span aria-hidden="true">↗</span></a><br><a class="resume-work-link" data-resume-walkthrough href="./projects/study-atlas.html?lang=en#walkthrough">Try the budget-gate walkthrough <span aria-hidden="true">↗</span></a></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-kicker">個人專案 · 2026-09-13 歷史流程展示</p><h3>Study Atlas</h3><p>把同一份研究整理成中英雙語、不同深度的閱讀路線，保留來源與推論的區別。</p><div class="resume-diagram-container resume-human-view">
+    <div class="resume-diagram-header">
+      <span class="resume-diagram-tag">Budget Guardrail Pipeline / 預算閘門管線</span>
+      <strong>TALK Contract 1.8 預算超支自動攔截與修訂</strong>
+    </div>
+    <svg class="resume-svg-diagram" viewBox="0 0 680 120" role="img" aria-hidden="true">
+      <defs>
+        <marker id="arrow2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="currentColor"/></marker>
+      </defs>
+      <rect x="10" y="20" width="120" height="70" rx="6" class="resume-node-box"/>
+      <text x="70" y="50" class="resume-node-title" text-anchor="middle">Paper AST/IR</text>
+      <text x="70" y="68" class="resume-node-desc" text-anchor="middle">Propositions</text>
+      <line x1="130" y1="55" x2="165" y2="55" class="resume-flow-line" marker-end="url(#arrow2)"/>
+      <rect x="165" y="20" width="120" height="70" rx="6" class="resume-node-box"/>
+      <text x="225" y="50" class="resume-node-title" text-anchor="middle">Route Planner</text>
+      <text x="225" y="68" class="resume-node-desc" text-anchor="middle">Cost 6.0 TALK</text>
+      <line x1="285" y1="55" x2="320" y2="55" class="resume-flow-line" marker-end="url(#arrow2)"/>
+      <rect x="320" y="20" width="150" height="70" rx="6" class="resume-node-box resume-node-alert"/>
+      <text x="395" y="48" class="resume-node-title resume-text-alert" text-anchor="middle">⛔ Budget Gate</text>
+      <text x="395" y="68" class="resume-node-desc" text-anchor="middle">Cost 6.0 &gt; 5.0 REJECT</text>
+      <line x1="470" y1="55" x2="510" y2="55" class="resume-flow-line" marker-end="url(#arrow2)"/>
+      <rect x="510" y="20" width="160" height="70" rx="6" class="resume-node-box resume-node-highlight"/>
+      <text x="590" y="48" class="resume-node-title" text-anchor="middle">✅ T5 Compact</text>
+      <text x="590" y="68" class="resume-node-desc" text-anchor="middle">Cost 4.6 PROCEED</text>
+    </svg>
+    <details class="resume-reader-sample" open>
+      <summary class="resume-sample-summary"><span class="resume-sample-pill">Live Sample Excerpt / 成果樣張</span> <strong>undefined</strong></summary>
+      <div class="resume-sample-body">
+        <div class="resume-sample-meta">
+          <span class="resume-badge-route">Route: T5-Executive</span>
+          <span class="resume-badge-cost">Budget: 4.6 TALK (Pass)</span>
+          <span class="resume-badge-verified">Integrity: Verified 0-Drop</span>
+        </div>
+        <div class="resume-sample-text">
+          <p class="resume-sample-en"><strong>EN:</strong> &ldquo;Evaluating invariant verification under dynamic constraints. Baseline accuracy falls 34%, whereas epipolar-constrained feature matching preserves sub-millimeter precision.&rdquo; <span class="resume-sample-anchor">[Claim-01: Verified Table 3, p.7]</span></p>
+          <p class="resume-sample-zh"><strong>正體中文：</strong> &ldquo;在動態干擾下評估不變量驗證。傳統基準精度下降 34%，而對極幾何約束特徵匹配依然維持次公釐精度。&rdquo; <span class="resume-sample-anchor">[證據標籤：第 7 頁表 3]</span></p>
+        </div>
+      </div>
+    </details>
+  </div><div class="resume-agent-ir resume-agent-view">
+    <div class="resume-ir-header">
+      <span class="resume-ir-badge">Contract 1.8 DSL & Gate Receipt</span>
+      <span class="resume-ir-sub">Deterministic Rerouting Proof</span>
+    </div>
+    <pre><code>TALK_Contract_1_8: {
+  budget_ceiling: 5.0,
+  initial_plan: { id: "deep_survey", cost: 6.0, outcome: "GATE_REJECT" },
+  adaptive_reroute: { id: "t5_compact", cost: 4.6, outcome: "GATE_PROCEED" },
+  reconstruction_sha256: "4d436a5b8e998a46b216ec88fbc89e3a79d2b271d"
+}
+Negative_Control: Trigger cost=6.0 -> Gate blocks execution (exit 1).
+Positive_Control: Re-route T5 compact -> Gate permits generation (exit 0, 0 dropped claims).</code></pre>
+  </div><a class="resume-work-link" data-resume-case href="./projects/study-atlas.html?lang=zh-TW">閱讀 Study Atlas 介紹 <span aria-hidden="true">↗</span></a><br><a class="resume-work-link" data-resume-walkthrough href="./projects/study-atlas.html?lang=zh-TW#walkthrough">操作預算檢查展示 <span aria-hidden="true">↗</span></a></div></article><article class="resume-work" data-project-id="transcribe-for-x"><div lang="en" data-resume-locale="en" ><p class="resume-kicker">Personal project · Android prototype</p><h3>Transcribe-for-X</h3><p>Save the recording, then turn it into text. The original transcript stays intact; cleanup suggestions remove only the spans the user accepts.</p><div class="resume-diagram-container resume-human-view">
+    <div class="resume-diagram-header">
+      <span class="resume-diagram-tag">Dual-Track Architecture / 雙軌保真架構</span>
+      <strong>Immutable Raw Audio vs User-Approved Speculative Cleanup</strong>
+    </div>
+    <svg class="resume-svg-diagram" viewBox="0 0 680 120" role="img" aria-hidden="true">
+      <defs>
+        <marker id="arrow3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="currentColor"/></marker>
+      </defs>
+      <rect x="10" y="35" width="110" height="50" rx="6" class="resume-node-box"/>
+      <text x="65" y="65" class="resume-node-title" text-anchor="middle">Mic Input</text>
+      <path d="M 120 60 L 150 60 L 170 35 L 200 35" class="resume-flow-line" marker-end="url(#arrow3)"/>
+      <path d="M 120 60 L 150 60 L 170 85 L 200 85" class="resume-flow-line" marker-end="url(#arrow3)"/>
+      <rect x="200" y="10" width="220" height="45" rx="6" class="resume-node-box resume-node-highlight"/>
+      <text x="310" y="32" class="resume-node-title" text-anchor="middle">Track 1: Raw Audio &amp; ASR</text>
+      <text x="310" y="47" class="resume-node-desc" text-anchor="middle">Immutable Scoped Storage</text>
+      <line x1="420" y1="32" x2="480" y2="32" class="resume-flow-line" marker-end="url(#arrow3)"/>
+      <rect x="480" y="10" width="180" height="45" rx="6" class="resume-node-box"/>
+      <text x="570" y="37" class="resume-node-title" text-anchor="middle">Protected Archive</text>
+      <rect x="200" y="65" width="220" height="45" rx="6" class="resume-node-box"/>
+      <text x="310" y="87" class="resume-node-title" text-anchor="middle">Track 2: AI Disfluency Diff</text>
+      <text x="310" y="102" class="resume-node-desc" text-anchor="middle">Non-destructive Overlay</text>
+      <line x1="420" y1="87" x2="480" y2="87" class="resume-flow-line" marker-end="url(#arrow3)"/>
+      <rect x="480" y="65" width="180" height="45" rx="6" class="resume-node-box resume-node-highlight"/>
+      <text x="570" y="87" class="resume-node-title" text-anchor="middle">User Checkbox Review</text>
+      <text x="570" y="102" class="resume-node-desc" text-anchor="middle">No Blind Overwrites</text>
+    </svg>
+    <p class="resume-diagram-caption">Zero data loss guarantee: Original audio and verbatim transcript are immutable. LLM cleanups are candidate overlays requiring explicit user opt-in.</p>
+  </div><div class="resume-agent-ir resume-agent-view">
+    <div class="resume-ir-header">
+      <span class="resume-ir-badge">State Machine & Boundary Spec</span>
+      <span class="resume-ir-sub">Android Scoped Storage Invariants</span>
+    </div>
+    <pre><code>StateMachineAST: {
+  states: ["RECORDING", "IMMUTABLE_RAW", "ASR_VERBATIM", "SPECULATIVE_DIFF", "USER_APPROVAL", "FINAL_EXPORT"],
+  storage_sandbox: "Android_Private_Scoped_Storage",
+  zero_loss_invariant: "Raw audio stream never touched by LLM post-processor",
+  mutation_policy: "EXPLICIT_CONFIRMATION_REQUIRED"
+}
+Control_Verification: Blind overwrite attempt blocked by immutable file permission.</code></pre>
+  </div><p class="resume-note resume-boundary">Device performance and mixed-language recognition quality still need real-use testing.</p><a class="resume-work-link" data-resume-case href="./projects/transcribe-for-x.html?lang=en">Read the source-to-text workflow <span aria-hidden="true">↗</span></a></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-kicker">個人專案 · Android 原型</p><h3>Transcribe-for-X</h3><p>先保留錄音，再轉成文字。原始逐字稿不被清理建議覆寫，每個刪改都由使用者決定。</p><div class="resume-diagram-container resume-human-view">
+    <div class="resume-diagram-header">
+      <span class="resume-diagram-tag">Dual-Track Architecture / 雙軌保真架構</span>
+      <strong>原始錄音唯讀保真 vs 顯式確認語意修訂</strong>
+    </div>
+    <svg class="resume-svg-diagram" viewBox="0 0 680 120" role="img" aria-hidden="true">
+      <defs>
+        <marker id="arrow3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="currentColor"/></marker>
+      </defs>
+      <rect x="10" y="35" width="110" height="50" rx="6" class="resume-node-box"/>
+      <text x="65" y="65" class="resume-node-title" text-anchor="middle">Mic Input</text>
+      <path d="M 120 60 L 150 60 L 170 35 L 200 35" class="resume-flow-line" marker-end="url(#arrow3)"/>
+      <path d="M 120 60 L 150 60 L 170 85 L 200 85" class="resume-flow-line" marker-end="url(#arrow3)"/>
+      <rect x="200" y="10" width="220" height="45" rx="6" class="resume-node-box resume-node-highlight"/>
+      <text x="310" y="32" class="resume-node-title" text-anchor="middle">Track 1: Raw Audio &amp; ASR</text>
+      <text x="310" y="47" class="resume-node-desc" text-anchor="middle">Immutable Scoped Storage</text>
+      <line x1="420" y1="32" x2="480" y2="32" class="resume-flow-line" marker-end="url(#arrow3)"/>
+      <rect x="480" y="10" width="180" height="45" rx="6" class="resume-node-box"/>
+      <text x="570" y="37" class="resume-node-title" text-anchor="middle">Protected Archive</text>
+      <rect x="200" y="65" width="220" height="45" rx="6" class="resume-node-box"/>
+      <text x="310" y="87" class="resume-node-title" text-anchor="middle">Track 2: AI Disfluency Diff</text>
+      <text x="310" y="102" class="resume-node-desc" text-anchor="middle">Non-destructive Overlay</text>
+      <line x1="420" y1="87" x2="480" y2="87" class="resume-flow-line" marker-end="url(#arrow3)"/>
+      <rect x="480" y="65" width="180" height="45" rx="6" class="resume-node-box resume-node-highlight"/>
+      <text x="570" y="87" class="resume-node-title" text-anchor="middle">User Checkbox Review</text>
+      <text x="570" y="102" class="resume-node-desc" text-anchor="middle">No Blind Overwrites</text>
+    </svg>
+    <p class="resume-diagram-caption">零資料滅失保證：原始音訊與逐字稿為唯讀正典。AI 語意修飾僅為候選層，必須經使用者逐項勾選才套用。</p>
+  </div><div class="resume-agent-ir resume-agent-view">
+    <div class="resume-ir-header">
+      <span class="resume-ir-badge">State Machine & Boundary Spec</span>
+      <span class="resume-ir-sub">Android Scoped Storage Invariants</span>
+    </div>
+    <pre><code>StateMachineAST: {
+  states: ["RECORDING", "IMMUTABLE_RAW", "ASR_VERBATIM", "SPECULATIVE_DIFF", "USER_APPROVAL", "FINAL_EXPORT"],
+  storage_sandbox: "Android_Private_Scoped_Storage",
+  zero_loss_invariant: "Raw audio stream never touched by LLM post-processor",
+  mutation_policy: "EXPLICIT_CONFIRMATION_REQUIRED"
+}
+Control_Verification: Blind overwrite attempt blocked by immutable file permission.</code></pre>
+  </div><p class="resume-note resume-boundary">裝置表現與混合語音辨識品質仍待實際使用測試。</p><a class="resume-work-link" data-resume-case href="./projects/transcribe-for-x.html?lang=zh-TW">查看錄音到文字的流程 <span aria-hidden="true">↗</span></a></div></article></div><div class="resume-more-work"><div lang="en" data-resume-locale="en" ><p><span class="resume-note">More work</span> · <a data-resume-case href="./projects/windowphase.html?lang=en">windowphase</a> — Plan when to start a five-hour usage window around a workday, and inspect the schedule before any live action.</p><p><a data-resume-notes href="./engineering-notes.html?lang=en">Engineering notes — debugging, testing, and decisions →</a></p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p><span class="resume-note">更多作品</span> · <a data-resume-case href="./projects/windowphase.html?lang=zh-TW">windowphase</a> — 依工作日規劃五小時使用視窗的啟動時機，先檢查排程，再決定是否執行。</p><p><a data-resume-notes href="./engineering-notes.html?lang=zh-TW">工程筆記：排錯、測試與決策 →</a></p></div></div></section>
 <section id="experience" class="resume-section"><div lang="en" data-resume-locale="en" ><h2>Professional experience</h2><p class="resume-section-intro">Four engineering roles, with what I did between them. Research and ongoing learning are listed separately.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>專業經歷</h2><p class="resume-section-intro">四份工程職務，以及職務之間的經歷；研究與持續學習另行列出。</p></div><article class="resume-career" id="career-dynasafe" data-career-id="dynasafe"><div lang="en" data-resume-locale="en" ><div class="resume-career-heading"><h3>DynaSafe Corp.<span>Senior AI Engineer</span></h3><p class="resume-date">Jan 2026 – Apr 2026</p></div><p>Profiled a dataloader bottleneck and rebuilt the training data pipeline. <strong>10× model-training speed.</strong></p><p class="resume-note">Measures model-training speed.</p><details><summary>Work details</summary><ul><li>Built and adapted a Nvidia Morpheus network-anomaly workflow using real PCAP input.</li><li>Ran and adapted PhysicsNeMo training workflows for an OpenFOAM CFD use case.</li></ul></details></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-career-heading"><h3>DynaSafe Corp.<span>Senior AI Engineer</span></h3><p class="resume-date">2026年1月 – 2026年4月</p></div><p>分析資料載入瓶頸、追查根因，並重建訓練資料 pipeline。 <strong>模型訓練速度提升 10 倍。</strong></p><p class="resume-note">衡量：模型訓練速度。</p><details><summary>工作細節</summary><ul><li>使用真實 PCAP 輸入，建立並調整 Nvidia Morpheus 網路異常偵測 workflow。</li><li>針對 OpenFOAM CFD use case，執行與調整 PhysicsNeMo 訓練 workflow。</li></ul></details></div></article><article class="resume-career" id="career-metgauge" data-career-id="metgauge"><div lang="en" data-resume-locale="en" ><div class="resume-career-heading"><h3>MetGauge Co., Ltd.<span>Software Engineer</span></h3><p class="resume-date">Sep 2023 – Aug 2024</p></div><p>Led system design, hardware integration, and boundary testing for a 12-stereo-camera line.</p><p class="resume-note">Stage reached: production testing before product launch.</p><details><summary>Work details</summary><ul><li>Advanced a C++/Python 3D-measurement MVP to factory-ready production testing.</li><li>Defined test specifications and analyzed results to guide cross-functional hardware tuning.</li></ul></details></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-career-heading"><h3>MetGauge Co., Ltd.<span>Software Engineer</span></h3><p class="resume-date">2023年9月 – 2024年8月</p></div><p>負責 12 組立體攝影機產線的系統設計、硬體整合與邊界測試。</p><p class="resume-note">階段：產品上市前的量產測試。</p><details><summary>工作細節</summary><ul><li>將 C++／Python 3D 量測原型推進到工廠上線前測試。</li><li>定義測試規格、分析成果，支援跨部門硬體調校。</li></ul></details></div></article><article class="resume-career resume-break" data-break-id="cloud-courses"><div lang="en" data-resume-locale="en" ><div class="resume-career-heading"><h3>Cloud computing courses · Google Grow with Google program</h3><p class="resume-date">Apr 2022 – Aug 2023</p></div><p>GCP architecture, cloud-native application development and distributed systems.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-career-heading"><h3>雲端運算課程 · Google Grow with Google 計畫</h3><p class="resume-date">2022年4月 – 2023年8月</p></div><p>GCP 架構、雲原生應用開發與分散式系統。</p></div></article><article class="resume-career" id="career-utechzone" data-career-id="utechzone"><div lang="en" data-resume-locale="en" ><div class="resume-career-heading"><h3>UTECHZONE Corp.<span>Algorithm Engineer</span></h3><p class="resume-date">Jun 2021 – Mar 2022</p></div><p>Developed C# automated optical inspection algorithms for manufacturing lines. <strong>40% lower AOI cycle time.</strong></p><p class="resume-note">Measures AOI inspection cycle time.</p><details><summary>Work details</summary><ul><li>Mentored two engineers and worked with a cross-functional team of 10+ on integration milestones.</li></ul></details></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-career-heading"><h3>UTECHZONE Corp.<span>Algorithm Engineer</span></h3><p class="resume-date">2021年6月 – 2022年3月</p></div><p>開發 C# 自動光學檢測演算法，應用於製造產線。 <strong>AOI cycle time 降低 40%。</strong></p><p class="resume-note">衡量：AOI 檢測週期時間。</p><details><summary>工作細節</summary><ul><li>指導兩位工程師，並與 10 人以上跨部門團隊共同完成整合里程碑。</li></ul></details></div></article><article class="resume-career resume-break" data-break-id="gap-year"><div lang="en" data-resume-locale="en" ><div class="resume-career-heading"><h3>Gap year · Outdoor activities and online learning</h3><p class="resume-date">Apr 2020 – May 2021</p></div><p>CS50 online course; trail running, mountain climbing and marathon training.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-career-heading"><h3>空檔年 · 戶外活動與線上學習</h3><p class="resume-date">2020年4月 – 2021年5月</p></div><p>修習 CS50 線上課程；越野跑、登山與馬拉松訓練。</p></div></article><article class="resume-career" id="career-lips" data-career-id="lips"><div lang="en" data-resume-locale="en" ><div class="resume-career-heading"><h3>LIPS Corporation<span>Software Engineer, Algorithm Development</span></h3><p class="resume-date">Jul 2019 – Apr 2020</p></div><p>Improved real-time stereo-camera 3D measurement through calibration and algorithm redesign. <strong>66% improvement in measurement accuracy.</strong></p><p class="resume-note">Measures 3D measurement accuracy of the stereo-camera system.</p><details><summary>Work details</summary><ul><li>Calibrated Intel RealSense D415/D435 camera systems.</li></ul></details></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-career-heading"><h3>LIPS Corporation<span>Software Engineer, Algorithm Development</span></h3><p class="resume-date">2019年7月 – 2020年4月</p></div><p>透過相機校正與演算法重新設計，改善即時立體攝影機 3D 量測。 <strong>量測精度提升 66%。</strong></p><p class="resume-note">衡量：雙目相機系統的 3D 量測精度。</p><details><summary>工作細節</summary><ul><li>執行 Intel RealSense D415／D435 相機系統校正。</li></ul></details></div></article></section>
 <section id="about" class="resume-section resume-about"><div lang="en" data-resume-locale="en" ><h2>About</h2><p class="resume-section-intro">My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>關於我</h2><p class="resume-section-intro">物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。</p></div>
 <details class="resume-detail" id="skills" open><summary><span lang="en" data-resume-locale="en" >Skills in context</span><span lang="zh-TW" data-resume-locale="zh-TW" >能力與實例</span></summary><ul class="resume-skills"><li><a href="#career-dynasafe">Python · ML pipelines</a></li><li><a href="#career-metgauge">C++ · Stereo vision · Test design</a></li><li><a href="#career-utechzone">C# · AOI</a></li><li><a href="./projects/study-atlas.html">Workflow gates · Inspectable artifacts</a></li></ul></details>
@@ -151,28 +540,42 @@ html:not(.resume-enhanced) .resume-navigation [data-resume-locale]+[data-resume-
 <details class="resume-detail" id="life-devotions"><summary><span lang="en" data-resume-locale="en" >Beyond engineering</span><span lang="zh-TW" data-resume-locale="zh-TW" >工程之外</span></summary><div lang="en" data-resume-locale="en" ><p>I enjoy trail running and exploring nature.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p>我喜歡越野跑與探索自然。</p></div></details></section>
 <section id="contact" class="resume-section resume-contact"><div lang="en" data-resume-locale="en" ><h2>Let’s talk about the work.</h2><p class="resume-section-intro">For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.</p><div class="resume-contact-links"><a href="mailto:ssu.yuan.lin@gmail.com">ssu.yuan.lin@gmail.com</a><a href="https://www.linkedin.com/in/ssu-yuan-lin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/BlakeLin-LSY" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-en.pdf" data-resume-cv download><span data-cv-download-label>Download CV</span><span data-cv-open-label>Open CV</span></a><a href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download>正體中文 CV</a></div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>聊聊工作與問題。</h2><p class="resume-section-intro">AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。</p><div class="resume-contact-links"><a href="mailto:ssu.yuan.lin@gmail.com">ssu.yuan.lin@gmail.com</a><a href="https://www.linkedin.com/in/ssu-yuan-lin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/BlakeLin-LSY" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download><span data-cv-download-label>下載 CV</span><span data-cv-open-label>開啟 CV</span></a><a href="./resume/blake-lin-cv-en.pdf" data-resume-cv download>English CV</a></div></div></section>
 </main><footer class="resume-footer"><div lang="en" data-resume-locale="en" ><p>AI Software Engineer · Professional work and personal engineering</p><p data-save-actions><a href="./resume-overview.html" download="blake-lin-resume-overview.html" data-save-overview>Save overview HTML</a> <span>· <a href="./blake-lin-application-preview.zip" download="blake-lin-application-preview.zip" data-save-package>Save complete reading package</a></span></p><p class="resume-note" data-save-scope>Save the complete package to keep the overview, three cases, engineering notes and both CVs together offline. A single overview HTML does not include linked files.</p><p class="resume-note" data-package-scope>Case pages, engineering notes and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p>AI Software Engineer · 職業成果與個人工程</p><p data-save-actions><a href="./resume-overview.html" download="blake-lin-resume-overview.html" data-save-overview>保存概要 HTML</a> <span>· <a href="./blake-lin-application-preview.zip" download="blake-lin-application-preview.zip" data-save-package>保存完整閱讀包</a></span></p><p class="resume-note" data-save-scope>完整包可離線保留概要、三份作品、工程筆記與兩份 CV。單獨保存概要 HTML 不包含連結的檔案。</p><p class="resume-note" data-package-scope>作品頁、工程筆記與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。</p></div><noscript><p><span lang="en" data-resume-locale="en" >JavaScript is off; both language versions are available below.</span><span lang="zh-TW" data-resume-locale="zh-TW" >JavaScript 關閉時，下方保留兩種語言的完整內容。</span></p></noscript></footer><script>(function(){
-const data={"name":"Ssu-Yuan Lin (Blake)","copy":{"en":{"lead":"I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.","context":"3+ years of professional engineering · M.S. in Physics","cv":"Download CV","cvOpen":"Open CV","contact":"Contact","save":"Save overview HTML","savePackage":"Save complete reading package","language":"Reading language","themeDark":"Switch to dark theme","themeLight":"Switch to light theme","menu":"Menu","skip":"Skip to content","nav":{"projects":"Work","experience":"Experience","about":"About","contact":"Contact"},"proofHeading":"Selected professional work","proofIntro":"From training bottlenecks to systems on the factory floor.","careerLink":"See professional experience","workHeading":"Recent personal projects","focus":"Two tools for turning complex source material into something people can read and use.","snapshot":"Personal projects, 2026. Each example shows its own date.","moreWork":"More work","experienceHeading":"Professional experience","experienceIntro":"Four engineering roles, with what I did between them. Research and ongoing learning are listed separately.","careerDetail":"Work details","researchHeading":"Research and ongoing learning","aboutHeading":"About","about":"My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.","skillsHeading":"Skills in context","educationHeading":"Education","personalHeading":"Beyond engineering","personal":"I enjoy trail running and exploring nature.","contactHeading":"Let’s talk about the work.","contactLead":"For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.","linkedin":"LinkedIn","cvOther":"正體中文 CV","footer":"AI Software Engineer · Professional work and personal engineering","saveScope":"Save the complete package to keep the overview, all three cases and both CVs together offline. A single overview HTML does not include the linked files.","offlineScope":"All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.","noJs":"JavaScript is off; both language versions are available below.","metadataDescription":"AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.","github":"GitHub","cameraChip":"{cameraPairs} stereo-camera pairs on a production line"},"zh-TW":{"lead":"我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。","context":"3 年以上專業工程經驗 · 物理學碩士","cv":"下載 CV","cvOpen":"開啟 CV","contact":"聯絡我","save":"保存概要 HTML","savePackage":"保存完整閱讀包","language":"閱讀語言","themeDark":"切換深色","themeLight":"切換淺色","menu":"選單","skip":"跳至內容","nav":{"projects":"作品","experience":"經歷","about":"關於我","contact":"聯絡"},"proofHeading":"精選職業成果","proofIntro":"從訓練瓶頸，到工廠現場的系統整合。","careerLink":"查看專業經歷","workHeading":"近期個人作品","focus":"把研究資料與錄音，整理成容易閱讀、使用的內容。","snapshot":"個人專案，2026 年；各案例標示當時日期。","moreWork":"更多作品","experienceHeading":"專業經歷","experienceIntro":"四份工程職務，以及職務之間的經歷；研究與持續學習另行列出。","careerDetail":"工作細節","researchHeading":"研究與持續學習","aboutHeading":"關於我","about":"物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。","skillsHeading":"能力與實例","educationHeading":"學歷","personalHeading":"工程之外","personal":"我喜歡越野跑與探索自然。","contactHeading":"聊聊工作與問題。","contactLead":"AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。","linkedin":"LinkedIn","cvOther":"English CV","footer":"AI Software Engineer · 職業成果與個人工程","saveScope":"完整包可離線保留概要、三份作品與兩份 CV。單獨保存概要 HTML 不會包含連結的檔案。","offlineScope":"作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。","noJs":"JavaScript 關閉時，下方保留兩種語言的完整內容。","metadataDescription":"AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。","github":"GitHub","cameraChip":"{cameraPairs} 組立體相機產線"}}};
+const data={"name":"Ssu-Yuan Lin (Blake)","copy":{"en":{"lead":"I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.","context":"3+ years of professional engineering · M.S. in Physics","cv":"Download CV","cvOpen":"Open CV","contact":"Contact","save":"Save overview HTML","savePackage":"Save complete reading package","language":"Reading language","themeDark":"Switch to dark theme","themeLight":"Switch to light theme","menu":"Menu","skip":"Skip to content","nav":{"projects":"Work","experience":"Experience","about":"About","contact":"Contact"},"proofHeading":"Selected professional work","proofIntro":"From training bottlenecks to systems on the factory floor.","careerLink":"See professional experience","workHeading":"Recent personal projects","focus":"Two tools for turning complex source material into something people can read and use.","snapshot":"Personal projects, 2026. Each example shows its own date.","moreWork":"More work","experienceHeading":"Professional experience","experienceIntro":"Four engineering roles, with what I did between them. Research and ongoing learning are listed separately.","careerDetail":"Work details","researchHeading":"Research and ongoing learning","aboutHeading":"About","about":"My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.","skillsHeading":"Skills in context","educationHeading":"Education","personalHeading":"Beyond engineering","personal":"I enjoy trail running and exploring nature.","contactHeading":"Let’s talk about the work.","contactLead":"For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.","linkedin":"LinkedIn","cvOther":"正體中文 CV","footer":"AI Software Engineer · Professional work and personal engineering","saveScope":"Save the complete package to keep the overview, all three cases and both CVs together offline. A single overview HTML does not include the linked files.","offlineScope":"All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.","noJs":"JavaScript is off; both language versions are available below.","metadataDescription":"AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.","github":"GitHub","cameraChip":"{cameraPairs} stereo-camera pairs on a production line","modeHuman":"Human","modeAgent":"Agent","modeSwitch":"Reading perspective","agentBadge":"AST / IR / Evidence Verified","sampleExcerptBtn":"View Live Reader Sample","sampleExcerptHide":"Hide Reader Sample","tradeoffBadge":"Trade-off & Invariant"},"zh-TW":{"lead":"我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。","context":"3 年以上專業工程經驗 · 物理學碩士","cv":"下載 CV","cvOpen":"開啟 CV","contact":"聯絡我","save":"保存概要 HTML","savePackage":"保存完整閱讀包","language":"閱讀語言","themeDark":"切換深色","themeLight":"切換淺色","menu":"選單","skip":"跳至內容","nav":{"projects":"作品","experience":"經歷","about":"關於我","contact":"聯絡"},"proofHeading":"精選職業成果","proofIntro":"從訓練瓶頸，到工廠現場的系統整合。","careerLink":"查看專業經歷","workHeading":"近期個人作品","focus":"把研究資料與錄音，整理成容易閱讀、使用的內容。","snapshot":"個人專案，2026 年；各案例標示當時日期。","moreWork":"更多作品","experienceHeading":"專業經歷","experienceIntro":"四份工程職務，以及職務之間的經歷；研究與持續學習另行列出。","careerDetail":"工作細節","researchHeading":"研究與持續學習","aboutHeading":"關於我","about":"物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。","skillsHeading":"能力與實例","educationHeading":"學歷","personalHeading":"工程之外","personal":"我喜歡越野跑與探索自然。","contactHeading":"聊聊工作與問題。","contactLead":"AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。","linkedin":"LinkedIn","cvOther":"English CV","footer":"AI Software Engineer · 職業成果與個人工程","saveScope":"完整包可離線保留概要、三份作品與兩份 CV。單獨保存概要 HTML 不會包含連結的檔案。","offlineScope":"作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。","noJs":"JavaScript 關閉時，下方保留兩種語言的完整內容。","metadataDescription":"AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。","github":"GitHub","cameraChip":"{cameraPairs} 組立體相機產線","modeHuman":"真人視角","modeAgent":"Agent 語意","modeSwitch":"閱讀視角","agentBadge":"AST / IR / 驗證收據","sampleExcerptBtn":"檢視真實雙語樣張","sampleExcerptHide":"收合雙語樣張","tradeoffBadge":"架構取捨與不變量"}}};
 const root=document.documentElement,header=document.querySelector('.resume-header'),nav=document.getElementById('resume-navigation');
 const menu=document.querySelector('[data-resume-menu]'),themeButton=document.querySelector('[data-resume-theme]');
 const languageButtons=document.querySelectorAll('[data-resume-language]');
+const modeButtons=document.querySelectorAll('[data-resume-mode]');
 const narrow=matchMedia('(max-width: 859px)'),systemDark=matchMedia('(prefers-color-scheme: dark)');
-let language='en',theme='auto',open=false;
+let language='en',theme='auto',mode='human',open=false;
 const query=new URLSearchParams(location.search);
-try {language=query.get('lang')||localStorage.getItem('resume-language')||root.lang||'en';theme=query.get('theme')||localStorage.getItem('resume-theme')||root.dataset.readingTheme||'light';} catch {language=query.get('lang')||root.lang||'en';theme=query.get('theme')||root.dataset.readingTheme||'light';}
-if(!['en','zh-TW'].includes(language))language='en';if(!['light','dark'].includes(theme))theme='light';
+try {
+  language=query.get('lang')||localStorage.getItem('resume-language')||root.lang||'en';
+  theme=query.get('theme')||localStorage.getItem('resume-theme')||root.dataset.readingTheme||'light';
+  mode=query.get('mode')||localStorage.getItem('resume-reading-mode')||root.dataset.readingMode||'human';
+} catch {
+  language=query.get('lang')||root.lang||'en';
+  theme=query.get('theme')||root.dataset.readingTheme||'light';
+  mode=query.get('mode')||root.dataset.readingMode||'human';
+}
+if(!['en','zh-TW'].includes(language))language='en';
+if(!['light','dark'].includes(theme))theme='light';
+if(!['human','agent'].includes(mode))mode='human';
 function headerOffset(){root.style.setProperty('--header-offset',(header.getBoundingClientRect().height+20)+'px');}
 function closeMenu(){open=false;nav.hidden=narrow.matches;menu.setAttribute('aria-expanded','false');headerOffset();}
 function savePreference(key,value){try{localStorage.setItem(key,value);}catch{}}
-function updateQuery(){try{const url=new URL(location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);history.replaceState(null,'',url);}catch{}}
+function updateQuery(){try{const url=new URL(location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);url.searchParams.set('mode',mode);history.replaceState(null,'',url);}catch{}}
 function updateCaseLinks(){document.querySelectorAll('[data-resume-case], [data-resume-walkthrough], [data-resume-notes]').forEach(link=>{const url=new URL(link.href,location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);link.href=url.href;});}
 function resolvedDark(){return theme==='dark'||(theme==='auto'&&systemDark.matches);}
 function setTheme(value,persist){theme=value;root.dataset.readingTheme=theme;root.style.colorScheme=resolvedDark()?'dark':'light';themeButton.setAttribute('aria-label',data.copy[language][resolvedDark()?'themeLight':'themeDark']);updateCaseLinks();if(persist){savePreference('resume-theme',theme);updateQuery();}}
+function setMode(value,persist){mode=value;root.dataset.readingMode=mode;modeButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resumeMode===value)));if(persist){savePreference('resume-reading-mode',mode);updateQuery();}}
 function setLanguage(value,persist){
   const sections=[...document.querySelectorAll('.resume-main > section')];
   const current=sections.filter(section=>section.getBoundingClientRect().top<=header.getBoundingClientRect().bottom+120).pop();
   const before=current&&current.getBoundingClientRect().top;
   language=value;root.lang=value;root.dataset.readingLanguage=value;
   languageButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resumeLanguage===value)));
+  document.querySelectorAll('[data-mode-label="human"]').forEach(el=>el.textContent=data.copy[value].modeHuman);
+  document.querySelectorAll('[data-mode-label="agent"]').forEach(el=>el.textContent=data.copy[value].modeAgent);
   menu.setAttribute('aria-label',data.copy[value].menu);document.title=data.name+' — AI Software Engineer';
   const description=document.querySelector('meta[name="description"]');if(description)description.content=data.copy[value].metadataDescription;
   const ogDescription=document.querySelector('meta[property="og:description"]');if(ogDescription)ogDescription.content=data.copy[value].metadataDescription;
@@ -183,6 +586,7 @@ function setLanguage(value,persist){
 root.classList.add('resume-enhanced');document.querySelectorAll('[data-js-control] button').forEach(button=>button.disabled=false);
 if(location.protocol==='file:'){root.dataset.offlineReading='true';document.querySelectorAll('[data-save-actions]').forEach(element=>element.hidden=true);document.querySelectorAll('[data-resume-cv]').forEach(link=>link.removeAttribute('download'));}
 languageButtons.forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.resumeLanguage,true)));
+modeButtons.forEach(button=>button.addEventListener('click',()=>setMode(button.dataset.resumeMode,true)));
 themeButton.addEventListener('click',()=>setTheme(resolvedDark()?'light':'dark',true));
 menu.addEventListener('click',()=>{open=!open;nav.hidden=!open;menu.setAttribute('aria-expanded',String(open));headerOffset();});
 nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
@@ -192,7 +596,7 @@ if(typeof ResizeObserver!=='undefined')new ResizeObserver(headerOffset).observe(
 let printDetails=[];
 addEventListener('beforeprint',()=>{printDetails=[...document.querySelectorAll('details')].map(element=>({element,open:element.open}));printDetails.forEach(item=>item.element.open=true);});
 addEventListener('afterprint',()=>{printDetails.forEach(item=>item.element.open=item.open);printDetails=[];});
-setLanguage(language,false);setTheme(theme,false);closeMenu();
+setLanguage(language,false);setTheme(theme,false);setMode(mode,false);closeMenu();
 // A fresh deep link must land after language/header layout has been enhanced.
 if(location.hash)requestAnimationFrame(()=>{const target=document.getElementById(location.hash.slice(1));if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView();}});
 })();</script><noscript><style>[data-js-control]{display:none!important}[data-resume-locale]{display:block!important}</style></noscript></body></html>

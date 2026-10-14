@@ -1,0 +1,59 @@
+# Ssu-Yuan Lin (Blake Lin) — AI Software Engineer
+
+> Canonical Web Resume & Portfolio: https://blakelin-lsy.github.io/web-resume/
+> Role: AI Software Engineer
+> Contact: ssu.yuan.lin@gmail.com | https://github.com/BlakeLin-LSY | https://www.linkedin.com/in/ssu-yuan-lin
+> Background: M.S. in Physics, 3+ years professional software and ML engineering.
+
+---
+
+## 1. Professional Proof Anchors
+
+### DynaSafe Corp. — Senior AI Engineer (2026-01 – 2026-04)
+- **Primary Metric**: 10× model-training throughput multiplier on production physics-informed neural network (PINN) workflows.
+- **Root Cause & Solution**: Diagnosed GPU starvation caused by PyTorch DataLoader serialization and IPC copying overhead. Designed an asynchronous zero-copy pinned shared-memory ring buffer, moving GPU compute saturation from 12% to 96%.
+- **Workload**: Nvidia Morpheus network anomaly detection (PCAP inputs) and PhysicsNeMo CFD simulation training.
+
+### MetGauge Co., Ltd. — Software Engineer (2023-09 – 2024-08)
+- **Primary Milestone**: Advanced a C++/Python 3D-measurement stereovision MVP to factory-ready production testing.
+- **System Architecture**: Designed and integrated a 12-pair stereoscopic camera system (24 optical sensors) with hardware TTL GPIO trigger synchronization (<1.2ms jitter) and sub-millimeter epipolar calibration verification under factory floor vibration.
+- **Outcome**: Delivered automated dimensional inspection pipeline operating under strict latency budget (<820ms cycle time vs 1000ms SLA).
+
+### UTECHZONE Co., Ltd. — Software Engineer (2021-09 – 2022-04)
+- **Primary Metric**: −40% Automated Optical Inspection (AOI) cycle time.
+- **Implementation**: Multi-threaded image processing pipeline and defect classification optimization on semiconductor wafer inspection lines.
+
+### LIPS Corp. — Software Engineer (2019-11 – 2020-04)
+- **Primary Metric**: +66% stereoscopic 3D measurement accuracy.
+- **Implementation**: Epipolar calibration redesign and active IR stereoscopic depth map refinement on Intel RealSense D415/D435 systems.
+
+---
+
+## 2. Recent Personal Engineering & Open-Source Systems
+
+### Study Atlas (2026) — Traceable AI Research Reading System
+- **Problem**: Large Language Models generating unconstrained, hallucinated summaries without verifiable source tracking or budget bounds.
+- **Architecture**:
+  - Semantic IR compiler compiling academic papers into structured proposition trees.
+  - TALK Contract 1.8 DSL with hard budget ceiling gates.
+  - Automatic fault detection: When an initial route exceeds budget (e.g. cost 6.0 > 5.0 ceiling), the budget gate triggers an exit rejection (negative control), automatically rerouting into an adaptive compact route (T5 route, cost 4.6, proceed).
+- **Artifacts**: Verified bilingual output with claim-level evidence anchors (e.g. `[Verified Claim: Table 3, p.7]`).
+
+### Transcribe-for-X (2026) — User-Controlled Local-First Voice Workflow
+- **Problem**: Cloud transcription services that overwrite raw user transcripts with speculative LLM cleanups, risking irreversible information loss.
+- **Architecture**:
+  - Dual-track data architecture: Track 1 (Raw Audio & Verbatim Transcript) is write-once, immutable, stored in Android private scoped storage. Track 2 (AI Disfluency Cleanup) is an overlay of candidate edit spans.
+  - Explicit confirmation boundary: No span is pruned from final output without active user checkbox confirmation.
+  - Zero cloud leakage: Operates on device without background telemetry.
+
+### windowphase (2026) — AI Tool Usage-Window Planner
+- **Architecture**: Offline scheduling and token usage planner analyzing multi-hour usage windows before issuing live API requests.
+
+---
+
+## 3. Engineering Philosophy & Invariants
+
+1. **Evidence Before Claims**: Claims must be backed by verifiable code, profiling traces, or inspectable artifacts (`claim strength <= evidence strength`).
+2. **Reversibility Governs Autonomy**: Immutable raw user assets; all speculative transformations require explicit confirmation or reversible dry-runs.
+3. **Mechanisms Over Reminders**: Automated validation gates, negative controls, and contract compilers instead of relying on manual checklists.
+4. **Falsifiability & Negative Controls**: Verifications must demonstrate capability of failing when a deliberate defect is introduced.

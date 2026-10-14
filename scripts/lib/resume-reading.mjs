@@ -5,24 +5,38 @@ const data=${data};
 const root=document.documentElement,header=document.querySelector('.resume-header'),nav=document.getElementById('resume-navigation');
 const menu=document.querySelector('[data-resume-menu]'),themeButton=document.querySelector('[data-resume-theme]');
 const languageButtons=document.querySelectorAll('[data-resume-language]');
+const modeButtons=document.querySelectorAll('[data-resume-mode]');
 const narrow=matchMedia('(max-width: 859px)'),systemDark=matchMedia('(prefers-color-scheme: dark)');
-let language='en',theme='auto',open=false;
+let language='en',theme='auto',mode='human',open=false;
 const query=new URLSearchParams(location.search);
-try {language=query.get('lang')||localStorage.getItem('resume-language')||root.lang||'en';theme=query.get('theme')||localStorage.getItem('resume-theme')||root.dataset.readingTheme||'light';} catch {language=query.get('lang')||root.lang||'en';theme=query.get('theme')||root.dataset.readingTheme||'light';}
-if(!['en','zh-TW'].includes(language))language='en';if(!['light','dark'].includes(theme))theme='light';
+try {
+  language=query.get('lang')||localStorage.getItem('resume-language')||root.lang||'en';
+  theme=query.get('theme')||localStorage.getItem('resume-theme')||root.dataset.readingTheme||'light';
+  mode=query.get('mode')||localStorage.getItem('resume-reading-mode')||root.dataset.readingMode||'human';
+} catch {
+  language=query.get('lang')||root.lang||'en';
+  theme=query.get('theme')||root.dataset.readingTheme||'light';
+  mode=query.get('mode')||root.dataset.readingMode||'human';
+}
+if(!['en','zh-TW'].includes(language))language='en';
+if(!['light','dark'].includes(theme))theme='light';
+if(!['human','agent'].includes(mode))mode='human';
 function headerOffset(){root.style.setProperty('--header-offset',(header.getBoundingClientRect().height+20)+'px');}
 function closeMenu(){open=false;nav.hidden=narrow.matches;menu.setAttribute('aria-expanded','false');headerOffset();}
 function savePreference(key,value){try{localStorage.setItem(key,value);}catch{}}
-function updateQuery(){try{const url=new URL(location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);history.replaceState(null,'',url);}catch{}}
+function updateQuery(){try{const url=new URL(location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);url.searchParams.set('mode',mode);history.replaceState(null,'',url);}catch{}}
 function updateCaseLinks(){document.querySelectorAll('[data-resume-case], [data-resume-walkthrough], [data-resume-notes]').forEach(link=>{const url=new URL(link.href,location.href);url.searchParams.set('lang',language);url.searchParams.set('theme',theme);link.href=url.href;});}
 function resolvedDark(){return theme==='dark'||(theme==='auto'&&systemDark.matches);}
 function setTheme(value,persist){theme=value;root.dataset.readingTheme=theme;root.style.colorScheme=resolvedDark()?'dark':'light';themeButton.setAttribute('aria-label',data.copy[language][resolvedDark()?'themeLight':'themeDark']);updateCaseLinks();if(persist){savePreference('resume-theme',theme);updateQuery();}}
+function setMode(value,persist){mode=value;root.dataset.readingMode=mode;modeButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resumeMode===value)));if(persist){savePreference('resume-reading-mode',mode);updateQuery();}}
 function setLanguage(value,persist){
   const sections=[...document.querySelectorAll('.resume-main > section')];
   const current=sections.filter(section=>section.getBoundingClientRect().top<=header.getBoundingClientRect().bottom+120).pop();
   const before=current&&current.getBoundingClientRect().top;
   language=value;root.lang=value;root.dataset.readingLanguage=value;
   languageButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resumeLanguage===value)));
+  document.querySelectorAll('[data-mode-label="human"]').forEach(el=>el.textContent=data.copy[value].modeHuman);
+  document.querySelectorAll('[data-mode-label="agent"]').forEach(el=>el.textContent=data.copy[value].modeAgent);
   menu.setAttribute('aria-label',data.copy[value].menu);document.title=data.name+' — AI Software Engineer';
   const description=document.querySelector('meta[name="description"]');if(description)description.content=data.copy[value].metadataDescription;
   const ogDescription=document.querySelector('meta[property="og:description"]');if(ogDescription)ogDescription.content=data.copy[value].metadataDescription;
@@ -33,6 +47,7 @@ function setLanguage(value,persist){
 root.classList.add('resume-enhanced');document.querySelectorAll('[data-js-control] button').forEach(button=>button.disabled=false);
 if(location.protocol==='file:'){root.dataset.offlineReading='true';document.querySelectorAll('[data-save-actions]').forEach(element=>element.hidden=true);document.querySelectorAll('[data-resume-cv]').forEach(link=>link.removeAttribute('download'));}
 languageButtons.forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.resumeLanguage,true)));
+modeButtons.forEach(button=>button.addEventListener('click',()=>setMode(button.dataset.resumeMode,true)));
 themeButton.addEventListener('click',()=>setTheme(resolvedDark()?'light':'dark',true));
 menu.addEventListener('click',()=>{open=!open;nav.hidden=!open;menu.setAttribute('aria-expanded',String(open));headerOffset();});
 nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
@@ -42,7 +57,7 @@ if(typeof ResizeObserver!=='undefined')new ResizeObserver(headerOffset).observe(
 let printDetails=[];
 addEventListener('beforeprint',()=>{printDetails=[...document.querySelectorAll('details')].map(element=>({element,open:element.open}));printDetails.forEach(item=>item.element.open=true);});
 addEventListener('afterprint',()=>{printDetails.forEach(item=>item.element.open=item.open);printDetails=[];});
-setLanguage(language,false);setTheme(theme,false);closeMenu();
+setLanguage(language,false);setTheme(theme,false);setMode(mode,false);closeMenu();
 // A fresh deep link must land after language/header layout has been enhanced.
 if(location.hash)requestAnimationFrame(()=>{const target=document.getElementById(location.hash.slice(1));if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView();}});
 })();`;

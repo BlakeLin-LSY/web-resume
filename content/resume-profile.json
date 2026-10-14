@@ -75,7 +75,14 @@
       "noJs": "JavaScript is off; both language versions are available below.",
       "metadataDescription": "AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.",
       "github": "GitHub",
-      "cameraChip": "{cameraPairs} stereo-camera pairs on a production line"
+      "cameraChip": "{cameraPairs} stereo-camera pairs on a production line",
+      "modeHuman": "Human",
+      "modeAgent": "Agent",
+      "modeSwitch": "Reading perspective",
+      "agentBadge": "AST / IR / Evidence Verified",
+      "sampleExcerptBtn": "View Live Reader Sample",
+      "sampleExcerptHide": "Hide Reader Sample",
+      "tradeoffBadge": "Trade-off & Invariant"
     },
     "zh-TW": {
       "lead": "我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。",
@@ -123,7 +130,14 @@
       "noJs": "JavaScript 關閉時，下方保留兩種語言的完整內容。",
       "metadataDescription": "AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。",
       "github": "GitHub",
-      "cameraChip": "{cameraPairs} 組立體相機產線"
+      "cameraChip": "{cameraPairs} 組立體相機產線",
+      "modeHuman": "真人視角",
+      "modeAgent": "Agent 語意",
+      "modeSwitch": "閱讀視角",
+      "agentBadge": "AST / IR / 驗證收據",
+      "sampleExcerptBtn": "檢視真實雙語樣張",
+      "sampleExcerptHide": "收合雙語樣張",
+      "tradeoffBadge": "架構取捨與不變量"
     }
   },
   "professional": [

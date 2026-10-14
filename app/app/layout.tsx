@@ -7,8 +7,10 @@ import "../../content/resume-layout.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://blakelin-lsy.github.io"),
   title: `${profile.identity.name} — ${profile.identity.role}`,
-  description: profile.copy.en.metadataDescription,
-  alternates: { canonical: "/web-resume/" },
+  alternates: {
+    canonical: "/web-resume/",
+    types: { "text/plain": [{ url: "/web-resume/llms.txt", title: "LLM Agent Profile" }] }
+  },
   openGraph: {
     type: "website",
     title: `${profile.identity.name} — ${profile.identity.role}`,
