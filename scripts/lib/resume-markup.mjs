@@ -1,8 +1,11 @@
 // Shared by the Next server page and the portable overview generator.
 // Public text and hrefs are escaped here; no filesystem or browser dependency.
-export const escapeHtml = (value) => String(value).replace(/[&<>"']/g, char => ({
-  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
-})[char]);
+import { escapeHtml, renderPipelineSvg } from "../generators/components/svg-pipeline.mjs";
+import { renderTopologySvg } from "../generators/components/svg-topology.mjs";
+import { renderCircuitBreakerSvg, renderDualTrackSvg } from "../generators/components/svg-circuit-breaker.mjs";
+import { renderAgentIr } from "../generators/components/agent-ir.mjs";
+
+export { escapeHtml };
 
 const languages = ["en", "zh-TW"];
 const localize = (render, tag = "div", attributes = "") => languages.map(language =>
@@ -18,7 +21,7 @@ const period = (start, end, language) => {
   return `${date(start)} – ${date(end)}`;
 };
 
-const triadData = {
+const fallbackTriads = {
   dynasafe: {
     challenge: {
       en: "DataLoader I/O serialization starved GPU compute during OpenFOAM CFD training.",
@@ -79,485 +82,144 @@ const triadData = {
 
 function dynaSafeVisual(e, language) {
   const isEn = language === "en";
-  return `<div class="resume-diagram-container resume-human-view">
-    <div class="resume-diagram-header">
-      <div class="resume-diagram-kicker-group">
-        <span class="resume-diagram-tag">${isEn ? "Pipeline Architecture" : "資料管線架構"}</span>
-        <span class="resume-diagram-badge">${isEn ? "10× Model-Training Speed" : "10× 模型訓練速度提升"}</span>
-      </div>
-      <strong class="resume-diagram-title">${isEn ? "DataLoader I/O Bottleneck vs. Rebuilt Streaming Pipeline" : "資料載入 I/O 序列化阻塞 vs. 重建串流管線對照"}</strong>
-    </div>
-
-    <div class="resume-svg-wrapper">
-      <svg class="resume-svg-diagram" viewBox="0 0 760 160" role="img" aria-label="DataLoader Bottleneck vs Rebuilt Pipeline">
-        <defs>
-          <marker id="arrow-dyna" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 1 2 L 8 5 L 1 8 z" class="resume-arrow-head"/>
-          </marker>
-          <marker id="arrow-dyna-alert" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 1 2 L 8 5 L 1 8 z" fill="#c25953"/>
-          </marker>
-        </defs>
-
-        <!-- Lane 1: Baseline (Unoptimized) -->
-        <g class="resume-node-group">
-          <rect x="10" y="14" width="180" height="60" rx="8" class="resume-node-box"/>
-          <rect x="18" y="20" width="80" height="16" rx="4" class="resume-node-pill"/>
-          <text x="58" y="31" class="resume-pill-text" text-anchor="middle">${isEn ? "BASELINE" : "優化前基準"}</text>
-          <text x="100" y="50" class="resume-node-title" text-anchor="middle">PyTorch DataLoader</text>
-          <text x="100" y="65" class="resume-node-detail" text-anchor="middle">${isEn ? "Synchronous IPC Pipe" : "同步處理序間管線 (IPC)"}</text>
-        </g>
-
-        <g class="resume-connector">
-          <line x1="190" y1="44" x2="239" y2="44" class="resume-flow-line resume-flow-alert" marker-end="url(#arrow-dyna-alert)"/>
-          <text x="215" y="38" class="resume-flow-label resume-text-alert" text-anchor="middle">${isEn ? "I/O Stall" : "I/O 阻塞"}</text>
-        </g>
-
-        <g class="resume-node-group">
-          <rect x="240" y="14" width="310" height="60" rx="8" class="resume-node-box resume-node-alert"/>
-          <text x="395" y="42" class="resume-node-title resume-text-alert" text-anchor="middle">${isEn ? "GPU Idle Starvation (88% Waiting)" : "GPU 閒置飢餓 (88% 處於等待)"}</text>
-          <text x="395" y="60" class="resume-node-detail" text-anchor="middle">${isEn ? "CFD Training Compute Stalled" : "CFD 訓練計算資源停滯"}</text>
-        </g>
-
-        <g class="resume-connector">
-          <line x1="550" y1="44" x2="589" y2="44" class="resume-flow-line" marker-end="url(#arrow-dyna)"/>
-        </g>
-
-        <g class="resume-node-group">
-          <rect x="590" y="14" width="160" height="60" rx="8" class="resume-node-box"/>
-          <text x="670" y="42" class="resume-node-title" text-anchor="middle">${isEn ? "1× Baseline" : "1× 基準吞吐"}</text>
-          <text x="670" y="60" class="resume-node-detail" text-anchor="middle">${isEn ? "Unoptimized Rate" : "未優化訓練速率"}</text>
-        </g>
-
-        <!-- Lane 2: Rebuilt & Optimized -->
-        <g class="resume-node-group">
-          <rect x="10" y="86" width="180" height="60" rx="8" class="resume-node-box resume-node-highlight"/>
-          <rect x="18" y="92" width="80" height="16" rx="4" class="resume-node-pill resume-pill-highlight"/>
-          <text x="58" y="103" class="resume-pill-text" text-anchor="middle">${isEn ? "REBUILT" : "重構管線"}</text>
-          <text x="100" y="122" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Data Pipeline" : "非同步資料管線"}</text>
-          <text x="100" y="137" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "PhysicsNeMo Format Loader" : "PhysicsNeMo 格式轉換載入器"}</text>
-        </g>
-
-        <g class="resume-connector">
-          <line x1="190" y1="116" x2="239" y2="116" class="resume-flow-line" marker-end="url(#arrow-dyna)"/>
-          <text x="215" y="110" class="resume-flow-label resume-stat-green" text-anchor="middle">${isEn ? "Continuous" : "持續串流"}</text>
-        </g>
-
-        <g class="resume-node-group">
-          <rect x="240" y="86" width="310" height="60" rx="8" class="resume-node-box resume-node-highlight"/>
-          <text x="395" y="114" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Continuous GPU Saturation" : "GPU 連續滿載運算"}</text>
-          <text x="395" y="132" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Zero Starvation Stalls · Compute Bound" : "零飢餓阻塞 · 達計算極限"}</text>
-        </g>
-
-        <g class="resume-connector">
-          <line x1="550" y1="116" x2="589" y2="116" class="resume-flow-line" marker-end="url(#arrow-dyna)"/>
-        </g>
-
-        <g class="resume-node-group">
-          <rect x="590" y="86" width="160" height="60" rx="8" class="resume-node-box resume-node-highlight"/>
-          <text x="670" y="114" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "⚡ 10× Speedup" : "⚡ 10× 加速倍率"}</text>
-          <text x="670" y="132" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Verified Model Training" : "實測模型訓練端到端驗證"}</text>
-        </g>
-      </svg>
-    </div>
-
-    <p class="resume-diagram-caption">${isEn ? "Profiled DataLoader I/O bottleneck starving GPU during CFD training. Rebuilt training data pipeline and custom format loader, achieving 10× overall model-training speed." : "分析 PyTorch DataLoader 瓶頸，追查 GPU 在 CFD 訓練期間的閒置飢餓根因。重建資料載入與格式轉換管線，實現模型訓練速度提升 10 倍。"}</p>
-  </div>`;
+  return renderPipelineSvg({
+    kicker: isEn ? "Pipeline Architecture" : "資料管線架構",
+    badge: isEn ? "10× Model-Training Speed" : "10× 模型訓練速度提升",
+    title: isEn ? "DataLoader I/O Bottleneck vs. Rebuilt Streaming Pipeline" : "資料載入 I/O 序列化阻塞 vs. 重建串流管線對照",
+    caption: isEn ? "Profiled DataLoader I/O bottleneck starving GPU during CFD training. Rebuilt training data pipeline and custom format loader, achieving 10× overall model-training speed." : "分析 PyTorch DataLoader 瓶頸，追查 GPU 在 CFD 訓練期間的閒置飢餓根因。重建資料載入與格式轉換管線，實現模型訓練速度提升 10 倍。",
+    ariaLabel: "DataLoader Bottleneck vs Rebuilt Pipeline"
+  }, language);
 }
 
 function dynaSafeAgent(e, language) {
-  return `<div class="resume-agent-ir resume-agent-view">
-    <div class="resume-ir-header">
-      <div class="resume-ir-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-      <span class="resume-ir-tab">dynasafe_pipeline_ast.json</span>
-      <span class="resume-ir-badge">AST / Metric Spec</span>
-    </div>
-    <pre><code><span class="ir-keyword">MetricAST</span> {
-  <span class="ir-prop">"id"</span>: <span class="ir-str">"dynasafe-training-throughput"</span>,
-  <span class="ir-prop">"employer"</span>: <span class="ir-str">"DynaSafe Corp."</span>,
-  <span class="ir-prop">"role"</span>: <span class="ir-str">"Senior AI Engineer"</span>,
-  <span class="ir-prop">"metric"</span>: {
-    <span class="ir-prop">"type"</span>: <span class="ir-str">"training-speed-factor"</span>,
-    <span class="ir-prop">"value"</span>: <span class="ir-num">10.0</span>,
-    <span class="ir-prop">"claim"</span>: <span class="ir-str">"10x model-training speed"</span>
-  },
-  <span class="ir-prop">"workloads"</span>: [
-    <span class="ir-str">"Nvidia Morpheus network-anomaly detection with real PCAP input"</span>,
-    <span class="ir-str">"PhysicsNeMo training workflow adaptation for an OpenFOAM CFD use case"</span>
-  ],
-  <span class="ir-prop">"root_cause_analysis"</span>: <span class="ir-str">"DataLoader bottleneck causing GPU compute starvation"</span>,
-  <span class="ir-prop">"engineering_action"</span>: <span class="ir-str">"Rebuilt training data pipeline and custom loader format conversion"</span>,
-  <span class="ir-prop">"boundary"</span>: <span class="ir-str">"Measures overall model-training speed"</span>
-}</code></pre>
-  </div>`;
+  return renderAgentIr({
+    astType: "MetricAST",
+    filename: "dynasafe_pipeline_ast.json",
+    badge: "AST / Metric Spec",
+    data: {
+      id: "dynasafe-training-throughput",
+      employer: "DynaSafe Corp.",
+      role: "Senior AI Engineer",
+      metric: {
+        type: "training-speed-factor",
+        value: 10.0,
+        claim: "10x model-training speed"
+      },
+      workloads: [
+        "Nvidia Morpheus network-anomaly detection with real PCAP input",
+        "PhysicsNeMo training workflow adaptation for an OpenFOAM CFD use case"
+      ],
+      root_cause_analysis: "DataLoader bottleneck causing GPU compute starvation",
+      engineering_action: "Rebuilt training data pipeline and custom loader format conversion",
+      boundary: "Measures overall model-training speed"
+    }
+  });
 }
 
 function metGaugeVisual(e, language) {
   const isEn = language === "en";
-  return `<div class="resume-diagram-container resume-human-view">
-    <div class="resume-diagram-header">
-      <div class="resume-diagram-kicker-group">
-        <span class="resume-diagram-tag">${isEn ? "System Topology" : "系統架構拓撲"}</span>
-        <span class="resume-diagram-badge">${isEn ? "12 Stereo Pairs · Factory Testing" : "12 組立體相機 · 工廠上線前測試"}</span>
-      </div>
-      <strong class="resume-diagram-title">${isEn ? "12-Stereo-Camera Production Line Inspection Topology" : "12 組立體相機產線檢測拓撲與軟硬體整合"}</strong>
-    </div>
-
-    <div class="resume-svg-wrapper">
-      <svg class="resume-svg-diagram" viewBox="0 0 760 160" role="img" aria-label="${isEn ? "12-Stereo-Camera Inspection Topology" : "12 組立體相機產線檢測拓撲"}">
-        <defs>
-          <marker id="arrow-refined" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 1 2 L 8 5 L 1 8 z" class="resume-arrow-head"/>
-          </marker>
-        </defs>
-
-        <!-- Stage 1: Optical Sensors -->
-        <g class="resume-node-group">
-          <rect x="10" y="14" width="165" height="132" rx="8" class="resume-node-box"/>
-          <rect x="18" y="22" width="85" height="18" rx="4" class="resume-node-pill"/>
-          <text x="60" y="34" class="resume-pill-text" text-anchor="middle">${isEn ? "SENSOR ARRAY" : "感測陣列"}</text>
-          <text x="92" y="60" class="resume-node-title" text-anchor="middle">${isEn ? "12 Stereo Pairs" : "12 組立體相機對"}</text>
-          <text x="92" y="78" class="resume-node-subtitle" text-anchor="middle">${isEn ? "24 Industrial Cameras" : "24 顆工業相機"}</text>
-          <line x1="25" y1="92" x2="160" y2="92" class="resume-node-divider"/>
-          <text x="92" y="110" class="resume-node-detail" text-anchor="middle">${isEn ? "Automated Production Line" : "自動化製造產線"}</text>
-          <text x="92" y="128" class="resume-node-detail" text-anchor="middle">${isEn ? "GigE Multi-Camera Staging" : "GigE 多相機同步配置"}</text>
-        </g>
-
-        <!-- Connector 1 -->
-        <g class="resume-connector">
-          <line x1="175" y1="80" x2="209" y2="80" class="resume-flow-line" marker-end="url(#arrow-refined)"/>
-          <text x="192" y="72" class="resume-flow-label" text-anchor="middle">${isEn ? "Trigger" : "硬體觸發"}</text>
-        </g>
-
-        <!-- Stage 2: Hardware Sync -->
-        <g class="resume-node-group">
-          <rect x="210" y="14" width="155" height="132" rx="8" class="resume-node-box"/>
-          <rect x="218" y="22" width="95" height="18" rx="4" class="resume-node-pill"/>
-          <text x="265" y="34" class="resume-pill-text" text-anchor="middle">${isEn ? "HARDWARE BUS" : "硬體匯流排"}</text>
-          <text x="287" y="60" class="resume-node-title" text-anchor="middle">${isEn ? "Hardware Sync" : "硬體同步機制"}</text>
-          <text x="287" y="78" class="resume-node-subtitle" text-anchor="middle">${isEn ? "GPIO Trigger Bus" : "GPIO 觸發匯流排"}</text>
-          <line x1="225" y1="92" x2="350" y2="92" class="resume-node-divider"/>
-          <text x="287" y="110" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Deterministic Frame Lock" : "精準鎖定每幀曝光"}</text>
-          <text x="287" y="128" class="resume-node-detail" text-anchor="middle">${isEn ? "Zero Frame Drift" : "零幀漂移與丟失"}</text>
-        </g>
-
-        <!-- Connector 2 -->
-        <g class="resume-connector">
-          <line x1="365" y1="80" x2="399" y2="80" class="resume-flow-line" marker-end="url(#arrow-refined)"/>
-          <text x="382" y="72" class="resume-flow-label" text-anchor="middle">${isEn ? "Stream" : "影像串流"}</text>
-        </g>
-
-        <!-- Stage 3: 3D Engine -->
-        <g class="resume-node-group">
-          <rect x="400" y="14" width="170" height="132" rx="8" class="resume-node-box"/>
-          <rect x="408" y="22" width="90" height="18" rx="4" class="resume-node-pill"/>
-          <text x="453" y="34" class="resume-pill-text" text-anchor="middle">${isEn ? "3D ENGINE" : "3D 量測引擎"}</text>
-          <text x="485" y="60" class="resume-node-title" text-anchor="middle">${isEn ? "3D Measurement" : "3D 空間量測"}</text>
-          <text x="485" y="78" class="resume-node-subtitle" text-anchor="middle">${isEn ? "C++ / Python Engine" : "C++ / Python 核心引擎"}</text>
-          <line x1="415" y1="92" x2="555" y2="92" class="resume-node-divider"/>
-          <text x="485" y="110" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Calibration & Boundary Tests" : "標定與邊界極限測試"}</text>
-          <text x="485" y="128" class="resume-node-detail" text-anchor="middle">${isEn ? "Guides Hardware Tuning" : "指引光機硬體校正"}</text>
-        </g>
-
-        <!-- Connector 3 -->
-        <g class="resume-connector">
-          <line x1="570" y1="80" x2="604" y2="80" class="resume-flow-line" marker-end="url(#arrow-refined)"/>
-          <text x="587" y="72" class="resume-flow-label" text-anchor="middle">${isEn ? "Point Cloud" : "點雲輸出"}</text>
-        </g>
-
-        <!-- Stage 4: Factory Testing Pass -->
-        <g class="resume-node-group">
-          <rect x="605" y="14" width="145" height="132" rx="8" class="resume-node-box resume-node-highlight"/>
-          <rect x="613" y="22" width="90" height="18" rx="4" class="resume-node-pill resume-pill-highlight"/>
-          <text x="658" y="34" class="resume-pill-text" text-anchor="middle">${isEn ? "FACTORY READY" : "產線就緒"}</text>
-          <text x="677" y="60" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Factory Testing" : "工廠上線測試"}</text>
-          <text x="677" y="78" class="resume-node-subtitle" text-anchor="middle">${isEn ? "Production Line Pass" : "產線驗證過關"}</text>
-          <line x1="620" y1="92" x2="735" y2="92" class="resume-node-divider"/>
-          <text x="677" y="110" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "MVP Prototype → Line" : "原型邁向產線整合"}</text>
-          <text x="677" y="128" class="resume-node-detail" text-anchor="middle">${isEn ? "Pre-Launch Tested" : "量產前完成實測"}</text>
-        </g>
-      </svg>
-    </div>
-
-    <p class="resume-diagram-caption">${isEn ? "Advanced C++/Python 3D-measurement prototype to factory-ready production testing on an automated line with 12 stereo-camera pairs (24 cameras). Led system design, hardware integration, and boundary testing." : "負責 12 組立體相機（24 顆相機）產線的系統架構設計、軟硬體整合與邊界測試。將 C++／Python 3D 量測原型推進至工廠上市前的產線上線測試階段。"}</p>
-  </div>`;
+  return renderTopologySvg({
+    kicker: isEn ? "System Topology" : "系統架構拓撲",
+    badge: isEn ? "12 Stereo Pairs · Factory Testing" : "12 組立體相機 · 工廠上線前測試",
+    title: isEn ? "12-Stereo-Camera Production Line Inspection Topology" : "12 組立體相機產線檢測拓撲與軟硬體整合",
+    caption: isEn ? "Advanced C++/Python 3D-measurement prototype to factory-ready production testing on an automated line with 12 stereo-camera pairs (24 cameras). Led system design, hardware integration, and boundary testing." : "負責 12 組立體相機（24 顆相機）產線的系統架構設計、軟硬體整合與邊界測試。將 C++／Python 3D 量測原型推進至工廠上市前的產線上線測試階段。",
+    ariaLabel: isEn ? "12-Stereo-Camera Inspection Topology" : "12 組立體相機產線檢測拓撲"
+  }, language);
 }
 
 function metGaugeAgent(e, language) {
-  return `<div class="resume-agent-ir resume-agent-view">
-    <div class="resume-ir-header">
-      <div class="resume-ir-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-      <span class="resume-ir-tab">metgauge_stereo_topology.ast.json</span>
-      <span class="resume-ir-badge">Topology & Invariant Spec</span>
-    </div>
-    <pre><code><span class="ir-keyword">StereoTopologyAST</span> {
-  <span class="ir-prop">"id"</span>: <span class="ir-str">"metgauge-production-line"</span>,
-  <span class="ir-prop">"employer"</span>: <span class="ir-str">"MetGauge Co., Ltd."</span>,
-  <span class="ir-prop">"role"</span>: <span class="ir-str">"Software Engineer"</span>,
-  <span class="ir-prop">"system"</span>: {
-    <span class="ir-prop">"camera_pairs"</span>: <span class="ir-num">12</span>,
-    <span class="ir-prop">"total_cameras"</span>: <span class="ir-num">24</span>,
-    <span class="ir-prop">"environment"</span>: <span class="ir-str">"Automated factory production line"</span>
-  },
-  <span class="ir-prop">"milestone_reached"</span>: <span class="ir-str">"MVP prototype -> factory-ready production testing"</span>,
-  <span class="ir-prop">"engineering_scope"</span>: [
-    <span class="ir-str">"System architecture design"</span>,
-    <span class="ir-str">"Hardware-software trigger integration"</span>,
-    <span class="ir-str">"Boundary testing & test specification definition"</span>,
-    <span class="ir-str">"Cross-functional hardware tuning"</span>
-  ],
-  <span class="ir-prop">"boundary"</span>: <span class="ir-str">"Stage reached: production testing before product launch"</span>
-}</code></pre>
-  </div>`;
+  return renderAgentIr({
+    astType: "StereoTopologyAST",
+    filename: "metgauge_stereo_topology.ast.json",
+    badge: "Topology & Invariant Spec",
+    data: {
+      id: "metgauge-production-line",
+      employer: "MetGauge Co., Ltd.",
+      role: "Software Engineer",
+      system: {
+        camera_pairs: 12,
+        total_cameras: 24,
+        environment: "Automated factory production line"
+      },
+      milestone_reached: "MVP prototype -> factory-ready production testing",
+      engineering_scope: [
+        "System architecture design",
+        "Hardware-software trigger integration",
+        "Boundary testing & test specification definition",
+        "Cross-functional hardware tuning"
+      ],
+      boundary: "Stage reached: production testing before product launch"
+    }
+  });
 }
 
 function atlasVisual(e, language, copy) {
   const isEn = language === "en";
-  return `<div class="resume-diagram-container resume-human-view">
-    <div class="resume-diagram-header">
-      <div class="resume-diagram-kicker-group">
-        <span class="resume-diagram-tag">${isEn ? "Guardrail Pipeline" : "預算閘門管線"}</span>
-        <span class="resume-diagram-badge">${isEn ? "TALK Contract 1.8" : "TALK Contract 1.8 契約"}</span>
-      </div>
-      <strong class="resume-diagram-title">${isEn ? "Dynamic Circuit-Breaker & Autonomous Rerouting" : "TALK 契約 1.8：預算超支自動熔斷與自主重規劃"}</strong>
-    </div>
-
-    <div class="resume-svg-wrapper">
-      <svg class="resume-svg-diagram" viewBox="0 0 760 170" role="img" aria-label="${isEn ? "TALK Contract 1.8 Budget Guardrail Circuit Breaker" : "TALK 契約 1.8 預算超支熔斷架構"}">
-        <defs>
-          <marker id="arrow-atlas" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 1 2 L 8 5 L 1 8 z" class="resume-arrow-head"/>
-          </marker>
-        </defs>
-
-        <!-- Stage 1: Paper AST Input -->
-        <g class="resume-node-group">
-          <rect x="10" y="24" width="130" height="118" rx="8" class="resume-node-box"/>
-          <rect x="18" y="32" width="70" height="18" rx="4" class="resume-node-pill"/>
-          <text x="53" y="44" class="resume-pill-text" text-anchor="middle">${isEn ? "SOURCE AST" : "來源 AST"}</text>
-          <text x="75" y="70" class="resume-node-title" text-anchor="middle">${isEn ? "Paper AST" : "論文抽象語法樹"}</text>
-          <text x="75" y="88" class="resume-node-subtitle" text-anchor="middle">${isEn ? "Extracted Claims" : "萃取論點與主張"}</text>
-          <line x1="22" y1="100" x2="128" y2="100" class="resume-node-divider"/>
-          <text x="75" y="118" class="resume-node-detail" text-anchor="middle">${isEn ? "Target: Reading Plan" : "目標：精讀規劃"}</text>
-        </g>
-
-        <!-- Connector to Gate -->
-        <line x1="140" y1="83" x2="174" y2="83" class="resume-flow-line" marker-end="url(#arrow-atlas)"/>
-
-        <!-- Stage 2: Budget Gate -->
-        <g class="resume-node-group">
-          <rect x="175" y="16" width="155" height="134" rx="8" class="resume-node-box"/>
-          <rect x="183" y="24" width="85" height="18" rx="4" class="resume-node-pill"/>
-          <text x="225" y="36" class="resume-pill-text" text-anchor="middle">${isEn ? "GATE CHECK" : "預算閘門"}</text>
-          <text x="252" y="62" class="resume-node-title" text-anchor="middle">${isEn ? "Budget Gate" : "預算配額控管"}</text>
-          <text x="252" y="80" class="resume-node-subtitle" text-anchor="middle">TALK Contract 1.8</text>
-          <line x1="188" y1="94" x2="318" y2="94" class="resume-node-divider"/>
-          <text x="252" y="112" class="resume-node-detail" text-anchor="middle">${isEn ? "Ceiling: 5.0 TALK" : "上限：5.0 TALK"}</text>
-          <text x="252" y="130" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Deterministic Audit" : "確定性預算審計"}</text>
-        </g>
-
-        <!-- Branch A (Top): Circuit Breaker Reject -->
-        <path d="M 330 65 Q 355 65 375 42" class="resume-flow-line resume-flow-alert" marker-end="url(#arrow-atlas)"/>
-        <g class="resume-node-group">
-          <rect x="380" y="12" width="175" height="60" rx="6" class="resume-node-box resume-node-alert"/>
-          <text x="467" y="32" class="resume-node-title resume-text-alert" text-anchor="middle">${isEn ? "⛔ Plan 1: Deep Survey" : "⛔ 計畫 1：深度全覽"}</text>
-          <text x="467" y="48" class="resume-node-detail" text-anchor="middle">${isEn ? "Cost 6.0 > 5.0 Ceiling" : "成本 6.0 > 5.0 上限"}</text>
-          <text x="467" y="62" class="resume-node-detail resume-text-alert" text-anchor="middle">${isEn ? "BLOCKED · 0 Tokens Leaked" : "熔斷攔截 · 0 Token 洩漏"}</text>
-        </g>
-
-        <!-- Branch B (Bottom): Adaptive Reroute -->
-        <path d="M 330 100 Q 355 100 375 118" class="resume-flow-line" marker-end="url(#arrow-atlas)"/>
-        <g class="resume-node-group">
-          <rect x="380" y="88" width="175" height="66" rx="6" class="resume-node-box resume-node-highlight"/>
-          <text x="467" y="108" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "⚡ Reroute: T5-Compact" : "⚡ 重規劃：T5-Compact"}</text>
-          <text x="467" y="124" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Cost 4.6 < 5.0 Ceiling" : "成本 4.6 < 5.0 上限"}</text>
-          <text x="467" y="140" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "APPROVED & EXECUTED" : "批准放行並執行"}</text>
-        </g>
-
-        <!-- Connector from Reroute to Output -->
-        <path d="M 555 121 Q 575 121 590 85" class="resume-flow-line" marker-end="url(#arrow-atlas)"/>
-
-        <!-- Stage 3: Verified Output -->
-        <g class="resume-node-group">
-          <rect x="595" y="24" width="155" height="118" rx="8" class="resume-node-box resume-node-highlight"/>
-          <rect x="603" y="32" width="90" height="18" rx="4" class="resume-node-pill resume-pill-highlight"/>
-          <text x="648" y="44" class="resume-pill-text" text-anchor="middle">${isEn ? "SYNTHESIS" : "成果合成"}</text>
-          <text x="672" y="70" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Bilingual Cards" : "雙語結構卡片"}</text>
-          <text x="672" y="88" class="resume-node-subtitle" text-anchor="middle">${isEn ? "Zero Claims Dropped" : "零論點遺漏不變量"}</text>
-          <line x1="608" y1="100" x2="738" y2="100" class="resume-node-divider"/>
-          <text x="672" y="118" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Anchored Citations" : "錨定論文章節引文"}</text>
-        </g>
-      </svg>
-    </div>
-
-    <!-- Editorial Monograph Proof Leaf -->
-    <details class="resume-reader-sample" open>
-      <summary class="resume-sample-summary">
-        <span class="resume-sample-pill">Monograph Proof Leaf / 雙語成果樣張</span>
-        <strong class="resume-sample-title">${e(copy[language].sampleExcerptTitle)}</strong>
-      </summary>
-      <div class="resume-sample-body">
-        <div class="resume-monograph-card">
-          <div class="resume-monograph-header">
-            <span class="resume-doc-id">DOC: VGGT-ARXIV-2503.11651</span>
-            <div class="resume-monograph-tags">
-              <span class="resume-badge-route">Route: T5-Compact</span>
-              <span class="resume-badge-cost">Cost: 4.6 TALK (Pass)</span>
-              <span class="resume-badge-verified">✓ 0-Drop Invariant</span>
-            </div>
-          </div>
-          <div class="resume-monograph-content">
-            <div class="resume-proof-leaf resume-leaf-en">
-              <span class="resume-leaf-lang">EN (Source Verification)</span>
-              <blockquote class="resume-leaf-quote">
-                &ldquo;At inference time point maps derived from depth and cameras are more accurate than the direct point-map head (ETH3D: 0.677 vs 0.709 overall error). Multi-task training does not require direct head delivery.&rdquo;
-              </blockquote>
-              <div class="resume-leaf-anchor">[VGGT Paper Evidence: §4.3, Table 3]</div>
-            </div>
-            <div class="resume-proof-leaf resume-leaf-zh">
-              <span class="resume-leaf-lang">正體中文（忠實對照譯本）</span>
-              <blockquote class="resume-leaf-quote">
-                &ldquo;推論時由深度與相機反投影得到的點圖比直接點圖頭更準（ETH3D：0.677 vs 0.709 整體誤差）。多任務訓練不要求最終一定使用每個直接輸出。&rdquo;
-              </blockquote>
-              <div class="resume-leaf-anchor">[VGGT 論文證據標籤：第 4.3 節、表 3]</div>
-            </div>
-          </div>
-          <div class="resume-monograph-footer">
-            <span class="resume-hash-seal">TALK Contract 1.8 Seal: SHA-256 <code>0f5e66c74dbd8762f2a90936d238fc72d9939db6396d68d49703645834eeb0d5</code></span>
-            <span class="resume-sla-badge">Preserved Artifact: 387,137 bytes</span>
-          </div>
-        </div>
-      </div>
-    </details>
-  </div>`;
+  return renderCircuitBreakerSvg({
+    kicker: isEn ? "Guardrail Pipeline" : "預算閘門管線",
+    badge: isEn ? "TALK Contract 1.8" : "TALK Contract 1.8 契約",
+    title: isEn ? "Dynamic Circuit-Breaker & Autonomous Rerouting" : "TALK 契約 1.8：預算超支自動熔斷與自主重規劃",
+    ariaLabel: isEn ? "TALK Contract 1.8 Budget Guardrail Circuit Breaker" : "TALK 契約 1.8 預算超支熔斷架構",
+    monograph: {
+      title: copy[language].sampleExcerptTitle
+    }
+  }, language);
 }
 
 function atlasAgent(e, language) {
-  return `<div class="resume-agent-ir resume-agent-view">
-    <div class="resume-ir-header">
-      <div class="resume-ir-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-      <span class="resume-ir-tab">talk_contract_v1_8.ir</span>
-      <span class="resume-ir-badge">Contract 1.8 DSL & Gate Receipt</span>
-    </div>
-    <pre><code><span class="ir-keyword">TALK_Contract_1_8</span> {
-  <span class="ir-prop">"id"</span>: <span class="ir-str">"study-atlas-talk-contract"</span>,
-  <span class="ir-prop">"budget_ceiling_talk"</span>: <span class="ir-num">5.0</span>,
-  <span class="ir-prop">"initial_execution_plan"</span>: {
-    <span class="ir-prop">"plan_id"</span>: <span class="ir-str">"deep_survey"</span>,
-    <span class="ir-prop">"estimated_cost_talk"</span>: <span class="ir-num">6.0</span>,
-    <span class="ir-prop">"gate_outcome"</span>: <span class="ir-control">"GATE_CIRCUIT_REJECT"</span>,
-    <span class="ir-prop">"action"</span>: <span class="ir-str">"Blocked prior to execution; 0 tokens billed"</span>
-  },
-  <span class="ir-prop">"adaptive_reroute"</span>: {
-    <span class="ir-prop">"plan_id"</span>: <span class="ir-str">"t5_compact"</span>,
-    <span class="ir-prop">"actual_cost_talk"</span>: <span class="ir-num">4.6</span>,
-    <span class="ir-prop">"gate_outcome"</span>: <span class="ir-verified">"GATE_PROCEED_PERMITTED"</span>
-  },
-  <span class="ir-prop">"synthesis_routes"</span>: [
-    <span class="ir-str">"short_briefing"</span>,
-    <span class="ir-str">"in_depth_explanation"</span>
-  ],
-  <span class="ir-prop">"boundary"</span>: <span class="ir-str">"6.0 -> 4.6 is calculated TALK budget, not measured human reading time or wall-clock acceleration"</span>
-}</code></pre>
-  </div>`;
+  return renderAgentIr({
+    astType: "TALK_Contract_1_8",
+    filename: "talk_contract_v1_8.ir",
+    badge: "Contract 1.8 DSL & Gate Receipt",
+    data: {
+      id: "study-atlas-talk-contract",
+      budget_ceiling_talk: 5.0,
+      initial_execution_plan: {
+        plan_id: "deep_survey",
+        estimated_cost_talk: 6.0,
+        gate_outcome: "GATE_CIRCUIT_REJECT",
+        action: "Blocked prior to execution; 0 tokens billed"
+      },
+      adaptive_reroute: {
+        plan_id: "t5_compact",
+        actual_cost_talk: 4.6,
+        gate_outcome: "GATE_PROCEED_PERMITTED"
+      },
+      synthesis_routes: [
+        "short_briefing",
+        "in_depth_explanation"
+      ],
+      boundary: "6.0 -> 4.6 is calculated TALK budget, not measured human reading time or wall-clock acceleration"
+    }
+  });
 }
 
 function tfxVisual(e, language) {
   const isEn = language === "en";
-  return `<div class="resume-diagram-container resume-human-view">
-    <div class="resume-diagram-header">
-      <div class="resume-diagram-kicker-group">
-        <span class="resume-diagram-tag">${isEn ? "Dual-Track Architecture" : "雙軌保真架構"}</span>
-        <span class="resume-diagram-badge">${isEn ? "Zero Data Loss Guarantee" : "零資料滅失保證"}</span>
-      </div>
-      <strong class="resume-diagram-title">${isEn ? "Immutable Raw Audio vs. User-Approved Speculative Cleanup" : "原始錄音唯讀保真 vs. 顯式確認語意修訂雙軌架構"}</strong>
-    </div>
-
-    <div class="resume-svg-wrapper">
-      <svg class="resume-svg-diagram" viewBox="0 0 760 180" role="img" aria-label="${isEn ? "Transcribe-for-X Dual-Track Architecture" : "Transcribe-for-X 雙軌保真架構"}">
-        <defs>
-          <marker id="arrow-tfx" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 1 2 L 8 5 L 1 8 z" class="resume-arrow-head"/>
-          </marker>
-        </defs>
-
-        <!-- Audio Input -->
-        <g class="resume-node-group">
-          <rect x="10" y="55" width="105" height="70" rx="8" class="resume-node-box"/>
-          <text x="62" y="85" class="resume-node-title" text-anchor="middle">${isEn ? "Mic Input" : "麥克風輸入"}</text>
-          <text x="62" y="102" class="resume-node-detail" text-anchor="middle">${isEn ? "PCM Audio Stream" : "PCM 原始音訊串流"}</text>
-        </g>
-
-        <!-- Central Isolation Barrier -->
-        <line x1="125" y1="90" x2="745" y2="90" class="resume-isolation-barrier"/>
-        <text x="435" y="86" class="resume-isolation-text" text-anchor="middle">${isEn ? "ZERO-LOSS ISOLATION BOUNDARY · LLM SANDBOXED FROM RAW STORAGE" : "零滅失隔離邊界 · 大型模型與底層原始儲存嚴格沙盒隔離"}</text>
-
-        <!-- Track 1: Immutable (Top) -->
-        <path d="M 115 78 Q 135 45 155 45" class="resume-flow-line" marker-end="url(#arrow-tfx)"/>
-        <g class="resume-node-group">
-          <rect x="160" y="14" width="245" height="62" rx="6" class="resume-node-box resume-node-highlight"/>
-          <text x="282" y="36" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Track 1: Raw Audio & Whisper ASR" : "軌道 1：原始音訊與 Whisper ASR"}</text>
-          <text x="282" y="52" class="resume-node-detail" text-anchor="middle">${isEn ? "Android Private Scoped Storage (Read-Only)" : "Android 專有沙盒儲存（唯讀保護）"}</text>
-          <text x="282" y="66" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "🔒 Byte-for-byte immutable archive" : "🔒 逐位元完全不可變封存"}</text>
-        </g>
-
-        <line x1="405" y1="45" x2="445" y2="45" class="resume-flow-line" marker-end="url(#arrow-tfx)"/>
-        <g class="resume-node-group">
-          <rect x="450" y="14" width="165" height="62" rx="6" class="resume-node-box"/>
-          <text x="532" y="38" class="resume-node-title" text-anchor="middle">${isEn ? "Permanent Ground Truth" : "永久真實基底 (Ground Truth)"}</text>
-          <text x="532" y="56" class="resume-node-detail" text-anchor="middle">${isEn ? "Verbatim Transcript Log" : "逐字稿紀錄與校驗碼"}</text>
-        </g>
-
-        <!-- Track 2: Speculative AI Diff (Bottom) -->
-        <path d="M 115 102 Q 135 135 155 135" class="resume-flow-line" marker-end="url(#arrow-tfx)"/>
-        <g class="resume-node-group">
-          <rect x="160" y="104" width="245" height="62" rx="6" class="resume-node-box"/>
-          <text x="282" y="126" class="resume-node-title" text-anchor="middle">${isEn ? "Track 2: AI Disfluency Diff Engine" : "軌道 2：AI 口語贅詞差分引擎"}</text>
-          <text x="282" y="142" class="resume-node-detail" text-anchor="middle">${isEn ? "Non-destructive candidate text overlays" : "非破壞性候選修訂文字層"}</text>
-          <text x="282" y="156" class="resume-node-detail" text-anchor="middle">${isEn ? "Zero in-place file mutation" : "絕無原地複寫檔案風險"}</text>
-        </g>
-
-        <line x1="405" y1="135" x2="445" y2="135" class="resume-flow-line" marker-end="url(#arrow-tfx)"/>
-        <g class="resume-node-group">
-          <rect x="450" y="104" width="165" height="62" rx="6" class="resume-node-box resume-node-highlight"/>
-          <text x="532" y="126" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "User Checkbox Review" : "使用者逐項核取審閱"}</text>
-          <text x="532" y="142" class="resume-node-detail" text-anchor="middle">${isEn ? "Explicit granular opt-in" : "顯式細粒度勾選同意"}</text>
-          <text x="532" y="156" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "⚡ Zero blind overwrites" : "⚡ 零未授權自動覆寫"}</text>
-        </g>
-
-        <!-- Final Export -->
-        <path d="M 615 45 Q 640 45 645 75" class="resume-flow-line"/>
-        <path d="M 615 135 Q 640 135 645 105" class="resume-flow-line"/>
-        <line x1="645" y1="90" x2="665" y2="90" class="resume-flow-line" marker-end="url(#arrow-tfx)"/>
-        <g class="resume-node-group">
-          <rect x="670" y="55" width="80" height="70" rx="6" class="resume-node-box"/>
-          <text x="710" y="85" class="resume-node-title" text-anchor="middle">${isEn ? "Clean Text" : "乾淨文稿"}</text>
-          <text x="710" y="102" class="resume-node-detail" text-anchor="middle">${isEn ? "User Confirmed" : "使用者確認輸出"}</text>
-        </g>
-      </svg>
-    </div>
-
-    <p class="resume-diagram-caption">${isEn ? "Android prototype that saves audio in private scoped storage before running local Whisper ASR. Original transcript is immutable; AI cleanup suggestions are treated as candidate overlays requiring explicit user opt-in." : "Android 原型：先將錄音儲存於專有沙盒空間，再執行本機 Whisper 語音辨識。原始逐字稿嚴格唯讀，AI 口語清理僅作為候選差分層，需由使用者逐項勾選同意才套用。"}</p>
-  </div>`;
+  return renderDualTrackSvg({
+    kicker: isEn ? "Dual-Track Architecture" : "雙軌保真架構",
+    badge: isEn ? "Zero Data Loss Guarantee" : "零資料滅失保證",
+    title: isEn ? "Immutable Raw Audio vs. User-Approved Speculative Cleanup" : "原始錄音唯讀保真 vs. 顯式確認語意修訂雙軌架構",
+    caption: isEn ? "Android prototype that saves audio in private scoped storage before running local Whisper ASR. Original transcript is immutable; AI cleanup suggestions are treated as candidate overlays requiring explicit user opt-in." : "Android 原型：先將錄音儲存於專有沙盒空間，再執行本機 Whisper 語音辨識。原始逐字稿嚴格唯讀，AI 口語清理僅作為候選差分層，需由使用者逐項勾選同意才套用。",
+    ariaLabel: isEn ? "Transcribe-for-X Dual-Track Architecture" : "Transcribe-for-X 雙軌保真架構"
+  }, language);
 }
 
 function tfxAgent(e, language) {
-  return `<div class="resume-agent-ir resume-agent-view">
-    <div class="resume-ir-header">
-      <div class="resume-ir-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-      <span class="resume-ir-tab">tfx_scoped_storage.ast.json</span>
-      <span class="resume-ir-badge">State Machine & Boundary Spec</span>
-    </div>
-    <pre><code><span class="ir-keyword">StateMachineAST</span> {
-  <span class="ir-prop">"id"</span>: <span class="ir-str">"transcribe-for-x-scoped-storage"</span>,
-  <span class="ir-prop">"platform"</span>: <span class="ir-str">"Android prototype"</span>,
-  <span class="ir-prop">"storage_sandbox"</span>: <span class="ir-str">"Android_Private_Scoped_Storage"</span>,
-  <span class="ir-prop">"zero_loss_invariant"</span>: <span class="ir-str">"Original audio bytes immutable; LLM runs in sandbox"</span>,
-  <span class="ir-prop">"ai_cleanup_policy"</span>: <span class="ir-control">"NON_DESTRUCTIVE_CANDIDATE_OVERLAY"</span>,
-  <span class="ir-prop">"mutation_gate"</span>: <span class="ir-str">"Item-by-item user checkbox confirmation required; zero blind overwrites"</span>,
-  <span class="ir-prop">"boundary"</span>: <span class="ir-str">"Device performance and mixed-language recognition quality still need real-use testing"</span>
-}</code></pre>
-  </div>`;
+  return renderAgentIr({
+    astType: "StateMachineAST",
+    filename: "tfx_scoped_storage.ast.json",
+    badge: "State Machine & Boundary Spec",
+    data: {
+      id: "transcribe-for-x-scoped-storage",
+      platform: "Android prototype",
+      storage_sandbox: "Android_Private_Scoped_Storage",
+      zero_loss_invariant: "Original audio bytes immutable; LLM runs in sandbox",
+      ai_cleanup_policy: "NON_DESTRUCTIVE_CANDIDATE_OVERLAY",
+      mutation_gate: "Item-by-item user checkbox confirmation required; zero blind overwrites",
+      boundary: "Device performance and mixed-language recognition quality still need real-use testing"
+    }
+  });
 }
 
 export function renderResume(profile, cases, assets, prefix = ".", notes) {
@@ -566,6 +228,8 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
   const career = new Map(profile.professional.map(item => [item.id, item]));
   const projects = new Map(cases.projects.map(item => [item.id, item]));
   const blurbs = new Map(profile.projects.map(item => [item.id, item]));
+  const triads = profile.triads || fallbackTriads;
+
   const cvHref = language => `${prefix}/resume/${assets.locales[language].file}`;
   const caseHref = (id, language, walkthrough = false) => `${prefix}/projects/${id}.html?lang=${language}${walkthrough ? "#walkthrough" : ""}`;
   const cvAction = language => `<a class="resume-button" href="${e(cvHref(language))}" data-resume-cv download><span data-cv-download-label>${e(copy[language].cv)}</span><span data-cv-open-label>${e(copy[language].cvOpen)}</span></a>`;
@@ -575,7 +239,7 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
   
   const proof = profile.entry.proofIds.map(id => {
     const item = career.get(id);
-    const triad = triadData[id];
+    const triad = item.triad || triads[id] || fallbackTriads[id];
     return `<article class="resume-focal-block" data-proof-id="${id}">${localize(language => {
       const isEn = language === "en";
       const visual = id === "dynasafe" ? dynaSafeVisual(e, language) : id === "metgauge" ? metGaugeVisual(e, language) : "";
@@ -609,7 +273,7 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
 
   const featured = profile.entry.projectIds.map(id => {
     const item = projects.get(id), blurb = blurbs.get(id);
-    const triad = triadData[id];
+    const triad = blurb.triad || triads[id] || fallbackTriads[id];
     return `<article class="resume-focal-block" data-project-id="${id}">${localize(language => {
       const isEn = language === "en";
       const visual = id === "study-atlas" ? atlasVisual(e, language, copy) : id === "transcribe-for-x" ? tfxVisual(e, language) : "";
