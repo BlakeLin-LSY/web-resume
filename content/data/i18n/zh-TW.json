@@ -80,10 +80,10 @@
   "proofShaLabel": "SHA-256 數位封籤",
   "proofStatusPass": "不變量驗證通過",
   "proofVerifyBtn": "執行即時不變量校驗",
-  "frameworkHeading": "通用核心工程架構",
-  "frameworkTitle": "關鍵瓶頸擊穿與不變量轉化器 (A ➔ B 通用轉化模型)",
-  "frameworkIntro": "如何將跨越 AI 運算管線、工廠軟硬整合與 Agent 系統的高熵複雜問題，經由第一性原理拆解為確定性、零滅失的高價值產出。",
-  "ribbonLabelA": "A 端輸入",
-  "ribbonLabelLink": "核心弱環節",
-  "ribbonLabelB": "B 端產出"
+  "frameworkHeading": "第一性工程求解引擎",
+  "frameworkTitle": "問題定義 · 關鍵弱鏈擊穿 · 高價值確定性交付 (A ➔ X ➔ B)",
+  "frameworkIntro": "從物理學邊界條件與假性需求過濾出發，運用自適應心智模型手術刀式擊穿最弱環節，在軟硬體產線與 Agent 系統中交付零滅失、抗脆弱的高價值確定性成果。",
+  "ribbonLabelA": "A: 問題與邊界定義",
+  "ribbonLabelLink": "X: 關鍵弱鏈擊穿",
+  "ribbonLabelB": "B: 確定性價值交付"
 }

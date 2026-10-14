@@ -111,12 +111,12 @@
       "proofShaLabel": "SHA-256 Digital Seal",
       "proofStatusPass": "VERIFIED INVARIANT",
       "proofVerifyBtn": "Run Live Invariant Gate",
-      "frameworkHeading": "Unifying Engineering Framework",
-      "frameworkTitle": "The Critical-Link & Invariant Engine (A ➔ B Transformation)",
-      "frameworkIntro": "How complex, high-entropy problems across AI pipelines, factory hardware, and agent systems are decomposed into deterministic, zero-loss outcomes.",
-      "ribbonLabelA": "A IN",
-      "ribbonLabelLink": "WEAKEST LINK",
-      "ribbonLabelB": "B OUT"
+      "frameworkHeading": "First-Principles Problem-Solving Engine",
+      "frameworkTitle": "Problem Scoping · Critical-Link Piercing · Deterministic Value (A ➔ X ➔ B)",
+      "frameworkIntro": "From physical boundary conditions and true-problem framing, to surgical weakest-link piercing via adaptive mental models, delivering zero-loss, anti-fragile deterministic outcomes across hardware and agent systems.",
+      "ribbonLabelA": "A: PROBLEM & SCOPE",
+      "ribbonLabelLink": "X: CRITICAL LINK",
+      "ribbonLabelB": "B: VALUE DELIVERY"
     },
     "zh-TW": {
       "lead": "我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。",
@@ -200,12 +200,12 @@
       "proofShaLabel": "SHA-256 數位封籤",
       "proofStatusPass": "不變量驗證通過",
       "proofVerifyBtn": "執行即時不變量校驗",
-      "frameworkHeading": "通用核心工程架構",
-      "frameworkTitle": "關鍵瓶頸擊穿與不變量轉化器 (A ➔ B 通用轉化模型)",
-      "frameworkIntro": "如何將跨越 AI 運算管線、工廠軟硬整合與 Agent 系統的高熵複雜問題，經由第一性原理拆解為確定性、零滅失的高價值產出。",
-      "ribbonLabelA": "A 端輸入",
-      "ribbonLabelLink": "核心弱環節",
-      "ribbonLabelB": "B 端產出"
+      "frameworkHeading": "第一性工程求解引擎",
+      "frameworkTitle": "問題定義 · 關鍵弱鏈擊穿 · 高價值確定性交付 (A ➔ X ➔ B)",
+      "frameworkIntro": "從物理學邊界條件與假性需求過濾出發，運用自適應心智模型手術刀式擊穿最弱環節，在軟硬體產線與 Agent 系統中交付零滅失、抗脆弱的高價值確定性成果。",
+      "ribbonLabelA": "A: 問題與邊界定義",
+      "ribbonLabelLink": "X: 關鍵弱鏈擊穿",
+      "ribbonLabelB": "B: 確定性價值交付"
     }
   },
   "professional": [

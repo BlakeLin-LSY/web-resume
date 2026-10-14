@@ -10,70 +10,76 @@ export function renderUniversalEngineSvg(language = "en") {
   const e = escapeHtml;
   const isEn = language === "en";
 
-  const kickerA = isEn ? "HIGH-ENTROPY INPUTS" : "高熵真實世界輸入";
-  const kickerEngine = isEn ? "CRITICAL-LINK & INVARIANT ENGINE" : "關鍵瓶頸擊穿與不變量核心";
-  const kickerB = isEn ? "DETERMINISTIC YIELDS" : "確定性高價值產出";
+  const kickerA = isEn ? "A(IN): PROBLEM & SCOPE FRAMING" : "A(IN): 問題定義與邊界框定";
+  const kickerEngine = isEn ? "X: ADAPTIVE MINDSETS & CRITICAL-LINK HACKING" : "X: 自適應心智與關鍵弱鏈擊穿";
+  const kickerB = isEn ? "B(OUT): DETERMINISTIC VALUE DELIVERY" : "B(OUT): 高價值確定性交付";
 
   const inputs = isEn ? [
-    { title: "Sensor Jitter & Noise", sub: "24 Cams · Hardware Async" },
-    { title: "GPU Compute Starvation", sub: "DataLoader I/O Serialization" },
-    { title: "Agent Combinatorial Drift", sub: "Unbounded Recursive Context" },
-    { title: "Silent Overwrite Risk", sub: "Destructive In-Place ASR" }
+    { title: "Sensor Clocks & Jitter", sub: "24 Cams Async · Metrology Boundary" },
+    { title: "Compute Starvation & I/O Stall", sub: "Deserialization Drag · DynaSafe Pipeline" },
+    { title: "Epistemic Drift & Bloom", sub: "Recursive Context · Atlas Agent Mesh" },
+    { title: "Destructive In-Place Mutation", sub: "Unchecked ASR Overwrites · TFX Pipeline" }
   ] : [
-    { title: "感測器時序抖動與雜訊", sub: "24 顆相機非同步觸發 (MetGauge)" },
-    { title: "GPU 運算飢餓與 I/O 阻塞", sub: "DataLoader 序列化瓶頸 (DynaSafe)" },
-    { title: "多 Agent 遞迴組合漂移", sub: "Token 預算指數級擴散 (Atlas)" },
-    { title: "非可逆覆寫資料滅失", sub: "黑箱語音轉錄無審計層 (TFX)" }
+    { title: "感測器時序競爭與微秒抖動", sub: "24 顆相機非同步觸發 · MetGauge" },
+    { title: "算力飢餓與反序列化阻塞", sub: "I/O 延遲拖垮 GPU · DynaSafe" },
+    { title: "認知邊界迷航與上下文膨脹", sub: "多 Agent 遞迴發散 · Study-Atlas" },
+    { title: "黑箱模型破壞性原地覆寫", sub: "語音切片無狀態審計 · Transcribe-for-X" }
   ];
 
   const coreStages = isEn ? [
     {
       num: "01",
-      name: "First-Principles Decomposition",
-      desc: "Strip away surface symptoms; isolate root physics and computation limits."
+      name: "First-Principles Framing",
+      line1: "Strip surface noise & isolate true boundary",
+      line2: "conditions, degrees of freedom & constraints."
     },
     {
       num: "02",
-      name: "Pierce Critical Weakest Link",
-      desc: "Re-engineer the single rate-limiting bottleneck via lockless IPC & ring buffers."
+      name: "Pierce Critical Weak Link",
+      line1: "Surgically re-architect rate-limiting bottleneck",
+      line2: "via lockless ring buffers, zero-copy IPC & duels."
     },
     {
       num: "03",
-      name: "Enforce Invariant Guard Gates",
-      desc: "Embed formal circuit breakers, zero-drift contracts & cryptographic seals."
+      name: "Enforce Invariant Gates",
+      line1: "Lock down formal circuit breakers, type-safe",
+      line2: "intent contracts & cryptographic SHA-256 seals."
     }
   ] : [
     {
       num: "01",
-      name: "第一性原理邊界剖析",
-      desc: "剝離表象雜訊與盲目增購，定位根本物理與計算制約。"
+      name: "第一性問題定義與邊界剖析",
+      line1: "剝離表象雜訊與假性需求，精準界定",
+      line2: "物理邊界條件、系統自由度與底層約束。"
     },
     {
       num: "02",
-      name: "穿透關鍵脆弱弱環節",
-      desc: "在唯一限速瓶頸處重構拓撲，實作無鎖緩衝與同態校正。"
+      name: "手術刀式擊穿最弱限速環節",
+      line1: "鎖定唯一的系統限速阻抗，以無鎖",
+      line2: "環形佇列、零拷貝 IPC 與對抗防線破局。"
     },
     {
       num: "03",
-      name: "錨定不變量防護閘門",
-      desc: "注入確定性斷路熔斷器、型別安全契約與 SHA-256 數位封籤。"
+      name: "錨定確定性守恆不變量閘門",
+      line1: "注入自動斷路熔斷器、型別安全意圖",
+      line2: "合約與 SHA-256 密碼學防偽封籤。"
     }
   ];
 
   const yields = isEn ? [
-    { title: "Sub-μs Hardware Sync", metric: "Factory Testing Verified" },
-    { title: "10× Training Throughput", metric: "Zero New GPU Capex" },
-    { title: "TALK 1.8 Budget Capping", metric: "6.0 → 4.6 Calculated Budget" },
-    { title: "Zero Data Loss Guarantee", metric: "Immutable Raw Ground Truth" }
+    { title: "Sub-μs Hardware Sync", metric: "Zero-Drop Metrology Invariant Pass" },
+    { title: "10× Training Throughput", metric: "Hardware Saturated · Zero Capex" },
+    { title: "Budget & Drift Convergence", metric: "100% Intent Fidelity · TALK 1.8 Capped" },
+    { title: "Immutable Ground Truth", metric: "Zero Data Loss · Cryptographic Seals" }
   ] : [
-    { title: "次微秒級硬體確定性同步", metric: "工廠產線上線前驗收通過" },
-    { title: "10× 訓練模型吞吐提速", metric: "同等硬體下釋放，零資本支出" },
-    { title: "TALK 1.8 預算超標熔斷", metric: "6.0 → 4.6 計算成本收斂" },
-    { title: "原始資料零滅失保證", metric: "不可變底層真理與顯式確認" }
+    { title: "次微秒級確定性同步", metric: "工廠 0 掉幀 · 物理公差量測通過" },
+    { title: "10× 訓練吞吐極限釋放", metric: "同等硬體飽和，零設備增購支出" },
+    { title: "認知邊界收斂與防漂移", metric: "100% 意圖保真 · TALK 1.8 成本鎖定" },
+    { title: "底層真理數據零滅失保證", metric: "不可變快照與 SHA-256 數位封籤" }
   ];
 
   return `<div class="resume-svg-wrapper">
-  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${e(isEn ? "Universal Critical-Link Engine A to B Transformation Architecture" : "關鍵瓶頸擊穿引擎 A 到 B 通用轉化架構圖")}">
+  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${e(isEn ? "First-Principles Problem-Solving Engine A to B Architecture" : "第一性工程求解引擎 A 到 B 架構圖")}">
     <defs>
       <!-- Gradients -->
       <linearGradient id="ue-engine-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -152,8 +158,8 @@ export function renderUniversalEngineSvg(language = "en") {
           <text x="12" y="24" font-size="12.5" font-weight="800" fill="${isMiddle ? "var(--resume-accent)" : "var(--resume-text)"}">
             <tspan fill="var(--resume-muted)" font-size="10.5" font-family="monospace">${e(stage.num)} · </tspan>${e(stage.name)}
           </text>
-          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-text)" opacity="0.9">${e(stage.desc.slice(0, isEn ? 40 : 20))}</text>
-          <text x="12" y="60" font-size="10" font-weight="500" fill="var(--resume-muted)">${e(stage.desc.slice(isEn ? 40 : 20))}</text>
+          <text x="12" y="44" font-size="10" font-weight="500" fill="var(--resume-text)" opacity="0.9">${e(stage.line1)}</text>
+          <text x="12" y="60" font-size="10" font-weight="500" fill="var(--resume-muted)">${e(stage.line2)}</text>
         </g>
         ${idx < 2 ? `<line x1="136" y1="${y + 78}" x2="136" y2="${y + 90}" stroke="var(--resume-accent)" stroke-width="2" stroke-dasharray="2 2" />` : ""}
         `;
@@ -162,7 +168,7 @@ export function renderUniversalEngineSvg(language = "en") {
       <!-- Chamber Status Indicator -->
       <g transform="translate(12, 308)">
         <circle cx="6" cy="6" r="3" fill="#4fac74" />
-        <text x="16" y="10" font-size="9" font-weight="700" fill="var(--resume-muted)" font-family="monospace">CONVERGENCE INVARIANT LOCKED</text>
+        <text x="16" y="10" font-size="9" font-weight="700" fill="var(--resume-muted)" font-family="monospace">${isEn ? "FIRST-PRINCIPLES CONVERGENCE LOCKED" : "第一性原理收斂不變量鎖定"}</text>
       </g>
     </g>
 
