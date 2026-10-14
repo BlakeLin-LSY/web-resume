@@ -27,6 +27,20 @@
       "zh-TW": "衡量指標：OpenFOAM CFD 工作負載之整體模型訓練速度提升 10 倍。"
     }
   },
+  "abTransformation": {
+    "aInput": {
+      "en": "CFD training GPU compute starved at ~15% utilization",
+      "zh-TW": "CFD 訓練 GPU 算力嚴重飢餓（利用率僅約 15%）"
+    },
+    "weakestLink": {
+      "en": "Python DataLoader I/O serialization & format conversion stall",
+      "zh-TW": "Python DataLoader 序列化 I/O 與格式轉換阻塞"
+    },
+    "bOutput": {
+      "en": "10× overall model-training speedup on identical hardware",
+      "zh-TW": "既有硬體上釋放 10× 整體模型訓練速度提升"
+    }
+  },
   "intentContract": {
     "strictInvariant": {
       "en": "DataLoader streaming throughput must match or exceed GPU compute ingestion rate without dropping CFD cell precision.",

@@ -104,7 +104,13 @@
       "proofReceiptHeading": "Cryptographic Engineering Receipts",
       "proofShaLabel": "SHA-256 Digital Seal",
       "proofStatusPass": "VERIFIED INVARIANT",
-      "proofVerifyBtn": "Run Live Invariant Gate"
+      "proofVerifyBtn": "Run Live Invariant Gate",
+      "frameworkHeading": "Unifying Engineering Framework",
+      "frameworkTitle": "The Critical-Link & Invariant Engine (A ➔ B Transformation)",
+      "frameworkIntro": "How complex, high-entropy problems across AI pipelines, factory hardware, and agent systems are decomposed into deterministic, zero-loss outcomes.",
+      "ribbonLabelA": "A IN",
+      "ribbonLabelLink": "WEAKEST LINK",
+      "ribbonLabelB": "B OUT"
     },
     "zh-TW": {
       "lead": "我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。",
@@ -181,7 +187,13 @@
       "proofReceiptHeading": "可驗證密碼學工程收據",
       "proofShaLabel": "SHA-256 數位封籤",
       "proofStatusPass": "不變量驗證通過",
-      "proofVerifyBtn": "執行即時不變量校驗"
+      "proofVerifyBtn": "執行即時不變量校驗",
+      "frameworkHeading": "通用核心工程架構",
+      "frameworkTitle": "關鍵瓶頸擊穿與不變量轉化器 (A ➔ B 通用轉化模型)",
+      "frameworkIntro": "如何將跨越 AI 運算管線、工廠軟硬整合與 Agent 系統的高熵複雜問題，經由第一性原理拆解為確定性、零滅失的高價值產出。",
+      "ribbonLabelA": "A 端輸入",
+      "ribbonLabelLink": "核心弱環節",
+      "ribbonLabelB": "B 端產出"
     }
   },
   "professional": [
@@ -212,6 +224,20 @@
         "boundary": {
           "en": "10× overall model-training speedup measured on CFD workload.",
           "zh-TW": "衡量指標：OpenFOAM CFD 工作負載之整體模型訓練速度提升 10 倍。"
+        }
+      },
+      "abTransformation": {
+        "aInput": {
+          "en": "CFD training GPU compute starved at ~15% utilization",
+          "zh-TW": "CFD 訓練 GPU 算力嚴重飢餓（利用率僅約 15%）"
+        },
+        "weakestLink": {
+          "en": "Python DataLoader I/O serialization & format conversion stall",
+          "zh-TW": "Python DataLoader 序列化 I/O 與格式轉換阻塞"
+        },
+        "bOutput": {
+          "en": "10× overall model-training speedup on identical hardware",
+          "zh-TW": "既有硬體上釋放 10× 整體模型訓練速度提升"
         }
       },
       "intentContract": {
@@ -315,6 +341,20 @@
         "boundary": {
           "en": "Advanced prototype MVP to factory-ready production testing before product launch.",
           "zh-TW": "推進成果：量測原型進入工廠上市前的產線上線測試階段。"
+        }
+      },
+      "abTransformation": {
+        "aInput": {
+          "en": "Production line mechanical vibration & optical frame displacement",
+          "zh-TW": "產線輸送帶機械震動與光學相機拍攝位移"
+        },
+        "weakestLink": {
+          "en": "OS network polling jitter (500μs = millimeter 3D calibration blur)",
+          "zh-TW": "OS 網路輪詢排程抖動（500μs 延遲即造成毫米級 3D 標定錯位）"
+        },
+        "bOutput": {
+          "en": "Deterministic sub-microsecond hardware sync; factory-ready testing",
+          "zh-TW": "次微秒硬體同步匯流排；推進至工廠上市前的產線上線測試"
         }
       },
       "intentContract": {
@@ -520,6 +560,20 @@
           "zh-TW": "邊界界定：6.0 → 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。"
         }
       },
+      "abTransformation": {
+        "aInput": {
+          "en": "Open-ended research prompts causing combinatorial agent token explosion",
+          "zh-TW": "開放式搜尋提示詞引發多 Agent 遞迴檢索與 Token 組合爆炸"
+        },
+        "weakestLink": {
+          "en": "Unbounded dispatch graph without execution-time budget guardrail",
+          "zh-TW": "缺乏派發前計算預算評估與斷路熔斷機制"
+        },
+        "bOutput": {
+          "en": "TALK 1.8 budget gate blocks overspend (6.0 > 5.0) & reroutes to 4.6",
+          "zh-TW": "TALK 1.8 預算超標熔斷阻斷 (6.0 > 5.0)，自主重導向至 4.6 精簡綜述"
+        }
+      },
       "intentContract": {
         "strictInvariant": {
           "en": "Calculated TALK budget must not exceed 5.0 ceiling; all citations must retain mathematical provenance to source papers.",
@@ -609,6 +663,20 @@
         "boundary": {
           "en": "Android prototype; device performance and mixed-language ASR require real-use testing.",
           "zh-TW": "邊界界定：Android 原型；裝置效能與雙語混合辨識品質仍待實際場景驗證。"
+        }
+      },
+      "abTransformation": {
+        "aInput": {
+          "en": "Speech noise & accidental transcript loss via irreversible LLM cleanup",
+          "zh-TW": "語音雜訊與口語頓挫，直接由 LLM 改寫造成原始語意滅失"
+        },
+        "weakestLink": {
+          "en": "Single-pass in-place destructive string rewriting",
+          "zh-TW": "單步原地破壞性字串覆寫"
+        },
+        "bOutput": {
+          "en": "Private scoped audio storage + user-approved candidate diff overlay",
+          "zh-TW": "專有沙盒原始音訊唯讀保真 + 顯式確認候選差分層（零資料滅失）"
         }
       },
       "intentContract": {

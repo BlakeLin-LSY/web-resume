@@ -344,6 +344,24 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
 .resume-receipt-hash{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;font-size:.72rem;background:var(--resume-panel);padding:1px 5px;border-radius:3px;border:1px solid var(--resume-border);color:var(--resume-text);word-break:break-all}
 .resume-receipt-invariant{color:var(--resume-accent);font-weight:600}
 
+/* --- Universal Framework Card & Engine Diagram --- */
+.resume-framework-card{background:var(--resume-panel);border:1px solid var(--resume-border);border-radius:14px;padding:24px 26px;margin-bottom:32px;box-shadow:0 3px 12px rgba(0,0,0,0.03)}
+.resume-framework-header{margin-bottom:16px}
+.resume-framework-kicker{font-size:.72rem;font-weight:800;letter-spacing:.06em;color:var(--resume-accent);text-transform:uppercase;display:block;margin-bottom:4px}
+.resume-framework-title{font-size:1.2rem;font-weight:800;color:var(--resume-text);margin:0 0 6px}
+.resume-framework-intro{font-size:.85rem;color:var(--resume-muted);line-height:1.55;margin:0}
+
+/* --- A -> B Transformation Ribbon --- */
+.resume-ab-ribbon{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:8px;padding:8px 12px;margin:12px 0 16px;font-size:.8rem;line-height:1.4}
+.resume-ab-seg{display:inline-flex;align-items:center;gap:6px;flex:1 1 auto;min-width:140px}
+.resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.resume-ab-a .resume-ab-badge{background:rgba(210,101,91,0.15);color:#d2655b;border:1px solid rgba(210,101,91,0.3)}
+.resume-ab-link .resume-ab-badge{background:rgba(40,92,77,0.15);color:var(--resume-accent);border:1px solid var(--resume-accent)}
+.resume-ab-b .resume-ab-badge{background:rgba(79,172,116,0.18);color:#285c4d;border:1px solid rgba(79,172,116,0.4)}
+.resume-ab-text{color:var(--resume-text);font-weight:600}
+.resume-ab-sep{color:var(--resume-accent);font-weight:800;font-size:.9rem}
+
+
 
 
 </style></head><body><a class="resume-skip" href="#content"><span lang="en" data-resume-locale="en" >Skip to content</span><span lang="zh-TW" data-resume-locale="zh-TW" >跳至內容</span></a>
@@ -352,13 +370,189 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
 <div class="resume-reading-controls" data-js-control><div lang="en" data-resume-locale="en" class="resume-lens-wrap"><div class="resume-lens-selector" role="group" aria-label="Perspective Lens"><button type="button" data-resume-lens="all" aria-pressed="true" title="Universal (All)">All</button><button type="button" data-resume-lens="staff" aria-pressed="false" title="Focus: Invariants, System Bottlenecks, Trade-offs &amp; Failure Boundaries">Staff Architect</button><button type="button" data-resume-lens="em" aria-pressed="false" title="Focus: Production Milestones, Velocity, ROI &amp; Risk Elimination">Engineering Manager</button><button type="button" data-resume-lens="recruiter" aria-pressed="false" title="Focus: Rare Intersection: Physics + HW/SW Integration + Agent Invariants">Deep Tech Recruiter</button></div></div><div lang="zh-TW" data-resume-locale="zh-TW" class="resume-lens-wrap"><div class="resume-lens-selector" role="group" aria-label="視角投影"><button type="button" data-resume-lens="all" aria-pressed="true" title="全視角綜覽">All</button><button type="button" data-resume-lens="staff" aria-pressed="false" title="聚焦：系統不變量、性能瓶頸、架構取捨與失效邊界">系統架構師</button><button type="button" data-resume-lens="em" aria-pressed="false" title="聚焦：產線里程碑、交付節奏、投資回報率與風險消除">工程經理</button><button type="button" data-resume-lens="recruiter" aria-pressed="false" title="聚焦：稀缺交集能力：物理第一性原理 + 軟硬整合 + Agent 意圖保真">創辦人 / 獵頭</button></div></div><div lang="en" data-resume-locale="en" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">Visual View</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">AST / Spec</span></button></div><div lang="zh-TW" data-resume-locale="zh-TW" class="resume-view-modes" role="group" aria-label="Reading perspective"><button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">視覺圖解</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">語意規格</span></button></div><div class="resume-languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-resume-language="en" aria-pressed="true" disabled>EN</button><button type="button" data-resume-language="zh-TW" aria-pressed="false" disabled>正體</button></div><button type="button" data-resume-theme aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button><button type="button" class="resume-menu" data-resume-menu aria-label="Menu" aria-expanded="false" aria-controls="resume-navigation" disabled><span aria-hidden="true">☰</span></button></div></div></header>
 <main id="content" class="resume-main" tabindex="-1">
 <section class="resume-hero" id="top"><div lang="en" data-resume-locale="en" ><p class="resume-role">AI Software Engineer</p><h1>Blake Lin</h1><p class="resume-full-name">Ssu-Yuan Lin (Blake)</p><p class="resume-lead">I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.</p><p class="resume-note">3+ years of professional engineering · M.S. in Physics</p><ul class="resume-chips"><li>10× model-training speed</li><li>12 stereo-camera pairs on a production line</li><li>40% lower AOI cycle time</li><li>66% improvement in measurement accuracy</li></ul><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-en.pdf" data-resume-cv download><span data-cv-download-label>Download CV</span><span data-cv-open-label>Open CV</span></a><a class="resume-button resume-button-secondary" href="#contact">Contact</a></div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p class="resume-role">AI Software Engineer</p><h1>Blake Lin</h1><p class="resume-full-name">Ssu-Yuan Lin (Blake)</p><p class="resume-lead">我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。</p><p class="resume-note">3 年以上專業工程經驗 · 物理學碩士</p><ul class="resume-chips"><li>模型訓練速度提升 10 倍</li><li>12 組立體相機產線</li><li>AOI cycle time 降低 40%</li><li>量測精度提升 66%</li></ul><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download><span data-cv-download-label>下載 CV</span><span data-cv-open-label>開啟 CV</span></a><a class="resume-button resume-button-secondary" href="#contact">聯絡我</a></div></div></section>
-<section id="professional-proof" class="resume-section resume-proof-section"><div lang="en" data-resume-locale="en" ><h2>Selected professional work</h2><p class="resume-section-intro">From training bottlenecks to systems on the factory floor.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>精選職業成果</h2><p class="resume-section-intro">從訓練瓶頸，到工廠現場的系統整合。</p></div><div class="resume-focal-stack"><article class="resume-focal-block" data-proof-id="dynasafe"><div lang="en" data-resume-locale="en" ><div class="resume-block-header">
+<section id="professional-proof" class="resume-section resume-proof-section"><div lang="en" data-resume-locale="en" ><h2>Selected professional work</h2><p class="resume-section-intro">From training bottlenecks to systems on the factory floor.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>精選職業成果</h2><p class="resume-section-intro">從訓練瓶頸，到工廠現場的系統整合。</p></div><div lang="en" data-resume-locale="en" ><div class="resume-framework-card resume-human-view">
+      <div class="resume-framework-header">
+        <span class="resume-framework-kicker">Unifying Engineering Framework</span>
+        <h3 class="resume-framework-title">The Critical-Link &amp; Invariant Engine (A ➔ B Transformation)</h3>
+        <p class="resume-framework-intro">How complex, high-entropy problems across AI pipelines, factory hardware, and agent systems are decomposed into deterministic, zero-loss outcomes.</p>
+      </div>
+      <div class="resume-svg-wrapper">
+  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Universal Critical-Link Engine A to B Transformation Architecture">
+    <defs>
+      <marker id="ue-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 8 5 L 0 9 z" class="resume-arrow-head" fill="var(--resume-accent)" />
+      </marker>
+    </defs>
+
+    <!-- BOX A: High Entropy Reality -->
+    <g class="ue-box-a" transform="translate(15, 15)">
+      <rect x="0" y="0" width="215" height="195" rx="8" class="resume-node-box" />
+      <rect x="0" y="0" width="215" height="28" rx="8" class="resume-node-pill" />
+      <rect x="0" y="20" width="215" height="8" class="resume-node-pill" />
+      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.04em">A IN: HIGH-ENTROPY INPUT</text>
+      
+      <text x="12" y="52" class="resume-node-detail" font-size="9.5">• Microsecond Jitter &amp; Sensor Noise (24 Cams)</text>
+      <text x="12" y="87" class="resume-node-detail" font-size="9.5">• GPU Starvation &amp; DataLoader I/O Stall</text>
+      <text x="12" y="122" class="resume-node-detail" font-size="9.5">• Multi-Agent Combinatorial Token Explosion</text>
+      <text x="12" y="157" class="resume-node-detail" font-size="9.5">• Destructive In-place Text Overwriting</text>
+      
+      <text x="12" y="188" class="resume-node-detail" font-size="8.5" fill="var(--resume-muted)" font-style="italic">High Entropy / Ambiguity</text>
+    </g>
+
+    <!-- CONNECTOR A -> ENGINE -->
+    <path d="M 230 112 L 265 112" class="resume-flow-line" stroke="var(--resume-accent)" stroke-width="2" marker-end="url(#ue-arrow)" />
+
+    <!-- BOX ENGINE: Blake's Cognitive Core -->
+    <g class="ue-box-engine" transform="translate(270, 10)">
+      <rect x="0" y="0" width="225" height="205" rx="10" class="resume-node-highlight" stroke-width="2" />
+      <rect x="0" y="0" width="225" height="30" rx="10" class="resume-pill-highlight" />
+      <rect x="0" y="22" width="225" height="8" class="resume-pill-highlight" />
+      <text x="14" y="20" class="resume-pill-text" fill="#fff" font-weight="800" letter-spacing="0.04em">ENGINE: BLAKE&#39;S COGNITIVE CORE</text>
+      
+      <!-- Engine Step 1 -->
+      <g transform="translate(10, 40)">
+        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1" />
+        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="700" fill="var(--resume-accent)">1. Epistemic Scoping</text>
+        <text x="8" y="34" class="resume-node-detail" font-size="8.8">First-Principles Physics &amp; Boundaries</text>
+      </g>
+      
+      <!-- Engine Step 2 -->
+      <g transform="translate(10, 92)">
+        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-accent)" stroke-width="1.5" />
+        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="800" fill="var(--resume-text)">2. Weakest-Link Pinpoint</text>
+        <text x="8" y="34" class="resume-node-detail" font-size="8.8" font-weight="600" fill="var(--resume-accent)">Isolate Single Rate-Limiting Choke</text>
+      </g>
+
+      <!-- Engine Step 3 -->
+      <g transform="translate(10, 144)">
+        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1" />
+        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="700" fill="var(--resume-accent)">3. Invariant Gate</text>
+        <text x="8" y="34" class="resume-node-detail" font-size="8.8">Deterministic Guardrails &amp; Circuit Breakers</text>
+      </g>
+    </g>
+
+    <!-- CONNECTOR ENGINE -> B -->
+    <path d="M 495 112 L 530 112" class="resume-flow-line" stroke="var(--resume-accent)" stroke-width="2" marker-end="url(#ue-arrow)" />
+
+    <!-- BOX B: Deterministic High Value Outcome -->
+    <g class="ue-box-b" transform="translate(535, 15)">
+      <rect x="0" y="0" width="210" height="195" rx="8" class="resume-node-box" />
+      <rect x="0" y="0" width="210" height="28" rx="8" class="resume-node-pill" />
+      <rect x="0" y="20" width="210" height="8" class="resume-node-pill" />
+      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.04em">B OUT: DETERMINISTIC OUTCOME</text>
+      
+      <text x="12" y="52" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 10× Model Training Speedup (Measured)</text>
+      <text x="12" y="87" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ Sub-μs Hardware Sync in Factory Testing</text>
+      <text x="12" y="122" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ TALK 1.8 Capped Budget (6.0 → 4.6)</text>
+      <text x="12" y="157" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ Zero Data Loss Guarantee (Immutable Ground Truth)</text>
+
+      <text x="12" y="188" class="resume-node-detail" font-size="8.5" fill="var(--resume-accent)" font-weight="700">Deterministic / Zero Loss</text>
+    </g>
+  </svg>
+</div>
+    </div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><div class="resume-framework-card resume-human-view">
+      <div class="resume-framework-header">
+        <span class="resume-framework-kicker">通用核心工程架構</span>
+        <h3 class="resume-framework-title">關鍵瓶頸擊穿與不變量轉化器 (A ➔ B 通用轉化模型)</h3>
+        <p class="resume-framework-intro">如何將跨越 AI 運算管線、工廠軟硬整合與 Agent 系統的高熵複雜問題，經由第一性原理拆解為確定性、零滅失的高價值產出。</p>
+      </div>
+      <div class="resume-svg-wrapper">
+  <svg class="resume-svg-diagram resume-universal-engine-svg" viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="關鍵瓶頸擊穿引擎 A 到 B 通用轉化架構圖">
+    <defs>
+      <marker id="ue-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 8 5 L 0 9 z" class="resume-arrow-head" fill="var(--resume-accent)" />
+      </marker>
+    </defs>
+
+    <!-- BOX A: High Entropy Reality -->
+    <g class="ue-box-a" transform="translate(15, 15)">
+      <rect x="0" y="0" width="215" height="195" rx="8" class="resume-node-box" />
+      <rect x="0" y="0" width="215" height="28" rx="8" class="resume-node-pill" />
+      <rect x="0" y="20" width="215" height="8" class="resume-node-pill" />
+      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.04em">A 端：高熵真實世界輸入</text>
+      
+      <text x="12" y="52" class="resume-node-detail" font-size="9.5">• 24 顆相機微秒級時序抖動與雜訊 (MetGauge)</text>
+      <text x="12" y="87" class="resume-node-detail" font-size="9.5">• GPU 運算飢餓與 DataLoader I/O 阻塞 (DynaSafe)</text>
+      <text x="12" y="122" class="resume-node-detail" font-size="9.5">• 多 Agent 遞迴檢索之 Token 組合爆炸 (Atlas)</text>
+      <text x="12" y="157" class="resume-node-detail" font-size="9.5">• LLM 原地覆寫導致原始語義滅失 (TFX)</text>
+      
+      <text x="12" y="188" class="resume-node-detail" font-size="8.5" fill="var(--resume-muted)" font-style="italic">High Entropy / Ambiguity</text>
+    </g>
+
+    <!-- CONNECTOR A -> ENGINE -->
+    <path d="M 230 112 L 265 112" class="resume-flow-line" stroke="var(--resume-accent)" stroke-width="2" marker-end="url(#ue-arrow)" />
+
+    <!-- BOX ENGINE: Blake's Cognitive Core -->
+    <g class="ue-box-engine" transform="translate(270, 10)">
+      <rect x="0" y="0" width="225" height="205" rx="10" class="resume-node-highlight" stroke-width="2" />
+      <rect x="0" y="0" width="225" height="30" rx="10" class="resume-pill-highlight" />
+      <rect x="0" y="22" width="225" height="8" class="resume-pill-highlight" />
+      <text x="14" y="20" class="resume-pill-text" fill="#fff" font-weight="800" letter-spacing="0.04em">核心引擎：關鍵環節擊穿器</text>
+      
+      <!-- Engine Step 1 -->
+      <g transform="translate(10, 40)">
+        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1" />
+        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="700" fill="var(--resume-accent)">1. 第一性原理分解</text>
+        <text x="8" y="34" class="resume-node-detail" font-size="8.8">釐清物理與計算真實邊界條件</text>
+      </g>
+      
+      <!-- Engine Step 2 -->
+      <g transform="translate(10, 92)">
+        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-accent)" stroke-width="1.5" />
+        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="800" fill="var(--resume-text)">2. 鎖定最脆弱環節</text>
+        <text x="8" y="34" class="resume-node-detail" font-size="8.8" font-weight="600" fill="var(--resume-accent)">精準點穴單一限速速率瓶頸</text>
+      </g>
+
+      <!-- Engine Step 3 -->
+      <g transform="translate(10, 144)">
+        <rect x="0" y="0" width="205" height="44" rx="5" fill="var(--resume-panel)" stroke="var(--resume-border)" stroke-width="1" />
+        <text x="8" y="18" class="resume-node-title" font-size="10.5" font-weight="700" fill="var(--resume-accent)">3. 建立不變量閘門</text>
+        <text x="8" y="34" class="resume-node-detail" font-size="8.8">注入確定性防護與斷路熔斷機制</text>
+      </g>
+    </g>
+
+    <!-- CONNECTOR ENGINE -> B -->
+    <path d="M 495 112 L 530 112" class="resume-flow-line" stroke="var(--resume-accent)" stroke-width="2" marker-end="url(#ue-arrow)" />
+
+    <!-- BOX B: Deterministic High Value Outcome -->
+    <g class="ue-box-b" transform="translate(535, 15)">
+      <rect x="0" y="0" width="210" height="195" rx="8" class="resume-node-box" />
+      <rect x="0" y="0" width="210" height="28" rx="8" class="resume-node-pill" />
+      <rect x="0" y="20" width="210" height="8" class="resume-node-pill" />
+      <text x="12" y="18" class="resume-pill-text" font-weight="800" letter-spacing="0.04em">B 端：確定性高價值產出</text>
+      
+      <text x="12" y="52" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 10× 模型訓練速度提升（實測指標）</text>
+      <text x="12" y="87" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 次微秒級硬體確定性同步（工廠上線前測試）</text>
+      <text x="12" y="122" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ TALK 1.8 預算超標熔斷收斂 (6.0 → 4.6)</text>
+      <text x="12" y="157" class="resume-node-detail resume-stat-green" font-size="9.5" font-weight="700">✓ 原始資料零滅失保證（不可變真理層）</text>
+
+      <text x="12" y="188" class="resume-node-detail" font-size="8.5" fill="var(--resume-accent)" font-weight="700">Deterministic / Zero Loss</text>
+    </g>
+  </svg>
+</div>
+    </div></div><div class="resume-focal-stack"><article class="resume-focal-block" data-proof-id="dynasafe"><div lang="en" data-resume-locale="en" ><div class="resume-block-header">
         <div class="resume-block-meta">
           <span class="resume-block-kicker">DynaSafe Corp. · Senior AI Engineer · Jan 2026 – Apr 2026</span>
           <span class="resume-block-badge">10× model-training speed</span>
         </div>
         <h3 class="resume-block-title">ML pipeline performance</h3>
       </div>
+      <div class="resume-ab-ribbon resume-human-view">
+    <div class="resume-ab-seg resume-ab-a">
+      <span class="resume-ab-badge">A IN</span>
+      <span class="resume-ab-text">CFD training GPU compute starved at ~15% utilization</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-link">
+      <span class="resume-ab-badge">WEAKEST LINK</span>
+      <span class="resume-ab-text">Python DataLoader I/O serialization &amp; format conversion stall</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-b">
+      <span class="resume-ab-badge">B OUT</span>
+      <span class="resume-ab-text">10× overall model-training speedup on identical hardware</span>
+    </div>
+  </div>
       <div class="resume-stage-box"><div class="resume-diagram-container resume-human-view">
     <div class="resume-diagram-header">
       <div class="resume-diagram-kicker-group">
@@ -593,6 +787,22 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
         </div>
         <h3 class="resume-block-title">ML pipeline 效能</h3>
       </div>
+      <div class="resume-ab-ribbon resume-human-view">
+    <div class="resume-ab-seg resume-ab-a">
+      <span class="resume-ab-badge">A 端輸入</span>
+      <span class="resume-ab-text">CFD 訓練 GPU 算力嚴重飢餓（利用率僅約 15%）</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-link">
+      <span class="resume-ab-badge">核心弱環節</span>
+      <span class="resume-ab-text">Python DataLoader 序列化 I/O 與格式轉換阻塞</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-b">
+      <span class="resume-ab-badge">B 端產出</span>
+      <span class="resume-ab-text">既有硬體上釋放 10× 整體模型訓練速度提升</span>
+    </div>
+  </div>
       <div class="resume-stage-box"><div class="resume-diagram-container resume-human-view">
     <div class="resume-diagram-header">
       <div class="resume-diagram-kicker-group">
@@ -827,6 +1037,22 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
         </div>
         <h3 class="resume-block-title">Hardware and software integration</h3>
       </div>
+      <div class="resume-ab-ribbon resume-human-view">
+    <div class="resume-ab-seg resume-ab-a">
+      <span class="resume-ab-badge">A IN</span>
+      <span class="resume-ab-text">Production line mechanical vibration &amp; optical frame displacement</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-link">
+      <span class="resume-ab-badge">WEAKEST LINK</span>
+      <span class="resume-ab-text">OS network polling jitter (500μs = millimeter 3D calibration blur)</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-b">
+      <span class="resume-ab-badge">B OUT</span>
+      <span class="resume-ab-text">Deterministic sub-microsecond hardware sync; factory-ready testing</span>
+    </div>
+  </div>
       <div class="resume-stage-box"><div class="resume-diagram-container resume-human-view">
     <div class="resume-diagram-header">
       <div class="resume-diagram-kicker-group">
@@ -1065,6 +1291,22 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
         </div>
         <h3 class="resume-block-title">軟硬體整合</h3>
       </div>
+      <div class="resume-ab-ribbon resume-human-view">
+    <div class="resume-ab-seg resume-ab-a">
+      <span class="resume-ab-badge">A 端輸入</span>
+      <span class="resume-ab-text">產線輸送帶機械震動與光學相機拍攝位移</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-link">
+      <span class="resume-ab-badge">核心弱環節</span>
+      <span class="resume-ab-text">OS 網路輪詢排程抖動（500μs 延遲即造成毫米級 3D 標定錯位）</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-b">
+      <span class="resume-ab-badge">B 端產出</span>
+      <span class="resume-ab-text">次微秒硬體同步匯流排；推進至工廠上市前的產線上線測試</span>
+    </div>
+  </div>
       <div class="resume-stage-box"><div class="resume-diagram-container resume-human-view">
     <div class="resume-diagram-header">
       <div class="resume-diagram-kicker-group">
@@ -1304,6 +1546,22 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
         </div>
         <h3 class="resume-block-title">Study Atlas</h3>
       </div>
+      <div class="resume-ab-ribbon resume-human-view">
+    <div class="resume-ab-seg resume-ab-a">
+      <span class="resume-ab-badge">A IN</span>
+      <span class="resume-ab-text">Open-ended research prompts causing combinatorial agent token explosion</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-link">
+      <span class="resume-ab-badge">WEAKEST LINK</span>
+      <span class="resume-ab-text">Unbounded dispatch graph without execution-time budget guardrail</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-b">
+      <span class="resume-ab-badge">B OUT</span>
+      <span class="resume-ab-text">TALK 1.8 budget gate blocks overspend (6.0 &gt; 5.0) &amp; reroutes to 4.6</span>
+    </div>
+  </div>
       <div class="resume-stage-box"><div class="resume-diagram-container resume-human-view">
     <div class="resume-diagram-header">
       <div class="resume-diagram-kicker-group">
@@ -1578,6 +1836,22 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
         </div>
         <h3 class="resume-block-title">Study Atlas</h3>
       </div>
+      <div class="resume-ab-ribbon resume-human-view">
+    <div class="resume-ab-seg resume-ab-a">
+      <span class="resume-ab-badge">A 端輸入</span>
+      <span class="resume-ab-text">開放式搜尋提示詞引發多 Agent 遞迴檢索與 Token 組合爆炸</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-link">
+      <span class="resume-ab-badge">核心弱環節</span>
+      <span class="resume-ab-text">缺乏派發前計算預算評估與斷路熔斷機制</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-b">
+      <span class="resume-ab-badge">B 端產出</span>
+      <span class="resume-ab-text">TALK 1.8 預算超標熔斷阻斷 (6.0 &gt; 5.0)，自主重導向至 4.6 精簡綜述</span>
+    </div>
+  </div>
       <div class="resume-stage-box"><div class="resume-diagram-container resume-human-view">
     <div class="resume-diagram-header">
       <div class="resume-diagram-kicker-group">
@@ -1852,6 +2126,22 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
         </div>
         <h3 class="resume-block-title">Transcribe-for-X</h3>
       </div>
+      <div class="resume-ab-ribbon resume-human-view">
+    <div class="resume-ab-seg resume-ab-a">
+      <span class="resume-ab-badge">A IN</span>
+      <span class="resume-ab-text">Speech noise &amp; accidental transcript loss via irreversible LLM cleanup</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-link">
+      <span class="resume-ab-badge">WEAKEST LINK</span>
+      <span class="resume-ab-text">Single-pass in-place destructive string rewriting</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-b">
+      <span class="resume-ab-badge">B OUT</span>
+      <span class="resume-ab-text">Private scoped audio storage + user-approved candidate diff overlay</span>
+    </div>
+  </div>
       <div class="resume-stage-box"><div class="resume-diagram-container resume-human-view">
     <div class="resume-diagram-header">
       <div class="resume-diagram-kicker-group">
@@ -2073,6 +2363,22 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
         </div>
         <h3 class="resume-block-title">Transcribe-for-X</h3>
       </div>
+      <div class="resume-ab-ribbon resume-human-view">
+    <div class="resume-ab-seg resume-ab-a">
+      <span class="resume-ab-badge">A 端輸入</span>
+      <span class="resume-ab-text">語音雜訊與口語頓挫，直接由 LLM 改寫造成原始語意滅失</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-link">
+      <span class="resume-ab-badge">核心弱環節</span>
+      <span class="resume-ab-text">單步原地破壞性字串覆寫</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-b">
+      <span class="resume-ab-badge">B 端產出</span>
+      <span class="resume-ab-text">專有沙盒原始音訊唯讀保真 + 顯式確認候選差分層（零資料滅失）</span>
+    </div>
+  </div>
       <div class="resume-stage-box"><div class="resume-diagram-container resume-human-view">
     <div class="resume-diagram-header">
       <div class="resume-diagram-kicker-group">
@@ -2296,7 +2602,7 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
 <details class="resume-detail" id="life-devotions"><summary><span lang="en" data-resume-locale="en" >Beyond engineering</span><span lang="zh-TW" data-resume-locale="zh-TW" >工程之外</span></summary><div lang="en" data-resume-locale="en" ><p>I enjoy trail running and exploring nature.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p>我喜歡越野跑與探索自然。</p></div></details></section>
 <section id="contact" class="resume-section resume-contact"><div lang="en" data-resume-locale="en" ><h2>Let’s talk about the work.</h2><p class="resume-section-intro">For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.</p><div class="resume-contact-links"><a href="mailto:ssu.yuan.lin@gmail.com">ssu.yuan.lin@gmail.com</a><a href="https://www.linkedin.com/in/ssu-yuan-lin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/BlakeLin-LSY" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-en.pdf" data-resume-cv download><span data-cv-download-label>Download CV</span><span data-cv-open-label>Open CV</span></a><a href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download>正體中文 CV</a></div></div><div lang="zh-TW" data-resume-locale="zh-TW" ><h2>聊聊工作與問題。</h2><p class="resume-section-intro">AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。</p><div class="resume-contact-links"><a href="mailto:ssu.yuan.lin@gmail.com">ssu.yuan.lin@gmail.com</a><a href="https://www.linkedin.com/in/ssu-yuan-lin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/BlakeLin-LSY" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="resume-actions"><a class="resume-button" href="./resume/blake-lin-cv-zh-tw.pdf" data-resume-cv download><span data-cv-download-label>下載 CV</span><span data-cv-open-label>開啟 CV</span></a><a href="./resume/blake-lin-cv-en.pdf" data-resume-cv download>English CV</a></div></div></section>
 </main><footer class="resume-footer"><div lang="en" data-resume-locale="en" ><p>AI Software Engineer · Professional work and personal engineering</p><p data-save-actions><a href="./resume-overview.html" download="blake-lin-resume-overview.html" data-save-overview>Save overview HTML</a> <span>· <a href="./blake-lin-application-preview.zip" download="blake-lin-application-preview.zip" data-save-package>Save complete reading package</a></span></p><p class="resume-note" data-save-scope>Save the complete package to keep the overview, three cases, engineering notes and both CVs together offline. A single overview HTML does not include linked files.</p><p class="resume-note" data-package-scope>Case pages, engineering notes and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.</p></div><div lang="zh-TW" data-resume-locale="zh-TW" ><p>AI Software Engineer · 職業成果與個人工程</p><p data-save-actions><a href="./resume-overview.html" download="blake-lin-resume-overview.html" data-save-overview>保存概要 HTML</a> <span>· <a href="./blake-lin-application-preview.zip" download="blake-lin-application-preview.zip" data-save-package>保存完整閱讀包</a></span></p><p class="resume-note" data-save-scope>完整包可離線保留概要、三份作品、工程筆記與兩份 CV。單獨保存概要 HTML 不包含連結的檔案。</p><p class="resume-note" data-package-scope>作品頁、工程筆記與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。</p></div><noscript><p><span lang="en" data-resume-locale="en" >JavaScript is off; both language versions are available below.</span><span lang="zh-TW" data-resume-locale="zh-TW" >JavaScript 關閉時，下方保留兩種語言的完整內容。</span></p></noscript></footer><script>(function(){
-const data={"name":"Ssu-Yuan Lin (Blake)","copy":{"en":{"lead":"I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.","context":"3+ years of professional engineering · M.S. in Physics","cv":"Download CV","cvOpen":"Open CV","contact":"Contact","save":"Save overview HTML","savePackage":"Save complete reading package","language":"Reading language","themeDark":"Switch to dark theme","themeLight":"Switch to light theme","menu":"Menu","skip":"Skip to content","nav":{"projects":"Work","experience":"Experience","about":"About","contact":"Contact"},"proofHeading":"Selected professional work","proofIntro":"From training bottlenecks to systems on the factory floor.","careerLink":"See professional experience","workHeading":"Recent personal projects","focus":"Two tools for turning complex source material into something people can read and use.","snapshot":"Personal projects, 2026. Each example shows its own date.","moreWork":"More work","experienceHeading":"Professional experience","experienceIntro":"Four engineering roles, with what I did between them. Research and ongoing learning are listed separately.","careerDetail":"Work details","researchHeading":"Research and ongoing learning","aboutHeading":"About","about":"My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.","skillsHeading":"Skills in context","educationHeading":"Education","personalHeading":"Beyond engineering","personal":"I enjoy trail running and exploring nature.","contactHeading":"Let’s talk about the work.","contactLead":"For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.","linkedin":"LinkedIn","cvOther":"正體中文 CV","footer":"AI Software Engineer · Professional work and personal engineering","saveScope":"Save the complete package to keep the overview, all three cases and both CVs together offline. A single overview HTML does not include the linked files.","offlineScope":"All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.","noJs":"JavaScript is off; both language versions are available below.","metadataDescription":"AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.","github":"GitHub","cameraChip":"{cameraPairs} stereo-camera pairs on a production line","modeHuman":"Visual View","modeAgent":"AST / Spec","modeSwitch":"Reading perspective","agentBadge":"AST / IR / Evidence Verified","sampleExcerptBtn":"View Live Reader Sample","sampleExcerptHide":"Hide Reader Sample","sampleExcerptTitle":"Study Atlas VGGT Synthesis Excerpt (ETH3D Point-Map Verification)","tradeoffBadge":"Trade-off & Invariant","lensLabel":"Perspective Lens","lensAll":"Universal (All)","lensStaff":"Staff Architect","lensEm":"Engineering Manager","lensRecruiter":"Deep Tech Recruiter","lensStaffDesc":"Focus: Invariants, System Bottlenecks, Trade-offs & Failure Boundaries","lensEmDesc":"Focus: Production Milestones, Velocity, ROI & Risk Elimination","lensRecruiterDesc":"Focus: Rare Intersection: Physics + HW/SW Integration + Agent Invariants","contractHeading":"Intent Contract & Epistemic Boundaries","contractInvariant":"Strict Invariant","contractNonGoals":"Explicit Non-Goals","contractFailure":"Failure Condition & Fallback","duelHeading":"Architecture Duel · Grill This Design","duelChallenger":"Reviewer / Challenger","duelDefense":"First-Principles Defense","duelToggleOpen":"⚔️ Grill This Architecture","duelToggleClose":"Close Architecture Duel","proofReceiptHeading":"Cryptographic Engineering Receipts","proofShaLabel":"SHA-256 Digital Seal","proofStatusPass":"VERIFIED INVARIANT","proofVerifyBtn":"Run Live Invariant Gate"},"zh-TW":{"lead":"我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。","context":"3 年以上專業工程經驗 · 物理學碩士","cv":"下載 CV","cvOpen":"開啟 CV","contact":"聯絡我","save":"保存概要 HTML","savePackage":"保存完整閱讀包","language":"閱讀語言","themeDark":"切換深色","themeLight":"切換淺色","menu":"選單","skip":"跳至內容","nav":{"projects":"作品","experience":"經歷","about":"關於我","contact":"聯絡"},"proofHeading":"精選職業成果","proofIntro":"從訓練瓶頸，到工廠現場的系統整合。","careerLink":"查看專業經歷","workHeading":"近期個人作品","focus":"把研究資料與錄音，整理成容易閱讀、使用的內容。","snapshot":"個人專案，2026 年；各案例標示當時日期。","moreWork":"更多作品","experienceHeading":"專業經歷","experienceIntro":"四份工程職務，以及職務之間的經歷；研究與持續學習另行列出。","careerDetail":"工作細節","researchHeading":"研究與持續學習","aboutHeading":"關於我","about":"物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。","skillsHeading":"能力與實例","educationHeading":"學歷","personalHeading":"工程之外","personal":"我喜歡越野跑與探索自然。","contactHeading":"聊聊工作與問題。","contactLead":"AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。","linkedin":"LinkedIn","cvOther":"English CV","footer":"AI Software Engineer · 職業成果與個人工程","saveScope":"完整包可離線保留概要、三份作品與兩份 CV。單獨保存概要 HTML 不會包含連結的檔案。","offlineScope":"作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。","noJs":"JavaScript 關閉時，下方保留兩種語言的完整內容。","metadataDescription":"AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。","github":"GitHub","cameraChip":"{cameraPairs} 組立體相機產線","modeHuman":"視覺圖解","modeAgent":"語意規格","modeSwitch":"閱讀視角","agentBadge":"AST / IR / 驗證收據","sampleExcerptBtn":"檢視真實雙語樣張","sampleExcerptHide":"收合雙語樣張","sampleExcerptTitle":"Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）","tradeoffBadge":"架構取捨與不變量","lensLabel":"視角投影","lensAll":"全視角綜覽","lensStaff":"系統架構師","lensEm":"工程經理","lensRecruiter":"創辦人 / 獵頭","lensStaffDesc":"聚焦：系統不變量、性能瓶頸、架構取捨與失效邊界","lensEmDesc":"聚焦：產線里程碑、交付節奏、投資回報率與風險消除","lensRecruiterDesc":"聚焦：稀缺交集能力：物理第一性原理 + 軟硬整合 + Agent 意圖保真","contractHeading":"意圖契約與認知邊界","contractInvariant":"嚴格不變量","contractNonGoals":"顯式非目標","contractFailure":"失效臨界與降級策略","duelHeading":"⚔️ 架構審查與對抗答辯","duelChallenger":"審查質疑","duelDefense":"第一性原理辯護","duelToggleOpen":"⚔️ 審查架構取捨","duelToggleClose":"收合架構答辯","proofReceiptHeading":"可驗證密碼學工程收據","proofShaLabel":"SHA-256 數位封籤","proofStatusPass":"不變量驗證通過","proofVerifyBtn":"執行即時不變量校驗"}}};
+const data={"name":"Ssu-Yuan Lin (Blake)","copy":{"en":{"lead":"I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.","context":"3+ years of professional engineering · M.S. in Physics","cv":"Download CV","cvOpen":"Open CV","contact":"Contact","save":"Save overview HTML","savePackage":"Save complete reading package","language":"Reading language","themeDark":"Switch to dark theme","themeLight":"Switch to light theme","menu":"Menu","skip":"Skip to content","nav":{"projects":"Work","experience":"Experience","about":"About","contact":"Contact"},"proofHeading":"Selected professional work","proofIntro":"From training bottlenecks to systems on the factory floor.","careerLink":"See professional experience","workHeading":"Recent personal projects","focus":"Two tools for turning complex source material into something people can read and use.","snapshot":"Personal projects, 2026. Each example shows its own date.","moreWork":"More work","experienceHeading":"Professional experience","experienceIntro":"Four engineering roles, with what I did between them. Research and ongoing learning are listed separately.","careerDetail":"Work details","researchHeading":"Research and ongoing learning","aboutHeading":"About","about":"My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.","skillsHeading":"Skills in context","educationHeading":"Education","personalHeading":"Beyond engineering","personal":"I enjoy trail running and exploring nature.","contactHeading":"Let’s talk about the work.","contactLead":"For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.","linkedin":"LinkedIn","cvOther":"正體中文 CV","footer":"AI Software Engineer · Professional work and personal engineering","saveScope":"Save the complete package to keep the overview, all three cases and both CVs together offline. A single overview HTML does not include the linked files.","offlineScope":"All case pages and both CVs are included. Keep the extracted folders together; Email, LinkedIn and GitHub need connectivity.","noJs":"JavaScript is off; both language versions are available below.","metadataDescription":"AI Software Engineer with professional work in ML pipelines, computer vision and hardware integration. Explore recent personal work and download a one-page CV.","github":"GitHub","cameraChip":"{cameraPairs} stereo-camera pairs on a production line","modeHuman":"Visual View","modeAgent":"AST / Spec","modeSwitch":"Reading perspective","agentBadge":"AST / IR / Evidence Verified","sampleExcerptBtn":"View Live Reader Sample","sampleExcerptHide":"Hide Reader Sample","sampleExcerptTitle":"Study Atlas VGGT Synthesis Excerpt (ETH3D Point-Map Verification)","tradeoffBadge":"Trade-off & Invariant","lensLabel":"Perspective Lens","lensAll":"Universal (All)","lensStaff":"Staff Architect","lensEm":"Engineering Manager","lensRecruiter":"Deep Tech Recruiter","lensStaffDesc":"Focus: Invariants, System Bottlenecks, Trade-offs & Failure Boundaries","lensEmDesc":"Focus: Production Milestones, Velocity, ROI & Risk Elimination","lensRecruiterDesc":"Focus: Rare Intersection: Physics + HW/SW Integration + Agent Invariants","contractHeading":"Intent Contract & Epistemic Boundaries","contractInvariant":"Strict Invariant","contractNonGoals":"Explicit Non-Goals","contractFailure":"Failure Condition & Fallback","duelHeading":"Architecture Duel · Grill This Design","duelChallenger":"Reviewer / Challenger","duelDefense":"First-Principles Defense","duelToggleOpen":"⚔️ Grill This Architecture","duelToggleClose":"Close Architecture Duel","proofReceiptHeading":"Cryptographic Engineering Receipts","proofShaLabel":"SHA-256 Digital Seal","proofStatusPass":"VERIFIED INVARIANT","proofVerifyBtn":"Run Live Invariant Gate","frameworkHeading":"Unifying Engineering Framework","frameworkTitle":"The Critical-Link & Invariant Engine (A ➔ B Transformation)","frameworkIntro":"How complex, high-entropy problems across AI pipelines, factory hardware, and agent systems are decomposed into deterministic, zero-loss outcomes.","ribbonLabelA":"A IN","ribbonLabelLink":"WEAKEST LINK","ribbonLabelB":"B OUT"},"zh-TW":{"lead":"我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。","context":"3 年以上專業工程經驗 · 物理學碩士","cv":"下載 CV","cvOpen":"開啟 CV","contact":"聯絡我","save":"保存概要 HTML","savePackage":"保存完整閱讀包","language":"閱讀語言","themeDark":"切換深色","themeLight":"切換淺色","menu":"選單","skip":"跳至內容","nav":{"projects":"作品","experience":"經歷","about":"關於我","contact":"聯絡"},"proofHeading":"精選職業成果","proofIntro":"從訓練瓶頸，到工廠現場的系統整合。","careerLink":"查看專業經歷","workHeading":"近期個人作品","focus":"把研究資料與錄音，整理成容易閱讀、使用的內容。","snapshot":"個人專案，2026 年；各案例標示當時日期。","moreWork":"更多作品","experienceHeading":"專業經歷","experienceIntro":"四份工程職務，以及職務之間的經歷；研究與持續學習另行列出。","careerDetail":"工作細節","researchHeading":"研究與持續學習","aboutHeading":"關於我","about":"物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。","skillsHeading":"能力與實例","educationHeading":"學歷","personalHeading":"工程之外","personal":"我喜歡越野跑與探索自然。","contactHeading":"聊聊工作與問題。","contactLead":"AI software、ML pipelines 與電腦視覺職缺，歡迎以 Email 聯絡。","linkedin":"LinkedIn","cvOther":"English CV","footer":"AI Software Engineer · 職業成果與個人工程","saveScope":"完整包可離線保留概要、三份作品與兩份 CV。單獨保存概要 HTML 不會包含連結的檔案。","offlineScope":"作品頁與兩份 CV 已包含在此保存包；請保留解壓縮的資料夾結構。Email、LinkedIn 與 GitHub 需要連線。","noJs":"JavaScript 關閉時，下方保留兩種語言的完整內容。","metadataDescription":"AI Software Engineer，專業經驗涵蓋 ML pipelines、電腦視覺與硬體整合。查看近期個人工程，下載單頁 CV。","github":"GitHub","cameraChip":"{cameraPairs} 組立體相機產線","modeHuman":"視覺圖解","modeAgent":"語意規格","modeSwitch":"閱讀視角","agentBadge":"AST / IR / 驗證收據","sampleExcerptBtn":"檢視真實雙語樣張","sampleExcerptHide":"收合雙語樣張","sampleExcerptTitle":"Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）","tradeoffBadge":"架構取捨與不變量","lensLabel":"視角投影","lensAll":"全視角綜覽","lensStaff":"系統架構師","lensEm":"工程經理","lensRecruiter":"創辦人 / 獵頭","lensStaffDesc":"聚焦：系統不變量、性能瓶頸、架構取捨與失效邊界","lensEmDesc":"聚焦：產線里程碑、交付節奏、投資回報率與風險消除","lensRecruiterDesc":"聚焦：稀缺交集能力：物理第一性原理 + 軟硬整合 + Agent 意圖保真","contractHeading":"意圖契約與認知邊界","contractInvariant":"嚴格不變量","contractNonGoals":"顯式非目標","contractFailure":"失效臨界與降級策略","duelHeading":"⚔️ 架構審查與對抗答辯","duelChallenger":"審查質疑","duelDefense":"第一性原理辯護","duelToggleOpen":"⚔️ 審查架構取捨","duelToggleClose":"收合架構答辯","proofReceiptHeading":"可驗證密碼學工程收據","proofShaLabel":"SHA-256 數位封籤","proofStatusPass":"不變量驗證通過","proofVerifyBtn":"執行即時不變量校驗","frameworkHeading":"通用核心工程架構","frameworkTitle":"關鍵瓶頸擊穿與不變量轉化器 (A ➔ B 通用轉化模型)","frameworkIntro":"如何將跨越 AI 運算管線、工廠軟硬整合與 Agent 系統的高熵複雜問題，經由第一性原理拆解為確定性、零滅失的高價值產出。","ribbonLabelA":"A 端輸入","ribbonLabelLink":"核心弱環節","ribbonLabelB":"B 端產出"}}};
 const root=document.documentElement,header=document.querySelector('.resume-header'),nav=document.getElementById('resume-navigation');
 const menu=document.querySelector('[data-resume-menu]'),themeButton=document.querySelector('[data-resume-theme]');
 const languageButtons=document.querySelectorAll('[data-resume-language]');

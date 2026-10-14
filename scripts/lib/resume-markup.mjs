@@ -7,6 +7,7 @@ import { renderAgentIr } from "../generators/components/agent-ir.mjs";
 import { renderIntentContract } from "../generators/components/intent-contract.mjs";
 import { renderArchitectureDuel } from "../generators/components/architecture-duel.mjs";
 import { renderProofReceipt } from "../generators/components/proof-receipt.mjs";
+import { renderUniversalEngineSvg } from "../generators/components/svg-universal-engine.mjs";
 
 export { escapeHtml };
 
@@ -296,6 +297,33 @@ function renderPovBadges(item, language) {
   </div>`;
 }
 
+function renderAbRibbon(item, language, copy) {
+  if (!item || !item.abTransformation) return "";
+  const e = escapeHtml;
+  const isEn = language === "en";
+  const ab = item.abTransformation;
+  const labelA = copy[language].ribbonLabelA || (isEn ? "A IN" : "A 端輸入");
+  const labelLink = copy[language].ribbonLabelLink || (isEn ? "WEAKEST LINK" : "核心弱環節");
+  const labelB = copy[language].ribbonLabelB || (isEn ? "B OUT" : "B 端產出");
+
+  return `<div class="resume-ab-ribbon resume-human-view">
+    <div class="resume-ab-seg resume-ab-a">
+      <span class="resume-ab-badge">${e(labelA)}</span>
+      <span class="resume-ab-text">${e(ab.aInput[language] || ab.aInput.en)}</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-link">
+      <span class="resume-ab-badge">${e(labelLink)}</span>
+      <span class="resume-ab-text">${e(ab.weakestLink[language] || ab.weakestLink.en)}</span>
+    </div>
+    <span class="resume-ab-sep" aria-hidden="true">➔</span>
+    <div class="resume-ab-seg resume-ab-b">
+      <span class="resume-ab-badge">${e(labelB)}</span>
+      <span class="resume-ab-text">${e(ab.bOutput[language] || ab.bOutput.en)}</span>
+    </div>
+  </div>`;
+}
+
 export function renderResume(profile, cases, assets, prefix = ".", notes) {
   const e = escapeHtml;
   const copy = profile.copy;
@@ -320,6 +348,7 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
       const agent = id === "dynasafe" ? dynaSafeAgent(e, language) : id === "metgauge" ? metGaugeAgent(e, language) : "";
       const kicker = `${e(item.employer)} · ${e(item.title)} · ${e(period(item.start, item.end, language))}`;
       const badge = e(metric(item, language));
+      const abRibbon = renderAbRibbon(item, language, copy);
       const pov = renderPovBadges(item, language);
       const contract = renderIntentContract(item.intentContract, language, copy);
       const duel = renderArchitectureDuel(item.mirrorDuel, language, copy);
@@ -332,6 +361,7 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
         </div>
         <h3 class="resume-block-title">${e(item[language].proofTitle)}</h3>
       </div>
+      ${abRibbon}
       <div class="resume-stage-box">${visual}${agent}</div>
       <div class="resume-triad-grid resume-human-view">
         <div class="resume-triad-item">
@@ -363,6 +393,7 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
       const agent = id === "study-atlas" ? atlasAgent(e, language) : id === "transcribe-for-x" ? tfxAgent(e, language) : "";
       const kicker = e(blurb[language].evidence);
       const badge = id === "study-atlas" ? (isEn ? "TALK 1.8 · 6.0 → 4.6 Calculated Budget" : "TALK 契約 1.8 · 6.0 → 4.6 計算預算") : (isEn ? "Immutable Storage · User-Approved Diff" : "原始音訊唯讀 · 顯式確認修訂");
+      const abRibbon = renderAbRibbon(blurb, language, copy);
       const pov = renderPovBadges(blurb, language);
       const contract = renderIntentContract(blurb.intentContract, language, copy);
       const duel = renderArchitectureDuel(blurb.mirrorDuel, language, copy);
@@ -375,6 +406,7 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
         </div>
         <h3 class="resume-block-title">${e(item.title)}</h3>
       </div>
+      ${abRibbon}
       <div class="resume-stage-box">${visual}${agent}</div>
       <div class="resume-triad-grid resume-human-view">
         <div class="resume-triad-item">
@@ -407,6 +439,17 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
   const education = profile.education.map(item => localize(language => `<h3>${e(item[language].title)}</h3><p>${e(item[language].institution)} · ${e(item.start)}–${e(item.end)}</p>`, "article", `class="resume-education"`)).join("");
   const skills = profile.skills.map(item => `<li><a href="${e(item.proofId ? `#career-${item.proofId}` : `${prefix}/projects/${item.projectId}.html`)}">${e(item.label)}</a></li>`).join("");
 
+  const universalFrameworkCard = localize(language => {
+    return `<div class="resume-framework-card resume-human-view">
+      <div class="resume-framework-header">
+        <span class="resume-framework-kicker">${e(copy[language].frameworkHeading)}</span>
+        <h3 class="resume-framework-title">${e(copy[language].frameworkTitle)}</h3>
+        <p class="resume-framework-intro">${e(copy[language].frameworkIntro)}</p>
+      </div>
+      ${renderUniversalEngineSvg(language)}
+    </div>`;
+  });
+
   const lensSelector = localize(language => `<div class="resume-lens-selector" role="group" aria-label="${e(copy[language].lensLabel)}"><button type="button" data-resume-lens="all" aria-pressed="true" title="${e(copy[language].lensAll)}">All</button><button type="button" data-resume-lens="staff" aria-pressed="false" title="${e(copy[language].lensStaffDesc)}">${e(copy[language].lensStaff)}</button><button type="button" data-resume-lens="em" aria-pressed="false" title="${e(copy[language].lensEmDesc)}">${e(copy[language].lensEm)}</button><button type="button" data-resume-lens="recruiter" aria-pressed="false" title="${e(copy[language].lensRecruiterDesc)}">${e(copy[language].lensRecruiter)}</button></div>`, "div", `class="resume-lens-wrap"`);
   const modeSwitch = localize(language => `<button type="button" data-resume-mode="human" aria-pressed="true" disabled><span class="resume-mode-icon" aria-hidden="true">🧑</span> <span data-mode-label="human">${e(copy[language].modeHuman)}</span></button><button type="button" data-resume-mode="agent" aria-pressed="false" disabled><span class="resume-mode-icon" aria-hidden="true">🤖</span> <span data-mode-label="agent">${e(copy[language].modeAgent)}</span></button>`, "div", `class="resume-view-modes" role="group" aria-label="${e(copy.en.modeSwitch)}"`);
 
@@ -416,7 +459,7 @@ export function renderResume(profile, cases, assets, prefix = ".", notes) {
 <div class="resume-reading-controls" data-js-control>${lensSelector}${modeSwitch}<div class="resume-languages" role="group" aria-label="Reading language / 閱讀語言"><button type="button" data-resume-language="en" aria-pressed="true" disabled>EN</button><button type="button" data-resume-language="zh-TW" aria-pressed="false" disabled>正體</button></div><button type="button" data-resume-theme aria-label="Switch to dark theme" disabled><span aria-hidden="true">◐</span></button><button type="button" class="resume-menu" data-resume-menu aria-label="Menu" aria-expanded="false" aria-controls="resume-navigation" disabled><span aria-hidden="true">☰</span></button></div></div></header>
 <main id="content" class="resume-main" tabindex="-1">
 <section class="resume-hero" id="top">${localize(language => `<p class="resume-role">${e(profile.identity.role)}</p><h1>${e(profile.identity.shortName)}</h1><p class="resume-full-name">${e(profile.identity.name)}</p><p class="resume-lead">${e(copy[language].lead)}</p><p class="resume-note">${e(copy[language].context)}</p><ul class="resume-chips">${profile.professional.map(item => item.metric ? metric(item, language) : item.system ? copy[language].cameraChip.replaceAll("{cameraPairs}", String(item.system.cameraPairs)) : "").filter(Boolean).map(text => `<li>${e(text)}</li>`).join("")}</ul><div class="resume-actions">${cvAction(language)}<a class="resume-button resume-button-secondary" href="#contact">${e(copy[language].contact)}</a></div>`)}</section>
-<section id="professional-proof" class="resume-section resume-proof-section">${localize(language => `<h2>${e(copy[language].proofHeading)}</h2><p class="resume-section-intro">${e(copy[language].proofIntro)}</p>`)}<div class="resume-focal-stack">${proof}</div>${localize(language => `<a class="resume-small-link" href="#experience">${e(copy[language].careerLink)} <span aria-hidden="true">↓</span></a>`)}</section>
+<section id="professional-proof" class="resume-section resume-proof-section">${localize(language => `<h2>${e(copy[language].proofHeading)}</h2><p class="resume-section-intro">${e(copy[language].proofIntro)}</p>`)}${universalFrameworkCard}<div class="resume-focal-stack">${proof}</div>${localize(language => `<a class="resume-small-link" href="#experience">${e(copy[language].careerLink)} <span aria-hidden="true">↓</span></a>`)}</section>
 <section id="projects" class="resume-section">${localize(language => `<h2>${e(copy[language].workHeading)}</h2><p class="resume-section-intro">${e(copy[language].focus)}</p><p class="resume-note">${e(copy[language].snapshot)}</p>`)}<div class="resume-focal-stack">${featured}</div><div class="resume-more-work">${localize(language => `<p><span class="resume-note">${e(copy[language].moreWork)}</span> · ${profile.entry.moreProjectIds.map(id => `<a data-resume-case href="${e(caseHref(id, language))}">${e(projects.get(id).title)}</a> — ${e(blurbs.get(id)[language].summary)}`).join(" · ")}</p>${notes ? `<p><a data-resume-notes href="${e(prefix)}/engineering-notes.html?lang=${language}">${e(notes.copy[language].entry)} →</a></p>` : ""}`)}</div></section>
 <section id="experience" class="resume-section">${localize(language => `<h2>${e(copy[language].experienceHeading)}</h2><p class="resume-section-intro">${e(copy[language].experienceIntro)}</p>`)}${professional}</section>
 <section id="about" class="resume-section resume-about">${localize(language => `<h2>${e(copy[language].aboutHeading)}</h2><p class="resume-section-intro">${e(copy[language].about)}</p>`)}

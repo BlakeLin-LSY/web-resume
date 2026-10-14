@@ -24,6 +24,20 @@
       "zh-TW": "推進成果：量測原型進入工廠上市前的產線上線測試階段。"
     }
   },
+  "abTransformation": {
+    "aInput": {
+      "en": "Production line mechanical vibration & optical frame displacement",
+      "zh-TW": "產線輸送帶機械震動與光學相機拍攝位移"
+    },
+    "weakestLink": {
+      "en": "OS network polling jitter (500μs = millimeter 3D calibration blur)",
+      "zh-TW": "OS 網路輪詢排程抖動（500μs 延遲即造成毫米級 3D 標定錯位）"
+    },
+    "bOutput": {
+      "en": "Deterministic sub-microsecond hardware sync; factory-ready testing",
+      "zh-TW": "次微秒硬體同步匯流排；推進至工廠上市前的產線上線測試"
+    }
+  },
   "intentContract": {
     "strictInvariant": {
       "en": "Microsecond trigger jitter across all 24 cameras must remain strictly below optical exposure shutter window to eliminate spatial blur.",

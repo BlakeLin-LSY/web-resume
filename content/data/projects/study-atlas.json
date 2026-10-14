@@ -18,6 +18,20 @@
       "zh-TW": "邊界界定：6.0 → 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。"
     }
   },
+  "abTransformation": {
+    "aInput": {
+      "en": "Open-ended research prompts causing combinatorial agent token explosion",
+      "zh-TW": "開放式搜尋提示詞引發多 Agent 遞迴檢索與 Token 組合爆炸"
+    },
+    "weakestLink": {
+      "en": "Unbounded dispatch graph without execution-time budget guardrail",
+      "zh-TW": "缺乏派發前計算預算評估與斷路熔斷機制"
+    },
+    "bOutput": {
+      "en": "TALK 1.8 budget gate blocks overspend (6.0 > 5.0) & reroutes to 4.6",
+      "zh-TW": "TALK 1.8 預算超標熔斷阻斷 (6.0 > 5.0)，自主重導向至 4.6 精簡綜述"
+    }
+  },
   "intentContract": {
     "strictInvariant": {
       "en": "Calculated TALK budget must not exceed 5.0 ceiling; all citations must retain mathematical provenance to source papers.",

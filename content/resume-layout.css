@@ -339,5 +339,23 @@ html[data-resume-lens="em"] .resume-block-badge{background:var(--resume-accent);
 .resume-receipt-hash{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;font-size:.72rem;background:var(--resume-panel);padding:1px 5px;border-radius:3px;border:1px solid var(--resume-border);color:var(--resume-text);word-break:break-all}
 .resume-receipt-invariant{color:var(--resume-accent);font-weight:600}
 
+/* --- Universal Framework Card & Engine Diagram --- */
+.resume-framework-card{background:var(--resume-panel);border:1px solid var(--resume-border);border-radius:14px;padding:24px 26px;margin-bottom:32px;box-shadow:0 3px 12px rgba(0,0,0,0.03)}
+.resume-framework-header{margin-bottom:16px}
+.resume-framework-kicker{font-size:.72rem;font-weight:800;letter-spacing:.06em;color:var(--resume-accent);text-transform:uppercase;display:block;margin-bottom:4px}
+.resume-framework-title{font-size:1.2rem;font-weight:800;color:var(--resume-text);margin:0 0 6px}
+.resume-framework-intro{font-size:.85rem;color:var(--resume-muted);line-height:1.55;margin:0}
+
+/* --- A -> B Transformation Ribbon --- */
+.resume-ab-ribbon{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:var(--resume-tint);border:1px solid var(--resume-border);border-radius:8px;padding:8px 12px;margin:12px 0 16px;font-size:.8rem;line-height:1.4}
+.resume-ab-seg{display:inline-flex;align-items:center;gap:6px;flex:1 1 auto;min-width:140px}
+.resume-ab-badge{font-size:.66rem;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.resume-ab-a .resume-ab-badge{background:rgba(210,101,91,0.15);color:#d2655b;border:1px solid rgba(210,101,91,0.3)}
+.resume-ab-link .resume-ab-badge{background:rgba(40,92,77,0.15);color:var(--resume-accent);border:1px solid var(--resume-accent)}
+.resume-ab-b .resume-ab-badge{background:rgba(79,172,116,0.18);color:#285c4d;border:1px solid rgba(79,172,116,0.4)}
+.resume-ab-text{color:var(--resume-text);font-weight:600}
+.resume-ab-sep{color:var(--resume-accent);font-weight:800;font-size:.9rem}
+
+
 
 

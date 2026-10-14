@@ -18,6 +18,20 @@
       "zh-TW": "邊界界定：Android 原型；裝置效能與雙語混合辨識品質仍待實際場景驗證。"
     }
   },
+  "abTransformation": {
+    "aInput": {
+      "en": "Speech noise & accidental transcript loss via irreversible LLM cleanup",
+      "zh-TW": "語音雜訊與口語頓挫，直接由 LLM 改寫造成原始語意滅失"
+    },
+    "weakestLink": {
+      "en": "Single-pass in-place destructive string rewriting",
+      "zh-TW": "單步原地破壞性字串覆寫"
+    },
+    "bOutput": {
+      "en": "Private scoped audio storage + user-approved candidate diff overlay",
+      "zh-TW": "專有沙盒原始音訊唯讀保真 + 顯式確認候選差分層（零資料滅失）"
+    }
+  },
   "intentContract": {
     "strictInvariant": {
       "en": "Original recorded audio bytes and raw Whisper transcripts are strictly append-only and immutable; AI suggestions remain in candidate layer.",

@@ -73,5 +73,11 @@
   "proofReceiptHeading": "Cryptographic Engineering Receipts",
   "proofShaLabel": "SHA-256 Digital Seal",
   "proofStatusPass": "VERIFIED INVARIANT",
-  "proofVerifyBtn": "Run Live Invariant Gate"
+  "proofVerifyBtn": "Run Live Invariant Gate",
+  "frameworkHeading": "Unifying Engineering Framework",
+  "frameworkTitle": "The Critical-Link & Invariant Engine (A ➔ B Transformation)",
+  "frameworkIntro": "How complex, high-entropy problems across AI pipelines, factory hardware, and agent systems are decomposed into deterministic, zero-loss outcomes.",
+  "ribbonLabelA": "A IN",
+  "ribbonLabelLink": "WEAKEST LINK",
+  "ribbonLabelB": "B OUT"
 }
