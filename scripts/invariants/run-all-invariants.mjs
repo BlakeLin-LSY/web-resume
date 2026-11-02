@@ -8,6 +8,7 @@ import { loadResumeSource } from "../lib/resume-source.mjs";
 import { loadModularProfile } from "../lib/data-loader.mjs";
 import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import { isDeepStrictEqual } from "node:util";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
@@ -41,14 +42,13 @@ async function runAllInvariants() {
   console.log("▶ [Invariant Gate 5] Verifying modular data (content/data/) vs compiled profile parity...");
   const modularProfile = await loadModularProfile();
   const compiledJson = JSON.parse(await readFile(resolve(repoRoot, "content/resume-profile.json"), "utf8"));
-  
-  if (modularProfile.identity.name !== compiledJson.identity.name ||
-      modularProfile.identity.role !== compiledJson.identity.role ||
-      modularProfile.professional.length !== compiledJson.professional.length ||
-      modularProfile.projects.length !== compiledJson.projects.length) {
+
+  const expectedProfile = { ...modularProfile };
+  delete expectedProfile.triads;
+  if (!isDeepStrictEqual(expectedProfile, compiledJson)) {
     throw new Error("Drift detected between modular content/data/ and compiled content/resume-profile.json");
   }
-  console.log("✓ Modular content/data/ and compiled profile are in 100% lockstep parity.");
+  console.log("✓ All serialized profile fields match; derived top-level triads are excluded.");
   console.log("");
 
   // 6. Intent Contracts, Mirror Duels & PoV Highlights completeness

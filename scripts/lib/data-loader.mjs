@@ -92,3 +92,10 @@ export async function syncResumeProfileJson(targetPath = resolve(repoRoot, "cont
   await writeFile(targetPath, serialized, "utf8");
   return profile;
 }
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  syncResumeProfileJson().catch((error) => {
+    console.error("Failed to sync content/resume-profile.json:", error);
+    process.exitCode = 1;
+  });
+}

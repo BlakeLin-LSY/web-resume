@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "test:invariants": "node ../scripts/invariants/run-all-invariants.mjs",
-    "build": "node ../scripts/invariants/run-all-invariants.mjs && node ../scripts/build-resume-overview.mjs && node ../scripts/build-project-case-studies.mjs && node ../scripts/build-engineering-notes.mjs && python3 ../scripts/build-application-package.py && next build",
+    "build": "node ../scripts/lib/data-loader.mjs && node ../scripts/invariants/run-all-invariants.mjs && node ../scripts/build-resume-overview.mjs && node ../scripts/build-project-case-studies.mjs && node ../scripts/build-engineering-notes.mjs && python3 ../scripts/build-application-package.py && next build",
     "start": "next start",
     "lint": "eslint app/layout.tsx app/page.tsx",
     "export": "npm run build",

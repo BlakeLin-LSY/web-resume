@@ -49,9 +49,9 @@ web-resume/
 │   │   ├── check-digital-seals.mjs    # PDF 與論文 SHA-256 數位封籤校驗
 │   │   ├── check-wcag-and-viewport.mjs# WCAG AA 對比度 (>=4.5) 與行動端 320px 防溢出
 │   │   ├── check-intent-contracts.mjs # 意圖契約、架構答辯與多重視角完整性檢驗
-│   │   └── run-all-invariants.mjs     # 綜合門禁執行器 (0.16s 毫秒級通過 6 道門禁)
+│   │   └── run-all-invariants.mjs     # 綜合門禁執行器（8 道門禁）
 │   └── lib/
-│       ├── data-loader.mjs            # 內容資料聚合器（支援向下相容同步）
+│       ├── data-loader.mjs            # 組合模組資料並同步 legacy profile
 │       ├── theme-engine.mjs           # Token 主題編譯與切換引擎
 │       ├── resume-markup.mjs          # 佈局組裝 Orchestrator（已瘦身解耦）
 │       ├── resume-reading.mjs         # 前端客戶端控制器（透鏡切換、持久化）
@@ -70,7 +70,7 @@ web-resume/
 3. **`mirrorAgent` 架構對抗答辯（⚔️ Grill This Architecture / Duel Mode）**：
    - 可互動展開的架構審查抽屜，收錄針對架構選擇與極端負載失效點的第一性原理辯護。
 4. **`preference` 密碼學工程收據與即時校驗（Cryptographic Proofs & Receipts）**：
-   - 嵌入 SHA-256 數位封籤與可重現的 CI 測試斷言收據，以真實工程證據驗證「10× 加速」與「零資料滅失」。
+   - SHA-256 hash 用來識別受檢查的檔案。Invariant suite 檢查結構與內容一致性，不會測量 10× 訓練速度，也不能證明零資料滅失。
 
 ---
 
@@ -81,7 +81,11 @@ web-resume/
    - 定義基本欄位：`id`, `employer`, `title`, `start`, `end`, `sourceIds`。
    - 定義關鍵指標：`metric: { value: 10, type: "...", en: "{value}× ...", "zh-TW": "..." }`。
    - 定義三元結構：`triad: { challenge: {...}, solution: {...}, boundary: {...} }`。
-2. 執行 `node scripts/lib/data-loader.mjs`，或直接執行 `npm --prefix app run test:invariants`。
+2. 從 repo 根目錄執行 `node scripts/lib/data-loader.mjs`，同步產生 `content/resume-profile.json`。
+3. 執行 `npm --prefix app run test:invariants`。此命令只檢查內容，不會同步或改寫 profile。
+4. 執行 `node scripts/invariants/test-data-loader-cli.mjs`，檢查 CLI、import 無寫入副作用，以及 invariant suite 對巢狀 drift 的拒絕行為。
+
+`npm --prefix app run build` 會先同步 profile，再執行 invariant suite 與後續建置。
 
 ### 2. 如何為新專案繪製架構圖？
 - **無需手動計算向量坐標！** 直接呼叫 `scripts/generators/components/` 中的通用組件：
@@ -108,18 +112,24 @@ node scripts/lib/theme-engine.mjs --theme=zen-slate
 
 ## 🚦 品質門禁與構建指令（Build & Verification）
 
-從 `web-resume/app` 資料夾執行：
+從 repo 根目錄執行：
 
 ```bash
-# 1. 執行 CI Invariant 門禁（i18n parity、SHA-256 封籤、WCAG AA 對比度與 320px 防溢出）
-npm run test:invariants
+# 1. 同步模組化資料到 compiled profile
+node scripts/lib/data-loader.mjs
 
-# 2. 靜態分析與型別檢查
-npm run lint
-npm run typecheck
+# 2. 執行只讀的 CI Invariant 門禁
+npm --prefix app run test:invariants
 
-# 3. 完整生產建置（包含 Invariants 檢查、Overview HTML、Case 頁面、離線 ZIP 與 Next.js Static Export）
-npm run build
+# 3. 執行 CLI 與 parity regression
+node scripts/invariants/test-data-loader-cli.mjs
+
+# 4. 完整生產建置。此命令會先同步 profile
+npm --prefix app run build
+
+# 5. 靜態分析與型別檢查
+npm --prefix app run lint
+npm --prefix app run typecheck
 ```
 
 ---
