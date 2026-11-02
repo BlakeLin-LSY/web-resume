@@ -86,6 +86,7 @@ web-resume/
 4. 執行 `node scripts/invariants/test-data-loader-cli.mjs`，檢查 CLI、import 無寫入副作用，以及 invariant suite 對巢狀 drift 的拒絕行為。
 
 `npm --prefix app run build` 會先同步 profile，再執行 invariant suite 與後續建置。
+GitHub Actions 在 build 前執行 CLI 與 parity regression，失敗時不會進入建置與發布。
 
 ### 2. 如何為新專案繪製架構圖？
 - **無需手動計算向量坐標！** 直接呼叫 `scripts/generators/components/` 中的通用組件：
