@@ -7,18 +7,12 @@
   "sourceIds": [
     "MAT-CAREER"
   ],
-  "metric": {
-    "value": 40,
-    "type": "aoi-cycle-time-reduction-percent",
-    "en": "{value}% lower AOI cycle time",
-    "zh-TW": "AOI cycle time 降低 {value}%"
-  },
   "en": {
     "summary": "Developed C# automated optical inspection algorithms for manufacturing lines.",
     "details": [
       "Mentored two engineers and worked with a cross-functional team of 10+ on integration milestones."
     ],
-    "boundary": "Measures AOI inspection cycle time.",
+    "boundary": "No numerical outcome is quoted because the comparison basis and measurement window are unavailable.",
     "proofTitle": "Optical inspection",
     "scope": "Manufacturing-line inspection"
   },
@@ -27,7 +21,7 @@
     "details": [
       "指導兩位工程師，並與 10 人以上跨部門團隊共同完成整合里程碑。"
     ],
-    "boundary": "衡量：AOI 檢測週期時間。",
+    "boundary": "比較基準與量測期間無法查證，因此不列數值成果。",
     "proofTitle": "光學檢測",
     "scope": "製造產線檢測"
   }

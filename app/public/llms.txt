@@ -10,22 +10,21 @@
 ## 1. Professional Proof Anchors
 
 ### DynaSafe Corp. — Senior AI Engineer (2026-01 – 2026-04)
-- **Primary Metric**: 10× model-training throughput multiplier on production physics-informed neural network (PINN) workflows.
-- **Root Cause & Solution**: Diagnosed GPU starvation caused by PyTorch DataLoader serialization and IPC copying overhead. Designed an asynchronous zero-copy pinned shared-memory ring buffer, moving GPU compute saturation from 12% to 96%.
-- **Workload**: Nvidia Morpheus network anomaly detection (PCAP inputs) and PhysicsNeMo CFD simulation training.
+- Diagnosed a slowdown in a PhysicsNeMo demo's data-format loader, specified the optimization direction, and reviewed a Claude-assisted code change.
+- Built and adapted Nvidia Morpheus network-anomaly workflows with PCAP input and PhysicsNeMo training workflows for an OpenFOAM CFD use case.
+- Evidence boundary: the owner recalls approximately 10× faster overall training. No profiler trace, absolute timings, or matched-workload benchmark is preserved. No hardware-utilization or financial saving is claimed.
 
 ### MetGauge Co., Ltd. — Software Engineer (2023-09 – 2024-08)
-- **Primary Milestone**: Advanced a C++/Python 3D-measurement stereovision MVP to factory-ready production testing.
-- **System Architecture**: Designed and integrated a 12-pair stereoscopic camera system (24 optical sensors) with hardware TTL GPIO trigger synchronization (<1.2ms jitter) and sub-millimeter epipolar calibration verification under factory floor vibration.
-- **Outcome**: Delivered automated dimensional inspection pipeline operating under strict latency budget (<820ms cycle time vs 1000ms SLA).
+- Contributed to C++ and Python 3D-measurement work on a documented 12-stereo-camera team project that advanced an MVP to factory-ready production testing.
+- Project scope included camera integration and boundary-condition exploration. Individual ownership, production uptime, trigger jitter, and cycle-time measurements are not established here.
 
-### UTECHZONE Co., Ltd. — Software Engineer (2021-09 – 2022-04)
-- **Primary Metric**: −40% Automated Optical Inspection (AOI) cycle time.
-- **Implementation**: Multi-threaded image processing pipeline and defect classification optimization on semiconductor wafer inspection lines.
+### UTECHZONE Co., Ltd. — Algorithm Engineer (2021-06 – 2022-03)
+- Developed C# Automated Optical Inspection algorithms for manufacturing-line inspection and quality checks.
+- No numerical improvement is quoted because the comparison basis and measurement window are unavailable.
 
-### LIPS Corp. — Software Engineer (2019-11 – 2020-04)
-- **Primary Metric**: +66% stereoscopic 3D measurement accuracy.
-- **Implementation**: Epipolar calibration redesign and active IR stereoscopic depth map refinement on Intel RealSense D415/D435 systems.
+### LIPS Corp. — Software Engineer, Algorithm Developer (2019-07 – 2020-04)
+- Worked on stereo-camera real-time 3D metrology, camera calibration, and algorithm redesign.
+- No numerical improvement is quoted because the original measurements and accuracy definition are unavailable.
 
 ---
 
@@ -39,12 +38,10 @@
   - Automatic fault detection: When an initial route exceeds budget (e.g. cost 6.0 > 5.0 ceiling), the budget gate triggers an exit rejection (negative control), automatically rerouting into an adaptive compact route (T5 route, cost 4.6, proceed).
 - **Artifacts**: Verified bilingual output with claim-level evidence anchors (e.g. `[Verified Claim: Table 3, p.7]`).
 
-### Transcribe-for-X (2026) — User-Controlled Local-First Voice Workflow
-- **Problem**: Cloud transcription services that overwrite raw user transcripts with speculative LLM cleanups, risking irreversible information loss.
-- **Architecture**:
-  - Dual-track data architecture: Track 1 (Raw Audio & Verbatim Transcript) is write-once, immutable, stored in Android private scoped storage. Track 2 (AI Disfluency Cleanup) is an overlay of candidate edit spans.
-  - Explicit confirmation boundary: No span is pruned from final output without active user checkbox confirmation.
-  - Zero cloud leakage: Operates on device without background telemetry.
+### Transcribe-for-X (2026) — User-Controlled Voice Workflow
+- Personal Android prototype for retaining recordings and separating original transcripts from cleanup suggestions.
+- Source retention and explicit review of candidate edits are design goals. This page does not establish crash-safe recovery, zero data loss, recognition accuracy, or enterprise adoption.
+- Device performance and mixed-language recognition still require real-use testing.
 
 ### windowphase (2026) — AI Tool Usage-Window Planner
 - **Architecture**: Offline scheduling and token usage planner analyzing multi-hour usage windows before issuing live API requests.

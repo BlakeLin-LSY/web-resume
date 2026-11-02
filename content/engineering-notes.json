@@ -52,15 +52,15 @@
       "en": {
         "context": "DynaSafe · Professional work · Jan–Apr 2026",
         "title": "The training bottleneck was in the data pipeline",
-        "brief": "Profiling led me to a dataloader bottleneck. Rebuilding that pipeline produced the 10× model-training speedup recorded in my career history. The interesting part is how the bottleneck was found.",
-        "detail": "The 10× figure describes model-training speed, not overall team productivity. A longer account with a profiling walkthrough is in preparation.",
+        "brief": "I investigated a PhysicsNeMo demo's data-format loader, set an optimization direction, and reviewed a Claude-assisted change. I recall overall training time improving, but no benchmark timings were preserved. The story is how I found the bottleneck and defined my role.",
+        "detail": "I recall faster overall training, but no profiler trace, before/after timings, matched workload, or model-quality check is preserved. This is not a verified benchmark. Claude modified the loader.",
         "question": "How do you decide whether a slow training run needs model changes or a better data path?"
       },
       "zh-TW": {
         "context": "DynaSafe · 職業工作 · 2026 年 1–4 月",
         "title": "訓練瓶頸，出在資料怎麼送進來",
-        "brief": "我透過 profiling 找到 dataloader 的瓶頸，再重建資料 pipeline。職涯紀錄中的模型訓練速度提升 10 倍，來自這次修改；值得展開聊的是，當時怎麼找到問題。",
-        "detail": "10 倍指模型訓練速度，不代表整個團隊的工作效率。附 profiling 過程的完整文章準備中。",
+        "brief": "我調查 PhysicsNeMo 範例的資料格式載入瓶頸，指定最佳化方向，並審查 Claude 協助的修改。我回憶整體訓練有所改善，但未保存 benchmark 量測時間。這段故事聚焦我如何找到瓶頸與界定分工。",
+        "detail": "我回憶整體訓練時間有所改善，但未保存 profiler trace、前後量測時間、匹配工作負載條件或模型品質檢查，因此不是已驗證的 benchmark。loader 由 Claude 修改。",
         "question": "訓練太慢時，你會怎麼判斷該調模型，還是先查資料 pipeline？"
       }
     },

@@ -145,7 +145,7 @@ export function renderDualTrackSvg(options, language = "en") {
   const l = (val) => typeof val === "object" && val !== null ? (isEn ? val.en : (val["zh-TW"] || val.en)) : String(val);
 
   const kicker = l(options.kicker || (isEn ? "Dual-Track Architecture" : "雙軌保真架構"));
-  const badge = l(options.badge || (isEn ? "Zero Data Loss Guarantee" : "零資料滅失保證"));
+  const badge = l(options.badge || (isEn ? "Android Prototype" : "Android 原型"));
   const title = l(options.title || (isEn ? "Immutable Raw Audio vs. User-Approved Speculative Cleanup" : "原始錄音唯讀保真 vs. 顯式確認語意修訂雙軌架構"));
   const ariaLabel = l(options.ariaLabel || (isEn ? "Transcribe-for-X Dual-Track Architecture" : "Transcribe-for-X 雙軌保真架構"));
   const markerId = options.markerId || "arrow-tfx";
@@ -177,31 +177,31 @@ export function renderDualTrackSvg(options, language = "en") {
 
         <!-- Central Isolation Barrier -->
         <line x1="125" y1="90" x2="745" y2="90" class="resume-isolation-barrier"/>
-        <text x="435" y="86" class="resume-isolation-text" text-anchor="middle">${isEn ? "ZERO-LOSS ISOLATION BOUNDARY · LLM SANDBOXED FROM RAW STORAGE" : "零滅失隔離邊界 · 大型模型與底層原始儲存嚴格沙盒隔離"}</text>
+        <text x="435" y="86" class="resume-isolation-text" text-anchor="middle">${isEn ? "SOURCE AUDIO KEPT SEPARATE FROM TRANSCRIPT EDITS" : "來源音訊與逐字稿修改分開保存"}</text>
 
         <!-- Track 1: Immutable (Top) -->
         <path d="M 115 78 Q 135 45 155 45" class="resume-flow-line" marker-end="url(#${markerId})"/>
         <g class="resume-node-group">
           <rect x="160" y="14" width="245" height="62" rx="6" class="resume-node-box resume-node-highlight"/>
-          <text x="282" y="36" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Track 1: Raw Audio & Whisper" : "軌道 1：原始音訊與 Whisper"}</text>
-          <text x="282" y="52" class="resume-node-detail" text-anchor="middle">${isEn ? "Android Scoped Storage · Read-Only" : "Android 專有沙盒儲存 · 唯讀保護"}</text>
-          <text x="282" y="66" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "🔒 Byte-for-byte immutable archive" : "🔒 逐位元完全不可變封存"}</text>
+          <text x="282" y="36" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Track 1: Source Audio" : "軌道 1：來源音訊"}</text>
+          <text x="282" y="52" class="resume-node-detail" text-anchor="middle">${isEn ? "App-Private Storage" : "App 私有儲存"}</text>
+          <text x="282" y="66" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Saved Before ASR" : "先儲存，再轉錄"}</text>
         </g>
 
         <line x1="405" y1="45" x2="445" y2="45" class="resume-flow-line" marker-end="url(#${markerId})"/>
         <g class="resume-node-group">
           <rect x="450" y="14" width="165" height="62" rx="6" class="resume-node-box"/>
-          <text x="532" y="38" class="resume-node-title" text-anchor="middle">${isEn ? "Permanent Ground Truth" : "永久真實基底"}</text>
-          <text x="532" y="56" class="resume-node-detail" text-anchor="middle">${isEn ? "Verbatim Transcript Log" : "逐字稿紀錄與校驗碼"}</text>
+          <text x="532" y="38" class="resume-node-title" text-anchor="middle">${isEn ? "Source Recording" : "來源錄音"}</text>
+          <text x="532" y="56" class="resume-node-detail" text-anchor="middle">${isEn ? "Retention Goal" : "以保留來源為目標"}</text>
         </g>
 
         <!-- Track 2: Speculative AI Diff (Bottom) -->
         <path d="M 115 102 Q 135 135 155 135" class="resume-flow-line" marker-end="url(#${markerId})"/>
         <g class="resume-node-group">
           <rect x="160" y="104" width="245" height="62" rx="6" class="resume-node-box"/>
-          <text x="282" y="126" class="resume-node-title" text-anchor="middle">${isEn ? "Track 2: AI Disfluency Engine" : "軌道 2：AI 口語贅詞差分引擎"}</text>
+          <text x="282" y="126" class="resume-node-title" text-anchor="middle">${isEn ? "Track 2: Cleanup Suggestions" : "軌道 2：清理建議"}</text>
           <text x="282" y="142" class="resume-node-detail" text-anchor="middle">${isEn ? "Non-destructive candidate overlays" : "非破壞性候選修訂文字層"}</text>
-          <text x="282" y="156" class="resume-node-detail" text-anchor="middle">${isEn ? "Zero in-place file mutation" : "絕無原地複寫檔案風險"}</text>
+          <text x="282" y="156" class="resume-node-detail" text-anchor="middle">${isEn ? "Cleanup Keeps Source Audio" : "清理不修改來源音訊"}</text>
         </g>
 
         <line x1="405" y1="135" x2="445" y2="135" class="resume-flow-line" marker-end="url(#${markerId})"/>
@@ -209,7 +209,7 @@ export function renderDualTrackSvg(options, language = "en") {
           <rect x="450" y="104" width="165" height="62" rx="6" class="resume-node-box resume-node-highlight"/>
           <text x="532" y="126" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "User Checkbox Review" : "使用者逐項核取審閱"}</text>
           <text x="532" y="142" class="resume-node-detail" text-anchor="middle">${isEn ? "Explicit granular opt-in" : "顯式細粒度勾選同意"}</text>
-          <text x="532" y="156" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "⚡ Zero blind overwrites" : "⚡ 零未授權自動覆寫"}</text>
+          <text x="532" y="156" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Accepted Edits Only" : "僅套用已接受修改"}</text>
         </g>
 
         <!-- Final Export -->

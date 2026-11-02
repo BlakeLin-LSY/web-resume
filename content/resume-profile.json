@@ -79,7 +79,7 @@
       "modeHuman": "Visual",
       "modeAgent": "AST / Spec",
       "modeSwitch": "Reading perspective",
-      "agentBadge": "AST / IR / Evidence Verified",
+      "agentBadge": "AST / IR / Evidence Boundaries",
       "sampleExcerptBtn": "View Live Reader Sample",
       "sampleExcerptHide": "Hide Reader Sample",
       "sampleExcerptTitle": "Study Atlas VGGT Synthesis Excerpt (ETH3D Point-Map Verification)",
@@ -93,11 +93,11 @@
       "lensEmShort": "Eng Lead",
       "lensRecruiterShort": "CTO",
       "lensStaffDesc": "Focus: Low-Level Concurrency, Root-Cause Bottlenecks, Invariants & Limits",
-      "lensEmDesc": "Focus: 10× Delivery Velocity, Zero-Loss Reliability & CI Automation",
-      "lensRecruiterDesc": "Focus: Zero Capex ROI, Lab-to-Production Moat & Rare Physics-to-Agent Intersection",
+      "lensEmDesc": "Focus: Delivery Workflow, Software Reliability & CI Automation",
+      "lensRecruiterDesc": "Focus: Applied AI, Computer Vision & Cross-Disciplinary Engineering",
       "lensCoreQuestion": "Core Probe",
       "lensBreakthrough": "Engineering Breakthrough",
-      "lensVerifiedMoat": "Verified Moat",
+      "lensVerifiedMoat": "Evidence Boundary",
       "contractHeading": "Intent Contract & Epistemic Boundaries",
       "contractInvariant": "Strict Invariant",
       "contractNonGoals": "Explicit Non-Goals",
@@ -113,7 +113,7 @@
       "proofVerifyBtn": "Run Live Invariant Gate",
       "frameworkHeading": "First-Principles Problem-Solving Engine",
       "frameworkTitle": "Problem Scoping · Critical-Link Piercing · Deterministic Value (A ➔ X ➔ B)",
-      "frameworkIntro": "From physical boundary conditions and true-problem framing, to surgical weakest-link piercing via adaptive mental models, delivering zero-loss, anti-fragile deterministic outcomes across hardware and agent systems.",
+      "frameworkIntro": "From physical constraints and problem framing to bottleneck diagnosis and reviewable outcomes across software, hardware and agent systems.",
       "ribbonLabelA": "A: PROBLEM & SCOPE",
       "ribbonLabelLink": "X: CRITICAL LINK",
       "ribbonLabelB": "B: VALUE DELIVERY"
@@ -168,7 +168,7 @@
       "modeHuman": "視覺",
       "modeAgent": "規格",
       "modeSwitch": "閱讀視角",
-      "agentBadge": "AST / IR / 驗證收據",
+      "agentBadge": "AST / IR / 證據界線",
       "sampleExcerptBtn": "檢視真實雙語樣張",
       "sampleExcerptHide": "收合雙語樣張",
       "sampleExcerptTitle": "Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）",
@@ -182,11 +182,11 @@
       "lensEmShort": "工程主管",
       "lensRecruiterShort": "CTO",
       "lensStaffDesc": "聚焦：底層併發拓撲、根本瓶頸定位、硬體物理極限與嚴格不變量",
-      "lensEmDesc": "聚焦：10× 交付吞吐量、產線 7x24 零丟包穩定性與機制化 CI 自動防護",
-      "lensRecruiterDesc": "聚焦：零硬體增購資本支出 ROI、實驗室到量產上市壁壘與物理推導 × Agent 認知稀缺交集",
+      "lensEmDesc": "聚焦：交付流程、軟體可靠性與 CI 自動檢查",
+      "lensRecruiterDesc": "聚焦：應用 AI、電腦視覺與跨領域工程",
       "lensCoreQuestion": "審查核心叩問",
       "lensBreakthrough": "攻堅突破機制",
-      "lensVerifiedMoat": "量化驗證壁壘",
+      "lensVerifiedMoat": "證據界線",
       "contractHeading": "意圖契約與認知邊界",
       "contractInvariant": "嚴格不變量",
       "contractNonGoals": "顯式非目標",
@@ -202,7 +202,7 @@
       "proofVerifyBtn": "執行即時不變量校驗",
       "frameworkHeading": "第一性工程求解引擎",
       "frameworkTitle": "問題定義 · 關鍵弱鏈擊穿 · 高價值確定性交付 (A ➔ X ➔ B)",
-      "frameworkIntro": "從物理學邊界條件與假性需求過濾出發，運用自適應心智模型手術刀式擊穿最弱環節，在軟硬體產線與 Agent 系統中交付零滅失、抗脆弱的高價值確定性成果。",
+      "frameworkIntro": "從物理邊界與問題定義出發，定位系統瓶頸，再為軟體、硬體與 Agent 工作交代可檢視的成果。",
       "ribbonLabelA": "A: 問題與邊界定義",
       "ribbonLabelLink": "X: 關鍵弱鏈擊穿",
       "ribbonLabelB": "B: 確定性價值交付"
@@ -221,148 +221,148 @@
       "metric": {
         "value": 10,
         "type": "training-speed-factor",
-        "en": "{value}× model-training speed",
-        "zh-TW": "模型訓練速度提升 {value} 倍"
+        "en": "~{value}× overall training-time improvement recalled by the owner; no benchmark timings preserved",
+        "zh-TW": "本人回憶整體訓練時間改善約 {value} 倍；未保存可核對的量測時間"
       },
       "triad": {
         "challenge": {
-          "en": "DataLoader I/O serialization starved GPU compute during OpenFOAM CFD training.",
-          "zh-TW": "DataLoader I/O 序列化阻塞，導致 GPU 在 CFD 訓練期間嚴重閒置飢餓。"
+          "en": "Diagnosed a data-format loader bottleneck in a PhysicsNeMo training demo.",
+          "zh-TW": "定位 PhysicsNeMo 訓練範例中的資料格式載入瓶頸。"
         },
         "solution": {
-          "en": "Rebuilt data loading pipeline and custom PhysicsNeMo format conversion.",
-          "zh-TW": "重建訓練資料管線，並自訂 PhysicsNeMo 格式轉換消除 I/O 阻塞。"
+          "en": "Specified an optimization direction and reviewed a Claude-assisted loader change.",
+          "zh-TW": "指定最佳化方向，並審查 Claude 協助修改的 loader。"
         },
         "boundary": {
-          "en": "10× overall model-training speedup measured on CFD workload.",
-          "zh-TW": "衡量指標：OpenFOAM CFD 工作負載之整體模型訓練速度提升 10 倍。"
+          "en": "The owner recalls faster overall training; no trace, timings, or matched-run conditions are preserved.",
+          "zh-TW": "本人回憶整體訓練時間縮短；未保存 trace、量測時間或匹配執行條件。"
         }
       },
       "abTransformation": {
         "aInput": {
-          "en": "CFD training GPU compute starved at ~15% utilization",
-          "zh-TW": "CFD 訓練 GPU 算力嚴重飢餓（利用率僅約 15%）"
+          "en": "Training slowed while the PhysicsNeMo demo loaded data",
+          "zh-TW": "PhysicsNeMo 訓練範例載入資料時耗時超出預期"
         },
         "weakestLink": {
-          "en": "Python DataLoader I/O serialization & format conversion stall",
-          "zh-TW": "Python DataLoader 序列化 I/O 與格式轉換阻塞"
+          "en": "Data-format loader in the PhysicsNeMo training demo",
+          "zh-TW": "PhysicsNeMo 訓練範例的資料格式載入器"
         },
         "bOutput": {
-          "en": "10× overall model-training speedup on identical hardware",
-          "zh-TW": "既有硬體上釋放 10× 整體模型訓練速度提升"
+          "en": "Claude-assisted loader change reviewed; faster training is owner-recalled",
+          "zh-TW": "審查 Claude 協助修改的 loader；訓練改善為本人回憶"
         }
       },
       "intentContract": {
         "strictInvariant": {
-          "en": "DataLoader streaming throughput must match or exceed GPU compute ingestion rate without dropping CFD cell precision.",
-          "zh-TW": "DataLoader 串流吞吐必須匹配或超越 GPU 計算攝取速率，且不得犧牲 CFD 網格計算精度。"
+          "en": "Describe the diagnosis and optimization direction; do not claim the owner authored the loader rewrite or measured a benchmark.",
+          "zh-TW": "描述瓶頸診斷與最佳化方向；不得宣稱本人撰寫 loader 改寫或完成 benchmark 量測。"
         },
         "nonGoals": {
           "en": [
-            "Rewriting OpenFOAM C++ solver core",
-            "Overclocking GPU hardware frequencies"
+            "Claiming the owner authored the loader rewrite",
+            "Claiming GPU utilization, matched-hardware results, or verified CFD quality without source evidence"
           ],
           "zh-TW": [
-            "重寫 OpenFOAM C++ 求解器核心",
-            "超頻 GPU 硬體頻率"
+            "宣稱本人撰寫 loader 改寫",
+            "未有來源證據便宣稱 GPU 利用率、同硬體對照結果或 CFD 品質已驗證"
           ]
         },
         "failureConditions": {
-          "en": "If disk I/O latency degrades below PCIe Gen4 standard or host RAM bandwidth saturates, pipeline falls back to cached chunk mode.",
-          "zh-TW": "若磁碟 I/O 延遲低於 PCIe Gen4 標準或主機記憶體頻寬飽和，管線降級為快取分塊模式。"
+          "en": "No profiler trace, before/after timings, matched-workload conditions, or model-quality check are preserved.",
+          "zh-TW": "未保存 profiler trace、前後量測時間、匹配工作負載條件或模型品質檢查。"
         }
       },
       "mirrorDuel": [
         {
           "challenger": {
-            "en": "Why not simply add more GPU memory or use a distributed cloud cluster to bruteforce the training throughput?",
-            "zh-TW": "為什麼不直接堆更多 GPU 顯存或使用分散式雲端叢集暴力解決訓練吞吐？"
+            "en": "How did you identify the training slowdown?",
+            "zh-TW": "你如何定位訓練變慢的原因？"
           },
           "defense": {
-            "en": "First-principles analysis proved the GPU compute utilization was hovering below 15% due to serialization in Python's DataLoader. Adding more GPUs would scale cost linearly while compute starvation remains. Eliminating the I/O bottleneck yielded 10× speedup on identical hardware.",
-            "zh-TW": "第一性原理分析證明，GPU 運算利用率低於 15% 的根因在於 Python DataLoader 的序列化 I/O。盲目堆疊 GPU 只會線性膨脹雲端成本，運算飢餓依然存在。擊穿 I/O 弱環節，在既有硬體上即釋放 10× 訓練速度。"
+            "en": "I used an NVIDIA tool to inspect the PhysicsNeMo demo data path, identified its data-format loader bottleneck, specified an optimization direction, and reviewed a Claude-assisted change. I recall faster overall training, but no benchmark timings were preserved.",
+            "zh-TW": "我使用 NVIDIA 工具檢查 PhysicsNeMo 範例的資料路徑，定位資料格式載入瓶頸、指定最佳化方向，並審查 Claude 協助的修改。我回憶整體訓練時間縮短，但未保存 benchmark 量測時間。"
           }
         },
         {
           "challenger": {
-            "en": "Where does this system break first under extreme load?",
-            "zh-TW": "這個架構在極端負載下第一個崩潰的環節是什麼？"
+            "en": "What evidence supports the size of the improvement?",
+            "zh-TW": "有哪些證據能確認改善幅度？"
           },
           "defense": {
-            "en": "Host-to-Device (H2D) PCIe bandwidth saturation when CFD mesh cell count exceeds pinned memory pool boundaries. Mitigated via asynchronous double-buffering prefetch.",
-            "zh-TW": "當 CFD 網格節點數超出鎖頁記憶體（Pinned Memory）池上限時的 Host-to-Device (H2D) PCIe 頻寬飽和。對策為透過非同步雙緩衝預取機制平滑頻寬波峰。"
+            "en": "I recall overall training time improving, but the original trace, before/after timings, and matched-workload conditions are not preserved. I cannot report a verified speedup.",
+            "zh-TW": "我回憶整體訓練時間有所改善，但未保存原始 trace、前後量測時間或匹配工作負載條件，因此不能報告已驗證的加速幅度。"
           }
         }
       ],
       "povHighlights": {
         "staff": {
-          "en": "Root-cause pinpointing: DataLoader I/O starvation vs streaming format",
-          "zh-TW": "根因定位：DataLoader I/O 飢餓 vs 串流格式重構",
+          "en": "Root-cause diagnosis: a PhysicsNeMo demo data-format loader",
+          "zh-TW": "根因診斷：PhysicsNeMo 範例的資料格式載入瓶頸",
           "coreQuestion": {
-            "en": "Why is GPU compute idling below 15% when memory is plentiful, and where is the critical saturation boundary?",
-            "zh-TW": "顯存充足時 GPU 運算利用率為何卡在 15% 以下？系統極限飽和邊界究竟在哪？"
+            "en": "Which stage constrained training, and what was my role in the change?",
+            "zh-TW": "訓練受哪個環節限制？我在修改中負責什麼？"
           },
           "breakthrough": {
-            "en": "Deconstructed the PyTorch DataLoader serialization bottleneck; replaced with custom PhysicsNeMo streaming loader and lock-free double-buffering prefetch.",
-            "zh-TW": "第一性原理拆解 PyTorch DataLoader 序列化 I/O 阻塞；以自訂 PhysicsNeMo 串流格式與無鎖雙緩衝預取全面替換。"
+            "en": "Located the data-format loader bottleneck, specified an optimization direction, and reviewed Claude's loader change. The exact implementation is not recorded.",
+            "zh-TW": "定位資料格式載入瓶頸、指定最佳化方向，並審查 Claude 修改的 loader。精確實作細節沒有留存。"
           },
           "verifiedMoat": {
-            "en": "Maximized hardware compute saturation; smoothed PCIe Host-to-Device transfer peaks with verified 10× model-training speedup.",
-            "zh-TW": "實現硬體運算飽和最大化；平滑 PCIe H2D 傳輸峰值，並以實測 10× 訓練提速完成驗證。"
+            "en": "The owner recalls faster training; no trace, timings, matched-run conditions, or model-quality check are preserved.",
+            "zh-TW": "本人回憶訓練時間縮短；未保存 trace、量測時間、匹配執行條件或模型品質檢查。"
           }
         },
         "em": {
-          "en": "10× training throughput on identical infrastructure; zero new hardware spend",
-          "zh-TW": "同等基礎設施下實現 10× 訓練吞吐，零硬體採購成本",
+          "en": "Training bottleneck diagnosis and reviewed code change",
+          "zh-TW": "訓練瓶頸診斷與程式修改審查",
           "coreQuestion": {
-            "en": "How do we meet aggressive training delivery deadlines without blowing the cloud infrastructure budget or accumulating unmonitored technical debt?",
-            "zh-TW": "如何在不膨脹雲端基礎設施預算且不累積技術債的前提下，如期交付高強度的訓練里程碑？"
+            "en": "How do you respond when data loading constrains model training?",
+            "zh-TW": "資料載入限制模型訓練時，如何找出應改善的環節？"
           },
           "breakthrough": {
-            "en": "Rebuilt the training pipeline with real PCAP packet replay tests and established 6 CI invariant guard gates with automatic cache fallback on degradation.",
-            "zh-TW": "以真實 PCAP 封包重放回歸測試重建訓練管線，並建立 6 道不變量防護機制，效能退化時自動降級至快取分塊模式。"
+            "en": "I identified the loader bottleneck, specified an optimization direction, and reviewed a Claude-assisted code change.",
+            "zh-TW": "我定位 loader 瓶頸、指定最佳化方向，並審查 Claude 協助的程式修改。"
           },
           "verifiedMoat": {
-            "en": "100% reproducible training cycle, 7x24 zero-incident stability, and zero unbudgeted hardware procurement.",
-            "zh-TW": "訓練週期 100% 可重現、線上 7x24 零故障穩定運行，並達成零額外硬體預算採購。"
+            "en": "The owner recalls faster overall training; no saved benchmark timings or matched-run protocol support a quantified result.",
+            "zh-TW": "本人回憶整體訓練時間縮短；沒有留存 benchmark 量測時間或匹配執行程序可支持量化結果。"
           }
         },
         "recruiter": {
-          "en": "Zero Capex ROI · Physics-grounded ML pipeline · 10× training breakthrough",
-          "zh-TW": "零增購資本支出 ROI · 物理第一性原理 ML 管線 · 10× 訓練突破",
+          "en": "Physics background · Model-training bottleneck diagnosis · Cross-domain work",
+          "zh-TW": "物理背景 · 模型訓練瓶頸診斷 · 跨領域工程",
           "coreQuestion": {
-            "en": "Does Blake possess rare cross-disciplinary engineering capability that translates directly into massive cost efficiency and technical moat?",
-            "zh-TW": "Blake 是否具備罕見的跨領域硬核工程直覺，能直接轉化為巨大的成本效益與技術壁壘？"
+            "en": "What did I diagnose, and which outcomes can I support?",
+            "zh-TW": "我診斷了什麼？哪些成果有證據支持？"
           },
           "breakthrough": {
-            "en": "Combines a Master's degree in Physics with deep CUDA/PyTorch systems engineering to eliminate the root hardware mismatch rather than just throwing money at more GPUs.",
-            "zh-TW": "結合物理碩士嚴密推導與 CUDA/PyTorch 系統工程直覺，從根源消弭硬體算力浪費，而非盲目堆疊 GPU。"
+            "en": "Applied a physics background to a model-training workflow, located a data-loader bottleneck, and reviewed Claude's code change.",
+            "zh-TW": "以物理背景理解模型訓練流程、定位資料載入瓶頸，並審查 Claude 的程式修改。"
           },
           "verifiedMoat": {
-            "en": "Saved hundreds of thousands in cloud compute and hardware CAPEX; single-handedly transformed a CFD bottleneck into a competitive advantage.",
-            "zh-TW": "為企業省下數百萬雲端算力與硬體採購成本；隻手將 CFD 訓練阻礙轉化為核心產品競爭優勢。"
+            "en": "The source supports the diagnosis and review role; it does not support a benchmark, savings, or production-success figure.",
+            "zh-TW": "來源支持瓶頸診斷與修改審查角色，未支持 benchmark、成本節省或產品成功數字。"
           }
         }
       },
       "en": {
-        "proofTitle": "ML pipeline performance",
-        "summary": "Profiled a dataloader bottleneck and rebuilt the training data pipeline.",
+        "proofTitle": "Training data-path diagnosis",
+        "summary": "Identified a PhysicsNeMo demo data-format loader bottleneck, specified an optimization direction, and reviewed a Claude-assisted change.",
         "scope": "Model training",
         "details": [
-          "Built and adapted a Nvidia Morpheus network-anomaly workflow using real PCAP input.",
+          "Built and adapted an Nvidia Morpheus network-anomaly workflow using real PCAP input.",
           "Ran and adapted PhysicsNeMo training workflows for an OpenFOAM CFD use case."
         ],
-        "boundary": "Measures model-training speed."
+        "boundary": "No saved trace, before/after timings, matched-workload conditions, or model-quality check."
       },
       "zh-TW": {
-        "proofTitle": "ML pipeline 效能",
-        "summary": "分析資料載入瓶頸、追查根因，並重建訓練資料 pipeline。",
+        "proofTitle": "訓練資料路徑診斷",
+        "summary": "定位 PhysicsNeMo 範例的資料格式載入瓶頸、指定最佳化方向，並審查 Claude 協助的修改。",
         "scope": "模型訓練",
         "details": [
           "使用真實 PCAP 輸入，建立並調整 Nvidia Morpheus 網路異常偵測 workflow。",
           "針對 OpenFOAM CFD use case，執行與調整 PhysicsNeMo 訓練 workflow。"
         ],
-        "boundary": "衡量：模型訓練速度。"
+        "boundary": "未保存 trace、前後量測時間、匹配工作負載條件或模型品質檢查。"
       }
     },
     {
@@ -529,18 +529,12 @@
       "sourceIds": [
         "MAT-CAREER"
       ],
-      "metric": {
-        "value": 40,
-        "type": "aoi-cycle-time-reduction-percent",
-        "en": "{value}% lower AOI cycle time",
-        "zh-TW": "AOI cycle time 降低 {value}%"
-      },
       "en": {
         "summary": "Developed C# automated optical inspection algorithms for manufacturing lines.",
         "details": [
           "Mentored two engineers and worked with a cross-functional team of 10+ on integration milestones."
         ],
-        "boundary": "Measures AOI inspection cycle time.",
+        "boundary": "No numerical outcome is quoted because the comparison basis and measurement window are unavailable.",
         "proofTitle": "Optical inspection",
         "scope": "Manufacturing-line inspection"
       },
@@ -549,7 +543,7 @@
         "details": [
           "指導兩位工程師，並與 10 人以上跨部門團隊共同完成整合里程碑。"
         ],
-        "boundary": "衡量：AOI 檢測週期時間。",
+        "boundary": "比較基準與量測期間無法查證，因此不列數值成果。",
         "proofTitle": "光學檢測",
         "scope": "製造產線檢測"
       }
@@ -563,18 +557,12 @@
       "sourceIds": [
         "MAT-CAREER"
       ],
-      "metric": {
-        "value": 66,
-        "type": "measurement-accuracy-improvement-percent",
-        "en": "{value}% improvement in measurement accuracy",
-        "zh-TW": "量測精度提升 {value}%"
-      },
       "en": {
         "summary": "Improved real-time stereo-camera 3D measurement through calibration and algorithm redesign.",
         "details": [
           "Calibrated Intel RealSense D415/D435 camera systems."
         ],
-        "boundary": "Measures 3D measurement accuracy of the stereo-camera system.",
+        "boundary": "No numerical outcome is quoted because the original measurements and accuracy definition are unavailable.",
         "proofTitle": "Stereo 3D measurement",
         "scope": "Measurement accuracy"
       },
@@ -583,7 +571,7 @@
         "details": [
           "執行 Intel RealSense D415／D435 相機系統校正。"
         ],
-        "boundary": "衡量：雙目相機系統的 3D 量測精度。",
+        "boundary": "原始量測與精度定義無法查證，因此不列數值成果。",
         "proofTitle": "立體視覺 3D 量測",
         "scope": "量測精度"
       }
@@ -773,61 +761,65 @@
       ],
       "triad": {
         "challenge": {
-          "en": "Preventing accidental transcript loss from automatic, uninspected LLM rewrites.",
-          "zh-TW": "杜絕由 LLM 自動修飾改寫逐字稿所造成的不可逆原始資料滅失。"
+          "en": "Keeping source audio separate from transcript edits in an Android speech-to-text prototype.",
+          "zh-TW": "在 Android 語音轉文字原型中，將來源音訊與逐字稿修改分開保存。"
         },
         "solution": {
-          "en": "Dual-track isolation: Private scoped audio storage (SHA-256 verified) vs speculative diff overlay.",
-          "zh-TW": "嚴格雙軌隔離：專有沙盒原始音訊（SHA-256 驗證）vs 非破壞性候選修訂層。"
+          "en": "The prototype stores source audio separately from transcript edits and offers cleanup suggestions for review.",
+          "zh-TW": "原型將來源音訊與逐字稿修改分開保存，並提供可供檢視的清理建議。"
         },
         "boundary": {
-          "en": "Android prototype; device performance and mixed-language ASR require real-use testing.",
-          "zh-TW": "邊界界定：Android 原型；裝置效能與雙語混合辨識品質仍待實際場景驗證。"
+          "en": "Recorded tests cover selected synthetic save and review flows; microphone completeness and process-restart recovery remain unaccepted.",
+          "zh-TW": "現有紀錄涵蓋部分合成儲存與檢視流程；麥克風擷取完整性與程序重啟復原尚未通過驗收。"
         }
       },
       "abTransformation": {
         "aInput": {
-          "en": "Speech noise & accidental transcript loss via irreversible LLM cleanup",
-          "zh-TW": "語音雜訊與口語頓挫，直接由 LLM 改寫造成原始語意滅失"
+          "en": "Keeping source audio available while reviewing speech-to-text edits",
+          "zh-TW": "檢視語音辨識文字時，仍保留來源音訊的目標"
         },
         "weakestLink": {
-          "en": "Single-pass in-place destructive string rewriting",
-          "zh-TW": "單步原地破壞性字串覆寫"
+          "en": "Separating source audio from transcript changes in the Android prototype",
+          "zh-TW": "在 Android 原型中區分來源音訊與逐字稿修改"
         },
         "bOutput": {
-          "en": "Private scoped audio storage + user-approved candidate diff overlay",
-          "zh-TW": "專有沙盒原始音訊唯讀保真 + 顯式確認候選差分層（零資料滅失）"
+          "en": "Source-audio retention goal with reviewable transcript cleanup in an Android prototype",
+          "zh-TW": "Android 原型以保留來源音訊為目標，並讓逐字稿清理可供檢視"
         }
       },
       "intentContract": {
         "strictInvariant": {
-          "en": "Original recorded audio bytes and raw Whisper transcripts are strictly append-only and immutable; AI suggestions remain in candidate layer.",
-          "zh-TW": "原始錄音音訊與 Whisper 初版逐字稿嚴格 Append-only 唯讀；AI 口語修飾建議僅保留於候選層。"
+          "en": "The implementation saves and checks source audio before ASR; transcript cleanup changes text, not the audio file.",
+          "zh-TW": "實作會先保存並檢查來源音訊，再執行 ASR；逐字稿清理修改文字，不改動音訊檔。"
         },
         "nonGoals": {
           "en": [
-            "Automatic irreversible in-place text replacement",
-            "Cloud-based voice telemetry or unencrypted audio offloading"
+            "Claims of zero loss under process termination",
+            "Claims of legal, executive, or medical workflow compliance",
+            "Automatic unreviewed text replacement",
+            "Cloud transcription or audio upload"
           ],
           "zh-TW": [
-            "未經檢視的自動原地破壞性文字覆寫",
-            "雲端音訊遙測或未加密之音訊上傳"
+            "宣稱在程序終止時也能保證零資料遺失",
+            "宣稱符合法律、高階商務或醫療工作流程規範",
+            "未經檢視的自動文字覆寫",
+            "雲端轉錄或音訊上傳"
           ]
         },
         "failureConditions": {
-          "en": "If edge device memory is constrained during Whisper inference, transcription prioritizes local audio file integrity and delays LLM candidate generation.",
-          "zh-TW": "若邊緣裝置在 Whisper 推論時記憶體不足，系統優先保證本機音訊完整性，延後 LLM 候選建議生成。"
+          "en": "Capture evidence that fails validation leaves the take incomplete and blocked from ASR; microphone completeness and process-restart recovery remain unaccepted.",
+          "zh-TW": "擷取證據未通過檢查時，錄音會維持未完成並禁止 ASR；麥克風擷取完整性與程序重啟復原尚未通過驗收。"
         }
       },
       "mirrorDuel": [
         {
           "challenger": {
-            "en": "Why not let an LLM directly output the cleanest, most fluent transcript in one single prompt pass?",
-            "zh-TW": "為什麼不讓 LLM 在一次 Prompt 中直接輸出最流暢乾淨的逐字稿？"
+            "en": "How does the prototype keep source audio separate from text cleanup?",
+            "zh-TW": "原型如何將來源音訊與文字清理分開？"
           },
           "defense": {
-            "en": "Single-pass LLM rewriting is inherently destructive. LLMs routinely hallucinate filler word removal, dropping specialized jargon, technical numerals, or subtle verbal hesitations that carry critical legal/technical meaning. The dual-track architecture preserves raw ground truth while presenting edits as non-destructive candidate diffs.",
-            "zh-TW": "單步 LLM 改寫本質上是破壞性的。LLM 在去除贅字時常產生幻覺，抹除專用術語、精確數字或代表猶豫的微弱語氣，而這些細節往往具備關鍵法律或技術意涵。雙軌架構守住原始事實真理，所有修改僅作為非破壞性候選差分層呈現。"
+            "en": "The Android prototype stores source audio separately from transcript text. Its rule-based cleanup offers selected spans for review; it does not use an LLM cleanup pass.",
+            "zh-TW": "Android 原型將來源音訊與逐字稿分開保存。規則式清理會提出可檢視的文字片段，不使用 LLM 改寫逐字稿。"
           }
         },
         {
@@ -836,71 +828,71 @@
             "zh-TW": "該系統如何在行動裝置端確保使用者隱私？"
           },
           "defense": {
-            "en": "Audio is written to Android's private scoped storage sandbox accessible only by the application UID. ASR runs entirely via on-device Whisper models, requiring zero network permissions for the core transcription pipeline.",
-            "zh-TW": "音訊直接寫入 Android 專有沙盒空間（Private Scoped Storage），僅限應用程式 UID 存取。語音辨識完全在本機離線執行，核心轉錄管線完全不需要網路連線權限。"
+            "en": "The current code uses app-private no-backup storage and on-device Whisper. Pixel/OEM backup and device-transfer behavior has not been verified.",
+            "zh-TW": "目前程式使用 app-private no-backup 儲存與裝置端 Whisper；Pixel／OEM 備份與裝置移轉行為尚未驗證。"
           }
         }
       ],
       "povHighlights": {
         "staff": {
-          "en": "Dual-track architecture: Immutable ground truth vs speculative candidate diff overlay",
-          "zh-TW": "雙軌保真架構：不可變事實真理 vs 非破壞性候選差分層",
+          "en": "Android prototype for source-audio storage and transcript review",
+          "zh-TW": "Android 原型：來源音訊保存與逐字稿檢視",
           "coreQuestion": {
-            "en": "How do we prevent silent transcription loss or unrecoverable drift during background OS interruption or model hallucination?",
-            "zh-TW": "當面臨作業系統後台突發殺行程或模型幻覺竄改時，如何確保原始音訊與逐字稿零遺失且可恢復？"
+            "en": "How can the prototype separate source audio from transcript changes and expose incomplete captures?",
+            "zh-TW": "原型如何區分來源音訊與逐字稿修改，並標示未完成的錄音？"
           },
           "breakthrough": {
-            "en": "Architected dual-track state engine with immutable raw audio backing and explicit non-destructive user-approved diff layers.",
-            "zh-TW": "設計雙軌狀態機引擎，底層強制綁定不可變唯讀原始音訊，上層疊加非破壞性之顯式候選差分修訂層。"
+            "en": "The code stores source audio separately from transcript data and applies cleanup only to accepted text spans. Device capture and recovery need separate evidence.",
+            "zh-TW": "程式將來源音訊與逐字稿資料分開保存，只對接受的文字片段套用清理；裝置擷取與復原仍需獨立證據。"
           },
           "verifiedMoat": {
-            "en": "100% deterministically reconstructible edits; zero data loss even under aggressive Android OS process termination.",
-            "zh-TW": "所有修訂歷史 100% 確定性可重現；即便在 Android 激進殺行程下亦達成零音訊/逐字稿滅失。"
+            "en": "Synthetic save/review paths are tested; physical microphone completeness and process-restart acceptance remain open.",
+            "zh-TW": "已測試合成儲存與檢視流程；實體麥克風擷取完整性與程序重啟驗收仍未完成。"
           }
         },
         "em": {
-          "en": "Zero data loss guarantee; defensible user control for sensitive transcription workflows",
-          "zh-TW": "零資料滅失保證；敏感語音轉錄工作流之可防護使用者自主權",
+          "en": "Personal Android prototype for source audio and reviewed transcript edits",
+          "zh-TW": "個人 Android 原型：來源音訊與逐字稿修改檢視",
           "coreQuestion": {
-            "en": "How do we deploy voice AI to sensitive enterprise users who mistrust opaque, automated rewriting?",
-            "zh-TW": "如何將語音 AI 推展至對黑箱重寫極度不信任的敏感企業客戶與專業訪談場景？"
+            "en": "What does the prototype support about source storage and transcript edits?",
+            "zh-TW": "原型在來源音訊保存與逐字稿修改方面有哪些可支持的結果？"
           },
           "breakthrough": {
-            "en": "Enforced transparent human-in-the-loop audit logs with granular visual diffs, ensuring every modification requires explicit consent.",
-            "zh-TW": "建立完全透明的 Human-in-the-Loop 審計日誌與精細視覺差分對比，確保任何改動均需使用者顯式授權。"
+            "en": "Built local source-audio, transcript-review, and user-accepted cleanup paths for a personal prototype.",
+            "zh-TW": "為個人原型建立本機來源音訊、逐字稿檢視與使用者接受後才套用的清理流程。"
           },
           "verifiedMoat": {
-            "en": "Zero customer complaints regarding lost original context; elevated revision efficiency by 4×.",
-            "zh-TW": "達成零客訴原始語境遺失；專業訪談修訂校驗效率提升 4 倍。"
+            "en": "Recorded evidence covers selected synthetic flows; no customer-adoption or revision-efficiency result is supported.",
+            "zh-TW": "紀錄涵蓋部分合成流程；沒有證據支持客戶採用或修訂效率成果。"
           }
         },
         "recruiter": {
-          "en": "Privacy-first speech AI · Full auditability · Enterprise confidentiality moat",
-          "zh-TW": "隱私優先語音 AI · 全鏈路可審計性 · 企業級機密防護壁壘",
+          "en": "On-device speech prototype · Source-audio boundary · User-reviewed edits",
+          "zh-TW": "裝置端語音原型 · 來源音訊界線 · 使用者檢視修改",
           "coreQuestion": {
-            "en": "What makes this speech-to-text system defensible against generic big-tech cloud transcription APIs?",
-            "zh-TW": "這套語音轉文字系統面對科技巨頭雲端 API 時，其不可替代的商業防禦壁壘何在？"
+            "en": "Which privacy and domain-use claims can the prototype support?",
+            "zh-TW": "原型能支持哪些隱私與領域使用主張？"
           },
           "breakthrough": {
-            "en": "Focused on extreme data sovereignty and intent-fidelity: on-device local processing, zero vendor lock-in, and full auditability.",
-            "zh-TW": "極致專注於「資料主權絕對自主」與「意圖保真」：邊緣端本地化運算、零供應商鎖定與全鏈路可追溯審計。"
+            "en": "The prototype uses local storage and on-device ASR. Backup transfer and legal, medical, or enterprise suitability have not been assessed.",
+            "zh-TW": "原型使用本機儲存與裝置端 ASR；備份移轉，以及法律、醫療或企業用途適用性均未評估。"
           },
           "verifiedMoat": {
-            "en": "Built trusted confidentiality moat essential for legal, executive, and medical transcriptions.",
-            "zh-TW": "打造符合法律、高階商務與醫療記錄嚴苛標準的商業機密信任壁壘。"
+            "en": "No legal, medical, or enterprise workflow validation is claimed.",
+            "zh-TW": "不宣稱已通過法律、醫療或企業工作流程驗證。"
           }
         }
       },
       "en": {
-        "summary": "Save the recording, then turn it into text. The original transcript stays intact; cleanup suggestions remove only the spans the user accepts.",
+        "summary": "An Android prototype stores source audio separately and lets users review transcript cleanup suggestions.",
         "evidence": "Personal project · Android prototype",
-        "boundary": "Device performance and mixed-language recognition quality still need real-use testing.",
+        "boundary": "Synthetic save/review flows are tested; physical microphone completeness and process-restart recovery remain unaccepted.",
         "action": "Read the source-to-text workflow"
       },
       "zh-TW": {
-        "summary": "先保留錄音，再轉成文字。原始逐字稿不被清理建議覆寫，每個刪改都由使用者決定。",
+        "summary": "Android 原型將來源音訊與逐字稿修改分開保存，並讓使用者檢視清理建議。",
         "evidence": "個人專案 · Android 原型",
-        "boundary": "裝置表現與混合語音辨識品質仍待實際使用測試。",
+        "boundary": "已測試合成儲存與檢視流程；實體麥克風擷取完整性與程序重啟復原尚未驗收。",
         "action": "查看錄音到文字的流程"
       }
     },

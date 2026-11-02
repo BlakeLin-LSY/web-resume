@@ -28,16 +28,16 @@ const period = (start, end, language) => {
 const fallbackTriads = {
   dynasafe: {
     challenge: {
-      en: "DataLoader I/O serialization starved GPU compute during OpenFOAM CFD training.",
-      "zh-TW": "DataLoader I/O 序列化阻塞，導致 GPU 在 CFD 訓練期間嚴重閒置飢餓。"
+      en: "Diagnosed a data-format loader bottleneck in a PhysicsNeMo training demo.",
+      "zh-TW": "定位 PhysicsNeMo 訓練範例中的資料格式載入瓶頸。"
     },
     solution: {
-      en: "Rebuilt data loading pipeline and custom PhysicsNeMo format conversion.",
-      "zh-TW": "重建訓練資料管線，並自訂 PhysicsNeMo 格式轉換消除 I/O 阻塞。"
+      en: "Specified an optimization direction and reviewed a Claude-assisted loader change.",
+      "zh-TW": "指定最佳化方向，並審查 Claude 協助修改的 loader。"
     },
     boundary: {
-      en: "10× overall model-training speedup measured on CFD workload.",
-      "zh-TW": "衡量指標：OpenFOAM CFD 工作負載之整體模型訓練速度提升 10 倍。"
+      en: "The owner recalls faster overall training; no trace, timings, or matched-run conditions are preserved.",
+      "zh-TW": "本人回憶整體訓練時間縮短；未保存 trace、量測時間或匹配執行條件。"
     }
   },
   metgauge: {
@@ -70,16 +70,16 @@ const fallbackTriads = {
   },
   "transcribe-for-x": {
     challenge: {
-      en: "Preventing accidental transcript loss from automatic, uninspected LLM rewrites.",
-      "zh-TW": "杜絕由 LLM 自動修飾改寫逐字稿所造成的不可逆原始資料滅失。"
+      en: "Keeping source audio separate from transcript edits in an Android speech-to-text prototype.",
+      "zh-TW": "在 Android 語音轉文字原型中，將來源音訊與逐字稿修改分開保存。"
     },
     solution: {
-      en: "Dual-track isolation: Private scoped audio storage (SHA-256 verified) vs speculative diff overlay.",
-      "zh-TW": "嚴格雙軌隔離：專有沙盒原始音訊（SHA-256 驗證）vs 非破壞性候選修訂層。"
+      en: "The prototype stores source audio separately from transcript edits and offers cleanup suggestions for review.",
+      "zh-TW": "原型將來源音訊與逐字稿修改分開保存，並提供可供檢視的清理建議。"
     },
     boundary: {
-      en: "Android prototype; device performance and mixed-language ASR require real-use testing.",
-      "zh-TW": "邊界界定：Android 原型；裝置效能與雙語混合辨識品質仍待實際場景驗證。"
+      en: "Recorded tests cover selected synthetic save and review flows; microphone completeness and process-restart recovery remain unaccepted.",
+      "zh-TW": "現有紀錄涵蓋部分合成儲存與檢視流程；麥克風擷取完整性與程序重啟復原尚未通過驗收。"
     }
   }
 };
@@ -88,10 +88,10 @@ function dynaSafeVisual(e, language) {
   const isEn = language === "en";
   return renderPipelineSvg({
     kicker: isEn ? "Pipeline Architecture" : "資料管線架構",
-    badge: isEn ? "10× Model-Training Speed" : "10× 模型訓練速度提升",
-    title: isEn ? "DataLoader I/O Bottleneck vs. Rebuilt Streaming Pipeline" : "資料載入 I/O 序列化阻塞 vs. 重建串流管線對照",
-    caption: isEn ? "Profiled DataLoader I/O bottleneck starving GPU during CFD training. Rebuilt training data pipeline and custom format loader, achieving 10× overall model-training speed." : "分析 PyTorch DataLoader 瓶頸，追查 GPU 在 CFD 訓練期間的閒置飢餓根因。重建資料載入與格式轉換管線，實現模型訓練速度提升 10 倍。",
-    ariaLabel: "DataLoader Bottleneck vs Rebuilt Pipeline"
+    badge: isEn ? "Data-Loader Bottleneck Diagnosed" : "資料載入瓶頸診斷",
+    title: isEn ? "PhysicsNeMo Demo Data-Format Loader" : "PhysicsNeMo 範例資料格式載入器",
+    caption: isEn ? "Identified the data-format loader bottleneck, specified an optimization direction, and reviewed a Claude-assisted change. The owner recalls faster overall training, but no benchmark timings were preserved." : "定位資料格式載入瓶頸、指定最佳化方向，並審查 Claude 協助的修改。本人回憶整體訓練時間縮短，但未保存 benchmark 量測時間。",
+    ariaLabel: "PhysicsNeMo Data-Format Loader Bottleneck Diagnosis"
   }, language);
 }
 
@@ -107,15 +107,14 @@ function dynaSafeAgent(e, language) {
       metric: {
         type: "training-speed-factor",
         value: 10.0,
-        claim: "10x model-training speed"
+        claim: "Approximately 10x owner-recalled overall training-time improvement; no benchmark timings preserved"
       },
       workloads: [
-        "Nvidia Morpheus network-anomaly detection with real PCAP input",
-        "PhysicsNeMo training workflow adaptation for an OpenFOAM CFD use case"
+        "PhysicsNeMo training demo for an OpenFOAM CFD use case"
       ],
-      root_cause_analysis: "DataLoader bottleneck causing GPU compute starvation",
-      engineering_action: "Rebuilt training data pipeline and custom loader format conversion",
-      boundary: "Measures overall model-training speed"
+      root_cause_analysis: "Data-format loader bottleneck in a PhysicsNeMo training demo",
+      engineering_action: "Specified an optimization direction and reviewed a Claude-assisted loader change",
+      boundary: "The owner recalls faster overall training; no trace, timings, or matched-workload conditions are preserved"
     }
   });
 }
@@ -202,10 +201,10 @@ function tfxVisual(e, language) {
   const isEn = language === "en";
   return renderDualTrackSvg({
     kicker: isEn ? "Dual-Track Architecture" : "雙軌保真架構",
-    badge: isEn ? "Zero Data Loss Guarantee" : "零資料滅失保證",
-    title: isEn ? "Immutable Raw Audio vs. User-Approved Speculative Cleanup" : "原始錄音唯讀保真 vs. 顯式確認語意修訂雙軌架構",
-    caption: isEn ? "Android prototype that saves audio in private scoped storage before running local Whisper ASR. Original transcript is immutable; AI cleanup suggestions are treated as candidate overlays requiring explicit user opt-in." : "Android 原型：先將錄音儲存於專有沙盒空間，再執行本機 Whisper 語音辨識。原始逐字稿嚴格唯讀，AI 口語清理僅作為候選差分層，需由使用者逐項勾選同意才套用。",
-    ariaLabel: isEn ? "Transcribe-for-X Dual-Track Architecture" : "Transcribe-for-X 雙軌保真架構"
+    badge: isEn ? "Android Prototype · Transcript Review" : "Android 原型 · 逐字稿檢視",
+    title: isEn ? "Source Audio and Transcript Review" : "來源音訊與逐字稿檢視",
+    caption: isEn ? "The prototype stores source audio separately from transcript edits. Recorded tests cover selected synthetic save and review flows; physical microphone completeness and process-restart recovery remain unaccepted." : "原型將來源音訊與逐字稿修改分開保存。現有紀錄涵蓋部分合成儲存與檢視流程；實體麥克風擷取完整性與程序重啟復原尚未通過驗收。",
+    ariaLabel: isEn ? "Transcribe-for-X Source Audio and Transcript Review" : "Transcribe-for-X 來源音訊與逐字稿檢視"
   }, language);
 }
 
@@ -217,28 +216,16 @@ function tfxAgent(e, language) {
     data: {
       id: "transcribe-for-x-scoped-storage",
       platform: "Android prototype",
-      storage_sandbox: "Android_Private_Scoped_Storage",
-      zero_loss_invariant: "Original audio bytes immutable; LLM runs in sandbox",
-      ai_cleanup_policy: "NON_DESTRUCTIVE_CANDIDATE_OVERLAY",
-      mutation_gate: "Item-by-item user checkbox confirmation required; zero blind overwrites",
-      boundary: "Device performance and mixed-language recognition quality still need real-use testing"
+      storage_sandbox: "Android_App_Private_NoBackup_Directory",
+      source_retention_goal: "Save and check source audio before ASR; this does not establish capture completeness or restart recovery",
+      cleanup_policy: "Rule-based suggestions; users accept selected text spans",
+      mutation_gate: "Cleanup changes only accepted transcript spans, not the source audio file",
+      boundary: "Selected synthetic save/review flows are tested; physical microphone completeness and process-restart acceptance remain open"
     }
   });
 }
 
 const proofReceipts = {
-  dynasafe: {
-    id: "dynasafe",
-    sealHash: "d4e21a8f9b2075c3a1e948c2794f31b8a56209e73d4c82b1fa902f5e197463da",
-    invariantRule: {
-      en: "DataLoader streaming ingestion >= GPU compute absorption (Zero compute starvation)",
-      "zh-TW": "DataLoader 串流攝取頻寬 >= GPU 計算吸收頻寬（零算力飢餓）"
-    },
-    verificationScope: {
-      en: "OpenFOAM CFD Training Pipeline · PyTorch PhysicsNeMo",
-      "zh-TW": "OpenFOAM CFD 訓練資料管線 · PyTorch PhysicsNeMo"
-    }
-  },
   metgauge: {
     id: "metgauge",
     sealHash: "a794b1c38e920d41e7f654a9382170c4b281f692305a4176d8e20984f9321c8b",
@@ -263,18 +250,6 @@ const proofReceipts = {
       "zh-TW": "多 Agent 綜述生成 · VGGT 專論數學引證數位封籤"
     }
   },
-  "transcribe-for-x": {
-    id: "transcribe-for-x",
-    sealHash: "7c82e91b54a098317efc829143a5098234db7a912803c54e19873a45f928e104",
-    invariantRule: {
-      en: "Original audio bytes immutable; cleanup diffs require explicit opt-in (Zero accidental loss)",
-      "zh-TW": "原始音訊位元組嚴格唯讀；AI 口語清理需逐項勾選（零意外滅失）"
-    },
-    verificationScope: {
-      en: "Android Private Scoped Storage · Whisper ASR Local Engine",
-      "zh-TW": "Android 專有沙盒儲存 · 本機離線 Whisper 語音辨識"
-    }
-  }
 };
 
 function renderPovBadges(item, language, copy) {
@@ -297,7 +272,7 @@ function renderPovBadges(item, language, copy) {
     {
       id: "recruiter",
       pill: isEn ? "CTO / FOUNDER LENS" : "CTO / 創辦人透鏡",
-      title: isEn ? "Zero Capex ROI & Strategic Defensibility" : "零增購資本支出 ROI 與商業壁壘"
+      title: isEn ? "Scope & Evidence" : "範圍與證據"
     }
   ];
 

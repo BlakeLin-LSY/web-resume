@@ -69,14 +69,14 @@ export function renderUniversalEngineSvg(language = "en") {
 
   const yields = isEn ? [
     { title: "Sub-μs Hardware Sync", metric: "Zero-Drop Metrology Pass" },
-    { title: "10× Training Throughput", metric: "Hardware Saturated · Zero Capex" },
+    { title: "Training Data-Path Diagnosis", metric: "Recalled Improvement · No Benchmark" },
     { title: "Budget & Drift Convergence", metric: "100% Intent Fidelity · Capped" },
-    { title: "Immutable Ground Truth", metric: "Zero Data Loss · Sealed Hash" }
+    { title: "Source Audio and Transcript Review", metric: "Synthetic Save/Review Flows Tested" }
   ] : [
     { title: "次微秒級確定性同步", metric: "工廠 0 掉幀 · 物理量測過關" },
-    { title: "10× 訓練吞吐極限釋放", metric: "同等硬體飽和 · 零設備增購" },
+    { title: "訓練資料載入瓶頸診斷", metric: "本人回憶改善 · 無 benchmark" },
     { title: "認知邊界收斂與防漂移", metric: "100% 意圖保真 · TALK 成本鎖定" },
-    { title: "底層真理數據零滅失", metric: "不可變快照 · SHA-256 數位封籤" }
+    { title: "來源音訊與逐字稿檢視", metric: "已測合成儲存與檢視流程" }
   ];
 
   return `<div class="resume-svg-wrapper">

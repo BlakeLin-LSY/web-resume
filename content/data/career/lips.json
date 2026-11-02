@@ -7,18 +7,12 @@
   "sourceIds": [
     "MAT-CAREER"
   ],
-  "metric": {
-    "value": 66,
-    "type": "measurement-accuracy-improvement-percent",
-    "en": "{value}% improvement in measurement accuracy",
-    "zh-TW": "量測精度提升 {value}%"
-  },
   "en": {
     "summary": "Improved real-time stereo-camera 3D measurement through calibration and algorithm redesign.",
     "details": [
       "Calibrated Intel RealSense D415/D435 camera systems."
     ],
-    "boundary": "Measures 3D measurement accuracy of the stereo-camera system.",
+    "boundary": "No numerical outcome is quoted because the original measurements and accuracy definition are unavailable.",
     "proofTitle": "Stereo 3D measurement",
     "scope": "Measurement accuracy"
   },
@@ -27,7 +21,7 @@
     "details": [
       "執行 Intel RealSense D415／D435 相機系統校正。"
     ],
-    "boundary": "衡量：雙目相機系統的 3D 量測精度。",
+    "boundary": "原始量測與精度定義無法查證，因此不列數值成果。",
     "proofTitle": "立體視覺 3D 量測",
     "scope": "量測精度"
   }
