@@ -1,0 +1,262 @@
+{
+  "checkedAt": "2026-11-03T11:01:04.160Z",
+  "scope": "Report HTML only; not product-runtime or career-metric verification",
+  "artifact": "brief.export.html",
+  "browser": "Chromium 1243 via Playwright 1.61.0",
+  "offline": true,
+  "pages": 4,
+  "sourceCards": 23,
+  "layoutCases": [
+    {
+      "width": 1280,
+      "language": "zh-TW",
+      "theme": "light",
+      "page": 1,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "zh-TW",
+      "theme": "light",
+      "page": 2,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "zh-TW",
+      "theme": "light",
+      "page": 3,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "zh-TW",
+      "theme": "light",
+      "page": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "zh-TW",
+      "theme": "dark",
+      "page": 1,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "zh-TW",
+      "theme": "dark",
+      "page": 2,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "zh-TW",
+      "theme": "dark",
+      "page": 3,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "zh-TW",
+      "theme": "dark",
+      "page": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "en",
+      "theme": "light",
+      "page": 1,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "en",
+      "theme": "light",
+      "page": 2,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "en",
+      "theme": "light",
+      "page": 3,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "en",
+      "theme": "light",
+      "page": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "en",
+      "theme": "dark",
+      "page": 1,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "en",
+      "theme": "dark",
+      "page": 2,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "en",
+      "theme": "dark",
+      "page": 3,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1280,
+      "language": "en",
+      "theme": "dark",
+      "page": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "zh-TW",
+      "theme": "light",
+      "page": 1,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "zh-TW",
+      "theme": "light",
+      "page": 2,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "zh-TW",
+      "theme": "light",
+      "page": 3,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "zh-TW",
+      "theme": "light",
+      "page": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "zh-TW",
+      "theme": "dark",
+      "page": 1,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "zh-TW",
+      "theme": "dark",
+      "page": 2,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "zh-TW",
+      "theme": "dark",
+      "page": 3,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "zh-TW",
+      "theme": "dark",
+      "page": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "theme": "light",
+      "page": 1,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "theme": "light",
+      "page": 2,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "theme": "light",
+      "page": 3,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "theme": "light",
+      "page": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "theme": "dark",
+      "page": 1,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "theme": "dark",
+      "page": 2,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "theme": "dark",
+      "page": 3,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "theme": "dark",
+      "page": 4,
+      "horizontalOverflow": false
+    }
+  ],
+  "sourceNavigation": true,
+  "keyboardNavigation": true,
+  "printShowsAllPages": true,
+  "brokenAnchorNegativeControl": true,
+  "pageErrors": [],
+  "networkRequests": [],
+  "screenshots": [
+    "checks/desktop.png",
+    "checks/mobile.png"
+  ],
+  "initialAttempt": {
+    "outcome": "navigation wait timed out",
+    "diagnosis": "Hash updated before the visible page and current index; rapid arrow key used stale state",
+    "repair": "Update the page synchronously before updating the hash",
+    "sameRapidNavigationNowPassed": true
+  },
+  "sourceFingerprintsUnchanged": 23,
+  "protectedTrackedFilesUnchanged": 88,
+  "authorReview": {
+    "documentationImpact": "independent review required",
+    "designSource": "existing content/design-tokens.json",
+    "deslop": "Reviewed HTML/CSS/JS scope; no unrelated hunks or retained code comments; page navigation helper has five callers",
+    "prose": "technical-writing and unslop applied"
+  },
+  "artifactSha256": "8a3572694b4f9a7b58bccecf91feb23c1d5791b9c3ee45c848e025f7288c7b19",
+  "printDarkThemeReadable": true,
+  "stagedWhitespaceIssue": "Removed 70 trailing spaces on blank numbered excerpt lines; source files unchanged; browser checks rerun"
+}

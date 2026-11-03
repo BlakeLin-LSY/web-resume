@@ -1,0 +1,35 @@
+=== zh-TW | PDF page 1 / 1 | raw pypdf extraction ===
+Ssu-Yuan Lin (Blake)
+AI Software Engineer
+ssu.yuan.lin@gmail.com · github.com/BlakeLin-LSY · blakelin-lsy.github.io/web-resume
+軟體⼯程師，具  3 年以上  ML 訓練、電腦視覺與軟硬體整合經驗。近期個⼈作品是⼀套雙語研究閱讀⼯具，以
+及將錄⾳轉成可編輯⽂字的  Android 應⽤。
+專業經歷
+DynaSafe Corp. · Senior AI Engineer 2026-01 – 2026-04
+分析資料載⼊瓶頸並重建訓練資料流程，將模型訓練速度提升  10 倍。
+以真實  PCAP 資料調整  Nvidia Morpheus 網路異常偵測流程；將  PhysicsNeMo 訓練流程應⽤於
+OpenFOAM CFD 案例。
+MetGauge Co., Ltd. · Software Engineer 2023-09 – 2024-08
+將  C++ ∕ Python 3D 量測原型推進到⼯廠上線前測試，整合  12 組⽴體攝影機。
+負責系統設計、軟硬體整合與邊界測試，依測試結果協助跨部⾨硬體調校。
+雲端運算課程  · Google Grow with Google 計畫 2022-04 – 2023-08
+UTECHZONE Corp. · Algorithm Engineer 2021-06 – 2022-03
+開發  C# ⾃動光學檢測演算法，將產線  AOI 檢測週期縮短  40% 。
+指導兩位⼯程師，與  10 ⼈以上跨部⾨團隊完成系統整合。
+空檔年  · ⼾外活動與線上學習 2020-04 – 2021-05
+LIPS Corporation · Software Engineer, Algorithm Development 2019-07 – 2020-04
+改良量測演算法並校正  Intel RealSense D415 ∕ D435 ⽴體攝影機，將即時  3D 量測精度提升  66% 。
+個⼈作品
+Study Atlas
+把研究內容整理成中英雙語卡⽚，提供簡短與深⼊兩種閱讀路線。加⼊閱讀預算檢查，讓超出預算的⽅案在交付
+前退回修訂。
+Transcribe-for-X
+開發  Android 原型，先保存錄⾳，再進⾏本機語⾳辨識。原始逐字稿與清理建議分開保留，使⽤者可逐項接受
+或拒絕刪除。
+核⼼技能
+Python · C++ · C# · ML pipeline · 電腦視覺
+效能分析  · ⽴體攝影機校正  · 軟硬體整合  · 測試設計
+學歷與早期研究
+物理學碩⼠ · 國⽴中央⼤學  · 2016 – 2018
+物理學學⼠ · 國⽴中央⼤學  · 2012 – 2016
+研究助理  · 國⽴中央⼤學  · 2018-09 – 2019-01

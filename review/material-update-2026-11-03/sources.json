@@ -1,0 +1,819 @@
+{
+  "capturedAt": "2026-11-03T18:44:23.772372+08:00",
+  "scope": "只更新報告；網站、PDF、外部來源均不修改。",
+  "repositories": {
+    "webresume": {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume",
+      "head": "3dbbb9935637e7a62d177e191d5948fdc4969c03",
+      "statusAtRead": "?? records/2026-11-03-pdf-source-audit.md\n?? review/pdf-audit-2026-11-03/"
+    },
+    "career": {
+      "path": "/home/blake_u2204/projects/career-ops-repo",
+      "head": "6268534d2a9f4c24aecb57411151b21ea7ceffc9",
+      "statusAtRead": "M DEPENDENCY.md\n M RUNBOOK.md\n M check-liveness.mjs\n M docs/pipeline_architecture_map.md\n M interview-prep/story-bank.md\n M lint-cv.js\n M liveness-core.mjs\n M merge-tracker.mjs\n M render-job-v2.mjs\n M scan.mjs\n M test-all.mjs\n?? .audit/\n?? SESSION.md\n?? article-digest.md\n?? data/cover-letters/cl-amazon-ring-ai-sde-10589556.md\n?? data/cover-letters/cl-ambarella-autonomous-driving.md\n?? data/cover-letters/cl-anvil-data-collection.md\n?? data/cover-letters/cl-appier-ml-scientist-modeling-evaluation.md\n?? data/cover-letters/cl-apple-agent-harness-200688056.md\n?? data/cover-letters/cl-apple-image-quality-200686669.md\n?? data/cover-letters/cl-apple-sensing-algorithm-200684287.md\n?? data/cover-letters/cl-artilux-senior-engineer-data-scientist.md\n?? data/cover-letters/cl-asus-aics-computer-vision-rd.md\n?? data/cover-letters/cl-binance-pioneer-applied-ai-agent-2026-10-18.md\n?? data/cover-letters/cl-bjak-ai-neobank.md\n?? data/cover-letters/cl-bjak-applied-ai-finance-agent.md\n?? data/cover-letters/cl-canner-wrenai-corrected.md\n?? data/cover-letters/cl-citetek-algorithm-research.md\n?? data/cover-letters/cl-etched-supercomputing-test.md\n?? data/cover-letters/cl-fintech-quant-ai-data-scientist.md\n?? data/cover-letters/cl-google-ai-infrastructure-xr.md\n?? data/cover-letters/cl-google-applied-ai-pixel-watch.md\n?? data/cover-letters/cl-google-generative-ai-agent-pixel-quality-watch.md\n?? data/cover-letters/cl-google-image-processing-pixel-camera.md\n?? data/cover-letters/cl-google-isp-system-modeling.md\n?? data/cover-letters/cl-hp-agentic-ai.md\n?? data/cover-letters/cl-hud-forward-deployed-research-engineer.md\n?? data/cover-letters/cl-hud-qc-automation.md\n?? data/cover-letters/cl-hud-software-engineer-data-quality.md\n?? data/cover-letters/cl-jth-ai-product-builder.md\n?? data/cover-letters/cl-kla-algorithm-2638682.md\n?? data/cover-letters/cl-kla-senior-algorithm-2638585.md\n?? data/cover-letters/cl-kla-software-engineer-anchor-2640036.md\n?? data/cover-letters/cl-mediatek-ai-algorithm-cv-consumer-devices.md\n?? data/cover-letters/cl-mediatek-ai-automation-system-engineer.md\n?? data/cover-letters/cl-mediatek-ai-software-tool.md\n?? data/cover-letters/cl-mediatek-ai-system-architecture-analyst.md\n?? data/cover-letters/cl-mediatek-camera-isp-2026.md\n?? data/cover-letters/cl-mediatek-computer-vision-image-processing-edge-ai.md\n?? data/cover-letters/cl-mediatek-display-image-algorithm.md\n?? data/cover-letters/cl-mediatek-image-processing-algorithm-chupei.md\n?? data/cover-letters/cl-mediatek-image-processing-algorithm-engineer.md\n?? data/cover-letters/cl-mediatek-machine-learning-accelerator.md\n?? data/cover-letters/cl-mediatek-system-automation.md\n?? data/cover-letters/cl-mediatek-testing-automation.md\n?? data/cover-letters/cl-micron-ai-full-stack-corrected-2026-10-08.md\n?? data/cover-letters/cl-micron-ai-full-stack.md\n?? data/cover-letters/cl-microsoft-software-engineer-2-document-intelligence.md\n?? data/cover-letters/cl-microsoft-software-engineer-200057301.md\n?? data/cover-letters/cl-nvidia-gpu-server-jr2022680.md\n?? data/cover-letters/cl-qlo-applied-ai-builder.md\n?? data/cover-letters/cl-qualcomm-computer-vision-systems.md\n?? data/cover-letters/cl-qualcomm-qairt.md\n?? data/cover-letters/cl-realtek-video-algorithm-developer.md\n?? data/cover-letters/cl-retailnext-ml-vision-engineer.md\n?? data/cover-letters/cl-siliconmind-solutions-engineer-ai-chip-design.md\n?? data/cover-letters/cl-teradyne-ai-enablement-fde.md\n?? data/cover-letters/cl-trendai-ai-engineer-r0009569.md\n?? data/cover-letters/cl-trendai-applied-ai-engineer-r0009808.md\n?? data/cover-letters/cl-trendai-applied-ai-windows-agent-r0009663.md\n?? data/cover-letters/cl-trendai-linux-agent-r0007814.md\n?? data/cover-letters/cl-trendai-linux-agent-r0009756.md\n?? data/cover-letters/cl-trendai-linux-agent.md\n?? data/cv-amazon-ring-ai-sde-10589556.md\n?? data/cv-ambarella-autonomous-driving.md\n?? data/cv-anvil-data-collection.md\n?? data/cv-appier-ml-scientist-modeling-evaluation.md\n?? data/cv-apple-agent-harness-200688056.md\n?? data/cv-apple-image-quality-200686669.md\n?? data/cv-apple-sensing-algorithm-200684287.md\n?? data/cv-artilux-senior-engineer-data-scientist.md\n?? data/cv-asus-aics-computer-vision-rd.md\n?? data/cv-binance-pioneer-applied-ai-agent-2026-10-18.md\n?? data/cv-bjak-ai-neobank.md\n?? data/cv-bjak-applied-ai-finance-agent.md\n?? data/cv-canner-wrenai-corrected.md\n?? data/cv-citetek-algorithm-research.md\n?? data/cv-etched-supercomputing-test.md\n?? data/cv-fintech-quant-ai-data-scientist.md\n?? data/cv-google-ai-infrastructure-xr.md\n?? data/cv-google-applied-ai-pixel-watch.md\n?? data/cv-google-generative-ai-agent-pixel-quality-watch.md\n?? data/cv-google-image-processing-pixel-camera.md\n?? data/cv-google-isp-system-modeling.md\n?? data/cv-hp-agentic-ai.md\n?? data/cv-hud-forward-deployed-research-engineer.md\n?? data/cv-hud-qc-automation.md\n?? data/cv-hud-software-engineer-data-quality.md\n?? data/cv-jth-ai-product-builder.md\n?? data/cv-kla-algorithm-2638682.md\n?? data/cv-kla-senior-algorithm-2638585.md\n?? data/cv-kla-software-engineer-anchor-2640036.md\n?? data/cv-latest-en.md\n?? data/cv-latest-zhtw.md\n?? data/cv-mediatek-ai-algorithm-cv-consumer-devices.md\n?? data/cv-mediatek-ai-automation-system-engineer.md\n?? data/cv-mediatek-ai-software-tool.md\n?? data/cv-mediatek-ai-system-architecture-analyst.md\n?? data/cv-mediatek-camera-isp-2026.md\n?? data/cv-mediatek-computer-vision-image-processing-edge-ai.md\n?? data/cv-mediatek-display-image-algorithm.md\n?? data/cv-mediatek-image-processing-algorithm-chupei.md\n?? data/cv-mediatek-image-processing-algorithm-engineer.md\n?? data/cv-mediatek-machine-learning-accelerator.md\n?? data/cv-mediatek-system-automation.md\n?? data/cv-mediatek-testing-automation.md\n?? data/cv-micron-ai-full-stack-corrected-2026-10-08.md\n?? data/cv-micron-ai-full-stack.md\n?? data/cv-microsoft-software-engineer-2-document-intelligence.md\n?? data/cv-microsoft-software-engineer-200057301.md\n?? data/cv-nvidia-gpu-server-jr2022680.md\n?? data/cv-qlo-applied-ai-builder.md\n?? data/cv-qualcomm-computer-vision-systems.md\n?? data/cv-qualcomm-qairt.md\n?? data/cv-realtek-video-algorithm-developer.md\n?? data/cv-retailnext-ml-vision-engineer.md\n?? data/cv-siliconmind-solutions-engineer-ai-chip-design.md\n?? data/cv-teradyne-ai-enablement-fde.md\n?? data/cv-trendai-ai-engineer-r0009569.md\n?? data/cv-trendai-applied-ai-engineer-r0009808.md\n?? data/cv-trendai-applied-ai-windows-agent-r0009663.md\n?? data/cv-trendai-linux-agent-r0007814.md\n?? data/cv-trendai-linux-agent-r0009756.md\n?? data/cv-trendai-linux-agent.md\n?? data/cv-wipro-ai-agent-systems-2026-10-12-v2.md\n?? data/cv-wipro-ai-agent-systems-2026-10-12.md\n?? data/outreach-ascension-cloud-data-ai-foundations.md\n?? data/outreach-compensation-qualification-2026-10-09.md\n?? data/outreach-joinjoy-cloud-infrastructure-security.md\n?? data/profile-refresh-2026-07-29/\n?? interview-prep/amd-taiwan-application-brief-2026-09-30.md\n?? interview-prep/anvil-robotics-company-research-2026-10-10.md\n?? interview-prep/applied-packet-claim-defense.md\n?? interview-prep/artilux-senior-engineer-data-scientist.md\n?? interview-prep/bilingual-expert-eli5-interview-depth-guide-2026-09-30.md\n?? interview-prep/binance-pioneer-applied-ai-agent-2026-10-18.md\n?? interview-prep/brightest-image-processing-software-engineer-research-2026-10-10.md\n?? interview-prep/canner-wrenai-sr-ai-software-engineer-screen.md\n?? interview-prep/career-continuity-defense.md\n?? interview-prep/career-continuity-quick-card.md\n?? interview-prep/career-preparation-read-first-2026-09-29.md\n?? interview-prep/career-status-brief-2026-10-16.html\n?? interview-prep/current-high-fit-openings-2026-10-15.md\n?? interview-prep/daily-opening-delta-2026-10-23.md\n?? interview-prep/daily-opening-delta-2026-10-24.md\n?? interview-prep/daily-opening-delta-2026-10-25.md\n?? interview-prep/daily-opening-delta-2026-10-26.md\n?? interview-prep/daily-opening-delta-2026-10-27.md\n?? interview-prep/daily-opening-delta-2026-10-28.md\n?? interview-prep/daily-opening-delta-2026-10-29.md\n?? interview-prep/daily-opening-delta-2026-10-30.md\n?? interview-prep/daily-opening-delta-2026-10-31.md\n?? interview-prep/daily-opening-delta-2026-11-01.md\n?? interview-prep/daily-opening-delta-2026-11-02.md\n?? interview-prep/daily-opening-delta-2026-11-03.md\n?? interview-prep/gap-evidence-verification-matrix-2026-09-29.md\n?? interview-prep/google-final-application-review-2026-09-16.md\n?? interview-prep/google-priority-application-pack-2026-09-16.md\n?? interview-prep/google-six-role-review-2026-09-24.md\n?? interview-prep/high-risk-skill-gap-defense.md\n?? interview-prep/individual-story-technical-deep-dives-2026-09-30.md\n?? interview-prep/interview-story-scripts-2026-09-29.md\n?? interview-prep/kla-software-engineer-anchor-2640036.md\n?? interview-prep/mediatek-ai-software-tool-engineer.md\n?? interview-prep/mediatek-image-processing-algorithm-research-2026-10-10.md\n?? interview-prep/micron-jr108412-material-correction-2026-10-08.md\n?? interview-prep/mock-interview-preparation-workbook-2026-09-30.md\n?? interview-prep/portfolio-outcomes-2026-10-30\n?? interview-prep/portfolio-outcomes-2026-10-30.pre-independent-repo/\n?? interview-prep/portfolio-project-briefs-2026-09-29.md\n?? interview-prep/priority-roles-deep-review-2026-10-20.md\n?? interview-prep/professional-story-verification-cards-2026-09-29.md\n?? interview-prep/side-project-evidence-matrix-2026-09-29.md\n?? interview-prep/siliconmind-solutions-engineer-ai-chip-design-2026-10-18.md\n?? interview-prep/six-week-career-preparation-plan-2026-09-29.md\n?? interview-prep/six-week-mock-interview-program-2026-09-29.md\n?? interview-prep/sre-online-chat-architecture-interview-guide.md\n?? interview-prep/taiwan-job-focus-shortlist-2026-10-09.md\n?? interview-prep/technical-story-library-2026-09-30/\n?? interview-prep/tier1-job-scan-2026-10-16.md\n?? interview-prep/top-tier-taiwan-job-ranking-2026-09-30.md\n?? interview-prep/top3-application-review-2026-10-16.md\n?? interview-prep/trendai-applied-ai-engineer-r0009808-deep-research-2026-10-08.md\n?? interview-prep/trendai-current-fit-and-ai-dlc-interview-brief-2026-10-15.md\n?? interview-prep/trendai-microsoft-google-openings-2026-10-20.md\n?? interview-prep/trendai-windows-agent-r0009663-deep-research-2026-10-15.md\n?? interview-prep/value-translation-defense.md\n?? interview-prep/wipro-python-developer-screen.md"
+    },
+    "atlas": {
+      "path": "/home/blake_u2204/projects/trivial-ideas/study-atlas",
+      "head": "4a3cdf99a38936bb7fc3fbfac4cf08521466d5e8",
+      "statusAtRead": ""
+    },
+    "tfx": {
+      "path": "/home/blake_u2204/projects/trivial-ideas/transcribe-for-x",
+      "head": "d9cb360fa42a7685319c81b12947644445481b66",
+      "statusAtRead": ""
+    }
+  },
+  "sources": [
+    {
+      "id": "C1",
+      "repository": "career",
+      "path": "/home/blake_u2204/projects/career-ops-repo/config/profile.yml",
+      "relativePath": "config/profile.yml",
+      "title": {
+        "zh-TW": "目前可使用的職涯說法",
+        "en": "Current career claim boundaries"
+      },
+      "kind": "canonical",
+      "bytes": 16108,
+      "sha256": "d0badef49a4a41f2fb5199a4f19746c6218b7a33453f0c590bbbfa8a5015a598",
+      "mtime": "2026-10-29T19:10:37.041048+08:00",
+      "head": "6268534d2a9f4c24aecb57411151b21ea7ceffc9",
+      "gitStatus": "",
+      "startLine": 75,
+      "endLine": 87,
+      "excerpt": "75:   proof_points:\n76:     - name: \"DynaSafe AI Pipelines\"\n77:       hero_metric: \"Diagnosed a PhysicsNeMo demo data-format loader bottleneck and reviewed a Claude-assisted change; separately adapted a Morpheus anomaly workflow on real PCAP input. The owner recalls an overall training-time improvement, but no baseline or comparison trace is preserved.\"\n78:       claim_boundary: \"Do not present the recalled 10x as a verified benchmark or imply Blake authored the loader rewrite; a Claude agent made the code change.\"\n79:     - name: \"MetGauge 3D Measurement System\"\n80:       hero_metric: \"Contributed to a 12-stereo-camera 3D measurement project advanced from MVP to factory-ready production testing\"\n81:       claim_boundary: \"Blake confirmed 2026-10-15 that the precise individual design, implementation, testing, and shared-work split is not recorded. Describe contribution to the cross-functional project and project-level scope; do not claim sole ownership of system design, hardware integration, or all test specifications.\"\n82:     - name: \"UTECHZONE AOI Algorithm\"\n83:       hero_metric: \"Developed a C# AOI algorithm for manufacturing-line inspection and quality checks\"\n84:       claim_boundary: \"Blake confirmed 2026-10-15 that the comparison baseline and calculation basis are not retained. Do not use the legacy percentage in candidate-facing materials until primary measurement evidence is recovered; do not infer throughput or measurement conditions.\"\n85:     - name: \"LIPS RealSense Metrology\"\n86:       hero_metric: \"Worked on real-time stereo-camera 3D-metrology algorithms, including calibration and algorithm redesign\"\n87:       claim_boundary: \"Blake confirmed 2026-10-15 that raw before/after values and the exact accuracy definition are not retained. Do not use the legacy percentage in candidate-facing materials until primary measurement evidence is recovered; do not infer values or measurement conditions.\""
+    },
+    {
+      "id": "C2",
+      "repository": "career",
+      "path": "/home/blake_u2204/projects/career-ops-repo/data/cv-decisions.md",
+      "relativePath": "data/cv-decisions.md",
+      "title": {
+        "zh-TW": "舊百分比的後續決定",
+        "en": "Decision superseding legacy percentages"
+      },
+      "kind": "decision",
+      "bytes": 7226,
+      "sha256": "aa92eaa761da6ec6a6c1f755313885f4c2cc12decc6885e06d6e209f05e6f4ff",
+      "mtime": "2026-10-18T05:27:28.480549+08:00",
+      "head": "6268534d2a9f4c24aecb57411151b21ea7ceffc9",
+      "gitStatus": "",
+      "startLine": 48,
+      "endLine": 54,
+      "excerpt": "48: ## 2026-10-18 — Evidence status of legacy UTECHZONE/LIPS percentages\n49: \n50: **Operational correction based on Blake's 2026-10-15 confirmation recorded in `data/career-status/AGENT-CONTEXT.md`:** the comparison basis/calculation record for UTECHZONE cycle time and the raw before/after values/metric definition for LIPS accuracy are not available. This supersedes the 2026-05-30 entry above for these two metrics.\n51: \n52: - Do **not** use the legacy UTECHZONE 40% or LIPS 66% figures as candidate-facing results in tailored CVs, cover letters, application answers, or interview scripts until primary measurement evidence is recovered.\n53: - Safe current framing: UTECHZONE — developed a C# AOI algorithm for manufacturing-line inspection and quality checks; LIPS — worked on real-time stereo-camera 3D-metrology algorithms, including camera calibration and algorithm redesign.\n54: - Do not infer metric definitions, baselines, before/after values, attribution, sample sizes, or quality guardrails. Keep `cv.md` as the canonical historical record unless Blake requests a master-CV edit; this decision governs use in new application materials."
+    },
+    {
+      "id": "C3",
+      "repository": "career",
+      "path": "/home/blake_u2204/projects/career-ops-repo/interview-prep/technical-story-library-2026-09-30/01-dynasafe-training-pipeline.md",
+      "relativePath": "interview-prep/technical-story-library-2026-09-30/01-dynasafe-training-pipeline.md",
+      "title": {
+        "zh-TW": "DynaSafe 的程式分工",
+        "en": "DynaSafe code contribution boundary"
+      },
+      "kind": "owner-record",
+      "bytes": 30244,
+      "sha256": "64f4ef826615c5cc3db7acf08cf63d78873fd2a286296db90e5ebbf67f8f33ea",
+      "mtime": "2026-10-08T21:57:03.346646+08:00",
+      "head": "6268534d2a9f4c24aecb57411151b21ea7ceffc9",
+      "gitStatus": "?? interview-prep/technical-story-library-2026-09-30/01-dynasafe-training-pipeline.md",
+      "startLine": 109,
+      "endLine": 129,
+      "excerpt": "109: ### 2026-10-08 — 資料格式載入實作澄清\n110: \n111: Owner 原話：\n112: \n113: > The module load the data format part, rewrite the loading part to a more efficient way intead of using the original use case from the physicsnemo training demo repo\n114: \n115: 實作範圍是 PhysicsNeMo training demo 的資料格式載入部分；依後續分工澄清，程式改寫由 Claude agent 處理，本人負責定位問題、指定最佳化方向與判斷結果。不得寫成本人親自重寫 loader。資料格式、原 API／library、新實作與減少的工作仍待原始紀錄確認。\n116: \n117: ### 2026-10-08 — 本人與 Claude 的分工澄清\n118: \n119: Owner 原話：\n120: \n121: > I don't remember exactly, since that part of code are handled by the llm agent (claude). I only decide and make sure it work on the right direction and point to the right place optimization, such as the memory bounded slow speed for the whole training pipeline.\n122: \n123: 本人可主張的責任是問題定位、方向決策與結果判斷；具體 loader 程式由 Claude agent 修改。尚未確認本人採用哪些驗證訊號或品質檢查；「memory bounded」保留為本人用語，不據此斷定記憶體頻寬是已驗證的根因。\n124: \n125: ### Owner 原話\n126: \n127: > At then, we have a request to train for CFD model with the nvidia PhysicsNeMo use case to simulate and speed up the heat flow simulation for the data center, trying to speed up the build up overall lifecycle with the help of physical heat flow simulation other than the old OpenFOAM simulator framework, but with the PhysicsNeMo to give faster rough simulation result, and redering on the Omniverse platform.\n128: >\n129: > The original model have some openfoam simulation data, however, we want to reproduce and verify if that can apply for the customized use case in our case, that is, we need to generate the simulated data from the OpenFoam to give the customized training and verification data to the PhysicsNeMo and know the whole training pipeline, and outcomes. To see if the PhysicsNeMo can do the speed up of simulation and give the expected predictions for reducing the simulation time with the older openfoam iteration with timesteps with computation and simulation. --> Therefore, we build up and learn for generating and have the openfoam case to simulate different timesteps, variables for the training data for the physicsNeMo."
+    },
+    {
+      "id": "C4",
+      "repository": "career",
+      "path": "/home/blake_u2204/projects/career-ops-repo/interview-prep/technical-story-library-2026-09-30/04-metgauge-multicamera-integration.md",
+      "relativePath": "interview-prep/technical-story-library-2026-09-30/04-metgauge-multicamera-integration.md",
+      "title": {
+        "zh-TW": "MetGauge 的分工與相機單位",
+        "en": "MetGauge ownership and camera-count limits"
+      },
+      "kind": "owner-record",
+      "bytes": 10210,
+      "sha256": "32114467cafc6cc10e7866741b991970b14aa8509412dd1f18531dda64d0135f",
+      "mtime": "2026-10-15T14:19:10.860530+08:00",
+      "head": "6268534d2a9f4c24aecb57411151b21ea7ceffc9",
+      "gitStatus": "?? interview-prep/technical-story-library-2026-09-30/04-metgauge-multicamera-integration.md",
+      "startLine": 11,
+      "endLine": 26,
+      "excerpt": "11: **本人確認（2026-10-15）：**目前無紀錄可精確區分我個人親自設計、實作、測試，以及與硬體夥伴共同完成的範圍。可沿用 CV 支持的整體工作主題；不得把系統設計、硬體整合或全部測試規格說成我單獨負責。除非找到分工或交付紀錄，否則不重問這項已確認無紀錄的 ownership 細節。\n12: \n13: ### 30 秒版本\n14: \n15: > 我在 MetGauge 參與一項多相機 3D 量測專案，系統從 MVP 推進到 factory-ready production testing。專案涵蓋系統設計、軟硬體整合、boundary conditions 與測試規格；我目前沒有保存精確的個人／共同工作拆分，因此不宣稱每項工作均由我主責。\n16: \n17: ### 展開版本 — 細節補齊後再練到 90 秒\n18: \n19: 在 MetGauge，我參與一項 3D 量測 MVP 專案，成果階段為 factory-ready production testing。CV 將專案範圍記為 12-stereo-camera production line；團隊工作涵蓋系統設計、硬體整合、邊界條件探索、測試規格與資料分析。本人已確認目前沒有精確的個人／共同工作拆分紀錄，且確切相機／stereo pair 的計數方式仍需確認。\n20: \n21: 我可以用這段經驗說明演算法如何進入完整量測系統，以及軟體測試和硬體調整如何交接。現有結果是 factory-ready production testing，不是已正式量產或持續維運。下一步需要補一個真實整合問題、我的判斷與交付，以及工廠驗收的具體標準。\n22: \n23: ### 分工與證據\n24: \n25: - **分工：**本人確認目前無精確 ownership 拆分紀錄。只能將系統設計、硬體整合、測試規格與分析描述為團隊專案範圍；不推定上述各項均由本人親自執行或單獨主責。\n26: - **待補：**相機數量定義；具體 integration issue；測試規格與 pass/fail；進入 factory testing 的依據。"
+    },
+    {
+      "id": "A1",
+      "repository": "atlas",
+      "path": "/home/blake_u2204/projects/trivial-ideas/study-atlas/AGENTS.md",
+      "relativePath": "AGENTS.md",
+      "title": {
+        "zh-TW": "Study Atlas 的產品核心",
+        "en": "Study Atlas product nucleus"
+      },
+      "kind": "canonical",
+      "bytes": 18955,
+      "sha256": "ea3cf744991e3f81df51f98e274c2f974a6262bf8fada4d528e9ca35069988fd",
+      "mtime": "2026-10-19T19:04:02.359230+08:00",
+      "head": "4a3cdf99a38936bb7fc3fbfac4cf08521466d5e8",
+      "gitStatus": "",
+      "startLine": 21,
+      "endLine": 42,
+      "excerpt": "21: [`references/evidence-levels.md`](references/evidence-levels.md).\n22: \n23: ## Recipe routing and project anchor\n24: \n25: **產品 End-Anchor：u1 透過任一支援介面（terminal agent 或 OpenAB Discord bot）提出\n26: 可支援的 repo／paper／web source／topic 或多來源研究需求；同一套 Study Atlas\n27: execution 交回可追溯材料、digest／閱讀稿與經檢查的 HTML representation，並保留\n28: feedback 與 truthful failure。介面、OpenAB、agent 與 model 是安全關鍵但可替換的\n29: execution plane。**\n30: \n31: **Goal nucleus：一個 supported request，無論從哪個介面進入，都必須成為一份可信、\n32: 可檢查、可回饋的 study delivery。** 共用邊界是\n33: `StudyRequest → StudyExecution → VerifiedStudyResult`。\n34: \n35: > This anchor was interface-bound to Discord until 2026-09-16. The 2026-09-07\n36: > product re-anchor had already restored it to interface-neutral in\n37: > [`CURRENT_STATE.md`](CURRENT_STATE.md) and [`WORKSTREAMS.md`](WORKSTREAMS.md),\n38: > but this file — the only one an agent is *forced* to read — kept the older\n39: > wording, so a cold start was routed toward the Discord plane rather than toward\n40: > a study. The two files that already agreed are the source; this is the\n41: > correction, not a new decision.\n42: "
+    },
+    {
+      "id": "A2",
+      "repository": "atlas",
+      "path": "/home/blake_u2204/projects/trivial-ideas/study-atlas/references/tiering.md",
+      "relativePath": "references/tiering.md",
+      "title": {
+        "zh-TW": "分層閱讀的正式定義",
+        "en": "Canonical condensation tiers"
+      },
+      "kind": "canonical",
+      "bytes": 4948,
+      "sha256": "651061b80226ce8abf1bfa22db4508edf5093cddf98863f234fa9f2a65b8186a",
+      "mtime": "2026-10-19T16:56:34.585485+08:00",
+      "head": "4a3cdf99a38936bb7fc3fbfac4cf08521466d5e8",
+      "gitStatus": "",
+      "startLine": 6,
+      "endLine": 25,
+      "excerpt": "6: \n7: ## Why tiers are condensation filters, not speech lengths\n8: \n9: A one-minute read (T1) is not a truncated thirty-minute study. It is the highest-density\n10: condensation that **opens with the core takeaway and decision pivots**; the five-minute\n11: read (T5) connects the major components into a coherent storyline; the thirty-minute\n12: read (T30) walks the full derivations, mechanics, and technical boundaries.\n13: \n14: The time periods (T1, T5, T30) are **rough classification criteria and filters for\n15: condensing the study report** according to reader cognitive bandwidth, not a spoken\n16: speech timer or rehearsal script. The design splits two axes:\n17: \n18: ```text\n19: 內容軸(SSOT)            敘事軸\n20: notes/<id>.md            TALK.md\n21: ├ tier                   ├ ## T1   [id 順序]\n22: └ 形態由 TALK 決定        ├ ## T5   [id 順序]\n23:                          └ ## T30  [id 順序]\n24: ```\n25: "
+    },
+    {
+      "id": "A3",
+      "repository": "atlas",
+      "path": "/home/blake_u2204/projects/trivial-ideas/study-atlas/references/personas.json",
+      "relativePath": "references/personas.json",
+      "title": {
+        "zh-TW": "六個分析視角的來源",
+        "en": "Six analysis lenses"
+      },
+      "kind": "canonical",
+      "bytes": 8450,
+      "sha256": "5c335feab218a0d54ff9fd7435e46ecef73c1d06276d2f0521c446b3312d1f66",
+      "mtime": "2026-10-20T00:35:46.171467+08:00",
+      "head": "4a3cdf99a38936bb7fc3fbfac4cf08521466d5e8",
+      "gitStatus": "",
+      "startLine": 1,
+      "endLine": 18,
+      "excerpt": "1: {\n2:   \"version\": \"2.0\",\n3:   \"canon_principle\": \"Poteto Orthogonal Cognitive Lenses: 6 mutually exclusive, exhaustive objective functions. Domain context is applied orthogonally to the perspective.\",\n4:   \"personas\": {\n5:     \"builder\": {\n6:       \"key\": \"builder\",\n7:       \"aliases\": [\"engineer\", \"eng\", \"tech\", \"architect\", \"systems\", \"pragmatist\", \"pragmatic\", \"devops\", \"tooling\", \"graphics-pipeline-lead\", \"agent-workflow-architect\", \"tooling-infrastructure-engineer\"],\n8:       \"objective\": \"Can it be constructed reliably, maintainably, and efficiently?\",\n9:       \"name\": {\n10:         \"zh\": \"架構工匠與系統建構者 (The Builder)\",\n11:         \"en\": \"The Builder: A systems architect and craftsman evaluating concrete mechanics, complexity, and operational reliability.\"\n12:       },\n13:       \"description\": {\n14:         \"zh\": \"目標函數：可構建性、代碼與系統人體工學、執行開銷、並發邊界、次日維運與故障恢復。\",\n15:         \"en\": \"Objective function: Constructibility, implementation mechanics, runtime footprint, concurrency bounds, day-2 operations, and failover.\"\n16:       },\n17:       \"question_template\": {\n18:         \"zh\": \"{subject} 的核心機制與資料結構如何具體運作，其在真實環境下的記憶體與計算開銷為何，有哪些邊界條件與故障復原局限？\","
+    },
+    {
+      "id": "A4",
+      "repository": "atlas",
+      "path": "/home/blake_u2204/projects/trivial-ideas/study-atlas/scripts/synthesize_study_ir.py",
+      "relativePath": "scripts/synthesize_study_ir.py",
+      "title": {
+        "zh-TW": "多份觀點合成的現有程式",
+        "en": "Existing synthesis implementation"
+      },
+      "kind": "implementation",
+      "bytes": 44173,
+      "sha256": "f9fa39bba53a28787d7e2a86ca58c285fe9e0bc3a778fe285b4057811fb00b81",
+      "mtime": "2026-10-20T03:45:31.273860+08:00",
+      "head": "4a3cdf99a38936bb7fc3fbfac4cf08521466d5e8",
+      "gitStatus": "",
+      "startLine": 56,
+      "endLine": 72,
+      "excerpt": "56: def synthesize_semantic_ir(\n57:     worker_runs: dict[str, dict[str, Any]],\n58:     compound_study_id: str,\n59: ) -> dict[str, Any]:\n60:     \"\"\"Synthesizes multiple worker StudySemanticIR dicts into one compound IR.\"\"\"\n61:     aligner = ClaimAligner(match_threshold=0.20)\n62:     clusters = aligner.align(worker_runs)\n63: \n64:     # Pick base template from the worker with the most comprehensive structure\n65:     best_worker = max(worker_runs.keys(), key=lambda w: len(worker_runs[w].get(\"cards\", [])))\n66:     base_ir = copy.deepcopy(worker_runs[best_worker])\n67: \n68:     # 1. Study metadata\n69:     base_ir[\"study_id\"] = compound_study_id\n70:     is_hexad = len(worker_runs) > 3 or any(k in worker_runs for k in (\"physicist\", \"visionary\", \"philosopher\"))\n71:     if \"metadata\" in base_ir and isinstance(base_ir[\"metadata\"], dict):\n72:         meta_title = base_ir[\"metadata\"].get(\"title\", {})"
+    },
+    {
+      "id": "A5",
+      "repository": "atlas",
+      "path": "/home/blake_u2204/projects/trivial-ideas/study-atlas/scripts/knowledge/lenses.py",
+      "relativePath": "scripts/knowledge/lenses.py",
+      "title": {
+        "zh-TW": "同源素材與視角配置",
+        "en": "Shared material and lens configuration"
+      },
+      "kind": "implementation",
+      "bytes": 61890,
+      "sha256": "00b7755261efa4f49b621de8ecf2475ef5a71a7a61f30fe54a98ba9c66258ea0",
+      "mtime": "2026-10-20T03:36:41.024253+08:00",
+      "head": "4a3cdf99a38936bb7fc3fbfac4cf08521466d5e8",
+      "gitStatus": "",
+      "startLine": 1,
+      "endLine": 12,
+      "excerpt": "1: #!/usr/bin/env python3\n2: \"\"\"Multi-Perspective Lens Engine & Shared Workspace Scheduler (WS-33 / Pipeline Upgrade).\n3: \n4: Implements:\n5: 1. Lens Quota Contract: Strict card quota & focus enforcement for Builder, Skeptic, and Strategist.\n6: 2. Lens Prompt Construction: Augments persona guidance with orthogonal quota and salience bounds.\n7: 3. Orthogonal Jaccard Similarity Checker: Verifies card title overlap < 30%.\n8: 4. Zero-Copy Shared Workspace Staging: Reuses single-pass intake across multiple lenses.\n9: \"\"\"\n10: from __future__ import annotations\n11: \n12: import copy"
+    },
+    {
+      "id": "A6",
+      "repository": "atlas",
+      "path": "/home/blake_u2204/projects/trivial-ideas/study-atlas/design/knowledge-construction.md",
+      "relativePath": "design/knowledge-construction.md",
+      "title": {
+        "zh-TW": "10 月 29 日的設計提醒",
+        "en": "October 29 design reminder"
+      },
+      "kind": "draft",
+      "bytes": 7896,
+      "sha256": "420a13fb3829587597e968b9ef5a8fc91bee85f52c12b7b013cd8ac45d283e2d",
+      "mtime": "2026-10-29T00:15:13.522937+08:00",
+      "head": "4a3cdf99a38936bb7fc3fbfac4cf08521466d5e8",
+      "gitStatus": "",
+      "startLine": 1,
+      "endLine": 18,
+      "excerpt": "1: # Knowledge Construction — 可追溯的建構與可交換材料\n2: \n3: > **提醒（2026-10-29 盤點）：** 這份草案放了兩個月，還沒核准。\n4: > - **原本要做的：** 讓每一項知識都能追溯到來源，分開標示「轉述是否忠實」「主張有多少支持」「誰在何時驗過」，信心不能只是一個高中低。\n5: > - **已經有的：** 內容一改，相依的紀錄就標 needs-review、視圖標 stale（`scripts/knowledge/revisions.py:146`、`impact.py`）；OKF 目前只用在 session 交接。\n6: > - **還缺的：** method 版本與來源 revision、「推導結論」型別、忠實度欄位、帶依據的信心分級、OKF 對映。整個 collection 沒有別的功能補上這些。\n7: > - **下一步：** 文末「Next」那一行的最小鏈，只用 LLaDA 一個來源走「來源 → atom → 結論」，改一個前提，看相依的評估會不會被標出來。\n8: > - **誰決定：** owner，在 study-atlas 自己的 session 決定要不要做那個 probe。沒有真實的使用需求之前，不做 OKF 匯出。\n9: \n10: 狀態：2026-08-27設計草案。使用者已接受建構包括理解、分析、檢查與合成，\n11: 要求逐項追溯、批判思考、第一性原理與信心標記。以下schema與OKF採用策略\n12: 尚未核准／實作，不重新詮釋現行node confidence欄位。\n13: \n14: ## 建構不是壓縮，也不是從零發明\n15: \n16: 每個具有研究意義的操作，應交代：**為何需要 → 依據什麼 → 做了什麼轉換\n17: → 產出什麼 → 怎麼檢查 → 哪些条件會使它失效。** 記錄外顯論據與artifact\n18: 依賴，不記錄或要求模型私有chain-of-thought。"
+    },
+    {
+      "id": "A7",
+      "repository": "atlas",
+      "path": "/home/blake_u2204/projects/trivial-ideas/study-atlas/records/2026-10-20-poteto-orthogonal-personas-and-compound-synthesis-closure.md",
+      "relativePath": "records/2026-10-20-poteto-orthogonal-personas-and-compound-synthesis-closure.md",
+      "title": {
+        "zh-TW": "10 月 20 日的歷史收據",
+        "en": "October 20 historical receipt"
+      },
+      "kind": "receipt",
+      "bytes": 10153,
+      "sha256": "01e1781b40aa7187539d4dc655b77e6cc62046add81c07aca781b742ab36babe",
+      "mtime": "2026-10-20T01:14:18.966462+08:00",
+      "head": "4a3cdf99a38936bb7fc3fbfac4cf08521466d5e8",
+      "gitStatus": "",
+      "startLine": 46,
+      "endLine": 58,
+      "excerpt": "46:   3. 複合金成管線與三大成果產出：在 `scripts/synthesize_study_ir.py` 與 `scripts/knowledge/alignment.py` 實作語意對齊與去重合併，成功合成 2026-GATOR（27 卡片）、poteto-noodle（24 卡片）與 dynamic-ontology（29 卡片）三份複合研究並渲染 V1.0 HTML。\n47:   4. 全量驗證與度量自愈：單元測試自 801 項擴充至 809 項全數通過，30 項偵測器門禁 PASS=30 FAIL=0，圖譜門禁 0 blocking，度量檔案自動更新同步。\n48:   5. 實機規範與提示詞機制加固：驗證 host agy 與 codex 派工鏈路，實作顯著性過濾準則（Salience Criteria）與評分規則編譯注入提示詞，並建立 CLI 視角差分比較器。\n49: \n50: ---\n51: \n52: <a id=\"timeline\"></a>\n53: ## 🕰️ Timeline\n54: \n55: 1. **Phase 1 — 複合金成管線探索與成果實作（Compound Synthesis Pipeline）**：\n56:    - 深入分析多 Worker 獨立研究在廣度與深度上的互補優勢與局限。\n57:    - 建立 `scripts/knowledge/alignment.py` 語意對齊器與 `scripts/synthesize_study_ir.py` 複合金成器。\n58:    - 針對 GATOR、noodle、Dynamic Ontology 跑通語意合併，產出帶跨 Worker 來源標籤的複合語意 IR。"
+    },
+    {
+      "id": "A8",
+      "repository": "atlas",
+      "path": "/home/blake_u2204/projects/trivial-ideas/study-atlas/tests/test_dialectical_synthesis.py",
+      "relativePath": "tests/test_dialectical_synthesis.py",
+      "title": {
+        "zh-TW": "合成相關測試的實際範圍",
+        "en": "Actual scope of synthesis tests"
+      },
+      "kind": "test-source",
+      "bytes": 13069,
+      "sha256": "af4debfa06402e226efdd922de73f8346c8d9a4680ae4e17fe0667c052f9891a",
+      "mtime": "2026-10-20T03:37:31.312757+08:00",
+      "head": "4a3cdf99a38936bb7fc3fbfac4cf08521466d5e8",
+      "gitStatus": "",
+      "startLine": 26,
+      "endLine": 47,
+      "excerpt": "26: class DialecticalSynthesisTests(unittest.TestCase):\n27:     \"\"\"Verifies lens quotas, zero-copy staging, dialectical edges, and orthogonality.\"\"\"\n28: \n29:     def test_relations_includes_bounds(self):\n30:         \"\"\"Invariant: RELATIONS must accept 'bounds' for Skeptic-to-Builder links.\"\"\"\n31:         self.assertIn(\"bounds\", RELATIONS)\n32:         self.assertIn(\"depends-on\", RELATIONS)\n33: \n34:     def test_lens_quota_contract(self):\n35:         \"\"\"Contract: Builder 3-4, Skeptic 3-4, Strategist 2-3.\"\"\"\n36:         builder = get_lens_contract(\"builder\")\n37:         skeptic = get_lens_contract(\"skeptic\")\n38:         strategist = get_lens_contract(\"strategist\")\n39: \n40:         self.assertEqual(builder[\"min_cards\"], 3)\n41:         self.assertEqual(builder[\"max_cards\"], 4)\n42:         self.assertEqual(skeptic[\"min_cards\"], 3)\n43:         self.assertEqual(skeptic[\"max_cards\"], 4)\n44:         self.assertEqual(strategist[\"min_cards\"], 2)\n45:         self.assertEqual(strategist[\"max_cards\"], 3)\n46: \n47:         self.assertIn(\"mechanisms\", builder[\"prompt_instruction\"])"
+    },
+    {
+      "id": "A9",
+      "repository": "atlas",
+      "path": "/home/blake_u2204/projects/trivial-ideas/study-atlas/CURRENT_STATE.md",
+      "relativePath": "CURRENT_STATE.md",
+      "title": {
+        "zh-TW": "10 月 20 日的狀態摘要",
+        "en": "October 20 state summary"
+      },
+      "kind": "status",
+      "bytes": 34092,
+      "sha256": "5b5c78e528b02e0f9f5c901e9f94ed5a50b936423ae68acb258d6d76daa02568",
+      "mtime": "2026-10-20T00:47:58.822230+08:00",
+      "head": "4a3cdf99a38936bb7fc3fbfac4cf08521466d5e8",
+      "gitStatus": "",
+      "startLine": 14,
+      "endLine": 20,
+      "excerpt": "14: **Snapshot update, 2026-10-20 — 6 正交認知視角正典化、動態領域提問與跨 Worker 複合金成研讀結案：視角正交減法，複合金成成果交付，808 測試與 30 門禁全綠。**\n15: \n16: - 核心正典：落實 Poteto 減法原則，收斂讀者視角為 6 大正交目標函數（`builder`、`skeptic`、`strategist`、`physicist`、`visionary`、`philosopher`），建立 `references/personas.json` 並完整向下相容；實作多模態素材領域特徵啟發式感知與動態提問合成引擎（`scripts/knowledge/personas.py`），並嚴格保證使用者顯式參數優先級（Explicit Override Invariant）。\n17: - 複合金成交付：完成語意對齊器（`scripts/knowledge/alignment.py`）與複合金成管線（`scripts/synthesize_study_ir.py`）；為 GATOR（27 卡片）、noodle（24 卡片）與 Dynamic Ontology（29 卡片）產出複合成果並渲染 V1.0 HTML 互動交付件。\n18: - 驗證：新增 `tests/test_personas.py`，全套 808 項單元測試全數通過；`./scripts/test_detectors.sh` 30/30 全數 PASS；`python3 scripts/build_graph.py --gate` 0 blocking 通過；`check_metrics.py --check` PROCEED（808 test cases, 0 drift）。\n19: - 實機規範：完成本機 `agy` 與 `codex` 執行鏈路 dry-run 驗證，提供直接可用之實機執行指令。\n20: - 本場 capsule：[6 正交認知視角正典化、動態領域提問與跨 Worker 複合金成研讀結案](records/2026-10-20-poteto-orthogonal-personas-and-compound-synthesis-closure.md)。"
+    },
+    {
+      "id": "T1",
+      "repository": "tfx",
+      "path": "/home/blake_u2204/projects/trivial-ideas/transcribe-for-x/docs/01_PRODUCT_DEFINITION.md",
+      "relativePath": "docs/01_PRODUCT_DEFINITION.md",
+      "title": {
+        "zh-TW": "TFX 的產品核心",
+        "en": "TFX product nucleus"
+      },
+      "kind": "canonical",
+      "bytes": 9581,
+      "sha256": "1a6dc32d017848f124cc1ed3f2af66ae3c973fc780b3b18fec5c394a440356e3",
+      "mtime": "2026-10-08T17:44:11.956738+08:00",
+      "head": "d9cb360fa42a7685319c81b12947644445481b66",
+      "gitStatus": "",
+      "startLine": 48,
+      "endLine": 78,
+      "excerpt": "48: \n49: ## Working End Goal\n50: \n51: > **「幫我把尚未成形的意思，變成我真正想說的東西。」**\n52: \n53: ### Interpretation\n54: \n55: - **尚未成形** initially means speech that is real but noisy: filler, accidental\n56:   repetition, explicit self-correction, and incomplete punctuation.\n57: - In later modes it may also mean an idea whose intent is still unclear to the\n58:   owner.\n59: - **真正想說** is not a model's hidden-state judgment. It is the latest\n60:   owner-confirmed truth for use: a representation or projection mapping that the\n61:   owner recognizes, corrects, and accepts.\n62: - The system may later offer deductions, suggestions, or one to two candidate\n63:   intents, but it must expose them as proposals rather than owner-authored truth.\n64: - The phrase is a direction anchor. Its explanation may be corrected as real use\n65:   exposes a better boundary.\n66: \n67: ## Nucleus\n68: \n69: The common nucleus is **evidence-preserving, owner-confirmed transformation**:\n70: \n71: > Increase usefulness without taking authorship away from the owner.\n72: \n73: ```text\n74: voice evidence\n75:     → raw transcript\n76:     → inspectable transformation\n77:     → owner correction / approval\n78:     → latest confirmed projection for use"
+    },
+    {
+      "id": "T2",
+      "repository": "tfx",
+      "path": "/home/blake_u2204/projects/trivial-ideas/transcribe-for-x/DECISIONS.md",
+      "relativePath": "DECISIONS.md",
+      "title": {
+        "zh-TW": "雙模式共用核心的決定",
+        "en": "Two modes over one shared core"
+      },
+      "kind": "decision",
+      "bytes": 68754,
+      "sha256": "3eb73361c706492628f952baccd0d2621ca81d12ba1a9c16487176bd166152aa",
+      "mtime": "2026-10-09T15:01:53.591288+08:00",
+      "head": "d9cb360fa42a7685319c81b12947644445481b66",
+      "gitStatus": "",
+      "startLine": 562,
+      "endLine": 593,
+      "excerpt": "562: ### D-026 — Two modes over one shared core, from the first owner real use\n563: \n564: - **Date:** 2026-10-08\n565: - **Trigger:** Root `D-035` A, the owner's first real use. Owner's words: the\n566:   record-then-correct flow \"is still not smooth and intuitive\"; while speaking\n567:   the owner is \"thinking of what have spoken and thinking of what's the next\",\n568:   but the app \"only process all the audios after finish the full record\".\n569: - **Decision — two modes, one core:** (owner answers 1 c, 2 a, 2026-10-08)\n570:   - **Rubber-duck mode** — mostly \"talking to rubber duck, to clarify and clear\n571:     my thoughts\", long and \"extremely not fluent\". Words appear while speaking,\n572:     and stay in TFX's own workspace; nothing is inserted into another app. This\n573:     mode is where the current long-record version grows.\n574:   - **Walking-dictation mode** — \"replace the typeing with the speaking\" when\n575:     typing is unsuitable, e.g. walking. Short, continuous speech; priority is\n576:     filler cleanup. Delivered through a keyboard (IME) into other apps.\n577:   - Both modes reuse common core modules (segment capture, ASR, cleanup,\n578:     edit-pair log, retention); differences live in the mode layer.\n579: - **Decision — capture and recognition:** (owner Q2 A + addition) Words are\n580:   produced per segment while speaking. Each segment is persisted and\n581:   integrity-checked before ASR consumes it. After recording ends, the full\n582:   recording is reprocessed in the background \"to convert and transcribe the\n583:   words more consistantly\". (answer 3 a) In rubber-duck mode the reprocessed\n584:   text replaces the live text except where the owner has edited, and every\n585:   replacement is visible. In walking-dictation mode the inserted text is never\n586:   changed; reprocessing only produces evaluation data.\n587: - **Decision — feedback data:** (owner Q3 A + C) The keyboard logs, locally and\n588:   only when the owner opts in, edits made to its own just-inserted text while it\n589:   is open; the owner also reports manually. For each utterance three texts are\n590:   kept: live output, background reprocess, owner's final edit. This triple is the\n591:   intended evidence for `O-009`.\n592: - **Decision — retention:** (answer 4 a) Segment audio follows the `D-012` 30-day\n593:   rule. The text triples are kept until the owner deletes them. All data stays"
+    },
+    {
+      "id": "T3",
+      "repository": "tfx",
+      "path": "/home/blake_u2204/projects/trivial-ideas/transcribe-for-x/app/src/main/java/dev/trivialideas/transcribeforx/GemmaOrganizer.java",
+      "relativePath": "app/src/main/java/dev/trivialideas/transcribeforx/GemmaOrganizer.java",
+      "title": {
+        "zh-TW": "本機整理的現有程式",
+        "en": "Existing local organization implementation"
+      },
+      "kind": "implementation",
+      "bytes": 2413,
+      "sha256": "6fbdde0a02f4ec12f63e02b71a6207e9163cf6b76351416df3ef6dbc0b700a91",
+      "mtime": "2026-10-09T15:01:56.069730+08:00",
+      "head": "d9cb360fa42a7685319c81b12947644445481b66",
+      "gitStatus": "",
+      "startLine": 12,
+      "endLine": 42,
+      "excerpt": "12: final class GemmaOrganizer {\n13:     private static Engine engine;\n14: \n15:     static synchronized String organize(File model, File privateDirectory, String prompt) throws IOException {\n16:         if (engine == null) {\n17:             // No active engine uses these files; remove copies abandoned by process death.\n18:             File[] abandoned = privateDirectory.listFiles();\n19:             if (abandoned != null) for (File file : abandoned)\n20:                 if (file.getName().startsWith(\"gemma-\") && file.getName().endsWith(\".litertlm\"))\n21:                     java.nio.file.Files.delete(file.toPath());\n22:             File copy = OrganizedText.verifiedCopy(model, privateDirectory,\n23:                     OrganizedText.MODEL_BYTES, OrganizedText.MODEL_SHA256);\n24:             try {\n25:                 Engine candidate = new Engine(new EngineConfig(copy.getAbsolutePath(), new Backend.CPU()));\n26:                 engine = initialize(candidate, candidate::initialize);\n27:             } catch (RuntimeException | Error failure) {\n28:                 try { java.nio.file.Files.deleteIfExists(copy.toPath()); }\n29:                 catch (IOException cleanup) { failure.addSuppressed(cleanup); }\n30:                 throw failure;\n31:             }\n32:         }\n33:         try (Conversation conversation = engine.createConversation(new ConversationConfig())) {\n34:             String result = conversation.sendMessage(prompt).toString();\n35:             if (result.trim().isEmpty()) throw new IOException(\"整理模型未產生文字，請重試。\");\n36:             return result;\n37:         }\n38:     }\n39: \n40:     static <T extends AutoCloseable> T initialize(T candidate, Runnable initialize) {\n41:         try {\n42:             initialize.run();"
+    },
+    {
+      "id": "T4",
+      "repository": "tfx",
+      "path": "/home/blake_u2204/projects/trivial-ideas/transcribe-for-x/app/src/main/java/dev/trivialideas/transcribeforx/TextTripleStore.java",
+      "relativePath": "app/src/main/java/dev/trivialideas/transcribeforx/TextTripleStore.java",
+      "title": {
+        "zh-TW": "三份文字與已送出狀態",
+        "en": "Three text versions and delivery state"
+      },
+      "kind": "implementation",
+      "bytes": 13391,
+      "sha256": "5515bbd65a73091a0c23ded2284c2bb3cdc808e702eb221b1324d7c3e3476cf8",
+      "mtime": "2026-10-09T15:01:56.123950+08:00",
+      "head": "d9cb360fa42a7685319c81b12947644445481b66",
+      "gitStatus": "",
+      "startLine": 20,
+      "endLine": 45,
+      "excerpt": "20: /** One atomically replaced file per source; kept until the owner deletes it (D-026). */\n21: final class TextTripleStore {\n22:     // Activity and IME instances share one process-wide transaction lock.\n23:     private static final Object STORAGE_LOCK = new Object();\n24:     private static final String SUFFIX = \".txt\";\n25: \n26:     static final class Triple {\n27:         final String sourceId;\n28:         final String live;\n29:         final String reprocessed;\n30:         final String finalText;\n31:         final long updatedAtMillis;\n32:         final boolean ownerEdited;\n33:         /** Text the keyboard already inserted into another app; never rewritten (D-026). */\n34:         final boolean delivered;\n35: \n36:         Triple(String sourceId, String live, String reprocessed, String finalText,\n37:                long updatedAtMillis) {\n38:             this(sourceId, live, reprocessed, finalText, updatedAtMillis, finalText != null);\n39:         }\n40: \n41:         Triple(String sourceId, String live, String reprocessed, String finalText,\n42:                long updatedAtMillis, boolean ownerEdited) {\n43:             this(sourceId, live, reprocessed, finalText, updatedAtMillis, ownerEdited, false);\n44:         }\n45: "
+    },
+    {
+      "id": "T5",
+      "repository": "tfx",
+      "path": "/home/blake_u2204/projects/trivial-ideas/transcribe-for-x/CURRENT_STATE.md",
+      "relativePath": "CURRENT_STATE.md",
+      "title": {
+        "zh-TW": "10 月 19 日的 mock 測試紀錄",
+        "en": "October 19 mock test record"
+      },
+      "kind": "status",
+      "bytes": 57437,
+      "sha256": "78d4a804ea8b19dbc3ee828f72e68247f65985dd3f6f0b7b24a2f1bc0632e0ad",
+      "mtime": "2026-10-19T19:07:23.768993+08:00",
+      "head": "d9cb360fa42a7685319c81b12947644445481b66",
+      "gitStatus": "",
+      "startLine": 1,
+      "endLine": 12,
+      "excerpt": "1: # Current State\n2: \n3: **Latest checkpoint (2026-10-19, WS-06 S7 & mock evaluation closure, source `56815c7`):**\n4: WS-06 S7「整理」已完成並合入 `main`。Java source 與 target 維持 17，改以 JDK 21 工具鏈建置。對應 commits 為 `7a76c22` 與 `7f75c2e`，落實決策 `D-031 D1A`。\n5: 2.6 GB Gemma 4 E2B 模型已推送到 Pixel 6 內部儲存空間，並完成 SHA-256 核對，落實決策 `D-031 D3A`。\n6: 依據決策 `D-031 D2A`，允許透過 ADB 將內部評估匯出檔拉回電腦執行 `scripts/ws06/eval_triples.py`，該腳本僅輸出數字與 UUID。\n7: 依據質疑前提原則（Attack the Premise），廢除舊指南中要求 Owner 手動關閉麥克風的「第 0 步延遲跑分」儀式。\n8: 端到端管線與錯字率驗證改由本機 Mock Fixtures 與 Python 評估腳本全自動承接。執行 `scripts/stage_a/score.py` 驗證 15 組 canonical fixtures，MER 為 0.000 通過。執行 `scripts/ws06/test_eval_triples.py`，7 項單元測試全數通過。\n9: 實體 Pixel 6 僅保留給 Owner 在有空時進行純粹的體感試用，免除第 0 步手動關麥跑分儀式。\n10: 本機 SSOT 驗證門檻 `scripts/verify.py` 已修復，修正本機失效連結並更新 upstream pins sha256，達成 100% PASS。\n11: \n12: **Earlier 2026-09-29 checkpoint (superseded by the one above):** The Stage A"
+    },
+    {
+      "id": "T6",
+      "repository": "tfx",
+      "path": "/home/blake_u2204/projects/trivial-ideas/transcribe-for-x/records/2026-10-19-ws06-s7-mock-closure.md",
+      "relativePath": "records/2026-10-19-ws06-s7-mock-closure.md",
+      "title": {
+        "zh-TW": "雙模式與整理功能的收尾收據",
+        "en": "Two-mode and organization closure receipt"
+      },
+      "kind": "receipt",
+      "bytes": 6914,
+      "sha256": "c10a76f6bf6eb15641701673cc960c069cdaddfb99abf4109ff059b82c437bf3",
+      "mtime": "2026-10-19T19:23:32.603414+08:00",
+      "head": "d9cb360fa42a7685319c81b12947644445481b66",
+      "gitStatus": "",
+      "startLine": 1,
+      "endLine": 18,
+      "excerpt": "1: ---\n2: type: Chat Session Record\n3: title: WS-06 S7 合入與本機 Mock 閉環收尾 / WS-06 S7 Integration and Local Mock Evaluation Closure\n4: description: 完成 TFX 本機 SSOT 驗證門檻修復、S7 Gemma「整理」功能與 JDK 21 工具鏈狀態同步、本機 Mock Fixtures 與評估管線閉環驗證，並廢除實機手動關麥跑分儀式。\n5: status: stable\n6: tags:\n7:   - tfx\n8:   - mock-evaluation\n9:   - gemma\n10:   - jdk21\n11:   - ssot-verify\n12: generated:\n13:   by: agy/close-chat-session\n14:   at: 2026-10-19T19:15:00+08:00\n15: sources:\n16:   - id: detailed-session\n17:     resource: ../SESSION.md\n18:     title: Detailed session record"
+    },
+    {
+      "id": "T7",
+      "repository": "tfx",
+      "path": "/home/blake_u2204/projects/trivial-ideas/transcribe-for-x/docs/README.md",
+      "relativePath": "docs/README.md",
+      "title": {
+        "zh-TW": "TFX 正式材料的路由",
+        "en": "TFX canonical material router"
+      },
+      "kind": "canonical",
+      "bytes": 2526,
+      "sha256": "d573a8787adfbab8adf3de22d6075322f10c6d586aed97e664a8bd509df15588",
+      "mtime": "2026-10-06T01:30:39.429957+08:00",
+      "head": "d9cb360fa42a7685319c81b12947644445481b66",
+      "gitStatus": "",
+      "startLine": 1,
+      "endLine": 18,
+      "excerpt": "1: # Canonical SSOT Router\n2: \n3: Load only the source whose trigger matches the current task.\n4: \n5: | ID | Canonical source | Owns | Load when |\n6: |---|---|---|---|\n7: | `TFX-SSOT-001` | [`01_PRODUCT_DEFINITION.md`](01_PRODUCT_DEFINITION.md) | origin, motivation, intent, nucleus, End Goal, stage meanings | discussing what the product is or is not |\n8: | `TFX-SSOT-002` | [`02_ARCHITECTURE_AND_RESPONSIBILITIES.md`](02_ARCHITECTURE_AND_RESPONSIBILITIES.md) | implementation-neutral responsibilities, artifact lineage, dependency direction, KISS/DRY/Unix tests | designing system contracts or implementation placement |\n9: | `TFX-SSOT-003` | [`03_P0_ACCEPTANCE_CONTRACT.md`](03_P0_ACCEPTANCE_CONTRACT.md) | P0 scenario, observable acceptance and failure boundaries | planning, building, or evaluating P0 |\n10: | `TFX-SSOT-004` | [`04_PLATFORM_ADAPTERS.md`](04_PLATFORM_ADAPTERS.md) | cross-platform conformance meaning and desktop/mobile evaluation boundaries | choosing platform or runtime work |\n11: | `TFX-SSOT-005` | [`05_INTEGRATION_HORIZONS.md`](05_INTEGRATION_HORIZONS.md) | later Render, Rubber Duck, IntentForge, and AoE integration | discussing post-P0 expansion |\n12: | `TFX-SSOT-006` | [`06_AUTHORITY_AND_PROVENANCE.md`](06_AUTHORITY_AND_PROVENANCE.md) | owner-stated vs derived status and pinned external authority | asserting provenance or changing upstream relationships |\n13: | `TFX-GLOSSARY-001` | [`GLOSSARY.md`](GLOSSARY.md) | canonical project terms and aliases | a term is ambiguous or being added |\n14: \n15: ## Supporting research snapshots\n16: \n17: [`07_COMPARABLE_PRODUCTS_AND_TECH_OPTIONS.md`](07_COMPARABLE_PRODUCTS_AND_TECH_OPTIONS.md)\n18: (`TFX-RESEARCH-001`) is a dated, non-canonical product and technology evidence"
+    },
+    {
+      "id": "R1",
+      "repository": "webresume",
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/records/2026-11-03-pdf-source-audit.md",
+      "relativePath": "records/2026-11-03-pdf-source-audit.md",
+      "title": {
+        "zh-TW": "兩語 PDF 的完整盤點",
+        "en": "Complete bilingual PDF audit"
+      },
+      "kind": "audit",
+      "bytes": 29898,
+      "sha256": "64ec696c80eae621cb9945aaafc9df0e5d0a2b90e663e9c5a87514a2c84d1f67",
+      "mtime": "2026-11-03T18:31:24.938382+08:00",
+      "head": "3dbbb9935637e7a62d177e191d5948fdc4969c03",
+      "gitStatus": "?? records/2026-11-03-pdf-source-audit.md",
+      "startLine": 1,
+      "endLine": 21,
+      "excerpt": "1: # 雙語 PDF 職涯來源核對與最小替換方案\n2: \n3: 兩份下載 PDF 仍是 2026-10-07 選定的舊版本。檔案、manifest、候選稿、本機 build 輸出與離線 ZIP 一致，但內容尚未反映後續職涯澄清。可直接校正 DynaSafe 歸因、移除未有量測支持的成果數字，並收斂 MetGauge 的個人主導用語。MetGauge 的相機與 stereo pair 計數方式另需本人確認，不能自行把 12 解讀為 24 顆相機。\n4: \n5: 本輪只交付核對紀錄與方案。未更改 PDF、網站來源或輸出，未寫入 career repo，未 commit、push、部署或外聯。未重做 portfolio 盤點，未委派 agent 或呼叫模型 provider。\n6: \n7: ## 核對基準與證據層級\n8: \n9: - 工作目錄固定為 `/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume`。\n10: - 產品 HEAD 實讀為 `3dbbb9935637e7a62d177e191d5948fdc4969c03`，開始時工作樹乾淨。\n11: - career repo HEAD 實讀為 `6268534d2a9f4c24aecb57411151b21ea7ceffc9`，工作樹原本已有修改及未追蹤檔。本輪依目前磁碟內容核對，沒有假設所有來源都在該 commit 裡。\n12: - verification cards、DynaSafe 等 story files 與 article-digest 是 career repo 未追蹤內容，story-bank 已修改；其內容不能只用 career HEAD 重建。每份受引用來源的實際 bytes、SHA-256、mtime 與 Git 狀態保存在 [snapshot.json](../review/pdf-audit-2026-11-03/snapshot.json)。時間使用 Asia/Taipei。\n13: - 證據層級是「本機二進位身分／文字抽取／來源語意核對」。職涯來源中的本人回憶沒有因這次核對而升格成獨立 benchmark；本輪也沒有驗證公開網站、執行新 PDF 產生流程或完成新 PDF 視覺驗收。\n14: \n15: | 語言 | 實際 bytes | 頁數 | SHA-256 | manifest |\n16: |---|---:|---:|---|---|\n17: | English | 44,420 | 1 | `c0b5955e7467721b5d09b4942e0ef4354e782455baea6d2fb0de1888df76a137` | 相符 |\n18: | zh-TW | 550,969 | 1 | `8d0cfb30adeaac71b1aa2075319e8f43914ac80459162be968fe22323f10656f` | 相符 |\n19: \n20: 兩檔位於 `app/public/resume/`，檔名由 `content/resume-assets.json` 取得。兩個 `review/cv-candidates/*.pdf` 與兩個 `app/out/resume/*.pdf` 均逐 bytes 等同對應公開資產，沒有在這些入口找到另一份較新、已選定的 PDF。PDF metadata 的建立時間分別為 2026-10-06 18:11:58／18:12:02 UTC；manifest 的 edition 日期與 owner 選定日期是不同事件。\n21: "
+    },
+    {
+      "id": "R2",
+      "repository": "webresume",
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/content/resume-assets.json",
+      "relativePath": "content/resume-assets.json",
+      "title": {
+        "zh-TW": "目前下載 PDF 的版本與封籤",
+        "en": "Current PDF manifest"
+      },
+      "kind": "manifest",
+      "bytes": 594,
+      "sha256": "c7a24f6e8c81a8186f67d0fadbeabe6c227b2d3a4574b988ce1b0b53db0d888a",
+      "mtime": "2026-10-07T02:13:28.836487+08:00",
+      "head": "3dbbb9935637e7a62d177e191d5948fdc4969c03",
+      "gitStatus": "",
+      "startLine": 1,
+      "endLine": 19,
+      "excerpt": "1: {\n2:   \"schemaVersion\": 1,\n3:   \"sourceVersion\": \"Second-edition CV generated from shared site facts (cv-candidate 2026-10-05, selected 2026-10-07)\",\n4:   \"privacy\": \"Name, email, GitHub and web resume links\",\n5:   \"locales\": {\n6:     \"en\": {\n7:       \"file\": \"blake-lin-cv-en.pdf\",\n8:       \"bytes\": 44420,\n9:       \"sha256\": \"c0b5955e7467721b5d09b4942e0ef4354e782455baea6d2fb0de1888df76a137\",\n10:       \"pageCount\": 1\n11:     },\n12:     \"zh-TW\": {\n13:       \"file\": \"blake-lin-cv-zh-tw.pdf\",\n14:       \"bytes\": 550969,\n15:       \"sha256\": \"8d0cfb30adeaac71b1aa2075319e8f43914ac80459162be968fe22323f10656f\",\n16:       \"pageCount\": 1\n17:     }\n18:   }\n19: }"
+    },
+    {
+      "id": "R3",
+      "repository": "webresume",
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/records/2026-11-03-portfolio-to-webresume-closure.md",
+      "relativePath": "records/2026-11-03-portfolio-to-webresume-closure.md",
+      "title": {
+        "zh-TW": "前一輪工作交接",
+        "en": "Prior work handoff"
+      },
+      "kind": "receipt",
+      "bytes": 3352,
+      "sha256": "d34661e32876f6fad7f0567da5d7a8b5db40463b7c72e8879dcdfb70fbdbf904",
+      "mtime": "2026-11-03T02:41:38.184745+08:00",
+      "head": "3dbbb9935637e7a62d177e191d5948fdc4969c03",
+      "gitStatus": "",
+      "startLine": 1,
+      "endLine": 23,
+      "excerpt": "1: ---\n2: type: Chat Session Record\n3: title: \"Portfolio 盤點與履歷修復 / Portfolio review and resume repair\"\n4: description: \"完成本機修復與交接，保留發布前證據缺口。\"\n5: status: stable\n6: tags: [portfolio, webresume, handoff]\n7: generated:\n8:   by: codex/close-chat-session\n9:   at: \"2026-11-03T02:41:38+08:00\"\n10: sources:\n11:   - id: detailed-session\n12:     resource: ../SESSION.md\n13:     title: Detailed session record\n14: session_date: 2026-11-03\n15: closure_phase: finalize\n16: language: zh-TW\n17: ---\n18: \n19: [總覽](#overview) · [時間線](#timeline) · [結論](#decisions) · [產物](#artifacts) · [核心回顧](#recap) · [接續](#carry)\n20: \n21: <a id=\"overview\"></a>\n22: ## 🧭 Session at a glance\n23: "
+    }
+  ],
+  "protectedFiles": [
+    {
+      "path": ".github/workflows/deploy.yml",
+      "sha256": "2fb4b7e4c2a2424b0aeb60bbdffb0de6756fda5a813b7cd75b0a174ecce4239a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7902a19e45a616dd1b87f52748f7a2c9b3b16d25ed0f6e9b4d1eff3c8804a787"
+    },
+    {
+      "path": "SESSION.md",
+      "sha256": "db59525ec46e7fb3133950892abf43348de7efa73fbe4f94ea48db88e2d54a4d"
+    },
+    {
+      "path": "app/.eslintrc.json",
+      "sha256": "b61b0282a67cd9458b7a9246f13f67fb2acbb2eb3f87ad1d6ca9d1df1b143d48"
+    },
+    {
+      "path": "app/.gitignore",
+      "sha256": "fbb6b8b79257e143802049c900df3637fbd14810730b0710ebc81b715a968923"
+    },
+    {
+      "path": "app/app/globals.css",
+      "sha256": "cc1a7ad0d019ddb1d32d0ecb588ba0ac26ce41d8625dd6c366348b25f83a28ec"
+    },
+    {
+      "path": "app/app/layout.tsx",
+      "sha256": "f6c3c68314913fabf59f341ab3596655c494f06654c48e53abc2be9b707c6cd1"
+    },
+    {
+      "path": "app/app/page.tsx",
+      "sha256": "dca4f7d04e77c9639b014446255461b77520760c116d217ce71aae293e5603f5"
+    },
+    {
+      "path": "app/app/resume-tokens.css",
+      "sha256": "3590a266ab966f92f5daab9306d0a68400225d2fe584d60a08f2a25637441b66"
+    },
+    {
+      "path": "app/next-env.d.ts",
+      "sha256": "f2b3bca04d1bfe583daae1e1f798c92ec24bb6693bd88d0a09ba6802dee362a8"
+    },
+    {
+      "path": "app/next.config.js",
+      "sha256": "edf5fd2cddf5adff5879f9fb961dab5a7cd3594a389cd36e95c218d23b033eb2"
+    },
+    {
+      "path": "app/package-lock.json",
+      "sha256": "8234ea80b874f3c0e99baf5b6e286b90dcacdd657b70f43b9f65eb7fff225507"
+    },
+    {
+      "path": "app/package.json",
+      "sha256": "67c5eeb1f5c05b1f00533b025f984a0b23947ac1ebfe107428f81dfa951293f4"
+    },
+    {
+      "path": "app/postcss.config.js",
+      "sha256": "fa650b380adfabb151a0b352f7135e107e6352345f899060f1c5c231228f94bf"
+    },
+    {
+      "path": "app/public/.nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "app/public/blake-lin-application-preview.zip",
+      "sha256": "9d5b49aa8d622e68cbdd8383407138989957ac040a343438c07d8fa3b3c917ec"
+    },
+    {
+      "path": "app/public/engineering-notes.html",
+      "sha256": "c182db793badcaf804bdbea354d35637da3f88db2a12013d4cd27038933b68ee"
+    },
+    {
+      "path": "app/public/llms.txt",
+      "sha256": "51fc8de098d62dcd5949479e856d25f677a9b333dc824ef0754788d58bfc69d6"
+    },
+    {
+      "path": "app/public/projects/study-atlas.html",
+      "sha256": "eff7a526484735c695b25078b73e2f74691a8b1e9f4b74571d0b77c6bed35306"
+    },
+    {
+      "path": "app/public/projects/transcribe-for-x.html",
+      "sha256": "4dda106bc54f6d9cff0bb8e22c0767a3abae1c8035970a428eeda26c97098502"
+    },
+    {
+      "path": "app/public/projects/windowphase.html",
+      "sha256": "675e24ae6fdf5fd5c409845806ebb733efb053c39b323d69bbd34419e292545b"
+    },
+    {
+      "path": "app/public/resume-overview.html",
+      "sha256": "f596aeb4ec5c35e109f0909ce29ec6049157203e290028af698069346f846746"
+    },
+    {
+      "path": "app/public/resume/blake-lin-cv-en.pdf",
+      "sha256": "c0b5955e7467721b5d09b4942e0ef4354e782455baea6d2fb0de1888df76a137"
+    },
+    {
+      "path": "app/public/resume/blake-lin-cv-zh-tw.pdf",
+      "sha256": "8d0cfb30adeaac71b1aa2075319e8f43914ac80459162be968fe22323f10656f"
+    },
+    {
+      "path": "app/tailwind.config.ts",
+      "sha256": "1a0bcf8758f094036b2ac98bcec7e4dafa4b81d8328364207831b59f57916692"
+    },
+    {
+      "path": "app/tsconfig.json",
+      "sha256": "1753d8f8c8863ff77050b8ade708482cda4502f0a3ae7f33a0011c22598ccbed"
+    },
+    {
+      "path": "app/tsconfig.resume.json",
+      "sha256": "b8db4554fe1919ef0107dd0c9a00a518d0af00f1a4f8baadfff63fa3a1f4d113"
+    },
+    {
+      "path": "content/cv-candidate.json",
+      "sha256": "013bbc156ff62a346e9b27b97e90c5863a4f9046fea533a7f33baff7f9abb98b"
+    },
+    {
+      "path": "content/data/career/career-breaks.json",
+      "sha256": "e2fe4cbdcfd38a4d93ee1d4171963b765792a04ece9752f1e067b443c4c2e744"
+    },
+    {
+      "path": "content/data/career/dynasafe.json",
+      "sha256": "5d1f0e7d340d7b617b1e2752067db34042b0b9b8a6dc9b151a2941eac3a5903c"
+    },
+    {
+      "path": "content/data/career/education.json",
+      "sha256": "bb812dc0fea01ed6f98a7dcb1836c11431256609e9614ee18a1caba5b68ad6aa"
+    },
+    {
+      "path": "content/data/career/lips.json",
+      "sha256": "bbd427da06f4ea764db061a249080f5c6137c82f282b4b4388be0c309e1eb402"
+    },
+    {
+      "path": "content/data/career/metgauge.json",
+      "sha256": "64390f72878dbea2bc32f238a0eb7b83e0d3b252e3e048079d8c9ed26714031a"
+    },
+    {
+      "path": "content/data/career/research-learning.json",
+      "sha256": "20fd6967086583fb4093bb09b13766495236962f2eb1a508deb847d7ee9cea8b"
+    },
+    {
+      "path": "content/data/career/skills.json",
+      "sha256": "025d086108bde29c043fdc3af4b8b0dce04c1a763ddbbdcd664f61109a884816"
+    },
+    {
+      "path": "content/data/career/utechzone.json",
+      "sha256": "97995302815df53c6b3b8fd6f870e3451480bc8ff45e21aada81324e29ebb049"
+    },
+    {
+      "path": "content/data/i18n/en.json",
+      "sha256": "eee19a699e5f3a517ed50026f858296e49230ed08e1ccae8774ddd64e7c32090"
+    },
+    {
+      "path": "content/data/i18n/zh-TW.json",
+      "sha256": "c7cf8b515f26d9a214a97da20b78c5348b1ce085b4e65f42047865a4351617d6"
+    },
+    {
+      "path": "content/data/identity.json",
+      "sha256": "96cf94c95551acd792d665a2c1074082c2ce562a6ddb881cac41ff025e089f5a"
+    },
+    {
+      "path": "content/data/projects/study-atlas.json",
+      "sha256": "c03b1418e15720cd59e195ef6b43f278cb5be3666f4e5b6f361eef2edf3c6ac7"
+    },
+    {
+      "path": "content/data/projects/transcribe-for-x.json",
+      "sha256": "e74af4df7a1ab36463c9245f7cbffd11c592e9213e50aa8427e986de84778849"
+    },
+    {
+      "path": "content/data/projects/windowphase.json",
+      "sha256": "4dc69f4c29a919ecb2ff74a99010103788ad90027168ddcae3756e13e1db4c0a"
+    },
+    {
+      "path": "content/design-tokens.json",
+      "sha256": "389e8fdd16f080720e70778b4ed7e5927a2f274071a4b29c2b192430e1ab4a9b"
+    },
+    {
+      "path": "content/design-tokens/clean-swiss.json",
+      "sha256": "8819e965b655b0a89777be6ae67d4d17d75eb593538db987768351788b94ccfa"
+    },
+    {
+      "path": "content/design-tokens/terminal-mono.json",
+      "sha256": "2444244b1b5b0d512e5081c5da211493930d7be6f0ae410933945a99c978f340"
+    },
+    {
+      "path": "content/design-tokens/zen-slate.json",
+      "sha256": "c8dcd4bfb2d4d595a7cc512b6b1418e96dc5ac98016a21780b32b8cc1774ca42"
+    },
+    {
+      "path": "content/engineering-notes.json",
+      "sha256": "9b39af847b76d86599deeaeebbca5a29e34e2b95d2dedeedadad37885c279bb3"
+    },
+    {
+      "path": "content/project-case-studies.json",
+      "sha256": "67e8a76275ca70ee74a2e98e020a30f25733f5c79b52f17d5130fe1a9667bd55"
+    },
+    {
+      "path": "content/resume-assets.json",
+      "sha256": "c7a24f6e8c81a8186f67d0fadbeabe6c227b2d3a4574b988ce1b0b53db0d888a"
+    },
+    {
+      "path": "content/resume-layout.css",
+      "sha256": "3236758adcb89c33b59e78ce18deead41047fff95b4d439299b477376ea480b3"
+    },
+    {
+      "path": "content/resume-profile.json",
+      "sha256": "082769a4ecf5000b84f691a188d2d420cf6052850815883eb86c320a65891aaf"
+    },
+    {
+      "path": "records/2026-11-02-sync-and-copy.md",
+      "sha256": "9eee13f4ad8e442cc311e06a333b502312a01bf86f103e2969235aca3a554c5f"
+    },
+    {
+      "path": "records/2026-11-03-portfolio-to-webresume-closure.md",
+      "sha256": "d34661e32876f6fad7f0567da5d7a8b5db40463b7c72e8879dcdfb70fbdbf904"
+    },
+    {
+      "path": "review/cv-candidates/README.md",
+      "sha256": "924c1186ee196f451e7a84d41b22d18f7e1d5d6728e23599b836e29dc10d796c"
+    },
+    {
+      "path": "review/cv-candidates/blake-lin-cv-candidate-en.html",
+      "sha256": "9e79ef08bb48c0d44191aaa194eb6316837e1169b213f1ab637656f236f87da4"
+    },
+    {
+      "path": "review/cv-candidates/blake-lin-cv-candidate-en.pdf",
+      "sha256": "c0b5955e7467721b5d09b4942e0ef4354e782455baea6d2fb0de1888df76a137"
+    },
+    {
+      "path": "review/cv-candidates/blake-lin-cv-candidate-zh-tw.html",
+      "sha256": "379b97d45ccbdd6063c13fc512fbba4ce449bf2f445ef05ad70e017736fcf549"
+    },
+    {
+      "path": "review/cv-candidates/blake-lin-cv-candidate-zh-tw.pdf",
+      "sha256": "8d0cfb30adeaac71b1aa2075319e8f43914ac80459162be968fe22323f10656f"
+    },
+    {
+      "path": "review/cv-candidates/provenance.json",
+      "sha256": "d0b4c6d3322f76e439f3aa9d76366bb704b0610f3aa76bd884908e35906a0a4b"
+    },
+    {
+      "path": "scripts/build-application-package.py",
+      "sha256": "bac21b9c81a959eee84ccb51b91b421208d300c60a0b1686d91cb88fca1291f0"
+    },
+    {
+      "path": "scripts/build-cv-candidates.mjs",
+      "sha256": "93c9560f7b6513e3f4925d3dd285cc6c51d2f308254ad82fbd87e6e2361d6a89"
+    },
+    {
+      "path": "scripts/build-engineering-notes.mjs",
+      "sha256": "5c4855ddf029fc76e993183b95c19dd555864d94214d23a639682db50feefe31"
+    },
+    {
+      "path": "scripts/build-project-case-studies.mjs",
+      "sha256": "cf70be3a7bc7666dc6d23bfd158859d6e5149d184931e2baffa8516709d353f0"
+    },
+    {
+      "path": "scripts/build-resume-overview.mjs",
+      "sha256": "d07d4005f0ac8b7cb1fba503ff0197543bc872c1ca27d4c6a9bc63b51da51fc8"
+    },
+    {
+      "path": "scripts/generators/components/agent-ir.mjs",
+      "sha256": "da3ac07f18f7a3502783bd36cfff9ee2dfa0ca06e631d6e6e06adeef0a3b760e"
+    },
+    {
+      "path": "scripts/generators/components/architecture-duel.mjs",
+      "sha256": "d47f3f72b7bd614392b8a14465da6e849f5a8b9e26a430fa6d3974202e199744"
+    },
+    {
+      "path": "scripts/generators/components/intent-contract.mjs",
+      "sha256": "45174da55667f96296945587875ecf5e6c57959428f916f2a532157b30509262"
+    },
+    {
+      "path": "scripts/generators/components/proof-receipt.mjs",
+      "sha256": "9ecb7a23c9d5704cbcef7a8626a28566cd70de0b8c93ecaed2d7a123106f43c0"
+    },
+    {
+      "path": "scripts/generators/components/svg-circuit-breaker.mjs",
+      "sha256": "8fefe10b22ed5af80911c5c1afb9b73952c6b2d58c7c965f3b7251656ee4e80f"
+    },
+    {
+      "path": "scripts/generators/components/svg-pipeline.mjs",
+      "sha256": "3f276a7b50b64f5831d02f70f11deb19f8771539138b99159cc977ce56110e09"
+    },
+    {
+      "path": "scripts/generators/components/svg-topology.mjs",
+      "sha256": "22a69dbd35f0b05262644d5fa276345c5a0c1eff6c53869b1c425e8b052e2bd1"
+    },
+    {
+      "path": "scripts/generators/components/svg-universal-engine.mjs",
+      "sha256": "8bc676bc16d9d28f5f8fae87999e149f5052415e624380d70811bf8b8f75850c"
+    },
+    {
+      "path": "scripts/invariants/check-design-and-typography-invariants.mjs",
+      "sha256": "b07137c481392c45d7b34575789fd383cc6e1c7d9f6f6706fee100cacffdf2a8"
+    },
+    {
+      "path": "scripts/invariants/check-digital-seals.mjs",
+      "sha256": "086da30c846a89f4cd3bc47aa993fd86108ac6bd747c27483febda6f305517a5"
+    },
+    {
+      "path": "scripts/invariants/check-i18n-parity.mjs",
+      "sha256": "7b9e82e8621de7d6dc91721111dd792774813c183cbfc2930e17d1f5fec899c1"
+    },
+    {
+      "path": "scripts/invariants/check-intent-contracts.mjs",
+      "sha256": "36d3fef76b7ecae48e5e261e5dd8f964fdb987fc25668909e4ff1d562af397b6"
+    },
+    {
+      "path": "scripts/invariants/check-side-project-invariants.mjs",
+      "sha256": "35753429bd1971c49eb16f24e3444f9231a1d5ab4530201750dc3a72c16e0d49"
+    },
+    {
+      "path": "scripts/invariants/check-wcag-and-viewport.mjs",
+      "sha256": "5b54fd8a710e9193aa09ef1b9729869aa7733ae468fdaee44872a7d5cf3ffbb3"
+    },
+    {
+      "path": "scripts/invariants/run-all-invariants.mjs",
+      "sha256": "b0ddbdc8fca6231b807bf0f69aa13a41498ef1d5b1e75470ac9a91c237a00e0c"
+    },
+    {
+      "path": "scripts/invariants/test-data-loader-cli.mjs",
+      "sha256": "175038127c72ac4b9d5df2228225a6cd3fd5d122f72e2c0366e0d14e0ef31088"
+    },
+    {
+      "path": "scripts/lib/case-previews.mjs",
+      "sha256": "f16ed2e6552663906cd13d6b74dbb8e2942dd59dfac98b259c6577a9d9847351"
+    },
+    {
+      "path": "scripts/lib/data-loader.mjs",
+      "sha256": "6e841ce46ab7ae36cd7589074d87fa8e8181a13eb93818ae4d0c1bfe742436b1"
+    },
+    {
+      "path": "scripts/lib/resume-markup.mjs",
+      "sha256": "cce44bfea915f63474a929b81fac3435f729afd149a4e14114f66a659a7582e2"
+    },
+    {
+      "path": "scripts/lib/resume-reading.mjs",
+      "sha256": "9cd9ae2a159497c775a8c25a5de74fb4b0c79fd2492cf2f12cfc2b708dd77121"
+    },
+    {
+      "path": "scripts/lib/resume-source.mjs",
+      "sha256": "d0ef300a42d3132dc3274df710af99c138170306862b6fa4e856be0a1f77f703"
+    },
+    {
+      "path": "scripts/lib/theme-engine.mjs",
+      "sha256": "e0c769db23225857eef73400bffd6eb7e006936402a478f7443d9781b4dc06f4"
+    },
+    {
+      "path": "scripts/validate-cv-candidates.py",
+      "sha256": "f9f42861d82c1a9deb9a9dc6ce51ec23f1c520804174b56c4c5ce6337205be9e"
+    },
+    {
+      "path": "scripts/validate-resume-assets.mjs",
+      "sha256": "99452fc52002358e632b36d4169e209e57ccb8db7643fd2b91b6ccc7d2c8241d"
+    }
+  ]
+}

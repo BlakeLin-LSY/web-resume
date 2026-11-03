@@ -1,0 +1,37 @@
+{
+  "verdict": "pass",
+  "scope": "僅審查指定 HTML、可攜 HTML 與 validation 紀錄；不是產品 runtime 或職涯量測驗收。",
+  "reviewerAgent": "/root/report_review",
+  "requestedModel": "gpt-6-luna",
+  "requestedReasoning": "max",
+  "files": {
+    "brief.html": "8a3572694b4f9a7b58bccecf91feb23c1d5791b9c3ee45c848e025f7288c7b19",
+    "brief.export.html": "8a3572694b4f9a7b58bccecf91feb23c1d5791b9c3ee45c848e025f7288c7b19",
+    "validation.json": "54cfa9ecb6fada2e43f1d51dea083ef1e4a696c2fca04d266f6c3f762ecb7906"
+  },
+  "resolvedFindings": [
+    {
+      "finding": "HTML 曾引用不存在的 validation.json。",
+      "resolution": "該檔已建立，包含 32 組檢查，artifactSha256 與受檢 HTML 相符。"
+    },
+    {
+      "finding": "中文「目前網站下載檔」可能被讀成公開站已驗證。",
+      "resolution": "已改成「本機網站資產中的下載檔」，與英文相符。"
+    }
+  ],
+  "reviewerChecks": {
+    "sourceHashesMatched": 23,
+    "protectedFileHashesMatched": 88,
+    "uniqueLayoutCases": 32,
+    "missingLayoutCases": 0,
+    "extraLayoutCases": 0,
+    "layoutCasesWithOverflow": 0,
+    "stagedWhitespaceCheck": "exit 0"
+  },
+  "independenceBoundary": "Reviewer 自行查原件、Git、hash、矩陣結構與文件語意；Chromium 瀏覽器實跑由主 agent 執行，reviewer 未重跑瀏覽器。",
+  "authorCleanup": {
+    "deslop": "只檢查本次 HTML、CSS、JS 與報告 diff，沒有無關 hunks、保留程式註解或需另行重構的項目。",
+    "documentationImpact": "author 模式要求 independent review；指定三檔已取得 reviewer pass。",
+    "prose": "technical-writing 與 unslop 已套用。"
+  }
+}

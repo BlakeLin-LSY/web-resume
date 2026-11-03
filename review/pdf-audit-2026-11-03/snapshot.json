@@ -1,0 +1,376 @@
+{
+  "capturedAt": "2026-11-03T18:26:24.597976+08:00",
+  "scope": "唯讀核對 PDF、來源與本機下載入口；不代表公開站驗證或職涯量測認證。",
+  "productHead": "3dbbb9935637e7a62d177e191d5948fdc4969c03",
+  "productStatusBeforeArtifacts": "",
+  "careerHead": "6268534d2a9f4c24aecb57411151b21ea7ceffc9",
+  "careerWorktreeStatus": "M DEPENDENCY.md\n M RUNBOOK.md\n M check-liveness.mjs\n M docs/pipeline_architecture_map.md\n M interview-prep/story-bank.md\n M lint-cv.js\n M liveness-core.mjs\n M merge-tracker.mjs\n M render-job-v2.mjs\n M scan.mjs\n M test-all.mjs\n?? .audit/\n?? SESSION.md\n?? article-digest.md\n?? data/cover-letters/cl-amazon-ring-ai-sde-10589556.md\n?? data/cover-letters/cl-ambarella-autonomous-driving.md\n?? data/cover-letters/cl-anvil-data-collection.md\n?? data/cover-letters/cl-appier-ml-scientist-modeling-evaluation.md\n?? data/cover-letters/cl-apple-agent-harness-200688056.md\n?? data/cover-letters/cl-apple-image-quality-200686669.md\n?? data/cover-letters/cl-apple-sensing-algorithm-200684287.md\n?? data/cover-letters/cl-artilux-senior-engineer-data-scientist.md\n?? data/cover-letters/cl-asus-aics-computer-vision-rd.md\n?? data/cover-letters/cl-binance-pioneer-applied-ai-agent-2026-10-18.md\n?? data/cover-letters/cl-bjak-ai-neobank.md\n?? data/cover-letters/cl-bjak-applied-ai-finance-agent.md\n?? data/cover-letters/cl-canner-wrenai-corrected.md\n?? data/cover-letters/cl-citetek-algorithm-research.md\n?? data/cover-letters/cl-etched-supercomputing-test.md\n?? data/cover-letters/cl-fintech-quant-ai-data-scientist.md\n?? data/cover-letters/cl-google-ai-infrastructure-xr.md\n?? data/cover-letters/cl-google-applied-ai-pixel-watch.md\n?? data/cover-letters/cl-google-generative-ai-agent-pixel-quality-watch.md\n?? data/cover-letters/cl-google-image-processing-pixel-camera.md\n?? data/cover-letters/cl-google-isp-system-modeling.md\n?? data/cover-letters/cl-hp-agentic-ai.md\n?? data/cover-letters/cl-hud-forward-deployed-research-engineer.md\n?? data/cover-letters/cl-hud-qc-automation.md\n?? data/cover-letters/cl-hud-software-engineer-data-quality.md\n?? data/cover-letters/cl-jth-ai-product-builder.md\n?? data/cover-letters/cl-kla-algorithm-2638682.md\n?? data/cover-letters/cl-kla-senior-algorithm-2638585.md\n?? data/cover-letters/cl-kla-software-engineer-anchor-2640036.md\n?? data/cover-letters/cl-mediatek-ai-algorithm-cv-consumer-devices.md\n?? data/cover-letters/cl-mediatek-ai-automation-system-engineer.md\n?? data/cover-letters/cl-mediatek-ai-software-tool.md\n?? data/cover-letters/cl-mediatek-ai-system-architecture-analyst.md\n?? data/cover-letters/cl-mediatek-camera-isp-2026.md\n?? data/cover-letters/cl-mediatek-computer-vision-image-processing-edge-ai.md\n?? data/cover-letters/cl-mediatek-display-image-algorithm.md\n?? data/cover-letters/cl-mediatek-image-processing-algorithm-chupei.md\n?? data/cover-letters/cl-mediatek-image-processing-algorithm-engineer.md\n?? data/cover-letters/cl-mediatek-machine-learning-accelerator.md\n?? data/cover-letters/cl-mediatek-system-automation.md\n?? data/cover-letters/cl-mediatek-testing-automation.md\n?? data/cover-letters/cl-micron-ai-full-stack-corrected-2026-10-08.md\n?? data/cover-letters/cl-micron-ai-full-stack.md\n?? data/cover-letters/cl-microsoft-software-engineer-2-document-intelligence.md\n?? data/cover-letters/cl-microsoft-software-engineer-200057301.md\n?? data/cover-letters/cl-nvidia-gpu-server-jr2022680.md\n?? data/cover-letters/cl-qlo-applied-ai-builder.md\n?? data/cover-letters/cl-qualcomm-computer-vision-systems.md\n?? data/cover-letters/cl-qualcomm-qairt.md\n?? data/cover-letters/cl-realtek-video-algorithm-developer.md\n?? data/cover-letters/cl-retailnext-ml-vision-engineer.md\n?? data/cover-letters/cl-siliconmind-solutions-engineer-ai-chip-design.md\n?? data/cover-letters/cl-teradyne-ai-enablement-fde.md\n?? data/cover-letters/cl-trendai-ai-engineer-r0009569.md\n?? data/cover-letters/cl-trendai-applied-ai-engineer-r0009808.md\n?? data/cover-letters/cl-trendai-applied-ai-windows-agent-r0009663.md\n?? data/cover-letters/cl-trendai-linux-agent-r0007814.md\n?? data/cover-letters/cl-trendai-linux-agent-r0009756.md\n?? data/cover-letters/cl-trendai-linux-agent.md\n?? data/cv-amazon-ring-ai-sde-10589556.md\n?? data/cv-ambarella-autonomous-driving.md\n?? data/cv-anvil-data-collection.md\n?? data/cv-appier-ml-scientist-modeling-evaluation.md\n?? data/cv-apple-agent-harness-200688056.md\n?? data/cv-apple-image-quality-200686669.md\n?? data/cv-apple-sensing-algorithm-200684287.md\n?? data/cv-artilux-senior-engineer-data-scientist.md\n?? data/cv-asus-aics-computer-vision-rd.md\n?? data/cv-binance-pioneer-applied-ai-agent-2026-10-18.md\n?? data/cv-bjak-ai-neobank.md\n?? data/cv-bjak-applied-ai-finance-agent.md\n?? data/cv-canner-wrenai-corrected.md\n?? data/cv-citetek-algorithm-research.md\n?? data/cv-etched-supercomputing-test.md\n?? data/cv-fintech-quant-ai-data-scientist.md\n?? data/cv-google-ai-infrastructure-xr.md\n?? data/cv-google-applied-ai-pixel-watch.md\n?? data/cv-google-generative-ai-agent-pixel-quality-watch.md\n?? data/cv-google-image-processing-pixel-camera.md\n?? data/cv-google-isp-system-modeling.md\n?? data/cv-hp-agentic-ai.md\n?? data/cv-hud-forward-deployed-research-engineer.md\n?? data/cv-hud-qc-automation.md\n?? data/cv-hud-software-engineer-data-quality.md\n?? data/cv-jth-ai-product-builder.md\n?? data/cv-kla-algorithm-2638682.md\n?? data/cv-kla-senior-algorithm-2638585.md\n?? data/cv-kla-software-engineer-anchor-2640036.md\n?? data/cv-latest-en.md\n?? data/cv-latest-zhtw.md\n?? data/cv-mediatek-ai-algorithm-cv-consumer-devices.md\n?? data/cv-mediatek-ai-automation-system-engineer.md\n?? data/cv-mediatek-ai-software-tool.md\n?? data/cv-mediatek-ai-system-architecture-analyst.md\n?? data/cv-mediatek-camera-isp-2026.md\n?? data/cv-mediatek-computer-vision-image-processing-edge-ai.md\n?? data/cv-mediatek-display-image-algorithm.md\n?? data/cv-mediatek-image-processing-algorithm-chupei.md\n?? data/cv-mediatek-image-processing-algorithm-engineer.md\n?? data/cv-mediatek-machine-learning-accelerator.md\n?? data/cv-mediatek-system-automation.md\n?? data/cv-mediatek-testing-automation.md\n?? data/cv-micron-ai-full-stack-corrected-2026-10-08.md\n?? data/cv-micron-ai-full-stack.md\n?? data/cv-microsoft-software-engineer-2-document-intelligence.md\n?? data/cv-microsoft-software-engineer-200057301.md\n?? data/cv-nvidia-gpu-server-jr2022680.md\n?? data/cv-qlo-applied-ai-builder.md\n?? data/cv-qualcomm-computer-vision-systems.md\n?? data/cv-qualcomm-qairt.md\n?? data/cv-realtek-video-algorithm-developer.md\n?? data/cv-retailnext-ml-vision-engineer.md\n?? data/cv-siliconmind-solutions-engineer-ai-chip-design.md\n?? data/cv-teradyne-ai-enablement-fde.md\n?? data/cv-trendai-ai-engineer-r0009569.md\n?? data/cv-trendai-applied-ai-engineer-r0009808.md\n?? data/cv-trendai-applied-ai-windows-agent-r0009663.md\n?? data/cv-trendai-linux-agent-r0007814.md\n?? data/cv-trendai-linux-agent-r0009756.md\n?? data/cv-trendai-linux-agent.md\n?? data/cv-wipro-ai-agent-systems-2026-10-12-v2.md\n?? data/cv-wipro-ai-agent-systems-2026-10-12.md\n?? data/outreach-ascension-cloud-data-ai-foundations.md\n?? data/outreach-compensation-qualification-2026-10-09.md\n?? data/outreach-joinjoy-cloud-infrastructure-security.md\n?? data/profile-refresh-2026-07-29/\n?? interview-prep/amd-taiwan-application-brief-2026-09-30.md\n?? interview-prep/anvil-robotics-company-research-2026-10-10.md\n?? interview-prep/applied-packet-claim-defense.md\n?? interview-prep/artilux-senior-engineer-data-scientist.md\n?? interview-prep/bilingual-expert-eli5-interview-depth-guide-2026-09-30.md\n?? interview-prep/binance-pioneer-applied-ai-agent-2026-10-18.md\n?? interview-prep/brightest-image-processing-software-engineer-research-2026-10-10.md\n?? interview-prep/canner-wrenai-sr-ai-software-engineer-screen.md\n?? interview-prep/career-continuity-defense.md\n?? interview-prep/career-continuity-quick-card.md\n?? interview-prep/career-preparation-read-first-2026-09-29.md\n?? interview-prep/career-status-brief-2026-10-16.html\n?? interview-prep/current-high-fit-openings-2026-10-15.md\n?? interview-prep/daily-opening-delta-2026-10-23.md\n?? interview-prep/daily-opening-delta-2026-10-24.md\n?? interview-prep/daily-opening-delta-2026-10-25.md\n?? interview-prep/daily-opening-delta-2026-10-26.md\n?? interview-prep/daily-opening-delta-2026-10-27.md\n?? interview-prep/daily-opening-delta-2026-10-28.md\n?? interview-prep/daily-opening-delta-2026-10-29.md\n?? interview-prep/daily-opening-delta-2026-10-30.md\n?? interview-prep/daily-opening-delta-2026-10-31.md\n?? interview-prep/daily-opening-delta-2026-11-01.md\n?? interview-prep/daily-opening-delta-2026-11-02.md\n?? interview-prep/daily-opening-delta-2026-11-03.md\n?? interview-prep/gap-evidence-verification-matrix-2026-09-29.md\n?? interview-prep/google-final-application-review-2026-09-16.md\n?? interview-prep/google-priority-application-pack-2026-09-16.md\n?? interview-prep/google-six-role-review-2026-09-24.md\n?? interview-prep/high-risk-skill-gap-defense.md\n?? interview-prep/individual-story-technical-deep-dives-2026-09-30.md\n?? interview-prep/interview-story-scripts-2026-09-29.md\n?? interview-prep/kla-software-engineer-anchor-2640036.md\n?? interview-prep/mediatek-ai-software-tool-engineer.md\n?? interview-prep/mediatek-image-processing-algorithm-research-2026-10-10.md\n?? interview-prep/micron-jr108412-material-correction-2026-10-08.md\n?? interview-prep/mock-interview-preparation-workbook-2026-09-30.md\n?? interview-prep/portfolio-outcomes-2026-10-30\n?? interview-prep/portfolio-outcomes-2026-10-30.pre-independent-repo/\n?? interview-prep/portfolio-project-briefs-2026-09-29.md\n?? interview-prep/priority-roles-deep-review-2026-10-20.md\n?? interview-prep/professional-story-verification-cards-2026-09-29.md\n?? interview-prep/side-project-evidence-matrix-2026-09-29.md\n?? interview-prep/siliconmind-solutions-engineer-ai-chip-design-2026-10-18.md\n?? interview-prep/six-week-career-preparation-plan-2026-09-29.md\n?? interview-prep/six-week-mock-interview-program-2026-09-29.md\n?? interview-prep/sre-online-chat-architecture-interview-guide.md\n?? interview-prep/taiwan-job-focus-shortlist-2026-10-09.md\n?? interview-prep/technical-story-library-2026-09-30/\n?? interview-prep/tier1-job-scan-2026-10-16.md\n?? interview-prep/top-tier-taiwan-job-ranking-2026-09-30.md\n?? interview-prep/top3-application-review-2026-10-16.md\n?? interview-prep/trendai-applied-ai-engineer-r0009808-deep-research-2026-10-08.md\n?? interview-prep/trendai-current-fit-and-ai-dlc-interview-brief-2026-10-15.md\n?? interview-prep/trendai-microsoft-google-openings-2026-10-20.md\n?? interview-prep/trendai-windows-agent-r0009663-deep-research-2026-10-15.md\n?? interview-prep/value-translation-defense.md\n?? interview-prep/wipro-python-developer-screen.md",
+  "extractor": {
+    "name": "pypdf",
+    "version": "6.11.0"
+  },
+  "pdfs": [
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/app/public/resume/blake-lin-cv-en.pdf",
+      "bytes": 44420,
+      "sha256": "c0b5955e7467721b5d09b4942e0ef4354e782455baea6d2fb0de1888df76a137",
+      "mtime": "2026-10-07T02:13:28.794437+08:00",
+      "locale": "en",
+      "pages": 1,
+      "manifestMatch": true,
+      "controls": [
+        {
+          "page": 1,
+          "characters": 2332,
+          "positiveMatches": {
+            "Ssu-Yuan Lin (Blake)": true,
+            "ssu.yuan.lin@gmail.com": true,
+            "DynaSafe": true,
+            "UTECHZONE": true,
+            "LIPS": true,
+            "MetGauge": true,
+            "Study Atlas": true,
+            "Transcribe-for-X": true,
+            "40%": true,
+            "66%": true,
+            "10×": true
+          },
+          "emailRemovalDetected": true
+        }
+      ],
+      "links": [
+        "mailto:ssu.yuan.lin@gmail.com",
+        "https://github.com/BlakeLin-LSY",
+        "https://blakelin-lsy.github.io/web-resume/"
+      ],
+      "extractFile": "en.txt",
+      "normalizedExtractFile": "en.nfkc.txt",
+      "candidate": {
+        "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/review/cv-candidates/blake-lin-cv-candidate-en.pdf",
+        "bytes": 44420,
+        "sha256": "c0b5955e7467721b5d09b4942e0ef4354e782455baea6d2fb0de1888df76a137",
+        "mtime": "2026-10-07T02:13:28.869489+08:00"
+      },
+      "candidateSameBytes": true,
+      "existingBuild": {
+        "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/app/out/resume/blake-lin-cv-en.pdf",
+        "bytes": 44420,
+        "sha256": "c0b5955e7467721b5d09b4942e0ef4354e782455baea6d2fb0de1888df76a137",
+        "mtime": "2026-11-03T02:07:38.223649+08:00"
+      },
+      "existingBuildSameBytes": true
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/app/public/resume/blake-lin-cv-zh-tw.pdf",
+      "bytes": 550969,
+      "sha256": "8d0cfb30adeaac71b1aa2075319e8f43914ac80459162be968fe22323f10656f",
+      "mtime": "2026-10-07T02:13:28.821937+08:00",
+      "locale": "zh-TW",
+      "pages": 1,
+      "manifestMatch": true,
+      "controls": [
+        {
+          "page": 1,
+          "characters": 1217,
+          "positiveMatches": {
+            "Ssu-Yuan Lin (Blake)": true,
+            "ssu.yuan.lin@gmail.com": true,
+            "DynaSafe": true,
+            "UTECHZONE": true,
+            "LIPS": true,
+            "MetGauge": true,
+            "Study Atlas": true,
+            "Transcribe-for-X": true,
+            "40%": true,
+            "66%": true,
+            "10倍": true
+          },
+          "emailRemovalDetected": true
+        }
+      ],
+      "links": [
+        "mailto:ssu.yuan.lin@gmail.com",
+        "https://github.com/BlakeLin-LSY",
+        "https://blakelin-lsy.github.io/web-resume/"
+      ],
+      "extractFile": "zh-TW.txt",
+      "normalizedExtractFile": "zh-TW.nfkc.txt",
+      "candidate": {
+        "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/review/cv-candidates/blake-lin-cv-candidate-zh-tw.pdf",
+        "bytes": 550969,
+        "sha256": "8d0cfb30adeaac71b1aa2075319e8f43914ac80459162be968fe22323f10656f",
+        "mtime": "2026-10-07T02:13:28.909053+08:00"
+      },
+      "candidateSameBytes": true,
+      "existingBuild": {
+        "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/app/out/resume/blake-lin-cv-zh-tw.pdf",
+        "bytes": 550969,
+        "sha256": "8d0cfb30adeaac71b1aa2075319e8f43914ac80459162be968fe22323f10656f",
+        "mtime": "2026-11-03T02:07:38.223649+08:00"
+      },
+      "existingBuildSameBytes": true
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/interview-prep/professional-story-verification-cards-2026-09-29.md",
+      "bytes": 13040,
+      "sha256": "b2c28382bb4f627e5f92ea80bd2922f07cbb8414682054d5c08af807b402a719",
+      "mtime": "2026-10-19T23:50:57.605286+08:00",
+      "gitStatus": "?? interview-prep/professional-story-verification-cards-2026-09-29.md"
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/data/cv-decisions.md",
+      "bytes": 7226,
+      "sha256": "aa92eaa761da6ec6a6c1f755313885f4c2cc12decc6885e06d6e209f05e6f4ff",
+      "mtime": "2026-10-18T05:27:28.480549+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/interview-prep/technical-story-library-2026-09-30/01-dynasafe-training-pipeline.md",
+      "bytes": 30244,
+      "sha256": "64f4ef826615c5cc3db7acf08cf63d78873fd2a286296db90e5ebbf67f8f33ea",
+      "mtime": "2026-10-08T21:57:03.346646+08:00",
+      "gitStatus": "?? interview-prep/technical-story-library-2026-09-30/01-dynasafe-training-pipeline.md"
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/interview-prep/technical-story-library-2026-09-30/02-utechzone-aoi.md",
+      "bytes": 8364,
+      "sha256": "4bc8bfc16bfe8efed911bf5488bd85e67a4bc6b347e01d49b15ea18c4558f9e9",
+      "mtime": "2026-10-18T05:27:50.976007+08:00",
+      "gitStatus": "?? interview-prep/technical-story-library-2026-09-30/02-utechzone-aoi.md"
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/interview-prep/technical-story-library-2026-09-30/03-lips-stereo-metrology.md",
+      "bytes": 8831,
+      "sha256": "bff1f914a7bcb09cb7cc07bbae711f9cf7e0651e6848257d86a299f0a5717fe1",
+      "mtime": "2026-10-18T05:27:51.526007+08:00",
+      "gitStatus": "?? interview-prep/technical-story-library-2026-09-30/03-lips-stereo-metrology.md"
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/interview-prep/technical-story-library-2026-09-30/04-metgauge-multicamera-integration.md",
+      "bytes": 10210,
+      "sha256": "32114467cafc6cc10e7866741b991970b14aa8509412dd1f18531dda64d0135f",
+      "mtime": "2026-10-15T14:19:10.860530+08:00",
+      "gitStatus": "?? interview-prep/technical-story-library-2026-09-30/04-metgauge-multicamera-integration.md"
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/interview-prep/technical-story-library-2026-09-30/05-study-atlas-research-delivery.md",
+      "bytes": 9319,
+      "sha256": "cb2555b5a7f7230b7f5340c49c758b637c171a2b9f7ab3583a0dedeb44ecf3d1",
+      "mtime": "2026-10-08T00:47:39.340725+08:00",
+      "gitStatus": "?? interview-prep/technical-story-library-2026-09-30/05-study-atlas-research-delivery.md"
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/cv.md",
+      "bytes": 11572,
+      "sha256": "7aab96f3c5cdfe54a16b47d56df69bd966a80b41e6c13f9674c10049e3961562",
+      "mtime": "2026-10-15T14:27:28.104842+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/data/career-status/GROUND-TRUTH.md",
+      "bytes": 2546,
+      "sha256": "a7887b2d542f9b15234f284e3bad9a34a297f258060624cac7d97a766e04d73f",
+      "mtime": "2026-07-29T10:11:14.169561+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/data/career-status/AGENT-CONTEXT.md",
+      "bytes": 663170,
+      "sha256": "9eb8cacb5c17176ea6378fa99046d3d12deb15fb45ccbaa67cbadd1d71476f13",
+      "mtime": "2026-10-30T00:28:43.327993+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/interview-prep/story-bank.md",
+      "bytes": 24403,
+      "sha256": "2e5f11f14bf14107caf8e919591bf3d12412f779322efc714968137dab654178",
+      "mtime": "2026-10-19T23:57:59.790124+08:00",
+      "gitStatus": "M interview-prep/story-bank.md"
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/article-digest.md",
+      "bytes": 26933,
+      "sha256": "f0478d35a3fe1f81be516baec0b13762681bac13041bb6459d6b97cbbc326cc7",
+      "mtime": "2026-10-08T11:42:32.279006+08:00",
+      "gitStatus": "?? article-digest.md"
+    },
+    {
+      "path": "/home/blake_u2204/projects/career-ops-repo/config/profile.yml",
+      "bytes": 16108,
+      "sha256": "d0badef49a4a41f2fb5199a4f19746c6218b7a33453f0c590bbbfa8a5015a598",
+      "mtime": "2026-10-29T19:10:37.041048+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/content/resume-assets.json",
+      "bytes": 594,
+      "sha256": "c7a24f6e8c81a8186f67d0fadbeabe6c227b2d3a4574b988ce1b0b53db0d888a",
+      "mtime": "2026-10-07T02:13:28.836487+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/content/resume-profile.json",
+      "bytes": 52297,
+      "sha256": "082769a4ecf5000b84f691a188d2d420cf6052850815883eb86c320a65891aaf",
+      "mtime": "2026-11-03T02:07:17.449850+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/content/cv-candidate.json",
+      "bytes": 4112,
+      "sha256": "013bbc156ff62a346e9b27b97e90c5863a4f9046fea533a7f33baff7f9abb98b",
+      "mtime": "2026-10-07T00:48:47.272067+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/content/design-tokens.json",
+      "bytes": 779,
+      "sha256": "389e8fdd16f080720e70778b4ed7e5927a2f274071a4b29c2b192430e1ab4a9b",
+      "mtime": "2026-10-04T03:57:23.294597+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/scripts/build-cv-candidates.mjs",
+      "bytes": 7404,
+      "sha256": "93c9560f7b6513e3f4925d3dd285cc6c51d2f308254ad82fbd87e6e2361d6a89",
+      "mtime": "2026-10-07T02:13:28.934502+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/scripts/validate-cv-candidates.py",
+      "bytes": 2404,
+      "sha256": "f9f42861d82c1a9deb9a9dc6ce51ec23f1c520804174b56c4c5ce6337205be9e",
+      "mtime": "2026-10-07T02:13:28.945560+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/scripts/validate-resume-assets.mjs",
+      "bytes": 1066,
+      "sha256": "99452fc52002358e632b36d4169e209e57ccb8db7643fd2b91b6ccc7d2c8241d",
+      "mtime": "2026-10-04T03:16:15.000059+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/scripts/build-application-package.py",
+      "bytes": 4267,
+      "sha256": "bac21b9c81a959eee84ccb51b91b421208d300c60a0b1686d91cb88fca1291f0",
+      "mtime": "2026-10-15T04:46:38.240718+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/review/cv-candidates/provenance.json",
+      "bytes": 1362,
+      "sha256": "d0b4c6d3322f76e439f3aa9d76366bb704b0610f3aa76bd884908e35906a0a4b",
+      "mtime": "2026-10-07T02:13:28.919531+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/review/cv-candidates/README.md",
+      "bytes": 3045,
+      "sha256": "924c1186ee196f451e7a84d41b22d18f7e1d5d6728e23599b836e29dc10d796c",
+      "mtime": "2026-10-07T01:05:06.994257+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/content/data/career/metgauge.json",
+      "bytes": 8686,
+      "sha256": "64390f72878dbea2bc32f238a0eb7b83e0d3b252e3e048079d8c9ed26714031a",
+      "mtime": "2026-10-15T04:46:37.971118+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/content/data/projects/study-atlas.json",
+      "bytes": 8504,
+      "sha256": "c03b1418e15720cd59e195ef6b43f278cb5be3666f4e5b6f361eef2edf3c6ac7",
+      "mtime": "2026-10-15T04:46:38.088993+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/content/data/projects/transcribe-for-x.json",
+      "bytes": 7581,
+      "sha256": "e74af4df7a1ab36463c9245f7cbffd11c592e9213e50aa8427e986de84778849",
+      "mtime": "2026-11-02T22:31:08.219716+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/app/app/page.tsx",
+      "bytes": 701,
+      "sha256": "dca4f7d04e77c9639b014446255461b77520760c116d217ce71aae293e5603f5",
+      "mtime": "2026-10-05T22:15:39.191941+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/scripts/lib/resume-markup.mjs",
+      "bytes": 33569,
+      "sha256": "cce44bfea915f63474a929b81fac3435f729afd149a4e14114f66a659a7582e2",
+      "mtime": "2026-11-02T22:32:03.720916+08:00",
+      "gitStatus": ""
+    },
+    {
+      "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/app/public/resume-overview.html",
+      "bytes": 263763,
+      "sha256": "f596aeb4ec5c35e109f0909ce29ec6049157203e290028af698069346f846746",
+      "mtime": "2026-11-03T02:07:17.616735+08:00",
+      "gitStatus": ""
+    }
+  ],
+  "provenanceInputComparison": [
+    {
+      "file": "content/resume-profile.json",
+      "recordedBytes": 17522,
+      "actualBytes": 52297,
+      "recordedSha256": "ab4ee7758790cabe81c05aca7a0f66984c5505c27db9f2c93b7f43403c3fef9d",
+      "actualSha256": "082769a4ecf5000b84f691a188d2d420cf6052850815883eb86c320a65891aaf",
+      "match": false
+    },
+    {
+      "file": "content/cv-candidate.json",
+      "recordedBytes": 4112,
+      "actualBytes": 4112,
+      "recordedSha256": "013bbc156ff62a346e9b27b97e90c5863a4f9046fea533a7f33baff7f9abb98b",
+      "actualSha256": "013bbc156ff62a346e9b27b97e90c5863a4f9046fea533a7f33baff7f9abb98b",
+      "match": true
+    },
+    {
+      "file": "content/design-tokens.json",
+      "recordedBytes": 779,
+      "actualBytes": 779,
+      "recordedSha256": "389e8fdd16f080720e70778b4ed7e5927a2f274071a4b29c2b192430e1ab4a9b",
+      "actualSha256": "389e8fdd16f080720e70778b4ed7e5927a2f274071a4b29c2b192430e1ab4a9b",
+      "match": true
+    },
+    {
+      "file": "scripts/build-cv-candidates.mjs",
+      "recordedBytes": 7404,
+      "actualBytes": 7404,
+      "recordedSha256": "93c9560f7b6513e3f4925d3dd285cc6c51d2f308254ad82fbd87e6e2361d6a89",
+      "actualSha256": "93c9560f7b6513e3f4925d3dd285cc6c51d2f308254ad82fbd87e6e2361d6a89",
+      "match": true
+    }
+  ],
+  "archive": {
+    "path": "/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/app/public/blake-lin-application-preview.zip",
+    "bytes": 511028,
+    "sha256": "9d5b49aa8d622e68cbdd8383407138989957ac040a343438c07d8fa3b3c917ec",
+    "mtime": "2026-11-03T02:07:17.783619+08:00",
+    "pdfEntries": [
+      {
+        "entry": "resume/blake-lin-cv-en.pdf",
+        "bytes": 44420,
+        "sha256": "c0b5955e7467721b5d09b4942e0ef4354e782455baea6d2fb0de1888df76a137",
+        "sameAsPublic": true,
+        "manifestMatch": true
+      },
+      {
+        "entry": "resume/blake-lin-cv-zh-tw.pdf",
+        "bytes": 550969,
+        "sha256": "8d0cfb30adeaac71b1aa2075319e8f43914ac80459162be968fe22323f10656f",
+        "sameAsPublic": true,
+        "manifestMatch": true
+      }
+    ],
+    "crcError": null
+  }
+}

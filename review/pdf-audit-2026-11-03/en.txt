@@ -1,0 +1,42 @@
+=== en | PDF page 1 / 1 | raw pypdf extraction ===
+Ssu-Yuan Lin (Blake)
+AI Software Engineer
+ssu.yuan.lin@gmail.com · github.com/BlakeLin-LSY · blakelin-lsy.github.io/web-resume
+Software engineer with 3+ years of experience in ML training, computer vision and hardware
+integration. Recent personal work includes a bilingual research reader and an Android app for
+turning recordings into editable text.
+Professional experience
+DynaSafe Corp. · Senior AI Engineer 2026-01 – 2026-04
+Rebuilt the training-data pipeline after proﬁling a dataloader bottleneck, making model training
+10× faster.
+Adapted Nvidia Morpheus for network-anomaly detection with real PCAP data, and
+PhysicsNeMo training for an OpenFOAM CFD use case.
+MetGauge Co., Ltd. · Software Engineer 2023-09 – 2024-08
+Took a C++/Python 3D-measurement prototype to factory-ready production testing on a line
+with 12 stereo-camera pairs.
+Led system design, hardware integration and boundary testing; used test results to guide
+hardware tuning.
+Cloud computing courses · Google Grow with Google program 2022-04 – 2023-08
+UTECHZONE Corp. · Algorithm Engineer 2021-06 – 2022-03
+Developed C# optical-inspection algorithms that reduced AOI cycle time by 40%.
+Mentored two engineers and worked with a cross-functional team of 10+ on system
+integration.
+Gap year · Outdoor activities and online learning 2020-04 – 2021-05
+LIPS Corporation · Software Engineer, Algorithm Development 2019-07 – 2020-04
+Improved real-time 3D measurement accuracy by 66% through algorithm redesign and
+calibration of Intel RealSense D415/D435 stereo-camera systems.
+Personal projects
+Study Atlas
+Built a reader that turns research into English and Traditional Chinese cards, with short and in-
+depth reading routes. Added checks that reject an over-budget reading plan before delivery.
+Transcribe-for-X
+Built an Android prototype that saves audio before running local speech recognition. Kept the
+original transcript separate from cleanup suggestions, so users can accept or reject each
+removal.
+Technical skills
+Python · C++ · C# · ML pipelines · Computer vision
+Proﬁling · Stereo-camera calibration · Hardware integration · Test design
+Education & earlier research
+M.S. in Physics · National Central University · 2016 – 2018
+B.S. in Physics · National Central University · 2012 – 2016
+Research Assistant · National Central University · 2018-09 – 2019-01
