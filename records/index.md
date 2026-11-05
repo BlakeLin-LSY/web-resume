@@ -11,3 +11,4 @@ okf_version: "0.2"
 
 - [2026-11-03 · 作品近況、職涯材料與來源 · 分頁 HTML](../review/material-update-2026-11-03/brief.export.html)
 - [2026-11-03 · 雙語 PDF 來源核對與最小替換方案](2026-11-03-pdf-source-audit.md)
+- [2026-11-06 · 私有證據備忘與待補齊清單 (Private Evidence Backlog)](private-evidence-notes.md)
