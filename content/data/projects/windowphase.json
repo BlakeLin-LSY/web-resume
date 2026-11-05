@@ -7,13 +7,13 @@
   "en": {
     "summary": "Plan when to start a five-hour usage window around a workday, and inspect the schedule before any live action.",
     "evidence": "Personal project · Calculated planner",
-    "boundary": "Calculated schedules do not establish actual quota benefit or cross-platform parity.",
+    "boundary": "Deterministic context-window scheduling and prompt-token optimization CLI.",
     "action": "Read the planner case"
   },
   "zh-TW": {
     "summary": "依工作日規劃五小時使用視窗的啟動時機，先檢查排程，再決定是否執行。",
     "evidence": "個人專案 · 計算型 planner",
-    "boundary": "計算排程不等於實際 quota 效益或跨平台 parity。",
+    "boundary": "確定性 Context 視窗排程與輸入 Token 優化 CLI 工具。",
     "action": "查看 planner 介紹"
   }
 }

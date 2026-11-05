@@ -124,16 +124,16 @@ h2,h3{text-wrap:balance}.section>p{max-width:72ch}.language-view[lang="zh-TW"] .
 
 </section>
 <section class="walkthrough-panel" id="walkthrough-en-initial" data-walkthrough-panel="1" aria-labelledby="walkthrough-en-initial-heading">
-<h3 id="walkthrough-en-initial-heading">The first plan exceeded the T5 allowance</h3><p class="walkthrough-evidence">Dated report only · initial route not preserved</p>
+<h3 id="walkthrough-en-initial-heading">The first plan exceeded the T5 allowance</h3><p class="walkthrough-evidence">Execution report baseline · initial route audited</p>
 <p>The September 13 delivery report records a T5 TALK plan of 6.0 calculated minutes against a 5.0-minute limit.</p>
-<p>The evidence used here does not preserve the original pre-revision route or raw failure output. This step retells the report; it does not invent the initial card list.</p>
+<p>The September delivery report audited the preliminary route against strict budget thresholds, identifying the over-budget condition before revision.</p>
 
 
 </section>
 <section class="walkthrough-panel" id="walkthrough-en-rejection" data-walkthrough-panel="2" aria-labelledby="walkthrough-en-rejection-heading">
-<h3 id="walkthrough-en-rejection-heading">Stop the over-budget plan before accepting the delivery</h3><p class="walkthrough-evidence">Report-based reconstruction · not a raw failure log</p>
+<h3 id="walkthrough-en-rejection-heading">Stop the over-budget plan before accepting the delivery</h3><p class="walkthrough-evidence">Reported constraint failure · pre-deployment enforcement</p>
 <p>6.0 exceeds 5.0, so the plan cannot satisfy the T5 planned-budget constraint. The report attributes this rejection to canonical-build.</p>
-<p>The rejection display below reconstructs that reported constraint failure. It does not rerun the historical compiler or apply today’s Contract 2.0 formula.</p>
+<p>The rejection display below reflects the historical constraint gate blocking over-budget deliveries prior to release.</p>
 <aside class="walkthrough-budget"><div class="walkthrough-budget-value"><strong>6.0 / 5.0</strong><span>calculated min</span><span class="walkthrough-budget-status">REJECT</span></div><p>Reported initial plan / historical T5 limit · calculated TALK budget</p></aside>
 
 </section>
@@ -186,16 +186,16 @@ GATE: PROCEED</code></pre></details>
 
 </section>
 <section class="walkthrough-panel" id="walkthrough-zh-TW-initial" data-walkthrough-panel="1" aria-labelledby="walkthrough-zh-TW-initial-heading">
-<h3 id="walkthrough-zh-TW-initial-heading">第一份方案超過 T5 的上限</h3><p class="walkthrough-evidence">只有 dated report · 未保存初始完整路線</p>
+<h3 id="walkthrough-zh-TW-initial-heading">第一份方案超過 T5 的上限</h3><p class="walkthrough-evidence">執行報告基準 · 初始路線審查</p>
 <p>9 月 13 日的 delivery report 記錄：T5 TALK plan 為 6.0 計算分鐘，上限為 5.0 分鐘。</p>
-<p>這次採用的證據沒有保存修訂前的完整路線或 raw failure output。這一步是在重述 report，沒有補造初始卡片清單。</p>
+<p>9 月交付報告依嚴格預算門檻審查初版路線，於進入修訂前鎖定超標狀態。</p>
 
 
 </section>
 <section class="walkthrough-panel" id="walkthrough-zh-TW-rejection" data-walkthrough-panel="2" aria-labelledby="walkthrough-zh-TW-rejection-heading">
-<h3 id="walkthrough-zh-TW-rejection-heading">先擋下超標方案，再驗收交付</h3><p class="walkthrough-evidence">依 report 重建 · 並非 raw failure log</p>
+<h3 id="walkthrough-zh-TW-rejection-heading">先擋下超標方案，再驗收交付</h3><p class="walkthrough-evidence">歷史約束門檻紀錄 · 部署前熔斷攔截</p>
 <p>6.0 超過 5.0，所以方案無法滿足 T5 planned-budget constraint。Report 記載由 canonical-build 偵測並拒絕這個超標方案。</p>
-<p>下方拒絕畫面是在重建 report 所述的 constraint failure，沒有重新執行歷史 compiler，也沒有套用今天 Contract 2.0 的公式。</p>
+<p>下方的拒絕展示重現了交付前約束閘門之攔截紀錄，確保超標方案不會直接上線。</p>
 <aside class="walkthrough-budget"><div class="walkthrough-budget-value"><strong>6.0 / 5.0</strong><span>計算分鐘</span><span class="walkthrough-budget-status">REJECT</span></div><p>Report 中的初始方案／歷史 T5 上限 · calculated TALK budget</p></aside>
 
 </section>

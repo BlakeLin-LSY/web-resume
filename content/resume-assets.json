@@ -6,13 +6,13 @@
     "en": {
       "file": "blake-lin-cv-en.pdf",
       "bytes": 45388,
-      "sha256": "c897b056b51562b0233e85210ba08cd79bad2fc778d28800092b55a9a7492a2b",
+      "sha256": "25d806d0b006dda945b424397056bf97376d8877684451de91bbed4a471f7957",
       "pageCount": 1
     },
     "zh-TW": {
       "file": "blake-lin-cv-zh-tw.pdf",
       "bytes": 692471,
-      "sha256": "1c936c028fef087b46b136def6ddd5e664c96c96c343dadb9846f5824d0b7396",
+      "sha256": "d8399b2686150be9e2bdaf1f9015a9929d598ebf31d03ca4527629c3ce97a4a0",
       "pageCount": 1
     }
   }

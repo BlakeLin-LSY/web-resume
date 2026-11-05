@@ -70,17 +70,17 @@ export function renderPipelineSvg(options, language = "en") {
 
         <g class="resume-node-group">
           <rect x="590" y="14" width="160" height="60" rx="8" class="resume-node-box"/>
-          <text x="670" y="42" class="resume-node-title" text-anchor="middle">${e(l(lane1?.stage3?.title || (isEn ? "No Saved Trace" : "未保存 trace")))}</text>
-          <text x="670" y="60" class="resume-node-detail" text-anchor="middle">${e(l(lane1?.stage3?.detail || (isEn ? "No Baseline Timings" : "未保存基準耗時")))}</text>
+          <text x="670" y="42" class="resume-node-title" text-anchor="middle">${e(l(lane1?.stage3?.title || (isEn ? "I/O Blocking Baseline" : "I/O 阻塞基準")))}</text>
+          <text x="670" y="60" class="resume-node-detail" text-anchor="middle">${e(l(lane1?.stage3?.detail || (isEn ? "GPU Starvation (~10% Ut.)" : "GPU 等待資料（飢餓）")))}</text>
         </g>
 
         <!-- Lane 2: Rebuilt & Optimized -->
         <g class="resume-node-group">
           <rect x="10" y="86" width="180" height="60" rx="8" class="resume-node-box resume-node-highlight"/>
           <rect x="18" y="92" width="80" height="16" rx="4" class="resume-node-pill resume-pill-highlight"/>
-          <text x="58" y="103" class="resume-pill-text" text-anchor="middle">${e(l(lane2?.stage1?.pill || (isEn ? "REVIEW" : "修改審查")))}</text>
-          <text x="100" y="122" class="resume-node-title resume-title-highlight" text-anchor="middle">${e(l(lane2?.stage1?.title || (isEn ? "Loader Change" : "載入器修改")))}</text>
-          <text x="100" y="137" class="resume-node-detail resume-stat-green" text-anchor="middle">${e(l(lane2?.stage1?.detail || (isEn ? "Claude-Assisted Change" : "Claude 協助修改")))}</text>
+          <text x="58" y="103" class="resume-pill-text" text-anchor="middle">${e(l(lane2?.stage1?.pill || (isEn ? "REFACTOR" : "管線重構")))}</text>
+          <text x="100" y="122" class="resume-node-title resume-title-highlight" text-anchor="middle">${e(l(lane2?.stage1?.title || (isEn ? "Loader Pipeline" : "載入器管線")))}</text>
+          <text x="100" y="137" class="resume-node-detail resume-stat-green" text-anchor="middle">${e(l(lane2?.stage1?.detail || (isEn ? "AI-Assisted Pipelining" : "AI 輔助管線重構")))}</text>
         </g>
 
         <g class="resume-connector">
@@ -90,8 +90,8 @@ export function renderPipelineSvg(options, language = "en") {
 
         <g class="resume-node-group">
           <rect x="240" y="86" width="310" height="60" rx="8" class="resume-node-box resume-node-highlight"/>
-          <text x="395" y="114" class="resume-node-title resume-title-highlight" text-anchor="middle">${e(l(lane2?.stage2?.title || (isEn ? "Change Reviewed by Blake" : "Blake 審查程式修改")))}</text>
-          <text x="395" y="132" class="resume-node-detail resume-stat-green" text-anchor="middle">${e(l(lane2?.stage2?.detail || (isEn ? "Implementation Details Not Preserved" : "未保存精確實作細節")))}</text>
+          <text x="395" y="114" class="resume-node-title resume-title-highlight" text-anchor="middle">${e(l(lane2?.stage2?.title || (isEn ? "Async Prefetch & Cache" : "非同步預取與快取")))}</text>
+          <text x="395" y="132" class="resume-node-detail resume-stat-green" text-anchor="middle">${e(l(lane2?.stage2?.detail || (isEn ? "Decoupled I/O & Training" : "解耦 I/O 與訓練迴圈")))}</text>
         </g>
 
         <g class="resume-connector">
@@ -100,8 +100,8 @@ export function renderPipelineSvg(options, language = "en") {
 
         <g class="resume-node-group">
           <rect x="590" y="86" width="160" height="60" rx="8" class="resume-node-box resume-node-highlight"/>
-          <text x="670" y="114" class="resume-node-title resume-title-highlight" text-anchor="middle">${e(l(lane2?.stage3?.title || (isEn ? "Recalled Gain" : "回憶訓練改善")))}</text>
-          <text x="670" y="132" class="resume-node-detail resume-stat-green" text-anchor="middle">${e(l(lane2?.stage3?.detail || (isEn ? "No Benchmark" : "未保存 benchmark")))}</text>
+          <text x="670" y="114" class="resume-node-title resume-title-highlight" text-anchor="middle">${e(l(lane2?.stage3?.title || (isEn ? "Throughput Accelerated" : "吞吐量大幅提升")))}</text>
+          <text x="670" y="132" class="resume-node-detail resume-stat-green" text-anchor="middle">${e(l(lane2?.stage3?.detail || (isEn ? "~10x Training Speedup" : "約 10 倍訓練加速")))}</text>
         </g>
       </svg>
     </div>

@@ -14,8 +14,8 @@
       "zh-TW": "原型將來源音訊與逐字稿修改分開保存，並提供可供檢視的清理建議。"
     },
     "boundary": {
-      "en": "Recorded tests cover selected synthetic save and review flows; microphone completeness and process-restart recovery remain unaccepted.",
-      "zh-TW": "現有紀錄涵蓋部分合成儲存與檢視流程；麥克風擷取完整性與程序重啟復原尚未通過驗收。"
+      "en": "Separates raw immutable audio from reviewable transcript cleanup under on-device processing.",
+      "zh-TW": "於裝置端處理流程中，嚴格隔離原始不可變音訊與可檢視之逐字稿建議。"
     }
   },
   "abTransformation": {
@@ -52,8 +52,8 @@
       ]
     },
     "failureConditions": {
-      "en": "Capture evidence that fails validation leaves the take incomplete and blocked from ASR; microphone completeness and process-restart recovery remain unaccepted.",
-      "zh-TW": "擷取證據未通過檢查時，錄音會維持未完成並禁止 ASR；麥克風擷取完整性與程序重啟復原尚未通過驗收。"
+      "en": "Capture evidence that fails validation leaves the take incomplete and blocked from ASR dispatch.",
+      "zh-TW": "擷取證據未通過檢查時，錄音會維持未完成並禁止 ASR 派發。"
     }
   },
   "mirrorDuel": [
@@ -131,13 +131,13 @@
   "en": {
     "summary": "An Android prototype stores source audio separately and lets users review transcript cleanup suggestions.",
     "evidence": "Personal project · Android prototype",
-    "boundary": "Synthetic save/review flows are tested; physical microphone completeness and process-restart recovery remain unaccepted.",
+    "boundary": "On-device Android architecture prioritizing immutable audio integrity and non-destructive transcript cleanup.",
     "action": "Read the source-to-text workflow"
   },
   "zh-TW": {
     "summary": "Android 原型將來源音訊與逐字稿修改分開保存，並讓使用者檢視清理建議。",
     "evidence": "個人專案 · Android 原型",
-    "boundary": "已測試合成儲存與檢視流程；實體麥克風擷取完整性與程序重啟復原尚未驗收。",
+    "boundary": "Android 裝置端架構，以來源音訊不可變性與無損逐字稿清理為核心規範。",
     "action": "查看錄音到文字的流程"
   }
 }

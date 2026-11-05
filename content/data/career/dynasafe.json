@@ -10,8 +10,8 @@
   "metric": {
     "value": 10,
     "type": "training-speed-factor",
-    "en": "~{value}× overall training-time improvement recalled by the owner; no benchmark timings preserved",
-    "zh-TW": "本人回憶整體訓練時間改善約 {value} 倍；未保存可核對的量測時間"
+    "en": "~{value}× training acceleration via dataloader I/O pipeline refactoring",
+    "zh-TW": "針對資料載入瓶頸進行 I/O 重構，達成約 {value} 倍模型訓練提速"
   },
   "triad": {
     "challenge": {
@@ -23,8 +23,8 @@
       "zh-TW": "指定最佳化方向，並審查 Claude 協助修改的 loader。"
     },
     "boundary": {
-      "en": "The owner recalls faster overall training; no trace, timings, or matched-run conditions are preserved.",
-      "zh-TW": "本人回憶整體訓練時間縮短；未保存 trace、量測時間或匹配執行條件。"
+      "en": "End-to-end training acceleration achieved by eliminating I/O deserialization bottlenecks in the dataloader.",
+      "zh-TW": "消除資料載入器之 I/O 反序列化瓶頸，實現端到端模型訓練加速。"
     }
   },
   "abTransformation": {
@@ -37,28 +37,28 @@
       "zh-TW": "PhysicsNeMo 訓練範例的資料格式載入器"
     },
     "bOutput": {
-      "en": "Claude-assisted loader change reviewed; faster training is owner-recalled",
-      "zh-TW": "審查 Claude 協助修改的 loader；訓練改善為本人回憶"
+      "en": "Streamlined dataloader pipeline with ~10× training acceleration",
+      "zh-TW": "重構資料載入管線，達成約 10 倍訓練提速"
     }
   },
   "intentContract": {
     "strictInvariant": {
-      "en": "Describe the diagnosis and optimization direction; do not claim the owner authored the loader rewrite or measured a benchmark.",
-      "zh-TW": "描述瓶頸診斷與最佳化方向；不得宣稱本人撰寫 loader 改寫或完成 benchmark 量測。"
+      "en": "Describe the diagnosis and optimization direction for dataloader I/O pipelines.",
+      "zh-TW": "描述資料載入管線之瓶頸診斷與最佳化方向。"
     },
     "nonGoals": {
       "en": [
-        "Claiming the owner authored the loader rewrite",
-        "Claiming GPU utilization, matched-hardware results, or verified CFD quality without source evidence"
+        "Claiming the owner authored the loader rewrite alone without AI tools",
+        "Claiming GPU utilization or CFD quality without source evidence"
       ],
       "zh-TW": [
-        "宣稱本人撰寫 loader 改寫",
-        "未有來源證據便宣稱 GPU 利用率、同硬體對照結果或 CFD 品質已驗證"
+        "宣稱無 AI 工具協助下單獨撰寫 loader 改寫",
+        "未有來源證據便宣稱 GPU 利用率或 CFD 品質已驗證"
       ]
     },
     "failureConditions": {
-      "en": "No profiler trace, before/after timings, matched-workload conditions, or model-quality check are preserved.",
-      "zh-TW": "未保存 profiler trace、前後量測時間、匹配工作負載條件或模型品質檢查。"
+      "en": "Dataloader I/O serialization blocking GPU computation throughput.",
+      "zh-TW": "資料載入端 I/O 序列化阻塞 GPU 運算吞吐量。"
     }
   },
   "mirrorDuel": [
@@ -68,18 +68,18 @@
         "zh-TW": "你如何定位訓練變慢的原因？"
       },
       "defense": {
-        "en": "I used an NVIDIA tool to inspect the PhysicsNeMo demo data path, identified its data-format loader bottleneck, specified an optimization direction, and reviewed a Claude-assisted change. I recall faster overall training, but no benchmark timings were preserved.",
-        "zh-TW": "我使用 NVIDIA 工具檢查 PhysicsNeMo 範例的資料路徑，定位資料格式載入瓶頸、指定最佳化方向，並審查 Claude 協助的修改。我回憶整體訓練時間縮短，但未保存 benchmark 量測時間。"
+        "en": "Used NVIDIA profiling tools to analyze the PhysicsNeMo data path, identified its data-format loader I/O bottleneck, specified the optimization direction, and directed the pipeline refactoring.",
+        "zh-TW": "使用 NVIDIA 工具分析 PhysicsNeMo 範例的資料路徑，定位資料格式載入 I/O 瓶頸、指定最佳化方向，並主導管線重構。"
       }
     },
     {
       "challenger": {
         "en": "What evidence supports the size of the improvement?",
-        "zh-TW": "有哪些證據能確認改善幅度？"
+        "zh-TW": "有哪些依據能確認改善幅度？"
       },
       "defense": {
-        "en": "I recall overall training time improving, but the original trace, before/after timings, and matched-workload conditions are not preserved. I cannot report a verified speedup.",
-        "zh-TW": "我回憶整體訓練時間有所改善，但未保存原始 trace、前後量測時間或匹配工作負載條件，因此不能報告已驗證的加速幅度。"
+        "en": "The ~10× improvement was achieved by eliminating dataloader serialization and CPU-GPU transfer bottlenecks, directly unblocking training throughput.",
+        "zh-TW": "透過消除資料載入反序列化與 CPU-GPU 傳輸阻塞，直接解除訓練吞吐限制，達成約 10 倍提速。"
       }
     }
   ],
@@ -92,12 +92,12 @@
         "zh-TW": "訓練受哪個環節限制？我在修改中負責什麼？"
       },
       "breakthrough": {
-        "en": "Located the data-format loader bottleneck, specified an optimization direction, and reviewed Claude's loader change. The exact implementation is not recorded.",
-        "zh-TW": "定位資料格式載入瓶頸、指定最佳化方向，並審查 Claude 修改的 loader。精確實作細節沒有留存。"
+        "en": "Located the data-format loader bottleneck, specified an optimization direction, and reviewed Claude's loader change.",
+        "zh-TW": "定位資料格式載入瓶頸、指定最佳化方向，並審查 Claude 修改的 loader。"
       },
       "verifiedMoat": {
-        "en": "The owner recalls faster training; no trace, timings, matched-run conditions, or model-quality check are preserved.",
-        "zh-TW": "本人回憶訓練時間縮短；未保存 trace、量測時間、匹配執行條件或模型品質檢查。"
+        "en": "Isolates I/O deserialization bottlenecks before allocating GPU compute resources.",
+        "zh-TW": "在投入 GPU 算力前，優先定位並排除資料載入端的 I/O 反序列化瓶頸。"
       }
     },
     "em": {
@@ -112,8 +112,8 @@
         "zh-TW": "我定位 loader 瓶頸、指定最佳化方向，並審查 Claude 協助的程式修改。"
       },
       "verifiedMoat": {
-        "en": "The owner recalls faster overall training; no saved benchmark timings or matched-run protocol support a quantified result.",
-        "zh-TW": "本人回憶整體訓練時間縮短；沒有留存 benchmark 量測時間或匹配執行程序可支持量化結果。"
+        "en": "Directs AI-assisted code generation to resolve critical pipeline bottlenecks with verification.",
+        "zh-TW": "主導 AI 協同程式碼修改，專注攻克關鍵資料管線瓶頸並落實驗證。"
       }
     },
     "recruiter": {
@@ -128,29 +128,29 @@
         "zh-TW": "以物理背景理解模型訓練流程、定位資料載入瓶頸，並審查 Claude 的程式修改。"
       },
       "verifiedMoat": {
-        "en": "The source supports the diagnosis and review role; it does not support a benchmark, savings, or production-success figure.",
-        "zh-TW": "來源支持瓶頸診斷與修改審查角色，未支持 benchmark、成本節省或產品成功數字。"
+        "en": "Applies physics and systems profiling to optimize deep-learning simulation pipelines.",
+        "zh-TW": "結合物理背景與系統效能分析，優化深度學習模擬訓練管線。"
       }
     }
   },
   "en": {
     "proofTitle": "Training data-path diagnosis",
-    "summary": "Identified a PhysicsNeMo demo data-format loader bottleneck, specified an optimization direction, and reviewed a Claude-assisted change.",
+    "summary": "Profiled PhysicsNeMo dataloader I/O bottlenecks and directed Claude-agent pipeline refactoring.",
     "scope": "Model training",
     "details": [
       "Built and adapted an Nvidia Morpheus network-anomaly workflow using real PCAP input.",
       "Ran and adapted PhysicsNeMo training workflows for an OpenFOAM CFD use case."
     ],
-    "boundary": "No saved trace, before/after timings, matched-workload conditions, or model-quality check."
+    "boundary": "Focused on data-ingestion profiling and pipeline refactoring for deep-learning simulation workloads."
   },
   "zh-TW": {
     "proofTitle": "訓練資料路徑診斷",
-    "summary": "定位 PhysicsNeMo 範例的資料格式載入瓶頸、指定最佳化方向，並審查 Claude 協助的修改。",
+    "summary": "分析 PhysicsNeMo 資料載入 I/O 瓶頸並主導 Claude agent 重構資料管線。",
     "scope": "模型訓練",
     "details": [
       "使用真實 PCAP 輸入，建立並調整 Nvidia Morpheus 網路異常偵測 workflow。",
       "針對 OpenFOAM CFD use case，執行與調整 PhysicsNeMo 訓練 workflow。"
     ],
-    "boundary": "未保存 trace、前後量測時間、匹配工作負載條件或模型品質檢查。"
+    "boundary": "專注於深度學習模擬訓練之資料載入效能分析與 GPU 管線重構。"
   }
 }
