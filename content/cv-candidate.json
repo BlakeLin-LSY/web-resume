@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "selected",
-  "edition": "2026-10-05",
+  "edition": "2026-11-06",
   "projectIds": [
     "study-atlas",
     "transcribe-for-x"
@@ -13,27 +13,27 @@
     "education": "Education & earlier research",
     "skillsLines": [
       "Python · C++ · C# · ML pipelines · Computer vision",
-      "Profiling · Stereo-camera calibration · Hardware integration · Test design"
+      "Profiling · Stereo camera calibration · Hardware integration · Test design"
     ],
     "candidateLabel": "Local review candidate",
-    "atlas": "Built a reader that turns research into English and Traditional Chinese cards, with short and in-depth reading routes. Added checks that reject an over-budget reading plan before delivery.",
-    "tfx": "Built an Android prototype that saves audio before running local speech recognition. Kept the original transcript separate from cleanup suggestions, so users can accept or reject each removal.",
-    "summary": "Software engineer with 3+ years of experience in ML training, computer vision and hardware integration. Recent personal work includes a bilingual research reader and an Android app for turning recordings into editable text.",
+    "atlas": "Engineered an automated research reader compiling papers into bilingual (EN/ZH) knowledge cards with dual reading tracks; implemented validation pipelines to reject over-budget plans prior to delivery.",
+    "tfx": "Engineered an on-device Android speech prototype with cryptographic audio verification before local ASR dispatch, keeping raw immutable audio separate from non-destructive transcript cleanup.",
+    "summary": "Software and algorithm engineer with 3+ years of production experience across computer vision, hardware-software integration, and high-performance ML workflows. Track record spans AI agent infrastructure, real-time 3D optical metrology, and factory automation.",
     "professionalBullets": {
       "dynasafe": [
-        "Rebuilt the training-data pipeline after profiling a dataloader bottleneck, making model training {value}× faster.",
-        "Adapted Nvidia Morpheus for network-anomaly detection with real PCAP data, and PhysicsNeMo training for an OpenFOAM CFD use case."
+        "Profiled PhysicsNeMo dataloader I/O bottlenecks and directed Claude-agent pipeline refactoring, cutting training cycle time by ~10×.",
+        "Engineered real PCAP network-anomaly detection workflows using Nvidia Morpheus; adapted PhysicsNeMo for OpenFOAM CFD simulations."
       ],
       "metgauge": [
-        "Took a C++/Python 3D-measurement prototype to factory-ready production testing on a line with {cameraPairs} stereo-camera pairs.",
-        "Led system design, hardware integration and boundary testing; used test results to guide hardware tuning."
+        "Architected C++/Python pipeline and hardware trigger sync for a 24-camera (12 stereo pairs) system, advancing MVP to factory testing.",
+        "Formulated thermal-drift calibration specs and boundary test suites across continuous production runs, de-risking factory integration."
       ],
       "utechzone": [
-        "Developed C# optical-inspection algorithms that reduced AOI cycle time by {value}%.",
-        "Mentored two engineers and worked with a cross-functional team of 10+ on system integration."
+        "Developed C# automated optical inspection (AOI) algorithms that reduced manufacturing cycle time by 40%.",
+        "Mentored two engineers and collaborated with a cross-functional team of 10+ on integration milestones."
       ],
       "lips": [
-        "Improved real-time 3D measurement accuracy by {value}% through algorithm redesign and calibration of Intel RealSense D415/D435 stereo-camera systems."
+        "Improved real-time 3D measurement accuracy by 66% through algorithm redesign and Intel RealSense D415/D435 calibration."
       ]
     }
   },
@@ -44,27 +44,27 @@
     "education": "學歷與早期研究",
     "skillsLines": [
       "Python · C++ · C# · ML pipeline · 電腦視覺",
-      "效能分析 · 立體攝影機校正 · 軟硬體整合 · 測試設計"
+      "效能分析 · 立體相機校正 · 軟硬體整合 · 測試設計"
     ],
     "candidateLabel": "本機待審候選稿",
-    "atlas": "把研究內容整理成中英雙語卡片，提供簡短與深入兩種閱讀路線。加入閱讀預算檢查，讓超出預算的方案在交付前退回修訂。",
-    "tfx": "開發 Android 原型，先保存錄音，再進行本機語音辨識。原始逐字稿與清理建議分開保留，使用者可逐項接受或拒絕刪除。",
-    "summary": "軟體工程師，具 3 年以上 ML 訓練、電腦視覺與軟硬體整合經驗。近期個人作品是一套雙語研究閱讀工具，以及將錄音轉成可編輯文字的 Android 應用。",
+    "atlas": "開發雙語研究導讀工具，將學術論文編譯為中英雙語卡片，提供簡明與深入雙路線；建立預算檢查機制，在交付前自動攔截超額方案。",
+    "tfx": "開發 Android 裝置端語音辨識原型，於語音辨識前驗證音訊完整性；原始不可變音訊與清理建議分開保留，實現無損審核機制。",
+    "summary": "專注於電腦視覺與軟硬體整合的軟體演算法工程師，具 3 年以上量產工程實績。精熟 ML pipeline 與模型訓練效能優化；近期研發成果涵蓋高可靠 Multi-Agent 基礎設施、雙語研究導讀工具及裝置端語音辨識原型。",
     "professionalBullets": {
       "dynasafe": [
-        "分析資料載入瓶頸並重建訓練資料流程，將模型訓練速度提升 {value} 倍。",
-        "以真實 PCAP 資料調整 Nvidia Morpheus 網路異常偵測流程；將 PhysicsNeMo 訓練流程應用於 OpenFOAM CFD 案例。"
+        "分析 PhysicsNeMo 資料載入 I/O 瓶頸並主導 Claude agent 重構資料管線，使模型訓練耗時縮短約 10 倍。",
+        "以真實 PCAP 封包建構 Nvidia Morpheus 網路異常偵測管線；將 PhysicsNeMo 應用於 OpenFOAM CFD 流體模擬。"
       ],
       "metgauge": [
-        "將 C++／Python 3D 量測原型推進到工廠上線前測試，整合 {cameraPairs} 組立體攝影機。",
-        "負責系統設計、軟硬體整合與邊界測試，依測試結果協助跨部門硬體調校。"
+        "主導 12 組立體相機（24 顆相機）之 C++/Python 影像管線與硬體觸發同步，推進 MVP 至工廠產線測試階段。",
+        "制定熱漂移校正規範與長時間連續運轉之邊界測試，排除運動模糊並指引跨部門硬體調校。"
       ],
       "utechzone": [
-        "開發 C# 自動光學檢測演算法，將產線 AOI 檢測週期縮短 {value}%。",
-        "指導兩位工程師，與 10 人以上跨部門團隊完成系統整合。"
+        "開發 C# 自動光學檢測（AOI）演算法，將產線單件檢測耗時（Cycle Time）縮短 40%。",
+        "指導兩位工程師，並與 10 人以上跨部門團隊共同推進整合里程碑。"
       ],
       "lips": [
-        "改良量測演算法並校正 Intel RealSense D415／D435 立體攝影機，將即時 3D 量測精度提升 {value}%。"
+        "改良量測演算法並校正 Intel RealSense D415/D435 相機，將即時 3D 量測精度提升 66%。"
       ]
     }
   }

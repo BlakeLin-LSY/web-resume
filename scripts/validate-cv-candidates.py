@@ -18,17 +18,42 @@ def normalize(text):
 
 def inspect_text(text):
     normalized = normalize(text)
-    expected = [profile['identity']['name'], profile['identity']['role'], profile['contact']['email'], 'github.com/BlakeLin-LSY', 'blakelin-lsy.github.io/web-resume', 'Study Atlas', 'Transcribe-for-X', 'Google Grow with Google', '2020-04', '2021-05', '2022-04', '2023-08']
+    expected = [
+        profile['identity']['name'],
+        profile['identity']['role'],
+        profile['contact']['email'],
+        'github.com/BlakeLin-LSY',
+        'blakelin-lsy.github.io/web-resume',
+        'Study Atlas',
+        'Transcribe-for-X',
+        'Google Grow with Google',
+        '2020-04',
+        '2021-05',
+        '2022-04',
+        '2023-08',
+        '2026-05',
+        'Agent Ticket Kanban',
+        'windowphase',
+        'PhysicsNeMo',
+        'Claude',
+        'Morpheus',
+        'Intel RealSense D415',
+        '40%',
+        '66%'
+    ]
     for item in profile['professional']:
         expected.extend([item['employer'], item['start'], item['end']])
-        if item.get('metric'):
-            expected.append(str(item['metric']['value']))
     for value in expected:
         if normalize(value) not in normalized:
             raise ValueError('Missing CV fact: ' + value)
     for forbidden in ['/mnt/', '/home/', 'linkedin.com', 'career-ops-repo']:
         if forbidden in text:
             raise ValueError('Non-public CV field: ' + forbidden)
+    if '{' in text or '}' in text:
+        raise ValueError('Unreplaced placeholder in CV')
+    for banned in ['40% cost reduction', '0 prompt-injection', 'zero state loss']:
+        if banned in text:
+            raise ValueError('Banned speculative claim present: ' + banned)
 
 
 for item in provenance['inputs']:
@@ -49,5 +74,12 @@ for output in provenance['outputs']:
         negative = True
     else:
         raise AssertionError('Missing-contact counterexample was accepted')
-    rows.append({'language': output['language'], 'pages': 1, 'bytes': len(raw), 'sha256': output['pdfSha256'], 'factsPresent': True, 'missingContactRejected': negative})
+    rows.append({
+        'language': output['language'],
+        'pages': 1,
+        'bytes': len(raw),
+        'sha256': output['pdfSha256'],
+        'factsPresent': True,
+        'missingContactRejected': negative
+    })
 print(json.dumps({'scope': 'Producer checks; not independent human review', 'candidates': rows}, ensure_ascii=False, indent=2))

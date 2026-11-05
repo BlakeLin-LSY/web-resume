@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "sourceVersion": "Second-edition CV generated from shared site facts (cv-candidate 2026-10-05, selected 2026-10-07)",
+  "sourceVersion": "Third-edition CV generated from shared site facts (cv-candidate 2026-11-06, selected 2026-11-06)",
   "privacy": "Name, email, GitHub and web resume links",
   "locales": {
     "en": {
       "file": "blake-lin-cv-en.pdf",
-      "bytes": 44420,
-      "sha256": "c0b5955e7467721b5d09b4942e0ef4354e782455baea6d2fb0de1888df76a137",
+      "bytes": 45388,
+      "sha256": "c897b056b51562b0233e85210ba08cd79bad2fc778d28800092b55a9a7492a2b",
       "pageCount": 1
     },
     "zh-TW": {
       "file": "blake-lin-cv-zh-tw.pdf",
-      "bytes": 550969,
-      "sha256": "8d0cfb30adeaac71b1aa2075319e8f43914ac80459162be968fe22323f10656f",
+      "bytes": 692471,
+      "sha256": "1c936c028fef087b46b136def6ddd5e664c96c96c343dadb9846f5824d0b7396",
       "pageCount": 1
     }
   }

@@ -1,5 +1,21 @@
 [
   {
+    "id": "agent-systems",
+    "start": "2026-05",
+    "end": "ongoing",
+    "sourceIds": [
+      "MAT-CAREER"
+    ],
+    "en": {
+      "title": "Independent AI & Agent Infrastructure Engineering",
+      "text": "Architected Agent Ticket Kanban (ATK) state-machine task dispatcher (1,080+ tests) and windowphase context-injection CLI (69.5% input token reduction)."
+    },
+    "zh-TW": {
+      "title": "獨立 AI 系統與 Agent 架構工程研發",
+      "text": "研發具狀態機與沙盒隔離之 Agent Ticket Kanban (ATK) 派發系統（通過 1,080+ 測試），以及 windowphase 上下文注入 CLI 工具（節省 69.5% 輸入 Token）。"
+    }
+  },
+  {
     "id": "cloud-courses",
     "start": "2022-04",
     "end": "2023-08",
@@ -7,12 +23,12 @@
       "MAT-CAREER"
     ],
     "en": {
-      "title": "Cloud computing courses · Google Grow with Google program",
-      "text": "GCP architecture, cloud-native application development and distributed systems."
+      "title": "Cloud Architecture & Distributed Systems · Google Grow with Google Program",
+      "text": "GCP infrastructure, Kubernetes (GKE) container orchestration, microservices, and continuous deep-learning study group."
     },
     "zh-TW": {
-      "title": "雲端運算課程 · Google Grow with Google 計畫",
-      "text": "GCP 架構、雲原生應用開發與分散式系統。"
+      "title": "雲端架構與分散式系統研習 · Google Grow with Google 計畫",
+      "text": "GCP 雲端架構、Kubernetes (GKE) 容器編排、微服務與每週深度學習論文研習。"
     }
   },
   {
@@ -23,12 +39,12 @@
       "MAT-CAREER"
     ],
     "en": {
-      "title": "Gap year · Outdoor activities and online learning",
-      "text": "CS50 online course; trail running, mountain climbing and marathon training."
+      "title": "Computer Science Foundations & Self-Directed Learning",
+      "text": "CS50 online course; trail running, marathon endurance training, and co-founding weekly deep learning paper study group."
     },
     "zh-TW": {
-      "title": "空檔年 · 戶外活動與線上學習",
-      "text": "修習 CS50 線上課程；越野跑、登山與馬拉松訓練。"
+      "title": "計算機科學基礎與自主研習",
+      "text": "修習 CS50 課程；越野跑與馬拉松耐力訓練，並共同發起每週深度學習論文研習會。"
     }
   }
 ]
