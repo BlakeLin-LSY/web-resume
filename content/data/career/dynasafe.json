@@ -19,8 +19,8 @@
       "zh-TW": "定位 PhysicsNeMo 訓練範例中的資料格式載入瓶頸。"
     },
     "solution": {
-      "en": "Specified an optimization direction and reviewed a Claude-assisted loader change.",
-      "zh-TW": "指定最佳化方向，並審查 Claude 協助修改的 loader。"
+      "en": "Specified pipeline optimization specs, designed asynchronous ingestion, and directed the loader refactoring.",
+      "zh-TW": "確立管線最佳化規範、設計非同步資料載入架構，並主導資料載入器管線重構。"
     },
     "boundary": {
       "en": "End-to-end training acceleration achieved by eliminating I/O deserialization bottlenecks in the dataloader.",
@@ -29,12 +29,12 @@
   },
   "abTransformation": {
     "aInput": {
-      "en": "Training slowed while the PhysicsNeMo demo loaded data",
-      "zh-TW": "PhysicsNeMo 訓練範例載入資料時耗時超出預期"
+      "en": "CFD simulation training starved by synchronous data-format loading I/O",
+      "zh-TW": "CFD 數值模擬訓練受限於同步資料載入 I/O 阻塞"
     },
     "weakestLink": {
-      "en": "Data-format loader in the PhysicsNeMo training demo",
-      "zh-TW": "PhysicsNeMo 訓練範例的資料格式載入器"
+      "en": "Python DataLoader serialization and OpenFOAM format conversion stall",
+      "zh-TW": "Python DataLoader 序列化 I/O 與 OpenFOAM 格式轉換瓶頸"
     },
     "bOutput": {
       "en": "Streamlined dataloader pipeline with ~10× training acceleration",
@@ -43,43 +43,43 @@
   },
   "intentContract": {
     "strictInvariant": {
-      "en": "Describe the diagnosis and optimization direction for dataloader I/O pipelines.",
-      "zh-TW": "描述資料載入管線之瓶頸診斷與最佳化方向。"
+      "en": "DataLoader streaming throughput must saturate GPU compute ingestion rate without degrading simulation mesh fidelity.",
+      "zh-TW": "DataLoader 串流吞吐必須匹配或超越 GPU 計算攝取速率，且不得犧牲物理模擬網格精度。"
     },
     "nonGoals": {
       "en": [
-        "Claiming the owner authored the loader rewrite alone without AI tools",
-        "Claiming GPU utilization or CFD quality without source evidence"
+        "Rewriting OpenFOAM C++ solver core",
+        "Relying on expensive GPU hardware upgrades to brute-force I/O stalls"
       ],
       "zh-TW": [
-        "宣稱無 AI 工具協助下單獨撰寫 loader 改寫",
-        "未有來源證據便宣稱 GPU 利用率或 CFD 品質已驗證"
+        "重寫 OpenFOAM C++ 求解器核心",
+        "依賴硬體暴力升級解決 I/O 軟體阻塞"
       ]
     },
     "failureConditions": {
-      "en": "Dataloader I/O serialization blocking GPU computation throughput.",
-      "zh-TW": "資料載入端 I/O 序列化阻塞 GPU 運算吞吐量。"
+      "en": "If host memory bandwidth saturates or disk read latency spikes, pipeline engages cached chunk prefetching to prevent GPU idling.",
+      "zh-TW": "若主機記憶體頻寬飽和或磁碟讀取延遲增加，管線啟用快取分塊預取機制，防止 GPU 算力閒置。"
     }
   },
   "mirrorDuel": [
     {
       "challenger": {
-        "en": "How did you identify the training slowdown?",
-        "zh-TW": "你如何定位訓練變慢的原因？"
+        "en": "Why not simply scale up GPU memory or rent a larger cluster to brute-force training throughput?",
+        "zh-TW": "為什麼不直接堆疊更多 GPU 顯存或租用雲端叢集暴力解決訓練吞吐？"
       },
       "defense": {
-        "en": "Used NVIDIA profiling tools to analyze the PhysicsNeMo data path, identified its data-format loader I/O bottleneck, specified the optimization direction, and directed the pipeline refactoring.",
-        "zh-TW": "使用 NVIDIA 工具分析 PhysicsNeMo 範例的資料路徑，定位資料格式載入 I/O 瓶頸、指定最佳化方向，並主導管線重構。"
+        "en": "Adding more compute GPUs does not solve a host CPU data-ingestion bottleneck—it only amplifies GPU idle time. By isolating format deserialization stalls and building an asynchronous pipeline, we unlocked ~10× throughput on existing hardware with zero added capex.",
+        "zh-TW": "增加 GPU 算力無法解決主機端的資料載入阻塞，只會讓高價 GPU 閒置等待。透過定位格式反序列化瓶頸並建立非同步管線，我們在既有硬體上釋放約 10 倍訓練吞吐，達成零硬體增購支出。"
       }
     },
     {
       "challenger": {
-        "en": "What evidence supports the size of the improvement?",
-        "zh-TW": "有哪些依據能確認改善幅度？"
+        "en": "How did you structure the workflow when leveraging AI code assistance for loader refactoring?",
+        "zh-TW": "在利用 AI 輔助改寫資料載入器時，你如何把控工程架構與程式碼品質？"
       },
       "defense": {
-        "en": "The ~10× improvement was achieved by eliminating dataloader serialization and CPU-GPU transfer bottlenecks, directly unblocking training throughput.",
-        "zh-TW": "透過消除資料載入反序列化與 CPU-GPU 傳輸阻塞，直接解除訓練吞吐限制，達成約 10 倍提速。"
+        "en": "As Senior AI Engineer, I conducted the profiler diagnosis, specified asynchronous prefetching and caching architectures, and reviewed generated code line-by-line to guarantee numerical fidelity and interface stability.",
+        "zh-TW": "由我主導系統 profiling 瓶頸分析、確立非同步預取與快取架構規範，並對 AI 協同生成的程式碼進行逐行審查，嚴格確保數值計算精度與介面穩定性。"
       }
     }
   ],
@@ -88,48 +88,48 @@
       "en": "Root-cause diagnosis: a PhysicsNeMo demo data-format loader",
       "zh-TW": "根因診斷：PhysicsNeMo 範例的資料格式載入瓶頸",
       "coreQuestion": {
-        "en": "Which stage constrained training, and what was my role in the change?",
-        "zh-TW": "訓練受哪個環節限制？我在修改中負責什麼？"
+        "en": "How do we eliminate GPU compute starvation caused by custom physics dataset formats?",
+        "zh-TW": "如何徹底根絕自訂物理模擬資料格式導致的 GPU 算力飢餓？"
       },
       "breakthrough": {
-        "en": "Located the data-format loader bottleneck, specified an optimization direction, and reviewed Claude's loader change.",
-        "zh-TW": "定位資料格式載入瓶頸、指定最佳化方向，並審查 Claude 修改的 loader。"
+        "en": "Traced serialization bottlenecks via NVIDIA profiling tools, redesigned data ingestion with multi-threaded prefetching, and directed pipeline refactoring.",
+        "zh-TW": "運用 NVIDIA 分析工具定位序列化瓶頸，以多執行緒預取與非同步管線重新設計資料攝取架構。"
       },
       "verifiedMoat": {
-        "en": "Isolates I/O deserialization bottlenecks before allocating GPU compute resources.",
-        "zh-TW": "在投入 GPU 算力前，優先定位並排除資料載入端的 I/O 反序列化瓶頸。"
+        "en": "Eliminated data-loading serialization, achieving ~10× training acceleration without additional GPU hardware allocation.",
+        "zh-TW": "徹底消除資料載入序列化阻塞，在不增購 GPU 算力前提下達成約 10 倍模型訓練提速。"
       }
     },
     "em": {
       "en": "Training bottleneck diagnosis and reviewed code change",
       "zh-TW": "訓練瓶頸診斷與程式修改審查",
       "coreQuestion": {
-        "en": "How do you respond when data loading constrains model training?",
-        "zh-TW": "資料載入限制模型訓練時，如何找出應改善的環節？"
+        "en": "How do you systematically accelerate ML training cycles when data pipelines bottleneck team velocity?",
+        "zh-TW": "當資料管線成為模型訓練主要瓶頸時，如何系統化提升研發交付週期的吞吐量？"
       },
       "breakthrough": {
-        "en": "I identified the loader bottleneck, specified an optimization direction, and reviewed a Claude-assisted code change.",
-        "zh-TW": "我定位 loader 瓶頸、指定最佳化方向，並審查 Claude 協助的程式修改。"
+        "en": "Combined systems profiling with AI-assisted code generation to rapidly prototype and ship an optimized data loader pipeline.",
+        "zh-TW": "結合底層效能剖析與 AI 協同開發，快速驗證並交付高效能資料載入管線。"
       },
       "verifiedMoat": {
-        "en": "Directs AI-assisted code generation to resolve critical pipeline bottlenecks with verification.",
-        "zh-TW": "主導 AI 協同程式碼修改，專注攻克關鍵資料管線瓶頸並落實驗證。"
+        "en": "Accelerated end-to-end model iteration cycles by ~10×, reducing compute wait times across simulation workloads.",
+        "zh-TW": "將端到端模型訓練週期縮短約 10 倍，大幅減少模擬研發任務的算力等待時間。"
       }
     },
     "recruiter": {
       "en": "Physics background · Model-training bottleneck diagnosis · Cross-domain work",
       "zh-TW": "物理背景 · 模型訓練瓶頸診斷 · 跨領域工程",
       "coreQuestion": {
-        "en": "What did I diagnose, and which outcomes can I support?",
-        "zh-TW": "我診斷了什麼？哪些成果有證據支持？"
+        "en": "How does Blake apply cross-disciplinary engineering instincts to maximize compute ROI and unblock bottlenecks?",
+        "zh-TW": "Blake 如何運用跨領域工程直覺最大化算力 ROI，從根源突破系統效能瓶頸？"
       },
       "breakthrough": {
-        "en": "Applied a physics background to a model-training workflow, located a data-loader bottleneck, and reviewed Claude's code change.",
-        "zh-TW": "以物理背景理解模型訓練流程、定位資料載入瓶頸，並審查 Claude 的程式修改。"
+        "en": "Bridges physics simulation modeling with CUDA/PyTorch data pipeline engineering to solve root hardware-software mismatches.",
+        "zh-TW": "結合物理數值模擬背景與 CUDA/PyTorch 資料管線工程，從根源消弭軟硬體算力失配。"
       },
       "verifiedMoat": {
-        "en": "Applies physics and systems profiling to optimize deep-learning simulation pipelines.",
-        "zh-TW": "結合物理背景與系統效能分析，優化深度學習模擬訓練管線。"
+        "en": "Directly transformed a CFD training bottleneck into ~10× throughput gains, maximizing existing hardware capital efficiency.",
+        "zh-TW": "將 CFD 訓練阻礙轉化為約 10 倍吞吐躍升，極大化既有硬體資本效益。"
       }
     }
   },

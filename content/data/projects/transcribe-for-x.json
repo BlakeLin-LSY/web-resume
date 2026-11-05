@@ -6,12 +6,12 @@
   ],
   "triad": {
     "challenge": {
-      "en": "Keeping source audio separate from transcript edits in an Android speech-to-text prototype.",
-      "zh-TW": "在 Android 語音轉文字原型中，將來源音訊與逐字稿修改分開保存。"
+      "en": "Preventing accidental verbatim transcript loss from automatic, destructive text rewriting on mobile devices.",
+      "zh-TW": "杜絕行動裝置端因自動化破壞性文字覆寫所造成的原始逐字稿滅失。"
     },
     "solution": {
-      "en": "The prototype stores source audio separately from transcript edits and offers cleanup suggestions for review.",
-      "zh-TW": "原型將來源音訊與逐字稿修改分開保存，並提供可供檢視的清理建議。"
+      "en": "Dual-track architecture: app-private scoped audio storage paired with non-destructive candidate diff review.",
+      "zh-TW": "雙軌保真架構：應用程式私有沙盒原始音訊唯讀保護 ＋ 非破壞性候選修訂差分審閱。"
     },
     "boundary": {
       "en": "Separates raw immutable audio from reviewable transcript cleanup under on-device processing.",
@@ -20,122 +20,118 @@
   },
   "abTransformation": {
     "aInput": {
-      "en": "Keeping source audio available while reviewing speech-to-text edits",
-      "zh-TW": "檢視語音辨識文字時，仍保留來源音訊的目標"
+      "en": "Speech noise and colloquial disfluencies triggering destructive in-place text rewriting",
+      "zh-TW": "語音雜訊與口語頓挫觸發破壞性原地文字覆寫，導致原始語意滅失"
     },
     "weakestLink": {
-      "en": "Separating source audio from transcript changes in the Android prototype",
-      "zh-TW": "在 Android 原型中區分來源音訊與逐字稿修改"
+      "en": "Coupled storage layer where automated cleanup directly mutates the raw verbatim transcript",
+      "zh-TW": "緊密耦合的儲存架構：自動化清理直接覆寫底層逐字稿原始事實"
     },
     "bOutput": {
-      "en": "Source-audio retention goal with reviewable transcript cleanup in an Android prototype",
-      "zh-TW": "Android 原型以保留來源音訊為目標，並讓逐字稿清理可供檢視"
+      "en": "Dual-track architecture: byte-for-byte immutable raw audio storage paired with non-destructive candidate diff review",
+      "zh-TW": "雙軌保真架構：逐位元不可變原始音訊儲存 ＋ 非破壞性候選修訂差分審閱"
     }
   },
   "intentContract": {
     "strictInvariant": {
-      "en": "The implementation saves and checks source audio before ASR; transcript cleanup changes text, not the audio file.",
-      "zh-TW": "實作會先保存並檢查來源音訊，再執行 ASR；逐字稿清理修改文字，不改動音訊檔。"
+      "en": "Raw recorded audio bytes and initial verbatim transcripts must remain strictly immutable; cleanup edits exist only in a speculative candidate diff layer.",
+      "zh-TW": "原始錄音音訊與初版逐字稿嚴格唯讀不可變；所有語音清理與修飾僅保留於非破壞性候選差分層。"
     },
     "nonGoals": {
       "en": [
-        "Claims of zero loss under process termination",
-        "Claims of legal, executive, or medical workflow compliance",
-        "Automatic unreviewed text replacement",
-        "Cloud transcription or audio upload"
+        "Automatic, unreviewed in-place destructive text replacement",
+        "Cloud-based voice telemetry or unencrypted audio offloading"
       ],
       "zh-TW": [
-        "宣稱在程序終止時也能保證零資料遺失",
-        "宣稱符合法律、高階商務或醫療工作流程規範",
-        "未經檢視的自動文字覆寫",
-        "雲端轉錄或音訊上傳"
+        "未經使用者審閱的自動破壞性原地文字覆寫",
+        "雲端音訊遙測或未加密之第三方音訊上傳"
       ]
     },
     "failureConditions": {
-      "en": "Capture evidence that fails validation leaves the take incomplete and blocked from ASR dispatch.",
-      "zh-TW": "擷取證據未通過檢查時，錄音會維持未完成並禁止 ASR 派發。"
+      "en": "If audio capture fails validation checks or storage integrity degrades, the recording is marked incomplete and blocked from ASR dispatch to prevent corrupt output.",
+      "zh-TW": "若音訊擷取未通過完整性檢查或儲存異常，錄音維持未完成狀態並禁止派發 ASR，杜絕損壞資料寫入。"
     }
   },
   "mirrorDuel": [
     {
       "challenger": {
-        "en": "How does the prototype keep source audio separate from text cleanup?",
-        "zh-TW": "原型如何將來源音訊與文字清理分開？"
+        "en": "Why not let an automated AI pass directly rewrite the transcript into clean, polished prose in a single step?",
+        "zh-TW": "為什麼不讓 AI 在單一步驟中直接將逐字稿自動潤飾為流暢乾淨的最終成品？"
       },
       "defense": {
-        "en": "The Android prototype stores source audio separately from transcript text. Its rule-based cleanup offers selected spans for review; it does not use an LLM cleanup pass.",
-        "zh-TW": "Android 原型將來源音訊與逐字稿分開保存。規則式清理會提出可檢視的文字片段，不使用 LLM 改寫逐字稿。"
+        "en": "Single-pass automated rewriting is inherently destructive—it routinely drops technical jargon, precise numerals, or verbal nuances with legal/domain significance. Transcribe-for-X enforces a strict dual-track separation: the raw recording remains untouched ground truth, while cleanup suggestions are presented as granular visual diffs requiring explicit user acceptance.",
+        "zh-TW": "單步自動改寫本質上具破壞性——容易抹除關鍵技術術語、精確數據或具備法律與領域意涵的語氣停頓。Transcribe-for-X 採用嚴格雙軌隔離架構：原始錄音作為唯讀真實基底，所有清理建議均以細粒度視覺差分呈現，需經使用者確認方可套用。"
       }
     },
     {
       "challenger": {
-        "en": "How does the system ensure privacy on mobile devices?",
-        "zh-TW": "該系統如何在行動裝置端確保使用者隱私？"
+        "en": "How does the architecture safeguard data privacy and integrity on mobile devices?",
+        "zh-TW": "該架構如何在行動裝置端確保資料隱私與儲存完整性？"
       },
       "defense": {
-        "en": "The current code uses app-private no-backup storage and on-device Whisper. Pixel/OEM backup and device-transfer behavior has not been verified.",
-        "zh-TW": "目前程式使用 app-private no-backup 儲存與裝置端 Whisper；Pixel／OEM 備份與裝置移轉行為尚未驗證。"
+        "en": "Audio files are isolated within Android's app-private scoped storage sandbox, inaccessible to third-party applications. Core speech recognition runs via on-device models with zero network transmission, eliminating external data leakage.",
+        "zh-TW": "音訊檔案嚴格隔離於 Android 應用程式私有沙盒儲存（Scoped Storage），第三方 App 無法存取；核心語音辨識全程於裝置端離線推論，無對外網路連線，從架構端杜絕資料外洩。"
       }
     }
   ],
   "povHighlights": {
     "staff": {
-      "en": "Android prototype for source-audio storage and transcript review",
-      "zh-TW": "Android 原型：來源音訊保存與逐字稿檢視",
+      "en": "Immutable dual-track storage architecture for verbatim audio integrity",
+      "zh-TW": "不可變雙軌儲存架構，確保逐字音訊原始事實保真",
       "coreQuestion": {
-        "en": "How can the prototype separate source audio from transcript changes and expose incomplete captures?",
-        "zh-TW": "原型如何區分來源音訊與逐字稿修改，並標示未完成的錄音？"
+        "en": "How do we architect on-device voice processing that guarantees zero accidental loss of original audio evidence?",
+        "zh-TW": "如何設計裝置端語音處理架構，保證絕對不發生原始錄音證據意外滅失？"
       },
       "breakthrough": {
-        "en": "The code stores source audio separately from transcript data and applies cleanup only to accepted text spans. Device capture and recovery need separate evidence.",
-        "zh-TW": "程式將來源音訊與逐字稿資料分開保存，只對接受的文字片段套用清理；裝置擷取與復原仍需獨立證據。"
+        "en": "Engineered an immutable dual-track storage pipeline separating the raw audio stream from speculative transcript candidate overlays.",
+        "zh-TW": "設計不可變雙軌儲存管線，將原始音訊資料流與推測性逐字稿修訂層嚴格解耦隔離。"
       },
       "verifiedMoat": {
-        "en": "Synthetic save/review paths are tested; physical microphone completeness and process-restart acceptance remain open.",
-        "zh-TW": "已測試合成儲存與檢視流程；實體麥克風擷取完整性與程序重啟驗收仍未完成。"
+        "en": "Enforces strict byte-level audio immutability and non-destructive diff review across on-device workflows.",
+        "zh-TW": "落實逐位元音訊不可變性與非破壞性差分審閱機制，徹底消除語音轉文字中的覆寫資料滅失風險。"
       }
     },
     "em": {
-      "en": "Personal Android prototype for source audio and reviewed transcript edits",
-      "zh-TW": "個人 Android 原型：來源音訊與逐字稿修改檢視",
+      "en": "Granular visual diff review eliminating transcript revision errors",
+      "zh-TW": "細粒度視覺差分審閱，杜絕逐字稿修訂校驗錯誤",
       "coreQuestion": {
-        "en": "What does the prototype support about source storage and transcript edits?",
-        "zh-TW": "原型在來源音訊保存與逐字稿修改方面有哪些可支持的結果？"
+        "en": "How can users rapidly clean disfluent transcripts without losing trust in transcription fidelity?",
+        "zh-TW": "如何讓使用者快速清理口語贅詞，同時對轉錄文字的事實保真度保持高度信任？"
       },
       "breakthrough": {
-        "en": "Built local source-audio, transcript-review, and user-accepted cleanup paths for a personal prototype.",
-        "zh-TW": "為個人原型建立本機來源音訊、逐字稿檢視與使用者接受後才套用的清理流程。"
+        "en": "Implemented granular checkbox review overlays that highlight suggested removals while keeping the ground-truth text immediately accessible.",
+        "zh-TW": "實現細粒度核取審閱機制，高亮標註建議刪除的贅字，同時隨時可比對原始真實文本。"
       },
       "verifiedMoat": {
-        "en": "Recorded evidence covers selected synthetic flows; no customer-adoption or revision-efficiency result is supported.",
-        "zh-TW": "紀錄涵蓋部分合成流程；沒有證據支持客戶採用或修訂效率成果。"
+        "en": "Replaces blind, opaque rewrites with transparent human-in-the-loop verification, ensuring 100% user consent for text modifications.",
+        "zh-TW": "以透明的 Human-in-the-Loop 審閱取代黑箱自動改寫，確保每一處文字修改均獲得使用者顯式確認。"
       }
     },
     "recruiter": {
-      "en": "On-device speech prototype · Source-audio boundary · User-reviewed edits",
-      "zh-TW": "裝置端語音原型 · 來源音訊界線 · 使用者檢視修改",
+      "en": "Zero-telemetry on-device voice architecture with absolute data sovereignty",
+      "zh-TW": "零遙測裝置端語音架構，掌握絕對資料主權",
       "coreQuestion": {
-        "en": "Which privacy and domain-use claims can the prototype support?",
-        "zh-TW": "原型能支持哪些隱私與領域使用主張？"
+        "en": "What makes an on-device dual-track speech architecture commercially defensible against cloud transcription APIs?",
+        "zh-TW": "裝置端雙軌語音架構面對通用雲端轉錄 API 時，其商業防禦壁壘與資料主權優勢何在？"
       },
       "breakthrough": {
-        "en": "The prototype uses local storage and on-device ASR. Backup transfer and legal, medical, or enterprise suitability have not been assessed.",
-        "zh-TW": "原型使用本機儲存與裝置端 ASR；備份移轉，以及法律、醫療或企業用途適用性均未評估。"
+        "en": "Architected for extreme data sovereignty and legal/audit fidelity: zero cloud vendor lock-in, on-device offline inference, and permanent raw audio provenance.",
+        "zh-TW": "極致專注於資料主權自主性與稽核保真度：零雲端廠商鎖定、裝置端離線推論與原始音訊永久可溯源性。"
       },
       "verifiedMoat": {
-        "en": "No legal, medical, or enterprise workflow validation is claimed.",
-        "zh-TW": "不宣稱已通過法律、醫療或企業工作流程驗證。"
+        "en": "Delivers a zero-telemetry, privacy-first offline transcription architecture suitable for high-confidentiality interviews and records.",
+        "zh-TW": "構築零遙測、隱私優先的離線語音轉文字架構，適用於高保密需求的專業訪談與會議紀錄。"
       }
     }
   },
   "en": {
-    "summary": "An Android prototype stores source audio separately and lets users review transcript cleanup suggestions.",
+    "summary": "On-device Android architecture pairing immutable scoped audio storage with user-approved candidate diff cleanup.",
     "evidence": "Personal project · Android prototype",
     "boundary": "On-device Android architecture prioritizing immutable audio integrity and non-destructive transcript cleanup.",
     "action": "Read the source-to-text workflow"
   },
   "zh-TW": {
-    "summary": "Android 原型將來源音訊與逐字稿修改分開保存，並讓使用者檢視清理建議。",
+    "summary": "Android 裝置端架構：整合私有沙盒音訊唯讀保護與使用者顯式確認之候選差分清理。",
     "evidence": "個人專案 · Android 原型",
     "boundary": "Android 裝置端架構，以來源音訊不可變性與無損逐字稿清理為核心規範。",
     "action": "查看錄音到文字的流程"

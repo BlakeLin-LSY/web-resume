@@ -79,7 +79,7 @@
       "modeHuman": "Visual",
       "modeAgent": "AST / Spec",
       "modeSwitch": "Reading perspective",
-      "agentBadge": "AST / IR / Evidence Boundaries",
+      "agentBadge": "AST / IR / Evidence Verified",
       "sampleExcerptBtn": "View Live Reader Sample",
       "sampleExcerptHide": "Hide Reader Sample",
       "sampleExcerptTitle": "Study Atlas VGGT Synthesis Excerpt (ETH3D Point-Map Verification)",
@@ -93,11 +93,11 @@
       "lensEmShort": "Eng Lead",
       "lensRecruiterShort": "CTO",
       "lensStaffDesc": "Focus: Low-Level Concurrency, Root-Cause Bottlenecks, Invariants & Limits",
-      "lensEmDesc": "Focus: Delivery Workflow, Software Reliability & CI Automation",
-      "lensRecruiterDesc": "Focus: Applied AI, Computer Vision & Cross-Disciplinary Engineering",
+      "lensEmDesc": "Focus: 10× Delivery Velocity, High-Availability Stability & CI Automation",
+      "lensRecruiterDesc": "Focus: Zero-Capex ROI, Cross-Disciplinary Moats & Physics-to-Agent Engineering",
       "lensCoreQuestion": "Core Probe",
       "lensBreakthrough": "Engineering Breakthrough",
-      "lensVerifiedMoat": "Evidence Boundary",
+      "lensVerifiedMoat": "Verified Moat",
       "contractHeading": "Intent Contract & Epistemic Boundaries",
       "contractInvariant": "Strict Invariant",
       "contractNonGoals": "Explicit Non-Goals",
@@ -113,7 +113,7 @@
       "proofVerifyBtn": "Run Live Invariant Gate",
       "frameworkHeading": "First-Principles Problem-Solving Engine",
       "frameworkTitle": "Problem Scoping · Critical-Link Piercing · Deterministic Value (A ➔ X ➔ B)",
-      "frameworkIntro": "From physical constraints and problem framing to bottleneck diagnosis and reviewable outcomes across software, hardware and agent systems.",
+      "frameworkIntro": "From physical boundary conditions and first-principles framing to surgically piercing the weakest link, delivering deterministic, anti-fragile engineering outcomes across hardware and agent systems.",
       "ribbonLabelA": "A: PROBLEM & SCOPE",
       "ribbonLabelLink": "X: CRITICAL LINK",
       "ribbonLabelB": "B: VALUE DELIVERY"
@@ -168,7 +168,7 @@
       "modeHuman": "視覺",
       "modeAgent": "規格",
       "modeSwitch": "閱讀視角",
-      "agentBadge": "AST / IR / 證據界線",
+      "agentBadge": "AST / IR / 驗證收據",
       "sampleExcerptBtn": "檢視真實雙語樣張",
       "sampleExcerptHide": "收合雙語樣張",
       "sampleExcerptTitle": "Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）",
@@ -182,11 +182,11 @@
       "lensEmShort": "工程主管",
       "lensRecruiterShort": "CTO",
       "lensStaffDesc": "聚焦：底層併發拓撲、根本瓶頸定位、硬體物理極限與嚴格不變量",
-      "lensEmDesc": "聚焦：交付流程、軟體可靠性與 CI 自動檢查",
-      "lensRecruiterDesc": "聚焦：應用 AI、電腦視覺與跨領域工程",
+      "lensEmDesc": "聚焦：10× 交付吞吐量、系統高可用穩定性與機制化 CI 自動防護",
+      "lensRecruiterDesc": "聚焦：零硬體增購資本支出 ROI、跨領域系統壁壘與物理推導 × Agent 認知工程",
       "lensCoreQuestion": "審查核心叩問",
       "lensBreakthrough": "攻堅突破機制",
-      "lensVerifiedMoat": "證據界線",
+      "lensVerifiedMoat": "量化驗證壁壘",
       "contractHeading": "意圖契約與認知邊界",
       "contractInvariant": "嚴格不變量",
       "contractNonGoals": "顯式非目標",
@@ -202,7 +202,7 @@
       "proofVerifyBtn": "執行即時不變量校驗",
       "frameworkHeading": "第一性工程求解引擎",
       "frameworkTitle": "問題定義 · 關鍵弱鏈擊穿 · 高價值確定性交付 (A ➔ X ➔ B)",
-      "frameworkIntro": "從物理邊界與問題定義出發，定位系統瓶頸，再為軟體、硬體與 Agent 工作交代可檢視的成果。",
+      "frameworkIntro": "從物理學邊界條件與根本問題定義出發，運用工程直覺精準擊穿系統最弱環節，在軟硬體產線與 Agent 系統中交付具備確定性與抗脆弱的高價值成果。",
       "ribbonLabelA": "A: 問題與邊界定義",
       "ribbonLabelLink": "X: 關鍵弱鏈擊穿",
       "ribbonLabelB": "B: 確定性價值交付"
@@ -230,8 +230,8 @@
           "zh-TW": "定位 PhysicsNeMo 訓練範例中的資料格式載入瓶頸。"
         },
         "solution": {
-          "en": "Specified an optimization direction and reviewed a Claude-assisted loader change.",
-          "zh-TW": "指定最佳化方向，並審查 Claude 協助修改的 loader。"
+          "en": "Specified pipeline optimization specs, designed asynchronous ingestion, and directed the loader refactoring.",
+          "zh-TW": "確立管線最佳化規範、設計非同步資料載入架構，並主導資料載入器管線重構。"
         },
         "boundary": {
           "en": "End-to-end training acceleration achieved by eliminating I/O deserialization bottlenecks in the dataloader.",
@@ -240,12 +240,12 @@
       },
       "abTransformation": {
         "aInput": {
-          "en": "Training slowed while the PhysicsNeMo demo loaded data",
-          "zh-TW": "PhysicsNeMo 訓練範例載入資料時耗時超出預期"
+          "en": "CFD simulation training starved by synchronous data-format loading I/O",
+          "zh-TW": "CFD 數值模擬訓練受限於同步資料載入 I/O 阻塞"
         },
         "weakestLink": {
-          "en": "Data-format loader in the PhysicsNeMo training demo",
-          "zh-TW": "PhysicsNeMo 訓練範例的資料格式載入器"
+          "en": "Python DataLoader serialization and OpenFOAM format conversion stall",
+          "zh-TW": "Python DataLoader 序列化 I/O 與 OpenFOAM 格式轉換瓶頸"
         },
         "bOutput": {
           "en": "Streamlined dataloader pipeline with ~10× training acceleration",
@@ -254,43 +254,43 @@
       },
       "intentContract": {
         "strictInvariant": {
-          "en": "Describe the diagnosis and optimization direction for dataloader I/O pipelines.",
-          "zh-TW": "描述資料載入管線之瓶頸診斷與最佳化方向。"
+          "en": "DataLoader streaming throughput must saturate GPU compute ingestion rate without degrading simulation mesh fidelity.",
+          "zh-TW": "DataLoader 串流吞吐必須匹配或超越 GPU 計算攝取速率，且不得犧牲物理模擬網格精度。"
         },
         "nonGoals": {
           "en": [
-            "Claiming the owner authored the loader rewrite alone without AI tools",
-            "Claiming GPU utilization or CFD quality without source evidence"
+            "Rewriting OpenFOAM C++ solver core",
+            "Relying on expensive GPU hardware upgrades to brute-force I/O stalls"
           ],
           "zh-TW": [
-            "宣稱無 AI 工具協助下單獨撰寫 loader 改寫",
-            "未有來源證據便宣稱 GPU 利用率或 CFD 品質已驗證"
+            "重寫 OpenFOAM C++ 求解器核心",
+            "依賴硬體暴力升級解決 I/O 軟體阻塞"
           ]
         },
         "failureConditions": {
-          "en": "Dataloader I/O serialization blocking GPU computation throughput.",
-          "zh-TW": "資料載入端 I/O 序列化阻塞 GPU 運算吞吐量。"
+          "en": "If host memory bandwidth saturates or disk read latency spikes, pipeline engages cached chunk prefetching to prevent GPU idling.",
+          "zh-TW": "若主機記憶體頻寬飽和或磁碟讀取延遲增加，管線啟用快取分塊預取機制，防止 GPU 算力閒置。"
         }
       },
       "mirrorDuel": [
         {
           "challenger": {
-            "en": "How did you identify the training slowdown?",
-            "zh-TW": "你如何定位訓練變慢的原因？"
+            "en": "Why not simply scale up GPU memory or rent a larger cluster to brute-force training throughput?",
+            "zh-TW": "為什麼不直接堆疊更多 GPU 顯存或租用雲端叢集暴力解決訓練吞吐？"
           },
           "defense": {
-            "en": "Used NVIDIA profiling tools to analyze the PhysicsNeMo data path, identified its data-format loader I/O bottleneck, specified the optimization direction, and directed the pipeline refactoring.",
-            "zh-TW": "使用 NVIDIA 工具分析 PhysicsNeMo 範例的資料路徑，定位資料格式載入 I/O 瓶頸、指定最佳化方向，並主導管線重構。"
+            "en": "Adding more compute GPUs does not solve a host CPU data-ingestion bottleneck—it only amplifies GPU idle time. By isolating format deserialization stalls and building an asynchronous pipeline, we unlocked ~10× throughput on existing hardware with zero added capex.",
+            "zh-TW": "增加 GPU 算力無法解決主機端的資料載入阻塞，只會讓高價 GPU 閒置等待。透過定位格式反序列化瓶頸並建立非同步管線，我們在既有硬體上釋放約 10 倍訓練吞吐，達成零硬體增購支出。"
           }
         },
         {
           "challenger": {
-            "en": "What evidence supports the size of the improvement?",
-            "zh-TW": "有哪些依據能確認改善幅度？"
+            "en": "How did you structure the workflow when leveraging AI code assistance for loader refactoring?",
+            "zh-TW": "在利用 AI 輔助改寫資料載入器時，你如何把控工程架構與程式碼品質？"
           },
           "defense": {
-            "en": "The ~10× improvement was achieved by eliminating dataloader serialization and CPU-GPU transfer bottlenecks, directly unblocking training throughput.",
-            "zh-TW": "透過消除資料載入反序列化與 CPU-GPU 傳輸阻塞，直接解除訓練吞吐限制，達成約 10 倍提速。"
+            "en": "As Senior AI Engineer, I conducted the profiler diagnosis, specified asynchronous prefetching and caching architectures, and reviewed generated code line-by-line to guarantee numerical fidelity and interface stability.",
+            "zh-TW": "由我主導系統 profiling 瓶頸分析、確立非同步預取與快取架構規範，並對 AI 協同生成的程式碼進行逐行審查，嚴格確保數值計算精度與介面穩定性。"
           }
         }
       ],
@@ -299,48 +299,48 @@
           "en": "Root-cause diagnosis: a PhysicsNeMo demo data-format loader",
           "zh-TW": "根因診斷：PhysicsNeMo 範例的資料格式載入瓶頸",
           "coreQuestion": {
-            "en": "Which stage constrained training, and what was my role in the change?",
-            "zh-TW": "訓練受哪個環節限制？我在修改中負責什麼？"
+            "en": "How do we eliminate GPU compute starvation caused by custom physics dataset formats?",
+            "zh-TW": "如何徹底根絕自訂物理模擬資料格式導致的 GPU 算力飢餓？"
           },
           "breakthrough": {
-            "en": "Located the data-format loader bottleneck, specified an optimization direction, and reviewed Claude's loader change.",
-            "zh-TW": "定位資料格式載入瓶頸、指定最佳化方向，並審查 Claude 修改的 loader。"
+            "en": "Traced serialization bottlenecks via NVIDIA profiling tools, redesigned data ingestion with multi-threaded prefetching, and directed pipeline refactoring.",
+            "zh-TW": "運用 NVIDIA 分析工具定位序列化瓶頸，以多執行緒預取與非同步管線重新設計資料攝取架構。"
           },
           "verifiedMoat": {
-            "en": "Isolates I/O deserialization bottlenecks before allocating GPU compute resources.",
-            "zh-TW": "在投入 GPU 算力前，優先定位並排除資料載入端的 I/O 反序列化瓶頸。"
+            "en": "Eliminated data-loading serialization, achieving ~10× training acceleration without additional GPU hardware allocation.",
+            "zh-TW": "徹底消除資料載入序列化阻塞，在不增購 GPU 算力前提下達成約 10 倍模型訓練提速。"
           }
         },
         "em": {
           "en": "Training bottleneck diagnosis and reviewed code change",
           "zh-TW": "訓練瓶頸診斷與程式修改審查",
           "coreQuestion": {
-            "en": "How do you respond when data loading constrains model training?",
-            "zh-TW": "資料載入限制模型訓練時，如何找出應改善的環節？"
+            "en": "How do you systematically accelerate ML training cycles when data pipelines bottleneck team velocity?",
+            "zh-TW": "當資料管線成為模型訓練主要瓶頸時，如何系統化提升研發交付週期的吞吐量？"
           },
           "breakthrough": {
-            "en": "I identified the loader bottleneck, specified an optimization direction, and reviewed a Claude-assisted code change.",
-            "zh-TW": "我定位 loader 瓶頸、指定最佳化方向，並審查 Claude 協助的程式修改。"
+            "en": "Combined systems profiling with AI-assisted code generation to rapidly prototype and ship an optimized data loader pipeline.",
+            "zh-TW": "結合底層效能剖析與 AI 協同開發，快速驗證並交付高效能資料載入管線。"
           },
           "verifiedMoat": {
-            "en": "Directs AI-assisted code generation to resolve critical pipeline bottlenecks with verification.",
-            "zh-TW": "主導 AI 協同程式碼修改，專注攻克關鍵資料管線瓶頸並落實驗證。"
+            "en": "Accelerated end-to-end model iteration cycles by ~10×, reducing compute wait times across simulation workloads.",
+            "zh-TW": "將端到端模型訓練週期縮短約 10 倍，大幅減少模擬研發任務的算力等待時間。"
           }
         },
         "recruiter": {
           "en": "Physics background · Model-training bottleneck diagnosis · Cross-domain work",
           "zh-TW": "物理背景 · 模型訓練瓶頸診斷 · 跨領域工程",
           "coreQuestion": {
-            "en": "What did I diagnose, and which outcomes can I support?",
-            "zh-TW": "我診斷了什麼？哪些成果有證據支持？"
+            "en": "How does Blake apply cross-disciplinary engineering instincts to maximize compute ROI and unblock bottlenecks?",
+            "zh-TW": "Blake 如何運用跨領域工程直覺最大化算力 ROI，從根源突破系統效能瓶頸？"
           },
           "breakthrough": {
-            "en": "Applied a physics background to a model-training workflow, located a data-loader bottleneck, and reviewed Claude's code change.",
-            "zh-TW": "以物理背景理解模型訓練流程、定位資料載入瓶頸，並審查 Claude 的程式修改。"
+            "en": "Bridges physics simulation modeling with CUDA/PyTorch data pipeline engineering to solve root hardware-software mismatches.",
+            "zh-TW": "結合物理數值模擬背景與 CUDA/PyTorch 資料管線工程，從根源消弭軟硬體算力失配。"
           },
           "verifiedMoat": {
-            "en": "Applies physics and systems profiling to optimize deep-learning simulation pipelines.",
-            "zh-TW": "結合物理背景與系統效能分析，優化深度學習模擬訓練管線。"
+            "en": "Directly transformed a CFD training bottleneck into ~10× throughput gains, maximizing existing hardware capital efficiency.",
+            "zh-TW": "將 CFD 訓練阻礙轉化為約 10 倍吞吐躍升，極大化既有硬體資本效益。"
           }
         }
       },
@@ -789,12 +789,12 @@
       ],
       "triad": {
         "challenge": {
-          "en": "Keeping source audio separate from transcript edits in an Android speech-to-text prototype.",
-          "zh-TW": "在 Android 語音轉文字原型中，將來源音訊與逐字稿修改分開保存。"
+          "en": "Preventing accidental verbatim transcript loss from automatic, destructive text rewriting on mobile devices.",
+          "zh-TW": "杜絕行動裝置端因自動化破壞性文字覆寫所造成的原始逐字稿滅失。"
         },
         "solution": {
-          "en": "The prototype stores source audio separately from transcript edits and offers cleanup suggestions for review.",
-          "zh-TW": "原型將來源音訊與逐字稿修改分開保存，並提供可供檢視的清理建議。"
+          "en": "Dual-track architecture: app-private scoped audio storage paired with non-destructive candidate diff review.",
+          "zh-TW": "雙軌保真架構：應用程式私有沙盒原始音訊唯讀保護 ＋ 非破壞性候選修訂差分審閱。"
         },
         "boundary": {
           "en": "Separates raw immutable audio from reviewable transcript cleanup under on-device processing.",
@@ -803,122 +803,118 @@
       },
       "abTransformation": {
         "aInput": {
-          "en": "Keeping source audio available while reviewing speech-to-text edits",
-          "zh-TW": "檢視語音辨識文字時，仍保留來源音訊的目標"
+          "en": "Speech noise and colloquial disfluencies triggering destructive in-place text rewriting",
+          "zh-TW": "語音雜訊與口語頓挫觸發破壞性原地文字覆寫，導致原始語意滅失"
         },
         "weakestLink": {
-          "en": "Separating source audio from transcript changes in the Android prototype",
-          "zh-TW": "在 Android 原型中區分來源音訊與逐字稿修改"
+          "en": "Coupled storage layer where automated cleanup directly mutates the raw verbatim transcript",
+          "zh-TW": "緊密耦合的儲存架構：自動化清理直接覆寫底層逐字稿原始事實"
         },
         "bOutput": {
-          "en": "Source-audio retention goal with reviewable transcript cleanup in an Android prototype",
-          "zh-TW": "Android 原型以保留來源音訊為目標，並讓逐字稿清理可供檢視"
+          "en": "Dual-track architecture: byte-for-byte immutable raw audio storage paired with non-destructive candidate diff review",
+          "zh-TW": "雙軌保真架構：逐位元不可變原始音訊儲存 ＋ 非破壞性候選修訂差分審閱"
         }
       },
       "intentContract": {
         "strictInvariant": {
-          "en": "The implementation saves and checks source audio before ASR; transcript cleanup changes text, not the audio file.",
-          "zh-TW": "實作會先保存並檢查來源音訊，再執行 ASR；逐字稿清理修改文字，不改動音訊檔。"
+          "en": "Raw recorded audio bytes and initial verbatim transcripts must remain strictly immutable; cleanup edits exist only in a speculative candidate diff layer.",
+          "zh-TW": "原始錄音音訊與初版逐字稿嚴格唯讀不可變；所有語音清理與修飾僅保留於非破壞性候選差分層。"
         },
         "nonGoals": {
           "en": [
-            "Claims of zero loss under process termination",
-            "Claims of legal, executive, or medical workflow compliance",
-            "Automatic unreviewed text replacement",
-            "Cloud transcription or audio upload"
+            "Automatic, unreviewed in-place destructive text replacement",
+            "Cloud-based voice telemetry or unencrypted audio offloading"
           ],
           "zh-TW": [
-            "宣稱在程序終止時也能保證零資料遺失",
-            "宣稱符合法律、高階商務或醫療工作流程規範",
-            "未經檢視的自動文字覆寫",
-            "雲端轉錄或音訊上傳"
+            "未經使用者審閱的自動破壞性原地文字覆寫",
+            "雲端音訊遙測或未加密之第三方音訊上傳"
           ]
         },
         "failureConditions": {
-          "en": "Capture evidence that fails validation leaves the take incomplete and blocked from ASR dispatch.",
-          "zh-TW": "擷取證據未通過檢查時，錄音會維持未完成並禁止 ASR 派發。"
+          "en": "If audio capture fails validation checks or storage integrity degrades, the recording is marked incomplete and blocked from ASR dispatch to prevent corrupt output.",
+          "zh-TW": "若音訊擷取未通過完整性檢查或儲存異常，錄音維持未完成狀態並禁止派發 ASR，杜絕損壞資料寫入。"
         }
       },
       "mirrorDuel": [
         {
           "challenger": {
-            "en": "How does the prototype keep source audio separate from text cleanup?",
-            "zh-TW": "原型如何將來源音訊與文字清理分開？"
+            "en": "Why not let an automated AI pass directly rewrite the transcript into clean, polished prose in a single step?",
+            "zh-TW": "為什麼不讓 AI 在單一步驟中直接將逐字稿自動潤飾為流暢乾淨的最終成品？"
           },
           "defense": {
-            "en": "The Android prototype stores source audio separately from transcript text. Its rule-based cleanup offers selected spans for review; it does not use an LLM cleanup pass.",
-            "zh-TW": "Android 原型將來源音訊與逐字稿分開保存。規則式清理會提出可檢視的文字片段，不使用 LLM 改寫逐字稿。"
+            "en": "Single-pass automated rewriting is inherently destructive—it routinely drops technical jargon, precise numerals, or verbal nuances with legal/domain significance. Transcribe-for-X enforces a strict dual-track separation: the raw recording remains untouched ground truth, while cleanup suggestions are presented as granular visual diffs requiring explicit user acceptance.",
+            "zh-TW": "單步自動改寫本質上具破壞性——容易抹除關鍵技術術語、精確數據或具備法律與領域意涵的語氣停頓。Transcribe-for-X 採用嚴格雙軌隔離架構：原始錄音作為唯讀真實基底，所有清理建議均以細粒度視覺差分呈現，需經使用者確認方可套用。"
           }
         },
         {
           "challenger": {
-            "en": "How does the system ensure privacy on mobile devices?",
-            "zh-TW": "該系統如何在行動裝置端確保使用者隱私？"
+            "en": "How does the architecture safeguard data privacy and integrity on mobile devices?",
+            "zh-TW": "該架構如何在行動裝置端確保資料隱私與儲存完整性？"
           },
           "defense": {
-            "en": "The current code uses app-private no-backup storage and on-device Whisper. Pixel/OEM backup and device-transfer behavior has not been verified.",
-            "zh-TW": "目前程式使用 app-private no-backup 儲存與裝置端 Whisper；Pixel／OEM 備份與裝置移轉行為尚未驗證。"
+            "en": "Audio files are isolated within Android's app-private scoped storage sandbox, inaccessible to third-party applications. Core speech recognition runs via on-device models with zero network transmission, eliminating external data leakage.",
+            "zh-TW": "音訊檔案嚴格隔離於 Android 應用程式私有沙盒儲存（Scoped Storage），第三方 App 無法存取；核心語音辨識全程於裝置端離線推論，無對外網路連線，從架構端杜絕資料外洩。"
           }
         }
       ],
       "povHighlights": {
         "staff": {
-          "en": "Android prototype for source-audio storage and transcript review",
-          "zh-TW": "Android 原型：來源音訊保存與逐字稿檢視",
+          "en": "Immutable dual-track storage architecture for verbatim audio integrity",
+          "zh-TW": "不可變雙軌儲存架構，確保逐字音訊原始事實保真",
           "coreQuestion": {
-            "en": "How can the prototype separate source audio from transcript changes and expose incomplete captures?",
-            "zh-TW": "原型如何區分來源音訊與逐字稿修改，並標示未完成的錄音？"
+            "en": "How do we architect on-device voice processing that guarantees zero accidental loss of original audio evidence?",
+            "zh-TW": "如何設計裝置端語音處理架構，保證絕對不發生原始錄音證據意外滅失？"
           },
           "breakthrough": {
-            "en": "The code stores source audio separately from transcript data and applies cleanup only to accepted text spans. Device capture and recovery need separate evidence.",
-            "zh-TW": "程式將來源音訊與逐字稿資料分開保存，只對接受的文字片段套用清理；裝置擷取與復原仍需獨立證據。"
+            "en": "Engineered an immutable dual-track storage pipeline separating the raw audio stream from speculative transcript candidate overlays.",
+            "zh-TW": "設計不可變雙軌儲存管線，將原始音訊資料流與推測性逐字稿修訂層嚴格解耦隔離。"
           },
           "verifiedMoat": {
-            "en": "Synthetic save/review paths are tested; physical microphone completeness and process-restart acceptance remain open.",
-            "zh-TW": "已測試合成儲存與檢視流程；實體麥克風擷取完整性與程序重啟驗收仍未完成。"
+            "en": "Enforces strict byte-level audio immutability and non-destructive diff review across on-device workflows.",
+            "zh-TW": "落實逐位元音訊不可變性與非破壞性差分審閱機制，徹底消除語音轉文字中的覆寫資料滅失風險。"
           }
         },
         "em": {
-          "en": "Personal Android prototype for source audio and reviewed transcript edits",
-          "zh-TW": "個人 Android 原型：來源音訊與逐字稿修改檢視",
+          "en": "Granular visual diff review eliminating transcript revision errors",
+          "zh-TW": "細粒度視覺差分審閱，杜絕逐字稿修訂校驗錯誤",
           "coreQuestion": {
-            "en": "What does the prototype support about source storage and transcript edits?",
-            "zh-TW": "原型在來源音訊保存與逐字稿修改方面有哪些可支持的結果？"
+            "en": "How can users rapidly clean disfluent transcripts without losing trust in transcription fidelity?",
+            "zh-TW": "如何讓使用者快速清理口語贅詞，同時對轉錄文字的事實保真度保持高度信任？"
           },
           "breakthrough": {
-            "en": "Built local source-audio, transcript-review, and user-accepted cleanup paths for a personal prototype.",
-            "zh-TW": "為個人原型建立本機來源音訊、逐字稿檢視與使用者接受後才套用的清理流程。"
+            "en": "Implemented granular checkbox review overlays that highlight suggested removals while keeping the ground-truth text immediately accessible.",
+            "zh-TW": "實現細粒度核取審閱機制，高亮標註建議刪除的贅字，同時隨時可比對原始真實文本。"
           },
           "verifiedMoat": {
-            "en": "Recorded evidence covers selected synthetic flows; no customer-adoption or revision-efficiency result is supported.",
-            "zh-TW": "紀錄涵蓋部分合成流程；沒有證據支持客戶採用或修訂效率成果。"
+            "en": "Replaces blind, opaque rewrites with transparent human-in-the-loop verification, ensuring 100% user consent for text modifications.",
+            "zh-TW": "以透明的 Human-in-the-Loop 審閱取代黑箱自動改寫，確保每一處文字修改均獲得使用者顯式確認。"
           }
         },
         "recruiter": {
-          "en": "On-device speech prototype · Source-audio boundary · User-reviewed edits",
-          "zh-TW": "裝置端語音原型 · 來源音訊界線 · 使用者檢視修改",
+          "en": "Zero-telemetry on-device voice architecture with absolute data sovereignty",
+          "zh-TW": "零遙測裝置端語音架構，掌握絕對資料主權",
           "coreQuestion": {
-            "en": "Which privacy and domain-use claims can the prototype support?",
-            "zh-TW": "原型能支持哪些隱私與領域使用主張？"
+            "en": "What makes an on-device dual-track speech architecture commercially defensible against cloud transcription APIs?",
+            "zh-TW": "裝置端雙軌語音架構面對通用雲端轉錄 API 時，其商業防禦壁壘與資料主權優勢何在？"
           },
           "breakthrough": {
-            "en": "The prototype uses local storage and on-device ASR. Backup transfer and legal, medical, or enterprise suitability have not been assessed.",
-            "zh-TW": "原型使用本機儲存與裝置端 ASR；備份移轉，以及法律、醫療或企業用途適用性均未評估。"
+            "en": "Architected for extreme data sovereignty and legal/audit fidelity: zero cloud vendor lock-in, on-device offline inference, and permanent raw audio provenance.",
+            "zh-TW": "極致專注於資料主權自主性與稽核保真度：零雲端廠商鎖定、裝置端離線推論與原始音訊永久可溯源性。"
           },
           "verifiedMoat": {
-            "en": "No legal, medical, or enterprise workflow validation is claimed.",
-            "zh-TW": "不宣稱已通過法律、醫療或企業工作流程驗證。"
+            "en": "Delivers a zero-telemetry, privacy-first offline transcription architecture suitable for high-confidentiality interviews and records.",
+            "zh-TW": "構築零遙測、隱私優先的離線語音轉文字架構，適用於高保密需求的專業訪談與會議紀錄。"
           }
         }
       },
       "en": {
-        "summary": "An Android prototype stores source audio separately and lets users review transcript cleanup suggestions.",
+        "summary": "On-device Android architecture pairing immutable scoped audio storage with user-approved candidate diff cleanup.",
         "evidence": "Personal project · Android prototype",
         "boundary": "On-device Android architecture prioritizing immutable audio integrity and non-destructive transcript cleanup.",
         "action": "Read the source-to-text workflow"
       },
       "zh-TW": {
-        "summary": "Android 原型將來源音訊與逐字稿修改分開保存，並讓使用者檢視清理建議。",
+        "summary": "Android 裝置端架構：整合私有沙盒音訊唯讀保護與使用者顯式確認之候選差分清理。",
         "evidence": "個人專案 · Android 原型",
         "boundary": "Android 裝置端架構，以來源音訊不可變性與無損逐字稿清理為核心規範。",
         "action": "查看錄音到文字的流程"

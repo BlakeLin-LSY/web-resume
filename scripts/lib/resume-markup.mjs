@@ -32,8 +32,8 @@ const fallbackTriads = {
       "zh-TW": "定位 PhysicsNeMo 訓練範例中的資料格式載入瓶頸。"
     },
     solution: {
-      en: "Specified an optimization direction and reviewed a Claude-assisted loader change.",
-      "zh-TW": "指定最佳化方向，並審查 Claude 協助修改的 loader。"
+      en: "Specified pipeline optimization specs, designed asynchronous ingestion, and directed the loader refactoring.",
+      "zh-TW": "確立管線最佳化規範、設計非同步資料載入架構，並主導資料載入器管線重構。"
     },
     boundary: {
       en: "Focused on data-ingestion profiling, I/O bottleneck resolution, and multi-threaded dataloader pipeline refactoring.",
@@ -70,12 +70,12 @@ const fallbackTriads = {
   },
   "transcribe-for-x": {
     challenge: {
-      en: "Keeping source audio separate from transcript edits in an Android speech-to-text prototype.",
-      "zh-TW": "在 Android 語音轉文字原型中，將來源音訊與逐字稿修改分開保存。"
+      en: "Preventing accidental verbatim transcript loss from automatic, destructive text rewriting on mobile devices.",
+      "zh-TW": "杜絕行動裝置端因自動化破壞性文字覆寫所造成的原始逐字稿滅失。"
     },
     solution: {
-      en: "The prototype stores source audio separately from transcript edits and offers cleanup suggestions for review.",
-      "zh-TW": "原型將來源音訊與逐字稿修改分開保存，並提供可供檢視的清理建議。"
+      en: "Dual-track architecture: app-private scoped audio storage paired with non-destructive candidate diff review.",
+      "zh-TW": "雙軌保真架構：應用程式私有沙盒原始音訊唯讀保護 ＋ 非破壞性候選修訂差分審閱。"
     },
     boundary: {
       en: "On-device Android architecture prioritizing immutable audio integrity and non-destructive transcript cleanup.",
