@@ -5,6 +5,7 @@ okf_version: "0.2"
 
 先讀 capsule，再按需載入 SESSION 與證據。
 
+- [2026-11-07 · 模組化重構、職涯真理校準、全站去脂與指令正典提煉 · stable](2026-11-07-modular-unslop-and-canonical-distillation-closure.md)
 - [2026-11-03 · Portfolio 到 Webresume · stable](2026-11-03-portfolio-to-webresume-closure.md)
 
 ## 材料審閱報告

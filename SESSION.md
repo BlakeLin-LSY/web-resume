@@ -1,6 +1,6 @@
 # Portfolio 盤點到履歷證據修復 / Portfolio review to resume evidence repair
 
-先讀 [交接 capsule](records/2026-11-03-portfolio-to-webresume-closure.md)；本檔只補時間線與證據。紀錄不是政策。
+先讀 [交接 capsule](records/2026-11-07-modular-unslop-and-canonical-distillation-closure.md)（前版見 [2026-11-03 capsule](records/2026-11-03-portfolio-to-webresume-closure.md)）；本檔只補時間線與證據。紀錄不是政策。
 
 ## 2026-11-03 finalized
 
@@ -26,7 +26,33 @@
 - 延後驗證：MetGauge/Atlas 完整證據核對、遠端 CI、公開站版本、3–5 位真人 readback。
 - 發布阻礙：兩份 CV PDF 仍含舊 10×、40%、66% 宣稱；須先校正／選版，不能以網站文字修復代替。
 
-下一個唯一 probe：依 [檢查清單](records/2026-11-02-sync-and-copy.md) 第一項，核對 `content/resume-assets.json` 指向的兩份 PDF 與最新職涯來源，列出替換差異。先不改外部 career repo、不部署。
+## 2026-11-06 finalized: 以人為本模組化重構、真實職涯校準、內容去脂與指令正典提煉
+
+使用者批准以人為本模組化重構（`plan-human-centric-modular-representations.md`）、真實職涯校準（`plan-align-real-career-pillars.md`）、內容去脂與雙語修復（`plan-content-rinse-and-diagram-consistency.md`）及指令正典提煉（`plan-lessons-distillation-and-update-walkthrough.md`）：
+
+1. **宣告式模組化架構落地**:
+   - 建立 `content/representation-manifest.json` 控管頁面區塊啟用與渲染次序。
+   - 解耦 `scripts/lib/resume-markup.mjs`（-517 行），拆分為 `scripts/layout/page-orchestrator.mjs` 與 `scripts/modules/`（7 大獨立渲染器），保留完整向後相容性 Facade。
+2. **職涯事實真理定錨**:
+   - 首屏實證數據鐵軌（Impact Rail）修正為：`~10×` ML Training Acceleration（DynaSafe）、`-40%` AOI Cycle-Time Reduction（UTECHZONE）、`Large FOV` Stereo 3D Metrology（MetGauge & LIPS）。
+   - MetGauge 去除次微秒硬體同步虛名，全面聚焦於多相機立體標定校正、原型推進至產線實測與高空大視野拼接。
+   - DynaSafe 消除自貶式免責筆錄聲明，強化 DataLoader 序列化 I/O 瓶頸定位與非同步預取資料管線重構。
+   - WindowPhase 依倉庫事實校準為 5 小時算力窗口排程 CLI，排除神經網絡臆測。
+3. **全站與向量圖表去脂（Unslop）**:
+   - 清除全站所有裝飾性 Emoji（⛔, ⚡, 🔒, 🎯, 🛡️, 📜, 🧐）與資料檔破折號（`—`）。
+   - 拔除首屏巨幅抽象圖表 `svg-universal-engine.mjs` 與動漫式 RPG 對抗人設，改為客觀專業的架構審查。
+   - 移除無法驗證的密碼學 Hash 字符串演示，改以客觀 `CI Invariant Gate: PASSED` 標籤呈現。
+   - 修復 `svg-topology.mjs`、`svg-pipeline.mjs`、`svg-circuit-breaker.mjs` 語言參數字串重載防禦，達成 100% 繁體中文向量圖表對齊。
+4. **專案級指令正典與機制化防護 (Mechanism Over Reminder)**:
+   - 建立專案指令正典 `.agents/AGENTS.md`，固化職涯真理、去脂語調、SVG 契約與剛性驗證流程。
+   - 新增第 9 道自動化閘門 `scripts/invariants/check-unslop-and-tone-invariants.mjs`，納入 `run-all-invariants.mjs`，蓄意負對照驗證成功。
+5. **剛性單頁約束與生產建置全數通過**:
+   - `python3 scripts/validate-cv-candidates.py`：英文（45,493 bytes）與繁中（680,751 bytes）候選 PDF 均嚴格剛好 1 頁 A4，數位簽章一致，無 placeholder 洩漏。
+   - `node scripts/invariants/run-all-invariants.mjs`：9/9 Gates 全數 PASSED。
+   - `cd app && npm run build`：Next.js 15.3.2 生產環境建置與靜態匯出（Export 3/3）成功。
+
+下一個唯一 probe：本 repo 變更已完成本機完整驗證，保持乾淨就緒。等待使用者指示是否執行 git commit。
+
 
 本 repo 在收尾前乾淨。Collection root 仍有別的工作留下的 WORKSTREAMS、convergence ticket_loop 與 CR26 紀錄修改，未暫存或提交。沒有新增偏好或知識候選。
 
