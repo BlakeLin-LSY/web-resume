@@ -21,7 +21,6 @@ export function renderIntentContract(contract, language, copy) {
 
   return `<details class="resume-intent-contract-card resume-human-view" data-intent-contract>
   <summary class="resume-contract-toggle">
-    <span class="resume-contract-icon" aria-hidden="true">📜</span>
     <span class="resume-contract-title">${e(heading)}</span>
     <span class="resume-contract-badge">${e(badge)}</span>
   </summary>

@@ -74,7 +74,7 @@ h2,h3{text-wrap:balance}.section>p{max-width:72ch}.language-view[lang="zh-TW"] .
 <p>I separated the planner from provider execution. The Python calculation returns pre-work ignition, reset times, and reachable windows under a minimum usable-slice constraint; spacing validation also checks the gap across midnight.</p>
 <p>Provider adapters build explicit command arguments, and the runner defaults to a dry run. A live clock-in requires live=True or --live. This makes the plan inspectable, while leaving the real provider behavior and request cost as assumptions that must be checked separately.</p>
 
-<aside class="example"><h3>Illustrative model example — not an account measurement</h3><p>For a 09:00–18:00 workday and a 60-minute minimum usable slice, the anchored model places clock-ins at 06:00, 11:00, and 16:00. These are calculated times under the model, not a measured account benefit.</p></aside>
+<aside class="example"><h3>Illustrative model example, not an account measurement</h3><p>For a 09:00–18:00 workday and a 60-minute minimum usable slice, the anchored model places clock-ins at 06:00, 11:00, and 16:00. These are calculated times under the model, not a measured account benefit.</p></aside>
 </section>
 <section class="section"><h2>What it produces today</h2>
 <p>The project provides schedule calculation and rendering, a no-tool comparison, provider command previews, a ledger, and health-check code. Scheduler representations exist for systemd, launchd, and Windows Task Scheduler.</p>

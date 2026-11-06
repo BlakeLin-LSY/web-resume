@@ -14,20 +14,20 @@
     "zh-TW": "即時 3D 量測精度提升 {value}%"
   },
   "en": {
-    "summary": "Improved real-time stereo-camera 3D measurement through calibration and algorithm redesign.",
+    "summary": "Redesigned stereo measurement algorithms and calibrated camera hardware to advance real-time 3D depth accuracy.",
     "details": [
       "Calibrated Intel RealSense D415/D435 camera systems."
     ],
-    "boundary": "Focused on stereo-camera optical calibration and real-time 3D depth measurement optimization.",
+    "boundary": "Covered stereo-camera optical calibration and real-time 3D depth measurement optimization.",
     "proofTitle": "Stereo 3D measurement",
     "scope": "Measurement accuracy"
   },
   "zh-TW": {
-    "summary": "透過相機校正與演算法重新設計，改善即時立體攝影機 3D 量測。",
+    "summary": "重新設計立體量測演算法並執行相機校正，改善即時 3D 深度量測。",
     "details": [
-      "執行 Intel RealSense D415／D435 相機系統校正。"
+      "校正 Intel RealSense D415 與 D435 立體相機系統。"
     ],
-    "boundary": "專注於立體相機光學校正與即時 3D 深度量測精度優化。",
+    "boundary": "涵蓋立體相機光學校正與即時 3D 深度量測精度最佳化。",
     "proofTitle": "立體視覺 3D 量測",
     "scope": "量測精度"
   }

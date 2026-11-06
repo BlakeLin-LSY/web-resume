@@ -5,16 +5,20 @@ export const escapeHtml = (value) => String(value).replace(/[&<>"']/g, char => (
 
 /**
  * Universal Data Pipeline SVG Generator
- * Generates responsive, dual-lane or single-lane vector pipelines with auto-positioned nodes and connectors.
+ * Generates responsive, dual-lane vector pipelines with auto-positioned nodes and connectors.
  */
-export function renderPipelineSvg(options, language = "en") {
+export function renderPipelineSvg(options = {}, language = "en") {
+  if (typeof options === "string") {
+    language = options;
+    options = {};
+  }
   const isEn = language === "en";
   const e = escapeHtml;
   const l = (val) => typeof val === "object" && val !== null ? (isEn ? val.en : (val["zh-TW"] || val.en)) : String(val);
 
   const kicker = l(options.kicker || (isEn ? "Pipeline Architecture" : "資料管線架構"));
-  const badge = l(options.badge || "");
-  const title = l(options.title || "");
+  const badge = l(options.badge || (isEn ? "~10× Speedup" : "約 10 倍加速"));
+  const title = l(options.title || (isEn ? "PhysicsNeMo DataLoader I/O Optimization" : "PhysicsNeMo 資料載入器 I/O 重構管線"));
   const caption = l(options.caption || "");
   const ariaLabel = l(options.ariaLabel || title);
 
@@ -80,7 +84,7 @@ export function renderPipelineSvg(options, language = "en") {
           <rect x="18" y="92" width="80" height="16" rx="4" class="resume-node-pill resume-pill-highlight"/>
           <text x="58" y="103" class="resume-pill-text" text-anchor="middle">${e(l(lane2?.stage1?.pill || (isEn ? "REFACTOR" : "管線重構")))}</text>
           <text x="100" y="122" class="resume-node-title resume-title-highlight" text-anchor="middle">${e(l(lane2?.stage1?.title || (isEn ? "Loader Pipeline" : "載入器管線")))}</text>
-          <text x="100" y="137" class="resume-node-detail resume-stat-green" text-anchor="middle">${e(l(lane2?.stage1?.detail || (isEn ? "AI-Assisted Pipelining" : "AI 輔助管線重構")))}</text>
+          <text x="100" y="137" class="resume-node-detail resume-stat-green" text-anchor="middle">${e(l(lane2?.stage1?.detail || (isEn ? "Prefetch & Cache Pipelining" : "預取與快取管線重構")))}</text>
         </g>
 
         <g class="resume-connector">

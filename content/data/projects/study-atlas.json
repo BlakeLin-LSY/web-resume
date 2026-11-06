@@ -11,11 +11,11 @@
     },
     "solution": {
       "en": "TALK 1.8 budget gate blocks over-budget plans (6.0 > 5.0) and reroutes to T5 compact (4.6).",
-      "zh-TW": "TALK 1.8 預算閘門熔斷超標方案（6.0 > 5.0），自主重導向至 T5 精簡綜述（4.6）。"
+      "zh-TW": "TALK 1.8 預算閘門攔截超標方案（6.0 > 5.0），重導向至 T5 精簡綜述（4.6）。"
     },
     "boundary": {
-      "en": "6.0 → 4.6 is calculated TALK budget; not human reading time or wall-clock speedup.",
-      "zh-TW": "邊界界定：6.0 → 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。"
+      "en": "6.0 to 4.6 is calculated TALK budget; not human reading time or wall-clock speedup.",
+      "zh-TW": "6.0 至 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。"
     }
   },
   "abTransformation": {
@@ -25,31 +25,31 @@
     },
     "weakestLink": {
       "en": "Unbounded dispatch graph without execution-time budget guardrail",
-      "zh-TW": "缺乏派發前計算預算評估與斷路熔斷機制"
+      "zh-TW": "缺乏派發前計算預算評估與斷路機制"
     },
     "bOutput": {
-      "en": "TALK 1.8 budget gate blocks overspend (6.0 > 5.0) & reroutes to 4.6",
-      "zh-TW": "TALK 1.8 預算超標熔斷阻斷 (6.0 > 5.0)，自主重導向至 4.6 精簡綜述"
+      "en": "TALK 1.8 budget gate blocks overspend (6.0 > 5.0) and reroutes to 4.6",
+      "zh-TW": "TALK 1.8 預算閘門攔截超標方案（6.0 > 5.0），重導向至 4.6 精簡綜述"
     }
   },
   "intentContract": {
     "strictInvariant": {
-      "en": "Calculated TALK budget must not exceed 5.0 ceiling; all citations must retain mathematical provenance to source papers.",
-      "zh-TW": "計算型 TALK 預算嚴格不可超越 5.0 上限；所有綜述引證必須保留至原論文之數學推論出處。"
+      "en": "Calculated TALK budget must not exceed 5.0 ceiling; all citations must retain verifiable provenance to source papers.",
+      "zh-TW": "計算型 TALK 預算不可超過 5.0 上限；所有綜述引證必須保留至原論文之可驗證出處。"
     },
     "nonGoals": {
       "en": [
         "Autonomous unbounded web search scraping",
-        "Blind LLM hallucinated summarization without provenance verification"
+        "LLM summarization without citation verification"
       ],
       "zh-TW": [
         "無邊界的網頁爬蟲與遞迴檢索",
-        "無引證出處校驗的盲目 LLM 幻覺摘要"
+        "缺乏出處驗證的 LLM 摘要"
       ]
     },
     "failureConditions": {
-      "en": "When user query complexity triggers a plan estimation > 5.0 TALK, execution is blocked at the gate and rerouted to T5 compact mode (4.6) with zero token leakage.",
-      "zh-TW": "當查詢複雜度觸發預估花費 > 5.0 TALK 時，閘門即時中斷執行並重導向至 T5 精簡模式（4.6），達到零 Token 洩漏。"
+      "en": "When query complexity triggers a plan estimation > 5.0 TALK, execution is blocked at the gate and rerouted to T5 compact mode (4.6) to prevent unbudgeted token consumption.",
+      "zh-TW": "當查詢複雜度觸發預估花費 > 5.0 TALK 時，閘門即時攔截並重導向至 T5 精簡模式（4.6），防止未受控的 Token 消耗。"
     }
   },
   "mirrorDuel": [
@@ -59,68 +59,68 @@
         "zh-TW": "為什麼要自訂 TALK 預算閘門，而不是單純在 API 呼叫中設定 max_tokens 讓 LLM 自己總結？"
       },
       "defense": {
-        "en": "API max_tokens is a blunt truncation mechanism—it cuts output mid-sentence and doesn't prevent wasteful multi-agent recursive exploration upstream. The TALK gate evaluates the execution graph prior to dispatch, enforcing cognitive budgeting and deliberate synthesis routing before billing occurs.",
-        "zh-TW": "API 的 max_tokens 只是生硬的截斷機制——它會在句子中途切斷，且完全無法防止上游多 Agent 遞迴搜尋的 Token 浪費。TALK 閘門在派發前即評估執行圖預算，在計費產生前強制執行認知預算控管與精簡重導向。"
+        "en": "API max_tokens is a blunt truncation mechanism. It cuts output mid-sentence and does not prevent wasteful multi-agent recursive exploration upstream. The TALK gate evaluates the execution graph prior to dispatch, enforcing token budget limits and synthesis routing before API calls occur.",
+        "zh-TW": "API 的 max_tokens 只是長度截斷機制，會在句子中途切斷，且無法防止上游多 Agent 遞迴檢索的 Token 浪費。TALK 閘門在派發前評估執行圖預算，在呼叫產生前限制 Token 預算並執行精簡重導向。"
       }
     },
     {
       "challenger": {
-        "en": "How do you prove that 6.0 → 4.6 isn't just an arbitrary number?",
-        "zh-TW": "如何證明 6.0 → 4.6 不只是隨意捏造的數字？"
+        "en": "How do you prove that 6.0 to 4.6 is not an arbitrary number?",
+        "zh-TW": "如何證明 6.0 至 4.6 不只是隨意設定的數字？"
       },
       "defense": {
-        "en": "TALK 1.8 is an explicit formal cost model based on input token AST density and reasoning step weights, backed by verifiable JSON-LD receipts in the walkthrough artifact, explicitly scoped as calculated budget rather than wall-clock seconds.",
-        "zh-TW": "TALK 1.8 是基於輸入 Token AST 密度與推理步權重的形式化成本模型，在歷史流程展示中具備 JSON-LD 數位收據，並在邊界中嚴格界定為計算預算而非真人碼錶時間。"
+        "en": "TALK 1.8 is an explicit cost model based on input token AST density and reasoning step weights. It is verified by JSON-LD receipts in the walkthrough artifact, and scoped as calculated budget rather than wall-clock seconds.",
+        "zh-TW": "TALK 1.8 是基於輸入 Token AST 密度與推理步權重的成本模型，在歷史流程展示中具備 JSON-LD 紀錄，並界定為計算預算而非真人碼錶時間。"
       }
     }
   ],
   "povHighlights": {
     "staff": {
-      "en": "Formal TALK contract & circuit-breaker preventing multi-agent combinatorial explosion",
-      "zh-TW": "形式化 TALK 契約與熔斷器，根絕多 Agent 組合爆炸",
+      "en": "Formal TALK contract and circuit-breaker preventing multi-agent combinatorial explosion",
+      "zh-TW": "形式化 TALK 契約與阻斷機制，避免多 Agent 組合爆炸",
       "coreQuestion": {
-        "en": "How do we prevent cascading hallucination and exponential token budget explosion across multi-agent research synthesis?",
-        "zh-TW": "多 Agent 協同進行文獻綜述時，如何杜絕幻覺串聯傳播與 Token 指數級爆炸？"
+        "en": "How do we prevent cascading errors and exponential token budget explosion across multi-agent research synthesis?",
+        "zh-TW": "多 Agent 協同進行文獻綜述時，如何避免錯誤串聯傳播與 Token 指數級爆炸？"
       },
       "breakthrough": {
-        "en": "Formalized the TALK contract protocol with strict budget capping (6.0 ➔ 4.6), AST token quotas, and cryptographic leaf citation anchoring.",
-        "zh-TW": "形式化 TALK 契約協議，設計嚴格計算預算上限（6.0 ➔ 4.6）、AST Token 配額管理與密碼學葉節點引證錨定。"
+        "en": "Formalized the TALK contract protocol with budget capping (6.0 to 4.6), AST token quotas, and paper citation verification.",
+        "zh-TW": "形式化 TALK 契約協議，設定計算預算上限（6.0 降至 4.6）、AST Token 配額管理與論文引證比對。"
       },
       "verifiedMoat": {
-        "en": "Zero unconstrained LLM loops; 100% cryptographic source provenance verified via SHA-256 digital seals.",
-        "zh-TW": "達成零失控 LLM 死迴圈；所有引文來源均經由 SHA-256 密碼學封籤 100% 可回溯驗證。"
+        "en": "Eliminates unconstrained LLM loops; verifies citation source provenance with SHA-256 hashes.",
+        "zh-TW": "消除未受控的 LLM 迴圈；所有引文來源均經由 SHA-256 雜湊值記錄與校驗。"
       }
     },
     "em": {
-      "en": "Deterministic budget capping (6.0 → 4.6) and zero-drift technical briefing synthesis",
-      "zh-TW": "確定性預算收斂（6.0 → 4.6），技術綜述品質零漂移",
+      "en": "Deterministic budget capping (6.0 to 4.6) and structured technical briefing synthesis",
+      "zh-TW": "確定性預算收斂（6.0 至 4.6），結構化技術綜述整理",
       "coreQuestion": {
-        "en": "How can an engineering team digest hundreds of complex vision papers per month without subjective bias or manual exhaustion?",
-        "zh-TW": "研發團隊每月需消化數百篇最新電腦視覺論文，如何避免主觀偏見整理與低效人力消耗？"
+        "en": "How can an engineering team digest complex vision papers without subjective bias or manual exhaustion?",
+        "zh-TW": "研發團隊需要消化大量電腦視覺論文時，如何避免主觀偏見整理與低效人力消耗？"
       },
       "breakthrough": {
-        "en": "Created deterministic dual-track reading routes (briefing vs deep proof) with automated ETH3D point-cloud inference validation.",
-        "zh-TW": "建立確定性雙軌閱讀路線（高階綜述 vs 深度證明），結合 ETH3D 點雲推論自動化萃取驗證。"
+        "en": "Created deterministic dual-track reading routes (briefing and deep proof) with automated ETH3D point-cloud inference validation.",
+        "zh-TW": "建立確定性雙軌閱讀路線（高階綜述與深度推導），結合 ETH3D 點雲推論驗證數據。"
       },
       "verifiedMoat": {
-        "en": "Compressed literature onboarding from days to minutes with zero-drift reproducibility across the team.",
-        "zh-TW": "將前沿文獻調研融入週期從數天壓縮至數分鐘，產出品質具備團隊級零漂移重現性。"
+        "en": "Provides structured briefing and deep-proof routes with reproducible source verification across the team.",
+        "zh-TW": "建立高階綜述與深度推導閱讀路線，產出具備團隊級可重現的來源驗證紀錄。"
       }
     },
     "recruiter": {
-      "en": "Epistemic boundary architecture · Beyond LLM wrapper · Enterprise research moat",
-      "zh-TW": "認知邊界架構 · 超越普通 LLM 套殼 · 企業級研究壁壘",
+      "en": "Multi-agent literature synthesis, pre-dispatch token budget evaluation, and citation verification",
+      "zh-TW": "多 Agent 文獻綜述、派發前 Token 預算評估與引證來源校驗",
       "coreQuestion": {
-        "en": "In a crowded market of shallow LLM wrappers, how does Blake build truly defensible Agent systems with epistemic boundaries?",
-        "zh-TW": "在氾濫的簡易 LLM 套殼市場中，Blake 如何構建具備認知邊界與真正技術防禦壁壘的 Agent 系統？"
+        "en": "How can a multi-agent literature synthesis system evaluate token budgets and verify citations before execution?",
+        "zh-TW": "多 Agent 文獻綜述系統如何在派發前評估 Token 預算，並確保論文引證可被校驗？"
       },
       "breakthrough": {
-        "en": "Architected system around 'Epistemic Boundaries' and 'Intent Fidelity'—enforcing that facts, inferences, and speculations remain strictly separated.",
-        "zh-TW": "圍繞「認知邊界」與「意圖保真」構建核心架構——強制將客觀事實、推論過程與猜測假說嚴格隔離封裝。"
+        "en": "Built pre-dispatch execution graph evaluation to cap token spend, paired with verifiable source extraction verified against paper benchmarks like ETH3D point-cloud derivation.",
+        "zh-TW": "建立派發前執行圖評估機制以限制 Token 消耗，並結合可校驗的引證抽取架構，對齊 ETH3D 點雲推論等論文實驗數據。"
       },
       "verifiedMoat": {
-        "en": "Delivers mathematical trust rather than probabilistic hallucination; sets standard for next-gen AI intelligence products.",
-        "zh-TW": "交付可經數學檢驗的確定性信任，而非不可控的機率幻覺；樹立下一代 AI 智慧工具的標竿。"
+        "en": "Enforces pre-dispatch budget gating (6.0 to 4.6 TALK) and separates paper evidence from engineering inference with verifiable SHA-256 artifacts.",
+        "zh-TW": "落實派發前預算閘門攔截（6.0 降至 4.6 TALK），並以 SHA-256 產物明確區分論文客觀數據與工程推論。"
       }
     }
   },
@@ -134,7 +134,7 @@
   "zh-TW": {
     "summary": "把同一份研究整理成中英雙語、不同深度的閱讀路線，保留來源與推論的區別。",
     "evidence": "個人專案 · 2026-09-13 歷史流程展示",
-    "boundary": "TALK 1.8 預算閘門熔斷機制，強制執行 Token 上限與論文引證溯源。",
+    "boundary": "TALK 1.8 預算閘門攔截機制，強制執行 Token 上限與論文引證溯源。",
     "action": "閱讀 Study Atlas 介紹",
     "walkthroughAction": "操作預算檢查展示"
   }

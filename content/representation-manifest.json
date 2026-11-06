@@ -1,0 +1,69 @@
+{
+  "$schema": "./schemas/representation-manifest.schema.json",
+  "version": "1.0.0",
+  "activeTheme": "clean-swiss",
+  "modules": [
+    {
+      "id": "hero",
+      "name": "Swiss Asymmetrical Hero",
+      "enabled": true,
+      "order": 10,
+      "nav": null
+    },
+    {
+      "id": "impact-rail",
+      "name": "Verified Impact Stat Rail",
+      "enabled": true,
+      "order": 20,
+      "nav": null
+    },
+    {
+      "id": "invariants-anchor",
+      "name": "Shared Engineering Invariants Anchor",
+      "enabled": true,
+      "order": 30,
+      "nav": null
+    },
+    {
+      "id": "flagship-proof",
+      "name": "Production Engineering Impact (DynaSafe & MetGauge)",
+      "enabled": true,
+      "order": 40,
+      "nav": { "key": "proof", "anchor": "#professional-proof" },
+      "options": {
+        "focalIds": ["dynasafe", "metgauge"]
+      }
+    },
+    {
+      "id": "system-projects",
+      "name": "Systems & AI Architecture Projects (Study Atlas & Transcribe-for-X)",
+      "enabled": true,
+      "order": 50,
+      "nav": { "key": "projects", "anchor": "#projects" },
+      "options": {
+        "focalIds": ["study-atlas", "transcribe-for-x"]
+      }
+    },
+    {
+      "id": "career-timeline",
+      "name": "Professional Experience Timeline",
+      "enabled": true,
+      "order": 60,
+      "nav": { "key": "experience", "anchor": "#experience" }
+    },
+    {
+      "id": "skills-about",
+      "name": "About & Contextual Skills",
+      "enabled": true,
+      "order": 70,
+      "nav": { "key": "about", "anchor": "#about" }
+    },
+    {
+      "id": "contact-footer",
+      "name": "Contact & Offline Actions Footer",
+      "enabled": true,
+      "order": 80,
+      "nav": { "key": "contact", "anchor": "#contact" }
+    }
+  ]
+}

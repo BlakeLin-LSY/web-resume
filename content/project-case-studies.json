@@ -119,7 +119,7 @@
         "en": {
           "eyebrow": "Historical walkthrough · September 13, 2026 · Contract 1.8",
           "title": "A reading plan that had to pass its budget gate",
-          "intro": "Follow one preserved VGGT paper request from the reader’s question to an over-budget plan, a compact revision, and an inspectable result. Choose a step or use Next.",
+          "intro": "Follow one preserved VGGT paper request from the reader's question to an over-budget plan, a compact revision, and an inspectable result. Choose a step or use Next.",
           "boundary": "6.0 → 4.6 minutes is the historical calculated TALK budget. It measures neither human reading speed nor wall-clock acceleration. This local walkthrough makes no model or service calls.",
           "previous": "Previous",
           "next": "Next",
@@ -129,11 +129,11 @@
             {
               "id": "source",
               "label": "Source & question",
-              "heading": "Make the reader’s question explicit",
+              "heading": "Make the reader's question explicit",
               "evidence": "Preserved request + authored QUESTION.md",
               "paragraphs": [
                 "Source: VGGT: Visual Geometry Grounded Transformer, preserved arXiv v1 (2503.11651). The input was the PDF 2025-VGGT_Visual_Geometry_Grounded_Transformer.pdf.",
-                "The recorded request asks: “What can we learn from this paper? What are the nucleus and takeaway for general framework to utilize in daily?” The intended reader has basic ML concepts and AI engineering experience.",
+                "The recorded request asks: \"What can we learn from this paper? What are the nucleus and takeaway for general framework to utilize in daily?\" The intended reader has basic ML concepts and AI engineering experience.",
                 "The authored study bounds the daily-framework discussion as engineering inference. A reading artifact can explain that inference; it does not establish that the framework works across domains."
               ]
             },
@@ -477,7 +477,7 @@
           "rawLabel": "2 · Original transcript",
           "raw": "Um, let's review the API tomorrow.",
           "removal": "Um, ",
-          "accept": "Accept removal of “Um, ”",
+          "accept": "Accept removal of \"Um, \"",
           "outputLabel": "3 · Text after your decision",
           "noJs": "Example after accepting the removal:",
           "expected": "let's review the API tomorrow.",
@@ -557,7 +557,7 @@
               "Provider adapters build explicit command arguments, and the runner defaults to a dry run. A live clock-in requires live=True or --live. This makes the plan inspectable, while leaving the real provider behavior and request cost as assumptions that must be checked separately."
             ],
             "example": {
-              "label": "Illustrative model example — not an account measurement",
+              "label": "Illustrative model example, not an account measurement",
               "text": "For a 09:00–18:00 workday and a 60-minute minimum usable slice, the anchored model places clock-ins at 06:00, 11:00, and 16:00. These are calculated times under the model, not a measured account benefit."
             }
           },

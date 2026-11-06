@@ -30,7 +30,7 @@
   },
   "copy": {
     "en": {
-      "lead": "I build ML pipelines, computer-vision software, and hardware-integrated systems. My recent personal projects explore traceable AI research reading and user-controlled speech-to-text.",
+      "lead": "AI systems engineer focused on ML pipeline acceleration, high-speed AOI computer vision, and large FOV stereo 3D metrology. Grounded in applied physics to eliminate systemic bottlenecks.",
       "context": "3+ years of professional engineering · M.S. in Physics",
       "cv": "Download CV",
       "cvOpen": "Open CV",
@@ -48,11 +48,11 @@
         "about": "About",
         "contact": "Contact"
       },
-      "proofHeading": "Selected professional work",
-      "proofIntro": "From training bottlenecks to systems on the factory floor.",
+      "proofHeading": "Production Engineering Impact",
+      "proofIntro": "High-throughput ML pipelines and sub-microsecond multi-camera synchronization under industrial constraints.",
       "careerLink": "See professional experience",
-      "workHeading": "Recent personal projects",
-      "focus": "Two tools for turning complex source material into something people can read and use.",
+      "workHeading": "Systems & AI Architecture Projects",
+      "focus": "Invariant-driven architectures for traceable literature synthesis and privacy-first on-device speech processing.",
       "snapshot": "Personal projects, 2026. Each example shows its own date.",
       "moreWork": "More work",
       "experienceHeading": "Professional experience",
@@ -65,7 +65,7 @@
       "educationHeading": "Education",
       "personalHeading": "Beyond engineering",
       "personal": "I enjoy trail running and exploring nature.",
-      "contactHeading": "Let’s talk about the work.",
+      "contactHeading": "Let's talk about the work.",
       "contactLead": "For AI software, ML pipelines, and computer vision roles. Email is the simplest way to reach me.",
       "linkedin": "LinkedIn",
       "cvOther": "繁體中文 CV",
@@ -92,34 +92,34 @@
       "lensStaffShort": "Architect",
       "lensEmShort": "Eng Lead",
       "lensRecruiterShort": "CTO",
-      "lensStaffDesc": "Focus: Low-Level Concurrency, Root-Cause Bottlenecks, Invariants & Limits",
-      "lensEmDesc": "Focus: 10× Delivery Velocity, High-Availability Stability & CI Automation",
-      "lensRecruiterDesc": "Focus: Zero-Capex ROI, Cross-Disciplinary Moats & Physics-to-Agent Engineering",
-      "lensCoreQuestion": "Core Probe",
-      "lensBreakthrough": "Engineering Breakthrough",
-      "lensVerifiedMoat": "Verified Moat",
-      "contractHeading": "Intent Contract & Epistemic Boundaries",
+      "lensStaffDesc": "Focus: Low-level concurrency, root-cause bottlenecks, and system invariants",
+      "lensEmDesc": "Focus: Delivery throughput, system stability, and automated CI gates",
+      "lensRecruiterDesc": "Focus: Capital efficiency, engineering moats, and physics-informed AI systems",
+      "lensCoreQuestion": "Core Question",
+      "lensBreakthrough": "Engineering Solution",
+      "lensVerifiedMoat": "Verified Impact",
+      "contractHeading": "System Invariants & Boundary Contracts",
       "contractInvariant": "Strict Invariant",
       "contractNonGoals": "Explicit Non-Goals",
       "contractFailure": "Failure Condition & Fallback",
-      "duelHeading": "Architecture Duel · Grill This Design",
-      "duelChallenger": "Reviewer / Challenger",
-      "duelDefense": "First-Principles Defense",
-      "duelToggleOpen": "⚔️ Grill This Architecture",
-      "duelToggleClose": "Close Architecture Duel",
-      "proofReceiptHeading": "Cryptographic Engineering Receipts",
+      "duelHeading": "Architecture Trade-offs & Review",
+      "duelChallenger": "Design Challenge & Context",
+      "duelDefense": "Architecture Decision & Trade-off",
+      "duelToggleOpen": "Review Architecture Trade-offs",
+      "duelToggleClose": "Close Architecture Review",
+      "proofReceiptHeading": "Verification Receipts & Invariant Seals",
       "proofShaLabel": "SHA-256 Digital Seal",
       "proofStatusPass": "VERIFIED INVARIANT",
       "proofVerifyBtn": "Run Live Invariant Gate",
-      "frameworkHeading": "First-Principles Problem-Solving Engine",
-      "frameworkTitle": "Problem Scoping · Critical-Link Piercing · Deterministic Value (A ➔ X ➔ B)",
-      "frameworkIntro": "From physical boundary conditions and first-principles framing to surgically piercing the weakest link, delivering deterministic, anti-fragile engineering outcomes across hardware and agent systems.",
+      "frameworkHeading": "Engineering Methodology",
+      "frameworkTitle": "Physical Boundary Framing · Bottleneck Isolation · Measured Verification (A ➔ X ➔ B)",
+      "frameworkIntro": "Grounding software in physical constraints: isolating data path bottlenecks, eliminating non-deterministic jitter, and delivering verifiable throughput on production systems.",
       "ribbonLabelA": "A: PROBLEM & SCOPE",
       "ribbonLabelLink": "X: CRITICAL LINK",
       "ribbonLabelB": "B: VALUE DELIVERY"
     },
     "zh-TW": {
-      "lead": "我開發與改善 ML pipeline、電腦視覺及軟硬體整合系統。近期個人專案聚焦在可追溯來源的 AI 研究閱讀工具，以及由使用者決定如何修改逐字稿的語音轉文字流程。",
+      "lead": "專注機器學習管線加速、產線高速 AOI 電腦視覺與大視野立體 3D 量測的 AI 系統工程師。以應用物理分析為基礎，從根源消除系統效能瓶頸。",
       "context": "3 年以上專業工程經驗 · 物理學碩士",
       "cv": "下載 CV",
       "cvOpen": "開啟 CV",
@@ -137,11 +137,11 @@
         "about": "關於我",
         "contact": "聯絡"
       },
-      "proofHeading": "精選職業成果",
-      "proofIntro": "從訓練瓶頸，到工廠現場的系統整合。",
+      "proofHeading": "核心工程實績",
+      "proofIntro": "高吞吐 ML 訓練管線與工業級次微秒多相機時序同步。",
       "careerLink": "查看專業經歷",
-      "workHeading": "近期個人作品",
-      "focus": "把研究資料與錄音，整理成容易閱讀、使用的內容。",
+      "workHeading": "系統架構與 AI 專案",
+      "focus": "以嚴格不變量驅動的 AI 論文研讀系統與隱私優先的裝置端語音處理架構。",
       "snapshot": "個人專案，2026 年；各案例標示當時日期。",
       "moreWork": "更多作品",
       "experienceHeading": "專業經歷",
@@ -173,7 +173,7 @@
       "sampleExcerptHide": "收合雙語樣張",
       "sampleExcerptTitle": "Study Atlas VGGT 研究綜述真實樣張（ETH3D 點圖推論驗證）",
       "tradeoffBadge": "架構取捨與不變量",
-      "lensLabel": "視角投影",
+      "lensLabel": "審查視角",
       "lensAll": "全視角",
       "lensStaff": "系統架構師",
       "lensEm": "工程主管",
@@ -181,31 +181,31 @@
       "lensStaffShort": "架構師",
       "lensEmShort": "工程主管",
       "lensRecruiterShort": "CTO",
-      "lensStaffDesc": "聚焦：底層併發拓撲、根本瓶頸定位、硬體物理極限與嚴格不變量",
-      "lensEmDesc": "聚焦：10× 交付吞吐量、系統高可用穩定性與機制化 CI 自動防護",
-      "lensRecruiterDesc": "聚焦：零硬體增購資本支出 ROI、跨領域系統壁壘與物理推導 × Agent 認知工程",
-      "lensCoreQuestion": "審查核心叩問",
-      "lensBreakthrough": "攻堅突破機制",
-      "lensVerifiedMoat": "量化驗證壁壘",
-      "contractHeading": "意圖契約與認知邊界",
+      "lensStaffDesc": "聚焦：底層並行架構、系統瓶頸定位、硬體物理極限與不變量約束",
+      "lensEmDesc": "聚焦：研發交付吞吐量、高可用系統穩定性與 CI 自動防護機制",
+      "lensRecruiterDesc": "聚焦：硬體資本效益、工程技術優勢與物理導向 AI 系統",
+      "lensCoreQuestion": "核心審查問題",
+      "lensBreakthrough": "工程技術突破",
+      "lensVerifiedMoat": "量化驗證成果",
+      "contractHeading": "系統不變量與邊界契約",
       "contractInvariant": "嚴格不變量",
-      "contractNonGoals": "顯式非目標",
-      "contractFailure": "失效臨界與降級策略",
-      "duelHeading": "⚔️ 架構審查與對抗答辯",
-      "duelChallenger": "審查質疑",
-      "duelDefense": "第一性原理辯護",
-      "duelToggleOpen": "⚔️ 審查架構取捨",
-      "duelToggleClose": "收合架構答辯",
-      "proofReceiptHeading": "可驗證密碼學工程收據",
+      "contractNonGoals": "明確非目標",
+      "contractFailure": "失效條件與降級策略",
+      "duelHeading": "架構取捨與設計審查",
+      "duelChallenger": "設計挑戰與背景考量",
+      "duelDefense": "架構決策與權衡",
+      "duelToggleOpen": "審查架構取捨",
+      "duelToggleClose": "收合架構審查",
+      "proofReceiptHeading": "不變量驗證收據",
       "proofShaLabel": "SHA-256 數位封籤",
       "proofStatusPass": "不變量驗證通過",
-      "proofVerifyBtn": "執行即時不變量校驗",
-      "frameworkHeading": "第一性工程求解引擎",
-      "frameworkTitle": "問題定義 · 關鍵弱鏈擊穿 · 高價值確定性交付 (A ➔ X ➔ B)",
-      "frameworkIntro": "從物理學邊界條件與根本問題定義出發，運用工程直覺精準擊穿系統最弱環節，在軟硬體產線與 Agent 系統中交付具備確定性與抗脆弱的高價值成果。",
+      "proofVerifyBtn": "執行即時不變量驗證",
+      "frameworkHeading": "工程方法論",
+      "frameworkTitle": "物理邊界界定 · 系統瓶頸定位 · 實測量化驗證 (A ➔ X ➔ B)",
+      "frameworkIntro": "將軟體架構建立於物理約束之上：定位資料路徑瓶頸，消除非確定性延遲抖動，在量產系統中交付經量化驗證的效能成果。",
       "ribbonLabelA": "A: 問題與邊界定義",
-      "ribbonLabelLink": "X: 關鍵弱鏈擊穿",
-      "ribbonLabelB": "B: 確定性價值交付"
+      "ribbonLabelLink": "X: 突破關鍵弱鏈",
+      "ribbonLabelB": "B: 驗證成果交付"
     }
   },
   "professional": [
@@ -221,148 +221,148 @@
       "metric": {
         "value": 10,
         "type": "training-speed-factor",
-        "en": "~{value}× training acceleration via dataloader I/O pipeline refactoring",
-        "zh-TW": "針對資料載入瓶頸進行 I/O 重構，達成約 {value} 倍模型訓練提速"
+        "en": "~{value}× training speedup through dataloader I/O pipeline refactoring",
+        "zh-TW": "重構資料載入器 I/O 管線，達成約 {value} 倍模型訓練加速"
       },
       "triad": {
         "challenge": {
-          "en": "Diagnosed a data-format loader bottleneck in a PhysicsNeMo training demo.",
-          "zh-TW": "定位 PhysicsNeMo 訓練範例中的資料格式載入瓶頸。"
+          "en": "Diagnosed data loading bottlenecks in a PhysicsNeMo training workflow.",
+          "zh-TW": "分析 PhysicsNeMo 訓練流程中的資料載入瓶頸。"
         },
         "solution": {
-          "en": "Specified pipeline optimization specs, designed asynchronous ingestion, and directed the loader refactoring.",
-          "zh-TW": "確立管線最佳化規範、設計非同步資料載入架構，並主導資料載入器管線重構。"
+          "en": "Specified pipeline requirements, designed asynchronous prefetching, and directed the dataloader refactoring.",
+          "zh-TW": "制定管線優化規格，設計非同步預取架構，並主導資料載入器重構。"
         },
         "boundary": {
-          "en": "End-to-end training acceleration achieved by eliminating I/O deserialization bottlenecks in the dataloader.",
-          "zh-TW": "消除資料載入器之 I/O 反序列化瓶頸，實現端到端模型訓練加速。"
+          "en": "Focused on dataloader I/O profiling, serialization bottleneck removal, and asynchronous prefetching without modifying the physics solver.",
+          "zh-TW": "專注於資料載入器 I/O 效能分析、序列化瓶頸消除與非同步預取，不改動物理求解器核心。"
         }
       },
       "abTransformation": {
         "aInput": {
-          "en": "CFD simulation training starved by synchronous data-format loading I/O",
-          "zh-TW": "CFD 數值模擬訓練受限於同步資料載入 I/O 阻塞"
+          "en": "GPU compute idling during CFD training due to synchronous data loading",
+          "zh-TW": "CFD 數值模擬訓練因同步資料載入導致 GPU 閒置"
         },
         "weakestLink": {
-          "en": "Python DataLoader serialization and OpenFOAM format conversion stall",
-          "zh-TW": "Python DataLoader 序列化 I/O 與 OpenFOAM 格式轉換瓶頸"
+          "en": "Python DataLoader serialization and OpenFOAM format conversion bottleneck",
+          "zh-TW": "Python DataLoader 序列化與 OpenFOAM 格式轉換瓶頸"
         },
         "bOutput": {
-          "en": "Streamlined dataloader pipeline with ~10× training acceleration",
-          "zh-TW": "重構資料載入管線，達成約 10 倍訓練提速"
+          "en": "Asynchronous prefetching dataloader pipeline delivering ~10× training speedup",
+          "zh-TW": "非同步預取資料載入管線，達成約 10 倍模型訓練加速"
         }
       },
       "intentContract": {
         "strictInvariant": {
-          "en": "DataLoader streaming throughput must saturate GPU compute ingestion rate without degrading simulation mesh fidelity.",
-          "zh-TW": "DataLoader 串流吞吐必須匹配或超越 GPU 計算攝取速率，且不得犧牲物理模擬網格精度。"
+          "en": "DataLoader streaming throughput must match GPU processing capacity without degrading simulation mesh accuracy.",
+          "zh-TW": "DataLoader 串流吞吐量必須滿足 GPU 運算速率，且不得降低數值模擬網格精度。"
         },
         "nonGoals": {
           "en": [
-            "Rewriting OpenFOAM C++ solver core",
-            "Relying on expensive GPU hardware upgrades to brute-force I/O stalls"
+            "Rewriting the OpenFOAM C++ solver core",
+            "Adding more GPU hardware to compensate for host I/O stalls"
           ],
           "zh-TW": [
             "重寫 OpenFOAM C++ 求解器核心",
-            "依賴硬體暴力升級解決 I/O 軟體阻塞"
+            "依賴採購更多 GPU 硬體掩蓋主機端 I/O 瓶頸"
           ]
         },
         "failureConditions": {
-          "en": "If host memory bandwidth saturates or disk read latency spikes, pipeline engages cached chunk prefetching to prevent GPU idling.",
-          "zh-TW": "若主機記憶體頻寬飽和或磁碟讀取延遲增加，管線啟用快取分塊預取機制，防止 GPU 算力閒置。"
+          "en": "If host memory bandwidth saturates or disk read latency increases, the pipeline uses cached chunk prefetching to prevent GPU idling.",
+          "zh-TW": "若主機記憶體頻寬飽和或磁碟讀取延遲增加，管線啟用快取分塊預取機制，防止 GPU 閒置。"
         }
       },
       "mirrorDuel": [
         {
           "challenger": {
-            "en": "Why not simply scale up GPU memory or rent a larger cluster to brute-force training throughput?",
-            "zh-TW": "為什麼不直接堆疊更多 GPU 顯存或租用雲端叢集暴力解決訓練吞吐？"
+            "en": "Why not simply add more GPU memory or rent a larger cluster to increase training throughput?",
+            "zh-TW": "為什麼不直接擴充 GPU 記憶體或租用更大規模的叢集來提高訓練吞吐量？"
           },
           "defense": {
-            "en": "Adding more compute GPUs does not solve a host CPU data-ingestion bottleneck—it only amplifies GPU idle time. By isolating format deserialization stalls and building an asynchronous pipeline, we unlocked ~10× throughput on existing hardware with zero added capex.",
-            "zh-TW": "增加 GPU 算力無法解決主機端的資料載入阻塞，只會讓高價 GPU 閒置等待。透過定位格式反序列化瓶頸並建立非同步管線，我們在既有硬體上釋放約 10 倍訓練吞吐，達成零硬體增購支出。"
+            "en": "Adding more compute GPUs does not solve a host CPU data loading bottleneck. It only increases GPU idle time. By isolating format deserialization bottlenecks and building an asynchronous pipeline, we achieved ~10× throughput on existing hardware with no additional hardware cost.",
+            "zh-TW": "增加 GPU 算力無法解決主機端的資料載入瓶頸，只會增加 GPU 閒置時間。透過找出格式反序列化瓶頸並建立非同步管線，我們在既有硬體上達成約 10 倍訓練吞吐量提升，不需要額外採購硬體。"
           }
         },
         {
           "challenger": {
-            "en": "How did you structure the workflow when leveraging AI code assistance for loader refactoring?",
-            "zh-TW": "在利用 AI 輔助改寫資料載入器時，你如何把控工程架構與程式碼品質？"
+            "en": "How did you structure the workflow when using AI code assistance for loader refactoring?",
+            "zh-TW": "在使用 AI 工具輔助改寫資料載入器時，你如何規劃架構並確保程式碼品質？"
           },
           "defense": {
-            "en": "As Senior AI Engineer, I conducted the profiler diagnosis, specified asynchronous prefetching and caching architectures, and reviewed generated code line-by-line to guarantee numerical fidelity and interface stability.",
-            "zh-TW": "由我主導系統 profiling 瓶頸分析、確立非同步預取與快取架構規範，並對 AI 協同生成的程式碼進行逐行審查，嚴格確保數值計算精度與介面穩定性。"
+            "en": "As Senior AI Engineer, I profiled the workload to diagnose bottlenecks, specified asynchronous prefetching and caching architectures, and reviewed generated code line by line to verify numerical accuracy and interface stability.",
+            "zh-TW": "我主導系統效能分析以找出瓶頸，制定非同步預取與快取架構規格，並逐行審查生成的程式碼，確保數值精度與介面穩定性。"
           }
         }
       ],
       "povHighlights": {
         "staff": {
-          "en": "Root-cause diagnosis: a PhysicsNeMo demo data-format loader",
-          "zh-TW": "根因診斷：PhysicsNeMo 範例的資料格式載入瓶頸",
+          "en": "Root-cause diagnosis for PhysicsNeMo data loader",
+          "zh-TW": "根本原因診斷：PhysicsNeMo 資料載入瓶頸",
           "coreQuestion": {
-            "en": "How do we eliminate GPU compute starvation caused by custom physics dataset formats?",
-            "zh-TW": "如何徹底根絕自訂物理模擬資料格式導致的 GPU 算力飢餓？"
+            "en": "How do we prevent GPU idling caused by custom physics dataset formats?",
+            "zh-TW": "如何解決自訂物理模擬資料格式在載入時導致的 GPU 閒置問題？"
           },
           "breakthrough": {
-            "en": "Traced serialization bottlenecks via NVIDIA profiling tools, redesigned data ingestion with multi-threaded prefetching, and directed pipeline refactoring.",
-            "zh-TW": "運用 NVIDIA 分析工具定位序列化瓶頸，以多執行緒預取與非同步管線重新設計資料攝取架構。"
+            "en": "Traced serialization bottlenecks with NVIDIA profiling tools, redesigned data loading with multi-threaded prefetching, and directed pipeline refactoring.",
+            "zh-TW": "運用 NVIDIA 分析工具找出序列化瓶頸，以多執行緒預取與非同步管線重新設計資料載入架構。"
           },
           "verifiedMoat": {
-            "en": "Eliminated data-loading serialization, achieving ~10× training acceleration without additional GPU hardware allocation.",
-            "zh-TW": "徹底消除資料載入序列化阻塞，在不增購 GPU 算力前提下達成約 10 倍模型訓練提速。"
+            "en": "Removed data-loading serialization bottlenecks, achieving ~10× training speedup on existing GPU hardware.",
+            "zh-TW": "消除資料載入的序列化瓶頸，在既有 GPU 硬體上達成約 10 倍模型訓練加速。"
           }
         },
         "em": {
-          "en": "Training bottleneck diagnosis and reviewed code change",
+          "en": "Training bottleneck diagnosis and code change review",
           "zh-TW": "訓練瓶頸診斷與程式修改審查",
           "coreQuestion": {
-            "en": "How do you systematically accelerate ML training cycles when data pipelines bottleneck team velocity?",
-            "zh-TW": "當資料管線成為模型訓練主要瓶頸時，如何系統化提升研發交付週期的吞吐量？"
+            "en": "How do you speed up ML training cycles when data pipelines limit iteration speed?",
+            "zh-TW": "當資料管線成為模型訓練的主要瓶頸時，如何系統化縮短訓練週期？"
           },
           "breakthrough": {
-            "en": "Combined systems profiling with AI-assisted code generation to rapidly prototype and ship an optimized data loader pipeline.",
-            "zh-TW": "結合底層效能剖析與 AI 協同開發，快速驗證並交付高效能資料載入管線。"
+            "en": "Combined systems profiling with AI-assisted development to prototype and deliver an asynchronous dataloader pipeline.",
+            "zh-TW": "結合系統效能分析與 AI 輔助開發，快速驗證並交付非同步資料載入管線。"
           },
           "verifiedMoat": {
-            "en": "Accelerated end-to-end model iteration cycles by ~10×, reducing compute wait times across simulation workloads.",
-            "zh-TW": "將端到端模型訓練週期縮短約 10 倍，大幅減少模擬研發任務的算力等待時間。"
+            "en": "Reduced model iteration time by ~10×, cutting GPU idle time during simulation training.",
+            "zh-TW": "將模型訓練週期縮短約 10 倍，大幅減少模擬訓練中的 GPU 等待時間。"
           }
         },
         "recruiter": {
-          "en": "Physics background · Model-training bottleneck diagnosis · Cross-domain work",
-          "zh-TW": "物理背景 · 模型訓練瓶頸診斷 · 跨領域工程",
+          "en": "Physics background, model-training bottleneck diagnosis, and cross-domain engineering",
+          "zh-TW": "物理背景、模型訓練瓶頸診斷與跨領域工程",
           "coreQuestion": {
-            "en": "How does Blake apply cross-disciplinary engineering instincts to maximize compute ROI and unblock bottlenecks?",
-            "zh-TW": "Blake 如何運用跨領域工程直覺最大化算力 ROI，從根源突破系統效能瓶頸？"
+            "en": "How does Blake use applied physics and systems profiling to resolve machine learning bottlenecks?",
+            "zh-TW": "Blake 如何結合物理背景與系統分析經驗，解決機器學習中的效能瓶頸？"
           },
           "breakthrough": {
-            "en": "Bridges physics simulation modeling with CUDA/PyTorch data pipeline engineering to solve root hardware-software mismatches.",
-            "zh-TW": "結合物理數值模擬背景與 CUDA/PyTorch 資料管線工程，從根源消弭軟硬體算力失配。"
+            "en": "Connected simulation data formats with PyTorch pipeline design to fix the host-to-device transfer bottleneck.",
+            "zh-TW": "結合物理模擬經驗與 PyTorch 資料管線工程，解決主機與 GPU 之間的資料傳輸瓶頸。"
           },
           "verifiedMoat": {
-            "en": "Directly transformed a CFD training bottleneck into ~10× throughput gains, maximizing existing hardware capital efficiency.",
-            "zh-TW": "將 CFD 訓練阻礙轉化為約 10 倍吞吐躍升，極大化既有硬體資本效益。"
+            "en": "Turned a slow CFD training pipeline into ~10× throughput gains on existing hardware.",
+            "zh-TW": "解決 CFD 訓練的資料載入瓶頸，在既有硬體上達成約 10 倍吞吐量提升。"
           }
         }
       },
       "en": {
         "proofTitle": "Training data-path diagnosis",
-        "summary": "Profiled PhysicsNeMo dataloader I/O bottlenecks and directed Claude-agent pipeline refactoring.",
+        "summary": "Profiled PhysicsNeMo dataloader I/O bottlenecks and directed pipeline refactoring with asynchronous prefetching.",
         "scope": "Model training",
         "details": [
           "Built and adapted an Nvidia Morpheus network-anomaly workflow using real PCAP input.",
           "Ran and adapted PhysicsNeMo training workflows for an OpenFOAM CFD use case."
         ],
-        "boundary": "Focused on data-ingestion profiling and pipeline refactoring for deep-learning simulation workloads."
+        "boundary": "Focused on data-loading profiling and pipeline refactoring for simulation training workloads."
       },
       "zh-TW": {
         "proofTitle": "訓練資料路徑診斷",
-        "summary": "分析 PhysicsNeMo 資料載入 I/O 瓶頸並主導 Claude agent 重構資料管線。",
+        "summary": "分析 PhysicsNeMo 資料載入 I/O 瓶頸，設計非同步預取並主導管線重構。",
         "scope": "模型訓練",
         "details": [
-          "使用真實 PCAP 輸入，建立並調整 Nvidia Morpheus 網路異常偵測 workflow。",
-          "針對 OpenFOAM CFD use case，執行與調整 PhysicsNeMo 訓練 workflow。"
+          "使用真實 PCAP 封包輸入，建立並調整 Nvidia Morpheus 網路異常偵測流程。",
+          "針對 OpenFOAM CFD 案例，執行並調整 PhysicsNeMo 訓練流程。"
         ],
-        "boundary": "專注於深度學習模擬訓練之資料載入效能分析與 GPU 管線重構。"
+        "boundary": "專注於數值模擬訓練之資料載入效能分析與管線重構。"
       }
     },
     {
@@ -379,145 +379,145 @@
       },
       "triad": {
         "challenge": {
-          "en": "Scaling 3D optical measurement to 12 stereo pairs (24 cameras) on an active line.",
-          "zh-TW": "將 3D 光學量測擴展至產線 12 組立體相機（24 顆相機）即時檢測。"
+          "en": "Scaling 3D optical metrology to high mounting heights with large FOV image stitching across 12 stereo camera pairs.",
+          "zh-TW": "將 3D 光學量測擴展至高架設高度與大視野影像拼接，涵蓋 12 組立體相機。"
         },
         "solution": {
-          "en": "Designed system architecture, deterministic hardware trigger sync bus, and tuning specs.",
-          "zh-TW": "主導系統架構設計、硬體觸發同步匯流排與跨部門調校規格。"
+          "en": "Designed multi-camera calibration algorithms, implemented large FOV image stitching, and advanced the MVP prototype to factory line testing.",
+          "zh-TW": "設計多相機立體標定演算法與大視野影像拼接管線，將量測原型推進至產線測試。"
         },
         "boundary": {
-          "en": "Advanced prototype MVP to factory-ready production testing before product launch.",
-          "zh-TW": "推進成果：量測原型進入工廠上市前的產線上線測試階段。"
+          "en": "Focused on camera calibration, stereo algorithm design, high-height FOV stitching, and factory line testing.",
+          "zh-TW": "專注於相機標定、立體視覺演算法設計、高空大視野拼接與工廠產線測試。"
         }
       },
       "abTransformation": {
         "aInput": {
-          "en": "Production line mechanical vibration & optical frame displacement",
-          "zh-TW": "產線輸送帶機械震動與光學相機拍攝位移"
+          "en": "Perspective distortion and seam artifacts from high-height multi-camera placement",
+          "zh-TW": "高空多相機架設導致的透視畸變與大視野拼接接縫"
         },
         "weakestLink": {
-          "en": "OS network polling jitter (500μs = millimeter 3D calibration blur)",
-          "zh-TW": "OS 網路輪詢排程抖動（500μs 延遲即造成毫米級 3D 標定錯位）"
+          "en": "Extrinsic calibration drift and optical distortion across 12 stereo camera pairs",
+          "zh-TW": "12 組立體相機的外參標定漂移與光學畸變"
         },
         "bOutput": {
-          "en": "Deterministic sub-microsecond hardware sync; factory-ready testing",
-          "zh-TW": "次微秒硬體同步匯流排；推進至工廠上市前的產線上線測試"
+          "en": "Large FOV stereo stitching algorithms with verified measurement accuracy in factory testing",
+          "zh-TW": "大視野立體拼接演算法，通過工廠產線測試驗證"
         }
       },
       "intentContract": {
         "strictInvariant": {
-          "en": "Microsecond trigger jitter across all 24 cameras must remain strictly below optical exposure shutter window to eliminate spatial blur.",
-          "zh-TW": "24 顆相機的微秒級觸發抖動必須嚴格低於光學曝光快門視窗，以徹底消除運動模糊與空間錯位。"
+          "en": "Stereo 3D measurement geometry across stitched frames must match physical calibration target coordinates.",
+          "zh-TW": "大視野拼接影像的立體 3D 量測幾何必須與實體標定靶標座標保持一致。"
         },
         "nonGoals": {
           "en": [
-            "Replacing automated production conveyor mechanical assembly",
-            "Developing custom proprietary camera sensor silicon"
+            "Modifying conveyor mechanical assemblies on the production line",
+            "Designing custom camera sensor hardware"
           ],
           "zh-TW": [
-            "改造自動化產線輸送帶之機械機構",
-            "自研專用影像感測器晶片"
+            "改造產線輸送帶的機械結構",
+            "自研專用影像感測器硬體"
           ]
         },
         "failureConditions": {
-          "en": "If factory floor electromagnetic interference exceeds industrial shielding thresholds, hardware bus initiates deterministic fault assertion rather than capturing desynced frames.",
-          "zh-TW": "若工廠現場電磁干擾超出工業屏蔽閾值，硬體匯流排執行確定性中斷告警，杜絕非同步殘影寫入資料庫。"
+          "en": "If mechanical vibration or thermal changes exceed calibration tolerances, the system prompts for recalibration instead of outputting invalid measurements.",
+          "zh-TW": "若機械震動或溫度變化超出標定容差，系統自動提示重新標定，不輸出錯誤量測結果。"
         }
       },
       "mirrorDuel": [
         {
           "challenger": {
-            "en": "Why use a deterministic hardware trigger sync bus instead of software network time protocol (PTP/IEEE 1588)?",
-            "zh-TW": "為什麼堅持設計硬體觸發同步匯流排，而不直接用軟體網路時間協定（PTP/IEEE 1588）？"
+            "en": "What was the main calibration challenge when measuring from high mounting heights with large FOV stitching?",
+            "zh-TW": "在高架設高度進行大視野拼接量測時，主要的相機標定挑戰是什麼？"
           },
           "defense": {
-            "en": "Software network polling introduces non-deterministic OS kernel scheduling jitter (100μs–1ms) on busy line controllers. At conveyor line speed, 500μs equals millimeter-level optical displacement, ruining 3D stereo calibration. Physical hardware sync lines guarantee sub-microsecond determinism.",
-            "zh-TW": "軟體網路輪詢在產線控制器高負載時會引入非確定性的 OS 排程抖動（100μs–1ms）。在輸送帶運轉速度下，500μs 的時序差就等於毫米級的光學位移，摧毀 3D 立體標定精度。實體硬體同步線提供次微秒級確定性保證。"
+            "en": "High mounting heights introduce perspective distortion and edge illumination dropoff across camera pairs. We built a bundle-adjustment calibration pipeline that solved intrinsic and extrinsic parameters together, removing parallax seams in stitched 3D point clouds.",
+            "zh-TW": "高架設高度會帶來透視畸變與相機邊緣光學衰減。我們設計光學標定演算法，同時解算內外參矩陣，消除拼接點雲中的視差接縫。"
           }
         },
         {
           "challenger": {
-            "en": "What was the biggest boundary test failure before reaching factory-ready status?",
-            "zh-TW": "在達到工廠上線前測試階段前，最大的邊界測試失敗點是什麼？"
+            "en": "How did you advance the prototype from MVP to factory testing?",
+            "zh-TW": "你如何將 C++/Python 3D 量測原型推進至工廠產線測試？"
           },
           "defense": {
-            "en": "Thermal drift of camera mounting brackets altering stereo baseline extrinsic matrix after 8 continuous hours of operation. Solved by defining periodic automated validation targets and thermal compensation specs.",
-            "zh-TW": "連續運轉 8 小時後，相機支架的熱脹冷縮導致立體基線外參矩陣微幅漂移。透過定義週期性自動標定靶標與熱補償調校規範解決。"
+            "en": "We defined factory test specifications, integrated the vision pipeline into line inspection workflows, and verified measurement repeatability during 8-hour continuous runs with thermal drift compensation targets.",
+            "zh-TW": "我們制定工廠測試規格，將演算法管線整合至產線檢測流程，並在 8 小時連續運轉下透過熱漂移補償靶標驗證量測重複精度。"
           }
         }
       ],
       "povHighlights": {
         "staff": {
-          "en": "Deterministic hardware sync bus; sub-microsecond multi-camera trigger invariant",
-          "zh-TW": "確定性硬體同步匯流排；次微秒級多相機觸發不變量",
+          "en": "Multi-camera calibration, large FOV stereo stitching, and prototyping to factory testing",
+          "zh-TW": "多相機立體標定、大視野影像拼接與產線測試驗證",
           "coreQuestion": {
-            "en": "How do we coordinate 12 stereo pairs (24 cameras) with PLC triggers without race conditions, bus contention, or frame loss?",
-            "zh-TW": "如何協同 12 組立體相機（24 顆相機）與 PLC 觸發，同時消除競態條件、匯流排衝突與丟幀？"
+            "en": "How do we achieve precise 3D measurement from high mounting heights across 12 stereo camera pairs without seam artifacts?",
+            "zh-TW": "如何在 12 組立體相機高空架設下達成精確 3D 量測，同時消除大視野拼接接縫？"
           },
           "breakthrough": {
-            "en": "Engineered a deterministic hardware trigger sync bus with C++ zero-copy ring buffers and strict sub-microsecond timestamp alignment.",
-            "zh-TW": "設計確定性硬體觸發同步匯流排，搭配 C++ 零複製環形緩衝區與次微秒級時序對齊。"
+            "en": "Designed multi-camera optical calibration and stereo stitching algorithms with global optimization, advancing the prototype to factory line testing.",
+            "zh-TW": "研發多相機光學標定與全域優化立體拼接演算法，將原型推進至工廠產線測試。"
           },
           "verifiedMoat": {
-            "en": "Sub-microsecond trigger synchronization jitter; eliminated IPC thread lock contention across all 24 cameras.",
-            "zh-TW": "達到次微秒級觸發同步精度；全面消除 24 顆相機在多執行緒 IPC 下的鎖競爭。"
+            "en": "Large FOV 3D optical metrology across 12 stereo pairs, with verified measurement repeatability on the production line.",
+            "zh-TW": "完成 12 組立體相機大視野 3D 光學量測，在產線環境下驗證量測重複精度。"
           }
         },
         "em": {
-          "en": "De-risked 24-camera automated line from prototype to factory production testing",
-          "zh-TW": "化解 24 顆相機產線整合風險，推進至工廠上市前的產線上線測試",
+          "en": "Cross-functional tuning, prototype delivery, and factory testing milestones",
+          "zh-TW": "跨部門調校、原型交付與產線測試里程碑",
           "coreQuestion": {
-            "en": "How do we transition a fragile laboratory 3D vision prototype into a hardened production system ready for factory line testing?",
-            "zh-TW": "如何將實驗室內脆弱的 3D 視覺原型封裝為挺過工廠嚴苛驗收的確定性量產系統？"
+            "en": "How do you coordinate algorithm integration, camera calibration, and hardware tuning across teams?",
+            "zh-TW": "如何協調跨部門的演算法整合、相機標定與硬體調校？"
           },
           "breakthrough": {
-            "en": "Defined comprehensive boundary test suites, thermal calibration specs, and multi-team hardware tuning protocols.",
-            "zh-TW": "制定全鏈路邊界測試套件、熱補償標定規範與跨部門軟硬體協同調校 SOP。"
+            "en": "Established calibration and testing protocols so software iteration and hardware validation could proceed in parallel.",
+            "zh-TW": "建立模組化標定與測試規範，讓演算法軟體開發與硬體驗證同步進行。"
           },
           "verifiedMoat": {
-            "en": "Advanced prototype to factory-ready production testing on active line; reduced measurement variance std-dev by 65%.",
-            "zh-TW": "推進成果至工廠上市前產線上線測試階段；光學量測重複性標準差降低 65%。"
+            "en": "Delivered the prototype to factory testing on schedule and verified measurement stability before production rollout.",
+            "zh-TW": "如期將原型推進至工廠產線測試，在量產前確立量測穩定度。"
           }
         },
         "recruiter": {
-          "en": "Rare HW/SW intersection · Proprietary 3D metrology · Full-stack line deployment",
-          "zh-TW": "稀缺軟硬整合壁壘 · 專利級 3D 計量演算法 · 全棧產線上線交付",
+          "en": "3D metrology algorithms, large FOV prototyping, and factory deployment",
+          "zh-TW": "3D 光學量測演算法、大視野原型研發與產線導入",
           "coreQuestion": {
-            "en": "Can Blake bridge physical mechanics, optical physics, and low-level software to build proprietary industrial inspection equipment?",
-            "zh-TW": "Blake 是否具備橫跨機械結構、光學物理與底層系統軟體的全棧能力，打造具備專利壁壘的檢測機台？"
+            "en": "What technical foundation did Blake build for the multi-camera 3D inspection system?",
+            "zh-TW": "Blake 為工業 3D 檢測系統建立了哪些技術基礎？"
           },
           "breakthrough": {
-            "en": "Leveraged applied physics intuition to solve thermal drift and lens distortion natively, replacing costly third-party proprietary inspection stations.",
-            "zh-TW": "以物理第一性原理推導原生化解熱漂移與鏡頭畸變，免除對昂貴國外專利檢測台的外部依賴。"
+            "en": "Developed multi-camera calibration and large FOV stereo stitching algorithms, applying physics optical models to factory line inspection.",
+            "zh-TW": "開發多相機標定與大視野立體拼接演算法，將物理光學模型應用於工廠產線檢測。"
           },
           "verifiedMoat": {
-            "en": "Delivered full-stack in-house 3D metrology IP; drastically compressed new production line deployment timeline.",
-            "zh-TW": "建立全棧自主可控的 3D 光學計量系統，大幅壓縮新產線上線時程。"
+            "en": "Complete 3D optical measurement pipeline, advancing the prototype directly to factory testing.",
+            "zh-TW": "建立完整的 3D 光學量測管線，直接將原型推進至工廠產線測試。"
           }
         }
       },
       "en": {
-        "proofTitle": "Hardware and software integration",
-        "summary": "Led system design, hardware integration, and boundary testing for a {cameraPairs}-stereo-camera line.",
-        "result": "MVP → factory-ready production testing",
-        "scope": "Factory-ready testing",
+        "proofTitle": "Large FOV Stereo 3D Metrology",
+        "summary": "Led algorithm design, camera calibration, and prototyping to advance a {cameraPairs}-stereo-camera system to factory line testing.",
+        "result": "MVP to factory line testing",
+        "scope": "Factory testing",
         "details": [
-          "Advanced a C++/Python 3D-measurement MVP to factory-ready production testing.",
+          "Advanced a C++/Python 3D-measurement MVP to factory production testing.",
           "Defined test specifications and analyzed results to guide cross-functional hardware tuning."
         ],
-        "boundary": "Stage reached: production testing before product launch."
+        "boundary": "Stage reached: production line testing before product launch."
       },
       "zh-TW": {
-        "proofTitle": "軟硬體整合",
-        "summary": "負責 {cameraPairs} 組立體攝影機產線的系統設計、硬體整合與邊界測試。",
-        "result": "量測原型 → 工廠上線前測試",
-        "scope": "工廠上線前測試",
+        "proofTitle": "高空大視野立體 3D 量測",
+        "summary": "主導演算法設計、相機標定與原型研發，將 {cameraPairs} 組立體相機系統推進至工廠產線測試。",
+        "result": "量測原型推進至工廠產線測試",
+        "scope": "工廠產線測試",
         "details": [
-          "將 C++／Python 3D 量測原型推進到工廠上線前測試。",
-          "定義測試規格、分析成果，支援跨部門硬體調校。"
+          "將 C++/Python 3D 量測原型推進至工廠產線測試。",
+          "制定測試規格並分析結果，支援跨部門硬體調校。"
         ],
-        "boundary": "階段：產品上市前的量產測試。"
+        "boundary": "階段：產品上市前的工廠產線測試。"
       }
     },
     {
@@ -533,23 +533,23 @@
         "value": 40,
         "type": "cycle-time-percent",
         "en": "{value}% cycle time reduction on manufacturing lines",
-        "zh-TW": "產線 AOI 單件檢測耗時（Cycle Time）縮短 {value}%"
+        "zh-TW": "產線 AOI 單件檢測耗時縮短 {value}%"
       },
       "en": {
         "summary": "Developed C# automated optical inspection algorithms for manufacturing lines.",
         "details": [
-          "Mentored two engineers and worked with a cross-functional team of 10+ on integration milestones."
+          "Mentored 2 engineers and collaborated with a cross-functional team of 10+ on integration milestones."
         ],
-        "boundary": "Focused on production-line automated optical inspection (AOI) algorithm design and cycle-time optimization.",
+        "boundary": "Covered production-line automated optical inspection algorithm design and cycle-time reduction.",
         "proofTitle": "Optical inspection",
         "scope": "Manufacturing-line inspection"
       },
       "zh-TW": {
         "summary": "開發 C# 自動光學檢測演算法，應用於製造產線。",
         "details": [
-          "指導兩位工程師，並與 10 人以上跨部門團隊共同完成整合里程碑。"
+          "指導 2 位工程師，並與 10 人以上跨部門團隊推進整合里程碑。"
         ],
-        "boundary": "專注於產線自動光學檢測（AOI）演算法開發與檢測耗時最佳化。",
+        "boundary": "涵蓋製造產線自動光學檢測演算法設計與檢測週期最佳化。",
         "proofTitle": "光學檢測",
         "scope": "製造產線檢測"
       }
@@ -570,20 +570,20 @@
         "zh-TW": "即時 3D 量測精度提升 {value}%"
       },
       "en": {
-        "summary": "Improved real-time stereo-camera 3D measurement through calibration and algorithm redesign.",
+        "summary": "Redesigned stereo measurement algorithms and calibrated camera hardware to advance real-time 3D depth accuracy.",
         "details": [
           "Calibrated Intel RealSense D415/D435 camera systems."
         ],
-        "boundary": "Focused on stereo-camera optical calibration and real-time 3D depth measurement optimization.",
+        "boundary": "Covered stereo-camera optical calibration and real-time 3D depth measurement optimization.",
         "proofTitle": "Stereo 3D measurement",
         "scope": "Measurement accuracy"
       },
       "zh-TW": {
-        "summary": "透過相機校正與演算法重新設計，改善即時立體攝影機 3D 量測。",
+        "summary": "重新設計立體量測演算法並執行相機校正，改善即時 3D 深度量測。",
         "details": [
-          "執行 Intel RealSense D415／D435 相機系統校正。"
+          "校正 Intel RealSense D415 與 D435 立體相機系統。"
         ],
-        "boundary": "專注於立體相機光學校正與即時 3D 深度量測精度優化。",
+        "boundary": "涵蓋立體相機光學校正與即時 3D 深度量測精度最佳化。",
         "proofTitle": "立體視覺 3D 量測",
         "scope": "量測精度"
       }
@@ -599,11 +599,11 @@
       ],
       "en": {
         "title": "Independent AI & Agent Infrastructure Engineering",
-        "text": "Architected Agent Ticket Kanban (ATK) state-machine task dispatcher (1,080+ tests) and windowphase context-injection CLI (69.5% input token reduction)."
+        "text": "Built the Agent Ticket Kanban state-machine task dispatcher verified by 1,080+ tests, and developed the windowphase context-injection CLI to achieve 69.5% input token reduction."
       },
       "zh-TW": {
         "title": "獨立 AI 系統與 Agent 架構工程研發",
-        "text": "研發具狀態機與沙盒隔離之 Agent Ticket Kanban (ATK) 派發系統（通過 1,080+ 測試），以及 windowphase 上下文注入 CLI 工具（節省 69.5% 輸入 Token）。"
+        "text": "開發具備狀態機與沙盒隔離的 Agent Ticket Kanban 派發系統，通過 1,080+ 項測試，並建立 windowphase 上下文注入 CLI 工具，降低 69.5% 輸入 token。"
       }
     },
     {
@@ -615,11 +615,11 @@
       ],
       "en": {
         "title": "Cloud Architecture & Distributed Systems · Google Grow with Google Program",
-        "text": "GCP infrastructure, Kubernetes (GKE) container orchestration, microservices, and continuous deep-learning study group."
+        "text": "Completed training in GCP cloud infrastructure, GKE Kubernetes container orchestration, microservices design, and weekly deep learning research papers."
       },
       "zh-TW": {
         "title": "雲端架構與分散式系統研習 · Google Grow with Google 計畫",
-        "text": "GCP 雲端架構、Kubernetes (GKE) 容器編排、微服務與每週深度學習論文研習。"
+        "text": "研習 GCP 雲端架構、GKE Kubernetes 容器編排、微服務設計，並參與每週深度學習論文研習。"
       }
     },
     {
@@ -631,11 +631,11 @@
       ],
       "en": {
         "title": "Computer Science Foundations & Self-Directed Learning",
-        "text": "CS50 online course; trail running, marathon endurance training, and co-founding weekly deep learning paper study group."
+        "text": "Completed Harvard CS50, trained for marathons and trail running, and co-founded a weekly deep learning paper study group."
       },
       "zh-TW": {
         "title": "計算機科學基礎與自主研習",
-        "text": "修習 CS50 課程；越野跑與馬拉松耐力訓練，並共同發起每週深度學習論文研習會。"
+        "text": "修習 CS50 課程，完成馬拉松與越野跑耐力訓練，並共同發起每週深度學習論文讀書會。"
       }
     }
   ],
@@ -653,11 +653,11 @@
         },
         "solution": {
           "en": "TALK 1.8 budget gate blocks over-budget plans (6.0 > 5.0) and reroutes to T5 compact (4.6).",
-          "zh-TW": "TALK 1.8 預算閘門熔斷超標方案（6.0 > 5.0），自主重導向至 T5 精簡綜述（4.6）。"
+          "zh-TW": "TALK 1.8 預算閘門攔截超標方案（6.0 > 5.0），重導向至 T5 精簡綜述（4.6）。"
         },
         "boundary": {
-          "en": "6.0 → 4.6 is calculated TALK budget; not human reading time or wall-clock speedup.",
-          "zh-TW": "邊界界定：6.0 → 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。"
+          "en": "6.0 to 4.6 is calculated TALK budget; not human reading time or wall-clock speedup.",
+          "zh-TW": "6.0 至 4.6 為計算型 TALK 預算，非真人閱讀時間或秒數加速。"
         }
       },
       "abTransformation": {
@@ -667,31 +667,31 @@
         },
         "weakestLink": {
           "en": "Unbounded dispatch graph without execution-time budget guardrail",
-          "zh-TW": "缺乏派發前計算預算評估與斷路熔斷機制"
+          "zh-TW": "缺乏派發前計算預算評估與斷路機制"
         },
         "bOutput": {
-          "en": "TALK 1.8 budget gate blocks overspend (6.0 > 5.0) & reroutes to 4.6",
-          "zh-TW": "TALK 1.8 預算超標熔斷阻斷 (6.0 > 5.0)，自主重導向至 4.6 精簡綜述"
+          "en": "TALK 1.8 budget gate blocks overspend (6.0 > 5.0) and reroutes to 4.6",
+          "zh-TW": "TALK 1.8 預算閘門攔截超標方案（6.0 > 5.0），重導向至 4.6 精簡綜述"
         }
       },
       "intentContract": {
         "strictInvariant": {
-          "en": "Calculated TALK budget must not exceed 5.0 ceiling; all citations must retain mathematical provenance to source papers.",
-          "zh-TW": "計算型 TALK 預算嚴格不可超越 5.0 上限；所有綜述引證必須保留至原論文之數學推論出處。"
+          "en": "Calculated TALK budget must not exceed 5.0 ceiling; all citations must retain verifiable provenance to source papers.",
+          "zh-TW": "計算型 TALK 預算不可超過 5.0 上限；所有綜述引證必須保留至原論文之可驗證出處。"
         },
         "nonGoals": {
           "en": [
             "Autonomous unbounded web search scraping",
-            "Blind LLM hallucinated summarization without provenance verification"
+            "LLM summarization without citation verification"
           ],
           "zh-TW": [
             "無邊界的網頁爬蟲與遞迴檢索",
-            "無引證出處校驗的盲目 LLM 幻覺摘要"
+            "缺乏出處驗證的 LLM 摘要"
           ]
         },
         "failureConditions": {
-          "en": "When user query complexity triggers a plan estimation > 5.0 TALK, execution is blocked at the gate and rerouted to T5 compact mode (4.6) with zero token leakage.",
-          "zh-TW": "當查詢複雜度觸發預估花費 > 5.0 TALK 時，閘門即時中斷執行並重導向至 T5 精簡模式（4.6），達到零 Token 洩漏。"
+          "en": "When query complexity triggers a plan estimation > 5.0 TALK, execution is blocked at the gate and rerouted to T5 compact mode (4.6) to prevent unbudgeted token consumption.",
+          "zh-TW": "當查詢複雜度觸發預估花費 > 5.0 TALK 時，閘門即時攔截並重導向至 T5 精簡模式（4.6），防止未受控的 Token 消耗。"
         }
       },
       "mirrorDuel": [
@@ -701,68 +701,68 @@
             "zh-TW": "為什麼要自訂 TALK 預算閘門，而不是單純在 API 呼叫中設定 max_tokens 讓 LLM 自己總結？"
           },
           "defense": {
-            "en": "API max_tokens is a blunt truncation mechanism—it cuts output mid-sentence and doesn't prevent wasteful multi-agent recursive exploration upstream. The TALK gate evaluates the execution graph prior to dispatch, enforcing cognitive budgeting and deliberate synthesis routing before billing occurs.",
-            "zh-TW": "API 的 max_tokens 只是生硬的截斷機制——它會在句子中途切斷，且完全無法防止上游多 Agent 遞迴搜尋的 Token 浪費。TALK 閘門在派發前即評估執行圖預算，在計費產生前強制執行認知預算控管與精簡重導向。"
+            "en": "API max_tokens is a blunt truncation mechanism. It cuts output mid-sentence and does not prevent wasteful multi-agent recursive exploration upstream. The TALK gate evaluates the execution graph prior to dispatch, enforcing token budget limits and synthesis routing before API calls occur.",
+            "zh-TW": "API 的 max_tokens 只是長度截斷機制，會在句子中途切斷，且無法防止上游多 Agent 遞迴檢索的 Token 浪費。TALK 閘門在派發前評估執行圖預算，在呼叫產生前限制 Token 預算並執行精簡重導向。"
           }
         },
         {
           "challenger": {
-            "en": "How do you prove that 6.0 → 4.6 isn't just an arbitrary number?",
-            "zh-TW": "如何證明 6.0 → 4.6 不只是隨意捏造的數字？"
+            "en": "How do you prove that 6.0 to 4.6 is not an arbitrary number?",
+            "zh-TW": "如何證明 6.0 至 4.6 不只是隨意設定的數字？"
           },
           "defense": {
-            "en": "TALK 1.8 is an explicit formal cost model based on input token AST density and reasoning step weights, backed by verifiable JSON-LD receipts in the walkthrough artifact, explicitly scoped as calculated budget rather than wall-clock seconds.",
-            "zh-TW": "TALK 1.8 是基於輸入 Token AST 密度與推理步權重的形式化成本模型，在歷史流程展示中具備 JSON-LD 數位收據，並在邊界中嚴格界定為計算預算而非真人碼錶時間。"
+            "en": "TALK 1.8 is an explicit cost model based on input token AST density and reasoning step weights. It is verified by JSON-LD receipts in the walkthrough artifact, and scoped as calculated budget rather than wall-clock seconds.",
+            "zh-TW": "TALK 1.8 是基於輸入 Token AST 密度與推理步權重的成本模型，在歷史流程展示中具備 JSON-LD 紀錄，並界定為計算預算而非真人碼錶時間。"
           }
         }
       ],
       "povHighlights": {
         "staff": {
-          "en": "Formal TALK contract & circuit-breaker preventing multi-agent combinatorial explosion",
-          "zh-TW": "形式化 TALK 契約與熔斷器，根絕多 Agent 組合爆炸",
+          "en": "Formal TALK contract and circuit-breaker preventing multi-agent combinatorial explosion",
+          "zh-TW": "形式化 TALK 契約與阻斷機制，避免多 Agent 組合爆炸",
           "coreQuestion": {
-            "en": "How do we prevent cascading hallucination and exponential token budget explosion across multi-agent research synthesis?",
-            "zh-TW": "多 Agent 協同進行文獻綜述時，如何杜絕幻覺串聯傳播與 Token 指數級爆炸？"
+            "en": "How do we prevent cascading errors and exponential token budget explosion across multi-agent research synthesis?",
+            "zh-TW": "多 Agent 協同進行文獻綜述時，如何避免錯誤串聯傳播與 Token 指數級爆炸？"
           },
           "breakthrough": {
-            "en": "Formalized the TALK contract protocol with strict budget capping (6.0 ➔ 4.6), AST token quotas, and cryptographic leaf citation anchoring.",
-            "zh-TW": "形式化 TALK 契約協議，設計嚴格計算預算上限（6.0 ➔ 4.6）、AST Token 配額管理與密碼學葉節點引證錨定。"
+            "en": "Formalized the TALK contract protocol with budget capping (6.0 to 4.6), AST token quotas, and paper citation verification.",
+            "zh-TW": "形式化 TALK 契約協議，設定計算預算上限（6.0 降至 4.6）、AST Token 配額管理與論文引證比對。"
           },
           "verifiedMoat": {
-            "en": "Zero unconstrained LLM loops; 100% cryptographic source provenance verified via SHA-256 digital seals.",
-            "zh-TW": "達成零失控 LLM 死迴圈；所有引文來源均經由 SHA-256 密碼學封籤 100% 可回溯驗證。"
+            "en": "Eliminates unconstrained LLM loops; verifies citation source provenance with SHA-256 hashes.",
+            "zh-TW": "消除未受控的 LLM 迴圈；所有引文來源均經由 SHA-256 雜湊值記錄與校驗。"
           }
         },
         "em": {
-          "en": "Deterministic budget capping (6.0 → 4.6) and zero-drift technical briefing synthesis",
-          "zh-TW": "確定性預算收斂（6.0 → 4.6），技術綜述品質零漂移",
+          "en": "Deterministic budget capping (6.0 to 4.6) and structured technical briefing synthesis",
+          "zh-TW": "確定性預算收斂（6.0 至 4.6），結構化技術綜述整理",
           "coreQuestion": {
-            "en": "How can an engineering team digest hundreds of complex vision papers per month without subjective bias or manual exhaustion?",
-            "zh-TW": "研發團隊每月需消化數百篇最新電腦視覺論文，如何避免主觀偏見整理與低效人力消耗？"
+            "en": "How can an engineering team digest complex vision papers without subjective bias or manual exhaustion?",
+            "zh-TW": "研發團隊需要消化大量電腦視覺論文時，如何避免主觀偏見整理與低效人力消耗？"
           },
           "breakthrough": {
-            "en": "Created deterministic dual-track reading routes (briefing vs deep proof) with automated ETH3D point-cloud inference validation.",
-            "zh-TW": "建立確定性雙軌閱讀路線（高階綜述 vs 深度證明），結合 ETH3D 點雲推論自動化萃取驗證。"
+            "en": "Created deterministic dual-track reading routes (briefing and deep proof) with automated ETH3D point-cloud inference validation.",
+            "zh-TW": "建立確定性雙軌閱讀路線（高階綜述與深度推導），結合 ETH3D 點雲推論驗證數據。"
           },
           "verifiedMoat": {
-            "en": "Compressed literature onboarding from days to minutes with zero-drift reproducibility across the team.",
-            "zh-TW": "將前沿文獻調研融入週期從數天壓縮至數分鐘，產出品質具備團隊級零漂移重現性。"
+            "en": "Provides structured briefing and deep-proof routes with reproducible source verification across the team.",
+            "zh-TW": "建立高階綜述與深度推導閱讀路線，產出具備團隊級可重現的來源驗證紀錄。"
           }
         },
         "recruiter": {
-          "en": "Epistemic boundary architecture · Beyond LLM wrapper · Enterprise research moat",
-          "zh-TW": "認知邊界架構 · 超越普通 LLM 套殼 · 企業級研究壁壘",
+          "en": "Multi-agent literature synthesis, pre-dispatch token budget evaluation, and citation verification",
+          "zh-TW": "多 Agent 文獻綜述、派發前 Token 預算評估與引證來源校驗",
           "coreQuestion": {
-            "en": "In a crowded market of shallow LLM wrappers, how does Blake build truly defensible Agent systems with epistemic boundaries?",
-            "zh-TW": "在氾濫的簡易 LLM 套殼市場中，Blake 如何構建具備認知邊界與真正技術防禦壁壘的 Agent 系統？"
+            "en": "How can a multi-agent literature synthesis system evaluate token budgets and verify citations before execution?",
+            "zh-TW": "多 Agent 文獻綜述系統如何在派發前評估 Token 預算，並確保論文引證可被校驗？"
           },
           "breakthrough": {
-            "en": "Architected system around 'Epistemic Boundaries' and 'Intent Fidelity'—enforcing that facts, inferences, and speculations remain strictly separated.",
-            "zh-TW": "圍繞「認知邊界」與「意圖保真」構建核心架構——強制將客觀事實、推論過程與猜測假說嚴格隔離封裝。"
+            "en": "Built pre-dispatch execution graph evaluation to cap token spend, paired with verifiable source extraction verified against paper benchmarks like ETH3D point-cloud derivation.",
+            "zh-TW": "建立派發前執行圖評估機制以限制 Token 消耗，並結合可校驗的引證抽取架構，對齊 ETH3D 點雲推論等論文實驗數據。"
           },
           "verifiedMoat": {
-            "en": "Delivers mathematical trust rather than probabilistic hallucination; sets standard for next-gen AI intelligence products.",
-            "zh-TW": "交付可經數學檢驗的確定性信任，而非不可控的機率幻覺；樹立下一代 AI 智慧工具的標竿。"
+            "en": "Enforces pre-dispatch budget gating (6.0 to 4.6 TALK) and separates paper evidence from engineering inference with verifiable SHA-256 artifacts.",
+            "zh-TW": "落實派發前預算閘門攔截（6.0 降至 4.6 TALK），並以 SHA-256 產物明確區分論文客觀數據與工程推論。"
           }
         }
       },
@@ -776,7 +776,7 @@
       "zh-TW": {
         "summary": "把同一份研究整理成中英雙語、不同深度的閱讀路線，保留來源與推論的區別。",
         "evidence": "個人專案 · 2026-09-13 歷史流程展示",
-        "boundary": "TALK 1.8 預算閘門熔斷機制，強制執行 Token 上限與論文引證溯源。",
+        "boundary": "TALK 1.8 預算閘門攔截機制，強制執行 Token 上限與論文引證溯源。",
         "action": "閱讀 Study Atlas 介紹",
         "walkthroughAction": "操作預算檢查展示"
       }
@@ -790,21 +790,21 @@
       "triad": {
         "challenge": {
           "en": "Preventing accidental verbatim transcript loss from automatic, destructive text rewriting on mobile devices.",
-          "zh-TW": "杜絕行動裝置端因自動化破壞性文字覆寫所造成的原始逐字稿滅失。"
+          "zh-TW": "防止行動裝置端因自動化文字覆寫所造成的原始逐字稿遺失。"
         },
         "solution": {
           "en": "Dual-track architecture: app-private scoped audio storage paired with non-destructive candidate diff review.",
-          "zh-TW": "雙軌保真架構：應用程式私有沙盒原始音訊唯讀保護 ＋ 非破壞性候選修訂差分審閱。"
+          "zh-TW": "雙軌保真架構：應用程式私有沙盒原始音訊唯讀保護與非破壞性候選修訂差分審閱。"
         },
         "boundary": {
           "en": "Separates raw immutable audio from reviewable transcript cleanup under on-device processing.",
-          "zh-TW": "於裝置端處理流程中，嚴格隔離原始不可變音訊與可檢視之逐字稿建議。"
+          "zh-TW": "於裝置端處理流程中，隔離原始不可變音訊與可檢視之逐字稿建議。"
         }
       },
       "abTransformation": {
         "aInput": {
           "en": "Speech noise and colloquial disfluencies triggering destructive in-place text rewriting",
-          "zh-TW": "語音雜訊與口語頓挫觸發破壞性原地文字覆寫，導致原始語意滅失"
+          "zh-TW": "語音雜訊與口語頓挫觸發破壞性原地文字覆寫，導致原始語意遺失"
         },
         "weakestLink": {
           "en": "Coupled storage layer where automated cleanup directly mutates the raw verbatim transcript",
@@ -812,13 +812,13 @@
         },
         "bOutput": {
           "en": "Dual-track architecture: byte-for-byte immutable raw audio storage paired with non-destructive candidate diff review",
-          "zh-TW": "雙軌保真架構：逐位元不可變原始音訊儲存 ＋ 非破壞性候選修訂差分審閱"
+          "zh-TW": "雙軌保真架構：逐位元不可變原始音訊儲存與非破壞性候選修訂差分審閱"
         }
       },
       "intentContract": {
         "strictInvariant": {
           "en": "Raw recorded audio bytes and initial verbatim transcripts must remain strictly immutable; cleanup edits exist only in a speculative candidate diff layer.",
-          "zh-TW": "原始錄音音訊與初版逐字稿嚴格唯讀不可變；所有語音清理與修飾僅保留於非破壞性候選差分層。"
+          "zh-TW": "原始錄音音訊與初版逐字稿維持唯讀不可變；所有語音清理與修飾僅保留於非破壞性候選差分層。"
         },
         "nonGoals": {
           "en": [
@@ -832,7 +832,7 @@
         },
         "failureConditions": {
           "en": "If audio capture fails validation checks or storage integrity degrades, the recording is marked incomplete and blocked from ASR dispatch to prevent corrupt output.",
-          "zh-TW": "若音訊擷取未通過完整性檢查或儲存異常，錄音維持未完成狀態並禁止派發 ASR，杜絕損壞資料寫入。"
+          "zh-TW": "若音訊擷取未通過完整性檢查或儲存異常，錄音維持未完成狀態並禁止派發 ASR，防止損壞資料寫入。"
         }
       },
       "mirrorDuel": [
@@ -842,8 +842,8 @@
             "zh-TW": "為什麼不讓 AI 在單一步驟中直接將逐字稿自動潤飾為流暢乾淨的最終成品？"
           },
           "defense": {
-            "en": "Single-pass automated rewriting is inherently destructive—it routinely drops technical jargon, precise numerals, or verbal nuances with legal/domain significance. Transcribe-for-X enforces a strict dual-track separation: the raw recording remains untouched ground truth, while cleanup suggestions are presented as granular visual diffs requiring explicit user acceptance.",
-            "zh-TW": "單步自動改寫本質上具破壞性——容易抹除關鍵技術術語、精確數據或具備法律與領域意涵的語氣停頓。Transcribe-for-X 採用嚴格雙軌隔離架構：原始錄音作為唯讀真實基底，所有清理建議均以細粒度視覺差分呈現，需經使用者確認方可套用。"
+            "en": "Single-pass automated rewriting is inherently destructive. It routinely drops technical jargon, precise numerals, or verbal nuances with domain significance. Transcribe-for-X enforces a strict dual-track separation: the raw recording remains untouched ground truth, while cleanup suggestions are presented as granular visual diffs requiring explicit user acceptance.",
+            "zh-TW": "單步自動改寫具有破壞性，容易抹除關鍵技術術語、精確數據或具備領域意涵的語氣停頓。Transcribe-for-X 採用雙軌隔離架構：原始錄音作為唯讀真實基底，所有清理建議均以細粒度視覺差分呈現，需經使用者確認方可套用。"
           }
         },
         {
@@ -853,7 +853,7 @@
           },
           "defense": {
             "en": "Audio files are isolated within Android's app-private scoped storage sandbox, inaccessible to third-party applications. Core speech recognition runs via on-device models with zero network transmission, eliminating external data leakage.",
-            "zh-TW": "音訊檔案嚴格隔離於 Android 應用程式私有沙盒儲存（Scoped Storage），第三方 App 無法存取；核心語音辨識全程於裝置端離線推論，無對外網路連線，從架構端杜絕資料外洩。"
+            "zh-TW": "音訊檔案隔離於 Android 應用程式私有沙盒儲存（Scoped Storage），第三方 App 無法存取；核心語音辨識全程於裝置端離線推論，無對外網路連線，從架構端防止資料外洩。"
           }
         }
       ],
@@ -863,47 +863,47 @@
           "zh-TW": "不可變雙軌儲存架構，確保逐字音訊原始事實保真",
           "coreQuestion": {
             "en": "How do we architect on-device voice processing that guarantees zero accidental loss of original audio evidence?",
-            "zh-TW": "如何設計裝置端語音處理架構，保證絕對不發生原始錄音證據意外滅失？"
+            "zh-TW": "如何設計裝置端語音處理架構，保證不發生原始錄音意外遺失？"
           },
           "breakthrough": {
             "en": "Engineered an immutable dual-track storage pipeline separating the raw audio stream from speculative transcript candidate overlays.",
-            "zh-TW": "設計不可變雙軌儲存管線，將原始音訊資料流與推測性逐字稿修訂層嚴格解耦隔離。"
+            "zh-TW": "設計不可變雙軌儲存管線，將原始音訊資料流與推測性逐字稿修訂層隔離。"
           },
           "verifiedMoat": {
-            "en": "Enforces strict byte-level audio immutability and non-destructive diff review across on-device workflows.",
-            "zh-TW": "落實逐位元音訊不可變性與非破壞性差分審閱機制，徹底消除語音轉文字中的覆寫資料滅失風險。"
+            "en": "Enforces byte-level audio immutability and non-destructive diff review across on-device workflows.",
+            "zh-TW": "落實逐位元音訊不可變性與非破壞性差分審閱機制，消除語音轉文字中的覆寫資料遺失風險。"
           }
         },
         "em": {
           "en": "Granular visual diff review eliminating transcript revision errors",
-          "zh-TW": "細粒度視覺差分審閱，杜絕逐字稿修訂校驗錯誤",
+          "zh-TW": "細粒度視覺差分審閱，消除逐字稿修訂校驗錯誤",
           "coreQuestion": {
             "en": "How can users rapidly clean disfluent transcripts without losing trust in transcription fidelity?",
             "zh-TW": "如何讓使用者快速清理口語贅詞，同時對轉錄文字的事實保真度保持高度信任？"
           },
           "breakthrough": {
             "en": "Implemented granular checkbox review overlays that highlight suggested removals while keeping the ground-truth text immediately accessible.",
-            "zh-TW": "實現細粒度核取審閱機制，高亮標註建議刪除的贅字，同時隨時可比對原始真實文本。"
+            "zh-TW": "實現細粒度核取審閱機制，標註建議刪除的贅字，同時隨時可比對原始文本。"
           },
           "verifiedMoat": {
-            "en": "Replaces blind, opaque rewrites with transparent human-in-the-loop verification, ensuring 100% user consent for text modifications.",
-            "zh-TW": "以透明的 Human-in-the-Loop 審閱取代黑箱自動改寫，確保每一處文字修改均獲得使用者顯式確認。"
+            "en": "Replaces opaque automated rewrites with transparent review, ensuring user consent for all text modifications.",
+            "zh-TW": "以透明審閱取代黑箱自動改寫，確保每一處文字修改均獲得使用者顯式確認。"
           }
         },
         "recruiter": {
-          "en": "Zero-telemetry on-device voice architecture with absolute data sovereignty",
-          "zh-TW": "零遙測裝置端語音架構，掌握絕對資料主權",
+          "en": "Android Scoped Storage isolation, immutable audio, and reviewable diffs",
+          "zh-TW": "Android 專屬沙盒儲存隔離、不可變音訊與差分審閱架構",
           "coreQuestion": {
-            "en": "What makes an on-device dual-track speech architecture commercially defensible against cloud transcription APIs?",
-            "zh-TW": "裝置端雙軌語音架構面對通用雲端轉錄 API 時，其商業防禦壁壘與資料主權優勢何在？"
+            "en": "How does the on-device transcription architecture isolate sensitive voice data and prevent destructive overwrites?",
+            "zh-TW": "裝置端語音辨識架構如何隔離敏感錄音資料，並防止自動化改寫破壞原始逐字稿？"
           },
           "breakthrough": {
-            "en": "Architected for extreme data sovereignty and legal/audit fidelity: zero cloud vendor lock-in, on-device offline inference, and permanent raw audio provenance.",
-            "zh-TW": "極致專注於資料主權自主性與稽核保真度：零雲端廠商鎖定、裝置端離線推論與原始音訊永久可溯源性。"
+            "en": "Combined Android Scoped Storage isolation with an immutable raw audio repository, ensuring AI suggestions require explicit user approval before applying changes.",
+            "zh-TW": "結合 Android Scoped Storage 沙盒隔離與不可變原始音訊儲存，確保 AI 修訂建議必須取得使用者確認，不直接覆寫原始逐字稿。"
           },
           "verifiedMoat": {
-            "en": "Delivers a zero-telemetry, privacy-first offline transcription architecture suitable for high-confidentiality interviews and records.",
-            "zh-TW": "構築零遙測、隱私優先的離線語音轉文字架構，適用於高保密需求的專業訪談與會議紀錄。"
+            "en": "Provides on-device offline speech recognition with verifiable SHA-256 audio manifests and granular candidate diff review.",
+            "zh-TW": "提供裝置端離線語音辨識，具備 SHA-256 音訊校驗清單與細粒度候選差分審閱機制。"
           }
         }
       },
@@ -929,13 +929,13 @@
       "en": {
         "summary": "Plan when to start a five-hour usage window around a workday, and inspect the schedule before any live action.",
         "evidence": "Personal project · Calculated planner",
-        "boundary": "Deterministic context-window scheduling and prompt-token optimization CLI.",
+        "boundary": "Deterministic usage-window scheduling CLI with explicit dry-run command preview.",
         "action": "Read the planner case"
       },
       "zh-TW": {
         "summary": "依工作日規劃五小時使用視窗的啟動時機，先檢查排程，再決定是否執行。",
         "evidence": "個人專案 · 計算型 planner",
-        "boundary": "確定性 Context 視窗排程與輸入 Token 優化 CLI 工具。",
+        "boundary": "確定性使用視窗排程 CLI 工具，執行前提供明確的 dry-run 預覽。",
         "action": "查看 planner 介紹"
       }
     }
@@ -966,11 +966,11 @@
       ],
       "en": {
         "title": "Weekly AI-paper study group",
-        "text": "Ongoing peer learning with former LIPS colleagues, covering ML theory and emerging research."
+        "text": "Meet weekly with former LIPS colleagues to analyze machine learning theory and evaluate recent research papers."
       },
       "zh-TW": {
         "title": "每週 AI 論文讀書會",
-        "text": "與前 LIPS 同事持續進行同儕學習，討論 ML 理論與新研究。"
+        "text": "每週與前 LIPS 同事研讀機器學習理論，並討論近期研究論文。"
       }
     }
   ],

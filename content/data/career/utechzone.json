@@ -11,23 +11,23 @@
     "value": 40,
     "type": "cycle-time-percent",
     "en": "{value}% cycle time reduction on manufacturing lines",
-    "zh-TW": "產線 AOI 單件檢測耗時（Cycle Time）縮短 {value}%"
+    "zh-TW": "產線 AOI 單件檢測耗時縮短 {value}%"
   },
   "en": {
     "summary": "Developed C# automated optical inspection algorithms for manufacturing lines.",
     "details": [
-      "Mentored two engineers and worked with a cross-functional team of 10+ on integration milestones."
+      "Mentored 2 engineers and collaborated with a cross-functional team of 10+ on integration milestones."
     ],
-    "boundary": "Focused on production-line automated optical inspection (AOI) algorithm design and cycle-time optimization.",
+    "boundary": "Covered production-line automated optical inspection algorithm design and cycle-time reduction.",
     "proofTitle": "Optical inspection",
     "scope": "Manufacturing-line inspection"
   },
   "zh-TW": {
     "summary": "開發 C# 自動光學檢測演算法，應用於製造產線。",
     "details": [
-      "指導兩位工程師，並與 10 人以上跨部門團隊共同完成整合里程碑。"
+      "指導 2 位工程師，並與 10 人以上跨部門團隊推進整合里程碑。"
     ],
-    "boundary": "專注於產線自動光學檢測（AOI）演算法開發與檢測耗時最佳化。",
+    "boundary": "涵蓋製造產線自動光學檢測演算法設計與檢測週期最佳化。",
     "proofTitle": "光學檢測",
     "scope": "製造產線檢測"
   }

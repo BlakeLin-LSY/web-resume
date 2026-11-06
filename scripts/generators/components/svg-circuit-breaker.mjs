@@ -2,17 +2,21 @@ import { escapeHtml } from "./svg-pipeline.mjs";
 
 /**
  * Universal Circuit-Breaker / Guardrail SVG Generator
- * Generates dynamic branching circuit-breakers and dual-track architectures.
+ * Generates dynamic branching budget guardrails and dual-track architectures.
  */
-export function renderCircuitBreakerSvg(options, language = "en") {
+export function renderCircuitBreakerSvg(options = {}, language = "en") {
+  if (typeof options === "string") {
+    language = options;
+    options = {};
+  }
   const isEn = language === "en";
   const e = escapeHtml;
   const l = (val) => typeof val === "object" && val !== null ? (isEn ? val.en : (val["zh-TW"] || val.en)) : String(val);
 
   const kicker = l(options.kicker || (isEn ? "Guardrail Pipeline" : "預算閘門管線"));
-  const badge = l(options.badge || (isEn ? "TALK Contract 1.8" : "TALK Contract 1.8 契約"));
-  const title = l(options.title || (isEn ? "Dynamic Circuit-Breaker & Autonomous Rerouting" : "TALK 契約 1.8：預算超支自動熔斷與自主重規劃"));
-  const ariaLabel = l(options.ariaLabel || (isEn ? "TALK Contract 1.8 Budget Guardrail Circuit Breaker" : "TALK 契約 1.8 預算超支熔斷架構"));
+  const badge = l(options.badge || (isEn ? "TALK Contract 1.8" : "TALK 契約 1.8"));
+  const title = l(options.title || (isEn ? "Dynamic Budget Guardrail & Synthesis Rerouting" : "TALK 契約 1.8：預算閘門攔截與精簡重導向"));
+  const ariaLabel = l(options.ariaLabel || (isEn ? "TALK Contract 1.8 Budget Guardrail Circuit Breaker" : "TALK 契約 1.8 預算閘門架構"));
   const markerId = options.markerId || "arrow-atlas";
 
   const monograph = options.monograph;
@@ -64,16 +68,16 @@ export function renderCircuitBreakerSvg(options, language = "en") {
         <path d="M 330 65 Q 355 65 375 42" class="resume-flow-line resume-flow-alert" marker-end="url(#${markerId})"/>
         <g class="resume-node-group">
           <rect x="380" y="12" width="175" height="60" rx="6" class="resume-node-box resume-node-alert"/>
-          <text x="467" y="32" class="resume-node-title resume-text-alert" text-anchor="middle">${isEn ? "⛔ Plan 1: Deep Survey" : "⛔ 計畫 1：深度全覽"}</text>
+          <text x="467" y="32" class="resume-node-title resume-text-alert" text-anchor="middle">${isEn ? "Plan 1: Deep Survey" : "計畫 1：深度全覽"}</text>
           <text x="467" y="48" class="resume-node-detail" text-anchor="middle">${isEn ? "Cost 6.0 > 5.0 Ceiling" : "成本 6.0 > 5.0 上限"}</text>
-          <text x="467" y="62" class="resume-node-detail resume-text-alert" text-anchor="middle">${isEn ? "BLOCKED · 0 Tokens Leaked" : "熔斷攔截 · 0 Token 洩漏"}</text>
+          <text x="467" y="62" class="resume-node-detail resume-text-alert" text-anchor="middle">${isEn ? "BLOCKED · 0 Tokens Leaked" : "閘門攔截 · 0 Token 洩漏"}</text>
         </g>
 
         <!-- Branch B (Bottom): Adaptive Reroute -->
         <path d="M 330 100 Q 355 100 375 118" class="resume-flow-line" marker-end="url(#${markerId})"/>
         <g class="resume-node-group">
           <rect x="380" y="88" width="175" height="66" rx="6" class="resume-node-box resume-node-highlight"/>
-          <text x="467" y="108" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "⚡ Reroute: T5-Compact" : "⚡ 重規劃：T5-Compact"}</text>
+          <text x="467" y="108" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Reroute: T5-Compact" : "重導向：T5-Compact"}</text>
           <text x="467" y="124" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Cost 4.6 < 5.0 Ceiling" : "成本 4.6 < 5.0 上限"}</text>
           <text x="467" y="140" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "APPROVED & EXECUTED" : "批准放行並執行"}</text>
         </g>
@@ -107,7 +111,7 @@ export function renderCircuitBreakerSvg(options, language = "en") {
             <div class="resume-monograph-tags">
               <span class="resume-badge-route">Route: T5-Compact</span>
               <span class="resume-badge-cost">Cost: 4.6 TALK (Pass)</span>
-              <span class="resume-badge-verified">✓ 0-Drop Invariant</span>
+              <span class="resume-badge-verified">0-Drop Invariant Pass</span>
             </div>
           </div>
           <div class="resume-monograph-content">
@@ -139,7 +143,11 @@ export function renderCircuitBreakerSvg(options, language = "en") {
 /**
  * Universal Dual-Track Storage/Pipeline SVG Generator (e.g. TFX)
  */
-export function renderDualTrackSvg(options, language = "en") {
+export function renderDualTrackSvg(options = {}, language = "en") {
+  if (typeof options === "string") {
+    language = options;
+    options = {};
+  }
   const isEn = language === "en";
   const e = escapeHtml;
   const l = (val) => typeof val === "object" && val !== null ? (isEn ? val.en : (val["zh-TW"] || val.en)) : String(val);
@@ -185,7 +193,7 @@ export function renderDualTrackSvg(options, language = "en") {
           <rect x="160" y="14" width="245" height="62" rx="6" class="resume-node-box resume-node-highlight"/>
           <text x="282" y="36" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Track 1: Raw Audio & ASR Ground Truth" : "軌道 1：原始音訊與真實基底"}</text>
           <text x="282" y="52" class="resume-node-detail" text-anchor="middle">${isEn ? "Scoped Storage Sandbox" : "專有沙盒儲存 · 唯讀保護"}</text>
-          <text x="282" y="66" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "🔒 Byte-for-byte immutable archive" : "🔒 逐位元不可變封存"}</text>
+          <text x="282" y="66" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Byte-for-byte immutable archive" : "逐位元不可變封存"}</text>
         </g>
 
         <line x1="405" y1="45" x2="445" y2="45" class="resume-flow-line" marker-end="url(#${markerId})"/>
@@ -209,7 +217,7 @@ export function renderDualTrackSvg(options, language = "en") {
           <rect x="450" y="104" width="165" height="62" rx="6" class="resume-node-box resume-node-highlight"/>
           <text x="532" y="126" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "User Checkbox Review" : "使用者逐項核取審閱"}</text>
           <text x="532" y="142" class="resume-node-detail" text-anchor="middle">${isEn ? "Explicit granular opt-in" : "顯式細粒度勾選同意"}</text>
-          <text x="532" y="156" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "⚡ Zero blind overwrites" : "⚡ 零未授權自動覆寫"}</text>
+          <text x="532" y="156" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Zero blind overwrites" : "零未授權自動覆寫"}</text>
         </g>
 
         <!-- Final Export -->

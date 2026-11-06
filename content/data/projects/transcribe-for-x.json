@@ -7,21 +7,21 @@
   "triad": {
     "challenge": {
       "en": "Preventing accidental verbatim transcript loss from automatic, destructive text rewriting on mobile devices.",
-      "zh-TW": "杜絕行動裝置端因自動化破壞性文字覆寫所造成的原始逐字稿滅失。"
+      "zh-TW": "防止行動裝置端因自動化文字覆寫所造成的原始逐字稿遺失。"
     },
     "solution": {
       "en": "Dual-track architecture: app-private scoped audio storage paired with non-destructive candidate diff review.",
-      "zh-TW": "雙軌保真架構：應用程式私有沙盒原始音訊唯讀保護 ＋ 非破壞性候選修訂差分審閱。"
+      "zh-TW": "雙軌保真架構：應用程式私有沙盒原始音訊唯讀保護與非破壞性候選修訂差分審閱。"
     },
     "boundary": {
       "en": "Separates raw immutable audio from reviewable transcript cleanup under on-device processing.",
-      "zh-TW": "於裝置端處理流程中，嚴格隔離原始不可變音訊與可檢視之逐字稿建議。"
+      "zh-TW": "於裝置端處理流程中，隔離原始不可變音訊與可檢視之逐字稿建議。"
     }
   },
   "abTransformation": {
     "aInput": {
       "en": "Speech noise and colloquial disfluencies triggering destructive in-place text rewriting",
-      "zh-TW": "語音雜訊與口語頓挫觸發破壞性原地文字覆寫，導致原始語意滅失"
+      "zh-TW": "語音雜訊與口語頓挫觸發破壞性原地文字覆寫，導致原始語意遺失"
     },
     "weakestLink": {
       "en": "Coupled storage layer where automated cleanup directly mutates the raw verbatim transcript",
@@ -29,13 +29,13 @@
     },
     "bOutput": {
       "en": "Dual-track architecture: byte-for-byte immutable raw audio storage paired with non-destructive candidate diff review",
-      "zh-TW": "雙軌保真架構：逐位元不可變原始音訊儲存 ＋ 非破壞性候選修訂差分審閱"
+      "zh-TW": "雙軌保真架構：逐位元不可變原始音訊儲存與非破壞性候選修訂差分審閱"
     }
   },
   "intentContract": {
     "strictInvariant": {
       "en": "Raw recorded audio bytes and initial verbatim transcripts must remain strictly immutable; cleanup edits exist only in a speculative candidate diff layer.",
-      "zh-TW": "原始錄音音訊與初版逐字稿嚴格唯讀不可變；所有語音清理與修飾僅保留於非破壞性候選差分層。"
+      "zh-TW": "原始錄音音訊與初版逐字稿維持唯讀不可變；所有語音清理與修飾僅保留於非破壞性候選差分層。"
     },
     "nonGoals": {
       "en": [
@@ -49,7 +49,7 @@
     },
     "failureConditions": {
       "en": "If audio capture fails validation checks or storage integrity degrades, the recording is marked incomplete and blocked from ASR dispatch to prevent corrupt output.",
-      "zh-TW": "若音訊擷取未通過完整性檢查或儲存異常，錄音維持未完成狀態並禁止派發 ASR，杜絕損壞資料寫入。"
+      "zh-TW": "若音訊擷取未通過完整性檢查或儲存異常，錄音維持未完成狀態並禁止派發 ASR，防止損壞資料寫入。"
     }
   },
   "mirrorDuel": [
@@ -59,8 +59,8 @@
         "zh-TW": "為什麼不讓 AI 在單一步驟中直接將逐字稿自動潤飾為流暢乾淨的最終成品？"
       },
       "defense": {
-        "en": "Single-pass automated rewriting is inherently destructive—it routinely drops technical jargon, precise numerals, or verbal nuances with legal/domain significance. Transcribe-for-X enforces a strict dual-track separation: the raw recording remains untouched ground truth, while cleanup suggestions are presented as granular visual diffs requiring explicit user acceptance.",
-        "zh-TW": "單步自動改寫本質上具破壞性——容易抹除關鍵技術術語、精確數據或具備法律與領域意涵的語氣停頓。Transcribe-for-X 採用嚴格雙軌隔離架構：原始錄音作為唯讀真實基底，所有清理建議均以細粒度視覺差分呈現，需經使用者確認方可套用。"
+        "en": "Single-pass automated rewriting is inherently destructive. It routinely drops technical jargon, precise numerals, or verbal nuances with domain significance. Transcribe-for-X enforces a strict dual-track separation: the raw recording remains untouched ground truth, while cleanup suggestions are presented as granular visual diffs requiring explicit user acceptance.",
+        "zh-TW": "單步自動改寫具有破壞性，容易抹除關鍵技術術語、精確數據或具備領域意涵的語氣停頓。Transcribe-for-X 採用雙軌隔離架構：原始錄音作為唯讀真實基底，所有清理建議均以細粒度視覺差分呈現，需經使用者確認方可套用。"
       }
     },
     {
@@ -70,7 +70,7 @@
       },
       "defense": {
         "en": "Audio files are isolated within Android's app-private scoped storage sandbox, inaccessible to third-party applications. Core speech recognition runs via on-device models with zero network transmission, eliminating external data leakage.",
-        "zh-TW": "音訊檔案嚴格隔離於 Android 應用程式私有沙盒儲存（Scoped Storage），第三方 App 無法存取；核心語音辨識全程於裝置端離線推論，無對外網路連線，從架構端杜絕資料外洩。"
+        "zh-TW": "音訊檔案隔離於 Android 應用程式私有沙盒儲存（Scoped Storage），第三方 App 無法存取；核心語音辨識全程於裝置端離線推論，無對外網路連線，從架構端防止資料外洩。"
       }
     }
   ],
@@ -80,47 +80,47 @@
       "zh-TW": "不可變雙軌儲存架構，確保逐字音訊原始事實保真",
       "coreQuestion": {
         "en": "How do we architect on-device voice processing that guarantees zero accidental loss of original audio evidence?",
-        "zh-TW": "如何設計裝置端語音處理架構，保證絕對不發生原始錄音證據意外滅失？"
+        "zh-TW": "如何設計裝置端語音處理架構，保證不發生原始錄音意外遺失？"
       },
       "breakthrough": {
         "en": "Engineered an immutable dual-track storage pipeline separating the raw audio stream from speculative transcript candidate overlays.",
-        "zh-TW": "設計不可變雙軌儲存管線，將原始音訊資料流與推測性逐字稿修訂層嚴格解耦隔離。"
+        "zh-TW": "設計不可變雙軌儲存管線，將原始音訊資料流與推測性逐字稿修訂層隔離。"
       },
       "verifiedMoat": {
-        "en": "Enforces strict byte-level audio immutability and non-destructive diff review across on-device workflows.",
-        "zh-TW": "落實逐位元音訊不可變性與非破壞性差分審閱機制，徹底消除語音轉文字中的覆寫資料滅失風險。"
+        "en": "Enforces byte-level audio immutability and non-destructive diff review across on-device workflows.",
+        "zh-TW": "落實逐位元音訊不可變性與非破壞性差分審閱機制，消除語音轉文字中的覆寫資料遺失風險。"
       }
     },
     "em": {
       "en": "Granular visual diff review eliminating transcript revision errors",
-      "zh-TW": "細粒度視覺差分審閱，杜絕逐字稿修訂校驗錯誤",
+      "zh-TW": "細粒度視覺差分審閱，消除逐字稿修訂校驗錯誤",
       "coreQuestion": {
         "en": "How can users rapidly clean disfluent transcripts without losing trust in transcription fidelity?",
         "zh-TW": "如何讓使用者快速清理口語贅詞，同時對轉錄文字的事實保真度保持高度信任？"
       },
       "breakthrough": {
         "en": "Implemented granular checkbox review overlays that highlight suggested removals while keeping the ground-truth text immediately accessible.",
-        "zh-TW": "實現細粒度核取審閱機制，高亮標註建議刪除的贅字，同時隨時可比對原始真實文本。"
+        "zh-TW": "實現細粒度核取審閱機制，標註建議刪除的贅字，同時隨時可比對原始文本。"
       },
       "verifiedMoat": {
-        "en": "Replaces blind, opaque rewrites with transparent human-in-the-loop verification, ensuring 100% user consent for text modifications.",
-        "zh-TW": "以透明的 Human-in-the-Loop 審閱取代黑箱自動改寫，確保每一處文字修改均獲得使用者顯式確認。"
+        "en": "Replaces opaque automated rewrites with transparent review, ensuring user consent for all text modifications.",
+        "zh-TW": "以透明審閱取代黑箱自動改寫，確保每一處文字修改均獲得使用者顯式確認。"
       }
     },
     "recruiter": {
-      "en": "Zero-telemetry on-device voice architecture with absolute data sovereignty",
-      "zh-TW": "零遙測裝置端語音架構，掌握絕對資料主權",
+      "en": "Android Scoped Storage isolation, immutable audio, and reviewable diffs",
+      "zh-TW": "Android 專屬沙盒儲存隔離、不可變音訊與差分審閱架構",
       "coreQuestion": {
-        "en": "What makes an on-device dual-track speech architecture commercially defensible against cloud transcription APIs?",
-        "zh-TW": "裝置端雙軌語音架構面對通用雲端轉錄 API 時，其商業防禦壁壘與資料主權優勢何在？"
+        "en": "How does the on-device transcription architecture isolate sensitive voice data and prevent destructive overwrites?",
+        "zh-TW": "裝置端語音辨識架構如何隔離敏感錄音資料，並防止自動化改寫破壞原始逐字稿？"
       },
       "breakthrough": {
-        "en": "Architected for extreme data sovereignty and legal/audit fidelity: zero cloud vendor lock-in, on-device offline inference, and permanent raw audio provenance.",
-        "zh-TW": "極致專注於資料主權自主性與稽核保真度：零雲端廠商鎖定、裝置端離線推論與原始音訊永久可溯源性。"
+        "en": "Combined Android Scoped Storage isolation with an immutable raw audio repository, ensuring AI suggestions require explicit user approval before applying changes.",
+        "zh-TW": "結合 Android Scoped Storage 沙盒隔離與不可變原始音訊儲存，確保 AI 修訂建議必須取得使用者確認，不直接覆寫原始逐字稿。"
       },
       "verifiedMoat": {
-        "en": "Delivers a zero-telemetry, privacy-first offline transcription architecture suitable for high-confidentiality interviews and records.",
-        "zh-TW": "構築零遙測、隱私優先的離線語音轉文字架構，適用於高保密需求的專業訪談與會議紀錄。"
+        "en": "Provides on-device offline speech recognition with verifiable SHA-256 audio manifests and granular candidate diff review.",
+        "zh-TW": "提供裝置端離線語音辨識，具備 SHA-256 音訊校驗清單與細粒度候選差分審閱機制。"
       }
     }
   },

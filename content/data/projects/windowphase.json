@@ -7,13 +7,13 @@
   "en": {
     "summary": "Plan when to start a five-hour usage window around a workday, and inspect the schedule before any live action.",
     "evidence": "Personal project · Calculated planner",
-    "boundary": "Deterministic context-window scheduling and prompt-token optimization CLI.",
+    "boundary": "Deterministic usage-window scheduling CLI with explicit dry-run command preview.",
     "action": "Read the planner case"
   },
   "zh-TW": {
     "summary": "依工作日規劃五小時使用視窗的啟動時機，先檢查排程，再決定是否執行。",
     "evidence": "個人專案 · 計算型 planner",
-    "boundary": "確定性 Context 視窗排程與輸入 Token 優化 CLI 工具。",
+    "boundary": "確定性使用視窗排程 CLI 工具，執行前提供明確的 dry-run 預覽。",
     "action": "查看 planner 介紹"
   }
 }

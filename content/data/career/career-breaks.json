@@ -8,11 +8,11 @@
     ],
     "en": {
       "title": "Independent AI & Agent Infrastructure Engineering",
-      "text": "Architected Agent Ticket Kanban (ATK) state-machine task dispatcher (1,080+ tests) and windowphase context-injection CLI (69.5% input token reduction)."
+      "text": "Built the Agent Ticket Kanban state-machine task dispatcher verified by 1,080+ tests, and developed the windowphase context-injection CLI to achieve 69.5% input token reduction."
     },
     "zh-TW": {
       "title": "獨立 AI 系統與 Agent 架構工程研發",
-      "text": "研發具狀態機與沙盒隔離之 Agent Ticket Kanban (ATK) 派發系統（通過 1,080+ 測試），以及 windowphase 上下文注入 CLI 工具（節省 69.5% 輸入 Token）。"
+      "text": "開發具備狀態機與沙盒隔離的 Agent Ticket Kanban 派發系統，通過 1,080+ 項測試，並建立 windowphase 上下文注入 CLI 工具，降低 69.5% 輸入 token。"
     }
   },
   {
@@ -24,11 +24,11 @@
     ],
     "en": {
       "title": "Cloud Architecture & Distributed Systems · Google Grow with Google Program",
-      "text": "GCP infrastructure, Kubernetes (GKE) container orchestration, microservices, and continuous deep-learning study group."
+      "text": "Completed training in GCP cloud infrastructure, GKE Kubernetes container orchestration, microservices design, and weekly deep learning research papers."
     },
     "zh-TW": {
       "title": "雲端架構與分散式系統研習 · Google Grow with Google 計畫",
-      "text": "GCP 雲端架構、Kubernetes (GKE) 容器編排、微服務與每週深度學習論文研習。"
+      "text": "研習 GCP 雲端架構、GKE Kubernetes 容器編排、微服務設計，並參與每週深度學習論文研習。"
     }
   },
   {
@@ -40,11 +40,11 @@
     ],
     "en": {
       "title": "Computer Science Foundations & Self-Directed Learning",
-      "text": "CS50 online course; trail running, marathon endurance training, and co-founding weekly deep learning paper study group."
+      "text": "Completed Harvard CS50, trained for marathons and trail running, and co-founded a weekly deep learning paper study group."
     },
     "zh-TW": {
       "title": "計算機科學基礎與自主研習",
-      "text": "修習 CS50 課程；越野跑與馬拉松耐力訓練，並共同發起每週深度學習論文研習會。"
+      "text": "修習 CS50 課程，完成馬拉松與越野跑耐力訓練，並共同發起每週深度學習論文讀書會。"
     }
   }
 ]

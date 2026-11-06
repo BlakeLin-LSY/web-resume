@@ -13,7 +13,7 @@
     "education": "Education & earlier research",
     "skillsLines": [
       "Python · C++ · C# · ML pipelines · Computer vision",
-      "Profiling · Stereo camera calibration · Hardware integration · Test design"
+      "Profiling · Stereo camera calibration · Large FOV stitching · Test design"
     ],
     "candidateLabel": "Local review candidate",
     "atlas": "Engineered an automated research reader compiling papers into bilingual (EN/ZH) knowledge cards with dual reading tracks; implemented validation pipelines to reject over-budget plans prior to delivery.",
@@ -21,15 +21,15 @@
     "summary": "Software and algorithm engineer with 3+ years of production experience across computer vision, hardware-software integration, and high-performance ML workflows. Track record spans AI agent infrastructure, real-time 3D optical metrology, and factory automation.",
     "professionalBullets": {
       "dynasafe": [
-        "Profiled PhysicsNeMo dataloader I/O bottlenecks and directed Claude-agent pipeline refactoring, cutting training cycle time by ~10×.",
+        "Profiled PhysicsNeMo dataloader I/O bottlenecks and directed Claude agent pipeline refactoring, accelerating model training by ~10×.",
         "Engineered real PCAP network-anomaly detection workflows using Nvidia Morpheus; adapted PhysicsNeMo for OpenFOAM CFD simulations."
       ],
       "metgauge": [
-        "Architected C++/Python pipeline and hardware trigger sync for a 24-camera (12 stereo pairs) system, advancing MVP to factory testing.",
-        "Formulated thermal-drift calibration specs and boundary test suites across continuous production runs, de-risking factory integration."
+        "Engineered C++/Python 3D measurement algorithms and multi-camera calibration for a 12-stereo-pair line, advancing MVP to factory testing.",
+        "Designed high-height large FOV image stitching workflows and test specs, verifying measurement repeatability across production runs."
       ],
       "utechzone": [
-        "Developed C# automated optical inspection (AOI) algorithms that reduced manufacturing cycle time by 40%.",
+        "Developed C# automated optical inspection algorithms that reduced manufacturing cycle time by 40%.",
         "Mentored two engineers and collaborated with a cross-functional team of 10+ on integration milestones."
       ],
       "lips": [
@@ -44,7 +44,7 @@
     "education": "學歷與早期研究",
     "skillsLines": [
       "Python · C++ · C# · ML pipeline · 電腦視覺",
-      "效能分析 · 立體相機校正 · 軟硬體整合 · 測試設計"
+      "效能分析 · 立體相機標定 · 大視野拼接 · 測試設計"
     ],
     "candidateLabel": "本機待審候選稿",
     "atlas": "開發雙語研究導讀工具，將學術論文編譯為中英雙語卡片，提供簡明與深入雙路線；建立預算檢查機制，在交付前自動攔截超額方案。",
@@ -52,15 +52,15 @@
     "summary": "專注於電腦視覺與軟硬體整合的軟體演算法工程師，具 3 年以上量產工程實績。精熟 ML pipeline 與模型訓練效能優化；近期研發成果涵蓋高可靠 Multi-Agent 基礎設施、雙語研究導讀工具及裝置端語音辨識原型。",
     "professionalBullets": {
       "dynasafe": [
-        "分析 PhysicsNeMo 資料載入 I/O 瓶頸並主導 Claude agent 重構資料管線，使模型訓練耗時縮短約 10 倍。",
+        "分析 PhysicsNeMo 資料載入 I/O 瓶頸並主導 Claude agent 重構資料管線，使模型訓練加速約 10 倍。",
         "以真實 PCAP 封包建構 Nvidia Morpheus 網路異常偵測管線；將 PhysicsNeMo 應用於 OpenFOAM CFD 流體模擬。"
       ],
       "metgauge": [
-        "主導 12 組立體相機（24 顆相機）之 C++/Python 影像管線與硬體觸發同步，推進 MVP 至工廠產線測試階段。",
-        "制定熱漂移校正規範與長時間連續運轉之邊界測試，排除運動模糊並指引跨部門硬體調校。"
+        "主導 12 組立體相機系統之 C++/Python 3D 量測演算法與多相機標定，推進量測原型至工廠產線測試。",
+        "設計高架設高度大視野影像拼接管線與測試規範，於產線環境驗證量測重複精度。"
       ],
       "utechzone": [
-        "開發 C# 自動光學檢測（AOI）演算法，將產線單件檢測耗時（Cycle Time）縮短 40%。",
+        "開發 C# 自動光學檢測（AOI）演算法，將產線單件檢測耗時縮短 40%。",
         "指導兩位工程師，並與 10 人以上跨部門團隊共同推進整合里程碑。"
       ],
       "lips": [

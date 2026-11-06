@@ -12,144 +12,144 @@
   },
   "triad": {
     "challenge": {
-      "en": "Scaling 3D optical measurement to 12 stereo pairs (24 cameras) on an active line.",
-      "zh-TW": "將 3D 光學量測擴展至產線 12 組立體相機（24 顆相機）即時檢測。"
+      "en": "Scaling 3D optical metrology to high mounting heights with large FOV image stitching across 12 stereo camera pairs.",
+      "zh-TW": "將 3D 光學量測擴展至高架設高度與大視野影像拼接，涵蓋 12 組立體相機。"
     },
     "solution": {
-      "en": "Designed system architecture, deterministic hardware trigger sync bus, and tuning specs.",
-      "zh-TW": "主導系統架構設計、硬體觸發同步匯流排與跨部門調校規格。"
+      "en": "Designed multi-camera calibration algorithms, implemented large FOV image stitching, and advanced the MVP prototype to factory line testing.",
+      "zh-TW": "設計多相機立體標定演算法與大視野影像拼接管線，將量測原型推進至產線測試。"
     },
     "boundary": {
-      "en": "Advanced prototype MVP to factory-ready production testing before product launch.",
-      "zh-TW": "推進成果：量測原型進入工廠上市前的產線上線測試階段。"
+      "en": "Focused on camera calibration, stereo algorithm design, high-height FOV stitching, and factory line testing.",
+      "zh-TW": "專注於相機標定、立體視覺演算法設計、高空大視野拼接與工廠產線測試。"
     }
   },
   "abTransformation": {
     "aInput": {
-      "en": "Production line mechanical vibration & optical frame displacement",
-      "zh-TW": "產線輸送帶機械震動與光學相機拍攝位移"
+      "en": "Perspective distortion and seam artifacts from high-height multi-camera placement",
+      "zh-TW": "高空多相機架設導致的透視畸變與大視野拼接接縫"
     },
     "weakestLink": {
-      "en": "OS network polling jitter (500μs = millimeter 3D calibration blur)",
-      "zh-TW": "OS 網路輪詢排程抖動（500μs 延遲即造成毫米級 3D 標定錯位）"
+      "en": "Extrinsic calibration drift and optical distortion across 12 stereo camera pairs",
+      "zh-TW": "12 組立體相機的外參標定漂移與光學畸變"
     },
     "bOutput": {
-      "en": "Deterministic sub-microsecond hardware sync; factory-ready testing",
-      "zh-TW": "次微秒硬體同步匯流排；推進至工廠上市前的產線上線測試"
+      "en": "Large FOV stereo stitching algorithms with verified measurement accuracy in factory testing",
+      "zh-TW": "大視野立體拼接演算法，通過工廠產線測試驗證"
     }
   },
   "intentContract": {
     "strictInvariant": {
-      "en": "Microsecond trigger jitter across all 24 cameras must remain strictly below optical exposure shutter window to eliminate spatial blur.",
-      "zh-TW": "24 顆相機的微秒級觸發抖動必須嚴格低於光學曝光快門視窗，以徹底消除運動模糊與空間錯位。"
+      "en": "Stereo 3D measurement geometry across stitched frames must match physical calibration target coordinates.",
+      "zh-TW": "大視野拼接影像的立體 3D 量測幾何必須與實體標定靶標座標保持一致。"
     },
     "nonGoals": {
       "en": [
-        "Replacing automated production conveyor mechanical assembly",
-        "Developing custom proprietary camera sensor silicon"
+        "Modifying conveyor mechanical assemblies on the production line",
+        "Designing custom camera sensor hardware"
       ],
       "zh-TW": [
-        "改造自動化產線輸送帶之機械機構",
-        "自研專用影像感測器晶片"
+        "改造產線輸送帶的機械結構",
+        "自研專用影像感測器硬體"
       ]
     },
     "failureConditions": {
-      "en": "If factory floor electromagnetic interference exceeds industrial shielding thresholds, hardware bus initiates deterministic fault assertion rather than capturing desynced frames.",
-      "zh-TW": "若工廠現場電磁干擾超出工業屏蔽閾值，硬體匯流排執行確定性中斷告警，杜絕非同步殘影寫入資料庫。"
+      "en": "If mechanical vibration or thermal changes exceed calibration tolerances, the system prompts for recalibration instead of outputting invalid measurements.",
+      "zh-TW": "若機械震動或溫度變化超出標定容差，系統自動提示重新標定，不輸出錯誤量測結果。"
     }
   },
   "mirrorDuel": [
     {
       "challenger": {
-        "en": "Why use a deterministic hardware trigger sync bus instead of software network time protocol (PTP/IEEE 1588)?",
-        "zh-TW": "為什麼堅持設計硬體觸發同步匯流排，而不直接用軟體網路時間協定（PTP/IEEE 1588）？"
+        "en": "What was the main calibration challenge when measuring from high mounting heights with large FOV stitching?",
+        "zh-TW": "在高架設高度進行大視野拼接量測時，主要的相機標定挑戰是什麼？"
       },
       "defense": {
-        "en": "Software network polling introduces non-deterministic OS kernel scheduling jitter (100μs–1ms) on busy line controllers. At conveyor line speed, 500μs equals millimeter-level optical displacement, ruining 3D stereo calibration. Physical hardware sync lines guarantee sub-microsecond determinism.",
-        "zh-TW": "軟體網路輪詢在產線控制器高負載時會引入非確定性的 OS 排程抖動（100μs–1ms）。在輸送帶運轉速度下，500μs 的時序差就等於毫米級的光學位移，摧毀 3D 立體標定精度。實體硬體同步線提供次微秒級確定性保證。"
+        "en": "High mounting heights introduce perspective distortion and edge illumination dropoff across camera pairs. We built a bundle-adjustment calibration pipeline that solved intrinsic and extrinsic parameters together, removing parallax seams in stitched 3D point clouds.",
+        "zh-TW": "高架設高度會帶來透視畸變與相機邊緣光學衰減。我們設計光學標定演算法，同時解算內外參矩陣，消除拼接點雲中的視差接縫。"
       }
     },
     {
       "challenger": {
-        "en": "What was the biggest boundary test failure before reaching factory-ready status?",
-        "zh-TW": "在達到工廠上線前測試階段前，最大的邊界測試失敗點是什麼？"
+        "en": "How did you advance the prototype from MVP to factory testing?",
+        "zh-TW": "你如何將 C++/Python 3D 量測原型推進至工廠產線測試？"
       },
       "defense": {
-        "en": "Thermal drift of camera mounting brackets altering stereo baseline extrinsic matrix after 8 continuous hours of operation. Solved by defining periodic automated validation targets and thermal compensation specs.",
-        "zh-TW": "連續運轉 8 小時後，相機支架的熱脹冷縮導致立體基線外參矩陣微幅漂移。透過定義週期性自動標定靶標與熱補償調校規範解決。"
+        "en": "We defined factory test specifications, integrated the vision pipeline into line inspection workflows, and verified measurement repeatability during 8-hour continuous runs with thermal drift compensation targets.",
+        "zh-TW": "我們制定工廠測試規格，將演算法管線整合至產線檢測流程，並在 8 小時連續運轉下透過熱漂移補償靶標驗證量測重複精度。"
       }
     }
   ],
   "povHighlights": {
     "staff": {
-      "en": "Deterministic hardware sync bus; sub-microsecond multi-camera trigger invariant",
-      "zh-TW": "確定性硬體同步匯流排；次微秒級多相機觸發不變量",
+      "en": "Multi-camera calibration, large FOV stereo stitching, and prototyping to factory testing",
+      "zh-TW": "多相機立體標定、大視野影像拼接與產線測試驗證",
       "coreQuestion": {
-        "en": "How do we coordinate 12 stereo pairs (24 cameras) with PLC triggers without race conditions, bus contention, or frame loss?",
-        "zh-TW": "如何協同 12 組立體相機（24 顆相機）與 PLC 觸發，同時消除競態條件、匯流排衝突與丟幀？"
+        "en": "How do we achieve precise 3D measurement from high mounting heights across 12 stereo camera pairs without seam artifacts?",
+        "zh-TW": "如何在 12 組立體相機高空架設下達成精確 3D 量測，同時消除大視野拼接接縫？"
       },
       "breakthrough": {
-        "en": "Engineered a deterministic hardware trigger sync bus with C++ zero-copy ring buffers and strict sub-microsecond timestamp alignment.",
-        "zh-TW": "設計確定性硬體觸發同步匯流排，搭配 C++ 零複製環形緩衝區與次微秒級時序對齊。"
+        "en": "Designed multi-camera optical calibration and stereo stitching algorithms with global optimization, advancing the prototype to factory line testing.",
+        "zh-TW": "研發多相機光學標定與全域優化立體拼接演算法，將原型推進至工廠產線測試。"
       },
       "verifiedMoat": {
-        "en": "Sub-microsecond trigger synchronization jitter; eliminated IPC thread lock contention across all 24 cameras.",
-        "zh-TW": "達到次微秒級觸發同步精度；全面消除 24 顆相機在多執行緒 IPC 下的鎖競爭。"
+        "en": "Large FOV 3D optical metrology across 12 stereo pairs, with verified measurement repeatability on the production line.",
+        "zh-TW": "完成 12 組立體相機大視野 3D 光學量測，在產線環境下驗證量測重複精度。"
       }
     },
     "em": {
-      "en": "De-risked 24-camera automated line from prototype to factory production testing",
-      "zh-TW": "化解 24 顆相機產線整合風險，推進至工廠上市前的產線上線測試",
+      "en": "Cross-functional tuning, prototype delivery, and factory testing milestones",
+      "zh-TW": "跨部門調校、原型交付與產線測試里程碑",
       "coreQuestion": {
-        "en": "How do we transition a fragile laboratory 3D vision prototype into a hardened production system ready for factory line testing?",
-        "zh-TW": "如何將實驗室內脆弱的 3D 視覺原型封裝為挺過工廠嚴苛驗收的確定性量產系統？"
+        "en": "How do you coordinate algorithm integration, camera calibration, and hardware tuning across teams?",
+        "zh-TW": "如何協調跨部門的演算法整合、相機標定與硬體調校？"
       },
       "breakthrough": {
-        "en": "Defined comprehensive boundary test suites, thermal calibration specs, and multi-team hardware tuning protocols.",
-        "zh-TW": "制定全鏈路邊界測試套件、熱補償標定規範與跨部門軟硬體協同調校 SOP。"
+        "en": "Established calibration and testing protocols so software iteration and hardware validation could proceed in parallel.",
+        "zh-TW": "建立模組化標定與測試規範，讓演算法軟體開發與硬體驗證同步進行。"
       },
       "verifiedMoat": {
-        "en": "Advanced prototype to factory-ready production testing on active line; reduced measurement variance std-dev by 65%.",
-        "zh-TW": "推進成果至工廠上市前產線上線測試階段；光學量測重複性標準差降低 65%。"
+        "en": "Delivered the prototype to factory testing on schedule and verified measurement stability before production rollout.",
+        "zh-TW": "如期將原型推進至工廠產線測試，在量產前確立量測穩定度。"
       }
     },
     "recruiter": {
-      "en": "Rare HW/SW intersection · Proprietary 3D metrology · Full-stack line deployment",
-      "zh-TW": "稀缺軟硬整合壁壘 · 專利級 3D 計量演算法 · 全棧產線上線交付",
+      "en": "3D metrology algorithms, large FOV prototyping, and factory deployment",
+      "zh-TW": "3D 光學量測演算法、大視野原型研發與產線導入",
       "coreQuestion": {
-        "en": "Can Blake bridge physical mechanics, optical physics, and low-level software to build proprietary industrial inspection equipment?",
-        "zh-TW": "Blake 是否具備橫跨機械結構、光學物理與底層系統軟體的全棧能力，打造具備專利壁壘的檢測機台？"
+        "en": "What technical foundation did Blake build for the multi-camera 3D inspection system?",
+        "zh-TW": "Blake 為工業 3D 檢測系統建立了哪些技術基礎？"
       },
       "breakthrough": {
-        "en": "Leveraged applied physics intuition to solve thermal drift and lens distortion natively, replacing costly third-party proprietary inspection stations.",
-        "zh-TW": "以物理第一性原理推導原生化解熱漂移與鏡頭畸變，免除對昂貴國外專利檢測台的外部依賴。"
+        "en": "Developed multi-camera calibration and large FOV stereo stitching algorithms, applying physics optical models to factory line inspection.",
+        "zh-TW": "開發多相機標定與大視野立體拼接演算法，將物理光學模型應用於工廠產線檢測。"
       },
       "verifiedMoat": {
-        "en": "Delivered full-stack in-house 3D metrology IP; drastically compressed new production line deployment timeline.",
-        "zh-TW": "建立全棧自主可控的 3D 光學計量系統，大幅壓縮新產線上線時程。"
+        "en": "Complete 3D optical measurement pipeline, advancing the prototype directly to factory testing.",
+        "zh-TW": "建立完整的 3D 光學量測管線，直接將原型推進至工廠產線測試。"
       }
     }
   },
   "en": {
-    "proofTitle": "Hardware and software integration",
-    "summary": "Led system design, hardware integration, and boundary testing for a {cameraPairs}-stereo-camera line.",
-    "result": "MVP → factory-ready production testing",
-    "scope": "Factory-ready testing",
+    "proofTitle": "Large FOV Stereo 3D Metrology",
+    "summary": "Led algorithm design, camera calibration, and prototyping to advance a {cameraPairs}-stereo-camera system to factory line testing.",
+    "result": "MVP to factory line testing",
+    "scope": "Factory testing",
     "details": [
-      "Advanced a C++/Python 3D-measurement MVP to factory-ready production testing.",
+      "Advanced a C++/Python 3D-measurement MVP to factory production testing.",
       "Defined test specifications and analyzed results to guide cross-functional hardware tuning."
     ],
-    "boundary": "Stage reached: production testing before product launch."
+    "boundary": "Stage reached: production line testing before product launch."
   },
   "zh-TW": {
-    "proofTitle": "軟硬體整合",
-    "summary": "負責 {cameraPairs} 組立體攝影機產線的系統設計、硬體整合與邊界測試。",
-    "result": "量測原型 → 工廠上線前測試",
-    "scope": "工廠上線前測試",
+    "proofTitle": "高空大視野立體 3D 量測",
+    "summary": "主導演算法設計、相機標定與原型研發，將 {cameraPairs} 組立體相機系統推進至工廠產線測試。",
+    "result": "量測原型推進至工廠產線測試",
+    "scope": "工廠產線測試",
     "details": [
-      "將 C++／Python 3D 量測原型推進到工廠上線前測試。",
-      "定義測試規格、分析成果，支援跨部門硬體調校。"
+      "將 C++/Python 3D 量測原型推進至工廠產線測試。",
+      "制定測試規格並分析結果，支援跨部門硬體調校。"
     ],
-    "boundary": "階段：產品上市前的量產測試。"
+    "boundary": "階段：產品上市前的工廠產線測試。"
   }
 }
