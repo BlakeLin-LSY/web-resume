@@ -1,6 +1,6 @@
 # Web Resume Project Instructions & Canonical Invariants
 
-> **專案環境**: `/home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume`  
+> **專案環境**: 本 repo 根目錄(本檔位於 `.agents/`,以下連結皆為相對路徑)
 > **專案定位**: Blake (Ssu-Yuan Lin) 資深 AI 與系統演算法工程師雙語網頁履歷與高可信作品集。  
 > **層級關係**: 本檔依據全域指示 `RULE[user_global]` §8 設立，只記錄本 repo 特有之架構邊界、職涯事實錨點、去脂語調規範與驗證管線。
 
@@ -9,12 +9,12 @@
 ## 1. 架構與模組邊界 (Architecture & Modular Boundaries)
 
 本系統採宣告式清單驅動（Manifest-Driven）解耦架構：
-- **宣告式清單 (SSOT)**: [`content/representation-manifest.json`](file:///home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/content/representation-manifest.json)
+- **宣告式清單 (SSOT)**: [`content/representation-manifest.json`](../content/representation-manifest.json)
   - 定義各模組的啟用狀態（`enabled`）、渲染次序（`order`）與錨點 ID。
   - 增刪或重排首頁區塊一律透過 Manifest 配置，不得於渲染器中硬編碼順序。
-- **版面編排調度器**: [`scripts/layout/page-orchestrator.mjs`](file:///home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/scripts/layout/page-orchestrator.mjs)
+- **版面編排調度器**: [`scripts/layout/page-orchestrator.mjs`](../scripts/layout/page-orchestrator.mjs)
   - 負責依據 Manifest 順序動態調用對應模組，保持頂層乾淨。
-- **獨立模組渲染器**: [`scripts/modules/`](file:///home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/scripts/modules/)
+- **獨立模組渲染器**: [`scripts/modules/`](../scripts/modules/)
   - `hero.mjs`（首屏與三大實證數據鐵軌 Impact Rail）
   - `invariants-anchor.mjs`（四大工程不變量定錨）
   - `flagship-proof.mjs`（旗艦職涯卡片：DynaSafe 與 MetGauge）
@@ -22,7 +22,7 @@
   - `career-timeline.mjs`（歷史職涯時間線：UTECHZONE、LIPS 等）
   - `skills-about.mjs`（技術能力與學歷背景）
   - `contact-footer.mjs`（聯絡資訊與頁尾）
-- **相容性 Facade**: [`scripts/lib/resume-markup.mjs`](file:///home/blake_u2204/projects/trivial-ideas/webresume-showcase/web-resume/scripts/lib/resume-markup.mjs)
+- **相容性 Facade**: [`scripts/lib/resume-markup.mjs`](../scripts/lib/resume-markup.mjs)
   - 僅保留對外匯出接口（`renderResume`, `escapeHtml` 等），對接 Next.js 與靜態生成腳本。
 
 ---
