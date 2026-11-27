@@ -1,17 +1,17 @@
 {
-  "edition": "2026-11-06",
+  "edition": "2026-11-27",
   "status": "selected",
   "scope": "Workspace-local derivatives from shared homepage facts; not byte-identical career PDFs. No external source writes.",
   "inputs": [
     {
       "file": "content/resume-profile.json",
-      "bytes": 54680,
-      "sha256": "83afbc0a357e1e436ac6a55dfd50d1a537ae8e4f85ad0322318d1c2ea2281cbd"
+      "bytes": 53090,
+      "sha256": "54251121f9bb79ca136a2f0adc735645c5b5b8c414fc10b5893ae65316333847"
     },
     {
       "file": "content/cv-candidate.json",
-      "bytes": 4348,
-      "sha256": "35951ae9a973deab9a52109c9e3fd7ef56251d7dc8eab5f838979eade177474f"
+      "bytes": 4406,
+      "sha256": "b2cd7c1f9161a3ce5e8bb742519b5cb72d58eca19079af142971d14d89306a6e"
     },
     {
       "file": "content/design-tokens.json",
@@ -20,8 +20,8 @@
     },
     {
       "file": "scripts/build-cv-candidates.mjs",
-      "bytes": 7686,
-      "sha256": "ed764658743cffba60be5f8391d7a5fc91c8bd53ca090ce7e6331fafab0f6f21"
+      "bytes": 7944,
+      "sha256": "3f74e7ab634c1c2f3a70c50f243223b32c14ff879e5455c5a3d056eefad3e8c6"
     }
   ],
   "outputs": [
@@ -29,14 +29,14 @@
       "language": "en",
       "html": "blake-lin-cv-candidate-en.html",
       "pdf": "blake-lin-cv-candidate-en.pdf",
-      "pdfSha256": "212f7c8f8a9d88ac04daed6c71724f74e99c15c92513da8ad454bc220fb24b9d",
+      "pdfSha256": "96fffae3046226b31fdb004e3b8b5f7244c1f1bbe7b4d53607bc0dd455588b7f",
       "httpRequests": 0
     },
     {
       "language": "zh-TW",
       "html": "blake-lin-cv-candidate-zh-tw.html",
       "pdf": "blake-lin-cv-candidate-zh-tw.pdf",
-      "pdfSha256": "5aea654c94ebc02bc60499393c66c50582171b6608986d319c80842798adc5f5",
+      "pdfSha256": "335e543506de6ea6d13e7555e237bac2cefc636d6cc747f218da5cf005767ac8",
       "httpRequests": 0
     }
   ]

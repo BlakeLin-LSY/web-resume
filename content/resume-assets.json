@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "sourceVersion": "Third-edition CV generated from shared site facts (cv-candidate 2026-11-06, selected 2026-11-06)",
+  "sourceVersion": "Fourth-edition CV generated from shared site facts (cv-candidate 2026-11-27): claims aligned to career-ops claim boundaries, certification added",
   "privacy": "Name, email, GitHub and web resume links",
   "locales": {
     "en": {
       "file": "blake-lin-cv-en.pdf",
-      "bytes": 45493,
-      "sha256": "212f7c8f8a9d88ac04daed6c71724f74e99c15c92513da8ad454bc220fb24b9d",
+      "bytes": 46810,
+      "sha256": "96fffae3046226b31fdb004e3b8b5f7244c1f1bbe7b4d53607bc0dd455588b7f",
       "pageCount": 1
     },
     "zh-TW": {
       "file": "blake-lin-cv-zh-tw.pdf",
-      "bytes": 680751,
-      "sha256": "5aea654c94ebc02bc60499393c66c50582171b6608986d319c80842798adc5f5",
+      "bytes": 676981,
+      "sha256": "335e543506de6ea6d13e7555e237bac2cefc636d6cc747f218da5cf005767ac8",
       "pageCount": 1
     }
   }
