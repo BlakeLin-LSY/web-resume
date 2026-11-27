@@ -12,36 +12,36 @@
   },
   "triad": {
     "challenge": {
-      "en": "Scaling 3D optical metrology to high mounting heights with large FOV image stitching across 12 stereo camera pairs.",
-      "zh-TW": "將 3D 光學量測擴展至高架設高度與大視野影像拼接，涵蓋 12 組立體相機。"
+      "en": "3D measurement from a high mounting height, stitched across a large field of view from 12 stereo camera pairs.",
+      "zh-TW": "在高安裝高度下，以 12 組立體相機拼接大視野進行 3D 量測。"
     },
     "solution": {
-      "en": "Designed multi-camera calibration algorithms, implemented large FOV image stitching, and advanced the MVP prototype to factory line testing.",
-      "zh-TW": "設計多相機立體標定演算法與大視野影像拼接管線，將量測原型推進至產線測試。"
+      "en": "Contributed C++/Python 3D-measurement work to the team that advanced the MVP to factory-ready production testing.",
+      "zh-TW": "參與 C++/Python 3D 量測開發，團隊將 MVP 推進至工廠就緒的產線測試。"
     },
     "boundary": {
-      "en": "Focused on camera calibration, stereo algorithm design, high-height FOV stitching, and factory line testing.",
-      "zh-TW": "專注於相機標定、立體視覺演算法設計、高空大視野拼接與工廠產線測試。"
+      "en": "Team project. Scope spanned system design, camera integration, boundary-condition exploration, test specifications, and analysis with hardware collaborators.",
+      "zh-TW": "團隊專案。範圍涵蓋系統設計、相機整合、邊界條件探索、測試規格，以及與硬體夥伴的分析。"
     }
   },
   "abTransformation": {
     "aInput": {
-      "en": "Perspective distortion and seam artifacts from high-height multi-camera placement",
-      "zh-TW": "高空多相機架設導致的透視畸變與大視野拼接接縫"
+      "en": "Perspective distortion and seams from high-mounted multi-camera placement",
+      "zh-TW": "高架多相機配置造成的透視畸變與拼接接縫"
     },
     "weakestLink": {
-      "en": "Extrinsic calibration drift and optical distortion across 12 stereo camera pairs",
-      "zh-TW": "12 組立體相機的外參標定漂移與光學畸變"
+      "en": "Calibration and alignment across 12 stereo camera pairs",
+      "zh-TW": "12 組立體相機之間的標定與對齊"
     },
     "bOutput": {
-      "en": "Large FOV stereo stitching algorithms with verified measurement accuracy in factory testing",
-      "zh-TW": "大視野立體拼接演算法，通過工廠產線測試驗證"
+      "en": "A 3D-measurement line ready for factory production testing",
+      "zh-TW": "可進入工廠產線測試的 3D 量測系統"
     }
   },
   "intentContract": {
     "strictInvariant": {
-      "en": "Stereo 3D measurement geometry across stitched frames must match physical calibration target coordinates.",
-      "zh-TW": "大視野拼接影像的立體 3D 量測幾何必須與實體標定靶標座標保持一致。"
+      "en": "Stitched 3D measurements must agree with the physical calibration target.",
+      "zh-TW": "拼接後的 3D 量測必須與實體標定靶一致。"
     },
     "nonGoals": {
       "en": [
@@ -54,101 +54,99 @@
       ]
     },
     "failureConditions": {
-      "en": "If mechanical vibration or thermal changes exceed calibration tolerances, the system prompts for recalibration instead of outputting invalid measurements.",
-      "zh-TW": "若機械震動或溫度變化超出標定容差，系統自動提示重新標定，不輸出錯誤量測結果。"
+      "en": "If vibration or temperature moves the cameras beyond calibration tolerance, the measurement should be recalibrated, not trusted.",
+      "zh-TW": "若震動或溫度使相機偏離標定容差，量測結果應重新標定，而不是直接採信。"
     }
   },
   "mirrorDuel": [
     {
       "challenger": {
-        "en": "What was the main calibration challenge when measuring from high mounting heights with large FOV stitching?",
-        "zh-TW": "在高架設高度進行大視野拼接量測時，主要的相機標定挑戰是什麼？"
+        "en": "What made high-mounted, large-FOV measurement hard?",
+        "zh-TW": "高架、大視野量測難在哪裡？"
       },
       "defense": {
-        "en": "High mounting heights introduce perspective distortion and edge illumination dropoff across camera pairs. We built a bundle-adjustment calibration pipeline that solved intrinsic and extrinsic parameters together, removing parallax seams in stitched 3D point clouds.",
-        "zh-TW": "高架設高度會帶來透視畸變與相機邊緣光學衰減。我們設計光學標定演算法，同時解算內外參矩陣，消除拼接點雲中的視差接縫。"
+        "en": "Perspective distortion and seams between camera views. Calibration across all 12 pairs had to hold before any stitched measurement meant anything.",
+        "zh-TW": "透視畸變與相機視野之間的接縫。12 組相機的標定先要成立，拼接後的量測才有意義。"
       }
     },
     {
       "challenger": {
-        "en": "How did you advance the prototype from MVP to factory testing?",
-        "zh-TW": "你如何將 C++/Python 3D 量測原型推進至工廠產線測試？"
+        "en": "What was your part, and what was the team's?",
+        "zh-TW": "哪些是你做的，哪些是團隊做的？"
       },
       "defense": {
-        "en": "We defined factory test specifications, integrated the vision pipeline into line inspection workflows, and verified measurement repeatability during 8-hour continuous runs with thermal drift compensation targets.",
-        "zh-TW": "我們制定工廠測試規格，將演算法管線整合至產線檢測流程，並在 8 小時連續運轉下透過熱漂移補償靶標驗證量測重複精度。"
+        "en": "I contributed C++/Python measurement work within a cross-functional team; the advance from MVP to factory-ready testing was a team milestone. The exact split of individual tasks was not recorded, so I describe the project scope rather than claim sole ownership.",
+        "zh-TW": "我在跨部門團隊中負責 C++/Python 量測相關工作；從 MVP 到工廠就緒測試是團隊里程碑。個人分工沒有留下紀錄，所以我描述專案範圍，不宣稱獨自負責。"
       }
     }
   ],
   "povHighlights": {
     "staff": {
-      "en": "Multi-camera calibration, large FOV stereo stitching, and prototyping to factory testing",
-      "zh-TW": "多相機立體標定、大視野影像拼接與產線測試驗證",
+      "en": "Multi-camera 3D measurement at production scale",
+      "zh-TW": "產線規模的多相機 3D 量測",
       "coreQuestion": {
-        "en": "How do we achieve precise 3D measurement from high mounting heights across 12 stereo camera pairs without seam artifacts?",
-        "zh-TW": "如何在 12 組立體相機高空架設下達成精確 3D 量測，同時消除大視野拼接接縫？"
+        "en": "How do 12 stereo pairs produce one trustworthy measurement?",
+        "zh-TW": "12 組立體相機如何產出一個可信的量測？"
       },
       "breakthrough": {
-        "en": "Designed multi-camera optical calibration and stereo stitching algorithms with global optimization, advancing the prototype to factory line testing.",
-        "zh-TW": "研發多相機光學標定與全域優化立體拼接演算法，將原型推進至工廠產線測試。"
+        "en": "Calibration, stitching, and test specifications worked together so the system could enter factory testing.",
+        "zh-TW": "標定、拼接與測試規格相互配合，系統得以進入工廠測試。"
       },
       "verifiedMoat": {
-        "en": "Large FOV 3D optical metrology across 12 stereo pairs, with verified measurement repeatability on the production line.",
-        "zh-TW": "完成 12 組立體相機大視野 3D 光學量測，在產線環境下驗證量測重複精度。"
+        "en": "The team advanced the MVP to factory-ready production testing.",
+        "zh-TW": "團隊將 MVP 推進至工廠就緒的產線測試。"
       }
     },
     "em": {
-      "en": "Cross-functional tuning, prototype delivery, and factory testing milestones",
-      "zh-TW": "跨部門調校、原型交付與產線測試里程碑",
+      "en": "Cross-functional work between software and hardware",
+      "zh-TW": "軟硬體之間的跨部門協作",
       "coreQuestion": {
-        "en": "How do you coordinate algorithm integration, camera calibration, and hardware tuning across teams?",
-        "zh-TW": "如何協調跨部門的演算法整合、相機標定與硬體調校？"
+        "en": "How do software iteration and hardware tuning stay in step?",
+        "zh-TW": "軟體迭代與硬體調校如何保持同步？"
       },
       "breakthrough": {
-        "en": "Established calibration and testing protocols so software iteration and hardware validation could proceed in parallel.",
-        "zh-TW": "建立模組化標定與測試規範，讓演算法軟體開發與硬體驗證同步進行。"
+        "en": "Test specifications and result analysis gave hardware collaborators something concrete to tune against.",
+        "zh-TW": "測試規格與結果分析讓硬體夥伴有具體的調校依據。"
       },
       "verifiedMoat": {
-        "en": "Delivered the prototype to factory testing on schedule and verified measurement stability before production rollout.",
-        "zh-TW": "如期將原型推進至工廠產線測試，在量產前確立量測穩定度。"
+        "en": "Reached the production-testing stage before product launch.",
+        "zh-TW": "在產品上市前達到產線測試階段。"
       }
     },
     "recruiter": {
-      "en": "3D metrology algorithms, large FOV prototyping, and factory deployment",
-      "zh-TW": "3D 光學量測演算法、大視野原型研發與產線導入",
+      "en": "3D measurement, camera calibration, and factory testing",
+      "zh-TW": "3D 量測、相機標定與工廠測試",
       "coreQuestion": {
-        "en": "What technical foundation did Blake build for the multi-camera 3D inspection system?",
-        "zh-TW": "Blake 為工業 3D 檢測系統建立了哪些技術基礎？"
+        "en": "What industrial computer-vision work has Blake done?",
+        "zh-TW": "Blake 做過哪些工業電腦視覺工作？"
       },
       "breakthrough": {
-        "en": "Developed multi-camera calibration and large FOV stereo stitching algorithms, applying physics optical models to factory line inspection.",
-        "zh-TW": "開發多相機標定與大視野立體拼接演算法，將物理光學模型應用於工廠產線檢測。"
+        "en": "C++/Python 3D measurement on a 12-stereo-pair line, plus earlier AOI and RealSense metrology roles.",
+        "zh-TW": "12 組立體相機產線的 C++/Python 3D 量測，以及先前的 AOI 與 RealSense 量測經歷。"
       },
       "verifiedMoat": {
-        "en": "Complete 3D optical measurement pipeline, advancing the prototype directly to factory testing.",
-        "zh-TW": "建立完整的 3D 光學量測管線，直接將原型推進至工廠產線測試。"
+        "en": "MVP to factory-ready production testing, as a team.",
+        "zh-TW": "與團隊一起把 MVP 推進至工廠就緒的產線測試。"
       }
     }
   },
   "en": {
     "proofTitle": "Large FOV Stereo 3D Metrology",
-    "summary": "Led algorithm design, camera calibration, and prototyping to advance a {cameraPairs}-stereo-camera system to factory line testing.",
-    "result": "MVP to factory line testing",
+    "summary": "Contributed C++/Python 3D-measurement work to a {cameraPairs}-stereo-camera line; the team advanced the MVP to factory-ready production testing.",
+    "result": "MVP to factory-ready testing",
     "scope": "Factory testing",
     "details": [
-      "Advanced a C++/Python 3D-measurement MVP to factory production testing.",
-      "Defined test specifications and analyzed results to guide cross-functional hardware tuning."
+      "Scope spanned system design, camera integration, boundary-condition exploration, test specifications, and analysis with hardware collaborators."
     ],
     "boundary": "Stage reached: production line testing before product launch."
   },
   "zh-TW": {
     "proofTitle": "高空大視野立體 3D 量測",
-    "summary": "主導演算法設計、相機標定與原型研發，將 {cameraPairs} 組立體相機系統推進至工廠產線測試。",
-    "result": "量測原型推進至工廠產線測試",
+    "summary": "參與 {cameraPairs} 組立體相機產線的 C++/Python 3D 量測開發；團隊將 MVP 推進至工廠就緒的產線測試。",
+    "result": "MVP 推進至工廠就緒測試",
     "scope": "工廠產線測試",
     "details": [
-      "將 C++/Python 3D 量測原型推進至工廠產線測試。",
-      "制定測試規格並分析結果，支援跨部門硬體調校。"
+      "範圍涵蓋系統設計、相機整合、邊界條件探索、測試規格，以及與硬體夥伴的分析。"
     ],
     "boundary": "階段：產品上市前的工廠產線測試。"
   }

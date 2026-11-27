@@ -7,150 +7,148 @@
   "sourceIds": [
     "MAT-CAREER"
   ],
-  "metric": {
-    "value": 10,
-    "type": "training-speed-factor",
-    "en": "~{value}× training speedup through dataloader I/O pipeline refactoring",
-    "zh-TW": "重構資料載入器 I/O 管線，達成約 {value} 倍模型訓練加速"
-  },
   "triad": {
     "challenge": {
-      "en": "Diagnosed data loading bottlenecks in a PhysicsNeMo training workflow.",
-      "zh-TW": "分析 PhysicsNeMo 訓練流程中的資料載入瓶頸。"
+      "en": "A PhysicsNeMo training workflow for data-center heat-flow simulation spent much of its time with the GPU waiting for data.",
+      "zh-TW": "資料中心熱流模擬的 PhysicsNeMo 訓練流程中，GPU 有大量時間在等待資料。"
     },
     "solution": {
-      "en": "Specified pipeline requirements, designed asynchronous prefetching, and directed the dataloader refactoring.",
-      "zh-TW": "制定管線優化規格，設計非同步預取架構，並主導資料載入器重構。"
+      "en": "Scoped the OpenFOAM data-generation dependency, traced the slowdown to the demo's data-format loader, set the optimization direction, and reviewed a Claude-assisted loader rewrite.",
+      "zh-TW": "釐清 OpenFOAM 資料生成的依賴，把瓶頸定位到範例的資料格式載入器，決定最佳化方向，並審查 Claude 協助完成的載入器改寫。"
     },
     "boundary": {
-      "en": "Focused on dataloader I/O profiling, serialization bottleneck removal, and asynchronous prefetching without modifying the physics solver.",
-      "zh-TW": "專注於資料載入器 I/O 效能分析、序列化瓶頸消除與非同步預取，不改動物理求解器核心。"
+      "en": "Changed how training data was loaded; the OpenFOAM solver and model architecture were left as they were.",
+      "zh-TW": "改的是訓練資料的載入方式；OpenFOAM 求解器與模型架構維持原樣。"
     }
   },
   "abTransformation": {
     "aInput": {
-      "en": "GPU compute idling during CFD training due to synchronous data loading",
-      "zh-TW": "CFD 數值模擬訓練因同步資料載入導致 GPU 閒置"
+      "en": "GPU idle time during CFD surrogate training",
+      "zh-TW": "CFD 代理模型訓練期間 GPU 閒置"
     },
     "weakestLink": {
-      "en": "Python DataLoader serialization and OpenFOAM format conversion bottleneck",
-      "zh-TW": "Python DataLoader 序列化與 OpenFOAM 格式轉換瓶頸"
+      "en": "The demo's loader for the simulation data format",
+      "zh-TW": "範例中模擬資料格式的載入器"
     },
     "bOutput": {
-      "en": "Asynchronous prefetching dataloader pipeline delivering ~10× training speedup",
-      "zh-TW": "非同步預取資料載入管線，達成約 10 倍模型訓練加速"
+      "en": "Shorter overall training and data-streaming time, with less GPU idle time",
+      "zh-TW": "整體訓練與資料串流耗時縮短，GPU 閒置減少"
     }
   },
   "intentContract": {
     "strictInvariant": {
-      "en": "DataLoader streaming throughput must match GPU processing capacity without degrading simulation mesh accuracy.",
-      "zh-TW": "DataLoader 串流吞吐量必須滿足 GPU 運算速率，且不得降低數值模擬網格精度。"
+      "en": "A low training loss is not evidence of a useful model unless the simulation data behind it is physically correct.",
+      "zh-TW": "模擬資料本身未確認正確前，訓練 loss 低不代表模型可用。"
     },
     "nonGoals": {
       "en": [
-        "Rewriting the OpenFOAM C++ solver core",
-        "Adding more GPU hardware to compensate for host I/O stalls"
+        "Rewriting the OpenFOAM solver",
+        "Buying more GPUs to hide a data-loading stall"
       ],
       "zh-TW": [
-        "重寫 OpenFOAM C++ 求解器核心",
-        "依賴採購更多 GPU 硬體掩蓋主機端 I/O 瓶頸"
+        "改寫 OpenFOAM 求解器",
+        "以增購 GPU 掩蓋資料載入的停頓"
       ]
     },
     "failureConditions": {
-      "en": "If host memory bandwidth saturates or disk read latency increases, the pipeline uses cached chunk prefetching to prevent GPU idling.",
-      "zh-TW": "若主機記憶體頻寬飽和或磁碟讀取延遲增加，管線啟用快取分塊預取機制，防止 GPU 閒置。"
+      "en": "If the simulation's initial-to-final states are not physically plausible, training speed is irrelevant; that check comes first, and a heat-flow specialist should confirm the data.",
+      "zh-TW": "若模擬從初始到終止狀態不符合物理常理，訓練再快也沒有意義；這項檢查優先，資料正確性應由熱流專家確認。"
     }
   },
   "mirrorDuel": [
     {
       "challenger": {
-        "en": "Why not simply add more GPU memory or rent a larger cluster to increase training throughput?",
-        "zh-TW": "為什麼不直接擴充 GPU 記憶體或租用更大規模的叢集來提高訓練吞吐量？"
+        "en": "Why not add GPUs or rent a larger cluster?",
+        "zh-TW": "為什麼不直接加 GPU 或租更大的叢集？"
       },
       "defense": {
-        "en": "Adding more compute GPUs does not solve a host CPU data loading bottleneck. It only increases GPU idle time. By isolating format deserialization bottlenecks and building an asynchronous pipeline, we achieved ~10× throughput on existing hardware with no additional hardware cost.",
-        "zh-TW": "增加 GPU 算力無法解決主機端的資料載入瓶頸，只會增加 GPU 閒置時間。透過找出格式反序列化瓶頸並建立非同步管線，我們在既有硬體上達成約 10 倍訓練吞吐量提升，不需要額外採購硬體。"
+        "en": "The GPU was already waiting for data. More GPUs would wait too. The limiting stage was the loader, so that is where the change went.",
+        "zh-TW": "GPU 已經在等資料，加更多 GPU 也只是一起等。限速的是載入器，所以改動放在那裡。"
       }
     },
     {
       "challenger": {
-        "en": "How did you structure the workflow when using AI code assistance for loader refactoring?",
-        "zh-TW": "在使用 AI 工具輔助改寫資料載入器時，你如何規劃架構並確保程式碼品質？"
+        "en": "A Claude agent wrote the loader change. What was your part?",
+        "zh-TW": "載入器是 Claude agent 改寫的，那你做了什麼？"
       },
       "defense": {
-        "en": "As Senior AI Engineer, I profiled the workload to diagnose bottlenecks, specified asynchronous prefetching and caching architectures, and reviewed generated code line by line to verify numerical accuracy and interface stability.",
-        "zh-TW": "我主導系統效能分析以找出瓶頸，制定非同步預取與快取架構規格，並逐行審查生成的程式碼，確保數值精度與介面穩定性。"
+        "en": "I defined the scope, found which stage was slow, chose the direction, and checked that training time and GPU idle time actually dropped. I also raised with several managers, up to the CTO, that the simulation data needed review by a heat-flow specialist before the model could be trusted.",
+        "zh-TW": "我界定範圍、找出慢在哪一段、決定方向，並確認訓練時間與 GPU 閒置確實下降。我也向多位主管（包括 CTO 層級）提出，模型可信之前，模擬資料需要熱流專家確認。"
       }
     }
   ],
   "povHighlights": {
     "staff": {
-      "en": "Root-cause diagnosis for PhysicsNeMo data loader",
-      "zh-TW": "根本原因診斷：PhysicsNeMo 資料載入瓶頸",
+      "en": "Finding the stage that limited training",
+      "zh-TW": "找出限制訓練速度的那一段",
       "coreQuestion": {
-        "en": "How do we prevent GPU idling caused by custom physics dataset formats?",
-        "zh-TW": "如何解決自訂物理模擬資料格式在載入時導致的 GPU 閒置問題？"
+        "en": "Is a slow training run a model problem or a data-path problem?",
+        "zh-TW": "訓練慢，是模型的問題，還是資料路徑的問題？"
       },
       "breakthrough": {
-        "en": "Traced serialization bottlenecks with NVIDIA profiling tools, redesigned data loading with multi-threaded prefetching, and directed pipeline refactoring.",
-        "zh-TW": "運用 NVIDIA 分析工具找出序列化瓶頸，以多執行緒預取與非同步管線重新設計資料載入架構。"
+        "en": "Traced GPU idle time to the simulation-data loader and set the direction for a Claude-assisted rewrite.",
+        "zh-TW": "把 GPU 閒置追到模擬資料載入器，並決定 Claude 協助改寫的方向。"
       },
       "verifiedMoat": {
-        "en": "Removed data-loading serialization bottlenecks, achieving ~10× training speedup on existing GPU hardware.",
-        "zh-TW": "消除資料載入的序列化瓶頸，在既有 GPU 硬體上達成約 10 倍模型訓練加速。"
+        "en": "Overall training time, data-streaming time, and GPU idle time dropped after the loader change.",
+        "zh-TW": "載入器改寫後，整體訓練、資料串流耗時與 GPU 閒置都下降。"
       }
     },
     "em": {
-      "en": "Training bottleneck diagnosis and code change review",
-      "zh-TW": "訓練瓶頸診斷與程式修改審查",
+      "en": "Bottleneck diagnosis and code-change review",
+      "zh-TW": "瓶頸診斷與程式修改審查",
       "coreQuestion": {
-        "en": "How do you speed up ML training cycles when data pipelines limit iteration speed?",
-        "zh-TW": "當資料管線成為模型訓練的主要瓶頸時，如何系統化縮短訓練週期？"
+        "en": "How do you use an AI coding agent without losing control of the result?",
+        "zh-TW": "使用 AI coding agent 時，如何仍掌握結果？"
       },
       "breakthrough": {
-        "en": "Combined systems profiling with AI-assisted development to prototype and deliver an asynchronous dataloader pipeline.",
-        "zh-TW": "結合系統效能分析與 AI 輔助開發，快速驗證並交付非同步資料載入管線。"
+        "en": "Kept problem definition, direction, and acceptance with the engineer; the agent made the code change.",
+        "zh-TW": "問題定義、方向與驗收由工程師負責，程式修改由 agent 執行。"
       },
       "verifiedMoat": {
-        "en": "Reduced model iteration time by ~10×, cutting GPU idle time during simulation training.",
-        "zh-TW": "將模型訓練週期縮短約 10 倍，大幅減少模擬訓練中的 GPU 等待時間。"
+        "en": "Raised the data-validation risk to management instead of reporting a fast model as a finished one.",
+        "zh-TW": "向主管提出資料驗證風險，而不是把訓練變快當成完成。"
       }
     },
     "recruiter": {
-      "en": "Physics background, model-training bottleneck diagnosis, and cross-domain engineering",
-      "zh-TW": "物理背景、模型訓練瓶頸診斷與跨領域工程",
+      "en": "Physics background applied to an unfamiliar ML domain",
+      "zh-TW": "物理背景應用於陌生的 ML 領域",
       "coreQuestion": {
-        "en": "How does Blake use applied physics and systems profiling to resolve machine learning bottlenecks?",
-        "zh-TW": "Blake 如何結合物理背景與系統分析經驗，解決機器學習中的效能瓶頸？"
+        "en": "How quickly can Blake become useful in an unfamiliar domain?",
+        "zh-TW": "Blake 進入陌生領域後，多快能有產出？"
       },
       "breakthrough": {
-        "en": "Connected simulation data formats with PyTorch pipeline design to fix the host-to-device transfer bottleneck.",
-        "zh-TW": "結合物理模擬經驗與 PyTorch 資料管線工程，解決主機與 GPU 之間的資料傳輸瓶頸。"
+        "en": "Learned OpenFOAM data generation and PhysicsNeMo training, then built and adapted a Morpheus PCAP anomaly workflow, each within about a month.",
+        "zh-TW": "學會 OpenFOAM 資料生成與 PhysicsNeMo 訓練，也建立並調整 Morpheus PCAP 異常偵測流程，各約一個月內完成。"
       },
       "verifiedMoat": {
-        "en": "Turned a slow CFD training pipeline into ~10× throughput gains on existing hardware.",
-        "zh-TW": "解決 CFD 訓練的資料載入瓶頸，在既有硬體上達成約 10 倍吞吐量提升。"
+        "en": "Two working workflows, documented and handed off.",
+        "zh-TW": "兩條可運作的流程，已文件化並完成交接。"
       }
     }
   },
   "en": {
     "proofTitle": "Training data-path diagnosis",
-    "summary": "Profiled PhysicsNeMo dataloader I/O bottlenecks and directed pipeline refactoring with asynchronous prefetching.",
+    "summary": "Traced GPU idle time in a PhysicsNeMo CFD training workflow to its data-format loader, set the optimization direction, and reviewed a Claude-assisted rewrite.",
+    "result": "GPU idle time traced to the loader",
     "scope": "Model training",
     "details": [
       "Built and adapted an Nvidia Morpheus network-anomaly workflow using real PCAP input.",
-      "Ran and adapted PhysicsNeMo training workflows for an OpenFOAM CFD use case."
+      "Ran and adapted PhysicsNeMo training for an OpenFOAM data-center heat-flow use case.",
+      "Raised that the simulation data needed review by a heat-flow specialist before the model could be trusted."
     ],
-    "boundary": "Focused on data-loading profiling and pipeline refactoring for simulation training workloads."
+    "boundary": "The agent made the code change; problem definition, direction, and acceptance were mine."
   },
   "zh-TW": {
     "proofTitle": "訓練資料路徑診斷",
-    "summary": "分析 PhysicsNeMo 資料載入 I/O 瓶頸，設計非同步預取並主導管線重構。",
+    "summary": "把 PhysicsNeMo CFD 訓練流程的 GPU 閒置追到資料格式載入器，決定最佳化方向，並審查 Claude 協助完成的改寫。",
+    "result": "GPU 閒置定位到資料載入器",
     "scope": "模型訓練",
     "details": [
       "使用真實 PCAP 封包輸入，建立並調整 Nvidia Morpheus 網路異常偵測流程。",
-      "針對 OpenFOAM CFD 案例，執行並調整 PhysicsNeMo 訓練流程。"
+      "針對 OpenFOAM 資料中心熱流案例，執行並調整 PhysicsNeMo 訓練流程。",
+      "提出模型可信之前，模擬資料需要熱流專家確認。"
     ],
-    "boundary": "專注於數值模擬訓練之資料載入效能分析與管線重構。"
+    "boundary": "程式修改由 agent 執行；問題定義、方向與驗收由我負責。"
   }
 }

@@ -64,8 +64,8 @@ export function renderTopologySvg(options = {}, language = "en") {
           <text x="287" y="60" class="resume-node-title" text-anchor="middle">${isEn ? "Multi-Camera Calib" : "多相機立體標定"}</text>
           <text x="287" y="78" class="resume-node-subtitle" text-anchor="middle">${isEn ? "Intrinsic & Extrinsic" : "相機內外參數優化"}</text>
           <line x1="225" y1="92" x2="350" y2="92" class="resume-node-divider"/>
-          <text x="287" y="110" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Global Bundle Adjust" : "全域幾何束集調校"}</text>
-          <text x="287" y="128" class="resume-node-detail" text-anchor="middle">${isEn ? "Eliminate Distortion" : "消除透視與接縫畸變"}</text>
+          <text x="287" y="110" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Target-Based Checks" : "以標定靶檢查"}</text>
+          <text x="287" y="128" class="resume-node-detail" text-anchor="middle">${isEn ? "Reduce Distortion" : "降低透視與接縫畸變"}</text>
         </g>
 
         <!-- Connector 2 -->
@@ -98,10 +98,10 @@ export function renderTopologySvg(options = {}, language = "en") {
           <rect x="613" y="22" width="90" height="18" rx="4" class="resume-node-pill resume-pill-highlight"/>
           <text x="658" y="34" class="resume-pill-text" text-anchor="middle">${isEn ? "FACTORY READY" : "產線就緒"}</text>
           <text x="677" y="60" class="resume-node-title resume-title-highlight" text-anchor="middle">${isEn ? "Large FOV Stitching" : "大視野影像拼接"}</text>
-          <text x="677" y="78" class="resume-node-subtitle" text-anchor="middle">${isEn ? "Multi-View Alignment" : "多視角無縫對齊"}</text>
+          <text x="677" y="78" class="resume-node-subtitle" text-anchor="middle">${isEn ? "Multi-View Alignment" : "多視角對齊"}</text>
           <line x1="620" y1="92" x2="735" y2="92" class="resume-node-divider"/>
           <text x="677" y="110" class="resume-node-detail resume-stat-green" text-anchor="middle">${isEn ? "Factory-Ready Testing" : "工廠產線上線實測"}</text>
-          <text x="677" y="128" class="resume-node-detail" text-anchor="middle">${isEn ? "MVP to Production Pass" : "量測原型驗證過關"}</text>
+          <text x="677" y="128" class="resume-node-detail" text-anchor="middle">${isEn ? "MVP to Factory Testing" : "MVP 推進至產線測試"}</text>
         </g>
       </svg>
     </div>

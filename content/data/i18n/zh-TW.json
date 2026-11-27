@@ -1,5 +1,5 @@
 {
-  "lead": "專注機器學習管線加速、產線高速 AOI 電腦視覺與大視野立體 3D 量測的 AI 系統工程師。以應用物理分析為基礎，從根源消除系統效能瓶頸。",
+  "lead": "具 3 年以上電腦視覺與軟硬體整合量產經驗的軟體演算法工程師，目前專注於可檢驗的 AI agent 工作流程。物理訓練讓我先找出真正的瓶頸，再動手最佳化。",
   "context": "3 年以上專業工程經驗 · 物理學碩士",
   "cv": "下載 CV",
   "cvOpen": "開啟 CV",
@@ -18,7 +18,7 @@
     "contact": "聯絡"
   },
   "proofHeading": "核心工程實績",
-  "proofIntro": "高吞吐 ML 訓練管線與工業級次微秒多相機時序同步。",
+  "proofIntro": "量產條件下的 ML 訓練資料路徑與多相機 3D 量測。",
   "careerLink": "查看專業經歷",
   "workHeading": "系統架構與 AI 專案",
   "focus": "以嚴格不變量驅動的 AI 論文研讀系統與隱私優先的裝置端語音處理架構。",
@@ -61,9 +61,9 @@
   "lensStaffShort": "架構師",
   "lensEmShort": "工程主管",
   "lensRecruiterShort": "CTO",
-  "lensStaffDesc": "聚焦：底層並行架構、系統瓶頸定位、硬體物理極限與不變量約束",
-  "lensEmDesc": "聚焦：研發交付吞吐量、高可用系統穩定性與 CI 自動防護機制",
-  "lensRecruiterDesc": "聚焦：硬體資本效益、工程技術優勢與物理導向 AI 系統",
+  "lensStaffDesc": "聚焦：根本原因診斷、系統邊界與不變量",
+  "lensEmDesc": "聚焦：交付、審查 agent 產出的程式碼與自動化檢查",
+  "lensRecruiterDesc": "聚焦：物理背景、量產電腦視覺與 AI agent 工程",
   "lensCoreQuestion": "核心審查問題",
   "lensBreakthrough": "工程技術突破",
   "lensVerifiedMoat": "量化驗證成果",
@@ -82,7 +82,7 @@
   "proofVerifyBtn": "執行即時不變量驗證",
   "frameworkHeading": "工程方法論",
   "frameworkTitle": "物理邊界界定 · 系統瓶頸定位 · 實測量化驗證 (A ➔ X ➔ B)",
-  "frameworkIntro": "將軟體架構建立於物理約束之上：定位資料路徑瓶頸，消除非確定性延遲抖動，在量產系統中交付經量化驗證的效能成果。",
+  "frameworkIntro": "把軟體建立在物理約束上：找出限制結果的那一段，改那一段，再用物理檢查結果。",
   "ribbonLabelA": "A: 問題與邊界定義",
   "ribbonLabelLink": "X: 突破關鍵弱鏈",
   "ribbonLabelB": "B: 驗證成果交付"

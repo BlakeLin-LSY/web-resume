@@ -16,24 +16,24 @@ export function renderHeroModule({ profile, copy, cvAction, localize, language }
           <a class="resume-button resume-button-secondary" href="#professional-proof">${isEn ? "Explore Work" : "查看工程實績"}</a>
         </div>
       </div>
-      <div class="resume-hero-right resume-impact-rail" aria-label="${isEn ? "Verified Impact Metrics" : "核心量化指標"}">
+      <div class="resume-hero-right resume-impact-rail" aria-label="${isEn ? "Selected work" : "代表成果"}">
         <div class="resume-rail-header">
-          <span class="resume-rail-kicker">${isEn ? "VERIFIED IMPACT" : "工程量化實績"}</span>
+          <span class="resume-rail-kicker">${isEn ? "SELECTED WORK" : "代表成果"}</span>
         </div>
         <div class="resume-rail-card">
-          <span class="resume-rail-num">~10×</span>
-          <span class="resume-rail-title">${isEn ? "ML Training Acceleration" : "ML 訓練管線加速"}</span>
-          <p class="resume-rail-desc">${isEn ? "Dataloader I/O profiling and asynchronous prefetching to unblock GPU compute without hardware expansion (DynaSafe)." : "分析 DataLoader I/O 瓶頸並導入非同步預取，在既有硬體上釋放 GPU 算力 (DynaSafe)。"}</p>
+          <span class="resume-rail-num">GPU idle</span>
+          <span class="resume-rail-title">${isEn ? "ML Training Bottleneck" : "ML 訓練瓶頸診斷"}</span>
+          <p class="resume-rail-desc">${isEn ? "Traced GPU idle time to the data-format loader and directed a Claude-assisted rewrite; training time dropped (DynaSafe)." : "把 GPU 閒置追到資料格式載入器，主導 Claude 協助的改寫，訓練耗時下降 (DynaSafe)。"}</p>
         </div>
         <div class="resume-rail-card">
-          <span class="resume-rail-num">-40%</span>
-          <span class="resume-rail-title">${isEn ? "AOI Cycle-Time Reduction" : "產線 AOI 檢測週期縮短"}</span>
-          <p class="resume-rail-desc">${isEn ? "Production-line automated optical inspection algorithm redesign and workflow optimization (UTECHZONE)." : "重構產線自動光學檢測（AOI）演算法與工作流程，單件檢測耗時降低 40% (UTECHZONE)。"}</p>
+          <span class="resume-rail-num">C# AOI</span>
+          <span class="resume-rail-title">${isEn ? "Production-Line Inspection" : "產線光學檢測"}</span>
+          <p class="resume-rail-desc">${isEn ? "Automated optical inspection algorithms for manufacturing-line quality checks (UTECHZONE)." : "製造產線品質檢查的自動光學檢測演算法 (UTECHZONE)。"}</p>
         </div>
         <div class="resume-rail-card">
-          <span class="resume-rail-num">Large FOV</span>
+          <span class="resume-rail-num">12 pairs</span>
           <span class="resume-rail-title">${isEn ? "Stereo 3D Metrology" : "大視野立體 3D 量測"}</span>
-          <p class="resume-rail-desc">${isEn ? "Multi-camera stereo calibration, high-height image stitching, and production-line metrology prototyping (MetGauge / LIPS)." : "多相機立體校正、高空大視野影像拼接與產線量測原型研發 (MetGauge / LIPS)。"}</p>
+          <p class="resume-rail-desc">${isEn ? "Team-built 12-stereo-pair 3D measurement line, advanced from MVP to factory-ready testing (MetGauge); RealSense metrology (LIPS)." : "團隊開發的 12 組立體相機 3D 量測產線，從 MVP 推進至工廠就緒測試 (MetGauge)；RealSense 量測 (LIPS)。"}</p>
         </div>
       </div>
     </div>

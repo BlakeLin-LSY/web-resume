@@ -52,15 +52,15 @@
       "en": {
         "context": "DynaSafe · Professional work · Jan–Apr 2026",
         "title": "The training bottleneck was in the data pipeline",
-        "brief": "I investigated a PhysicsNeMo demo's data-format loader, pinpointed I/O bottlenecks causing GPU starvation, and directed pipeline refactoring to achieve roughly 10x training acceleration.",
-        "detail": "By profiling simulation training runs, I located critical I/O serialization in custom dataset format loading, designed asynchronous multi-threaded ingestion, and verified high GPU utilization throughout training loops.",
+        "brief": "GPU idle time in a PhysicsNeMo CFD training run came from the demo's data-format loader. I found that, set the direction, and reviewed a Claude-assisted rewrite; training and data-streaming time dropped.",
+        "detail": "I first checked whether the slowdown was in the model or in getting data to it. The GPU was waiting, so the loader was the stage to change. A Claude agent wrote the change; I checked the direction and that training actually got faster. I also flagged that low loss would not mean much until a heat-flow specialist confirmed the simulation data.",
         "question": "How do you decide whether a slow training run needs model changes or a better data path?"
       },
       "zh-TW": {
         "context": "DynaSafe · 職業工作 · 2026 年 1–4 月",
         "title": "訓練瓶頸，出在資料怎麼送進來",
-        "brief": "我調查 PhysicsNeMo 範例的資料格式載入瓶頸，鎖定造成 GPU 飢餓的 I/O 阻塞點，主導管線平行化重構達成約 10 倍訓練加速。",
-        "detail": "透過剖析模擬訓練流程，精確定位自訂資料集載入時的序列化瓶頸，設計非同步多執行緒資料載入架構，消除 I/O 阻塞並確保 GPU 算力維持高效運算。",
+        "brief": "PhysicsNeMo CFD 訓練的 GPU 閒置，來自範例的資料格式載入器。我找出這點、決定方向，並審查 Claude 協助完成的改寫；訓練與資料串流耗時隨之下降。",
+        "detail": "我先確認慢在模型，還是慢在把資料送進模型。GPU 在等資料，所以該改的是載入器。程式修改由 Claude agent 完成；我確認方向，也確認訓練確實變快。我也提出：熱流專家確認模擬資料之前，loss 低不代表什麼。",
         "question": "訓練太慢時，你會怎麼判斷該調模型，還是先查資料 pipeline？"
       }
     },

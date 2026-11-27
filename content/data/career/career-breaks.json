@@ -8,11 +8,11 @@
     ],
     "en": {
       "title": "Independent AI & Agent Infrastructure Engineering",
-      "text": "Built the Agent Ticket Kanban state-machine task dispatcher verified by 1,080+ tests, and developed the windowphase context-injection CLI to achieve 69.5% input token reduction."
+      "text": "Personal projects: Agent Ticket Kanban, a state-machine task dispatcher (958/958 tests and a 146/146 mutation sweep, 2026-10-04), and windowphase, a context-injection CLI that used 69.5% fewer input tokens in a 28-invocation dogfood session."
     },
     "zh-TW": {
       "title": "獨立 AI 系統與 Agent 架構工程研發",
-      "text": "開發具備狀態機與沙盒隔離的 Agent Ticket Kanban 派發系統，通過 1,080+ 項測試，並建立 windowphase 上下文注入 CLI 工具，降低 69.5% 輸入 token。"
+      "text": "個人專案：Agent Ticket Kanban 狀態機任務派發系統（2026-10-04 測試 958/958、mutation 146/146），以及 windowphase 上下文注入 CLI（28 次實測輸入 token 減少 69.5%）。"
     }
   },
   {

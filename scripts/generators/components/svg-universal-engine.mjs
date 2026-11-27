@@ -16,12 +16,12 @@ export function renderUniversalEngineSvg(language = "en") {
   const kickerB = isEn ? "B(OUT): VALUE DELIVERY" : "B(OUT): 確定性價值交付";
 
   const inputs = isEn ? [
-    { title: "Sensor Clocks & Jitter", sub: "24 Cams Async · Metrology Drift" },
+    { title: "Multi-Camera Calibration", sub: "24 Cameras · Metrology Drift" },
     { title: "Compute Starvation & Stall", sub: "DataLoader I/O Serialization" },
     { title: "Epistemic Drift & Bloom", sub: "Recursive Context Expansion" },
     { title: "In-Place Destructive Writes", sub: "Unchecked Mutations · Audio TFX" }
   ] : [
-    { title: "感測器時序競爭與微秒抖動", sub: "24 顆相機非同步觸發 · MetGauge" },
+    { title: "多相機標定與量測漂移", sub: "24 顆相機 · MetGauge" },
     { title: "算力飢餓與反序列化阻塞", sub: "I/O 延遲拖垮 GPU · DynaSafe" },
     { title: "認知邊界迷航與上下文膨脹", sub: "多 Agent 遞迴發散 · Study-Atlas" },
     { title: "黑箱模型破壞性原地覆寫", sub: "語音切片無狀態審計 · TFX 管線" }
@@ -37,8 +37,8 @@ export function renderUniversalEngineSvg(language = "en") {
     {
       num: "02",
       name: "Pierce Critical Weak Link",
-      line1: "Break rate-limiting bottlenecks via",
-      line2: "lockless ring buffers & zero-copy IPC."
+      line1: "Change the stage that limits the",
+      line2: "result before adding hardware."
     },
     {
       num: "03",
@@ -55,9 +55,9 @@ export function renderUniversalEngineSvg(language = "en") {
     },
     {
       num: "02",
-      name: "手術刀式擊穿最弱限速環節",
-      line1: "鎖定唯一系統限速阻抗，以無鎖",
-      line2: "環形佇列、零拷貝 IPC 與對抗破局。"
+      name: "先改限制結果的環節",
+      line1: "找出真正限速的那一段，",
+      line2: "先改它，再考慮加硬體。"
     },
     {
       num: "03",
@@ -68,14 +68,14 @@ export function renderUniversalEngineSvg(language = "en") {
   ];
 
   const yields = isEn ? [
-    { title: "Sub-μs Hardware Sync", metric: "Zero-Drop Metrology Pass" },
-    { title: "Training Data-Path Optimization", metric: "~10x Training Acceleration" },
-    { title: "Budget & Drift Convergence", metric: "100% Intent Fidelity · Capped" },
+    { title: "12-Pair Stereo Metrology", metric: "MVP to Factory-Ready Testing" },
+    { title: "Training Data-Path Diagnosis", metric: "GPU Idle Traced to Loader" },
+    { title: "Research Delivery Gates", metric: "8 Gates · Hash-Matched Delivery" },
     { title: "Source Audio Dual-Storage", metric: "Immutable Audio & Non-Destructive Flow" }
   ] : [
-    { title: "次微秒級確定性同步", metric: "工廠 0 掉幀 · 物理量測過關" },
-    { title: "訓練資料載入管線優化", metric: "約 10 倍訓練加速 · 消除 GPU 飢餓" },
-    { title: "認知邊界收斂與防漂移", metric: "100% 意圖保真 · TALK 成本鎖定" },
+    { title: "12 組立體相機量測", metric: "MVP 推進至工廠就緒測試" },
+    { title: "訓練資料路徑診斷", metric: "GPU 閒置定位到載入器" },
+    { title: "研究導讀交付檢查", metric: "8 道檢查 · 交付雜湊一致" },
     { title: "來源音訊雙層儲存架構", metric: "原始音訊防篡改 · 無損清理檢驗" }
   ];
 

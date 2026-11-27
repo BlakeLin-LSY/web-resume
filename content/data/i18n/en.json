@@ -1,5 +1,5 @@
 {
-  "lead": "AI systems engineer focused on ML pipeline acceleration, high-speed AOI computer vision, and large FOV stereo 3D metrology. Grounded in applied physics to eliminate systemic bottlenecks.",
+  "lead": "Software and algorithm engineer with 3+ years of production work in computer vision and hardware-software integration, now building AI-agent workflows that can be checked. Physics training shapes how I find the real bottleneck before optimizing.",
   "context": "3+ years of professional engineering · M.S. in Physics",
   "cv": "Download CV",
   "cvOpen": "Open CV",
@@ -18,7 +18,7 @@
     "contact": "Contact"
   },
   "proofHeading": "Production Engineering Impact",
-  "proofIntro": "High-throughput ML pipelines and sub-microsecond multi-camera synchronization under industrial constraints.",
+  "proofIntro": "ML training data paths and multi-camera 3D measurement under production constraints.",
   "careerLink": "See professional experience",
   "workHeading": "Systems & AI Architecture Projects",
   "focus": "Invariant-driven architectures for traceable literature synthesis and privacy-first on-device speech processing.",
@@ -61,9 +61,9 @@
   "lensStaffShort": "Architect",
   "lensEmShort": "Eng Lead",
   "lensRecruiterShort": "CTO",
-  "lensStaffDesc": "Focus: Low-level concurrency, root-cause bottlenecks, and system invariants",
-  "lensEmDesc": "Focus: Delivery throughput, system stability, and automated CI gates",
-  "lensRecruiterDesc": "Focus: Capital efficiency, engineering moats, and physics-informed AI systems",
+  "lensStaffDesc": "Focus: root-cause diagnosis, system boundaries, and invariants",
+  "lensEmDesc": "Focus: delivery, review of agent-written code, and automated checks",
+  "lensRecruiterDesc": "Focus: physics background, production computer vision, and AI-agent engineering",
   "lensCoreQuestion": "Core Question",
   "lensBreakthrough": "Engineering Solution",
   "lensVerifiedMoat": "Verified Impact",
@@ -82,7 +82,7 @@
   "proofVerifyBtn": "Run Live Invariant Gate",
   "frameworkHeading": "Engineering Methodology",
   "frameworkTitle": "Physical Boundary Framing · Bottleneck Isolation · Measured Verification (A ➔ X ➔ B)",
-  "frameworkIntro": "Grounding software in physical constraints: isolating data path bottlenecks, eliminating non-deterministic jitter, and delivering verifiable throughput on production systems.",
+  "frameworkIntro": "Grounding software in physical constraints: find the stage that limits the result, change that stage, and check the outcome against the physics.",
   "ribbonLabelA": "A: PROBLEM & SCOPE",
   "ribbonLabelLink": "X: CRITICAL LINK",
   "ribbonLabelB": "B: VALUE DELIVERY"

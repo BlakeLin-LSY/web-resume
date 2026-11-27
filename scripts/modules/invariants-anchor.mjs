@@ -32,16 +32,16 @@ export function renderInvariantsAnchorModule({ language }) {
       num: "03",
       name: isEn ? "Optical Calibration Over Heuristic Stitching" : "幾何光學校正優於啟發式拼接",
       rule: isEn
-        ? "High-height multi-camera metrology requires exact intrinsic and extrinsic calibration with global bundle adjustment to eliminate perspective distortion and seam artifacts across large fields of view."
-        : "架高大視野多相機檢測需依賴精確的相機內外參數校正與全域幾何優化，消除大視野重疊區域的透視變形與拼接接縫。"
+        ? "High-mounted multi-camera measurement needs intrinsic and extrinsic calibration checked against a physical target before stitched results can be trusted."
+        : "架高大視野多相機量測，相機內外參數須以實體標定靶檢查，拼接結果才可信。"
     },
     {
       id: "algorithm-workflow",
       num: "04",
       name: isEn ? "Algorithm Redesign and Workflow Optimization Over Brute Force" : "演算法與工作流程優化優於暴力運算",
       rule: isEn
-        ? "Profiling dataflow and algorithm bottlenecks across AOI inspection workflows and deep-learning loaders delivers measurable cycle-time reductions and throughput gains on existing hardware."
-        : "深入分析產線 AOI 檢測流程與深度學習載入器的資料流瓶頸，在既有硬體上縮短單件耗時並提升訓練吞吐量。"
+        ? "Find the algorithm or dataflow stage that limits the result, in an AOI workflow or a training loader, before adding compute."
+        : "不論是產線 AOI 流程還是訓練載入器，先找出限制結果的演算法或資料流環節，再考慮增加算力。"
     }
   ];
 
