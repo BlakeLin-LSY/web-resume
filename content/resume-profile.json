@@ -62,7 +62,7 @@
       "aboutHeading": "About",
       "about": "My background in physics informs how I approach software: trace the problem, test the boundary, and make the result inspectable.",
       "skillsHeading": "Skills in context",
-      "educationHeading": "Education",
+      "educationHeading": "Education & Certifications",
       "personalHeading": "Beyond engineering",
       "personal": "I enjoy trail running and exploring nature.",
       "contactHeading": "Let's talk about the work.",
@@ -151,7 +151,7 @@
       "aboutHeading": "關於我",
       "about": "物理背景影響了我處理軟體問題的方式：追查問題、測試邊界，讓成果能被檢查。",
       "skillsHeading": "能力與實例",
-      "educationHeading": "學歷",
+      "educationHeading": "學歷與證書",
       "personalHeading": "工程之外",
       "personal": "我喜歡越野跑與探索自然。",
       "contactHeading": "聊聊工作與問題。",
@@ -999,6 +999,24 @@
       "zh-TW": {
         "title": "物理學學士",
         "institution": "國立中央大學"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "id": "google-cybersecurity",
+      "issued": "2026-11",
+      "sourceIds": [
+        "MAT-CAREER"
+      ],
+      "url": "https://www.coursera.org/account/accomplishments/professional-cert/5QQF0HG0VAIX",
+      "en": {
+        "title": "Google Cybersecurity Professional Certificate",
+        "issuer": "Google · Coursera"
+      },
+      "zh-TW": {
+        "title": "Google 資安專業證書（Google Cybersecurity Professional Certificate）",
+        "issuer": "Google · Coursera"
       }
     }
   ],

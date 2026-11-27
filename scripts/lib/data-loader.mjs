@@ -20,6 +20,7 @@ export async function loadModularProfile(baseDir = dataRoot) {
     careerBreaks,
     researchLearning,
     education,
+    certifications,
     skills,
     studyAtlas,
     transcribeForX,
@@ -35,6 +36,7 @@ export async function loadModularProfile(baseDir = dataRoot) {
     readJson(resolve(baseDir, "career/career-breaks.json")),
     readJson(resolve(baseDir, "career/research-learning.json")),
     readJson(resolve(baseDir, "career/education.json")),
+    readJson(resolve(baseDir, "career/certifications.json")),
     readJson(resolve(baseDir, "career/skills.json")),
     readJson(resolve(baseDir, "projects/study-atlas.json")),
     readJson(resolve(baseDir, "projects/transcribe-for-x.json")),
@@ -70,6 +72,7 @@ export async function loadModularProfile(baseDir = dataRoot) {
     projects,
     researchLearning,
     education,
+    certifications,
     skills,
     triads,
   };

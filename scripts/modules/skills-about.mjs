@@ -25,6 +25,13 @@ export function renderSkillsAboutModule({
     `, "article", `class="resume-education"`)
   ).join("");
 
+  const certifications = (profile.certifications ?? []).map(item =>
+    localize(lang => `
+      <h3><a href="${e(item.url)}">${e(item[lang].title)}</a></h3>
+      <p>${e(item[lang].issuer)} · ${e(item.issued)}</p>
+    `, "article", `class="resume-education resume-certification"`)
+  ).join("");
+
   const skills = profile.skills.map(item =>
     `<li><a href="${e(item.proofId ? `#career-${item.proofId}` : `${prefix}/projects/${item.projectId}.html`)}">${e(item.label)}</a></li>`
   ).join("");
@@ -41,6 +48,7 @@ export function renderSkillsAboutModule({
     <details class="resume-detail" id="education">
       <summary>${localize(lang => e(copy[lang].educationHeading), "span")}</summary>
       ${education}
+      ${certifications}
     </details>
     <details class="resume-detail">
       <summary>${localize(lang => e(copy[lang].researchHeading), "span")}</summary>
